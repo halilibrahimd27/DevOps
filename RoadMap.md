@@ -65,13 +65,13 @@ Her adım:
 
 ### 🟫 F. OBSERVABILITY (MONITORING + LOGGING)
 
-| Adım | Konu                          | Araç                              | Açıklama                    |
-| ---- | ----------------------------- | --------------------------------- | --------------------------- |
-| F1   | Prometheus + Grafana kurulumu | Helm                              | `kube-prometheus-stack`     |
-| F2   | Exporter’lar                  | node-exporter, kube-state-metrics | Kaynak & pod gözlemi        |
-| F3   | Alertmanager konfigürasyonu   | Alertmanager                      | Slack/Mail entegrasyonu     |
-| F4   | Fluent Bit kurulumu           | Fluent Bit                        | Tüm pod logları toplanır    |
-| F5   | Elasticsearch + Kibana        | ELK                               | Log arama ve görselleştirme |
+| Adım | Konu                                     | Araç                              | Açıklama                    |
+| ---- | ---------------------------------------- | --------------------------------- | --------------------------- |
+| F1   | Prometheus + Grafana kurulumu            | Helm                              | `kube-prometheus-stack`     |
+| F2   | Exporter’lar                             | node-exporter, kube-state-metrics | Kaynak & pod gözlemi        |
+| F3   | Alertmanager konfigürasyonu              | Alertmanager                      | Slack/Mail entegrasyonu     |
+| F4   | Fluent Bit kurulumu                      | Fluent Bit                        | Tüm pod logları toplanır    |
+| F5   | Elasticsearch + Logstash + Kibana        | Wazuh                             | Log arama ve görselleştirme |
 
 ---
 
