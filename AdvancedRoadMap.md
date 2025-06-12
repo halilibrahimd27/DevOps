@@ -8524,7 +8524,7 @@ echo "Applications ready! 🎉"
 5. **Train Team** - Share access and documentation
 
 ## Need Help?
-
+```
 - 📖 **Full Documentation**: [README.md](README.md)
 - 🔧 **Troubleshooting**: [docs/troubleshooting.md](docs/troubleshooting.md)
 - 💬 **Support**: Contact DevOps team
