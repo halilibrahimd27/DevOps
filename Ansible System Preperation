@@ -144,3 +144,92 @@ cat > playbooks/01-system-prep.yml << 'EOF'
     - name: reload sysctl
       command: sysctl --system
 EOF
+
+ansible all -i inventory/production.yml -m ping
+
+ansible-playbook -i inventory/production.yml playbooks/01-system-prep.yml
+
+# Docker & Containerd installation playbook
+cat > playbooks/02-container-runtime.yml << 'EOF'
+---
+- name: Install Container Runtime
+  hosts: masters:workers:infrastructure
+  become: yes
+  tasks:
+    - name: Install prerequisite packages
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        update_cache: yes
+
+    - name: Create keyring directory
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        keyring: /etc/apt/keyrings/docker.gpg
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        update_cache: yes
+
+    - name: Install Docker packages
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Add ubuntu user to docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Create containerd config directory
+      file:
+        path: /etc/containerd
+        state: directory
+
+    - name: Generate containerd configuration
+      shell: containerd config default > /etc/containerd/config.toml
+
+    - name: Configure systemd cgroup driver
+      replace:
+        path: /etc/containerd/config.toml
+        regexp: 'SystemdCgroup = false'
+        replace: 'SystemdCgroup = true'
+
+    - name: Start and enable containerd
+      systemd:
+        name: containerd
+        state: restarted
+        enabled: yes
+
+    - name: Start and enable docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Verify docker installation
+      command: docker --version
+      register: docker_version
+      
+    - name: Display docker version
+      debug:
+        msg: "Docker version: {{ docker_version.stdout }}"
+EOF
+
+# Container runtime kurulumunu çalıştır
+ansible-playbook -i inventory/production.yml playbooks/02-container-runtime.yml
