@@ -233,3 +233,160 @@ EOF
 
 # Container runtime kurulumunu çalıştır
 ansible-playbook -i inventory/production.yml playbooks/02-container-runtime.yml
+
+# Kubernetes packages installation playbook
+cat > playbooks/03-kubernetes-packages.yml << 'EOF'
+---
+- name: Install Kubernetes packages
+  hosts: masters:workers:infrastructure
+  become: yes
+  tasks:
+    - name: Create Kubernetes keyring directory
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Add Kubernetes GPG key
+      apt_key:
+        url: https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key
+        keyring: /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+    - name: Add Kubernetes repository
+      apt_repository:
+        repo: "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /"
+        update_cache: yes
+
+    - name: Install Kubernetes packages
+      apt:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: present
+        update_cache: yes
+
+    - name: Hold Kubernetes packages from auto-update
+      dpkg_selections:
+        name: "{{ item }}"
+        selection: hold
+      loop:
+        - kubelet
+        - kubeadm
+        - kubectl
+
+    - name: Enable and start kubelet
+      systemd:
+        name: kubelet
+        enabled: yes
+        state: started
+      ignore_errors: yes  # kubelet will fail until cluster is initialized
+
+    - name: Verify kubeadm version
+      command: kubeadm version -o short
+      register: kubeadm_version
+      
+    - name: Display kubeadm version
+      debug:
+        msg: "Kubeadm version: {{ kubeadm_version.stdout }}"
+EOF
+
+# Kubernetes packages kurulumunu çalıştır
+ansible-playbook -i inventory/production.yml playbooks/03-kubernetes-packages.yml
+
+# HAProxy load balancer setup
+cat > playbooks/04-load-balancer.yml << 'EOF'
+---
+- name: Setup HAProxy Load Balancer
+  hosts: loadbalancer
+  become: yes
+  tasks:
+    - name: Install HAProxy and Keepalived
+      apt:
+        name:
+          - haproxy
+          - keepalived
+        update_cache: yes
+
+    - name: Configure HAProxy
+      copy:
+        content: |
+          global
+              log stdout local0
+              chroot /var/lib/haproxy
+              stats socket /run/haproxy/admin.sock mode 660 level admin
+              stats timeout 30s
+              user haproxy
+              group haproxy
+              daemon
+
+          defaults
+              mode http
+              log global
+              option httplog
+              option dontlognull
+              option log-health-checks
+              option forwardfor
+              option http-server-close
+              timeout connect 5000
+              timeout client 50000
+              timeout server 50000
+
+          frontend stats
+              bind *:8404
+              stats enable
+              stats uri /stats
+              stats refresh 30s
+
+          frontend k8s_api_frontend
+              bind *:6443
+              mode tcp
+              option tcplog
+              default_backend k8s_api_backend
+
+          backend k8s_api_backend
+              mode tcp
+              balance roundrobin
+              option tcp-check
+              server master1 172.168.20.210:6443 check fall 3 rise 2
+              server master2 172.168.20.211:6443 check fall 3 rise 2
+              server master3 172.168.20.212:6443 check fall 3 rise 2
+
+          frontend k8s_ingress_http
+              bind *:80
+              mode http
+              default_backend k8s_ingress_http_backend
+
+          backend k8s_ingress_http_backend
+              mode http
+              balance roundrobin
+              server ingress1 172.168.20.228:80 check
+
+          frontend k8s_ingress_https
+              bind *:443
+              mode tcp
+              default_backend k8s_ingress_https_backend
+
+          backend k8s_ingress_https_backend
+              mode tcp
+              balance roundrobin
+              server ingress1 172.168.20.228:443 check
+        dest: /etc/haproxy/haproxy.cfg
+        backup: yes
+
+    - name: Restart and enable HAProxy
+      systemd:
+        name: haproxy
+        state: restarted
+        enabled: yes
+
+    - name: Verify HAProxy status
+      command: systemctl is-active haproxy
+      register: haproxy_status
+      
+    - name: Display HAProxy status
+      debug:
+        msg: "HAProxy status: {{ haproxy_status.stdout }}"
+EOF
+
+ansible-playbook -i inventory/production.yml playbooks/04-load-balancer.yml
