@@ -1,0 +1,49 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: 
+          - '172.168.30.51:9100'   # omruhbase-test (101)
+          - '172.168.30.52:9100'   # platform-test (102)
+          - '172.168.30.53:9100'   # earsiv-test (103)
+          - '172.168.30.54:9100'   # crm-test (104)
+          - '172.168.30.55:9100'   # ik-test (105)
+          - '172.168.30.56:9100'   # ecommerce-test (106)
+          - '172.168.30.57:9100'
+          - '172.168.30.58:9100'
+          - '172.168.30.59:9100'
+          - '172.168.30.99:9100'   # tk-test (107)
+          - '172.168.30.96:9100'   # test-monitoring (110) - current
+          - '172.168.30.97:9100'   # test-nginx (109)
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets:
+          - '172.168.30.51:8088'   # omruhbase-test (101) 
+          - '172.168.30.52:8088'   # platform-test (102)
+          - '172.168.30.53:8088'   # earsiv-test (103)
+          - '172.168.30.54:8088'   # crm-test (104)
+          - '172.168.30.55:8088'   # ik-test (105)
+          - '172.168.30.56:8088'   # ecommerce-test (106)
+          - '172.168.30.57:8088'
+          - '172.168.30.58:8088'
+          - '172.168.30.59:8088'
+          - '172.168.30.99:8088'   # tk-test (107)
+          - '172.168.30.96:8088'   # test-monitoring (110)
+          - '172.168.30.97:8088'   # test-nginx (109)

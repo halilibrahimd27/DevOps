@@ -1,0 +1,161 @@
+groups:
+  # Critical Infrastructure Alerts - Production Enhanced
+  - name: infrastructure.critical
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Instance {{ $labels.instance }} is down"
+          description: "{{ $labels.instance }} of job {{ $labels.job }} ({{ $labels.service_type }}) has been down for more than 30 seconds."
+
+      - alert: NodeExporterDown
+        expr: up{job=~"node-exporter.*"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Node Exporter is down on {{ $labels.hostname }}"
+          description: "Node Exporter on {{ $labels.hostname }} ({{ $labels.service_type }}) has been down for more than 1 minute."
+
+  - name: system_alerts
+    rules:
+
+      # CPU Kullanımı
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: performance
+        annotations:
+          summary: "⚠️ {{ $labels.instance }} - Yüksek CPU kullanımı"
+          description: "CPU kullanımı %80'in üzerinde (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      - alert: CriticalCPUUsage
+        expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 95
+        for: 2m
+        labels:
+          severity: critical
+          service: performance
+        annotations:
+          summary: "🔴 {{ $labels.instance }} - Kritik CPU kullanımı"
+          description: "CPU kullanımı kritik seviyede! (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      # Memory Kullanımı
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          service: performance
+        annotations:
+          summary: "⚠️ {{ $labels.instance }} - Yüksek RAM kullanımı"
+          description: "RAM kullanımı %85'in üzerinde (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      - alert: CriticalMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 95
+        for: 2m
+        labels:
+          severity: critical
+          service: performance
+        annotations:
+          summary: "🔴 {{ $labels.instance }} - Kritik RAM kullanımı"
+          description: "RAM kullanımı kritik seviyede! (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      # Disk Kullanımı
+      - alert: HighDiskUsage
+        expr: (1 - node_filesystem_avail_bytes{fstype!~"tmpfs|fuse.lxcfs"} / node_filesystem_size_bytes{fstype!~"tmpfs|fuse.lxcfs"}) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: storage
+        annotations:
+          summary: "⚠️ {{ $labels.instance }} - Yüksek disk kullanımı"
+          description: "{{ $labels.mountpoint }} disk kullanımı %80'in üzerinde (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      - alert: CriticalDiskUsage
+        expr: (1 - node_filesystem_avail_bytes{fstype!~"tmpfs|fuse.lxcfs"} / node_filesystem_size_bytes{fstype!~"tmpfs|fuse.lxcfs"}) * 100 > 90
+        for: 2m
+        labels:
+          severity: critical
+          service: storage
+        annotations:
+          summary: "🔴 {{ $labels.instance }} - Kritik disk kullanımı"
+          description: "{{ $labels.mountpoint }} disk kullanımı kritik seviyede! (Şu an: {{ printf \"%.1f\" $value }}%)"
+
+      # Load Average
+      - alert: HighLoadAverage
+        expr: node_load15 > (count by (instance) (node_cpu_seconds_total{mode="idle"}) * 0.7)
+        for: 10m
+        labels:
+          severity: warning
+          service: performance
+        annotations:
+          summary: "⚠️ {{ $labels.instance }} - Yüksek sistem yükü"
+          description: "15 dakikalık load average yüksek: {{ printf \"%.2f\" $value }}"
+
+  - name: docker_alerts
+    rules:
+      # Container durumları
+      - alert: ContainerDown
+        expr: time() - container_last_seen{name=~".+",name!~".*exporter.*"} > 60
+        for: 1m
+        labels:
+          severity: warning
+          service: container
+        annotations:
+          summary: "⚠️ {{ $labels.name }} container'ı durmuş"
+          description: "{{ $labels.name }} container'ı {{ $labels.instance }} sunucusunda çalışmıyor"
+
+      # Container yüksek CPU kullanımı
+      - alert: ContainerHighCPU
+        expr: sum by (name, instance) (rate(container_cpu_usage_seconds_total{name=~".+"}[5m])) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: container
+        annotations:
+          summary: "⚠️ {{ $labels.name }} - Yüksek CPU kullanımı"
+          description: "Container CPU kullanımı yüksek: {{ printf \"%.1f\" $value }}%"
+
+      # Container yüksek memory kullanımı
+      - alert: ContainerHighMemory
+        expr: |
+          (
+            container_memory_usage_bytes{name=~".+", name!~".*exporter.*", name!="POD"} 
+            / 
+            container_spec_memory_limit_bytes{name=~".+", name!~".*exporter.*", name!="POD"}
+          ) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: container
+        annotations:
+          summary: "⚠️ {{ $labels.name }} - Yüksek RAM kullanımı (Limitli)"
+          description: "Container RAM kullanımı: {{ printf \"%.1f\" $value }}% / Limit ({{ $labels.instance }})"
+  - name: application_alerts
+    rules:
+      # HTTP yanıt süresi (eğer blackbox exporter kullanırsanız)
+      - alert: SlowResponseTime
+        expr: probe_duration_seconds > 5
+        for: 2m
+        labels:
+          severity: warning
+          service: application
+        annotations:
+          summary: "⚠️ {{ $labels.instance }} - Yavaş yanıt süresi"
+          description: "HTTP yanıt süresi {{ printf \"%.1f\" $value }} saniye"
+
+      # SSL sertifika süresi
+      - alert: SSLCertificateExpiry
+        expr: (probe_ssl_earliest_cert_expiry - time()) / 86400 < 30
+        for: 1h
+        labels:
+          severity: warning
+          service: security
+        annotations:
+          summary: "⚠️ SSL sertifikası süresi yaklaşıyor"
+          description: "{{ $labels.instance }} SSL sertifikası {{ printf \"%.0f\" $value }} gün sonra sona erecek"

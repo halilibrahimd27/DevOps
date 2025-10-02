@@ -1,0 +1,126 @@
+groups:
+  # Database Specific Alerts
+  - name: database.postgresql
+    rules:
+      - alert: PostgreSQLDown
+        expr: pg_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL is down on {{ $labels.instance }}"
+          description: "PostgreSQL database on {{ $labels.instance }} has been down for more than 1 minute."
+
+      - alert: PostgreSQLTooManyConnections
+        expr: pg_stat_database_numbackends / on(instance) pg_settings_max_connections * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL too many connections on {{ $labels.instance }}"
+          description: "PostgreSQL instance {{ $labels.instance }} has too many connections. Database: {{ $labels.datname }}, Current: {{ $value }}%"
+
+      - alert: PostgreSQLHighConnections
+        expr: pg_stat_database_numbackends > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL high connection count"
+          description: "Database {{ $labels.datname }} on {{ $labels.instance }} has {{ $value }} active connections."
+
+      - alert: PostgreSQLSlowQueries
+        expr: pg_stat_activity_max_tx_duration > 300
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL slow queries detected"
+          description: "PostgreSQL on {{ $labels.instance }} has queries running longer than 5 minutes."
+
+      - alert: PostgreSQLHighCacheHitRatio
+        expr: pg_stat_database_blks_hit / (pg_stat_database_blks_hit + pg_stat_database_blks_read) < 0.95
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL low cache hit ratio"
+          description: "PostgreSQL cache hit ratio is low on {{ $labels.instance }} for database {{ $labels.datname }}. Current: {{ $value }}"
+
+      - alert: PostgreSQLReplicationLag
+        expr: pg_replication_lag > 30
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL replication lag"
+          description: "PostgreSQL replication lag is {{ $value }} seconds on {{ $labels.instance }}."
+
+      - alert: PostgreSQLTableBloat
+        expr: pg_stat_user_tables_n_dead_tup / (pg_stat_user_tables_n_live_tup + pg_stat_user_tables_n_dead_tup) > 0.1
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "PostgreSQL table bloat detected"
+          description: "Table {{ $labels.relname }} in database {{ $labels.datname }} on {{ $labels.instance }} has high dead tuple ratio: {{ $value }}"
+
+  # Database Performance Monitoring
+  - name: database.performance
+    rules:
+      - alert: DatabaseHighDiskIOWait
+        expr: rate(node_disk_io_time_seconds_total[5m]) * 100 > 50
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High disk I/O wait time on {{ $labels.instance }}"
+          description: "Database server {{ $labels.instance }} has high disk I/O wait time: {{ $value }}%"
+
+      - alert: DatabaseLockWait
+        expr: pg_locks_count > 50
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Database lock contention on {{ $labels.instance }}"
+          description: "PostgreSQL on {{ $labels.instance }} has {{ $value }} locks, indicating potential contention."
+
+      - alert: DatabaseVacuumRequired
+        expr: pg_stat_user_tables_n_dead_tup / pg_stat_user_tables_n_live_tup > 0.2
+        for: 1h
+        labels:
+          severity: info
+        annotations:
+          summary: "Database vacuum required"
+          description: "Table {{ $labels.relname }} in {{ $labels.datname }} needs vacuuming. Dead/Live ratio: {{ $value }}"
+
+  # Database Storage Alerts
+  - name: database.storage
+    rules:
+      - alert: DatabaseDiskSpaceLow
+        expr: (1 - node_filesystem_avail_bytes{service_type="database",fstype!~"tmpfs|fuse.lxcfs"} / node_filesystem_size_bytes{service_type="database",fstype!~"tmpfs|fuse.lxcfs"}) * 100 > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Database disk space low on {{ $labels.hostname }}"
+          description: "Database server {{ $labels.hostname }} disk usage is {{ $value }}% on mount {{ $labels.mountpoint }}"
+
+      - alert: DatabaseDiskSpaceCritical
+        expr: (1 - node_filesystem_avail_bytes{service_type="database",fstype!~"tmpfs|fuse.lxcfs"} / node_filesystem_size_bytes{service_type="database",fstype!~"tmpfs|fuse.lxcfs"}) * 100 > 90
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Database disk space critical on {{ $labels.hostname }}"
+          description: "Database server {{ $labels.hostname }} disk usage is critically high at {{ $value }}% on mount {{ $labels.mountpoint }}"
+
+      - alert: DatabaseTransactionLogGrowth
+        expr: rate(pg_stat_database_xact_commit[5m]) + rate(pg_stat_database_xact_rollback[5m]) > 1000
+        for: 10m
+        labels:
+          severity: info
+        annotations:
+          summary: "High transaction rate on {{ $labels.instance }}"
+          description: "Database {{ $labels.datname }} on {{ $labels.instance }} has high transaction rate: {{ $value }} txn/sec"
