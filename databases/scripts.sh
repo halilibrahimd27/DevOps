@@ -1,15 +1,15 @@
 
 
 # HTML dosyasındaki IP adreslerini değiştir
-sed -i 's/172.168.20.159/172.168.20.171/g' nginx/html/index.html
-sed -i 's/172.168.20.156/172.168.20.171/g' nginx/html/index.html
+sed -i 's/172.168.20.175/172.168.20.178/g' nginx/html/index.html
+sed -i 's/172.168.20.175/172.168.20.178/g' nginx/html/index.html
 
 # CRM -> Earsiv değiştir
-sed -i 's/CRM Database/Earsiv Database/g' nginx/html/index.html
-sed -i 's/CRM DB/Earsiv DB/g' nginx/html/index.html
+sed -i 's/CRM Database/Netsketre Database/g' nginx/html/index.html
+sed -i 's/CRM DB/Netsketre DB/g' nginx/html/index.html
 
 # Nginx konfigürasyonunda title'ı değiştir
-sed -i 's/CRM Database Administration Panel/Earsiv Database Administration Panel/g' nginx/nginx.conf
+sed -i 's/CRM Database Administration Panel/Netsketre Database Administration Panel/g' nginx/nginx.conf
 
 # Docker compose dosyasından version satırını kaldır (eğer varsa)
 sed -i '/^version:/d' docker-compose.yml
