@@ -1,0 +1,48 @@
+[2025-10-09 02:00:01] =========================================
+[2025-10-09 02:00:01] Starting full backup of all databases...
+[2025-10-09 02:00:01] =========================================
+[2025-10-09 02:00:01] Creating MariaDB backup: mariadb_full_20251009_020001
+[2025-10-09 02:00:02] ✓ MariaDB backup completed successfully - Size: 736K
+[2025-10-09 02:00:02]   Location: /opt/databases/backups/mariadb_full_20251009_020001.sql.gz
+[2025-10-09 02:00:02] Creating PostgreSQL backup: postgresql_full_20251009_020001
+[2025-10-09 02:00:03] ✓ PostgreSQL backup completed successfully - Size: 4.0K
+[2025-10-09 02:00:03]   Location: /opt/databases/backups/postgresql_full_20251009_020001.sql.gz
+[2025-10-09 02:00:03] Creating MongoDB backup: mongodb_full_20251009_020001
+2025-10-09T02:00:03.511+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-09T02:00:03.512+0000	done dumping admin.system.users (1 document)
+2025-10-09T02:00:03.513+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-09T02:00:03.514+0000	done dumping admin.system.version (2 documents)
+[2025-10-09 02:00:03] ✓ MongoDB backup completed successfully - Size: 4.0K
+[2025-10-09 02:00:03]   Location: /opt/databases/backups/mongodb_full_20251009_020001.tar.gz
+[2025-10-09 02:00:03] Creating Redis backup: redis_full_20251009_020001
+Background saving started
+[2025-10-09 02:00:09] ✓ Redis backup completed successfully - Size: 4.0K
+[2025-10-09 02:00:09]   Location: /opt/databases/backups/redis_full_20251009_020001.rdb.gz
+[2025-10-09 02:00:09] =========================================
+[2025-10-09 02:00:09] Full backup completed
+[2025-10-09 02:00:09] Success: 4 | Failed: 1
+[2025-10-09 02:00:09] =========================================
+[2025-10-09 11:00:45] =========================================
+[2025-10-09 11:00:45] Starting full backup of all databases...
+[2025-10-09 11:00:45] =========================================
+[2025-10-09 11:00:45] Creating MariaDB backup: mariadb_full_20251009_110045
+[2025-10-09 11:00:45] ✓ MariaDB backup completed successfully - Size: 736K
+[2025-10-09 11:00:45]   Location: /opt/databases/backups/mariadb_full_20251009_110045.sql.gz
+[2025-10-09 11:00:45] Creating PostgreSQL backup: postgresql_full_20251009_110045
+[2025-10-09 11:00:46] ✓ PostgreSQL backup completed successfully - Size: 4.0K
+[2025-10-09 11:00:46]   Location: /opt/databases/backups/postgresql_full_20251009_110045.sql.gz
+[2025-10-09 11:00:46] Creating MongoDB backup: mongodb_full_20251009_110045
+2025-10-09T11:00:46.996+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-09T11:00:46.997+0000	done dumping admin.system.users (1 document)
+2025-10-09T11:00:46.998+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-09T11:00:46.999+0000	done dumping admin.system.version (2 documents)
+[2025-10-09 11:00:47] ✓ MongoDB backup completed successfully - Size: 4.0K
+[2025-10-09 11:00:47]   Location: /opt/databases/backups/mongodb_full_20251009_110045.tar.gz
+[2025-10-09 11:00:47] Creating Redis backup: redis_full_20251009_110045
+Background saving started
+[2025-10-09 11:00:52] ✓ Redis backup completed successfully - Size: 4.0K
+[2025-10-09 11:00:52]   Location: /opt/databases/backups/redis_full_20251009_110045.rdb.gz
+[2025-10-09 11:00:52] =========================================
+[2025-10-09 11:00:52] Full backup completed
+[2025-10-09 11:00:52] Success: 4 | Failed: 1
+[2025-10-09 11:00:52] =========================================

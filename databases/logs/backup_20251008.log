@@ -1,0 +1,101 @@
+[2025-10-08 14:45:37] =========================================
+[2025-10-08 14:45:37] Starting full backup of all databases...
+[2025-10-08 14:45:37] =========================================
+[2025-10-08 14:45:37] Creating MariaDB backup: mariadb_full_20251008_144537
+[2025-10-08 14:45:38] ✓ MariaDB backup completed successfully - Size: 736K
+[2025-10-08 14:45:38]   Location: /opt/databases/backups/mariadb_full_20251008_144537.sql.gz
+[2025-10-08 14:45:38] Creating PostgreSQL backup: postgresql_full_20251008_144537
+[2025-10-08 14:45:38] ✓ PostgreSQL backup completed successfully - Size: 4.0K
+[2025-10-08 14:45:38]   Location: /opt/databases/backups/postgresql_full_20251008_144537.sql.gz
+[2025-10-08 14:45:38] Creating MongoDB backup: mongodb_full_20251008_144537
+2025-10-08T14:45:39.431+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-08T14:45:39.433+0000	done dumping admin.system.users (1 document)
+2025-10-08T14:45:39.433+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-08T14:45:39.434+0000	done dumping admin.system.version (2 documents)
+[2025-10-08 14:45:39] ✗ MongoDB backup failed - docker cp error
+[2025-10-08 14:45:39] Creating Redis backup: redis_full_20251008_144537
+Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
+Background saving started
+[2025-10-08 14:45:44] ✗ Redis backup failed - docker cp error
+[2025-10-08 14:45:45] =========================================
+[2025-10-08 14:45:45] Full backup completed
+[2025-10-08 14:45:45] Success: 2 | Failed: 3
+[2025-10-08 14:45:45] =========================================
+[2025-10-08 14:46:13] Available backups in /opt/databases/backups:
+[2025-10-08 14:46:18] Verifying backup: /opt/databases/backups/mariadb_full_20251008_144150.sql.gz
+[2025-10-08 14:46:18] ✓ Backup file is valid
+[2025-10-08 14:51:29] Creating MongoDB backup: test_mongo_v2
+2025-10-08T14:51:30.146+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-08T14:51:30.147+0000	done dumping admin.system.users (1 document)
+2025-10-08T14:51:30.148+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-08T14:51:30.149+0000	done dumping admin.system.version (2 documents)
+[2025-10-08 14:51:30] ✓ MongoDB backup completed successfully - Size: 4.0K
+[2025-10-08 14:51:30]   Location: /opt/databases/backups/test_mongo_v2.tar.gz
+[2025-10-08 14:51:30] Creating Redis backup: test_redis_v2
+Background saving started
+[2025-10-08 14:51:36] ✓ Redis backup completed successfully - Size: 4.0K
+[2025-10-08 14:51:36]   Location: /opt/databases/backups/test_redis_v2.rdb.gz
+[2025-10-08 14:51:43] =========================================
+[2025-10-08 14:51:43] Starting full backup of all databases...
+[2025-10-08 14:51:43] =========================================
+[2025-10-08 14:51:43] Creating MariaDB backup: mariadb_full_20251008_145143
+[2025-10-08 14:51:44] ✓ MariaDB backup completed successfully - Size: 736K
+[2025-10-08 14:51:44]   Location: /opt/databases/backups/mariadb_full_20251008_145143.sql.gz
+[2025-10-08 14:51:44] Creating PostgreSQL backup: postgresql_full_20251008_145143
+[2025-10-08 14:51:44] ✓ PostgreSQL backup completed successfully - Size: 4.0K
+[2025-10-08 14:51:44]   Location: /opt/databases/backups/postgresql_full_20251008_145143.sql.gz
+[2025-10-08 14:51:44] Creating MongoDB backup: mongodb_full_20251008_145143
+2025-10-08T14:51:45.322+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-08T14:51:45.323+0000	done dumping admin.system.users (1 document)
+2025-10-08T14:51:45.323+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-08T14:51:45.324+0000	done dumping admin.system.version (2 documents)
+[2025-10-08 14:51:45] ✓ MongoDB backup completed successfully - Size: 4.0K
+[2025-10-08 14:51:45]   Location: /opt/databases/backups/mongodb_full_20251008_145143.tar.gz
+[2025-10-08 14:51:45] Creating Redis backup: redis_full_20251008_145143
+Background saving started
+[2025-10-08 14:51:51] ✓ Redis backup completed successfully - Size: 4.0K
+[2025-10-08 14:51:51]   Location: /opt/databases/backups/redis_full_20251008_145143.rdb.gz
+[2025-10-08 14:51:51] =========================================
+[2025-10-08 14:51:51] Full backup completed
+[2025-10-08 14:51:51] Success: 4 | Failed: 1
+[2025-10-08 14:51:51] =========================================
+[2025-10-08 14:51:54] Backup System Information
+[2025-10-08 14:51:54] =========================
+[2025-10-08 14:51:54] Backup Directory: /opt/databases/backups
+[2025-10-08 14:51:54] Log Directory: /opt/databases/logs
+[2025-10-08 14:51:54] 
+[2025-10-08 14:51:54] Total Backup Size: 5.9M
+[2025-10-08 14:51:54] MariaDB backups: 3
+[2025-10-08 14:51:54] PostgreSQL backups: 53
+[2025-10-08 14:51:54] MongoDB backups: 2
+[2025-10-08 14:51:54] Redis backups: 2
+[2025-10-08 14:53:04] Verifying backup: /opt/databases/backups/mariadb_full_20251008_145143.sql.gz
+[2025-10-08 14:53:04] ✓ Backup file is valid
+[2025-10-08 14:53:04] Verifying backup: /opt/databases/backups/mongodb_full_20251008_145143.tar.gz
+[2025-10-08 14:53:04] ✓ Backup file is valid
+[2025-10-08 14:53:04] Verifying backup: /opt/databases/backups/redis_full_20251008_145143.rdb.gz
+[2025-10-08 14:53:04] ✓ Backup file is valid
+[2025-10-08 14:53:58] =========================================
+[2025-10-08 14:53:58] Starting full backup of all databases...
+[2025-10-08 14:53:58] =========================================
+[2025-10-08 14:53:58] Creating MariaDB backup: mariadb_full_20251008_145358
+[2025-10-08 14:53:59] ✓ MariaDB backup completed successfully - Size: 736K
+[2025-10-08 14:53:59]   Location: /opt/databases/backups/mariadb_full_20251008_145358.sql.gz
+[2025-10-08 14:53:59] Creating PostgreSQL backup: postgresql_full_20251008_145358
+[2025-10-08 14:54:00] ✓ PostgreSQL backup completed successfully - Size: 4.0K
+[2025-10-08 14:54:00]   Location: /opt/databases/backups/postgresql_full_20251008_145358.sql.gz
+[2025-10-08 14:54:00] Creating MongoDB backup: mongodb_full_20251008_145358
+2025-10-08T14:54:00.879+0000	writing admin.system.users to /tmp/backup/admin/system.users.bson
+2025-10-08T14:54:00.880+0000	done dumping admin.system.users (1 document)
+2025-10-08T14:54:00.881+0000	writing admin.system.version to /tmp/backup/admin/system.version.bson
+2025-10-08T14:54:00.882+0000	done dumping admin.system.version (2 documents)
+[2025-10-08 14:54:01] ✓ MongoDB backup completed successfully - Size: 4.0K
+[2025-10-08 14:54:01]   Location: /opt/databases/backups/mongodb_full_20251008_145358.tar.gz
+[2025-10-08 14:54:01] Creating Redis backup: redis_full_20251008_145358
+Background saving started
+[2025-10-08 14:54:06] ✓ Redis backup completed successfully - Size: 4.0K
+[2025-10-08 14:54:06]   Location: /opt/databases/backups/redis_full_20251008_145358.rdb.gz
+[2025-10-08 14:54:06] =========================================
+[2025-10-08 14:54:06] Full backup completed
+[2025-10-08 14:54:06] Success: 4 | Failed: 1
+[2025-10-08 14:54:06] =========================================

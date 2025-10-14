@@ -135,6 +135,108 @@ scrape_configs:
       - source_labels: [hostname]
         target_label: instance
 
+# MySQL/MariaDB Exporters
+  - job_name: 'mysql-exporter'
+    static_configs:
+      - targets: ['172.168.20.156:9104']
+        labels:
+          hostname: 'ecommerce-db'
+          database: 'ecommerce'
+          db_type: 'mariadb'
+      - targets: ['172.168.20.159:9104']
+        labels:
+          hostname: 'crm-db'
+          database: 'crm'
+          db_type: 'mariadb'
+      - targets: ['172.168.20.162:9104']
+        labels:
+          hostname: 'onmuhasebe-db'
+          database: 'onmuhasebe'
+          db_type: 'mariadb'
+      - targets: ['172.168.20.165:9104']
+        labels:
+          hostname: 'ik-db'
+          database: 'ik'
+          db_type: 'mariadb'
+      - targets: ['172.168.20.168:9104']
+        labels:
+          hostname: 'platform-db'
+          database: 'platform'
+          db_type: 'mariadb'
+      - targets: ['172.168.20.171:9104']
+        labels:
+          hostname: 'earsiv-db'
+          database: 'earsiv'
+          db_type: 'mariadb'
+
+  # MongoDB Exporters
+  - job_name: 'mongodb-exporter'
+    static_configs:
+      - targets: ['172.168.20.156:9216']
+        labels:
+          hostname: 'ecommerce-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+      - targets: ['172.168.20.159:9216']
+        labels:
+          hostname: 'crm-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+      - targets: ['172.168.20.162:9216']
+        labels:
+          hostname: 'onmuhasebe-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+      - targets: ['172.168.20.165:9216']
+        labels:
+          hostname: 'ik-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+      - targets: ['172.168.20.168:9216']
+        labels:
+          hostname: 'platform-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+      - targets: ['172.168.20.171:9216']
+        labels:
+          hostname: 'earsiv-db'
+          database: 'mongodb'
+          db_type: 'mongodb'
+
+  # Redis Exporters (zaten var ama tam hali)
+  - job_name: 'redis-exporter'
+    static_configs:
+      - targets: ['172.168.20.156:9121']
+        labels:
+          hostname: 'ecommerce-db'
+          database: 'redis'
+          db_type: 'redis'
+      - targets: ['172.168.20.159:9121']
+        labels:
+          hostname: 'crm-db'
+          database: 'redis'
+          db_type: 'redis'
+      - targets: ['172.168.20.162:9121']
+        labels:
+          hostname: 'onmuhasebe-db'
+          database: 'redis'
+          db_type: 'redis'
+      - targets: ['172.168.20.165:9121']
+        labels:
+          hostname: 'ik-db'
+          database: 'redis'
+          db_type: 'redis'
+      - targets: ['172.168.20.168:9121']
+        labels:
+          hostname: 'platform-db'
+          database: 'redis'
+          db_type: 'redis'
+      - targets: ['172.168.20.171:9121']
+        labels:
+          hostname: 'earsiv-db'
+          database: 'redis'
+          db_type: 'redis'
+
   # Monitoring Server
   - job_name: 'node-exporter-monitoring'
     static_configs:
@@ -276,35 +378,3 @@ scrape_configs:
           hostname: 'earsiv-db'
           database: 'earsiv'
 
-  # Process Exporters for critical services
-  - job_name: 'process-exporter'
-    static_configs:
-      - targets: ['172.168.20.154:9256', '172.168.20.157:9256', '172.168.20.160:9256', '172.168.20.163:9256', '172.168.20.166:9256', '172.168.20.169:9256']
-        labels:
-          service_type: 'api'
-      - targets: ['172.168.20.155:9256', '172.168.20.158:9256', '172.168.20.161:9256', '172.168.20.164:9256', '172.168.20.167:9256', '172.168.20.170:9256']
-        labels:
-          service_type: 'frontend'
-
-  # Application Health Check via Blackbox
-  - job_name: 'blackbox-http'
-    metrics_path: /probe
-    params:
-      module: [http_2xx]
-    static_configs:
-      - targets:
-        - http://172.168.20.154:8000/health
-        - http://172.168.20.157:8000/health
-        - http://172.168.20.160:8000/health
-        - http://172.168.20.163:8000/health
-        - http://172.168.20.166:8000/health
-        - http://172.168.20.169:8000/health
-        labels:
-          service_type: 'api-health'
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: blackbox-exporter:9115
