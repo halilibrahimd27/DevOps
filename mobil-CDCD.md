@@ -893,3 +893,4 @@ README.md'ye:
 
 
 Bu checklist'i takip ederek eksiksiz bir CI/CD altyapısı kurabilirsiniz! Her maddeyi tamamladıkça işaretleyin. 🚀
+
