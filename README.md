@@ -6,14 +6,17 @@
 
 CI/CD · Kubernetes · IaC · GitOps · SRE · DevSecOps · FinOps · Platform Engineering · LLMOps
 
-[![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f6feb?style=flat-square&logo=markdown&logoColor=white)](#)
+[![GitHub Stars](https://img.shields.io/github/stars/halilibrahimd27/DevOps?style=flat-square&color=yellow&logo=github)](https://github.com/halilibrahimd27/DevOps/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/halilibrahimd27/DevOps?style=flat-square&color=blue&logo=github)](https://github.com/halilibrahimd27/DevOps/network/members)
 [![Topics](https://img.shields.io/badge/topics-19-blueviolet?style=flat-square)](#-içindekiler)
 [![Cheatsheets](https://img.shields.io/badge/cheatsheets-9-success?style=flat-square)](16-Cheatsheets/)
-[![Templates](https://img.shields.io/badge/copy--paste%20templates-15%2B-orange?style=flat-square)](17-Templates/)
+[![Templates](https://img.shields.io/badge/copy--paste%20templates-25%2B-orange?style=flat-square)](17-Templates/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Awesome](https://awesome.re/badge-flat2.svg)](#)
 
 **Türkçe** · *2026 itibarıyla güncel* · *placeholder'lı, copy-paste güvenli*
+
+> **⭐ Beğendiysen yıldız bırak, kaybetme.** Repo'nun büyümesi senin yıldızınla başlar.
 
 </div>
 
@@ -175,8 +178,22 @@ PR'lar memnuniyetle. [`CONTRIBUTING.md`](CONTRIBUTING.md) okuyun.
 
 <div align="center">
 
+## 🌟 Repo'yu desteklemek istiyorsan
+
+| Süre | Yardımın |
+|---|---|
+| **5 saniye** | Sağ üstteki **⭐ Star** butonuna tıkla |
+| **30 saniye** | Repo'yu Twitter/LinkedIn/Slack'te paylaş |
+| **5 dakika** | Eksik bulduğun bir konu için [issue](../../issues/new/choose) aç |
+| **30 dakika** | Bir cheatsheet'e katkı PR'ı |
+| **2 saat** | Yeni bir deep-dive yaz, [`CONTRIBUTING.md`](CONTRIBUTING.md) okuyup PR aç |
+
+---
+
 *Bu repo'nun hedefi: bir DevOps mühendisinin **3 yıl boyunca** açıp baktığında değer bulduğu bir referans olmak.*
 
-**Beğendiyseniz ⭐ verin, eksiği varsa [`Issue`](https://github.com/halilibrahimd27/DevOps/issues) açın.**
+**Star history:**
+
+[![Star History Chart](https://api.star-history.com/svg?repos=halilibrahimd27/DevOps&type=Date)](https://star-history.com/#halilibrahimd27/DevOps&Date)
 
 </div>

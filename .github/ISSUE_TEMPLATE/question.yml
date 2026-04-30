@@ -1,0 +1,23 @@
+name: ❓ Soru / tartışma
+description: Konu hakkında soru veya pratik tartışma
+title: "[Soru] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 💡 **İpucu:** Genel sohbet veya tartışma için
+        > [Discussions](../discussions) daha uygun olabilir.
+        > Issue, somut bir konuya cevap aramak için kullanılır.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Soru
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Bağlam (denedikleriniz, mevcut yaklaşım)

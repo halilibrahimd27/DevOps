@@ -1,0 +1,39 @@
+name: 🔧 Düzeltme / hata bildirimi
+description: Yanlış komut, kırık link, yazım hatası, eski bilgi
+title: "[Düzeltme] "
+labels: ["bug", "documentation"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Hangi dosya?
+      placeholder: "16-Cheatsheets/kubectl.md"
+    validations:
+      required: true
+
+  - type: input
+    id: line
+    attributes:
+      label: Hangi satır / başlık?
+      placeholder: "Line 42 / 'Pod Debug' bölümü"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Ne yanlış?
+      placeholder: "Bu komut artık çalışmıyor (deprecated K8s 1.30'dan itibaren)..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Öneri (opsiyonel)
+      placeholder: "Şöyle olmalı: ..."
+
+  - type: checkboxes
+    id: fix
+    attributes:
+      label: Düzeltme
+      options:
+        - label: Düzeltmeyi ben yaparım (PR açacağım)

@@ -1,0 +1,60 @@
+name: 💡 İçerik önerisi
+description: Yeni cheatsheet, deep-dive, template önerisi veya eksik konu
+title: "[İçerik] "
+labels: ["enhancement", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Eksik gördüğün veya zenginleştirilmesi gereken konuyu paylaş.
+        Doğrudan PR de açabilirsin — [`CONTRIBUTING.md`](../blob/main/CONTRIBUTING.md).
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Hangi kategori?
+      options:
+        - "00-Culture (kültür, postmortem, on-call)"
+        - "01-Git-Workflow"
+        - "02-CI-CD"
+        - "03-IaC (Terraform, Pulumi)"
+        - "04-Containers (Docker, BuildKit)"
+        - "05-Kubernetes"
+        - "06-GitOps"
+        - "07-Observability"
+        - "08-Security (DevSecOps)"
+        - "09-Networking"
+        - "10-Databases-Production"
+        - "11-SRE"
+        - "12-FinOps"
+        - "13-Platform-Engineering"
+        - "14-Sustainability"
+        - "15-AI-LLMOps"
+        - "16-Cheatsheets"
+        - "17-Templates"
+        - "18-Career"
+        - "Diğer / yeni klasör"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: Önerilen konu
+      placeholder: "Örn: Cilium NetworkPolicy debug runbook'u; PgBouncer connection pool sizing rehberi"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Niye gerekli? (kısa)
+      placeholder: "Bu konu çoğu prod cluster'da karşılaşılır ama mevcut Türkçe doc'ta detayı yok"
+
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Yazma niyeti
+      options:
+        - label: Bu içeriği ben yazmak istiyorum (PR açacağım)
+        - label: Sadece öneri — başka biri yazsın
