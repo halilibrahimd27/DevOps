@@ -1,0 +1,51 @@
+# HorizontalPodAutoscaler — CPU/memory + custom metric
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: <APP_NAME>
+  namespace: <NAMESPACE>
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: <APP_NAME>
+  minReplicas: 3                  # HA için en az 3
+  maxReplicas: 30
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Percent
+          value: 100              # 60sn'de %100 (2x) artırabilir
+          periodSeconds: 60
+        - type: Pods
+          value: 4                # veya 4 pod ekle
+          periodSeconds: 60
+      selectPolicy: Max
+    scaleDown:
+      stabilizationWindowSeconds: 300        # 5dk yavaş azalt (oscillation engelle)
+      policies:
+        - type: Percent
+          value: 50
+          periodSeconds: 60
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+    # Custom metric örneği (Prometheus Adapter kurulu olmalı):
+    # - type: Pods
+    #   pods:
+    #     metric:
+    #       name: http_requests_per_second
+    #     target:
+    #       type: AverageValue
+    #       averageValue: "100"

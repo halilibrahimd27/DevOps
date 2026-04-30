@@ -1,0 +1,50 @@
+# Kyverno policy — zorunlu label kontrolü (cost allocation, ownership için)
+# Her workload mutlaka şu label'lara sahip olmalı:
+#   - app.kubernetes.io/name
+#   - app.kubernetes.io/managed-by
+#   - team
+#   - cost-center
+
+apiVersion: kyverno.io/v2beta1
+kind: ClusterPolicy
+metadata:
+  name: require-standard-labels
+  annotations:
+    policies.kyverno.io/title: Require Standard Labels
+    policies.kyverno.io/category: Best Practices
+    policies.kyverno.io/severity: medium
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: check-labels
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+                - StatefulSet
+                - DaemonSet
+                - Job
+                - CronJob
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - kube-system
+                - kube-public
+                - kube-node-lease
+      validate:
+        message: |
+          Tüm workload'lar şu label'lara sahip olmalı:
+          - app.kubernetes.io/name
+          - app.kubernetes.io/managed-by  (terraform | helm | argocd | flux)
+          - team                          (örn: payments, growth, platform)
+          - cost-center                   (örn: eng-1234)
+        pattern:
+          metadata:
+            labels:
+              app.kubernetes.io/name: "?*"
+              app.kubernetes.io/managed-by: "?*"
+              team: "?*"
+              cost-center: "?*"

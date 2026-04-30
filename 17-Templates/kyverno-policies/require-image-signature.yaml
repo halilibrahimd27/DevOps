@@ -1,0 +1,54 @@
+# Kyverno policy — sadece imzalı imajların deploy edilmesine izin ver
+# Cosign keyless OIDC ile imzalanmış imajları doğrular.
+#
+# Kurulum: https://kyverno.io
+#
+# Test:
+#   kubectl run pod-test --image=ghcr.io/<ORG>/<IMAGE>:<TAG>
+#   (imzasızsa: admission webhook reject)
+
+apiVersion: kyverno.io/v2beta1
+kind: ClusterPolicy
+metadata:
+  name: verify-image-signature
+  annotations:
+    policies.kyverno.io/title: Verify Image Signature
+    policies.kyverno.io/category: Supply Chain Security
+    policies.kyverno.io/severity: high
+    policies.kyverno.io/description: >-
+      Cluster'a sadece güvenilir registry'lerden gelen ve cosign ile imzalanmış
+      imajların deploy edilmesine izin verir.
+spec:
+  validationFailureAction: Enforce       # Audit veya Enforce
+  background: false
+  webhookTimeoutSeconds: 30
+  failurePolicy: Fail
+  rules:
+    - name: verify-signature
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      # Bypass: belirli sistem namespace'leri (örnek)
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - kube-system
+                - kyverno
+                - cert-manager
+      verifyImages:
+        - imageReferences:
+            - "ghcr.io/<ORG>/*"
+            - "<REGISTRY>/<ORG>/*"
+          attestors:
+            - entries:
+                - keyless:
+                    subject: "https://github.com/<ORG>/*"
+                    issuer: "https://token.actions.githubusercontent.com"
+                    rekor:
+                      url: https://rekor.sigstore.dev
+          # Mutate (digest pin) — imaj tag'i SHA digest'e çevirir
+          mutateDigest: true
+          required: true

@@ -1,0 +1,13 @@
+# PodDisruptionBudget — voluntary disruption (node drain, vs) sırasında
+# en az kaç pod ayakta kalsın garantisi
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: <APP_NAME>
+  namespace: <NAMESPACE>
+spec:
+  minAvailable: 2                  # veya: maxUnavailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: <APP_NAME>
+  unhealthyPodEvictionPolicy: AlwaysAllow   # K8s 1.27+ — unhealthy pod'lar evict edilebilir

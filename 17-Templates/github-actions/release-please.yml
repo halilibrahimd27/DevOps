@@ -1,0 +1,81 @@
+# release-please otomasyonu: Conventional Commits → otomatik changelog + GitHub Release + tag
+# Kullanım:
+#   .github/workflows/release.yml içine kopyala
+#   release-please-config.json dosyası repo root'unda olmalı (örnek aşağıda)
+
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - name: Run release-please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+
+      # Buraya release-spesifik publish adımları:
+      # - npm publish
+      # - docker build & push (release tag ile)
+      # - terraform module registry push
+      # - vs.
+
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "🚀 Released ${{ needs.release-please.outputs.tag_name }}: ${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ needs.release-please.outputs.tag_name }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_RELEASE_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+# ────────────────────────────────────────────────────────────────────────────
+# release-please-config.json (repo root'unda):
+#
+# {
+#   "release-type": "node",                    // veya: simple, python, go, rust, ...
+#   "packages": {
+#     ".": {
+#       "package-name": "<APP_NAME>",
+#       "changelog-sections": [
+#         { "type": "feat",     "section": "🚀 Features" },
+#         { "type": "fix",      "section": "🐛 Bug Fixes" },
+#         { "type": "perf",     "section": "⚡ Performance" },
+#         { "type": "refactor", "section": "♻️ Refactoring" },
+#         { "type": "docs",     "section": "📚 Documentation" },
+#         { "type": "chore",    "section": "🔧 Chores", "hidden": true },
+#         { "type": "ci",       "section": "🤖 CI",     "hidden": true }
+#       ]
+#     }
+#   }
+# }
+#
+# .release-please-manifest.json (repo root'unda):
+#
+# { ".": "0.1.0" }

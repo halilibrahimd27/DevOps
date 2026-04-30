@@ -1,0 +1,40 @@
+# Kyverno policy — `:latest` tag'li imajları reddet
+# Production'da rollback'i imkansızlaştırır; immutable tag zorunlu.
+
+apiVersion: kyverno.io/v2beta1
+kind: ClusterPolicy
+metadata:
+  name: disallow-latest-tag
+  annotations:
+    policies.kyverno.io/title: Disallow Latest Tag
+    policies.kyverno.io/category: Best Practices
+    policies.kyverno.io/severity: medium
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: validate-tag
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "`:latest` tag prod'da yasak. Semantic version (`v1.2.3`) veya SHA digest (`@sha256:...`) kullanın."
+        pattern:
+          spec:
+            containers:
+              - image: "!*:latest"
+
+    - name: validate-tag-exists
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Imaj tag'siz olamaz (Docker default'ı `:latest` olur)."
+        pattern:
+          spec:
+            containers:
+              - image: "*:*"

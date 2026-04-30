@@ -1,0 +1,99 @@
+# NetworkPolicy — default-deny + explicit allow
+# CNI'ın NetworkPolicy desteklemesi gerekir (Cilium, Calico, vb.)
+
+# 1) Namespace içinde DEFAULT DENY (her şey kapalı)
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: <NAMESPACE>
+spec:
+  podSelector: {}                 # tüm pod'lar
+  policyTypes:
+    - Ingress
+    - Egress
+
+# 2) DNS'e (kube-dns) çıkışına izin ver — ZORUNLU
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-dns
+  namespace: <NAMESPACE>
+spec:
+  podSelector: {}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+
+# 3) Uygulamanın spesifik allow'ları
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: <APP_NAME>-allow
+  namespace: <NAMESPACE>
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: <APP_NAME>
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    # Ingress controller'dan trafik kabul et
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ingress-nginx
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: ingress-nginx
+      ports:
+        - protocol: TCP
+          port: 8080
+
+    # Aynı namespace'teki monitoring (prometheus scrape)
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: monitoring
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: prometheus
+      ports:
+        - protocol: TCP
+          port: 9090
+  egress:
+    # Aynı namespace'teki Postgres'e
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: postgres
+      ports:
+        - protocol: TCP
+          port: 5432
+
+    # External API çağrıları (HTTPS)
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+              - 10.0.0.0/8        # internal network'lere açık değil
+              - 172.16.0.0/12
+              - 192.168.0.0/16
+      ports:
+        - protocol: TCP
+          port: 443

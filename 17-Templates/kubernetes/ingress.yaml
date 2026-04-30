@@ -1,0 +1,50 @@
+# Ingress — TLS terminasyon, rate limit, basic security headers
+# (NGINX Ingress Controller varsayar; Gateway API için ayrı template)
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: <APP_NAME>
+  namespace: <NAMESPACE>
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+
+    # Rate limiting — IP başına dakika içinde 100 istek
+    nginx.ingress.kubernetes.io/limit-rps: "100"
+    nginx.ingress.kubernetes.io/limit-connections: "20"
+
+    # Body size limiti
+    nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+
+    # Timeout'lar
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "5"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+
+    # Security headers
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Content-Type-Options: nosniff";
+      more_set_headers "X-Frame-Options: DENY";
+      more_set_headers "Referrer-Policy: strict-origin-when-cross-origin";
+      more_set_headers "Permissions-Policy: geolocation=(), microphone=(), camera=()";
+      more_set_headers "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload";
+
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - <DOMAIN>
+      secretName: <APP_NAME>-tls
+  rules:
+    - host: <DOMAIN>
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: <APP_NAME>
+                port:
+                  number: 80
