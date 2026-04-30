@@ -596,7 +596,7 @@ sudo kubeadm init phase preflight
 # Kubeadm init'i çalıştır
 sudo kubeadm init \
   --pod-network-cidr=10.244.0.0/16 \
-  --apiserver-advertise-address=172.168.54.10 \
+  --apiserver-advertise-address=<K8S_MASTER_IP> \
   --control-plane-endpoint=master \
   --v=5
 
@@ -606,7 +606,7 @@ sudo reboot
 # Restart sonrası tekrar dene
 sudo kubeadm init \
   --pod-network-cidr=10.244.0.0/16 \
-  --apiserver-advertise-address=172.168.54.10 \
+  --apiserver-advertise-address=<K8S_MASTER_IP> \
   --control-plane-endpoint=master
 ```
 
@@ -623,7 +623,7 @@ kubectl patch svc kubernetes-dashboard -n kubernetes-dashboard -p '{"spec":{"typ
 kubectl get svc kubernetes-dashboard -n kubernetes-dashboard
 
 # HTTPS URL'ini kullan
-# https://172.168.54.10:<nodeport-number>
+# https://<K8S_MASTER_IP>:<nodeport-number>
 
 # Long-lived token oluştur
 cat <<EOF | kubectl apply -f -

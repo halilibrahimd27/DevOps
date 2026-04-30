@@ -7,59 +7,59 @@ all:
     masters:
       hosts:
         k8s-master-1:
-          ansible_host: 172.168.53.210
+          ansible_host: <K8S_MASTER_1_IP>
           etcd_member_name: master1
         k8s-master-2:
-          ansible_host: 172.168.53.211
+          ansible_host: <K8S_MASTER_2_IP>
           etcd_member_name: master2
         k8s-master-3:
-          ansible_host: 172.168.53.212
+          ansible_host: <K8S_MASTER_3_IP>
           etcd_member_name: master3
     
     workers:
       hosts:
         k8s-worker-1:
-          ansible_host: 172.168.53.220
+          ansible_host: <K8S_WORKER_1_IP>
           node_labels: "workload-type=applications"
         k8s-worker-2:
-          ansible_host: 172.168.53.221
+          ansible_host: <K8S_WORKER_2_IP>
           node_labels: "workload-type=applications"
         k8s-worker-3:
-          ansible_host: 172.168.53.222
+          ansible_host: <K8S_WORKER_3_IP>
           node_labels: "workload-type=applications"
     
     infrastructure:
       hosts:
         k8s-infra-1:
-          ansible_host: 172.168.53.225
+          ansible_host: <K8S_INFRA_1_IP>
           node_labels: "workload-type=elk"
           node_taints: "workload=elk:NoSchedule"
         k8s-infra-2:
-          ansible_host: 172.168.53.226
+          ansible_host: <K8S_INFRA_2_IP>
           node_labels: "workload-type=monitoring"
           node_taints: "workload=monitoring:NoSchedule"
         k8s-infra-3:
-          ansible_host: 172.168.53.227
+          ansible_host: <K8S_INFRA_3_IP>
           node_labels: "workload-type=cicd"
           node_taints: "workload=cicd:NoSchedule"
         k8s-infra-4:
-          ansible_host: 172.168.53.228
+          ansible_host: <K8S_INFRA_4_IP>
           node_labels: "workload-type=ingress"
           node_taints: "workload=ingress:NoSchedule"
     
     loadbalancer:
       hosts:
         k8s-lb-1:
-          ansible_host: 172.168.53.230
+          ansible_host: <K8S_LB_VIP>
           lb_priority: 100
         k8s-lb-2:
-          ansible_host: 172.168.53.231
+          ansible_host: <K8S_LB_BACKUP_IP>
           lb_priority: 90
     
     storage:
       hosts:
         k8s-storage:
-          ansible_host: 172.168.53.240
+          ansible_host: <K8S_STORAGE_IP>
 
   vars:
     ansible_user: ubuntu
@@ -68,7 +68,7 @@ all:
     pod_network_cidr: "10.244.0.0/16"
     service_subnet: "10.96.0.0/12"
     cluster_name: "production-k8s"
-    api_server_endpoint: "172.168.53.230:6443"
+    api_server_endpoint: "<K8S_LB_VIP>:6443"
 EOF
 
 
@@ -348,9 +348,9 @@ cat > playbooks/04-load-balancer.yml << 'EOF'
               mode tcp
               balance roundrobin
               option tcp-check
-              server master1 172.168.53.210:6443 check fall 3 rise 2
-              server master2 172.168.53.211:6443 check fall 3 rise 2
-              server master3 172.168.53.212:6443 check fall 3 rise 2
+              server master1 <K8S_MASTER_1_IP>:6443 check fall 3 rise 2
+              server master2 <K8S_MASTER_2_IP>:6443 check fall 3 rise 2
+              server master3 <K8S_MASTER_3_IP>:6443 check fall 3 rise 2
 
           frontend k8s_ingress_http
               bind *:80
@@ -360,7 +360,7 @@ cat > playbooks/04-load-balancer.yml << 'EOF'
           backend k8s_ingress_http_backend
               mode http
               balance roundrobin
-              server ingress1 172.168.53.228:80 check
+              server ingress1 <K8S_INFRA_4_IP>:80 check
 
           frontend k8s_ingress_https
               bind *:443
@@ -370,7 +370,7 @@ cat > playbooks/04-load-balancer.yml << 'EOF'
           backend k8s_ingress_https_backend
               mode tcp
               balance roundrobin
-              server ingress1 172.168.53.228:443 check
+              server ingress1 <K8S_INFRA_4_IP>:443 check
         dest: /etc/haproxy/haproxy.cfg
         backup: yes
 
