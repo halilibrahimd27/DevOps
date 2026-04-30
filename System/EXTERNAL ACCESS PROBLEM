@@ -17,9 +17,9 @@ kubectl port-forward --address 0.0.0.0 service/backend-service 8082:80 -n develo
 echo "✅ External access port-forwards started!"
 echo ""
 echo "🌐 EXTERNAL ACCESS URLS:"
-echo "http://172.168.30.10:8080 - User Frontend"
-echo "http://172.168.30.10:8081 - Admin Frontend"  
-echo "http://172.168.30.10:8082 - Backend API"
+echo "http://172.168.54.10:8080 - User Frontend"
+echo "http://172.168.54.10:8081 - Admin Frontend"  
+echo "http://172.168.54.10:8082 - Backend API"
 
 # ══════════════════════════════════════════════════════════════
 # 🚀 ÇÖZÜM 2: NODEPORT SERVICE (Kalıcı Çözüm)
@@ -41,9 +41,9 @@ kubectl patch service backend-service -n development -p '{"spec":{"type":"NodePo
 echo "✅ NodePort services configured!"
 echo ""
 echo "🌐 NODEPORT ACCESS URLS (PORT-FORWARD GEREKSIZ):"
-echo "http://172.168.30.10:30080 - User Frontend"
-echo "http://172.168.30.10:30081 - Admin Frontend"
-echo "http://172.168.30.10:30082 - Backend API"
+echo "http://172.168.54.10:30080 - User Frontend"
+echo "http://172.168.54.10:30081 - Admin Frontend"
+echo "http://172.168.54.10:30082 - Backend API"
 
 # ══════════════════════════════════════════════════════════════
 # 🚀 ÇÖZÜM 3: LOAD BALANCER (Production Ready)
@@ -118,8 +118,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 kubectl patch service ingress-nginx-controller -n ingress-nginx -p '{"spec":{"type":"NodePort","ports":[{"port":80,"targetPort":80,"nodePort":30080,"name":"http"},{"port":443,"targetPort":443,"nodePort":30443,"name":"https"}]}}'
 
 echo "✅ Ingress Controller installed!"
-echo "HTTP: http://172.168.30.10:30080"
-echo "HTTPS: https://172.168.30.10:30443"
+echo "HTTP: http://172.168.54.10:30080"
+echo "HTTPS: https://172.168.54.10:30443"
 EOF
 
 chmod +x install-ingress.sh
@@ -263,7 +263,7 @@ cat << 'EOF' > check-access.sh
 echo "🔍 KUBERNETES ACCESS STATUS CHECK"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-SERVER_IP="172.168.30.10"
+SERVER_IP="172.168.54.10"
 
 echo "1️⃣ Port Forward Status:"
 ps aux | grep "kubectl port-forward" | grep -v grep || echo "No active port forwards"
@@ -325,4 +325,4 @@ echo "kubectl port-forward --address 0.0.0.0 service/user-frontend-service 8080:
 echo "kubectl port-forward --address 0.0.0.0 service/admin-frontend-service 8081:80 -n development &"
 echo "kubectl port-forward --address 0.0.0.0 service/backend-service 8082:80 -n development &"
 echo ""
-echo "✅ Then access: http://172.168.30.10:8080"
+echo "✅ Then access: http://172.168.54.10:8080"
