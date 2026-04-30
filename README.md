@@ -98,13 +98,19 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · DevSecOps · FinOps · Platform E
 | [`Terrafrom/`](Terrafrom/) | Proxmox + manuel VM Terraform örnekleri |
 | [`Network/`](Network/) | Wazuh SIEM + ağ segmentasyonu |
 | [`monitoring/`](monitoring/) | Prometheus/Grafana/Uptime Kuma stack'i |
-| [`databases/`](databases/) | DB'ler için backup/health check/security setup |
 | [`nginx/`](nginx/) | NGINX prod konfig örnekleri |
-| [`infra-devops/`](infra-devops/) | Azure'da Kubespray + multi-master Kubernetes |
-| [`haproxy-openmanager/`](haproxy-openmanager/) | HAProxy yöneticisi |
-| [`crypter/`](crypter/) | Config şifreleme yardımcıları |
 | [`System/`](System/) | Sistem-seviyesi rehberler |
 | [`Testing/`](Testing/) | Draft/test materyali |
+
+### 🔗 Yan Repolar (bu repo'dan ayrılan tamamlayıcı projeler)
+
+| Repo | Konu |
+|---|---|
+| **[databases-stack](https://github.com/halilibrahimd27/databases-stack)** | Tek `docker compose up` ile MariaDB+PostgreSQL+MongoDB+Redis self-hosted stack — admin paneller, Prometheus exporters, 15-dakikalık backup automation, Google Drive sync |
+| **[file-crypter](https://github.com/halilibrahimd27/file-crypter)** | AES-256 CBC + PBKDF2 ile dosya/klasör şifreleme — terminalden tek komut |
+| **[wakapi-admin](https://github.com/halilibrahimd27/wakapi-admin)** | Wakapi self-hosted stack + custom admin panel (realtime active users, domain tag system, AI editor detection) |
+| **[api-sentinel](https://github.com/halilibrahimd27/api-sentinel)** | 3. parti API schema değişiklik tespiti — plugin tabanlı, severity-aware monitoring |
+| **[cheat-sheet](https://github.com/halilibrahimd27/cheat-sheet)** | Offensive security komut referansı — 2000+ pentest komutu, OSCP/OSWE/OSEP prep |
 
 ---
 
