@@ -291,7 +291,7 @@ Quarterly:
 - **4857 Sayılı İş Kanunu** — TR yasal çerçeve
 - [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md)
 - [`00-Culture/On-Call-Playbook.md`](../00-Culture/On-Call-Playbook.md)
-- _`Postmortem-Conversation.md`_ *(yakında)*
+- [`Postmortem-Conversation.md`](Postmortem-Conversation.md)
 
 ---
 

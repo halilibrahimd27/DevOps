@@ -468,7 +468,7 @@ ArgoCD'nin kendi başına secret çözümü yok. Üç ana yaklaşım:
 | **Sealed Secrets** | Git'te şifreli commit | Tek key, rotation karmaşık |
 | **SOPS** + helm-secrets / Argo-vault-plugin | Multi-recipient, age key | Plugin install + key dağıtımı |
 
-> Detay: _`Secrets-in-GitOps.md`_ *(yakında)* (Faz ileri) ve
+> Detay: [`Secrets-in-GitOps.md`](Secrets-in-GitOps.md) (Faz ileri) ve
 > [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md).
 
 ---

@@ -512,7 +512,7 @@ const adoptionMetrics = {
 - **CNCF Backstage** — github.com/backstage/backstage
 - **Roadie** — roadie.io (Backstage SaaS)
 - [`Internal-Developer-Platform.md`](Internal-Developer-Platform.md)
-- _`Golden-Paths.md`_ *(yakında)*
+- [`Golden-Paths.md`](Golden-Paths.md)
 - _`Service-Catalog.md`_ *(yakında)*
 - [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)
 

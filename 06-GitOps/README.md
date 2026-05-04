@@ -15,7 +15,7 @@ istenen duruma çeker.
 | [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md) | Çok-cluster, çok-tenant deploy: matrix/git generator/cluster generator |
 | [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md) | Self-managed ArgoCD; bootstrap akışı |
 | [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md) | Manifest derivation: avantaj/dezavantaj tablo |
-| _`Secrets-in-GitOps.md`_ *(yakında)* | SOPS, Sealed Secrets, External Secrets Operator karşılaştırma |
+| [`Secrets-in-GitOps.md`](Secrets-in-GitOps.md) | SOPS, Sealed Secrets, External Secrets Operator karşılaştırma |
 
 ## OpenGitOps prensipleri
 

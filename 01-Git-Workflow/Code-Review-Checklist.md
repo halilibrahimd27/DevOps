@@ -378,7 +378,7 @@ Code review = asenkron pair programming. Bazen real-time daha iyi:
 - **The Pull Request Review Process** — Jessica Joy Kerr
 - [`Trunk-Based-Development.md`](Trunk-Based-Development.md)
 - [`Conventional-Commits.md`](Conventional-Commits.md)
-- _`PR-Templates-and-Automation.md`_ *(yakında)*
+- [`PR-Templates-and-Automation.md`](PR-Templates-and-Automation.md)
 
 ---
 

@@ -379,7 +379,7 @@ Backstage repo'yu çekip markdown'ı render eder, search'le bulunur.
 - **Platform Engineering** — platformengineering.org
 - **CNCF Platforms WG** — github.com/cncf/sig-app-delivery
 - [`Backstage-Setup.md`](Backstage-Setup.md)
-- _`Golden-Paths.md`_ *(yakında)*
+- [`Golden-Paths.md`](Golden-Paths.md)
 - _`Platform-as-Product.md`_ *(yakında)*
 - [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)
 

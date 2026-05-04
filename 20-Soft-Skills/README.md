@@ -16,7 +16,7 @@ yöneticilerle, vendor'larla. Bu bölüm "kodun nasıl yazılacağı" değil,
 | [`Working-with-Security-Team.md`](Working-with-Security-Team.md) | Security ekibiyle düşman değil partner ilişkisi |
 | _`Vendor-Management.md`_ *(yakında)* | RFP, vendor lock-in, müzakere, escape stratejisi |
 | [`Saying-No.md`](Saying-No.md) | "Hayır" demenin sanatı: scope creep, premature commitment |
-| _`Postmortem-Conversation.md`_ *(yakında)* | Blameless culture'i konuşmaya nasıl yansıtırız |
+| [`Postmortem-Conversation.md`](Postmortem-Conversation.md) | Blameless culture'i konuşmaya nasıl yansıtırız |
 | _`Mentoring-Junior-Engineers.md`_ *(yakında)* | Junior'a infra/SRE öğretmenin pratikleri |
 | _`Documentation-as-Communication.md`_ *(yakında)* | RFC, ADR, design doc — bunları yazmak ve okumak |
 

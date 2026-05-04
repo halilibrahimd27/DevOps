@@ -509,8 +509,8 @@ pg_repack -d app -t large_table
 - [`Backup-Restore-Patterns.md`](Backup-Restore-Patterns.md)
 - [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md)
 - [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md)
-- _`Connection-Pooling.md`_ *(yakında)*
-- _`Monitoring-Postgres.md`_ *(yakında)*
+- [`Connection-Pooling.md`](Connection-Pooling.md)
+- [`Monitoring-Postgres.md`](Monitoring-Postgres.md)
 
 ---
 

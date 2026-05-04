@@ -15,8 +15,8 @@ geçerli değildir. Backup, HA, migration ayrı bir disiplin.
 | [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md) | Auto-failover, sentinel, split-brain çözümü |
 | [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md) | Expand/contract pattern, online schema change, gh-ost/pt-osc |
 | _`Operator-Patterns.md`_ *(yakında)* | CloudNativePG, Zalando postgres-operator, Crunchy karşılaştırma |
-| _`Connection-Pooling.md`_ *(yakında)* | PgBouncer transaction vs session mode, pool sizing |
-| _`Monitoring-Postgres.md`_ *(yakında)* | Slow query, lock, autovacuum, replication lag dashboards |
+| [`Connection-Pooling.md`](Connection-Pooling.md) | PgBouncer transaction vs session mode, pool sizing |
+| [`Monitoring-Postgres.md`](Monitoring-Postgres.md) | Slow query, lock, autovacuum, replication lag dashboards |
 
 ## "Containerize edebilir miyim?"
 
