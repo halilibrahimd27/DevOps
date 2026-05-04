@@ -10,8 +10,8 @@ Generative AI uygulamalarının prod'a alınması yeni bir disiplin: LLMOps.
 | Dosya | Konu |
 |---|---|
 | [`LLM-in-Production.md`](LLM-in-Production.md) | RAG arch, eval, observability, cost, safety guardrail'ler |
-| _`Prompt-Engineering-for-Ops.md`_ *(yakında)* | Prompt'lar kod gibi: versiyonlama, test, A/B |
-| _`RAG-Architecture.md`_ *(yakında)* | Vector DB seçimi, chunking strategi, hybrid search, eval |
+| [`Prompt-Engineering-for-Ops.md`](Prompt-Engineering-for-Ops.md) | Prompt'lar kod gibi: versiyonlama, test, A/B |
+| [`RAG-Architecture.md`](RAG-Architecture.md) | Vector DB seçimi, chunking strategi, hybrid search, eval |
 | _`AI-Augmented-Operations.md`_ *(yakında)* | Incident summarization, log search, root cause assist |
 | _`Self-Hosted-LLM.md`_ *(yakında)* | vLLM, Triton, TGI; GPU node pool, autoscaling |
 | _`Model-Cost-Optimization.md`_ *(yakında)* | Model routing, caching, batching, quantization |

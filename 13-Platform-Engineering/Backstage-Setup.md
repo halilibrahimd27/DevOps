@@ -513,7 +513,7 @@ const adoptionMetrics = {
 - **Roadie** — roadie.io (Backstage SaaS)
 - [`Internal-Developer-Platform.md`](Internal-Developer-Platform.md)
 - [`Golden-Paths.md`](Golden-Paths.md)
-- _`Service-Catalog.md`_ *(yakında)*
+- [`Service-Catalog.md`](Service-Catalog.md)
 - [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)
 
 ---

@@ -434,8 +434,8 @@ PROPOSE → BUILD → BETA → GA → MAINTAIN → DEPRECATE
 - **Platform Engineering Maturity** — platformengineering.org/maturity-model
 - [`Internal-Developer-Platform.md`](Internal-Developer-Platform.md)
 - [`Backstage-Setup.md`](Backstage-Setup.md)
-- _`Service-Catalog.md`_ *(yakında)*
-- _`Platform-as-Product.md`_ *(yakında)*
+- [`Service-Catalog.md`](Service-Catalog.md)
+- [`Platform-as-Product.md`](Platform-as-Product.md)
 - [`02-CI-CD/Pipeline-Patterns.md`](../02-CI-CD/Pipeline-Patterns.md) — CI standardı
 
 ---

@@ -379,7 +379,7 @@ sum(rate(gateway_http_requests_total[5m])) by (route)
 - **Istio Gateway API** — istio.io/latest/docs/tasks/traffic-management/ingress/gateway-api/
 - [`Cilium-eBPF-Intro.md`](Cilium-eBPF-Intro.md)
 - [`Service-Mesh-Comparison.md`](Service-Mesh-Comparison.md)
-- _`Ingress-NGINX-Patterns.md`_ *(yakında)*
+- [`Ingress-NGINX-Patterns.md`](Ingress-NGINX-Patterns.md)
 - [`08-Security/Zero-Trust-Networking.md`](../08-Security/Zero-Trust-Networking.md)
 
 ---

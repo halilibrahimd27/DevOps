@@ -380,7 +380,7 @@ Backstage repo'yu çekip markdown'ı render eder, search'le bulunur.
 - **CNCF Platforms WG** — github.com/cncf/sig-app-delivery
 - [`Backstage-Setup.md`](Backstage-Setup.md)
 - [`Golden-Paths.md`](Golden-Paths.md)
-- _`Platform-as-Product.md`_ *(yakında)*
+- [`Platform-as-Product.md`](Platform-as-Product.md)
 - [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)
 
 ---

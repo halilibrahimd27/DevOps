@@ -425,8 +425,8 @@ prompt-customer-support v2.0.0-rc.1 vs v1.5.0
 
 ## 📚 Devamı
 
-- _`Prompt-Engineering-for-Ops.md`_ *(yakında)*
-- _`RAG-Architecture.md`_ *(yakında)*
+- [`Prompt-Engineering-for-Ops.md`](Prompt-Engineering-for-Ops.md)
+- [`RAG-Architecture.md`](RAG-Architecture.md)
 - _`Safety-and-Guardrails.md`_ *(yakında)*
 - [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents)
 - [LangChain — Building LLM apps in production](https://python.langchain.com)
