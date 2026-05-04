@@ -394,7 +394,7 @@ redis.set(cache_key, response, ex=3600)
 - **Lilian Weng — Prompt Engineering** (blog)
 - [`LLM-in-Production.md`](LLM-in-Production.md)
 - [`RAG-Architecture.md`](RAG-Architecture.md)
-- _`Safety-and-Guardrails.md`_ *(yakında)*
+- [`Safety-and-Guardrails.md`](Safety-and-Guardrails.md)
 - [`19-Compliance/EU-AI-Act.md`](../19-Compliance/EU-AI-Act.md)
 - [`11-SRE/Runbook-Template.md`](../11-SRE/Runbook-Template.md)
 - [`11-SRE/Postmortem-Practice.md`](../11-SRE/Postmortem-Practice.md)

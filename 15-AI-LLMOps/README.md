@@ -15,7 +15,7 @@ Generative AI uygulamalarının prod'a alınması yeni bir disiplin: LLMOps.
 | _`AI-Augmented-Operations.md`_ *(yakında)* | Incident summarization, log search, root cause assist |
 | _`Self-Hosted-LLM.md`_ *(yakında)* | vLLM, Triton, TGI; GPU node pool, autoscaling |
 | _`Model-Cost-Optimization.md`_ *(yakında)* | Model routing, caching, batching, quantization |
-| _`Safety-and-Guardrails.md`_ *(yakında)* | Prompt injection, PII redaction, jailbreak detection |
+| [`Safety-and-Guardrails.md`](Safety-and-Guardrails.md) | Prompt injection, PII redaction, jailbreak detection |
 
 ## "MLOps vs LLMOps"
 

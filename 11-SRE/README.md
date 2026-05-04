@@ -12,9 +12,9 @@ SLI / SLO / Error Budget üzerine kurulu, *toil minimization* yaklaşımı.
 | [`SLI-SLO-Error-Budget.md`](SLI-SLO-Error-Budget.md) | SLI seçimi, SLO matematiği, error budget policy |
 | [`Incident-Response.md`](Incident-Response.md) | IC role, severity matrix, communication tree, comms runbook |
 | [`Runbook-Template.md`](Runbook-Template.md) | "Bu alert düştüğünde ne yap" şablonu |
-| _`Chaos-Engineering.md`_ *(yakında)* | GameDay → continuous chaos, Litmus/Chaos Mesh kullanımı |
-| _`Capacity-Planning.md`_ *(yakında)* | Demand forecasting, headroom, load test framework |
-| _`Toil-Reduction.md`_ *(yakında)* | Toil tanımı, ölçümü, %50 kuralı |
+| [`Chaos-Engineering.md`](Chaos-Engineering.md) | GameDay → continuous chaos, Litmus/Chaos Mesh kullanımı |
+| [`Capacity-Planning.md`](Capacity-Planning.md) | Demand forecasting, headroom, load test framework |
+| [`Toil-Reduction.md`](Toil-Reduction.md) | Toil tanımı, ölçümü, %50 kuralı |
 | [`Postmortem-Practice.md`](Postmortem-Practice.md) | Blameless postmortem'i nasıl rutine dönüştürürüz |
 
 ## SRE'nin "kutsal kitabı"

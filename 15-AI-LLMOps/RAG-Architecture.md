@@ -395,7 +395,7 @@ results = evaluate(
 - **Ragas (RAG eval)** — docs.ragas.io
 - [`LLM-in-Production.md`](LLM-in-Production.md)
 - [`Prompt-Engineering-for-Ops.md`](Prompt-Engineering-for-Ops.md)
-- _`Safety-and-Guardrails.md`_ *(yakında)*
+- [`Safety-and-Guardrails.md`](Safety-and-Guardrails.md)
 - [`19-Compliance/EU-AI-Act.md`](../19-Compliance/EU-AI-Act.md)
 
 ---
