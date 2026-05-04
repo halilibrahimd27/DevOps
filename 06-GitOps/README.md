@@ -11,7 +11,7 @@ istenen duruma çeker.
 | Dosya | Konu |
 |---|---|
 | [`ArgoCD-Setup.md`](ArgoCD-Setup.md) | ArgoCD kurulumu, AppProject, RBAC, SSO, notifications |
-| _`Flux-vs-ArgoCD.md`_ *(yakında)* | İkisinin felsefesi, ne zaman hangisi |
+| [`Flux-vs-ArgoCD.md`](Flux-vs-ArgoCD.md) | İkisinin felsefesi, ne zaman hangisi |
 | [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md) | Çok-cluster, çok-tenant deploy: matrix/git generator/cluster generator |
 | [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md) | Self-managed ArgoCD; bootstrap akışı |
 | [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md) | Manifest derivation: avantaj/dezavantaj tablo |

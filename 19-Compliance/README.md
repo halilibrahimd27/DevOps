@@ -14,10 +14,10 @@ nasıl **continuous compliance**'a dönüştüğünü anlatır.
 |---|---|
 | [`KVKK-Practical.md`](KVKK-Practical.md) | KVKK için mühendislik kontrolleri (data inventory, DPIA, incident notification) |
 | [`GDPR-Engineering.md`](GDPR-Engineering.md) | GDPR ile mühendislik temasının olduğu yerler (right-to-erasure, DPA) |
-| _`ISO-27001-Controls.md`_ *(yakında)* | Annex A kontrolleri ve hangi tool/policy karşılar |
-| _`SOC2-Type2-Prep.md`_ *(yakında)* | Trust Service Criteria, observation period, evidence collection |
+| [`ISO-27001-Controls.md`](ISO-27001-Controls.md) | Annex A kontrolleri ve hangi tool/policy karşılar |
+| [`SOC2-Type2-Prep.md`](SOC2-Type2-Prep.md) | Trust Service Criteria, observation period, evidence collection |
 | [`EU-AI-Act.md`](EU-AI-Act.md) | AI sistemi sınıfları, high-risk uyumluluk yükümlülükleri |
-| _`NIS2-Directive.md`_ *(yakında)* | EU NIS2 — kritik altyapı güvenlik gereklilikleri |
+| [`NIS2-Directive.md`](NIS2-Directive.md) | EU NIS2 — kritik altyapı güvenlik gereklilikleri |
 | _`PCI-DSS-4.md`_ *(yakında)* | Kart verisi işleyen sistemler için PCI DSS v4 değişiklikleri |
 | _`Audit-Evidence-Automation.md`_ *(yakında)* | "Audit gününe hazırlık" değil, otomatik kanıt toplama |
 

@@ -10,7 +10,7 @@
 | [`DevOps-Interview-Questions.md`](DevOps-Interview-Questions.md) | Junior → Staff seviyeye 50+ soru, kategorize, cevap ipuçlu |
 | [`SRE-Interview-Prep.md`](SRE-Interview-Prep.md) | SRE'ye özel: SLO design, incident response simulation, capacity |
 | [`System-Design-Cheatsheet.md`](System-Design-Cheatsheet.md) | DevOps/SRE'ye özgü system design soruları (cluster tasarla, multi-region, vb) |
-| _`CV-Tips.md`_ *(yakında)* | DevOps CV'si nasıl yazılır; "tool listesi" ile "impact" arasındaki fark |
+| [`CV-Tips.md`](CV-Tips.md) | DevOps CV'si nasıl yazılır; "tool listesi" ile "impact" arasındaki fark |
 
 ## Seviye haritası (rough)
 
