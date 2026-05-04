@@ -14,7 +14,7 @@ GitHub Actions / GitLab CI tarifleri ve "yavaş CI" tedavi protokolleri.
 | _`GitLab-CI-Recipes.md`_ *(yakında)* | DAG pipeline, dynamic child, dotenv artifact'lar |
 | _`Caching-Strategies.md`_ *(yakında)* | Layer cache, npm/pip/cargo/go cache, BuildKit cache mount |
 | _`Reusable-Workflows.md`_ *(yakında)* | Org-wide template, callable workflow, composite action |
-| _`Pipeline-Performance.md`_ *(yakında)* | "10 dakikalık CI"yi 90 saniyeye indirme protokolü |
+| [`Pipeline-Performance.md`](Pipeline-Performance.md) | "10 dakikalık CI"yi 90 saniyeye indirme protokolü |
 | [`Mobile-CICD-Flutter.md`](Mobile-CICD-Flutter.md) | Flutter/Android/iOS için end-to-end CI/CD checklist (signing, store deploy) |
 
 ## Pipeline anatomisi (referans)

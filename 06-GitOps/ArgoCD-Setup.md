@@ -522,7 +522,7 @@ ArgoCD'nin kendi başına secret çözümü yok. Üç ana yaklaşım:
 - **ApplicationSet Generators** — argocd-applicationset.readthedocs.io
 - **OpenGitOps Principles** — opengitops.dev
 - **GitOps Working Group (CNCF)**
-- _`App-of-Apps-Pattern.md`_ *(yakında)*
+- [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md)
 - [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md)
 - [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md)

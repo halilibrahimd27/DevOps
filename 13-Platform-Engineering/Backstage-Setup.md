@@ -1,0 +1,523 @@
+# Backstage Setup — IDP'nin Pratik Kuruluşu
+
+> *"Backstage 'Confluence + Jenkins + Datadog'un evladı' değildir.
+> **Geliştirici portalı** olarak tasarlanır — kod, doküman, dashboard,
+> servis kataloğu **tek yerden**. Doğru kurulumu 1 hafta, yanlışı 6 ay."*
+
+Bu rehber Spotify'ın açık kaynak Backstage'ini sıfırdan, prod-grade
+seviyeye kadar kurmak için somut adımları + plugin önerilerini sunar.
+
+---
+
+## 🎯 Backstage Anatomi
+
+```
+[Backstage Portal]
+├── Catalog          ← servis envanteri (kim sahip, nerede)
+├── Scaffolder       ← "yeni servis aç" template'leri
+├── TechDocs         ← markdown-as-docs (per-service)
+├── Search           ← global cross-resource search
+├── Plugins          ← K8s, Datadog, GitHub, Jira, ...
+└── Auth             ← OIDC (Keycloak / Auth0 / GitHub)
+```
+
+---
+
+## 🚀 Adım 1: Local'de Çalıştır
+
+### Pre-requisites
+- Node.js 20+
+- yarn
+- Docker (PostgreSQL için)
+
+### Create app
+```bash
+npx @backstage/create-app@latest
+
+# Sorulara cevap:
+# ? Project name: company-portal
+# ? Database: PostgreSQL (production için), SQLite (lokal için)
+
+cd company-portal
+yarn install
+yarn dev
+# → localhost:3000
+```
+
+### İlk catalog entry
+```yaml
+# catalog-info.yaml (Backstage repo'sunda örnek)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-service
+  description: Sample service
+  annotations:
+    github.com/project-slug: <ORG>/example-service
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+```
+
+---
+
+## 🏗️ Adım 2: Production Deployment
+
+### Helm chart ile K8s'ye
+```bash
+helm repo add backstage https://backstage.github.io/charts
+helm install backstage backstage/backstage \
+  -n backstage --create-namespace \
+  -f values.yaml
+```
+
+### `values.yaml`
+```yaml
+backstage:
+  image:
+    repository: <REGISTRY>/backstage
+    tag: <VERSION>
+    pullPolicy: IfNotPresent
+
+  replicas: 2
+
+  podSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+
+  containerSecurityContext:
+    runAsNonRoot: true
+    readOnlyRootFilesystem: true
+
+  appConfig:
+    app:
+      title: "Company Portal"
+      baseUrl: "https://portal.<DOMAIN>"
+    backend:
+      baseUrl: "https://portal.<DOMAIN>"
+      cors:
+        origin: "https://portal.<DOMAIN>"
+      database:
+        client: pg
+        connection:
+          host: ${POSTGRES_HOST}
+          port: 5432
+          user: ${POSTGRES_USER}
+          password: ${POSTGRES_PASSWORD}
+          ssl: true
+
+    auth:
+      providers:
+        oidc:
+          development:
+            metadataUrl: https://<IDP>/.well-known/openid-configuration
+            clientId: ${OIDC_CLIENT_ID}
+            clientSecret: ${OIDC_CLIENT_SECRET}
+
+    integrations:
+      github:
+        - host: github.com
+          token: ${GITHUB_TOKEN}
+
+    catalog:
+      providers:
+        github:
+          providerId:
+            organization: '<ORG>'
+            catalogPath: '/catalog-info.yaml'
+            filters:
+              branch: 'main'
+
+  resources:
+    requests: {cpu: 250m, memory: 512Mi}
+    limits: {cpu: 1000m, memory: 2Gi}
+
+ingress:
+  enabled: true
+  className: nginx
+  host: portal.<DOMAIN>
+  tls:
+    - hosts: [portal.<DOMAIN>]
+      secretName: backstage-tls
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+postgresql:
+  enabled: true   # veya external Postgres
+  auth:
+    database: backstage
+```
+
+> 🔑 **Production'da:** external managed Postgres (RDS / CNPG) tercih.
+
+---
+
+## 🔐 Adım 3: SSO Authentication
+
+### OIDC (Keycloak / Google / Auth0)
+```typescript
+// packages/backend/src/plugins/auth.ts
+import { providers } from '@backstage/plugin-auth-backend';
+
+export default async function createPlugin(env: PluginEnvironment): Promise<Router> {
+  return await createRouter({
+    ...env,
+    providerFactories: {
+      oidc: providers.oidc.create({
+        signIn: {
+          resolver: providers.oidc.resolvers.emailLocalPartMatchingUserEntityName(),
+        },
+      }),
+    },
+  });
+}
+```
+
+### GitHub login (basit)
+```yaml
+auth:
+  providers:
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+```
+
+---
+
+## 📦 Adım 4: Catalog Discovery
+
+### GitHub auto-discovery
+```yaml
+# app-config.yaml
+catalog:
+  providers:
+    github:
+      providerId:
+        organization: '<ORG>'
+        catalogPath: '/catalog-info.yaml'
+        filters:
+          branch: 'main'
+          repository: '.*'   # tüm repo'ları tara
+        schedule:
+          frequency: { minutes: 30 }
+          timeout: { minutes: 3 }
+```
+
+→ Org'taki her repo'da `catalog-info.yaml` varsa otomatik catalog'a girer.
+
+### Repo template
+```yaml
+# Her servis repo'su catalog-info.yaml'ında:
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payments-api
+  annotations:
+    github.com/project-slug: <ORG>/payments-api
+    backstage.io/techdocs-ref: dir:.
+    pagerduty.com/integration-key: <KEY>
+    grafana/dashboard-selector: "tag in (payments,api)"
+    sentry.io/project-slug: payments-api
+    sonarqube.org/project-key: <ORG>_payments-api
+spec:
+  type: service
+  lifecycle: production
+  owner: payments-team
+  system: payments
+  providesApis:
+    - payments-rest-api
+  dependsOn:
+    - resource:postgres-payments-db
+    - component:auth-service
+```
+
+---
+
+## 🏗️ Adım 5: Scaffolder — Golden Path
+
+```yaml
+# templates/golang-rest-api/template.yaml
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: golang-rest-api
+  title: Go REST API
+  description: Yeni Go REST API + DB + ArgoCD app
+  tags: [go, rest, postgres]
+spec:
+  owner: platform-team
+  type: service
+
+  parameters:
+    - title: Service info
+      required: [serviceName, ownerTeam]
+      properties:
+        serviceName:
+          type: string
+          pattern: '^[a-z][a-z0-9-]+$'
+          ui:autofocus: true
+        description: {type: string}
+        ownerTeam:
+          type: string
+          enum: [platform-team, payments-team, catalog-team]
+        databaseNeeded: {type: boolean, default: false}
+
+    - title: Cloud + Region
+      properties:
+        cloud:
+          type: string
+          enum: [aws, gcp]
+        region:
+          type: string
+          enum: [eu-west-1, eu-central-1, us-east-1]
+
+  steps:
+    - id: fetch
+      name: Fetch template
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          serviceName: ${{ parameters.serviceName }}
+          ownerTeam: ${{ parameters.ownerTeam }}
+          dbNeeded: ${{ parameters.databaseNeeded }}
+
+    - id: publish
+      name: Create GitHub repo
+      action: publish:github
+      input:
+        repoUrl: github.com?owner=<ORG>&repo=${{ parameters.serviceName }}
+        defaultBranch: main
+        protectDefaultBranch: true
+        requiredApprovingReviewCount: 1
+        deleteBranchOnMerge: true
+        gitCommitMessage: 'Initial commit from scaffolder'
+        gitAuthorName: 'Backstage Bot'
+
+    - id: register
+      name: Register in catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+    - id: create-argocd-app
+      name: Create ArgoCD application
+      action: argocd:create-resources
+      input:
+        appName: ${{ parameters.serviceName }}-prod
+        namespace: ${{ parameters.serviceName }}
+        repoUrl: ${{ steps.publish.output.remoteUrl }}
+        path: k8s/
+
+    - id: create-db
+      name: Provision DB (if needed)
+      if: ${{ parameters.databaseNeeded }}
+      action: terraform:apply
+      input:
+        directory: ./terraform/modules/postgres
+        vars:
+          db_name: ${{ parameters.serviceName }}
+          environment: prod
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: View in Catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}
+      - title: ArgoCD Application
+        url: 'https://argocd.<DOMAIN>/applications/${{ parameters.serviceName }}-prod'
+```
+
+> 🔑 Tek form → repo + branch protection + ArgoCD app + DB. **5 dakikada** servis up.
+
+---
+
+## 📚 Adım 6: TechDocs (Markdown-as-Docs)
+
+### Repo'nun root'unda:
+```yaml
+# mkdocs.yml
+site_name: 'Payments API'
+plugins:
+  - techdocs-core
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - API Reference: api.md
+  - Runbook: runbook.md
+  - Postmortem History: postmortems/index.md
+```
+
+```
+docs/
+├── index.md
+├── architecture.md
+├── api.md
+├── runbook.md
+└── postmortems/
+    ├── index.md
+    └── 2026-04-12-payment-down.md
+```
+
+### Backstage TechDocs
+- Markdown'ı çekip render eder
+- Search'e dahil eder
+- Backstage UI'da görünür
+
+> 🔑 **Doküman koddaki yerinde** = eskimez. Confluence'a göre 10x daha temiz.
+
+---
+
+## 🔌 Adım 7: Plugin'ler
+
+### En değerli plugin'ler (2026)
+
+| Plugin | Niche |
+|---|---|
+| **Kubernetes** | Servis K8s pod'larını portal'da gör |
+| **GitHub Actions** | CI status, deploy history |
+| **ArgoCD** | Application sync status |
+| **Datadog / Grafana** | Embed dashboard |
+| **PagerDuty** | On-call rotation görünür |
+| **SonarQube** | Code quality |
+| **Sentry** | Error tracking |
+| **Jira / Linear** | Ticket integration |
+| **Cost Insights** (Kubecost) | Servis başına maliyet |
+| **TechDocs** | Markdown docs |
+| **Tech Radar** | Teknoloji benimseme durumu |
+| **API Docs** | OpenAPI / GraphQL specs |
+
+### Plugin install
+```bash
+yarn add @backstage/plugin-kubernetes
+```
+
+```typescript
+// packages/app/src/App.tsx
+import { KubernetesPage } from '@backstage/plugin-kubernetes';
+
+<Route path="/kubernetes" element={<KubernetesPage />} />
+```
+
+---
+
+## 🛡️ Adım 8: Security Hardening
+
+```yaml
+# 1. RBAC permissions
+permission:
+  enabled: true
+  policy:
+    file: ./permission-policy.csv
+```
+
+```csv
+# permission-policy.csv
+p, role:default/admin, catalog.entity.delete, allow
+p, role:default/admin, catalog.entity.create, allow
+p, role:default/developer, catalog.entity.read, allow
+g, group:default/platform-team, role:default/admin
+g, group:default/everyone, role:default/developer
+```
+
+```yaml
+# 2. CSP headers
+backend:
+  csp:
+    connect-src: ["'self'", 'https:']
+    img-src: ["'self'", 'data:', 'https:']
+
+# 3. Rate limit
+backend:
+  reading:
+    allow:
+      - host: github.com
+      - host: <ORG>.github.io
+```
+
+---
+
+## 📊 Adım 9: Adoption Metrics
+
+```typescript
+// Sergiler dashboard'u (Backstage'de cost insights gibi)
+const adoptionMetrics = {
+  totalServices: catalog.entities.length,
+  servicesWithTechDocs: catalog.entities.filter(e => e.metadata.annotations?.['backstage.io/techdocs-ref']).length,
+  goldenPathUsage: scaffolder.executions.last30Days,
+  avgOnboardTime: scaffolder.avgDuration,  // < 10 dk hedef
+  nps: surveys.lastNPS,                     // > 30 hedef
+};
+```
+
+---
+
+## 🚫 Anti-Pattern Tablosu
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| `catalog-info.yaml` manuel her servise | 100 servis = 100 manuel | GitHub auto-discovery |
+| Tek root `app-config.yaml` | Maintenance zor | Per-environment config split |
+| SQLite production'da | Multi-replica çalışmaz | PostgreSQL |
+| Auth disabled "kolaylık için" | Public catalog → bilgi sızıntısı | OIDC + RBAC |
+| Plugin fazla (50+) | UI karmaşık, performance | Sadece kullanılanlar |
+| Adoption ölçülmüyor | "Backstage var" iddia, kullanılmıyor | NPS + metric dashboard |
+| Backstage upgrade ihmal | Eskir, security gap | Quarterly upgrade |
+| Custom plugin Git'te değil | Drift, lost work | Mono-repo + GitOps |
+| "Backstage zorunlu" demek | Bypass mevzuatı | Self-service + escape hatch |
+| Scaffolder template eskir | "Yeni servis nasıl açılır" doc'u şişer | Quarterly template review |
+| Catalog'da deprecated servis | Yanlış bilgi | Lifecycle: production / deprecated / experimental |
+
+---
+
+## 📋 Backstage Production Checklist
+
+```
+[ ] PostgreSQL HA (managed veya CNPG)
+[ ] Backstage replicas: 2+
+[ ] Ingress + TLS
+[ ] OIDC authentication
+[ ] RBAC permissions enabled
+[ ] GitHub catalog auto-discovery
+[ ] Scaffolder: en az 1 golden path
+[ ] TechDocs: en az 5 servis için
+[ ] Plugin: K8s, ArgoCD, GitHub Actions
+[ ] Plugin: PagerDuty (on-call görünür)
+[ ] Plugin: Cost Insights (Kubecost)
+[ ] Search çalışıyor (cross-resource)
+[ ] Catalog ownership: her servis owner'lı
+[ ] Lifecycle metadata güncel
+[ ] Backstage'in kendisi catalog'da
+[ ] Onboarding doc: yeni mühendis nasıl kullanır
+[ ] NPS quarterly survey
+[ ] Adoption dashboard
+[ ] Quarterly Backstage upgrade
+[ ] DR: cluster down → bootstrap
+```
+
+---
+
+## 📚 Referanslar
+
+- **Backstage Docs** — backstage.io/docs
+- **Backstage Plugin Marketplace** — backstage.io/plugins
+- **Spotify Backstage Blog** — backstage.spotify.com
+- **CNCF Backstage** — github.com/backstage/backstage
+- **Roadie** — roadie.io (Backstage SaaS)
+- [`Internal-Developer-Platform.md`](Internal-Developer-Platform.md)
+- _`Golden-Paths.md`_ *(yakında)*
+- _`Service-Catalog.md`_ *(yakında)*
+- [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)
+
+---
+
+> *"Backstage 'kurulduğu gün' değil, **kullanıldığı gün** değer
+> üretir. Adoption'u ölçmeyen ekip, **Backstage'in kabuğunu** yerleştirir;
+> içini doldurmayı unutur."*

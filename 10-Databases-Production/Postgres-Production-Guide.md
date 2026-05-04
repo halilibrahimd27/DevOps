@@ -356,7 +356,7 @@ PRIMARY ──WAL stream──▶ STANDBY-1 (sync, otomatik failover)
 ### Auto-failover: Patroni
 - **Patroni** = Postgres + DCS (etcd/Consul) + watchdog
 - Primary down → standby promote'a geçer
-- Detaylar: _`HA-Patroni-Stolon.md`_ *(yakında)*
+- Detaylar: [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md)
 
 ### K8s Operator: CloudNativePG (önerilen)
 ```bash
@@ -426,7 +426,7 @@ spec:
 
 ## 🔄 Zero-Downtime Migration
 
-> Detay: _`Zero-Downtime-Migrations.md`_ *(yakında)*.
+> Detay: [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md).
 
 ### Expand/Contract pattern
 ```
@@ -507,8 +507,8 @@ pg_repack -d app -t large_table
 - **WAL-G** — github.com/wal-g/wal-g
 - **pgBackRest** — pgbackrest.org
 - [`Backup-Restore-Patterns.md`](Backup-Restore-Patterns.md)
-- _`HA-Patroni-Stolon.md`_ *(yakında)*
-- _`Zero-Downtime-Migrations.md`_ *(yakında)*
+- [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md)
+- [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md)
 - _`Connection-Pooling.md`_ *(yakında)*
 - _`Monitoring-Postgres.md`_ *(yakında)*
 

@@ -443,7 +443,7 @@ template:
 - **Argo CD Generators** — argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/
 - **GitOps Patterns** — opengitops.dev
 - [`ArgoCD-Setup.md`](ArgoCD-Setup.md)
-- _`App-of-Apps-Pattern.md`_ *(yakında)*
+- [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md)
 - [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md)
 - [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../08-Security/Policy-as-Code-OPA-Kyverno.md) — multi-cluster policy
 

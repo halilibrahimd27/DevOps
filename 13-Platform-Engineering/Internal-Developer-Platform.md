@@ -378,7 +378,7 @@ Backstage repo'yu çekip markdown'ı render eder, search'le bulunur.
 - **OpsLevel** — opslevel.com
 - **Platform Engineering** — platformengineering.org
 - **CNCF Platforms WG** — github.com/cncf/sig-app-delivery
-- _`Backstage-Setup.md`_ *(yakında)*
+- [`Backstage-Setup.md`](Backstage-Setup.md)
 - _`Golden-Paths.md`_ *(yakında)*
 - _`Platform-as-Product.md`_ *(yakında)*
 - [`00-Culture/Team-Topologies.md`](../00-Culture/Team-Topologies.md)

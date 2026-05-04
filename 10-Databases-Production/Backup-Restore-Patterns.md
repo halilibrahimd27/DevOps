@@ -226,7 +226,7 @@ CREATE ROLE replicator WITH REPLICATION LOGIN PASSWORD '<PWD>';
 - Patroni: standalone, etcd/consul DCS
 - CloudNativePG: K8s operator, modern, recommended
 
-Detay: _`HA-Patroni-Stolon.md`_ *(yakında)* (sonraki batch).
+Detay: [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md) (sonraki batch).
 
 ---
 
@@ -388,8 +388,8 @@ aws s3api put-object-lock-configuration \
 - **PostgreSQL Backup Documentation** — postgresql.org/docs/current/backup.html
 - **3-2-1 Rule** — yaygın industry pratiği
 - [`Postgres-Production-Guide.md`](Postgres-Production-Guide.md)
-- _`HA-Patroni-Stolon.md`_ *(yakında)*
-- _`Zero-Downtime-Migrations.md`_ *(yakında)*
+- [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md)
+- [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md) — backup creds
 - [`19-Compliance/KVKK-Practical.md`](../19-Compliance/KVKK-Practical.md) — retention policy
 - [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md) — DR akışı

@@ -486,7 +486,7 @@ patches:
 - **Helm Best Practices** — helm.sh/docs/chart_best_practices/
 - **CNCF App Delivery TAG**
 - [`ArgoCD-Setup.md`](ArgoCD-Setup.md)
-- _`App-of-Apps-Pattern.md`_ *(yakında)*
+- [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md)
 - [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md) — secret entegrasyonu
 

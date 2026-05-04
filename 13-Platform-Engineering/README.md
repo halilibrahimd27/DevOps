@@ -11,7 +11,7 @@ opinionated bir "altın yol".
 | Dosya | Konu |
 |---|---|
 | [`Internal-Developer-Platform.md`](Internal-Developer-Platform.md) | IDP nedir, niye Backstage'den başlar, build vs buy |
-| _`Backstage-Setup.md`_ *(yakında)* | Backstage kurulumu, plugin'ler, scaffolder template |
+| [`Backstage-Setup.md`](Backstage-Setup.md) | Backstage kurulumu, plugin'ler, scaffolder template |
 | _`Golden-Paths.md`_ *(yakında)* | "Yeni servis aç → 5 dk'da" şablonları |
 | _`Service-Catalog.md`_ *(yakında)* | Service ownership, dependency graph, on-call mapping |
 | _`Platform-as-Product.md`_ *(yakında)* | Developer'ı müşteri gibi gör; NPS, SLA, roadmap |
