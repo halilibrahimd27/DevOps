@@ -315,7 +315,7 @@ Not-Worth-It: "Maliyet/fayda yatmıyor — şu sayılar..."
 - **Writing for Developers** — Piotr Sarna
 - [`Working-with-Security-Team.md`](Working-with-Security-Team.md)
 - [`Saying-No.md`](Saying-No.md)
-- _`Documentation-as-Communication.md`_ *(yakında)*
+- [`Documentation-as-Communication.md`](Documentation-as-Communication.md)
 
 ---
 

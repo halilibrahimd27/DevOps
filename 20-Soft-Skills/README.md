@@ -14,11 +14,11 @@ yöneticilerle, vendor'larla. Bu bölüm "kodun nasıl yazılacağı" değil,
 | [`Oncall-Sustainability.md`](Oncall-Sustainability.md) | On-call'da burnout önleme, vardiya tasarımı, post-incident dinlenme |
 | [`Stakeholder-Management.md`](Stakeholder-Management.md) | Üst yönetim, ürün, security, legal — kime ne dilde anlatırsın |
 | [`Working-with-Security-Team.md`](Working-with-Security-Team.md) | Security ekibiyle düşman değil partner ilişkisi |
-| _`Vendor-Management.md`_ *(yakında)* | RFP, vendor lock-in, müzakere, escape stratejisi |
+| [`Vendor-Management.md`](Vendor-Management.md) | RFP, vendor lock-in, müzakere, escape stratejisi |
 | [`Saying-No.md`](Saying-No.md) | "Hayır" demenin sanatı: scope creep, premature commitment |
 | [`Postmortem-Conversation.md`](Postmortem-Conversation.md) | Blameless culture'i konuşmaya nasıl yansıtırız |
-| _`Mentoring-Junior-Engineers.md`_ *(yakında)* | Junior'a infra/SRE öğretmenin pratikleri |
-| _`Documentation-as-Communication.md`_ *(yakında)* | RFC, ADR, design doc — bunları yazmak ve okumak |
+| [`Mentoring-Junior-Engineers.md`](Mentoring-Junior-Engineers.md) | Junior'a infra/SRE öğretmenin pratikleri |
+| [`Documentation-as-Communication.md`](Documentation-as-Communication.md) | RFC, ADR, design doc — bunları yazmak ve okumak |
 
 ## Felsefe
 

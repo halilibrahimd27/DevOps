@@ -372,9 +372,9 @@ jobs:
 - **AWS Customer Carbon Footprint Tool**
 - **GCP Carbon Footprint**
 - **Azure Emissions Impact Dashboard**
-- _`Carbon-Aware-Computing.md`_ *(yakında)*
-- _`Measuring-Software-Carbon.md`_ *(yakında)*
-- _`Region-Selection.md`_ *(yakında)*
+- [`Carbon-Aware-Computing.md`](Carbon-Aware-Computing.md)
+- [`Measuring-Software-Carbon.md`](Measuring-Software-Carbon.md)
+- [`Region-Selection.md`](Region-Selection.md)
 - [`12-FinOps/Cloud-Cost-Allocation.md`](../12-FinOps/Cloud-Cost-Allocation.md) — cost ↔ carbon dual
 
 ---

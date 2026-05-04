@@ -11,9 +11,9 @@ Cloud kullanımı = Scope 2/3 emisyon.
 | Dosya | Konu |
 |---|---|
 | [`Green-Software-Principles.md`](Green-Software-Principles.md) | GSF 8 prensibi, mühendislik kararlarına nasıl yansır |
-| _`Carbon-Aware-Computing.md`_ *(yakında)* | "Düşük-karbon saatlerde batch çalıştır" pattern'i |
-| _`Measuring-Software-Carbon.md`_ *(yakında)* | SCI formula, Cloud Carbon Footprint, Kepler |
-| _`Region-Selection.md`_ *(yakında)* | Yenilenebilir enerji yoğun region'lar (cloud-spesifik) |
+| [`Carbon-Aware-Computing.md`](Carbon-Aware-Computing.md) | "Düşük-karbon saatlerde batch çalıştır" pattern'i |
+| [`Measuring-Software-Carbon.md`](Measuring-Software-Carbon.md) | SCI formula, Cloud Carbon Footprint, Kepler |
+| [`Region-Selection.md`](Region-Selection.md) | Yenilenebilir enerji yoğun region'lar (cloud-spesifik) |
 | _`Efficiency-Practices.md`_ *(yakında)* | ARM/Graviton, idle cleanup, caching, compression |
 
 ## Green Software Foundation 8 prensibi
