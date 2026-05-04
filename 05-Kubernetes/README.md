@@ -10,13 +10,13 @@ Production'da Kubernetes'i yöneten ekibe gerçek işine yarayan referanslar.
 | Dosya | Konu |
 |---|---|
 | [`Production-Checklist.md`](Production-Checklist.md) | 50 maddelik prod-readiness checklist (resource, probe, security, observability) |
-| [`Resource-Limits-Guide.md`](Resource-Limits-Guide.md) | Request vs limit, OOMKilled debug, VPA recommendations |
-| [`HPA-VPA-KEDA.md`](HPA-VPA-KEDA.md) | Otomatik ölçekleme: CPU/RAM/custom metric/event-driven |
-| [`Ingress-and-Gateway-API.md`](Ingress-and-Gateway-API.md) | Ingress'ten Gateway API'ye geçiş, niçin ve nasıl |
-| [`Multi-Tenancy-Patterns.md`](Multi-Tenancy-Patterns.md) | Soft/hard multi-tenancy, namespace izolasyonu, vCluster |
-| [`StatefulSet-vs-Operator.md`](StatefulSet-vs-Operator.md) | Stateful workload'larını yönetmek; ne zaman operator gerekir |
-| [`Upgrade-Strategy.md`](Upgrade-Strategy.md) | Cluster upgrade'i sıfır-downtime ile yapma; deprecated API geçişi |
-| [`Debugging-Pods.md`](Debugging-Pods.md) | CrashLoopBackOff, ImagePullBackOff, Pending: triage flowchart'ı |
+| _`Resource-Limits-Guide.md`_ *(yakında)* | Request vs limit, OOMKilled debug, VPA recommendations |
+| _`HPA-VPA-KEDA.md`_ *(yakında)* | Otomatik ölçekleme: CPU/RAM/custom metric/event-driven |
+| _`Ingress-and-Gateway-API.md`_ *(yakında)* | Ingress'ten Gateway API'ye geçiş, niçin ve nasıl |
+| _`Multi-Tenancy-Patterns.md`_ *(yakında)* | Soft/hard multi-tenancy, namespace izolasyonu, vCluster |
+| _`StatefulSet-vs-Operator.md`_ *(yakında)* | Stateful workload'larını yönetmek; ne zaman operator gerekir |
+| _`Upgrade-Strategy.md`_ *(yakında)* | Cluster upgrade'i sıfır-downtime ile yapma; deprecated API geçişi |
+| _`Debugging-Pods.md`_ *(yakında)* | CrashLoopBackOff, ImagePullBackOff, Pending: triage flowchart'ı |
 
 ## Production checklist (özet)
 

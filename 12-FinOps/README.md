@@ -11,13 +11,13 @@ Maliyeti finans değil, mühendislik problemi olarak ele alır.
 | Dosya | Konu |
 |---|---|
 | [`Cloud-Cost-Allocation.md`](Cloud-Cost-Allocation.md) | Tagging policy, showback/chargeback, OpenCost/Kubecost setup |
-| [`Right-Sizing.md`](Right-Sizing.md) | Compute Optimizer, VPA recommendations, "fat pod" tespiti |
-| [`Spot-Instance-Strategy.md`](Spot-Instance-Strategy.md) | Spot interruption handling, Karpenter ile mixed pool |
-| [`Reserved-and-Savings-Plans.md`](Reserved-and-Savings-Plans.md) | RI vs SP, commit stratejileri, expiration planlama |
-| [`Storage-Cost-Optimization.md`](Storage-Cost-Optimization.md) | S3 Intelligent-Tiering, EBS gp2→gp3, snapshot lifecycle |
-| [`Egress-Cost-Reduction.md`](Egress-Cost-Reduction.md) | "Hidden killer" — VPC endpoint, Cloudflare R2, region locality |
-| [`Kubecost-Setup.md`](Kubecost-Setup.md) | Kubernetes maliyet attribution: namespace/workload/team |
-| [`PR-Cost-Diff.md`](PR-Cost-Diff.md) | Infracost ile pre-merge maliyet review |
+| _`Right-Sizing.md`_ *(yakında)* | Compute Optimizer, VPA recommendations, "fat pod" tespiti |
+| _`Spot-Instance-Strategy.md`_ *(yakında)* | Spot interruption handling, Karpenter ile mixed pool |
+| _`Reserved-and-Savings-Plans.md`_ *(yakında)* | RI vs SP, commit stratejileri, expiration planlama |
+| _`Storage-Cost-Optimization.md`_ *(yakında)* | S3 Intelligent-Tiering, EBS gp2→gp3, snapshot lifecycle |
+| _`Egress-Cost-Reduction.md`_ *(yakında)* | "Hidden killer" — VPC endpoint, Cloudflare R2, region locality |
+| _`Kubecost-Setup.md`_ *(yakında)* | Kubernetes maliyet attribution: namespace/workload/team |
+| _`PR-Cost-Diff.md`_ *(yakında)* | Infracost ile pre-merge maliyet review |
 
 ## FinOps Foundation döngüsü
 

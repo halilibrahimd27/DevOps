@@ -11,12 +11,12 @@ geçerli değildir. Backup, HA, migration ayrı bir disiplin.
 | Dosya | Konu |
 |---|---|
 | [`Postgres-Production-Guide.md`](Postgres-Production-Guide.md) | `postgresql.conf` tuning, connection pooling (PgBouncer), monitoring |
-| [`Backup-Restore-Patterns.md`](Backup-Restore-Patterns.md) | Logical (pg_dump) vs Physical (pgBackRest, WAL-G), PITR |
-| [`HA-Patroni-Stolon.md`](HA-Patroni-Stolon.md) | Auto-failover, sentinel, split-brain çözümü |
-| [`Zero-Downtime-Migrations.md`](Zero-Downtime-Migrations.md) | Expand/contract pattern, online schema change, gh-ost/pt-osc |
-| [`Operator-Patterns.md`](Operator-Patterns.md) | CloudNativePG, Zalando postgres-operator, Crunchy karşılaştırma |
-| [`Connection-Pooling.md`](Connection-Pooling.md) | PgBouncer transaction vs session mode, pool sizing |
-| [`Monitoring-Postgres.md`](Monitoring-Postgres.md) | Slow query, lock, autovacuum, replication lag dashboards |
+| _`Backup-Restore-Patterns.md`_ *(yakında)* | Logical (pg_dump) vs Physical (pgBackRest, WAL-G), PITR |
+| _`HA-Patroni-Stolon.md`_ *(yakında)* | Auto-failover, sentinel, split-brain çözümü |
+| _`Zero-Downtime-Migrations.md`_ *(yakında)* | Expand/contract pattern, online schema change, gh-ost/pt-osc |
+| _`Operator-Patterns.md`_ *(yakında)* | CloudNativePG, Zalando postgres-operator, Crunchy karşılaştırma |
+| _`Connection-Pooling.md`_ *(yakında)* | PgBouncer transaction vs session mode, pool sizing |
+| _`Monitoring-Postgres.md`_ *(yakında)* | Slow query, lock, autovacuum, replication lag dashboards |
 
 ## "Containerize edebilir miyim?"
 

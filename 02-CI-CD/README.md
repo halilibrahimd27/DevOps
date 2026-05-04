@@ -10,11 +10,12 @@ GitHub Actions / GitLab CI tarifleri ve "yavaş CI" tedavi protokolleri.
 | Dosya | Konu |
 |---|---|
 | [`Pipeline-Patterns.md`](Pipeline-Patterns.md) | Build → Test → Scan → Sign → Deploy katmanlama |
-| [`GitHub-Actions-Recipes.md`](GitHub-Actions-Recipes.md) | Reusable workflow, matrix build, OIDC AWS auth, ortam koruması |
-| [`GitLab-CI-Recipes.md`](GitLab-CI-Recipes.md) | DAG pipeline, dynamic child, dotenv artifact'lar |
-| [`Caching-Strategies.md`](Caching-Strategies.md) | Layer cache, npm/pip/cargo/go cache, BuildKit cache mount |
-| [`Reusable-Workflows.md`](Reusable-Workflows.md) | Org-wide template, callable workflow, composite action |
-| [`Pipeline-Performance.md`](Pipeline-Performance.md) | "10 dakikalık CI"yi 90 saniyeye indirme protokolü |
+| _`GitHub-Actions-Recipes.md`_ *(yakında)* | Reusable workflow, matrix build, OIDC AWS auth, ortam koruması |
+| _`GitLab-CI-Recipes.md`_ *(yakında)* | DAG pipeline, dynamic child, dotenv artifact'lar |
+| _`Caching-Strategies.md`_ *(yakında)* | Layer cache, npm/pip/cargo/go cache, BuildKit cache mount |
+| _`Reusable-Workflows.md`_ *(yakında)* | Org-wide template, callable workflow, composite action |
+| _`Pipeline-Performance.md`_ *(yakında)* | "10 dakikalık CI"yi 90 saniyeye indirme protokolü |
+| [`Mobile-CICD-Flutter.md`](Mobile-CICD-Flutter.md) | Flutter/Android/iOS için end-to-end CI/CD checklist (signing, store deploy) |
 
 ## Pipeline anatomisi (referans)
 

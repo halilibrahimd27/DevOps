@@ -11,11 +11,11 @@ PR review'dan geçer.
 | Dosya | Konu |
 |---|---|
 | [`Terraform-Best-Practices.md`](Terraform-Best-Practices.md) | Module layout, remote state, workspace, lifecycle hooks, drift handling |
-| [`Terraform-Module-Layout.md`](Terraform-Module-Layout.md) | Standart `vpc/eks/rds` modül iskeleti, `terraform-docs` |
-| [`OpenTofu-Migration.md`](OpenTofu-Migration.md) | HashiCorp BSL → OpenTofu Apache geçişi, ne değişir/değişmez |
-| [`Pulumi-vs-Terraform.md`](Pulumi-vs-Terraform.md) | TypeScript/Python ile IaC: ne zaman tercih edilir |
-| [`Crossplane-Intro.md`](Crossplane-Intro.md) | Kubernetes-native cloud control plane: niçin, nasıl |
-| [`Drift-Detection.md`](Drift-Detection.md) | `terraform plan`'i CI'da otomatik koşturma; manuel değişiklikleri yakalama |
+| _`Terraform-Module-Layout.md`_ *(yakında)* | Standart `vpc/eks/rds` modül iskeleti, `terraform-docs` |
+| _`OpenTofu-Migration.md`_ *(yakında)* | HashiCorp BSL → OpenTofu Apache geçişi, ne değişir/değişmez |
+| _`Pulumi-vs-Terraform.md`_ *(yakında)* | TypeScript/Python ile IaC: ne zaman tercih edilir |
+| _`Crossplane-Intro.md`_ *(yakında)* | Kubernetes-native cloud control plane: niçin, nasıl |
+| _`Drift-Detection.md`_ *(yakında)* | `terraform plan`'i CI'da otomatik koşturma; manuel değişiklikleri yakalama |
 
 ## Karar ağacı: hangi IaC?
 

@@ -434,4 +434,4 @@ Monthly cost change: +$320
 - [FOCUS specification](https://focus.finops.org) — vendor-neutral cost spec
 - [AWS Well-Architected — Cost Optimization Pillar](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/)
 - [OpenCost docs](https://www.opencost.io)
-- [Right Sizing → 12-FinOps/Right-Sizing.md](Right-Sizing.md)
+- _Right Sizing → 12-FinOps/Right-Sizing.md_ *(yakında)*

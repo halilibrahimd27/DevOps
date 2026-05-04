@@ -4,11 +4,11 @@
 
 ### *Production'da işleyen modern DevOps pratiklerinin Türkçe başucu kitabı*
 
-CI/CD · Kubernetes · IaC · GitOps · SRE · DevSecOps · FinOps · Platform Engineering · LLMOps
+CI/CD · Kubernetes · IaC · GitOps · SRE · **DevSecOps** · FinOps · Platform · LLMOps · Compliance · Soft Skills
 
 [![GitHub Stars](https://img.shields.io/github/stars/halilibrahimd27/DevOps?style=flat-square&color=yellow&logo=github)](https://github.com/halilibrahimd27/DevOps/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/halilibrahimd27/DevOps?style=flat-square&color=blue&logo=github)](https://github.com/halilibrahimd27/DevOps/network/members)
-[![Topics](https://img.shields.io/badge/topics-19-blueviolet?style=flat-square)](#-içindekiler)
+[![Topics](https://img.shields.io/badge/topics-21-blueviolet?style=flat-square)](#-içindekiler)
 [![Cheatsheets](https://img.shields.io/badge/cheatsheets-9-success?style=flat-square)](16-Cheatsheets/)
 [![Templates](https://img.shields.io/badge/copy--paste%20templates-25%2B-orange?style=flat-square)](17-Templates/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
@@ -45,6 +45,9 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · DevSecOps · FinOps · Platform E
 | 🛡️ **Güvenlik review'ı geliyor** | [`08-Security/DevSecOps-Pipeline.md`](08-Security/DevSecOps-Pipeline.md) → [`08-Security/Kubernetes-Hardening.md`](08-Security/Kubernetes-Hardening.md) |
 | 💰 **Cloud faturası patladı** | [`12-FinOps/Cloud-Cost-Allocation.md`](12-FinOps/Cloud-Cost-Allocation.md) |
 | 🎯 **Mülakata hazırlanıyorum** | [`18-Career/`](18-Career/) |
+| ⚖️ **KVKK/GDPR audit geliyor** | [`19-Compliance/KVKK-Practical.md`](19-Compliance/KVKK-Practical.md) → [`19-Compliance/`](19-Compliance/) |
+| 🔥 **On-call'da burnout oluyorum** | [`20-Soft-Skills/Oncall-Sustainability.md`](20-Soft-Skills/Oncall-Sustainability.md) |
+| 📖 **Türkçe terim aradım** | [`Glossary.md`](Glossary.md) |
 
 ---
 
@@ -90,17 +93,22 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · DevSecOps · FinOps · Platform E
 | [`17-Templates/`](17-Templates/) | GitHub Actions · K8s manifest · Dockerfile · Terraform module · Kyverno policy · runbook |
 | [`18-Career/`](18-Career/) | DevOps/SRE interview soruları, system design hazırlığı |
 
-### 🧰 Operasyonel Notlar (Mevcut)
+### ⚖️ Hukuki Çerçeve & İnsan Tarafı
+| Bölüm | Konu |
+|---|---|
+| [`19-Compliance/`](19-Compliance/) | KVKK, GDPR, ISO 27001, SOC 2, **EU AI Act**, NIS2, PCI DSS — mühendislik kontrolüyle |
+| [`20-Soft-Skills/`](20-Soft-Skills/) | On-call sürdürülebilirliği, stakeholder yönetimi, security ekibi ile çalışma, "hayır" demek |
+| [`Glossary.md`](Glossary.md) | Türkçe ↔ İngilizce DevOps terim sözlüğü |
+| [`CLAUDE.md`](CLAUDE.md) | Yazım stili & editorial rehber (katkı yapanlar için) |
+
+### 🧰 Operasyonel Notlar
 | Klasör | Konu |
 |---|---|
 | [`Ansible/`](Ansible/) | Ansible playbook ve sistem hazırlığı notları |
-| [`Kubectl/`](Kubectl/) | Jenkins, logging, secret/credential örnekleri |
-| [`Terrafrom/`](Terrafrom/) | Proxmox + manuel VM Terraform örnekleri |
+| [`Kubectl/`](Kubectl/) | Logging ve secret/credential örnekleri |
+| [`Terraform/`](Terraform/) | Proxmox + manuel VM Terraform örnekleri |
 | [`Network/`](Network/) | Wazuh SIEM + ağ segmentasyonu |
-| [`monitoring/`](monitoring/) | Prometheus/Grafana/Uptime Kuma stack'i |
-| [`nginx/`](nginx/) | NGINX prod konfig örnekleri |
-| [`System/`](System/) | Sistem-seviyesi rehberler |
-| [`Testing/`](Testing/) | Draft/test materyali |
+| [`System/`](System/) | Sistem-seviyesi rehberler (K8s install, GitHub Actions, external access) |
 
 ### 🔗 Yan Repolar (bu repo'dan ayrılan tamamlayıcı projeler)
 

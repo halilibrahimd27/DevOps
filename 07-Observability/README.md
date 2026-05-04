@@ -11,12 +11,12 @@ Hepsinin önünde **OpenTelemetry**.
 | Dosya | Konu |
 |---|---|
 | [`OpenTelemetry-Adoption.md`](OpenTelemetry-Adoption.md) | OTel SDK + Collector + vendor-neutral pipeline kurulumu |
-| [`Prometheus-Best-Practices.md`](Prometheus-Best-Practices.md) | Cardinality, recording rules, Mimir/VictoriaMetrics scaling |
-| [`SLO-Engineering.md`](SLO-Engineering.md) | SLI seçimi, multi-window/multi-burn-rate alert, SLO dashboard |
-| [`Alerting-Done-Right.md`](Alerting-Done-Right.md) | Symptom-based alert, page/ticket/log ayrımı, alert fatigue çözümü |
-| [`Logs-Loki-vs-ELK.md`](Logs-Loki-vs-ELK.md) | Log stack seçimi, structured logging, query patterns |
-| [`Tracing-with-Tempo.md`](Tracing-with-Tempo.md) | Distributed tracing kurulumu, trace ID exemplar'ları |
-| [`Profiling-with-Pyroscope.md`](Profiling-with-Pyroscope.md) | Continuous profiling, eBPF, hot path tespiti |
+| _`Prometheus-Best-Practices.md`_ *(yakında)* | Cardinality, recording rules, Mimir/VictoriaMetrics scaling |
+| _`SLO-Engineering.md`_ *(yakında)* | SLI seçimi, multi-window/multi-burn-rate alert, SLO dashboard |
+| _`Alerting-Done-Right.md`_ *(yakında)* | Symptom-based alert, page/ticket/log ayrımı, alert fatigue çözümü |
+| _`Logs-Loki-vs-ELK.md`_ *(yakında)* | Log stack seçimi, structured logging, query patterns |
+| _`Tracing-with-Tempo.md`_ *(yakında)* | Distributed tracing kurulumu, trace ID exemplar'ları |
+| _`Profiling-with-Pyroscope.md`_ *(yakında)* | Continuous profiling, eBPF, hot path tespiti |
 
 ## "Three Pillars + 1"
 

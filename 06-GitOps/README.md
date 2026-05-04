@@ -11,11 +11,11 @@ istenen duruma çeker.
 | Dosya | Konu |
 |---|---|
 | [`ArgoCD-Setup.md`](ArgoCD-Setup.md) | ArgoCD kurulumu, AppProject, RBAC, SSO, notifications |
-| [`Flux-vs-ArgoCD.md`](Flux-vs-ArgoCD.md) | İkisinin felsefesi, ne zaman hangisi |
-| [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md) | Çok-cluster, çok-tenant deploy: matrix/git generator/cluster generator |
-| [`App-of-Apps-Pattern.md`](App-of-Apps-Pattern.md) | Self-managed ArgoCD; bootstrap akışı |
-| [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md) | Manifest derivation: avantaj/dezavantaj tablo |
-| [`Secrets-in-GitOps.md`](Secrets-in-GitOps.md) | SOPS, Sealed Secrets, External Secrets Operator karşılaştırma |
+| _`Flux-vs-ArgoCD.md`_ *(yakında)* | İkisinin felsefesi, ne zaman hangisi |
+| _`ApplicationSet-Patterns.md`_ *(yakında)* | Çok-cluster, çok-tenant deploy: matrix/git generator/cluster generator |
+| _`App-of-Apps-Pattern.md`_ *(yakında)* | Self-managed ArgoCD; bootstrap akışı |
+| _`Helm-vs-Kustomize-vs-Raw.md`_ *(yakında)* | Manifest derivation: avantaj/dezavantaj tablo |
+| _`Secrets-in-GitOps.md`_ *(yakında)* | SOPS, Sealed Secrets, External Secrets Operator karşılaştırma |
 
 ## OpenGitOps prensipleri
 

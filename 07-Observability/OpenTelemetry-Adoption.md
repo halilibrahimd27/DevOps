@@ -379,4 +379,4 @@ queue_gauge = meter.create_observable_gauge("queue.depth", callbacks=[cb])
 - [opentelemetry.io](https://opentelemetry.io)
 - [OTel Demo App](https://opentelemetry.io/docs/demo/) — eksiksiz örnek mikroservis stack
 - [OTel Collector Receivers/Processors/Exporters list](https://github.com/open-telemetry/opentelemetry-collector-contrib)
-- [`07-Observability/Prometheus-Best-Practices.md`](Prometheus-Best-Practices.md)
+- _`07-Observability/Prometheus-Best-Practices.md`_ *(yakında)*
