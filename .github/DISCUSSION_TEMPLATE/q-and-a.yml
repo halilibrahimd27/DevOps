@@ -1,0 +1,60 @@
+title: "[Soru] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bu repo'daki bir konu hakkında sorun varsa burada sor!
+
+        Önce şunlara bakmayı dene:
+        - [📚 İçindekiler](https://github.com/halilibrahimd27/DevOps#-içindekiler)
+        - [📖 Glossary](https://github.com/halilibrahimd27/DevOps/blob/main/Glossary.md)
+        - Mevcut [discussions](https://github.com/halilibrahimd27/DevOps/discussions)
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Sorun
+      description: Ne öğrenmek/anlamak istiyorsun?
+      placeholder: "Örn: Production K8s'de Postgres için CloudNativePG mi Crunchy mi seçmeli?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Bağlam
+      description: Hangi senaryoda? Ekip büyüklüğü, sektör, mevcut stack?
+      placeholder: "Örn: 50 mikroservis, B2B SaaS, AWS, mevcut Postgres tek instance"
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: Ne denedin?
+      description: Repo'da hangi dokümanları okudun? Hangi yaklaşımları düşündün?
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: İlgili bölüm
+      options:
+        - "00-Culture"
+        - "01-Git-Workflow"
+        - "02-CI-CD"
+        - "03-IaC"
+        - "04-Containers"
+        - "05-Kubernetes"
+        - "06-GitOps"
+        - "07-Observability"
+        - "08-Security (DevSecOps)"
+        - "09-Networking"
+        - "10-Databases-Production"
+        - "11-SRE"
+        - "12-FinOps"
+        - "13-Platform-Engineering"
+        - "14-Sustainability"
+        - "15-AI-LLMOps"
+        - "18-Career"
+        - "19-Compliance"
+        - "20-Soft-Skills"
+        - "Genel"

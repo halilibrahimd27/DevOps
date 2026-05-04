@@ -1,0 +1,74 @@
+# GitHub label config — github-label-sync veya manuel oluşturulur
+# Bu dosya: org-wide consistent label set'i
+
+# Categories
+- name: "type: bug"
+  color: "d73a4a"
+  description: "Yanlışlık, hata içerik"
+
+- name: "type: enhancement"
+  color: "a2eeef"
+  description: "İyileştirme önerisi"
+
+- name: "type: new-content"
+  color: "0e8a16"
+  description: "Yeni doküman / bölüm"
+
+- name: "type: question"
+  color: "d876e3"
+  description: "Soru / yardım"
+
+- name: "type: docs"
+  color: "0075ca"
+  description: "Doküman güncelleme"
+
+- name: "type: typo"
+  color: "fbca04"
+  description: "Yazım hatası"
+
+# Topics
+- name: "area: kubernetes"
+  color: "326ce5"
+- name: "area: ci-cd"
+  color: "f29818"
+- name: "area: security"
+  color: "b60205"
+- name: "area: gitops"
+  color: "ef7b4d"
+- name: "area: observability"
+  color: "9a6dd7"
+- name: "area: finops"
+  color: "0e8a16"
+- name: "area: compliance"
+  color: "5319e7"
+- name: "area: ai-llmops"
+  color: "7057ff"
+- name: "area: sre"
+  color: "1d76db"
+- name: "area: career"
+  color: "fbca04"
+
+# Process
+- name: "good first issue"
+  color: "7057ff"
+  description: "Yeni katkı yapanlar için ideal"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Topluluk yardımı bekleniyor"
+
+- name: "blocked"
+  color: "e99695"
+  description: "Başka bir şeye bağlı"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "Yapılmayacak (kapalı)"
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "Önceki issue'nun aynısı"
+
+- name: "stale"
+  color: "f0f0f0"
+  description: "30 gündür inaktif"

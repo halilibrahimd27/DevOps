@@ -16,10 +16,12 @@
 | EN | TR / Açıklama |
 |---|---|
 | **Admission Controller** | K8s API server'da kabul kontrolcüsü; istek validate/mutate eder |
+| **Agent (LLM)** | LLM-based otomasyonu; tool çağrısı + reasoning ile çalışır |
 | **AppArmor** | Linux Mandatory Access Control; profil bazlı uygulama izolasyonu |
 | **API** | API (çevirme — endüstri standardı) |
 | **Artifact** | İmaj/paket/binary; CI çıktısı (kelime kalır) |
 | **Attestation** | İmzalı metadata claim (SLSA, in-toto) |
+| **Atlantis** | Terraform PR-driven workflow tool |
 | **Autoscaler** | Otomatik ölçekleyici (HPA, VPA, CA) |
 | **AuthN / AuthZ** | Authentication (kimlik doğrulama) / Authorization (yetkilendirme) |
 
@@ -34,12 +36,17 @@
 | **Blue/Green** | Mavi/yeşil deploy — iki sürüm paralel, traffic switch |
 | **BuildKit** | Docker yeni nesil image builder |
 | **Burnout** | Tükenmişlik |
+| **Burn rate** | SLO bütçesini normal hızdan kaç kat hızlı yakıyoruz |
 
 ## C
 
 | EN | TR / Açıklama |
 |---|---|
 | **Canary** | Kanarya — ufak yüzdelik traffic'le yeni sürüm test |
+| **Capsule** | K8s multi-tenancy operator |
+| **Cardinality** | Bir metric'in unique label kombinasyon sayısı (Prometheus) |
+| **Carbon-aware** | Workload'u düşük-karbon zaman/yerde çalıştırma |
+| **Chainguard Images** | 0-CVE hedefli, daily-rebuild distroless alternatif |
 | **CD** | Continuous Delivery / Deployment (sürekli teslim) — CD kalır |
 | **CI** | Continuous Integration (sürekli entegrasyon) — CI kalır |
 | **CIDR** | IP adres bloğu notasyonu |
@@ -48,13 +55,17 @@
 | **Cilium** | eBPF-tabanlı CNI + service mesh |
 | **CNCF** | Cloud Native Computing Foundation |
 | **CNI** | Container Network Interface (pod network) |
+| **CloudNativePG (CNPG)** | K8s-native Postgres operator (CNCF Sandbox) |
+| **Composition (Crossplane)** | XRD + template ile self-service abstraction |
 | **Compliance** | Uyum / mevzuata uyum |
 | **Conformance test** | Uyumluluk testi (Gateway API, K8s) |
+| **conntrack** | Linux netfilter NAT tablosu |
 | **CRD** | Custom Resource Definition (K8s) |
 | **Crossplane** | Cloud-native control plane / IaC alternatifi |
 | **CSI** | Container Storage Interface (volume) |
 | **CSRD** | EU Corporate Sustainability Reporting Directive |
 | **CTO** | Chief Technology Officer |
+| **CUDs** | GCP Committed Use Discounts |
 | **CVE** | Common Vulnerabilities and Exposures (güvenlik açığı kayıt) |
 
 ## D
@@ -63,6 +74,10 @@
 |---|---|
 | **DAG** | Directed Acyclic Graph (yönlü döngüsüz çizge); pipeline yapısı |
 | **DDoS** | Distributed Denial of Service (dağıtık hizmet engelleme) |
+| **DCS** | Distributed Configuration Store (etcd / consul; Patroni için) |
+| **DeepSeek** | Open-source LLM (671B param MoE, ~37B active) |
+| **Direct Connect** | AWS dedicated fiber on-prem ↔ cloud |
+| **driftctl** | Terraform unmanaged resource detection |
 | **Deployment** | Deploy / dağıtım (kelime kalır) |
 | **DevSecOps** | Development + Security + Operations |
 | **DFD** | Data Flow Diagram (veri akış diyagramı) |
@@ -99,7 +114,9 @@
 | **Feature flag** | Özellik bayrağı |
 | **FIDO2** | Phishing-resistant authentication standardı |
 | **FinOps** | Finance + Operations — bulut maliyet yönetimi |
+| **Flame Graph** | Profile görselleştirme (CPU time per function) |
 | **Flux** | GitOps tool (CNCF) |
+| **Fulcio** | Sigstore short-lived cert authority |
 
 ## G
 
@@ -110,7 +127,10 @@
 | **gh-ost** | GitHub Online Schema Transmogrifier (MySQL) |
 | **gitleaks** | Secret detection in Git |
 | **GitOps** | Git'i tek doğruluk kaynağı yapan deploy felsefesi |
+| **Goldilocks** | Fairwinds VPA recommendation tool |
+| **Golden Path** | IDP'de "yeni servis 5 dk" opinionated yol |
 | **GPAI** | General Purpose AI (foundation model) |
+| **Graphite** | Stacked diff CLI tool |
 | **Graviton** | AWS ARM CPU'lar |
 | **GSF** | Green Software Foundation |
 
@@ -118,6 +138,7 @@
 
 | EN | TR / Açıklama |
 |---|---|
+| **Hallucination** | LLM'in "bilmediği şeyi kesin gibi" söylemesi |
 | **Helm** | K8s paket yöneticisi |
 | **HITL / HOTL** | Human-in-the-loop / Human-on-the-loop (insan onay/gözlem) |
 | **HPA** | Horizontal Pod Autoscaler |
@@ -153,13 +174,16 @@
 
 | EN | TR / Açıklama |
 |---|---|
+| **Karpenter** | AWS K8s node autoscaler (consolidation + spot) |
 | **KEDA** | Kubernetes Event-Driven Autoscaler |
 | **Kepler** | eBPF-tabanlı pod-level energy ölçümü |
 | **Keyless signing** | Anahtar-siz imzalama (cosign + OIDC) |
 | **KMS** | Key Management Service |
+| **Kubecost** | K8s per-namespace cost dashboard |
 | **kube-proxy** | K8s service network bileşeni |
 | **kubectl** | K8s CLI (kalır) |
 | **Kubernetes / k8s** | Kubernetes / k8s (kalır) |
+| **kubent** | K8s deprecated API detection tool |
 | **Kustomize** | K8s manifest customizer |
 | **KVKK** | Kişisel Verilerin Korunması Kanunu (TR) |
 | **Kyverno** | K8s policy engine |
@@ -169,9 +193,11 @@
 | EN | TR / Açıklama |
 |---|---|
 | **L4 / L7** | Layer 4 (transport) / Layer 7 (application) |
+| **LangChain** | LLM agent framework |
 | **Linkerd** | Lightweight service mesh |
 | **LINDDUN** | Privacy threat modeling framework |
 | **Linting** | Lint — statik kod kontrolü (kelime kalır) |
+| **Llama** | Meta'nın açık kaynak LLM ailesi |
 | **Loki** | Grafana log aggregation |
 | **LRT** | Long-running task (uzun-süreli iş) |
 
@@ -200,18 +226,23 @@
 | **NIS2** | EU Network and Information Security Directive 2 |
 | **Node** | Düğüm / node — K8s VM/server (kelime kalır) |
 | **NodePort** | K8s service tip (port-bazlı) |
+| **NodeLocal DNSCache** | Node-level DNS cache, CoreDNS yükünü azaltır |
 | **NPS** | Net Promoter Score (müşteri/dev memnuniyet ölçümü) |
 
 ## O
 
 | EN | TR / Açıklama |
 |---|---|
-| **Observability** | Gözlemlenebilirlik (3 pillar: metrics, logs, traces) |
+| **Observability** | Gözlemlenebilirlik (4 pillar: metrics, logs, traces, profiles) |
 | **OIDC** | OpenID Connect (auth standardı) |
+| **Ollama** | Local LLM serving CLI |
 | **OOM** | Out Of Memory (bellek tükendi) |
 | **OPA** | Open Policy Agent (Rego policy engine) |
+| **OpenCost** | CNCF cost allocation engine |
+| **OpenSearch** | AWS fork of Elasticsearch (Apache 2 license) |
 | **OpenTelemetry / OTel** | Observability instrumentation standardı |
 | **OpenTofu** | Terraform open-source fork |
+| **Operator** | Domain-specific K8s controller (CRD-based) |
 | **Orchestration** | Orkestrasyon |
 | **OWASP** | Open Web Application Security Project |
 
@@ -224,17 +255,23 @@
 | **PCI DSS** | Payment Card Industry Data Security Standard |
 | **PDB** | PodDisruptionBudget (K8s) |
 | **PgBouncer** | Postgres connection pooler |
+| **pgcat** | Modern Rust-based Postgres pooler |
 | **PII** | Personally Identifiable Information (kişisel veri) |
 | **PIM** | Privileged Identity Management (just-in-time access) |
 | **Playbook** | Playbook (kalır), runbook ile aynı anlamda |
+| **pluto** | K8s deprecated API detection |
 | **Postgres / PostgreSQL** | Postgres (kalır) |
 | **Postmortem** | Postmortem — incident sonrası rapor (kelime kalır) |
 | **PR** | Pull Request |
+| **Profile (continuous)** | Sürekli profiling (Pyroscope) — 4. observability pillar |
 | **Prometheus** | Metrics monitoring system |
+| **Promtail** | Loki log shipper |
 | **Provenance** | Köken bilgisi (SLSA terim) |
 | **PSP** | Pod Security Policy (deprecated, PSS yerine) |
 | **PSS** | Pod Security Standards |
+| **Pulumi** | General-purpose lang IaC alternatif |
 | **PV / PVC** | Persistent Volume / Persistent Volume Claim |
+| **Pyroscope** | Grafana continuous profiling |
 
 ## Q
 
@@ -247,10 +284,13 @@
 
 | EN | TR / Açıklama |
 |---|---|
+| **RAG** | Retrieval-Augmented Generation (LLM + dış kaynak) |
 | **RBAC** | Role-Based Access Control |
 | **Reconciliation** | Uzlaşma / sürekli senkron — ArgoCD/Flux Git ↔ cluster |
 | **Rego** | OPA'nın policy DSL'i |
+| **Rekor** | Sigstore transparent log |
 | **Renovate** | Dependency update bot |
+| **Reranker** | RAG'da retrieval kalitesini iyileştiren ikinci pass |
 | **Replication lag** | Replikasyon gecikmesi |
 | **Reproducible build** | Tekrar üretilebilir build |
 | **RFC** | Request For Comments (tasarım dokümanı) |
@@ -266,9 +306,12 @@
 |---|---|
 | **SaaS** | Software as a Service |
 | **SAML** | Security Assertion Markup Language (auth) |
+| **Sapling** | Meta'nın stacked-diff Git replacement |
 | **SAST** | Static Application Security Testing |
+| **Savings Plans (SP)** | AWS commitment-based discount |
 | **SBOM** | Software Bill of Materials (yazılım malzeme listesi) |
 | **SCA** | Software Composition Analysis (dependency security) |
+| **Sloth** | SLO YAML → Prometheus rule generator |
 | **Scaffold** | İskelet — yeni proje template'i |
 | **SCC** | Standard Contractual Clauses (EU veri ihracı) |
 | **SCI** | Software Carbon Intensity |
@@ -285,6 +328,9 @@
 | **Sidecar** | Yan-kova / sidecar container |
 | **Sigstore** | Software signing infrastructure (cosign, Rekor, Fulcio) |
 | **SIEM** | Security Information and Event Management |
+| **Spacelift** | Terraform/OpenTofu PR-driven workflow + drift |
+| **Spot Instance** | Cloud idle capacity (%70 ucuz, interrupt riski) |
+| **Stacked Diffs** | Büyük feature'ı küçük PR zincirine bölme |
 | **SLA** | Service Level Agreement (müşteriye söz) |
 | **SLI** | Service Level Indicator (ölçülen) |
 | **SLO** | Service Level Objective (iç hedef) |
@@ -306,13 +352,17 @@
 | EN | TR / Açıklama |
 |---|---|
 | **Tag** | Tag — image versiyonu (kelime kalır) |
+| **Tail Sampling** | Trace tamamlandıktan sonra sample karar (Otel) |
 | **TDE** | Transparent Data Encryption (DB) |
 | **Telemetry** | Telemetri |
+| **Tempo** | Grafana distributed tracing backend |
 | **Terraform** | Terraform (kalır) |
 | **Tetragon** | Cilium runtime security |
+| **Thanos** | Prometheus long-term storage |
 | **Threat model** | Tehdit modeli |
 | **TLS** | Transport Layer Security |
 | **Toil** | Toil — tekrarlayan, manuel, value-yaratmayan iş (kelime kalır) |
+| **Tokenization** | PAN → token (PCI scope reduction) |
 | **Trivy** | Aqua Security scanner |
 | **Trunk-Based Development / TBD** | Trunk-based — tek ana branch geliştirme |
 
@@ -327,14 +377,17 @@
 
 | EN | TR / Açıklama |
 |---|---|
+| **vCluster** | Virtual K8s cluster (multi-tenant API isolation) |
 | **Validating** | Validating admission — kabul kontrolü (red/onay) |
 | **Vault** | HashiCorp secret manager |
 | **Velocity** | Velocity / hız |
 | **VERBİS** | Veri Sorumluları Sicil Bilgi Sistemi (KVK) |
 | **Versioning** | Versiyonlama |
 | **VirtualService** | Istio L7 routing CRD |
+| **vLLM** | Production-grade LLM serving (multi-user, GPU) |
 | **VPA** | Vertical Pod Autoscaler |
 | **VPC** | Virtual Private Cloud |
+| **VPC Endpoint** | NAT bypass for AWS services |
 | **VPN** | Virtual Private Network |
 | **Vulnerability** | Açık / zayıflık (vulnerability kalır) |
 
@@ -345,8 +398,10 @@
 | **WAF** | Web Application Firewall |
 | **WAL** | Write-Ahead Log (Postgres) |
 | **WAL-G** | WAL archiving tool |
+| **WASM** | WebAssembly (server-side runtime alternatif) |
 | **Watcher** | İzleyici — controller pattern |
 | **Webhook** | Webhook (kalır) |
+| **Wolfi** | Chainguard'ın mini distro'su |
 | **Workload** | İş yükü / workload |
 
 ## X

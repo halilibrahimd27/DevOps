@@ -15,7 +15,7 @@ Maliyeti finans değil, mühendislik problemi olarak ele alır.
 | [`Spot-Instance-Strategy.md`](Spot-Instance-Strategy.md) | Spot interruption handling, Karpenter ile mixed pool |
 | [`Reserved-and-Savings-Plans.md`](Reserved-and-Savings-Plans.md) | RI vs SP, commit stratejileri, expiration planlama |
 | [`Storage-Cost-Optimization.md`](Storage-Cost-Optimization.md) | S3 Intelligent-Tiering, EBS gp2→gp3, snapshot lifecycle |
-| _`Egress-Cost-Reduction.md`_ *(yakında)* | "Hidden killer" — VPC endpoint, Cloudflare R2, region locality |
+| [`Egress-Cost-Reduction.md`](Egress-Cost-Reduction.md) | "Hidden killer" — VPC endpoint, Cloudflare R2, region locality |
 | [`Kubecost-Setup.md`](Kubecost-Setup.md) | Kubernetes maliyet attribution: namespace/workload/team |
 | [`PR-Cost-Diff.md`](PR-Cost-Diff.md) | Infracost ile pre-merge maliyet review |
 

@@ -1,22 +1,31 @@
 <div align="center">
 
-# 🛠️ DevOps Notebook
+# 🛠️ DevOps Notebook — Türkçe DevSecOps Rehberi
 
-### *Production'da işleyen modern DevOps pratiklerinin Türkçe başucu kitabı*
+### *Production'da işleyen modern DevOps + DevSecOps + SRE pratiklerinin Türkçe başucu kitabı*
 
-CI/CD · Kubernetes · IaC · GitOps · SRE · **DevSecOps** · FinOps · Platform · LLMOps · Compliance · Soft Skills
+**Kubernetes · CI/CD · GitOps · DevSecOps · SRE · IaC · Platform Engineering · FinOps · Observability · LLMOps · Compliance**
 
-[![GitHub Stars](https://img.shields.io/github/stars/halilibrahimd27/DevOps?style=flat-square&color=yellow&logo=github)](https://github.com/halilibrahimd27/DevOps/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/halilibrahimd27/DevOps?style=flat-square&color=blue&logo=github)](https://github.com/halilibrahimd27/DevOps/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/halilibrahimd27/DevOps?style=for-the-badge&color=yellow&logo=github)](https://github.com/halilibrahimd27/DevOps/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/halilibrahimd27/DevOps?style=for-the-badge&color=blue&logo=github)](https://github.com/halilibrahimd27/DevOps/network/members)
+[![GitHub Watchers](https://img.shields.io/github/watchers/halilibrahimd27/DevOps?style=for-the-badge&color=green&logo=github)](https://github.com/halilibrahimd27/DevOps/watchers)
+[![Last Commit](https://img.shields.io/github/last-commit/halilibrahimd27/DevOps?style=for-the-badge&color=purple)](https://github.com/halilibrahimd27/DevOps/commits/main)
+
 [![Topics](https://img.shields.io/badge/topics-21-blueviolet?style=flat-square)](#-içindekiler)
+[![Deep Dives](https://img.shields.io/badge/deep--dives-125%2B-success?style=flat-square)](#-içindekiler)
 [![Cheatsheets](https://img.shields.io/badge/cheatsheets-9-success?style=flat-square)](16-Cheatsheets/)
 [![Templates](https://img.shields.io/badge/copy--paste%20templates-25%2B-orange?style=flat-square)](17-Templates/)
+[![Lines](https://img.shields.io/badge/markdown-64K%2B%20lines-informational?style=flat-square)](#-içindekiler)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Awesome](https://awesome.re/badge-flat2.svg)](#)
 
-**Türkçe** · *2026 itibarıyla güncel* · *placeholder'lı, copy-paste güvenli*
+**🇹🇷 Türkçe** · *2026 itibarıyla güncel* · *placeholder'lı, production-safe*
 
-> **⭐ Beğendiysen yıldız bırak, kaybetme.** Repo'nun büyümesi senin yıldızınla başlar.
+### **🚀 Türkiye'nin en kapsamlı Türkçe DevSecOps kaynağı**
+
+> **⭐ Yıldız bırakırsan repo daha çok kişiye ulaşır.** Repo'nun büyümesi senin yıldızınla başlar.
+
+[**📚 İçindekiler**](#-içindekiler) · [**🚀 Hızlı Başlangıç**](#-hızlı-başlangıç) · [**🤝 Katkı**](#-katkı) · [**📖 Sözlük**](Glossary.md) · [**📣 Discussions**](https://github.com/halilibrahimd27/DevOps/discussions)
 
 </div>
 
@@ -33,6 +42,33 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · **DevSecOps** · FinOps · Platfo
 
 ---
 
+## 🎯 Bu Repo Sana Ne Verir?
+
+- ✅ **125+ deep-dive doküman** — her biri 250-600 satır, production-tested
+- ✅ **64,000+ satır Türkçe içerik** — DevOps + DevSecOps + SRE + Platform
+- ✅ **21 ana bölüm** — kültür, Git, CI/CD, IaC, Containers, Kubernetes, GitOps, Observability, Security, Networking, Databases, SRE, FinOps, Platform Engineering, Sustainability, AI/LLMOps, Cheatsheets, Templates, Career, Compliance, Soft Skills
+- ✅ **Anti-pattern tablosu** — her dokümanda "yapma" listesi
+- ✅ **Production checklist** — "yarın işine başlayabilirsin"
+- ✅ **9 cheatsheet** + **25+ copy-paste template** (Kubernetes, GitHub Actions, Dockerfile, Kyverno, runbook)
+- ✅ **Compliance**: KVKK, GDPR, ISO 27001, SOC 2, EU AI Act, NIS2, PCI DSS — mühendislik açısından
+- ✅ **Soft skills**: oncall sustainability, stakeholder management, mentoring, "hayır" demek, RFC yazımı
+- ✅ **TR-spesifik**: Iyzico, BDDK, KVK Kurumu, Wazuh entegrasyonu, TR pazarı maaş context'i
+
+### 🆚 Diğer Türkçe DevOps Kaynakları ile
+
+| Boyut | Bu Repo | Diğerleri (genelde) |
+|---|---|---|
+| **Derinlik** | 250-600 satır deep-dive | Yüzeysel liste (50-100 satır) |
+| **Güncellik** | 2026 (CloudNativePG, Karpenter, OpenTofu, Cilium ambient) | 2020-2022 (eski tool'lar) |
+| **DevSecOps kapsamı** | 8 derin doküman (security amiral gemisi) | Genelde 1-2 sayfa |
+| **Anti-pattern + Checklist** | Her dokümanda zorunlu | Yok |
+| **Compliance (TR/EU)** | KVKK + GDPR + SOC2 + ISO + NIS2 + EU AI Act | Eksik |
+| **Soft skills** | 8 doküman (oncall, stakeholder, mentoring) | Yok |
+| **Placeholder güvenli** | Gerçek IP/credential yok | Bazen var (kopyala-yapıştır risk) |
+| **Glossary** | TR↔EN tam terim sözlüğü | Yok |
+
+---
+
 ## 🚀 Hızlı Başlangıç
 
 | Sen kim hissediyorsun? | Buradan başla |
@@ -43,11 +79,18 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · **DevSecOps** · FinOps · Platfo
 | 📦 **Yeni servis konteynerleştireceğim** | [`04-Containers/Dockerfile-Best-Practices.md`](04-Containers/Dockerfile-Best-Practices.md) → [`17-Templates/dockerfiles/`](17-Templates/dockerfiles/) |
 | 🚀 **CI/CD pipeline yazacağım** | [`02-CI-CD/Pipeline-Patterns.md`](02-CI-CD/Pipeline-Patterns.md) → [`17-Templates/github-actions/`](17-Templates/github-actions/) |
 | 🛡️ **Güvenlik review'ı geliyor** | [`08-Security/DevSecOps-Pipeline.md`](08-Security/DevSecOps-Pipeline.md) → [`08-Security/Kubernetes-Hardening.md`](08-Security/Kubernetes-Hardening.md) |
-| 💰 **Cloud faturası patladı** | [`12-FinOps/Cloud-Cost-Allocation.md`](12-FinOps/Cloud-Cost-Allocation.md) |
+| 💰 **Cloud faturası patladı** | [`12-FinOps/Cloud-Cost-Allocation.md`](12-FinOps/Cloud-Cost-Allocation.md) → [`12-FinOps/Right-Sizing.md`](12-FinOps/Right-Sizing.md) |
 | 🎯 **Mülakata hazırlanıyorum** | [`18-Career/`](18-Career/) |
-| ⚖️ **KVKK/GDPR audit geliyor** | [`19-Compliance/KVKK-Practical.md`](19-Compliance/KVKK-Practical.md) → [`19-Compliance/`](19-Compliance/) |
+| ⚖️ **KVKK/GDPR/SOC2 audit geliyor** | [`19-Compliance/KVKK-Practical.md`](19-Compliance/KVKK-Practical.md) → [`19-Compliance/`](19-Compliance/) |
 | 🔥 **On-call'da burnout oluyorum** | [`20-Soft-Skills/Oncall-Sustainability.md`](20-Soft-Skills/Oncall-Sustainability.md) |
 | 📖 **Türkçe terim aradım** | [`Glossary.md`](Glossary.md) |
+| 🤖 **AI ile DevOps yapmak istiyorum** | [`15-AI-LLMOps/AI-Augmented-Operations.md`](15-AI-LLMOps/AI-Augmented-Operations.md) |
+| 📈 **K8s upgrade'i yapacağım** | [`05-Kubernetes/Upgrade-Strategy.md`](05-Kubernetes/Upgrade-Strategy.md) |
+| 🌳 **GitOps adopt ediyorum** | [`06-GitOps/ArgoCD-Setup.md`](06-GitOps/ArgoCD-Setup.md) → [`06-GitOps/Flux-vs-ArgoCD.md`](06-GitOps/Flux-vs-ArgoCD.md) |
+| 🔍 **Postgres prod'a alıyorum** | [`10-Databases-Production/Postgres-Production-Guide.md`](10-Databases-Production/Postgres-Production-Guide.md) |
+| 👀 **Observability stack kuruyorum** | [`07-Observability/OpenTelemetry-Adoption.md`](07-Observability/OpenTelemetry-Adoption.md) |
+| 🏗️ **Internal Developer Platform** | [`13-Platform-Engineering/Internal-Developer-Platform.md`](13-Platform-Engineering/Internal-Developer-Platform.md) |
+| 🌱 **Yeşil yazılım yapacağım** | [`14-Sustainability/Green-Software-Principles.md`](14-Sustainability/Green-Software-Principles.md) |
 
 ---
 
@@ -100,6 +143,7 @@ CI/CD · Kubernetes · IaC · GitOps · SRE · **DevSecOps** · FinOps · Platfo
 | [`20-Soft-Skills/`](20-Soft-Skills/) | On-call sürdürülebilirliği, stakeholder yönetimi, security ekibi ile çalışma, "hayır" demek |
 | [`Glossary.md`](Glossary.md) | Türkçe ↔ İngilizce DevOps terim sözlüğü |
 | [`CLAUDE.md`](CLAUDE.md) | Yazım stili & editorial rehber (katkı yapanlar için) |
+| [`MARKETING.md`](MARKETING.md) | Repo growth playbook (organic stars + topluluk) |
 
 ### 🧰 Operasyonel Notlar
 | Klasör | Konu |
@@ -211,3 +255,19 @@ PR'lar memnuniyetle. [`CONTRIBUTING.md`](CONTRIBUTING.md) okuyun.
 [![Star History Chart](https://api.star-history.com/svg?repos=halilibrahimd27/DevOps&type=Date)](https://star-history.com/#halilibrahimd27/DevOps&Date)
 
 </div>
+
+---
+
+<details>
+<summary><strong>🔍 Keywords (Google + GitHub Search için)</strong></summary>
+
+Türkçe DevOps rehberi · Türkçe DevSecOps · Kubernetes Türkçe · DevOps mülakat · SRE rehberi · GitOps Türkçe · CI/CD pipeline Türkçe · Docker best practices Türkçe · Helm vs Kustomize · ArgoCD setup · Flux vs ArgoCD · Postgres production · CloudNativePG · Patroni HA · Prometheus best practices · OpenTelemetry · Grafana Loki Tempo · SLO error budget · incident response · postmortem template · chaos engineering · KVKK uyumu · GDPR mühendislik · ISO 27001 · SOC 2 Type II · EU AI Act · NIS2 directive · PCI DSS v4 · Backstage IDP · Internal Developer Platform · platform engineering · golden path · service catalog · FinOps Türkçe · Kubecost · spot instance · savings plan · right-sizing · sustainability · green software · carbon-aware computing · LLMOps · RAG architecture · prompt engineering · vLLM · self-hosted LLM · Cilium eBPF · Gateway API · service mesh · zero trust networking · cosign image signing · SLSA SBOM · Kyverno OPA · threat modeling · STRIDE LINDDUN · Falco runtime security · Trivy vulnerability scanning · Vault secrets management · External Secrets Operator · trunk-based development · conventional commits · stacked diffs · code review · oncall sustainability · stakeholder management · mentoring junior · DevOps cheatsheet · K8s production checklist · DevOps interview Turkish · SRE interview · system design Türkçe.
+
+</details>
+
+<div align="center">
+
+**🇹🇷 Made with discipline in Türkiye · 2026**
+
+</div>
+
