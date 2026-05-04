@@ -143,7 +143,6 @@
 | [`20-Soft-Skills/`](20-Soft-Skills/) | On-call sürdürülebilirliği, stakeholder yönetimi, security ekibi ile çalışma, "hayır" demek |
 | [`Glossary.md`](Glossary.md) | Türkçe ↔ İngilizce DevOps terim sözlüğü |
 | [`CLAUDE.md`](CLAUDE.md) | Yazım stili & editorial rehber (katkı yapanlar için) |
-| [`MARKETING.md`](MARKETING.md) | Repo growth playbook (organic stars + topluluk) |
 
 ### 🧰 Operasyonel Notlar
 | Klasör | Konu |
