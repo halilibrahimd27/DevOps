@@ -14,7 +14,7 @@ Cloud kullanımı = Scope 2/3 emisyon.
 | [`Carbon-Aware-Computing.md`](Carbon-Aware-Computing.md) | "Düşük-karbon saatlerde batch çalıştır" pattern'i |
 | [`Measuring-Software-Carbon.md`](Measuring-Software-Carbon.md) | SCI formula, Cloud Carbon Footprint, Kepler |
 | [`Region-Selection.md`](Region-Selection.md) | Yenilenebilir enerji yoğun region'lar (cloud-spesifik) |
-| _`Efficiency-Practices.md`_ *(yakında)* | ARM/Graviton, idle cleanup, caching, compression |
+| [`Efficiency-Practices.md`](Efficiency-Practices.md) | ARM/Graviton, idle cleanup, caching, compression |
 
 ## Green Software Foundation 8 prensibi
 

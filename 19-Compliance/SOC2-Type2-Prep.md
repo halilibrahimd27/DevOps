@@ -292,7 +292,7 @@ evidence/
 - [`KVKK-Practical.md`](KVKK-Practical.md)
 - [`GDPR-Engineering.md`](GDPR-Engineering.md)
 - [`ISO-27001-Controls.md`](ISO-27001-Controls.md)
-- _`Audit-Evidence-Automation.md`_ *(yakında)*
+- [`Audit-Evidence-Automation.md`](Audit-Evidence-Automation.md)
 - [`08-Security/Kubernetes-Hardening.md`](../08-Security/Kubernetes-Hardening.md)
 - [`08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md)
 - [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md)

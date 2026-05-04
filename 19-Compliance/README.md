@@ -18,8 +18,8 @@ nasıl **continuous compliance**'a dönüştüğünü anlatır.
 | [`SOC2-Type2-Prep.md`](SOC2-Type2-Prep.md) | Trust Service Criteria, observation period, evidence collection |
 | [`EU-AI-Act.md`](EU-AI-Act.md) | AI sistemi sınıfları, high-risk uyumluluk yükümlülükleri |
 | [`NIS2-Directive.md`](NIS2-Directive.md) | EU NIS2 — kritik altyapı güvenlik gereklilikleri |
-| _`PCI-DSS-4.md`_ *(yakında)* | Kart verisi işleyen sistemler için PCI DSS v4 değişiklikleri |
-| _`Audit-Evidence-Automation.md`_ *(yakında)* | "Audit gününe hazırlık" değil, otomatik kanıt toplama |
+| [`PCI-DSS-4.md`](PCI-DSS-4.md) | Kart verisi işleyen sistemler için PCI DSS v4 değişiklikleri |
+| [`Audit-Evidence-Automation.md`](Audit-Evidence-Automation.md) | "Audit gününe hazırlık" değil, otomatik kanıt toplama |
 
 ## Felsefe
 

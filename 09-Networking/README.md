@@ -15,8 +15,8 @@ Ingress'ten Gateway API'ye geçiş.
 | [`Cilium-eBPF-Intro.md`](Cilium-eBPF-Intro.md) | eBPF dünyasına 30 dk'da giriş, kube-proxy replacement |
 | [`Ingress-NGINX-Patterns.md`](Ingress-NGINX-Patterns.md) | TLS termination, rate-limit, canary, dış-dünya integrations |
 | [`Gateway-API-Migration.md`](Gateway-API-Migration.md) | Ingress → Gateway API: route splitting, TCP/UDP, HTTPRoute, mesh integration |
-| _`DNS-Strategies.md`_ *(yakında)* | external-dns, split-horizon, NodeLocal DNSCache, CoreDNS tuning |
-| _`Network-Troubleshooting.md`_ *(yakında)* | tcpdump, ss, dig, conntrack: connection sorunları flowchart'ı |
+| [`DNS-Strategies.md`](DNS-Strategies.md) | external-dns, split-horizon, NodeLocal DNSCache, CoreDNS tuning |
+| [`Network-Troubleshooting.md`](Network-Troubleshooting.md) | tcpdump, ss, dig, conntrack: connection sorunları flowchart'ı |
 
 ## Service mesh karşılaştırma (özet)
 
