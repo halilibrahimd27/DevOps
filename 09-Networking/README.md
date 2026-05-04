@@ -12,9 +12,9 @@ Ingress'ten Gateway API'ye geçiş.
 | Dosya | Konu |
 |---|---|
 | [`Service-Mesh-Comparison.md`](Service-Mesh-Comparison.md) | Istio vs Linkerd vs Cilium Service Mesh — niye sidecar-less yükselişte |
-| _`Cilium-eBPF-Intro.md`_ *(yakında)* | eBPF dünyasına 30 dk'da giriş, kube-proxy replacement |
+| [`Cilium-eBPF-Intro.md`](Cilium-eBPF-Intro.md) | eBPF dünyasına 30 dk'da giriş, kube-proxy replacement |
 | _`Ingress-NGINX-Patterns.md`_ *(yakında)* | TLS termination, rate-limit, canary, dış-dünya integrations |
-| _`Gateway-API-Migration.md`_ *(yakında)* | Ingress → Gateway API: route splitting, TCP/UDP, HTTPRoute, mesh integration |
+| [`Gateway-API-Migration.md`](Gateway-API-Migration.md) | Ingress → Gateway API: route splitting, TCP/UDP, HTTPRoute, mesh integration |
 | _`DNS-Strategies.md`_ *(yakında)* | external-dns, split-horizon, NodeLocal DNSCache, CoreDNS tuning |
 | _`Network-Troubleshooting.md`_ *(yakında)* | tcpdump, ss, dig, conntrack: connection sorunları flowchart'ı |
 

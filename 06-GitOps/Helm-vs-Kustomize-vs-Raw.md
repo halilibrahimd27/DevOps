@@ -487,7 +487,7 @@ patches:
 - **CNCF App Delivery TAG**
 - [`ArgoCD-Setup.md`](ArgoCD-Setup.md)
 - _`App-of-Apps-Pattern.md`_ *(yakında)*
-- _`ApplicationSet-Patterns.md`_ *(yakında)*
+- [`ApplicationSet-Patterns.md`](ApplicationSet-Patterns.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md) — secret entegrasyonu
 
 ---

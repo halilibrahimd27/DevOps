@@ -357,8 +357,8 @@ spec:
 - **SMI (Service Mesh Interface)** — vendor-neutral spec
 - **Buoyant Cloud** — Linkerd commercial
 - **Solo.io / Tetrate** — Istio commercial
-- _`Cilium-eBPF-Intro.md`_ *(yakında)*
-- _`Gateway-API-Migration.md`_ *(yakında)*
+- [`Cilium-eBPF-Intro.md`](Cilium-eBPF-Intro.md)
+- [`Gateway-API-Migration.md`](Gateway-API-Migration.md)
 - [`08-Security/Zero-Trust-Networking.md`](../08-Security/Zero-Trust-Networking.md)
 
 ---
