@@ -10,7 +10,7 @@ disiplinleri ve code review pratikleri.
 | Dosya | Konu |
 |---|---|
 | [`Trunk-Based-Development.md`](Trunk-Based-Development.md) | Niye Git Flow değil; trunk-based + feature flag akışı |
-| _`Conventional-Commits.md`_ *(yakında)* | `feat:`, `fix:`, `chore:` kanonik kullanım + otomatik changelog |
+| [`Conventional-Commits.md`](Conventional-Commits.md) | `feat:`, `fix:`, `chore:` kanonik kullanım + otomatik changelog |
 | [`Code-Review-Checklist.md`](Code-Review-Checklist.md) | İyi review nasıl yapılır; "nit/blocker/question" kategori sistemi |
 | _`Stacked-Diffs.md`_ *(yakında)* | Graphite/sapling akışı: küçük PR stack'leri |
 | _`PR-Templates-and-Automation.md`_ *(yakında)* | PR template, otomatik label, semantic-pr-action |

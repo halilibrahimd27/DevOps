@@ -13,7 +13,7 @@ nasıl **continuous compliance**'a dönüştüğünü anlatır.
 | Dosya | Konu |
 |---|---|
 | [`KVKK-Practical.md`](KVKK-Practical.md) | KVKK için mühendislik kontrolleri (data inventory, DPIA, incident notification) |
-| _`GDPR-Engineering.md`_ *(yakında)* | GDPR ile mühendislik temasının olduğu yerler (right-to-erasure, DPA) |
+| [`GDPR-Engineering.md`](GDPR-Engineering.md) | GDPR ile mühendislik temasının olduğu yerler (right-to-erasure, DPA) |
 | _`ISO-27001-Controls.md`_ *(yakında)* | Annex A kontrolleri ve hangi tool/policy karşılar |
 | _`SOC2-Type2-Prep.md`_ *(yakında)* | Trust Service Criteria, observation period, evidence collection |
 | [`EU-AI-Act.md`](EU-AI-Act.md) | AI sistemi sınıfları, high-risk uyumluluk yükümlülükleri |

@@ -524,7 +524,7 @@ ArgoCD'nin kendi başına secret çözümü yok. Üç ana yaklaşım:
 - **GitOps Working Group (CNCF)**
 - _`App-of-Apps-Pattern.md`_ *(yakında)*
 - _`ApplicationSet-Patterns.md`_ *(yakında)*
-- _`Helm-vs-Kustomize-vs-Raw.md`_ *(yakında)*
+- [`Helm-vs-Kustomize-vs-Raw.md`](Helm-vs-Kustomize-vs-Raw.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md)
 - [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../08-Security/Policy-as-Code-OPA-Kyverno.md) — admission ile uyum
 

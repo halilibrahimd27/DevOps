@@ -315,7 +315,7 @@ Bkz [`02-CI-CD/Pipeline-Patterns.md`](../02-CI-CD/Pipeline-Patterns.md).
 - **Accelerate** (Forsgren, Humble, Kim) — DORA metrikleri kitap
 - **State of DevOps Report** — yıllık DORA
 - **Feature Toggles** — Pete Hodgson (Martin Fowler blog)
-- _`Conventional-Commits.md`_ *(yakında)*
+- [`Conventional-Commits.md`](Conventional-Commits.md)
 - [`02-CI-CD/Pipeline-Patterns.md`](../02-CI-CD/Pipeline-Patterns.md)
 - _`02-CI-CD/Pipeline-Performance.md`_ *(yakında)*
 

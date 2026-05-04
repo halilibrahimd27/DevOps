@@ -245,7 +245,7 @@ Sonraki update: 16:00
 
 ## ⚖️ "Hayır" Demek
 
-Bkz _`Saying-No.md`_ *(yakında)* — soft skill'in özü.
+Bkz [`Saying-No.md`](Saying-No.md) — soft skill'in özü.
 
 ### Kısa formula
 ```
@@ -314,7 +314,7 @@ Not-Worth-It: "Maliyet/fayda yatmıyor — şu sayılar..."
 - **Staff Engineer** — Will Larson
 - **Writing for Developers** — Piotr Sarna
 - [`Working-with-Security-Team.md`](Working-with-Security-Team.md)
-- _`Saying-No.md`_ *(yakında)*
+- [`Saying-No.md`](Saying-No.md)
 - _`Documentation-as-Communication.md`_ *(yakında)*
 
 ---

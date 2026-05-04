@@ -377,7 +377,7 @@ Code review = asenkron pair programming. Bazen real-time daha iyi:
 - **What to look for in a code review** — Trisha Gee
 - **The Pull Request Review Process** — Jessica Joy Kerr
 - [`Trunk-Based-Development.md`](Trunk-Based-Development.md)
-- _`Conventional-Commits.md`_ *(yakında)*
+- [`Conventional-Commits.md`](Conventional-Commits.md)
 - _`PR-Templates-and-Automation.md`_ *(yakında)*
 
 ---

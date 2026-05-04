@@ -506,7 +506,7 @@ pg_repack -d app -t large_table
 - **pgtune** — pgtune.leopard.in.ua
 - **WAL-G** — github.com/wal-g/wal-g
 - **pgBackRest** — pgbackrest.org
-- _`Backup-Restore-Patterns.md`_ *(yakında)*
+- [`Backup-Restore-Patterns.md`](Backup-Restore-Patterns.md)
 - _`HA-Patroni-Stolon.md`_ *(yakında)*
 - _`Zero-Downtime-Migrations.md`_ *(yakında)*
 - _`Connection-Pooling.md`_ *(yakında)*

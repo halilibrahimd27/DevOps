@@ -391,7 +391,7 @@ KVKK Madde 9: yurt dışı aktarım için **yeterli korumaya sahip ülke** veya
 - **Veri İhlal Bildirim Formu** — kvkk.gov.tr/SitePages/veri-ihlali-bildirimi
 - **GDPR & KVKK Karşılaştırma** — KVK Kurumu Rehber
 - **LINDDUN** — linddun.org (privacy threat modeling)
-- _`GDPR-Engineering.md`_ *(yakında)*
+- [`GDPR-Engineering.md`](GDPR-Engineering.md)
 - [`08-Security/Threat-Modeling.md`](../08-Security/Threat-Modeling.md)
 - [`08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md)
 - [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md)

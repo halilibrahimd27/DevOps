@@ -11,7 +11,7 @@ geçerli değildir. Backup, HA, migration ayrı bir disiplin.
 | Dosya | Konu |
 |---|---|
 | [`Postgres-Production-Guide.md`](Postgres-Production-Guide.md) | `postgresql.conf` tuning, connection pooling (PgBouncer), monitoring |
-| _`Backup-Restore-Patterns.md`_ *(yakında)* | Logical (pg_dump) vs Physical (pgBackRest, WAL-G), PITR |
+| [`Backup-Restore-Patterns.md`](Backup-Restore-Patterns.md) | Logical (pg_dump) vs Physical (pgBackRest, WAL-G), PITR |
 | _`HA-Patroni-Stolon.md`_ *(yakında)* | Auto-failover, sentinel, split-brain çözümü |
 | _`Zero-Downtime-Migrations.md`_ *(yakında)* | Expand/contract pattern, online schema change, gh-ost/pt-osc |
 | _`Operator-Patterns.md`_ *(yakında)* | CloudNativePG, Zalando postgres-operator, Crunchy karşılaştırma |
