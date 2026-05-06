@@ -287,49 +287,37 @@
 }
 
 /* ============================================================
- * Top nav — yatay scroll (24+ tab var, taşanlar görünmüyor sorununu fix)
+ * Top nav — yatay scroll (minimal fix)
+ * Material default tabs row'unu OLDUĞU GİBİ bırak, sadece taşanlar
+ * için scroll aç. mask/inline-flex/contain gibi agresif override yok.
  * ============================================================ */
-.md-tabs {
+.md-tabs__list {
+  white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
 }
 
-.md-tabs__list {
-  white-space: nowrap;
-  display: inline-flex;
-  flex-wrap: nowrap;
-  contain: inline-size;
+/* Webkit (Chrome/Safari/Edge) scrollbar — ince mor çubuk */
+.md-tabs__list::-webkit-scrollbar {
+  height: 4px;
 }
 
-.md-tabs__item {
-  flex-shrink: 0;
-}
-
-/* Scroll bar — açık temada hafif, koyuda biraz daha görünür */
-.md-tabs::-webkit-scrollbar {
-  height: 6px;
-}
-
-.md-tabs::-webkit-scrollbar-track {
+.md-tabs__list::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.md-tabs::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 3px;
+.md-tabs__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
 }
 
-.md-tabs::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.45);
-}
-
-/* Sağ kenarda fade efekti — "buradan devam edebilirsin" ipucu */
-.md-tabs {
-  position: relative;
-  mask-image: linear-gradient(to right, black 0%, black calc(100% - 32px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, black calc(100% - 32px), transparent 100%);
+.md-tabs__list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .md-tabs__link {
@@ -340,13 +328,6 @@
 
 .md-tabs__link--active {
   font-weight: 700;
-}
-
-/* Klavye + mouse wheel ile scroll: shift+scroll dik tabletlerde de işe yarasın */
-@media (hover: hover) {
-  .md-tabs:hover::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4);
-  }
 }
 
 /* ============================================================
