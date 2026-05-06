@@ -100,10 +100,10 @@ for dir in "${!TITLES[@]}"; do
   fi
 done
 
-# 7) Top-level nav sırası (.pages root)
+# 7) Top-level nav sırası (.pages root) — index.md "🏠 Ana Sayfa" olarak override
 cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
-  - index.md
+  - "🏠 Ana Sayfa": index.md
   - RoadMap
   - 00-Culture
   - 01-Git-Workflow
@@ -136,8 +136,27 @@ nav:
 PAGES_EOF
 echo "  + .pages (root nav)"
 
-# 8) Dosya başlıklarını da kısalt (Glossary uzunsa vb.)
-# Glossary.md başlığı zaten "Glossary — DevOps ↔ TR Terim Sözlüğü" tarzında. .pages'te override ettik.
+# 8) RoadMap iç dosya başlıkları (junior'a hitap için yeniden sıralı)
+if [ -d "$STAGE/RoadMap" ]; then
+  cat > "$STAGE/RoadMap/.pages" <<'EOF'
+title: 🗺️ Yol Haritası
+nav:
+  - README.md
+  - "Modern DevOps 2026 — Felsefe + 2026 Stack": Modern-DevOps-2026.md
+  - "GitOps A→Z (Mid+)": RoadMap.md
+  - "Advanced — AWS/EKS Implementation (Senior)": Advanced RoadMap.md
+  - "Planning Şablonu (Tech Lead)": Planning.md
+EOF
+  echo "  + RoadMap/.pages (yeniden sıralı, Modern-DevOps-2026 başta)"
+fi
+
+# 9) System klasörü uzun dosya isimleri kısaltma
+if [ -d "$STAGE/System" ]; then
+  cat > "$STAGE/System/.pages" <<'EOF'
+title: 🛠️ System Setup
+EOF
+  echo "  + System/.pages"
+fi
 
 # Sayım
 MD_COUNT=$(find "$STAGE" -name "*.md" | wc -l)
