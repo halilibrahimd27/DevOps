@@ -1,0 +1,159 @@
+name: Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.yml"
+      - "**/*.yaml"
+      - ".github/workflows/quality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.yml"
+      - "**/*.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # 1) Markdown lint — stil tutarlılığı (CLAUDE.md kurallarına yakın)
+  markdownlint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: |
+            **/*.md
+            !node_modules
+            !.github/PULL_REQUEST_TEMPLATE.md
+          config: .markdownlint.jsonc
+
+  # 2) Broken link check — iç ve dış linkler
+  link-check:
+    name: Broken link check (lychee)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --cache
+            --max-cache-age 14d
+            --no-progress
+            --max-concurrency 6
+            --exclude-mail
+            --exclude-path .git
+            --exclude-path node_modules
+            --config .lychee.toml
+            './**/*.md'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 3) Placeholder/credential leak guard — CLAUDE.md "kırmızı çizgi"
+  placeholder-leak:
+    name: Placeholder leak guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for real IPs and credentials
+        run: |
+          set -euo pipefail
+          FAIL=0
+
+          echo "🔍 AWS access key pattern (AKIA...)..."
+          if grep -rEn 'AKIA[0-9A-Z]{16}' \
+              --include="*.md" --include="*.yaml" --include="*.yml" \
+              --exclude-dir=.git --exclude-dir=node_modules .; then
+            echo "::error::AWS access key pattern detected. Use placeholder."
+            FAIL=1
+          fi
+
+          echo "🔍 Google API key pattern (AIza...)..."
+          if grep -rEn 'AIza[0-9A-Za-z_-]{35}' \
+              --include="*.md" --include="*.yaml" --include="*.yml" \
+              --exclude-dir=.git .; then
+            echo "::error::Google API key pattern detected."
+            FAIL=1
+          fi
+
+          echo "🔍 Slack token pattern (xox...)..."
+          if grep -rEn 'xox[baprs]-[0-9a-zA-Z-]{10,}' \
+              --include="*.md" --include="*.yaml" --include="*.yml" \
+              --exclude-dir=.git .; then
+            echo "::error::Slack token pattern detected."
+            FAIL=1
+          fi
+
+          echo "🔍 Private key headers..."
+          if grep -rEn -- '-----BEGIN (RSA |EC |OPENSSH |DSA |)PRIVATE KEY-----' \
+              --include="*.md" --include="*.yaml" --include="*.yml" \
+              --exclude-dir=.git .; then
+            echo "::error::Private key block detected."
+            FAIL=1
+          fi
+
+          echo "🔍 Generic high-entropy hardcoded credential ('password'/'secret'/'token'='...')..."
+          if grep -rEn -i '(password|passwd|secret|api[_-]?key|access[_-]?token|bearer)\s*[:=]\s*["'"'"'][A-Za-z0-9+/=_-]{20,}["'"'"']' \
+              --include="*.md" --include="*.yaml" --include="*.yml" \
+              --exclude-dir=.git . \
+              | grep -viE '(<[A-Z_]+>|YOUR_|REPLACE_|REDACTED|placeholder|example|change[-_]?me|xxxxx+|\\$\{[A-Z_]+\}|valuefrom|secretkeyref|secretref|fromsecret)' \
+              || true | head -1 | grep -q .; then
+            echo "::warning::Possible hardcoded credential. Manual review required."
+          fi
+
+          echo "🔍 Public IPv4 (excluding RFC1918, loopback, examples)..."
+          # 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 127.0.0.0/8, 169.254.0.0/16,
+          # 0.0.0.0, 255.255.255.255, 192.0.2.0/24 (TEST-NET-1), 198.51.100.0/24, 203.0.113.0/24
+          if grep -rhEn -- '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' \
+              --include="*.md" \
+              --exclude-dir=.git . \
+              | grep -vE '\b(10|127|169\.254|172\.(1[6-9]|2[0-9]|3[01])|192\.168|192\.0\.2|198\.51\.100|203\.0\.113|0|255)\.' \
+              | grep -vE '<[A-Z_]+>|<TARGET_IP>|<IP>|x\.x\.x\.x|0\.0\.0\.0|255\.255\.255\.255' \
+              | grep -vE 'version|v[0-9]+\.[0-9]+\.[0-9]+' \
+              | head -5 ; then
+            echo "::warning::Possible public IPv4 leaked. Use <TARGET_IP> placeholder if real."
+          fi
+
+          if [ "$FAIL" -ne 0 ]; then
+            exit 1
+          fi
+          echo "✅ Placeholder leak guard passed"
+
+  # 4) Doküman istatistikleri (PR yorumu için bilgi)
+  stats:
+    name: Repo stats
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute stats
+        run: |
+          echo "📊 Markdown istatistikleri" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          MD_COUNT=$(find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" | wc -l)
+          MD_LINES=$(find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" -exec cat {} + | wc -l)
+          README_COUNT=$(find . -name "README.md" -not -path "./.git/*" | wc -l)
+          echo "| Metrik | Değer |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Toplam markdown | $MD_COUNT |" >> $GITHUB_STEP_SUMMARY
+          echo "| README | $README_COUNT |" >> $GITHUB_STEP_SUMMARY
+          echo "| Toplam satır | $MD_LINES |" >> $GITHUB_STEP_SUMMARY

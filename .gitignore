@@ -81,4 +81,21 @@ build/
 out/
 target/
 .cache/
+
+# ───── MkDocs build çıktısı ─────
+site/
+site_src/
+
+# ───── Lychee link checker cache ─────
+.lycheecache
+
+# ───── Local runtime stack data (monitoring/) ─────
+monitoring/**/data/
+monitoring/**/docker-tls/
+monitoring/**/screenshots/
+monitoring/**/upload/
+
+# ───── Repo bakım dokümanları (private) ─────
 MARKETING.md
+LAUNCH-PLAN.md
+SOCIAL-DRAFTS.md

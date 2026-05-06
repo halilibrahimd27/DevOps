@@ -1,0 +1,29 @@
+// markdownlint-cli2 config — bu repo'nun stiline göre esnetildi.
+// Kurallar: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "default": true,
+
+  // CLAUDE.md uzun satırlara izin verir (war story / alıntılar)
+  "MD013": false,
+
+  // Aynı başlık birden fazla bölümde olabilir (Checklist, Anti-pattern vb.)
+  "MD024": { "siblings_only": true },
+
+  // HTML bloklarına izin (badge'ler, <details>, <div align="center">)
+  "MD033": false,
+
+  // Satır içi HTML emoji veya tablolar için yasak değil
+  "MD034": false,
+
+  // Çoklu üst üste boş satır — kabul (görsel ayrıştırma)
+  "MD012": { "maximum": 2 },
+
+  // İlk satır H1 zorunluluğu kaldır (CLAUDE.md gibi yapılandırılmış dosyalar)
+  "MD041": false,
+
+  // Liste indentasyonu — Türkçe içerikte zaman zaman 2 boşluk
+  "MD007": { "indent": 2 },
+
+  // Code block dil belirteci — uyarı seviyesinde tutalım
+  "MD040": false
+}

@@ -1,0 +1,39 @@
+# lychee link-checker config
+# Docs: https://lychee.cli.rs/usage/config/
+
+# Bağlantıyı 30 sn'de bekle, retry 2
+max_retries = 2
+timeout = 30
+max_concurrency = 6
+
+# 429/503 sırasında bekle
+retry_wait_time = 5
+
+# Bu HTTP status'lerini kabul et (link sağ ama login arkasında olabilir)
+accept = ["200..=299", "403", "429"]
+
+# Local dosya kontrolü için
+include_fragments = false
+
+# Atlamalar
+exclude = [
+    # Local placeholder URLs
+    "^https?://(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)",
+    "^https?://[0-9.]+:[0-9]+",  # bare IP:port
+    # Örnek/placeholder domain'ler
+    "^https?://(example\\.(com|org|net)|<[A-Z_]+>|your-)",
+    "<[A-Z_]+>",
+    # GitHub'ın dinamik sayfaları (issue/pr/discussions filter URL'leri)
+    "^https?://github\\.com/.+/(issues|pull|discussions|labels)/.*\\?",
+    # Twitter/X — sürekli rate-limit veriyor
+    "^https?://(twitter|x)\\.com",
+    "^https?://t\\.co",
+    # LinkedIn — login wall
+    "^https?://(www\\.)?linkedin\\.com",
+    # Mailto / tel
+    "^mailto:",
+    "^tel:",
+]
+
+# Verbose çıktı
+verbose = "info"
