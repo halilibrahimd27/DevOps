@@ -8,6 +8,8 @@ on:
       - "mkdocs.yml"
       - "requirements-docs.txt"
       - "docs/**"
+      - "assets/**"
+      - "scripts/build-docs.sh"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
