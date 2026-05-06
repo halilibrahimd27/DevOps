@@ -1,17 +1,217 @@
-/* DevOps Notebook — özel stil katmanı
+/* ============================================================
+ * DevOps Notebook — özel stil katmanı
  * Material default theme'in üzerine bindirilir.
- */
+ * ============================================================ */
 
-/* Ana renk paleti — deep purple + deep orange tonu */
 :root {
   --md-primary-fg-color: #5e35b1;
   --md-primary-fg-color--light: #7e57c2;
   --md-primary-fg-color--dark: #4527a0;
   --md-accent-fg-color: #f4511e;
-  --md-accent-fg-color--transparent: rgba(244, 81, 30, 0.1);
+  --md-accent-fg-color--transparent: rgba(244, 81, 30, 0.12);
+
+  --dn-gradient: linear-gradient(135deg, #4527a0 0%, #5e35b1 50%, #7e57c2 100%);
+  --dn-gradient-accent: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
+  --dn-card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --dn-card-shadow-hover: 0 8px 24px rgba(94, 53, 177, 0.18), 0 4px 8px rgba(0,0,0,0.08);
 }
 
-/* Hero bölümü — anasayfanın üst kısmı */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #7e57c2;
+  --md-accent-fg-color: #ff7043;
+  --dn-card-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  --dn-card-shadow-hover: 0 8px 24px rgba(126, 87, 194, 0.3);
+}
+
+/* ============================================================
+ * Hero — homepage karşılama bölümü
+ * ============================================================ */
+.hero {
+  position: relative;
+  margin: 1rem -1.5rem 2.5rem;
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  background: var(--dn-gradient);
+  border-radius: 16px;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(244, 81, 30, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--dn-gradient-accent);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: white;
+  line-height: 1.05;
+}
+
+.hero h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0.6rem 0 1.2rem;
+  color: rgba(255, 255, 255, 0.92);
+  border-bottom: none;
+  letter-spacing: -0.01em;
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 640px;
+  margin: 0 auto 1.8rem;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.6;
+}
+
+.hero .md-button {
+  margin: 0.3rem;
+  border-radius: 8px;
+  padding: 0.55rem 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.hero .md-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.hero .md-button--primary {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: white;
+}
+
+.hero .md-button--primary:hover {
+  background: #ff7043;
+  border-color: #ff7043;
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 2.5rem 1rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero h3 { font-size: 1rem; }
+}
+
+/* ============================================================
+ * Hero stats — küçük metrik tablosu
+ * ============================================================ */
+.hero-stats {
+  margin: 0 0 2rem;
+}
+
+.hero-stats table {
+  width: 100%;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.hero-stats table th,
+.hero-stats table td {
+  text-align: center;
+  border: none !important;
+  background: transparent !important;
+  padding: 0.4rem 0.5rem !important;
+  color: inherit !important;
+}
+
+.hero-stats table th {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color) !important;
+  letter-spacing: -0.03em;
+}
+
+[data-md-color-scheme="slate"] .hero-stats table th {
+  color: var(--md-accent-fg-color) !important;
+}
+
+.hero-stats table td {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-stats table tr:nth-child(even) {
+  background: transparent !important;
+}
+
+.hero-stats table tr:hover {
+  background: transparent !important;
+}
+
+/* ============================================================
+ * Material grid cards — özelleştirme
+ * ============================================================ */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card,
+.md-typeset div.grid.cards > div {
+  border-radius: 12px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: var(--dn-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  padding: 1.2rem;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover,
+.md-typeset div.grid.cards > div:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--dn-card-shadow-hover);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+.md-typeset .grid.cards > ul > li > hr {
+  margin: 0.6rem 0;
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .grid.cards .twemoji.lg,
+.md-typeset .grid .twemoji.lg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.md-typeset .grid.cards :is(strong, b) {
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards :is(strong, b) {
+  color: var(--md-accent-fg-color);
+}
+
+/* ============================================================
+ * Genel typografi
+ * ============================================================ */
 .md-typeset h1 {
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -30,11 +230,20 @@
   margin-top: 1.8rem;
 }
 
-/* Tablo iyileştirmeleri — daha belirgin başlık */
+/* ============================================================
+ * Tablolar
+ * ============================================================ */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--dn-card-shadow);
+}
+
 .md-typeset table:not([class]) th {
-  background-color: var(--md-primary-fg-color);
-  color: white;
+  background: var(--md-primary-fg-color);
+  color: white !important;
   font-weight: 600;
+  border: none;
 }
 
 .md-typeset table:not([class]) tr:nth-child(even) {
@@ -45,84 +254,153 @@
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-/* Code block — JetBrains Mono daha sıkı */
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--md-accent-fg-color--transparent) !important;
+}
+
+/* ============================================================
+ * Code blocks
+ * ============================================================ */
 .md-typeset code {
   font-feature-settings: "calt", "ss01", "ss02";
   font-size: 0.85em;
+  border-radius: 4px;
 }
 
-/* Admonition tipleri */
-.md-typeset .admonition {
+.md-typeset pre > code {
   border-radius: 8px;
 }
 
-/* Anti-pattern blokları için özel stil */
-.md-typeset .admonition.danger,
-.md-typeset details.danger {
-  border-color: #d32f2f;
+/* ============================================================
+ * Admonition
+ * ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-width: 1px;
+  border-left-width: 4px;
 }
 
-/* Checklist daha okunaklı */
-.md-typeset .task-list-item input[type="checkbox"] {
-  transform: scale(1.2);
+.md-typeset blockquote {
+  border-left-color: var(--md-accent-fg-color);
+  border-left-width: 3px;
 }
 
-/* Footer linki */
-.md-footer-meta__inner {
-  font-size: 0.8rem;
+/* ============================================================
+ * Top nav
+ * ============================================================ */
+.md-tabs__link {
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
 }
 
-/* Sözlük (glossary) terimleri için */
+.md-tabs__link--active {
+  font-weight: 700;
+}
+
+/* ============================================================
+ * Search
+ * ============================================================ */
+.md-search__form {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.md-search__form:focus-within {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 2px var(--md-accent-fg-color);
+}
+
+/* ============================================================
+ * Buton
+ * ============================================================ */
+.md-typeset .md-button {
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-width: 2px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(94, 53, 177, 0.25);
+}
+
+.md-typeset .md-button--primary {
+  background: var(--md-primary-fg-color);
+  color: white;
+  border-color: var(--md-primary-fg-color);
+}
+
+/* ============================================================
+ * Footer quote
+ * ============================================================ */
+.footer-quote {
+  text-align: center;
+  margin: 3rem auto 1.5rem;
+  padding: 1.5rem;
+  background: var(--md-accent-fg-color--transparent);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 720px;
+}
+
+.footer-quote em {
+  font-style: italic;
+}
+
+.footer-quote strong {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+}
+
+[data-md-color-scheme="slate"] .footer-quote strong {
+  color: var(--md-accent-fg-color);
+}
+
+/* ============================================================
+ * Glossary
+ * ============================================================ */
 .md-typeset abbr {
   text-decoration: underline dotted;
+  text-decoration-color: var(--md-accent-fg-color);
   cursor: help;
 }
 
-/* Banner / announcement bar */
-.md-banner {
-  background: linear-gradient(90deg, #5e35b1, #f4511e);
-  color: white;
-  font-weight: 500;
+/* ============================================================
+ * Mermaid
+ * ============================================================ */
+.md-typeset .mermaid {
+  text-align: center;
 }
 
-.md-banner a {
-  color: white;
-  text-decoration: underline;
-}
-
-/* "🇹🇷 TR-spesifik" notları için kart benzeri görünüm */
-blockquote:has(strong:first-child:contains("🇹🇷")) {
-  background: var(--md-accent-fg-color--transparent);
-  border-left: 4px solid var(--md-accent-fg-color);
-  border-radius: 4px;
-  padding: 1rem;
-}
-
-/* Badge listesini ortala (README üst kısmı) */
-.md-typeset div[align="center"] p {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  justify-content: center;
-}
-
-/* Mermaid diagram arka plan — koyu tema uyumlu */
 [data-md-color-scheme="slate"] .mermaid {
   background: #1e1e2e;
   border-radius: 8px;
   padding: 1rem;
 }
 
-/* Print-friendly */
-@media print {
-  .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
-  .md-content { max-width: 100%; }
-}
-
-/* Search highlight */
+/* ============================================================
+ * Search highlight
+ * ============================================================ */
 .md-search-result__article mark {
   background-color: var(--md-accent-fg-color);
   color: white;
   padding: 0 2px;
   border-radius: 2px;
+}
+
+/* ============================================================
+ * Print
+ * ============================================================ */
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
+  .md-content { max-width: 100%; }
+  .hero { background: none; color: black; }
+  .hero h1, .hero h3 { color: black; }
 }
