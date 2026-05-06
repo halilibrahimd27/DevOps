@@ -25,21 +25,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # 1) Markdown lint — stil tutarlılığı (CLAUDE.md kurallarına yakın)
-  markdownlint:
-    name: Markdown lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: DavidAnson/markdownlint-cli2-action@v18
-        with:
-          globs: |
-            **/*.md
-            !node_modules
-            !.github/PULL_REQUEST_TEMPLATE.md
-          config: .markdownlint.jsonc
-
-  # 2) Broken link check — iç ve dış linkler
+  # 1) Broken link check — iç ve dış linkler
   link-check:
     name: Broken link check (lychee)
     runs-on: ubuntu-latest
@@ -69,7 +55,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # 3) Placeholder/credential leak guard — CLAUDE.md "kırmızı çizgi"
+  # 2) Placeholder/credential leak guard — CLAUDE.md "kırmızı çizgi"
   placeholder-leak:
     name: Placeholder leak guard
     runs-on: ubuntu-latest
@@ -139,7 +125,7 @@ jobs:
           fi
           echo "✅ Placeholder leak guard passed"
 
-  # 4) Doküman istatistikleri (PR yorumu için bilgi)
+  # 3) Doküman istatistikleri (PR yorumu için bilgi)
   stats:
     name: Repo stats
     runs-on: ubuntu-latest

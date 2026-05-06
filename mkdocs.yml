@@ -30,7 +30,6 @@ exclude_docs: |
 theme:
   name: material
   language: tr
-  custom_dir: site_src/overrides
   logo: assets/logo.svg
   favicon: assets/favicon.svg
   features:
