@@ -2,7 +2,7 @@
 hide:
   - toc
   - navigation
-title: Ana Sayfa
+title: DevOps Notebook — Türkçe DevSecOps Rehberi
 description: >-
   Production'da işleyen modern DevOps + DevSecOps + SRE pratiklerinin Türkçe başucu kitabı.
   Junior'dan principal'a · 21 konu · 125+ deep-dive · 65K+ satır · MIT lisans.

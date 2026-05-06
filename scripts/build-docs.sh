@@ -100,10 +100,10 @@ for dir in "${!TITLES[@]}"; do
   fi
 done
 
-# 7) Top-level nav sırası (.pages root) — index.md "🏠 Ana Sayfa" olarak override
+# 7) Top-level nav sırası (.pages root)
 cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
-  - "🏠 Ana Sayfa": index.md
+  - index.md
   - RoadMap
   - 00-Culture
   - 01-Git-Workflow
