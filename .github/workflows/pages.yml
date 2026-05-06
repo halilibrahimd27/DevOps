@@ -45,6 +45,9 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Stage docs (kök md → site_src/)
+        run: bash scripts/build-docs.sh
+
       - name: Build site
         run: mkdocs build --clean
         env:

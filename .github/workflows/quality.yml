@@ -59,9 +59,10 @@ jobs:
             --max-cache-age 14d
             --no-progress
             --max-concurrency 6
-            --exclude-mail
             --exclude-path .git
             --exclude-path node_modules
+            --exclude-path site_src
+            --exclude-path site
             --config .lychee.toml
             './**/*.md'
           fail: true
