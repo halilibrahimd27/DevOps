@@ -25,7 +25,7 @@
 
 > **⭐ Yıldız bırakırsan repo daha çok kişiye ulaşır.** Repo'nun büyümesi senin yıldızınla başlar.
 
-[**📚 İçindekiler**](#-içindekiler) · [**🚀 Hızlı Başlangıç**](#-hızlı-başlangıç) · [**🤝 Katkı**](#-katkı) · [**📖 Sözlük**](Glossary.md) · [**📣 Discussions**](https://github.com/halilibrahimd27/DevOps/discussions)
+[**🌐 Site**](https://halilibrahimd27.github.io/DevOps/) · [**📚 İçindekiler**](#-içindekiler) · [**🚀 Hızlı Başlangıç**](#-hızlı-başlangıç) · [**🤝 Katkı**](#-katkı) · [**📖 Sözlük**](Glossary.md) · [**📣 Discussions**](https://github.com/halilibrahimd27/DevOps/discussions)
 
 </div>
 

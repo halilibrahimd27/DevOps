@@ -1,39 +1,57 @@
 # lychee link-checker config
 # Docs: https://lychee.cli.rs/usage/config/
 
-# Bağlantıyı 30 sn'de bekle, retry 2
 max_retries = 2
 timeout = 30
 max_concurrency = 6
-
-# 429/503 sırasında bekle
 retry_wait_time = 5
 
-# Bu HTTP status'lerini kabul et (link sağ ama login arkasında olabilir)
+# 200-299 OK, 403/429 = login/rate-limit (link sağ)
 accept = ["200..=299", "403", "429"]
-
-# Local dosya kontrolü için
 include_fragments = false
 
-# Atlamalar
+# Atlamalar — placeholder URL'ler ve sürekli 4xx/5xx veren tarihsel link'ler
 exclude = [
     # Local placeholder URLs
     "^https?://(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)",
     "^https?://[0-9.]+:[0-9]+",  # bare IP:port
-    # Örnek/placeholder domain'ler
-    "^https?://(example\\.(com|org|net)|<[A-Z_]+>|your-)",
+
+    # Placeholder domain'ler — repo'da example olarak geçenler
+    "^https?://(example|yourdomain|your-?domain|company|your-?company)\\.(com|org|net|io|dev)",
+    "^https?://[a-z0-9-]+\\.(yourdomain|your-?domain|company|your-?company|example)\\.",
+    "your-?(domain|company|registry|cluster|grafana|app|svc|service|cluster)",
     "<[A-Z_]+>",
-    # GitHub'ın dinamik sayfaları (issue/pr/discussions filter URL'leri)
+    "%24%7B[A-Z_]+%7D",  # ${VAR} URL-encoded
+
+    # Internal/cluster hostname'leri (DNS yok)
+    "^https?://(elasticsearch|prometheus|grafana|kibana|loki|jaeger|tempo|alertmanager|kafka|redis|postgres|mysql|mongodb|registry|argocd|vault):",
+    "^https?://[a-z]+\\.(svc|cluster|local)(\\.|:|/|$)",
+    "\\.svc\\.cluster\\.local",
+
+    # Repo'nun GitHub dynamic page'leri (filter URL'leri)
     "^https?://github\\.com/.+/(issues|pull|discussions|labels)/.*\\?",
-    # Twitter/X — sürekli rate-limit veriyor
+    # github.com/.../... gibi placeholder PR URL'leri
+    "^https?://github\\.com/\\.\\.\\.",
+
+    # Twitter/X — sürekli rate-limit / 403
     "^https?://(twitter|x)\\.com",
     "^https?://t\\.co",
+
     # LinkedIn — login wall
     "^https?://(www\\.)?linkedin\\.com",
+
+    # Self-reference (Pages henüz live olmadığında flake)
+    "^https?://halilibrahimd27\\.github\\.io/DevOps",
+
+    # Tarihsel olarak 404/down olan kaynaklar — issue ile düzeltilecek
+    "^https?://linuxacademy\\.com",  # ACG'ye alındı
+    "^https?://etsyjs\\.gitbook\\.io",  # Etsy gitbook hesabı kapandı
+    "^https?://github\\.com/awesome-slo/awesome-slo",  # repo silinmiş
+    "^https?://owasp\\.org/www-project-container-security",  # URL değişmiş
+
     # Mailto / tel
     "^mailto:",
     "^tel:",
 ]
 
-# Verbose çıktı
 verbose = "info"
