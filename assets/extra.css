@@ -1,0 +1,128 @@
+/* DevOps Notebook — özel stil katmanı
+ * Material default theme'in üzerine bindirilir.
+ */
+
+/* Ana renk paleti — deep purple + deep orange tonu */
+:root {
+  --md-primary-fg-color: #5e35b1;
+  --md-primary-fg-color--light: #7e57c2;
+  --md-primary-fg-color--dark: #4527a0;
+  --md-accent-fg-color: #f4511e;
+  --md-accent-fg-color--transparent: rgba(244, 81, 30, 0.1);
+}
+
+/* Hero bölümü — anasayfanın üst kısmı */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.4rem;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 1.8rem;
+}
+
+/* Tablo iyileştirmeleri — daha belirgin başlık */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: var(--md-default-bg-color--lighter);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Code block — JetBrains Mono daha sıkı */
+.md-typeset code {
+  font-feature-settings: "calt", "ss01", "ss02";
+  font-size: 0.85em;
+}
+
+/* Admonition tipleri */
+.md-typeset .admonition {
+  border-radius: 8px;
+}
+
+/* Anti-pattern blokları için özel stil */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: #d32f2f;
+}
+
+/* Checklist daha okunaklı */
+.md-typeset .task-list-item input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+/* Footer linki */
+.md-footer-meta__inner {
+  font-size: 0.8rem;
+}
+
+/* Sözlük (glossary) terimleri için */
+.md-typeset abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* Banner / announcement bar */
+.md-banner {
+  background: linear-gradient(90deg, #5e35b1, #f4511e);
+  color: white;
+  font-weight: 500;
+}
+
+.md-banner a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* "🇹🇷 TR-spesifik" notları için kart benzeri görünüm */
+blockquote:has(strong:first-child:contains("🇹🇷")) {
+  background: var(--md-accent-fg-color--transparent);
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+/* Badge listesini ortala (README üst kısmı) */
+.md-typeset div[align="center"] p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+/* Mermaid diagram arka plan — koyu tema uyumlu */
+[data-md-color-scheme="slate"] .mermaid {
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Print-friendly */
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
+  .md-content { max-width: 100%; }
+}
+
+/* Search highlight */
+.md-search-result__article mark {
+  background-color: var(--md-accent-fg-color);
+  color: white;
+  padding: 0 2px;
+  border-radius: 2px;
+}

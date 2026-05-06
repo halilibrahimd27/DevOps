@@ -1,0 +1,178 @@
+site_name: DevOps Notebook
+site_description: >-
+  Türkçe DevOps · DevSecOps · SRE · Platform Engineering başucu kitabı.
+  21 konu, 125+ deep-dive, 9 cheatsheet, 25+ production-ready template.
+  Kubernetes · Terraform · GitOps · Observability · FinOps · LLMOps · KVKK/GDPR.
+site_author: Halil İbrahim Dürmüş
+site_url: https://halilibrahimd27.github.io/DevOps/
+copyright: >-
+  Copyright &copy; 2026 Halil İbrahim Dürmüş — MIT License ·
+  <a href="#__consent">Çerez ayarları</a>
+
+repo_name: halilibrahimd27/DevOps
+repo_url: https://github.com/halilibrahimd27/DevOps
+edit_uri: edit/main/
+
+# site_src/ build-time generated (scripts/build-docs.sh oluşturur)
+docs_dir: site_src
+site_dir: site
+
+# MkDocs build sırasında dahil edilmeyecek dosyalar
+exclude_docs: |
+  Ansible/SSH CONNECTIVITY TEST
+  CLAUDE.md
+  CODE_OF_CONDUCT.md
+  SECURITY.md
+  CONTRIBUTING.md
+  LAUNCH-PLAN.md
+  MARKETING.md
+
+theme:
+  name: material
+  language: tr
+  custom_dir: site_src/overrides
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - content.tooltips
+    - toc.follow
+    - announce.dismiss
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Karanlık moda geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Aydınlık moda geç
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+plugins:
+  - search:
+      lang:
+        - tr
+        - en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - awesome-pages:
+      collapse_single_pages: false
+      strict: false
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      locale: tr
+      fallback_to_build_date: true
+      enabled: !ENV [CI, false]
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      zoomable: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "#"
+      permalink_title: Bağlantıyı kopyala
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.tilde
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/halilibrahimd27
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/halilibrahimd
+      name: LinkedIn
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/halilibrahimd27
+      name: X
+  consent:
+    title: Çerez kullanımı
+    description: >-
+      Bu site sayfa kullanımını anlamak için anonim çerezler kullanır.
+      Onay verirsen ne ararken zorlandığını görüp içeriği iyileştirebiliyorum.
+    actions:
+      - accept
+      - reject
+      - manage
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/extra.js
+
+strict: false
+use_directory_urls: true

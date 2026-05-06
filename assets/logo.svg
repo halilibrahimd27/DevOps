@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#5e35b1"/>
+  <!-- Wrench / anahtar — DevOps simgesi -->
+  <path d="M19 45 L42 22 M16 41 L23 48 M44 24 C49 19 49 11 44 6 L38 12 L40 14 L34 20 L32 18 L26 24 C31 29 39 29 44 24 Z"
+        stroke="#f4511e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Vida / nokta -->
+  <circle cx="14" cy="50" r="3" fill="#ffd54f"/>
+</svg>
