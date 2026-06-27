@@ -2,11 +2,11 @@
 
 # 🛠️ DevOps Notebook — Türkçe DevSecOps Rehberi
 
-*Production'da işleyen modern DevOps · DevSecOps · SRE pratiklerinin Türkçe, eylemsel referansı.*
+*Production'a yönelik modern DevOps · DevSecOps · SRE pratiklerinin Türkçe, eylemsel referansı.*
 
 Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Platform Engineering · FinOps · LLMOps · Compliance
 
-[![Site](https://img.shields.io/badge/canlı_site-halilibrahimd27.github.io%2FDevOps-deeppurple?style=flat-square)](https://halilibrahimd27.github.io/DevOps/)
+[![Site](https://img.shields.io/badge/canlı_site-halilibrahimd27.github.io%2FDevOps-8A2BE2?style=flat-square)](https://halilibrahimd27.github.io/DevOps/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/halilibrahimd27/DevOps?style=flat-square)](https://github.com/halilibrahimd27/DevOps/commits/main)
 
@@ -17,7 +17,8 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 ---
 
 > **Niçin var:** Çoğu DevOps kaynağı ya yüzeysel bir listedir, ya da satışçı
-> bir tondadır. Bu repo, production'da yaşanıp damıtılmış pratikleri Türkçe ve
+> bir tondadır. Bu repo, production senaryolarına göre yazılmış ve gerçek kurulum
+> deneyimiyle ([21-Field-Notes](21-Field-Notes/)) desteklenen pratikleri Türkçe ve
 > eylemsel tutar. Konferans slaytı değil, on-call'da işine yarayan referans.
 
 > **Kim için:** sıfırdan başlayan bir junior'dan, ekip kuran bir staff/principal'a
@@ -51,14 +52,14 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 | 💰 **Cloud faturası patladı** | [12-FinOps/Cloud-Cost-Allocation.md](12-FinOps/Cloud-Cost-Allocation.md) → [12-FinOps/Right-Sizing.md](12-FinOps/Right-Sizing.md) |
 | 🎯 **Mülakata hazırlanıyorum** | [18-Career/](18-Career/) |
 | ⚖️ **KVKK/GDPR/SOC2 audit geliyor** | [19-Compliance/KVKK-Practical.md](19-Compliance/KVKK-Practical.md) → [19-Compliance/](19-Compliance/) |
-| 🔥 **On-call'da tükeniyorum** | [20-Soft-Skills/Oncall-Sustainability.md](20-Soft-Skills/Oncall-Sustainability.md) |
+| 🪫 **On-call'da tükeniyorum** | [20-Soft-Skills/Oncall-Sustainability.md](20-Soft-Skills/Oncall-Sustainability.md) |
 | 📖 **Türkçe terim aradım** | [Glossary.md](Glossary.md) |
 | 🤖 **AI ile DevOps yapmak istiyorum** | [15-AI-LLMOps/AI-Augmented-Operations.md](15-AI-LLMOps/AI-Augmented-Operations.md) |
 | 📈 **K8s upgrade'i yapacağım** | [05-Kubernetes/Upgrade-Strategy.md](05-Kubernetes/Upgrade-Strategy.md) |
 | 🌳 **GitOps adopt ediyorum** | [06-GitOps/ArgoCD-Setup.md](06-GitOps/ArgoCD-Setup.md) → [06-GitOps/Flux-vs-ArgoCD.md](06-GitOps/Flux-vs-ArgoCD.md) |
 | 🔍 **Postgres prod'a alıyorum** | [10-Databases-Production/Postgres-Production-Guide.md](10-Databases-Production/Postgres-Production-Guide.md) |
 | 👀 **Observability stack kuruyorum** | [07-Observability/OpenTelemetry-Adoption.md](07-Observability/OpenTelemetry-Adoption.md) |
-| 🏗️ **Internal Developer Platform** | [13-Platform-Engineering/Internal-Developer-Platform.md](13-Platform-Engineering/Internal-Developer-Platform.md) |
+| 🧩 **Internal Developer Platform** | [13-Platform-Engineering/Internal-Developer-Platform.md](13-Platform-Engineering/Internal-Developer-Platform.md) |
 | 🌱 **Yeşil yazılım yapacağım** | [14-Sustainability/Green-Software-Principles.md](14-Sustainability/Green-Software-Principles.md) |
 
 ---
@@ -202,9 +203,4 @@ PR'lar memnuniyetle. Önce [CONTRIBUTING.md](CONTRIBUTING.md) ve yazım rehberi 
 
 *Hedef: bir DevOps mühendisinin yıllar boyunca açıp baktığında değer bulduğu bir referans olmak.*
 
-<details>
-<summary><strong>🔍 Anahtar kelimeler (arama için)</strong></summary>
-
-Türkçe DevOps rehberi · Türkçe DevSecOps · Kubernetes Türkçe · DevOps mülakat · SRE rehberi · GitOps Türkçe · CI/CD pipeline Türkçe · Docker best practices Türkçe · Helm vs Kustomize · ArgoCD setup · Flux vs ArgoCD · Postgres production · CloudNativePG · Patroni HA · Prometheus best practices · OpenTelemetry · Grafana Loki Tempo · SLO error budget · incident response · postmortem template · chaos engineering · KVKK uyumu · GDPR mühendislik · ISO 27001 · SOC 2 Type II · EU AI Act · NIS2 directive · PCI DSS v4 · Backstage IDP · Internal Developer Platform · platform engineering · golden path · service catalog · FinOps Türkçe · Kubecost · spot instance · savings plan · right-sizing · sustainability · green software · carbon-aware computing · LLMOps · RAG architecture · prompt engineering · vLLM · self-hosted LLM · Cilium eBPF · Gateway API · service mesh · zero trust networking · cosign image signing · SLSA SBOM · Kyverno OPA · threat modeling · STRIDE LINDDUN · Falco runtime security · Trivy vulnerability scanning · Vault secrets management · External Secrets Operator · trunk-based development · conventional commits · code review · oncall sustainability · stakeholder management · DevOps cheatsheet · K8s production checklist · DevOps interview Turkish · SRE interview · system design Türkçe.
-
-</details>
+Yazan & sürdüren: **Halil İbrahim Dürmüş** — [@halilibrahimd27](https://github.com/halilibrahimd27) · [LinkedIn](https://www.linkedin.com/in/halilibrahimd)
