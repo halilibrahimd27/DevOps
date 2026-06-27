@@ -1,3 +1,8 @@
+# Ansible ile Sistem Hazırlığı
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```bash
 cd /root/k8s-production
 mkdir -p ansible/inventory
 
@@ -390,3 +395,4 @@ cat > playbooks/04-load-balancer.yml << 'EOF'
 EOF
 
 ansible-playbook -i inventory/production.yml playbooks/04-load-balancer.yml
+```

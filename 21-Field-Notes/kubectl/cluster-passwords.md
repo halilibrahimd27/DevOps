@@ -1,3 +1,8 @@
+# Kubernetes Cluster Parolaları (Toplama Script'i)
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```bash
 echo "=== 🔐 KUBERNETES CLUSTER PAROLALARİ ==="
 echo ""
 echo "📊 JENKINS:"
@@ -18,3 +23,4 @@ echo "📈 Grafana: http://$(kubectl get svc prometheus-grafana -n monitoring -o
 echo "📊 Kibana: http://$(kubectl get svc kibana -n logging -o jsonpath='{.spec.clusterIP}'):5601"
 echo "🔍 Elasticsearch: http://$(kubectl get svc elasticsearch -n logging -o jsonpath='{.spec.clusterIP}'):9200"
 echo ""
+```

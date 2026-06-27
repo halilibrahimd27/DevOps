@@ -74,7 +74,7 @@
 | Sen kim hissediyorsun? | Buradan başla |
 |---|---|
 | 🆕 **Yeni başlıyorum, "DevOps nedir?"** | [`RoadMap/Modern-DevOps-2026.md`](RoadMap/Modern-DevOps-2026.md) |
-| 🏗️ **Sıfırdan altyapı kuracağım** | [`RoadMap/Advanced RoadMap.md`](RoadMap/Advanced%20RoadMap.md) → [`05-Kubernetes/Production-Checklist.md`](05-Kubernetes/Production-Checklist.md) |
+| 🏗️ **Sıfırdan altyapı kuracağım** | [`RoadMap/Advanced RoadMap.md`](RoadMap/advanced-roadmap.md) → [`05-Kubernetes/Production-Checklist.md`](05-Kubernetes/Production-Checklist.md) |
 | 🔥 **Şu an yangın söndürüyorum** | [`16-Cheatsheets/`](16-Cheatsheets/) → [`11-SRE/Incident-Response.md`](11-SRE/Incident-Response.md) |
 | 📦 **Yeni servis konteynerleştireceğim** | [`04-Containers/Dockerfile-Best-Practices.md`](04-Containers/Dockerfile-Best-Practices.md) → [`17-Templates/dockerfiles/`](17-Templates/dockerfiles/) |
 | 🚀 **CI/CD pipeline yazacağım** | [`02-CI-CD/Pipeline-Patterns.md`](02-CI-CD/Pipeline-Patterns.md) → [`17-Templates/github-actions/`](17-Templates/github-actions/) |

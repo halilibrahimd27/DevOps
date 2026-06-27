@@ -37,16 +37,16 @@ for f in CHANGELOG.md Glossary.md; do
   fi
 done
 
-# 3) Numaralı klasörler (00-20)
-for d in 0[0-9]-* 1[0-9]-* 20-*; do
+# 3) Numaralı klasörler (00-21)
+for d in 0[0-9]-* 1[0-9]-* 2[0-9]-*; do
   if [ -d "$d" ]; then
     cp -r "$d" "$STAGE/"
     echo "  + $d/"
   fi
 done
 
-# 4) Ek klasörler
-for d in RoadMap System Ansible Kubectl Terraform Network; do
+# 4) Ek klasörler (RoadMap top-level öğrenme yolu; saha notları 21-Field-Notes/ altında)
+for d in RoadMap; do
   if [ -d "$d" ]; then
     cp -r "$d" "$STAGE/"
     echo "  + $d/"
@@ -85,12 +85,8 @@ declare -A TITLES=(
   ["18-Career"]="18 · Career"
   ["19-Compliance"]="19 · Compliance"
   ["20-Soft-Skills"]="20 · Soft Skills"
+  ["21-Field-Notes"]="21 · Saha Notları"
   ["RoadMap"]="🗺️ Yol Haritası"
-  ["System"]="🛠️ System Setup"
-  ["Ansible"]="Ansible"
-  ["Kubectl"]="kubectl"
-  ["Terraform"]="Terraform"
-  ["Network"]="Network/SIEM"
 )
 
 for dir in "${!TITLES[@]}"; do
@@ -126,11 +122,7 @@ nav:
   - 18-Career
   - 19-Compliance
   - 20-Soft-Skills
-  - System
-  - Ansible
-  - Kubectl
-  - Terraform
-  - Network
+  - 21-Field-Notes
   - "📖 Sözlük": Glossary.md
   - "📋 Changelog": CHANGELOG.md
 PAGES_EOF
@@ -144,18 +136,33 @@ nav:
   - README.md
   - "Modern DevOps 2026 — Felsefe + 2026 Stack": Modern-DevOps-2026.md
   - "GitOps A→Z (Mid+)": RoadMap.md
-  - "Advanced — AWS/EKS Implementation (Senior)": Advanced RoadMap.md
+  - "Advanced — AWS/EKS Implementation (Senior)": advanced-roadmap.md
   - "Planning Şablonu (Tech Lead)": Planning.md
 EOF
   echo "  + RoadMap/.pages (yeniden sıralı, Modern-DevOps-2026 başta)"
 fi
 
-# 9) System klasörü uzun dosya isimleri kısaltma
-if [ -d "$STAGE/System" ]; then
-  cat > "$STAGE/System/.pages" <<'EOF'
-title: 🛠️ System Setup
-EOF
-  echo "  + System/.pages"
+# RoadMap içindeki büyük "advanced-roadmap" alt-dosyalarına başlık (varsa)
+if [ -d "$STAGE/RoadMap/advanced" ]; then
+  printf "title: Advanced — AWS/EKS\n" > "$STAGE/RoadMap/advanced/.pages"
+  echo "  + RoadMap/advanced/.pages"
+fi
+
+# 9) Saha Notları alt-klasör başlıkları
+if [ -d "$STAGE/21-Field-Notes" ]; then
+  declare -A FN_TITLES=(
+    ["ansible"]="Ansible"
+    ["kubectl"]="kubectl"
+    ["network"]="Network / SIEM"
+    ["system"]="System Setup"
+    ["terraform"]="Terraform"
+  )
+  for sub in "${!FN_TITLES[@]}"; do
+    if [ -d "$STAGE/21-Field-Notes/$sub" ]; then
+      printf "title: %s\n" "${FN_TITLES[$sub]}" > "$STAGE/21-Field-Notes/$sub/.pages"
+    fi
+  done
+  echo "  + 21-Field-Notes/*/.pages"
 fi
 
 # Sayım
