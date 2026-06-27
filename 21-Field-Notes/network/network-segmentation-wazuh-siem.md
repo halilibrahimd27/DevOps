@@ -1,5 +1,9 @@
 # 🔒 Ağ Segmentasyonu ve Wazuh SIEM Entegrasyon Rehberi
 
+> ℹ️ **Placeholder notu:** Bu rehberdeki tüm IP/subnet değerleri (`192.168.x.x` vb.)
+> **RFC 1918 örnek adresleridir** — gerçek altyapı değildir. Segmentasyon şemasını
+> anlatmak için somut tutulmuştur; kendi VLAN/subnet planına uyarla.
+
 ## 📋 Mevcut Durum ve Hedef Mimari
 
 ### 🎯 Hedef Ağ Segmentasyonu

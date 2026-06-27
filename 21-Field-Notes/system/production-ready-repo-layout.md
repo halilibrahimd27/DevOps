@@ -586,7 +586,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: <DB_ROOT_PASSWORD>
           MYSQL_DATABASE: laravel_test
         ports:
           - 3306:3306
@@ -644,7 +644,7 @@ jobs:
         DB_PORT: 3306
         DB_DATABASE: laravel_test
         DB_USERNAME: root
-        DB_PASSWORD: password
+        DB_PASSWORD: <DB_PASSWORD>
         REDIS_HOST: 127.0.0.1
         REDIS_PORT: 6379
 
@@ -903,7 +903,7 @@ backend:
 
   secrets:
     APP_KEY: base64:your-app-key
-    DB_PASSWORD: your-db-password
+    DB_PASSWORD: <DB_PASSWORD>
     JWT_SECRET: your-jwt-secret
 
 # Frontend configuration
@@ -927,10 +927,10 @@ frontend:
 mysql:
   enabled: true
   auth:
-    rootPassword: your-root-password
+    rootPassword: <ROOT_PASSWORD>
     database: laravel_prod
     username: laravel_user
-    password: your-db-password
+    password: <DB_PASSWORD>
   
   primary:
     persistence:
@@ -951,7 +951,7 @@ redis:
   enabled: true
   auth:
     enabled: true
-    password: your-redis-password
+    password: <REDIS_PASSWORD>
   
   master:
     persistence:
@@ -999,7 +999,7 @@ monitoring:
     enabled: true
   grafana:
     enabled: true
-    adminPassword: your-grafana-password
+    adminPassword: <GRAFANA_PASSWORD>
   
   alerts:
     enabled: true

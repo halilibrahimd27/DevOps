@@ -180,7 +180,7 @@ Bağımlılıkları (3rd-party libraries) için CVE/lisans tarama.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: google/osv-scanner-action@v1.7.0
+      - uses: google/osv-scanner-action@<VERSION>
         with:
           scan-args: |-
             --recursive
