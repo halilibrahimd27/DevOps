@@ -1,3 +1,6 @@
+---
+description: "FinOps Foundation cercevesi (Inform-Optimize-Operate) rehberleri: cost allocation, right-sizing, spot, reserved plan, storage, egress, Kubecost ve PR cost diff."
+---
 # 12 · FinOps
 
 > *"AWS faturası ay başında geldi: $42,318. Geçen ay $19,200'dü. Kim,

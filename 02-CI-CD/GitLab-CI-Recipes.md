@@ -1,3 +1,6 @@
+---
+description: "GitLab CI/CD pratik tarifleri: DAG pipeline, dynamic child, multi-project trigger ve OIDC AWS auth; monorepo dostu DAG-native kullanim anlatilir."
+---
 # GitLab CI Recipes — DAG, Dynamic Child, Multi-Project
 
 > *"GitLab CI 'GitHub Actions klonu' değil — **DAG-native** + **monorepo

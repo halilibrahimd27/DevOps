@@ -1,3 +1,6 @@
+---
+description: "GitHub Actions reusable workflow ve composite action ile org-wide CI/CD standardizasyonu: step, job ve workflow seviyesinde soyutlama pratikleri."
+---
 # Reusable Workflows — Org-Wide Template
 
 > *"50 repo, 50 farklı CI workflow YAML. Bug 1 yerde fix → 50 repo

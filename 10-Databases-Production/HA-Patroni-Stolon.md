@@ -1,3 +1,6 @@
+---
+description: "Postgres yüksek erişilebilirlik (HA) çözümleri: Patroni, Stolon ve CloudNativePG karşılaştırması, otomatik failover, split-brain çözümü ve 2026 önerisi."
+---
 # Postgres HA — Patroni, Stolon, CloudNativePG
 
 > *"Single instance prod Postgres = saatlik downtime kabul eden iş.

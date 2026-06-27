@@ -1,3 +1,6 @@
+---
+description: "CI/CD bolumu indeksi: pipeline patternleri, GitHub Actions ve GitLab CI tarifleri, caching, reusable workflow ve yavas CI tedavi protokolleri."
+---
 # 02 · CI/CD
 
 > *"Her commit deploy edilebilir olmalı; her deploy reversible olmalı."*

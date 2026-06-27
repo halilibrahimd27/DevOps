@@ -1,3 +1,6 @@
+---
+description: "Yesil yazilim icin hizli uygulanabilen verimlilik pratikleri: ARM/Graviton, spot instance, idle cleanup, compression, caching ve right-sizing; cost-carbon dual ROI ornekleriyle."
+---
 # Efficiency Practices — Quick Wins for Carbon + Cost
 
 > *"Yeşil yazılım 'gelecekte düşünelim' işi değil — **bu çeyrek**

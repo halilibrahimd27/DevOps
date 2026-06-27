@@ -1,3 +1,6 @@
+---
+description: "Kubernetes cluster node'larına (master, worker, storage, infra, load balancer) SSH erişimini ConnectTimeout ile toplu doğrulayan bash test script'i."
+---
 # SSH Bağlantı Testi
 
 > 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.

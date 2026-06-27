@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE/Platform alanında junior mühendisi yetiştirmenin somut tekniklerini, on-boarding planını, shadow-solo geçişini ve TR iş kültürünü anlatır."
+---
 # Mentoring Junior Engineers — Infra/SRE Öğretmek
 
 > *"Senior'ın görevi 'kendi başına en hızlı kim?' yarışı değil —

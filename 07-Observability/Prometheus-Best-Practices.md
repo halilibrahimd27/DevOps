@@ -1,3 +1,6 @@
+---
+description: "Production-grade Prometheus best practices: metric naming, cardinality kontrolu, retention politikasi, federation, HA ve recording rules ile OOM'dan kacinma kurallari."
+---
 # Prometheus Best Practices — Production-Grade
 
 > *"Prometheus 'install et çalışıyor' değil — **disiplin gerektiren

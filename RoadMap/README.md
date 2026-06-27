@@ -1,3 +1,6 @@
+---
+description: "DevOps öğrenme yol haritası index'i: yeni başlayan, junior/mid ve senior/staff için dört ayrı patika önerir; seviyene göre nereden başlayacağını gösterir."
+---
 # 🗺️ Yol Haritası — Hangi Seviyedeysen Oradan Başla
 
 > *"Yol haritası, herkese aynı yolu önermek değil — sana göre hangi yola

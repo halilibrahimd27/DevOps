@@ -1,3 +1,6 @@
+---
+description: "Pod-level debugging rehberi: kubectl describe/logs, ephemeral container, distroless image debug, CrashLoopBackOff ve OOMKilled gibi yaygin senaryolar."
+---
 # Debugging Pods — `kubectl debug`, ephemeral, exec rehberi
 
 > *"`kubectl logs` çıktı vermiyor, pod CrashLoopBackOff. Production'da

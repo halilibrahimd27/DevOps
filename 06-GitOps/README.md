@@ -1,3 +1,6 @@
+---
+description: "GitOps bölümü indeksi: ArgoCD, Flux, ApplicationSet, App-of-Apps, Helm/Kustomize ve secret yönetimi rehberlerine bağlantılar ve OpenGitOps prensipleri."
+---
 # 06 · GitOps
 
 > *"Cluster'ında ne çalıştığını öğrenmek için `kubectl get` kullanan ekip,

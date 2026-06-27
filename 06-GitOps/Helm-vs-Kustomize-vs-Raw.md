@@ -1,3 +1,6 @@
+---
+description: "Kubernetes manifest stratejisi: Helm, Kustomize ve Raw YAML yaklaşımlarının templating, multi-env ve reusability ekseninde karar ağacı ve karşılaştırması."
+---
 # Helm vs Kustomize vs Raw YAML — Manifest Stratejisi Karar Rehberi
 
 > *"Üç araç, üç farklı felsefe. Yanlış seçim 6 ay sonra 'her şeyi

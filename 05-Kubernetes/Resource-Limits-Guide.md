@@ -1,3 +1,6 @@
+---
+description: "Kubernetes resource yonetimi rehberi: requests vs limits farki, QoS class'lari, OOMKilled davranisi ve dogru CPU/memory sayilarinin nasil bulunacagi."
+---
 # Resource Limits Guide — Request, Limit, QoS
 
 > *"`requests: 100m, limits: 2000m` setlemenin ne anlamı geldiğini

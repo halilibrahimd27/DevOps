@@ -1,3 +1,6 @@
+---
+description: "Kubernetes öncesi Ansible ile sistem hazırlığı: production inventory dosyası oluşturma, master/worker host tanımları, etcd member ve node label ayarları."
+---
 # Ansible ile Sistem Hazırlığı
 
 > 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.

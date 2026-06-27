@@ -1,3 +1,6 @@
+---
+description: "Blameless kültürünü gerçek konuşmaya yansıtma rehberi: fasilitasyon teknikleri, tipik dil tuzakları ve psikolojik güvenlik yaratmanın somut adımları."
+---
 # Postmortem Conversation — Blameless'i Konuşmaya Yansıtmak
 
 > *"Postmortem dokümanı 'blameless' olabilir; ama ekibin **kullandığı

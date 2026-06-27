@@ -1,3 +1,6 @@
+---
+description: "GitHub Actions production tarifleri: OIDC cloud auth, matrix build, reusable workflow, caching ve secret yonetimi somut YAML ornekleriyle anlatilir."
+---
 # GitHub Actions Recipes — Production Tarifleri
 
 > *"GitHub Actions YAML 'magic' değil — **disiplin**. Reusable

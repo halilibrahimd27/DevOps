@@ -1,3 +1,6 @@
+---
+description: "DMZ, application ve management zone'larına ayrılmış ağ segmentasyonu mimarisi ve Wazuh SIEM entegrasyonu rehberi; VLAN/subnet planı ve güvenlik şeması."
+---
 # 🔒 Ağ Segmentasyonu ve Wazuh SIEM Entegrasyon Rehberi
 
 > ℹ️ **Placeholder notu:** Bu rehberdeki tüm IP/subnet değerleri (`192.168.x.x` vb.)

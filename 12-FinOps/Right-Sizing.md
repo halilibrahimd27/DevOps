@@ -1,3 +1,6 @@
+---
+description: "AWS, GCP ve Kubernetes icin right-sizing rehberi: kullanim profiline gore instance kuculttme, CPU/memory hedefleri, tooling ve ne zaman kuculteleceginin karari."
+---
 # Right-Sizing — Doğru Boyutta Resource
 
 > *"Ortalama %15 CPU kullanan instance'a `4 vCPU` allocate eden ekip,

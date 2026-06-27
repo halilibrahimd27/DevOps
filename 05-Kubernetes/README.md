@@ -1,3 +1,6 @@
+---
+description: "Production Kubernetes referans seti icindekiler: prod-readiness checklist, resource limitleri, HPA/VPA/KEDA, multi-tenancy, upgrade stratejisi ve pod debugging."
+---
 # 05 · Kubernetes
 
 > *"`kubectl apply -f` çalıştı diye production'da işliyor demek

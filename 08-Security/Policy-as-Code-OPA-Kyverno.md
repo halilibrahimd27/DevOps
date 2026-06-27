@@ -1,3 +1,6 @@
+---
+description: "Kubernetes admission policy oyuncusu Kyverno ve OPA Gatekeeper karsilastirmasi: hazir policy katalogu ve production'a girerken sart olan 10 policy."
+---
 # Policy-as-Code — Kyverno vs OPA Gatekeeper
 
 > *"Ekipte 14 mühendis, 200 namespace, 3 cluster. Hangi pod root mu çalışıyor,

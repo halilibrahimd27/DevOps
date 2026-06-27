@@ -1,3 +1,6 @@
+---
+description: "Internal Developer Platform'un kalbi golden path'leri tasarlama rehberi: opinionated ve otomatik 'yeni servis 5 dakikada' yol haritaları, kapsamı ve adoption ölçümü."
+---
 # Golden Paths — "Yeni Servis 5 Dakikada"
 
 > *"Geliştirici 'yeni servis nasıl açılır?' diye sorduğunda Confluence

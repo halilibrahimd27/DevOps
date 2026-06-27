@@ -1,3 +1,6 @@
+---
+description: "EU AI Act'in mühendislik açısından pratik rehberi: risk kategorileri, high-risk AI sistem yükümlülükleri ve 2025-2027 kademeli uygulama takvimi özeti."
+---
 # EU AI Act — Mühendislik Açısından Pratik Rehber
 
 > *"AI sistemini production'a almadan önce 'high-risk mi?' diye sormayan

@@ -1,3 +1,6 @@
+---
+description: "Google SRE Book'un toil kavramını, nasıl ölçüleceğini, %50 kuralını ve toil'i azaltmanın somut tekniklerini anlatan pratik rehber."
+---
 # Toil Reduction — "Ekibin %50'si Toil'da" Demek
 
 > *"Toil = manuel + tekrarlayan + value yaratmayan iş. SRE

@@ -1,3 +1,6 @@
+---
+description: "Postgres backup stratejileri: 3-2-1 kuralı, RPO/RTO hedefleri, logical/physical backup, PITR ve restore tatbikatını otomasyonla disiplin haline getirme."
+---
 # Postgres Backup & Restore — Test Edilmemiş Backup, Backup Değildir
 
 > *"Backup'ı olmayanların verisi gider; backup'ı olan ama test

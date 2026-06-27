@@ -1,3 +1,6 @@
+---
+description: "Cloud faturasini anlamlandirma: kim ne icin harcadi sorusuna cevap; tagging stratejisi, showback, chargeback ve anomaly detection ile maliyet allocation."
+---
 # Cloud Cost Allocation — Faturayı Anlamak
 
 > *"Bu ay AWS faturası $42,318. Ne için? Bilmiyorum. Hangi takım yaktı?

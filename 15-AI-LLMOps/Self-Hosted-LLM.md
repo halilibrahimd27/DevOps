@@ -1,3 +1,6 @@
+---
+description: "Self-hosted LLM: vLLM, Ollama ve Llama Stack ile kurulum, GPU kapasite planlamasi, production onerileri; privacy, cost ve offline icin self-host artilari."
+---
 # Self-Hosted LLM — vLLM, Ollama, Llama Stack
 
 > *"OpenAI / Anthropic API kullanmak hızlı ama: data gönderiyorsun,

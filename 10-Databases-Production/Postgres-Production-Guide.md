@@ -1,3 +1,6 @@
+---
+description: "Prod-grade PostgreSQL kurulumu için rehber: postgresql.conf tuning, connection pooling, monitoring ve operasyonel kararlar; Postgres 16/17 referansli."
+---
 # PostgreSQL Production Guide — Tuning, Pooling, Monitoring
 
 > *"PostgreSQL'in default config'i bir RaspberryPi için yazılmış gibidir.

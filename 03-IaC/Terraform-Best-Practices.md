@@ -1,3 +1,6 @@
+---
+description: "Terraform/OpenTofu 2026 production rehberi: remote state, versiyonlu module, PR'da plan, manuel apply, for_each, sensitive marking ve sürekli drift izleme."
+---
 # Terraform Best Practices
 
 > *"Terraform `apply -auto-approve` insanlığın en pahalı klavye

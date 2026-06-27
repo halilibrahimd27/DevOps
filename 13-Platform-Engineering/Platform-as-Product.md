@@ -1,3 +1,6 @@
+---
+description: "Platform Engineering'i bir ürün disiplini olarak yönetmenin somut yolları: developer'ı müşteri görme felsefesi, NPS ölçümü, roadmap, OKR, beta program ve evangelism."
+---
 # Platform-as-Product — İç Müşteri Memnuniyeti
 
 > *"Platform takımının ürünü 'bir tool' değil, **diğer mühendislere

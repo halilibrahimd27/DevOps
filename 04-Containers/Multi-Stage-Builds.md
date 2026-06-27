@@ -1,3 +1,6 @@
+---
+description: "Multi-stage Docker build pattern'leri ve anti-pattern'leri: builder/runner ayrimi, dil-spesifik ornekler ve cache optimizasyonu ile imaji 10x kucultme rehberi."
+---
 # Multi-Stage Builds — Küçük, Güvenli, Hızlı Image
 
 > *"Tek-stage Dockerfile = build araçları + runtime aynı image'da.

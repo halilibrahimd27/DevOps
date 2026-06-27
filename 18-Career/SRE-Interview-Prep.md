@@ -1,3 +1,6 @@
+---
+description: "SRE mülakat hazırlığı: SLO design round, error budget ve kapasite matematiği, incident simulation ve postmortem; SRE rolünde aranan core skill'ler üzerine pratik notlar."
+---
 # SRE Interview Prep
 
 > SRE rolünün DevOps'tan ayrılan tarafı: **rakam ile düşünme**, *kasten*

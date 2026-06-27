@@ -1,3 +1,6 @@
+---
+description: "Conventional Commits 1.0 spec: feat/fix/chore commit formatı, niye işe yaradığı ve CI'da nasıl enforce edileceği; otomatik changelog ve semver bump'ın temeli."
+---
 # Conventional Commits — Disiplinli Commit Mesajları
 
 > *"`fix typo lol` mesajı olan bir commit, 6 ay sonra hangi bug'ın

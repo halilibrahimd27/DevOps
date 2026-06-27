@@ -1,3 +1,7 @@
+---
+description: "Sağlıklı on-call rotation kurma rehberi: primary/secondary roller, alert hijyeni, devir-teslim, eskalasyon ve sürdürülebilir nöbet pratikleri."
+---
+
 # On-Call Playbook
 
 > *"Sağlıklı on-call: 7 gün boyunca rotation'da olduğunda **2 kez bile

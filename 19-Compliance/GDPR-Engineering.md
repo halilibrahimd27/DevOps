@@ -1,3 +1,6 @@
+---
+description: "GDPR'ın mühendislik karşılığı: madde eşlemesi, KVKK ile farkları, right-to-erasure, DPA ve Türkiye'den AB pazarına hizmet verirken pratik uyum adımları."
+---
 # GDPR — Mühendislik Açısından Pratik Rehber
 
 > *"GDPR'ı 'AB yasası' diye atlayıp Türkiye'den hizmet veren ekip,

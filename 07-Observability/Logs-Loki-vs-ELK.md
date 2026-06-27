@@ -1,3 +1,6 @@
+---
+description: "Loki ve ELK (Elasticsearch + Logstash + Kibana) log stack karsilastirmasi: indexleme felsefesi, depolama maliyeti, sorgu desenleri ve Wazuh entegrasyonu."
+---
 # Logs — Loki vs ELK Stack
 
 > *"Log stack 'yıllarca aynı' kaldı (ELK), 2020'de Loki geldi —

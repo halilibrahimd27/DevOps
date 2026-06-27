@@ -1,3 +1,6 @@
+---
+description: "Faz 3 (Gün 6-7): Containerization ve registry; GitHub Container Registry kurulumu, login, image push ve Docker multi-stage build şablonlarının hazırlanması."
+---
 # 🐳 **PHASE 3: CONTAINERIZATION VE REGISTRY** (Gün 6-7)
 
 ### 📦 **4.1 GitHub Container Registry Setup**

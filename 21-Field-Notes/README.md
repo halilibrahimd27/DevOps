@@ -1,3 +1,6 @@
+---
+description: "Production kurulumlardan kalan ham DevOps saha notları: Ansible, Terraform, Kubernetes, kubectl ve sistem rehberlerinin olduğu gibi korunmuş komut dökümleri."
+---
 # 21 · Saha Notları — Field Notes
 
 > *"Cilalı deep-dive değil; production'da yaşanıp not düşülmüş ham gerçeklik."*

@@ -1,3 +1,6 @@
+---
+description: "Kopyala-değiştir-kullan DevOps template koleksiyonu: GitHub Actions, Kubernetes, Dockerfile, Terraform, Kyverno, runbook ve Prometheus kuralları; tüm placeholder'lar UPPER_CASE."
+---
 # 17 · Templates
 
 > Copy-paste-değiştir-kullan. Tüm placeholder'lar `<UPPER_CASE>` ile.

@@ -1,3 +1,6 @@
+---
+description: "DevOps için vendor seçimi, kontrat müzakeresi, lock-in ölçümü ve escape stratejisini somut tekniklerle anlatan vendor yönetimi rehberi."
+---
 # Vendor Management — Lock-In, Müzakere, Escape Stratejisi
 
 > *"Vendor 'müşteri başına maliyetler artıyor' dediğinde 6 ay

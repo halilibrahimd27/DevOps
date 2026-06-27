@@ -1,3 +1,6 @@
+---
+description: "Build hizi, imaj boyutu ve guvenligi iyilestiren 20 maddelik Dockerfile best practice listesi: multi-stage, layer/cache ve least privilege."
+---
 # Dockerfile Best Practices — 20 Madde
 
 > *"Imaj ne kadar küçük olursa o kadar güvenli, o kadar hızlı, o kadar

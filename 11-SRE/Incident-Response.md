@@ -1,3 +1,6 @@
+---
+description: "Üretimde incident çıktığında ne yapılır, kim ne der, kim karar verir sorularına net cevap veren; IC rolü, severity ve iletişim odaklı pratik rehber."
+---
 # Incident Response — Yangın Söndürmenin Anatomi'si
 
 > *"Bir incident'ı 30 dakikada kapatabilen ekip ve 4 saatte kapatan ekip arasındaki fark — ekibin yetkinliği değil, **prosedürü**."*

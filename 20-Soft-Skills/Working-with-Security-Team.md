@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE ile Security ekipleri arasındaki sürtünmenin niye olduğunu, nasıl ortadan kalkacağını ve sağlıklı işbirliğinin somut pratiklerini anlatır."
+---
 # Security Ekibiyle Çalışmak — Düşman Değil, Partner
 
 > *"Security ekibi 'nope' dediğinde DevOps ekibinin ilk içgüdüsü

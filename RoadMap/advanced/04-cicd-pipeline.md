@@ -1,3 +1,6 @@
+---
+description: "Faz 4 (Gün 8-10): CI/CD pipeline kurulumu; Kubernetes üzerinde Jenkins kurulumu, namespace, ServiceAccount ve RBAC ile pipeline altyapısının oluşturulması."
+---
 # 🔄 **PHASE 4: CI/CD PIPELINE KURULUMU** (Gün 8-10)
 
 ### 🛠️ **5.1 Jenkins on Kubernetes Setup**

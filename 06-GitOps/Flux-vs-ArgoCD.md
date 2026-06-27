@@ -1,3 +1,6 @@
+---
+description: "Flux ve ArgoCD GitOps araçlarının 2026 karşılaştırması: felsefe, UI, multi-cluster, Helm/Kustomize desteği ve hangi senaryoda hangisi tercih edilir."
+---
 # Flux vs ArgoCD — GitOps Tool Karar Rehberi
 
 > *"İki tool da CNCF Graduated, ikisi de production-ready, ikisi de

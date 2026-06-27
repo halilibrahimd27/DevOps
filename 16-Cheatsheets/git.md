@@ -1,3 +1,6 @@
+---
+description: "Git pratik komut notlari: status ve log inspection, gecmis duzenleme, bisect, cherry-pick, reflog ve worktree. Senior dev'lerin gunluk kullandigi ipuclari."
+---
 # Git Cheatsheet
 
 > *"Git'i kullanmıyorsun, Git seni kullanıyor."* — her senior dev, eninde sonunda

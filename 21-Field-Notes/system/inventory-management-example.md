@@ -1,3 +1,6 @@
+---
+description: "DevOps envanter yönetimi master şablonu: sunucu/instance envanteri ve kullanıcı erişim envanteri tabloları; hostname, IP, rol, OS ve SSH key kayıtları."
+---
 # Envanter Yönetimi — Örnek (Master Template)
 
 ## 📂 DEVOPS ENVANTER ANALİZİ — MASTER TEMPLATE

@@ -1,3 +1,6 @@
+---
+description: "Kubernetes ortaminda production-grade DNS kurulumu: external-dns, CoreDNS tuning, NodeLocal DNSCache ve split-horizon ile DNS incident'larini onleme rehberi."
+---
 # DNS Strategies — external-dns, NodeLocal, CoreDNS Tuning
 
 > *"Production'da %30 incident **DNS**'tedir. 'It's always DNS' meme'si

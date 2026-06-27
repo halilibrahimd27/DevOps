@@ -1,3 +1,6 @@
+---
+description: "EU NIS2 Directive (2022/2555) rehberi: kritik altyapı kapsamı, mühendislik gereksinimleri, yürürlük takvimi, cezalar ve TR şirketlerin AB müşterileriyle etkisi."
+---
 # NIS2 Directive — EU Kritik Altyapı Güvenliği
 
 > *"NIS2 'AB yasası' diye atlanan ekipler, 2024-2025'te **bir

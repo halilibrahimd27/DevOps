@@ -1,3 +1,6 @@
+---
+description: "Trivy ekseninde shift-left container image tarama rehberi: OS/dil CVE, IaC misconfig, secret ve SBOM taramasi; CI gate'ten admission ve runtime drift'e."
+---
 # Container Image Scanning — CVE'yi Üretime Sokmamak
 
 > *"CVE'yi prod'da bulmaktansa, prod'a sokmamak — 1000 kat ucuz, 100

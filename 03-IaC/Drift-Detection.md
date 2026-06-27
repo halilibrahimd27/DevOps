@@ -1,3 +1,6 @@
+---
+description: "Terraform/OpenTofu drift detection rehberi: Git ile cloud arasındaki farkı sürekli yakalama, otomasyon, alarm ve remediation pattern'leri somut araçlarla."
+---
 # Drift Detection — Git'te Yazan ile Cloud'da Olan Arasındaki Fark
 
 > *"Console'dan tıklayarak EBS değiştirdin, Terraform bilmiyor. **Drift**.

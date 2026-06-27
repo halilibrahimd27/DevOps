@@ -1,3 +1,6 @@
+---
+description: "Stacked diffs pattern: büyük feature'ı küçük ve gerçekten review edilebilir PR'lara bölme; Graphite, Sapling veya manuel branch chain ile araç ve workflow."
+---
 # Stacked Diffs — Büyük Feature'ı Küçük PR'lara Bölme
 
 > *"3000 satırlık PR'ı 'review et' demek, mühendisin **gözünü

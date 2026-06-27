@@ -1,3 +1,6 @@
+---
+description: "Postgres connection pooling rehberi: PgBouncer pratikleri, pgcat ve app-side pooling alternatifleri, pool exhaustion sorunu ve doğru pool size hesabı."
+---
 # Connection Pooling — Postgres'in En Sık İhmal Edilen Tarafı
 
 > *"Postgres connection = process. 10 MB RAM. 500 connection = 5 GB.

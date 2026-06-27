@@ -1,3 +1,6 @@
+---
+description: "Terraform ve OpenTofu icin komut notlari: init, fmt, validate, plan/apply workflow, state islemleri, import ve console. Komutlar her iki arac icin ayni calisir."
+---
 # Terraform / OpenTofu Cheatsheet
 
 > Komutlar `terraform` ve `tofu` için aynıdır. OpenTofu fork sonrası

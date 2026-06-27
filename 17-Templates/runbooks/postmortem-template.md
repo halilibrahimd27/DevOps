@@ -1,3 +1,6 @@
+---
+description: "Blameless postmortem template: TL;DR, etki metrikleri, UTC zaman çizelgesi, kök neden, savunma katmanları, owner'lı aksiyon maddeleri ve öğrenilen dersler."
+---
 # Postmortem: <INCIDENT TITLE>
 
 > **Status:** Draft / Under Review / Final

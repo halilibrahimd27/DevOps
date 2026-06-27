@@ -1,3 +1,6 @@
+---
+description: "Chaos engineering'i game day, fault injection, Litmus ve Chaos Mesh ile ekibin kültürüne entegre etmenin somut yollarını anlatan rehber."
+---
 # Chaos Engineering — Kontrollü Hata Yaratmak
 
 > *"Production'da incident'ı **bekleyen ekip**, ihlal anında öğrenir.

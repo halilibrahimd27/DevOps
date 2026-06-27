@@ -1,3 +1,6 @@
+---
+description: "Production'da network sorunlarini sistemli debug etme: tcpdump, ss, dig ve conntrack komutlari ile karar agaci yontemini somut adimlarla anlatan rehber."
+---
 # Network Troubleshooting — tcpdump, ss, dig, conntrack
 
 > *"Connection timeout. Sebep: A) NetworkPolicy, B) DNS, C) firewall,

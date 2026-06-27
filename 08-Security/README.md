@@ -1,3 +1,6 @@
+---
+description: "DevSecOps bolumu indeksi: shift-left pipeline, secrets yonetimi, image scanning, Kubernetes hardening, SLSA/SBOM, policy-as-code ve zero-trust rehberleri."
+---
 # 08 · Security (DevSecOps)
 
 > *"Production'da ihlal olduğunda 'security takımının sorunu değil, hepimizin

@@ -1,3 +1,6 @@
+---
+description: "Linux sorun giderme cheatsheet'i: Brendan Gregg USE metodu ile CPU, bellek, disk ve network teshisi. Production'da neyin yavas oldugunu bulma araclari."
+---
 # Linux Troubleshooting Cheatsheet
 
 > *"Production'da bir şey yavaş, hangi şey?"* sorusunun çoklu pencereli cevabı.

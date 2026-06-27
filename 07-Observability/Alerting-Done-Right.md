@@ -1,3 +1,6 @@
+---
+description: "Symptom-based, actionable ve az sayida alarm tasarlama rehberi: alarmin 3 sarti, cause vs symptom ayrimi, alert fatigue, runbook ve alert review pratikleri."
+---
 # Alerting Done Right — Symptom-Based, Actionable, Az
 
 > *"50 alarm/gün gelen ekibin SRE'si **bağışıklık** geliştirir.

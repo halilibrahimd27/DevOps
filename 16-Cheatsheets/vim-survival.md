@@ -1,3 +1,6 @@
+---
+description: "Vim hayatta kalma rehberi: cikma, kaydetme, undo, modlar ve temel duzenleme. Usta olmak degil, production sunucusunda 2 dakikada config duzeltip cikmak icin."
+---
 # Vim Survival Guide
 
 > *"Vim'den nasıl çıkarım?"* — `:q!` (Enter)

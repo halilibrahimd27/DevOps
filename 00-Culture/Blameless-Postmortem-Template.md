@@ -1,3 +1,7 @@
+---
+description: "Suçlamayan (blameless) postmortem felsefesi ve şablonu: neden blameless, blameful/blameless ton karşılaştırması, dolu örnek ve kontrol listesi."
+---
+
 # Blameless Postmortem — Felsefe ve Şablon
 
 > *"Blameless" = "Suçsuz" değil; **suçlamayan**. Sistem hatasını
