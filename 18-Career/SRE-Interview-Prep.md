@@ -223,6 +223,42 @@ Tek bir partition/shard tüm trafiği yiyor.
 
 ---
 
+## 🚫 Mülakatta sık hatalar
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| SLO'yu rakamsız "yüksek availability" diye geçmek | Ölçülemez hedef = error budget yok = mühendislik yok | SLI seç, %99.9x koy, dakikaya/budget'a çevir |
+| %100 availability hedeflemek | Imkansız + sonsuz maliyet, hiçbir deploy/risk alınamaz | Error budget kavramını savun: %99.95 yeter, kalanı hız için harca |
+| Incident'te önce root-cause araştırmak | Müşteri down'ken dakikalar yanar, "mitigate first" ihlali | Önce rollback/mitigate, root-cause postmortem'e bırak |
+| Alert'i acknowledge etmeden dalmak | Ekip "kimse bakıyor mu" panik yapar, çift müdahale | İlk hareket: acknowledge + severity + incident channel |
+| Kapasiteyi linear ölçeklemek (5x trafik = 5x pod) | DB/cache/downstream pinch point'leri görmezden gelir | Bottleneck'i (genelde DB) tespit et, pre-scale + headroom |
+| HPA'ya güvenip event'e reactive girmek | İlk dalga acı çeker, scale-up window'u geç kalır | Black Friday öncesi manuel pre-scale + pool pre-warm |
+| Chaos'u staging'de bırakıp prod'a hiç sokmamak | Sadece prod'da çıkan hatalar yakalanmaz | Blast radius minimize (%1 traffic, off-hours) edip prod'da koştur |
+| Toil'i "sıfırlayacağım" demek | Gerçekçi değil; yeni feature yeni toil yaratır | "Kontrol altına alırım" + ROI/payback ile önceliklendir |
+| Retry'ı jitter'sız/limitsiz eklemek | Retry storm + thundering herd, cascade'i büyütür | Backoff + jitter + circuit breaker + load shedding |
+| Cache miss'i request coalescing'siz bırakmak | 1000 pod aynı query'yi atar, DB çöker | Coalescing + stale-while-revalidate + early refresh |
+| Postmortem'i kişi suçlamak için kullanmak | Blameless kültür kırılır, gerçek root-cause saklanır | Blameless: sistem/process eksiğine odaklan, action item çıkar |
+
+---
+
+## 📋 Hazırlık adımları
+
+- [ ] Back-of-envelope matematik akıcı: RPS↔QPS, dakika↔budget, %99.9x→downtime çevirimini ezberle
+- [ ] Bir SLO'yu uçtan uca tasarlayabiliyorum (SLI seç → SLO → SLA → multi-burn-rate alert → error budget policy)
+- [ ] Incident response sıralamasını refleks haline getir: ack → severity → channel → recent-change → rollback → diagnosis → comms
+- [ ] "Mitigate first, investigate later" prensibini bir örnekle anlatabiliyorum
+- [ ] Capacity planning'de bottleneck-önce-DB yaklaşımını ve pre-scale gerekçesini sözel verebiliyorum
+- [ ] Cascading failure çözümlerini (circuit breaker, bulkhead, backoff+jitter, load shedding) ezbere sayabiliyorum
+- [ ] Thundering herd / hot spot kalıplarına en az 2'şer çözüm hazır
+- [ ] Bir chaos experiment'i steady-state→hipotez→blast-radius→observe→iterate sırasıyla tasarlayabiliyorum
+- [ ] Blameless postmortem yapısını (timeline, impact, root cause, action items) biliyorum
+- [ ] En az 1 gerçek incident/proje hikayemi STAR formatında hazırladım (Situation-Task-Action-Result)
+- [ ] 4 haftalık çalışma planındaki SRE Book + Workbook bölümlerini tamamladım
+- [ ] En az 1 mock interview yaptım (peer ya da Pramp/Interviewing.io)
+- [ ] kubectl rollout / HPA / k6 gibi araçların temel komutlarını canlı yazabiliyorum
+
+---
+
 ## 📚 Hazırlık kaynakları
 
 - *Site Reliability Engineering* — Google (ücretsiz online)

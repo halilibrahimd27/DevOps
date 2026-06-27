@@ -228,6 +228,28 @@ Bir mühendisin "production-ready on-call" olması için:
 
 ---
 
+## 📋 Checklist
+
+On-call rotation'ı **production-ready** saymadan önce hepsini işaretle:
+
+- [ ] Rotation 4-8 kişi — < 4 ise burnout riski, hemen büyüt.
+- [ ] PagerDuty/Opsgenie ile auto-rotation kurulu, tatil/izin override çalışıyor.
+- [ ] Her aktif alert'in runbook'u var — runbook'suz alert canlıya alınmaz.
+- [ ] Alert'ler actionable + customer-impacting + urgent; gerisi ticket'a düşürüldü.
+- [ ] Severity tier (SEV-1..SEV-4) tanımlı, her tier'ın bildirim kanalı net.
+- [ ] Acknowledge SLA'i (15 dk) ölçülüyor, kaçırılınca secondary'ye eskale oluyor.
+- [ ] Incident Commander + Comms Lead rolleri SEV-1/SEV-2 için belirli.
+- [ ] Status page (<STATUS_PAGE_URL>) bağlı, Comms Lead güncelliyor.
+- [ ] Handoff ritüeli var — outgoing özet yazıyor, 30 dk overlap uygulanıyor.
+- [ ] Postmortem 24 saat içinde draft'a giriyor, blameless yürütülüyor.
+- [ ] Postmortem aksiyon item'larının > %70'i kapatılıyor (takip ediliyor).
+- [ ] Haftalık alert audit yapılıyor; false positive eşik ayarı veya silme ile kapatılıyor.
+- [ ] Compensation politikası net: standby/page-time pay veya comp-day veriliyor.
+- [ ] Yeni mühendis 4 haftalık onboarding (shadow → reverse shadow → solo) tamamladı.
+- [ ] Rotation ortalaması < 5 page; üzeri reliability yatırımı tetikliyor.
+
+---
+
 ## 📚 Devamı
 
 - [Google SRE Book — Chapter 11: Being On-Call](https://sre.google/sre-book/being-on-call/)

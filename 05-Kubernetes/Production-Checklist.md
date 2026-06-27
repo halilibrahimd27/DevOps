@@ -426,6 +426,30 @@ kubectl diff -f deployment.yaml
 
 ---
 
+## 🚫 Anti-Pattern
+
+Red flag'ler "neyi yapma"yı söyler; bu tablo "onun yerine ne yap"ı da verir.
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| `image: <APP>:latest` | Tag mutable; aynı tag farklı içerik çeker, rollback imkansız | SHA-pinned (`@sha256:...`) veya semantic version |
+| `imagePullPolicy: Always` prod'da | Her pod start'ında registry'ye gider; rate-limit + yavaş başlangıç | SHA-pinned image + `IfNotPresent` |
+| `resources` tanımsız | BestEffort QoS; node baskısında ilk evict edilen pod olursun | Her container'a `requests`, memory `limits` zorunlu |
+| Memory `limit` yok | Sızıntı node'u OOM'a sürükler, komşu pod'ları öldürür | Memory limit mutlaka; CPU limit opsiyonel |
+| CPU `limit == request` her yerde | Gereksiz CFS throttling, p99 latency artar | CPU'da burst bırak (limit yok ya da request'ten yüksek) |
+| `livenessProbe` ağır `/health`'e bağlı | DB yavaşlayınca probe fail → cascade restart fırtınası | Liveness hafif `/health/live`; bağımlılık kontrolü readiness'te |
+| `readinessProbe` yok | Henüz warm-up bitmemiş pod'a trafik gider, 503 | `/health/ready` ile downstream + warm-up kontrolü |
+| `preStop` + grace period yok | Pod kill anında in-flight bağlantılar 503 alır | `preStop: sleep`, `terminationGracePeriodSeconds` yeterli |
+| `replicas: 1` (leader-election'sız) | Tek node/zone arızası = tam kesinti (SPOF) | min 2-3 replica + PDB + topology spread |
+| PDB yok | Node drain/upgrade tüm replica'ları aynı anda kaldırabilir | `PodDisruptionBudget: minAvailable` |
+| Secret `env` içinde plain | Log, `env` dump ve `kubectl describe`'da sızar | `Secret` resource / ESO / Sealed Secrets / SOPS |
+| `runAsRoot` (securityContext yok) | Container escape ayrıcalıklı; node compromise yolu | `runAsNonRoot`, `drop: ["ALL"]`, `readOnlyRootFilesystem` |
+| Default ServiceAccount + cluster-admin | Tek pod compromise = cluster pwn | Kendi SA + dar Role; `automountServiceAccountToken: false` |
+| NetworkPolicy yok | Düz ağ; bir pod'dan tüm namespace'lere lateral movement | Namespace başına default-deny + explicit allow |
+| `kubectl apply` manuel | Drift, audit-trail yok, "kim ne deploy etti" belirsiz | GitOps (ArgoCD/Flux) Git'i izlesin, drift'i düzeltsin |
+
+---
+
 ## 🚦 "Bu prod'a çıkamaz" red flag'ler
 
 | 🚩 | Açıklama |

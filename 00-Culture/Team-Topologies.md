@@ -241,6 +241,25 @@ DevOps & Platform Engineering ekiplerinin **yapı** referansı.
 
 ---
 
+## 📋 Checklist
+
+Bir org yapısını "Team Topologies uyumlu" saymadan önce şunları doğrula:
+
+- [ ] Her takım net bir tipe oturuyor (stream-aligned / enabling / complicated subsystem / platform) — "karma" takım yok
+- [ ] Stream-aligned takımlar end-to-end bir akışın sahibi: build + deploy + on-call aynı ekipte ("you build it, you run it")
+- [ ] Hiçbir stream-aligned takım 9 kişiyi aşmıyor (aşıyorsa böl)
+- [ ] Platform team ürün gibi yönetiliyor: roadmap var, NPS ölçülüyor, ticket-driven değil
+- [ ] Platform self-service: yeni servis açmak / prod'a deploy etmek tek ekiple, az adımda yapılıyor
+- [ ] "DevOps team" / "QA team" / "Database team" gibi silo bottleneck'ler yok
+- [ ] Enabling takımlar için çıkış kriteri tanımlı — kalıcı hale gelmiyor, iş bitince dağılıyor
+- [ ] Her takım çifti için etkileşim modu açık (collaboration / X-as-a-Service / facilitating) ve süreli olanların bitiş tarihi var
+- [ ] Cognitive load ölçülüyor: "yeni servis / deploy / incident için kaç ekiple konuşmalıyım?" sayısı takip ediliyor
+- [ ] Extraneous cognitive load (tooling/process karmaşası) platform team backlog'unda azaltma hedefi olarak duruyor
+- [ ] Mimari diyagramı org chart'ı yansıtıyor (Conway's Law) — uyumsuzluk reorg sinyali olarak izleniyor
+- [ ] Reorg tetikleyicileri tanımlı: feature lead time'ı, koordinasyon toplantısı yükü, çapraz-ekip ticket sayısı
+
+---
+
 ## 📚 Devamı
 
 - *Team Topologies* — Skelton & Pais (kitap, **must read**)

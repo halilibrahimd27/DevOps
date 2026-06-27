@@ -492,6 +492,46 @@ Hata türleri:
 
 ---
 
+## 🚫 Anti-Pattern
+
+Mülakatta sık görülen tuzaklar — bunlardan kaçın.
+
+| Anti-pattern | Niye kötü | Doğru |
+|--------------|-----------|-------|
+| Tanım ezberleyip okumak | Mülakatçı deneyim arıyor, Wikipedia değil; takip sorusunda çökersin | Kavramı kendi yaşadığın bir olayla, trade-off vererek anlat |
+| "Her zaman X kullanılır" demek | Mutlak ifade tecrübesizlik sinyali; gerçek hayatta her şey bağlama bağlı | "Şu durumda X, şu durumda Y; çünkü..." diye koşula bağla |
+| Bilmediğin konuda uydurmak | Yanlış cevap, dürüst "bilmiyorum"dan çok daha kötü; güveni yıkar | "Bunu kullanmadım ama şöyle yaklaşırdım / nasıl öğrenirim" de |
+| Problemi netleştirmeden çözüme dalmak | Yanlış soruyu çözersin; sistem tasarımında ölümcül | Önce varsayımları/kısıtları sor, scope'u netleştir, sonra çöz |
+| Debug sorusunda rastgele komut denemek | Sistematiksizlik panik gösterir; gerçek incident'te de tehlikeli | Hipotez → ölç → daralt; `describe`/`logs`/`events` sırayla |
+| Behavioral'da "biz" diye anlatmak | Senin katkın görünmez; rolün belirsiz kalır | STAR ile **senin** aksiyonunu net ver, sayı ile destekle |
+| Eski incident'te başkasını suçlamak | Blameless kültür yoksunluğu; takım oyuncusu değilsin sinyali | Sistemik kök neden + "niye yakalanmadı" + ne değiştirdin |
+| Trade-off söylemeden tek doğru sunmak | Senior+ sinyali trade-off farkındalığıdır; tek-boyutlu cevap junior gösterir | Her kararın maliyetini/karmaşıklığını da söyle |
+| Soru sormadan teklifi kabul etmek | İlgisizlik/araştırmasızlık sinyali; karşılıklı uyum kaçar | Ürün, ekip yapısı, on-call, teknik borç hakkında hazır soru getir |
+| Abartılı/yalan deneyim anlatmak | Derinleşen soruda ortaya çıkar; tüm güveni sıfırlar | Gerçek deneyim + dürüstçe sınırını belirt |
+
+---
+
+## 📋 Checklist
+
+Mülakata girmeden önce hazır olduğunu doğrula.
+
+- [ ] Her seviye için en az 2 gerçek hikaye hazır (STAR formatında, sayısal impact ile)
+- [ ] "En zor incident" hikayesi prova edildi — timeline, rolün, öğrenilen ders net
+- [ ] "Yanlış çıkan kararım" örneği dürüst ve sistemik dersle hazır
+- [ ] Container/K8s/CI-CD/Terraform temel kavramları trade-off ile anlatılabiliyor
+- [ ] Debug yaklaşımı sistematik prova edildi (hipotez → ölç → daralt)
+- [ ] Sistem tasarımında önce scope/kısıt sorma refleksi yerleşik
+- [ ] Whiteboard/ekran paylaşımı ile düşünerek konuşma (think-aloud) çalışıldı
+- [ ] Başvurulan şirket araştırıldı: ürün, engineering blog, son haberler, tech stack
+- [ ] Mülakatçıya sorulacak en az 5 anlamlı soru hazır (on-call, teknik borç, ekip yapısı)
+- [ ] CV'deki her satırı derinleşen takip sorusuna karşı savunabiliyorsun
+- [ ] Production-like lab (kind/k3d/minikube) ile pratik yapıldı, eller kirlendi
+- [ ] Maaş/seviye beklentisi ve müzakere aralığı önceden belirlendi
+- [ ] Teknik ortam test edildi (kamera, mikrofon, IDE/terminal paylaşımı) — remote mülakat için
+- [ ] "Bilmiyorum"u dürüstçe söyleyip nasıl öğrenirim ekleme refleksi prova edildi
+
+---
+
 ## 📚 Hazırlık kaynakları
 
 - [System Design Interview — Alex Xu]

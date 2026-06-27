@@ -488,6 +488,53 @@ Developer push → PR open
 
 ---
 
+## 📋 Checklist
+
+Production'a çıkmadan önce her madde işaretlenmeli. İşaretlenmeyen madde =
+açık risk.
+
+### State & Backend
+- [ ] State remote backend'de (S3/GCS/Azure Blob) — local state YOK
+- [ ] State locking aktif (DynamoDB / GCS native / Azure lease)
+- [ ] State bucket'ta versioning enabled (rollback için)
+- [ ] State encryption KMS ile (SSE-S3 değil)
+- [ ] Bucket public access block: all + access logging ayrı bucket'a
+- [ ] `*.tfstate` ve `*.tfstate.backup` `.gitignore`'da
+- [ ] Her env/service için ayrı state key (monolitik state YOK)
+
+### Kod & Module
+- [ ] `required_version` ve tüm provider'lar pinned (`~> 5.0` / `>= 5.0, < 6.0`)
+- [ ] `.terraform.lock.hcl` commit'lenmiş (multi-platform hash'lerle)
+- [ ] Module'ler Git tag / Registry version ile referanslı — path-based YOK
+- [ ] `for_each` kullanılıyor (mümkün olan her yerde `count` yerine)
+- [ ] Tüm `variable`'larda `type` + `description`, kritiklerinde `validation`
+- [ ] `terraform fmt -recursive -check` temiz
+- [ ] `terraform validate` ve `tflint --recursive` hatasız
+
+### Güvenlik
+- [ ] Sensitive değişken/output'lar `sensitive = true`
+- [ ] Gerçek secret'lar Vault/Secrets Manager veya ephemeral resource'tan
+- [ ] tfsec/Checkov taraması CI'da, kritik bulgu YOK
+- [ ] OPA/Conftest policy gate plan üzerinde çalışıyor
+- [ ] Provider credential'ları OIDC/role-assume ile (uzun ömürlü key YOK)
+
+### Lifecycle & Güvenli Apply
+- [ ] Kritik kaynaklarda (RDS, KMS, prod bucket) `prevent_destroy = true`
+- [ ] Replace gerektiren değişiklikler `create_before_destroy` ile
+- [ ] `ignore_changes` spesifik field'larda (`["*"]` YOK)
+- [ ] Plan PR'da görünür (Atlantis / GHA comment)
+- [ ] Apply manuel onay gate'inin arkasında, audit log'lu — `-auto-approve` YOK
+- [ ] Apply öncesi state backup adımı pipeline'da
+
+### Operasyon
+- [ ] Drift detection scheduled (daily/weekly) + alarm (Slack/PagerDuty)
+- [ ] Promote sırası uygulanıyor: dev → staging → prod
+- [ ] Module'lerde `README.md` (terraform-docs) ve `examples/` var
+- [ ] Kritik module'ler için Terratest/`tofu test` entegrasyon testi
+- [ ] Backend bootstrap chicken-and-egg çözümü dokümante (`-migrate-state`)
+
+---
+
 ## 📚 Devamı
 
 - [Terraform official docs](https://www.terraform.io/docs)

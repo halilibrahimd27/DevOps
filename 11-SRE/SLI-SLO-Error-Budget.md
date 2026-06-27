@@ -251,6 +251,62 @@ duyur. Kim bu kuralı uygulayacak (tooling enforce'u + manager onayı)?
 
 ---
 
+## 🚫 Anti-Pattern
+
+Aşağıdaki tablo SLO pratiğinde en sık görülen yanlışları damıtır. Sol
+sütundakini yapma, sağdakini yap.
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| SLO = %100 hedefle | Matematiksel imkansız; error budget = 0 olur, hiç deploy edemezsin. | Gerçekçi koy (%99.9 çoğu prod için). Budget'ı risk almak için harca. |
+| SLO'yu mevcut davranışa eşitle (retro-fit) | "%99.7'deyim, hedefim %99.7" ölçümdür, hedef değil; iyileştirme baskısı kaybolur. | Mevcut + biraz mühendislik gücü = SLO. Hedef şu ankine yakın ama biraz iyi olsun. |
+| SLI olarak CPU/memory/disk seç | Saturation göstergesi; kullanıcı CPU yüksekken bile etkilenmemiş olabilir. | Müşteri-deneyimi yansıtan SLI: success rate, latency, freshness. |
+| Latency'yi average ile ölç | Ortalama yalan söyler; kuyruktaki kötü request'leri gizler. | `histogram_quantile` ile p99/p95 percentile kullan. |
+| Sadece error rate'i SLO yap | Hızlı ama yanlış/bayat yanıt SLO'yu yeşil gösterir, müşteri kötü. | Latency + freshness + correctness'i de SLO'ya kat. |
+| Cause-based alert (CPU > %80) | False positive üretir; gerçek müşteri etkisi olmadan page atar. | Symptom-based: error budget burn-rate üzerinden alert. |
+| Tek-window SLO alert | Ya çok geç (low-burn) ya çok hassas (false positive) görür. | Multi-burn-rate: 2 pencere (fast 14.4x + slow 6x) birlikte. |
+| Toplam/aggregate metric'e bak | Bir büyük tenant %50 down olsa toplamda fark etmezsin. | Per-tenant / per-journey breakdown ile ölç. |
+| Endpoint bazında SLO | Tek endpoint yeşil olabilir ama user journey kırık. | User journey (akış zinciri) bazında SLO yaz. |
+| Üretici tarafında (app 5xx) ölç | LB/gateway'de timeout olan request app'e hiç ulaşmaz, ölçülmez. | Müşteriye yakın ölç: CDN / API gateway tarafı. |
+| SLA = SLO (aynı değer) | Buffer yok; iç hedefi kaçırınca direkt müşteri sözünü ihlal edersin. | İç SLO'yu SLA'dan sıkı tut (SLA %99.5 → SLO %99.7). |
+| Error budget policy'yi manuel "biz tutarız" yap | Disiplin baskı altında ilk çöken şeydir; gating uygulanmaz. | Policy'yi tooling ile enforce et (GitOps gating + alertmanager). |
+| Window'u çok kısa (7 gün) seç | Noisy; sürekli yanlış alarm, sinir bozucu. | 30 gün rolling standart. Çok uzun (90 gün) da kötüyü geç fark ettirir. |
+
+---
+
+## 📋 Checklist
+
+Bir servisin SLO'su production-ready sayılmadan önce hepsi işaretlenmeli.
+
+**SLI tanımı**
+- [ ] SLI'lar müşteri perspektifinden seçildi (CPU/memory değil, success rate / latency)
+- [ ] Latency SLI percentile (p99/p95) ile ölçülüyor, average ile değil
+- [ ] Servis kategorisine uygun SLI'lar var (request/response → availability + latency; data → freshness + correctness)
+- [ ] Ölçüm müşteriye en yakın noktada yapılıyor (CDN / API gateway), app içinde değil
+- [ ] User journey bazında en az bir SLI tanımlandı (kritik akış endpoint zinciri)
+
+**SLO hedefi**
+- [ ] Mevcut performans son 30 günde ölçüldü (gerçek baseline)
+- [ ] Hedef gerçekçi konuldu (downtime tablosuna karşı maliyet/gerek doğrulandı)
+- [ ] İç SLO, müşteriye verilen SLA'dan sıkı (buffer var)
+- [ ] Window 30 gün rolling olarak sabitlendi
+- [ ] Multi-tenant ise per-tenant breakdown query'si mevcut
+
+**Error budget & alerting**
+- [ ] Error budget matematiği hesaplandı (allowed bad minutes belli)
+- [ ] Multi-burn-rate alert kuruldu (fast 14.4x → page, slow 6x → ticket)
+- [ ] Alert'ler symptom-based (burn-rate), cause-based (CPU) değil
+- [ ] Recording + alerting rules versiyon kontrolünde (`<PLACEHOLDER>/slo-recording-rules.yaml`)
+- [ ] Budget eşiklerine bağlı deploy gating tooling ile enforce ediliyor (manuel değil)
+
+**Gözlemlenebilirlik & süreç**
+- [ ] Dashboard tek bakışta gösteriyor: current SLO, budget remaining, burn-rate, deploy annotation
+- [ ] Error budget policy yazılı ve takıma duyuruldu (budget < %20 → feature freeze)
+- [ ] Policy'yi kimin/neyin uygulayacağı net (tooling enforce + manager onayı)
+- [ ] Aylık SLO review takvime alındı (budget yanması, alert doğruluğu, hedef güncelleme)
+
+---
+
 ## 📚 Devamı
 
 - *Site Reliability Engineering* (Google SRE Book) — bölüm 4

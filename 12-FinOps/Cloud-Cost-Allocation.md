@@ -428,6 +428,63 @@ Monthly cost change: +$320
 
 ---
 
+## 🚫 Anti-Pattern
+
+Maliyet allocation'da en sık görülen ve faturayı kör eden hatalar:
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| Tag enforcement olmadan allocation başlatmak | Untagged resource = atfedilemeyen para; rapor delik dolu çıkar | Önce SCP/Config/Kyverno ile zorunlu tag, sonra rapor |
+| Sadece toplam faturaya bakmak | Hangi ekip/servis yaktı görünmez, optimizasyon kör | Team + Service tag bazında breakdown çek |
+| Ay sonunu bekleyip faturaya bakmak | Sürpriz patlama; sapma 30 gün boyunca büyür | Günlük anomaly detection (Cost Anomaly veya Athena cron) |
+| Cost Explorer ile resource-seviye analiz | CE aggregate; tek resource'u izleyemezsin | Resource-seviye için CUR → Athena kullan |
+| Kubernetes maliyetini cloud bill'den okumak | Bill node bazlı; pod/namespace attribution yok | OpenCost/Kubecost ile pod-seviye allocation |
+| Egress maliyetini görmezden gelmek | Kontrolsüz büyür ($0.09/GB); en büyük gizli gider | VPC Endpoint + CDN + cross-region trafiği izle |
+| Hemen 3-yıl all-upfront RI almak | Esneklik sıfır; instance tipi değişince para çöp | Önce 1-year SP, kullanım oturunca uzun commit |
+| SP/RI expiration'ı takip etmemek | Commit cliff'e çarpıp on-demand fiyata düşmek | Bitişten 60 gün önce alarm + yenileme planı |
+| Idle resource'u (boş EIP/EBS/LB) bırakmak | Kullanılmadan fatura yazar; ay ay birikir | Haftalık idle taraması + otomatik temizlik |
+| Maliyeti merkezi tek ekibe yıkmak (showback yok) | Kimse kendi tüketimini görmez, sorumluluk yok | Showback dashboard; her ekip kendi maliyetini görür |
+| Maliyet diff'ini merge sonrası fark etmek | Pahalı kaynak prod'a sızar, geri almak zor | PR-time Infracost diff ile merge öncesi gör |
+
+---
+
+## 📋 Checklist
+
+Production-ready cost allocation için somut maddeler:
+
+**Tagging foundation**
+- [ ] Zorunlu tag set tanımlı (`Environment`, `Team`, `Service`, `CostCenter`, `ManagedBy`, `Owner`)
+- [ ] SCP ile tag'siz resource oluşturma engelleniyor (org-level)
+- [ ] Terraform `required-tags` modülü tüm modüllerde kullanımda
+- [ ] Kyverno/AWS Config ile K8s + AWS tag compliance denetimi aktif
+- [ ] Mevcut (legacy) resource'lar retro-tag'lendi
+- [ ] Haftalık untagged raporu otomatik; 4 hafta üst üste untagged kalan durduruluyor
+
+**Reporting**
+- [ ] CUR aktif ve Athena'ya bağlı (resource-seviye sorgu mümkün)
+- [ ] Team bazlı breakdown raporu çalışıyor
+- [ ] Untagged-cost raporu izleniyor (kayıp para görünür)
+- [ ] Kubernetes için OpenCost/Kubecost kurulu (pod/namespace allocation)
+
+**Showback / Chargeback**
+- [ ] Her ekibe aylık showback dashboard/e-mail gidiyor
+- [ ] Bütçe vs gerçek karşılaştırması raporda var
+- [ ] (Büyük org) Chargeback iç fatura akışı finansla entegre
+
+**Anomaly & alarm**
+- [ ] AWS Cost Anomaly Detection monitor + subscription aktif
+- [ ] Günlük sapma sorgusu (>%30) Slack/e-mail'e düşüyor
+- [ ] Alarm subscriber ARN/endpoint `<PLACEHOLDER>` ile parametrize, hardcode kredensiyal yok
+
+**Optimizasyon**
+- [ ] Idle EC2/EBS/EIP/LB haftalık taranıyor
+- [ ] gp2→gp3 ve eski snapshot temizliği planlı
+- [ ] Egress (data transfer) izleniyor; VPC Endpoint/CDN devrede
+- [ ] RI/SP stratejisi baseline'a göre belirli; expiration'a 60 gün alarm
+- [ ] PR-time Infracost diff CI'da çalışıyor
+
+---
+
 ## 📚 Devamı
 
 - [FinOps Foundation](https://www.finops.org)

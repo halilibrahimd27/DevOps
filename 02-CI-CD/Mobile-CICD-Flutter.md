@@ -871,6 +871,25 @@ README.md'ye:
 
 ---
 
+## 🚫 Anti-Pattern
+
+Flutter CI/CD kurarken sık yapılan ve mutlaka kaçınılması gereken hatalar:
+
+| Anti-pattern | Niye kötü | Doğru |
+|--------------|-----------|-------|
+| Keystore/.p12/.mobileprovision dosyalarını repo'ya commit etmek | Sertifika sızar, herkes uygulamanı imzalayabilir; geri alınamaz. | Hassas dosyaları `.gitignore`'a al, base64 olarak GitHub Secrets'ta sakla. |
+| Şifreleri workflow YAML'ına veya koda gömmek | Repo'yu gören herkes credential'a erişir; rotasyon imkânsızlaşır. | Tüm credential'ları `${{ secrets.* }}` referansıyla Secrets'tan oku. |
+| Keystore'u tek yerde tutmak / yedek almamak | Kaybedersen uygulamayı bir daha güncelleyemezsin (Play Store imza zorunlu). | En az 3 ayrı yerde yedekle: password manager + şifreli cloud + offline. |
+| Build number'ı elle artırmak | İnsan unutur, çakışan build number upload'ı reddedilir. | `--build-number=${{ github.run_number }}` ile otomatik artır. |
+| İlk testleri doğrudan production track'e atmak | Hatalı build gerçek kullanıcılara ulaşır, geri çekme zor. | Önce Firebase Distribution / internal track / TestFlight'ta dene. |
+| API key / service account JSON'unu loglara yazdırmak | Actions logları sızdırırsa credential ifşa olur. | Secret'ları echo etme; `add-mask` kullan veya hiç yazdırma. |
+| Sertifika expiry tarihini takip etmemek | Sertifika dolduğunda pipeline aniden kırılır, release durur. | Expiry tarihlerini takvime/uyarıya bağla, dolmadan yenile. |
+| Release build'i imzasız veya `minifyEnabled false` ile çıkmak | Store reddeder ya da APK şişer, kod açıkta kalır. | `signingConfig` + `minifyEnabled`/`shrinkResources` + ProGuard aktif olsun. |
+| `flutter test` / lint adımını CI'dan atlamak | Kırık kod store'a kadar gider, geç fark edilir. | Test job'ı build'lerden önce zorunlu (required check) yap. |
+| Service account'a Owner/aşırı geniş izin vermek | Sızarsa tüm projeye erişim açılır. | En az ayrıcalık: yalnız Release Manager / App Manager rolü ver. |
+
+---
+
 ## 📞 Yardım Kaynakları
 
 ### Dokümantasyon:

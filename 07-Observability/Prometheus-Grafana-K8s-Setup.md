@@ -578,6 +578,43 @@ kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-alertmanager 9
 
 ---
 
+## 🚫 Anti-Pattern
+
+| Anti-pattern | Niye kötü | Doğru |
+|--------------|-----------|-------|
+| Grafana admin şifresini `values.yaml`'a düz metin yazmak (`adminPassword: "admin123!"`) | Şifre git'e ve Helm release secret'ına sızar, herkes okur | Şifreyi K8s Secret olarak oluştur, `admin.existingSecret` ile referansla |
+| Tüm servisleri NodePort ile internete açmak | Prometheus/AlertManager kimlik doğrulamasız, cluster metrikleri ve config dışarı sızar | İç erişimi ClusterIP'te tut, dış erişimi Ingress + auth (OAuth2/basic) arkasına al |
+| `retention` ayarlamadan Prometheus çalıştırmak | TSDB disk'i sınırsız büyür, PVC dolar, Prometheus crash olur | `retention: 15d` ve `retentionSize` ile sınır koy, PVC boyutuyla uyumlu tut |
+| Pod'lara resource `requests`/`limits` koymamak | Prometheus OOM-kill yer veya node'u boğar, scrape kesilir | Her bileşene memory/cpu request+limit ver (örn. Prometheus 1Gi limit) |
+| `emptyDir` veya persistence kapalı çalıştırmak | Pod restart'ında tüm metrik ve dashboard geçmişi silinir | `persistence.enabled: true` + kalıcı StorageClass kullan |
+| `helm upgrade`'i mevcut values almadan çalıştırmak | Önceki özelleştirmeler default'a döner, NodePort/şifre/retention sıfırlanır | Önce `helm get values ... > current.yaml`, sonra `--values current.yaml` ile upgrade et |
+| Alert kuralı yazmadan sadece dashboard'a bakmak | Sorunlar ekrana bakan biri olmadığında fark edilmez | Kritik metrikler için `PrometheusRule` ile alert tanımla, AlertManager'ı bir kanala bağla |
+| Tek replica AlertManager ile prod'a çıkmak | Pod düşünce hiçbir alarm iletilmez, sessiz arıza | AlertManager'ı HA (en az 2 replica) ve gerçek receiver (Slack/e-posta/PagerDuty) ile kur |
+| `kubectl patch` ile servisleri elle düzenleyip values'a yazmamak | Bir sonraki Helm upgrade değişikliği ezer, drift oluşur | Değişiklikleri `values.yaml`'a yaz, kaynak-doğru (GitOps) tut |
+| Metrics server / `kubectl top` olmadan kapasite planlamak | Kaynak kullanımı görünmez, limit ayarları tahmine dayanır | Metrics server kur, `kubectl top` ve Grafana ile gerçek kullanımı izle |
+
+---
+
+## 📋 Checklist
+
+Production'a çıkmadan önce:
+
+- [ ] Grafana admin şifresi K8s Secret'ta (`existingSecret`), values'da düz metin yok
+- [ ] Prometheus `retention` + `retentionSize` ayarlandı ve PVC boyutuyla uyumlu
+- [ ] Tüm bileşenlerde resource `requests` ve `limits` tanımlı
+- [ ] Persistence açık ve kalıcı StorageClass kullanılıyor (Prometheus, Grafana, AlertManager)
+- [ ] Dış erişim Ingress + TLS + auth arkasında; Prometheus/AlertManager doğrudan NodePort ile açık değil
+- [ ] AlertManager HA (>=2 replica) ve gerçek receiver'a (Slack/e-posta/PagerDuty) bağlı
+- [ ] Kritik metrikler için `PrometheusRule` alert kuralları yazıldı ve test edildi
+- [ ] Prometheus `/targets` sayfasında tüm hedefler `UP`
+- [ ] Metrics server kurulu, `kubectl top pods/nodes` çalışıyor
+- [ ] `externalLabels` (cluster adı) ayarlandı — çok-cluster federasyon için
+- [ ] Backup planı var: Prometheus data + Grafana config/dashboard'lar düzenli alınıyor
+- [ ] RBAC ve NetworkPolicy ile monitoring namespace izole edildi
+- [ ] Tüm konfigürasyon `values.yaml`'da versiyonlanıyor; manuel `kubectl patch` drift'i yok
+
+---
+
 ## 📖 Ek Kaynaklar
 
 ### Resmi Dokümantasyon

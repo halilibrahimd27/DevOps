@@ -26,11 +26,19 @@
 
 ## 2. CLAUDE.md Anatomi Uyumu
 
-**Numaralı deep-dive'lar (125 dosya) — çok iyi durumda:**
-- Anti-pattern tablosu eksik: **1 / 125**
-- Checklist eksik: **1 / 125**
+**Numaralı deep-dive'lar (125 dosya) — büyük ölçüde uyumlu:**
+- Anti-pattern tablosu eksik: **7 / 125**
+- Checklist eksik: **13 / 125**
 
-→ Numaralı içerik anayasaya neredeyse tam uyumlu; Faz 3 burada **minimal**. (1'er sapan dosya Faz 3'te tek tek tespit edilip kapatılacak.)
+> ⚠️ **Düzeltme:** İlk taramada "1/125" yazılmıştı; bu bir zsh word-splitting
+> hatasının ürünüydü (döngü tek iterasyon koştu). Python ile yeniden ölçülen
+> doğru rakamlar yukarıdadır. ~16 benzersiz dosya etkileniyor.
+
+→ İçeriğin %85+'i anatomiye uyumlu; Faz 3 eksik bölümleri (anti-pattern/checklist)
+dosyanın gerçek konusuna dayalı, CLAUDE.md sesinde ekler (uydurma yok).
+Kod-bloğu dil etiketi (`MD040`) CI'da zorunlu değil (`.markdownlint.jsonc: MD040 false`,
+zaten markdownlint CI'dan çıkarılmış) → 511 etiketsiz fence (çoğu ASCII diyagram/
+tree/çıktı) bilinçli olarak değiştirilmedi.
 
 **Eski klasörler (RoadMap/System/Network/Ansible/Terraform/Kubectl) — anatomi YOK:**
 Bunlar saha notu / uzun rehber formatında; CLAUDE.md deep-dive iskeletini (epigraf, kavram tablosu, anti-pattern tablosu, checklist, kapanış) izlemiyor. Bilinçli mi (saha notu) yoksa dönüştürülecek mi → **§5 kararına bağlı**.

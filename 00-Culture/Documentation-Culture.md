@@ -254,6 +254,27 @@ Yılda bir audit. Her doc:
 
 ---
 
+## 📋 Checklist
+
+Bir doc'u "production-ready" saymadan önce:
+
+- [ ] Her repo'da Tier-1 README var — özet + quick start + architecture link 5 dakikada anlaşılıyor
+- [ ] Önemli mimari kararlar numaralı ADR'da (`docs/adr/`), 1 sayfayı geçmiyor, immutable
+- [ ] Doc başında `last-reviewed` + `owner` + `review-frequency` frontmatter'ı dolu
+- [ ] `CODEOWNERS`'ta doc dizinlerinin sahibi tanımlı (orphan doc yok)
+- [ ] CI'da link checker (lychee vb.) çalışıyor — kırık link PR'ı bloke ediyor
+- [ ] CI'da "6 aydır review olmamış" / stale doc uyarısı aktif
+- [ ] Code change ile doc aynı PR'da güncelleniyor (drift'e karşı PR kuralı)
+- [ ] Tüm code block'lar test edildi — komutlar gerçekten çalışıyor
+- [ ] Placeholder'lar `<UPPER_CASE>` formatında, gerçek IP/domain/credential yok
+- [ ] Linkler relative — repo taşınınca kırılmıyor
+- [ ] Diátaxis ayrımı korunmuş — tutorial / how-to / reference / explanation karışmamış
+- [ ] On-call için runbook + incident sonrası postmortem template'i mevcut
+- [ ] Doc Git'te (markdown), meeting notes Notion/Confluence'da — kaynak doc Slack thread değil
+- [ ] Audit'te "decommission ya da düzelt" geçti — stale doc silindi
+
+---
+
 ## 📚 Devamı
 
 - [Diátaxis framework](https://diataxis.fr) — 4 doc türü

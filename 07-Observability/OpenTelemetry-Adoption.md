@@ -374,6 +374,50 @@ queue_gauge = meter.create_observable_gauge("queue.depth", callbacks=[cb])
 
 ---
 
+## 🚫 Anti-Pattern
+
+| Anti-pattern | Niye kötü | Doğru |
+|---|---|---|
+| Vendor SDK'sını (Datadog/NewRelic) yeni kodda kullanmak | OTel'in tüm amacını öldürür; vendor değişince yine kod değişir | OTel API/SDK ile yaz, Collector exporter'ından vendor'a gönder |
+| `user_id`/`order_id` gibi high-cardinality attribute'u metric'e koymak | Time-series patlar, Prometheus/Mimir maliyeti uçar | High-cardinality alanları trace'e bırak; metric'te düşük-kardinalite label kullan |
+| Memory limiter processor'ı atlamak | Collector OOM olur, tüm telemetry kaybı + restart loop | Her pipeline'da `memory_limiter`'ı ilk processor yap |
+| Batch processor'sız OTLP export | Her span ayrı RPC; network/CPU overhead patlar | `batch` processor ile gönderimi grupla |
+| Prod'da head-based %100 sampling | Veri ve maliyet kontrolsüz büyür | Tail-based sampling: error + slow %100, geri kalan düşük yüzde |
+| Tail sampling'i `decision_wait` çok kısa ayarlamak | Geç gelen span'lar trace'ten düşer, eksik trace | `decision_wait`'i en yavaş span'ı kapsayacak şekilde ver (örn. 10s) |
+| Custom attribute isimleri (`httpMethod`, `env`) | Semantic convention bozulur, vendor dashboard/query çalışmaz | `http.method`, `deployment.environment` standart isimlerini kullan |
+| Trace ID'yi log'a eklememek | Trace ↔ log korelasyonu kopar, debug'da köprü yok | Logger'a `trace_id`/`span_id` enjekte et, JSON log'a yaz |
+| `traceparent` header'ı manuel forward etmemek | Servisler arası trace zinciri kırılır | W3C propagator'ı kur; HTTP client auto-inject etsin |
+| PII'yı (email, token) span/log'a olduğu gibi göndermek | KVKK/GDPR ihlali, sızıntı riski | `attributes` processor ile delete/hash uygula |
+| Auto-instrument'i kör açıp bırakmak | Gereksiz span (redirect, health-check, DB ping) noise + maliyet | İstenmeyen span'ları sampler/filter ile sustur |
+| OTLP endpoint'ini TLS'siz public ağda kullanmak | Telemetry trafiği şifresiz akar, dinlenebilir | İç ağda `insecure` tamam; dış hop'ta mTLS/TLS zorunlu kıl |
+| Hepsini tek seferde (trace+metric+log) migrate etmek | Risk büyük, geri dönüş zor, ekip boğulur | Faz faz git: önce trace, sonra metric, sonra log |
+
+---
+
+## 📋 Checklist
+
+Production-ready OTel adoption için:
+
+- [ ] OTel SDK (auto + manuel span) tüm servislerde kurulu, vendor SDK kaldırıldı
+- [ ] `service.name`, `service.version`, `deployment.environment` her serviste set ediliyor
+- [ ] Attribute isimleri semantic conventions'a uygun (`http.*`, `db.*`, `service.*`)
+- [ ] Collector deploy edildi (`mode` workload'a uygun: deployment/daemonset)
+- [ ] Her pipeline'da `memory_limiter` ilk, `batch` processor ekli
+- [ ] Tail-based sampling aktif: error + slow %100, random düşük yüzde
+- [ ] `decision_wait` en yavaş işlemi kapsayacak şekilde ayarlı
+- [ ] PII redaction: email/token/user-agent için delete/hash processor'ı ekli
+- [ ] W3C `traceparent` propagation tüm servisler arası HTTP/gRPC'de çalışıyor
+- [ ] Log'lara `trace_id`/`span_id` enjekte ediliyor, Grafana'da trace ↔ log geçişi test edildi
+- [ ] High-cardinality attribute'lar metric'e değil trace'e gidiyor (cardinality kontrol edildi)
+- [ ] Yeni metric'ler OTel metrics API ile yazılıyor (eski Prometheus client değil)
+- [ ] OTLP endpoint dış hop'larda TLS/mTLS ile korunuyor
+- [ ] Collector kendi telemetry'sini export ediyor (self-monitoring: drop/queue metrikleri)
+- [ ] Collector resource limit/request set edildi, OOM ve restart loop izleniyor
+- [ ] Migration fazları planlandı ve sıralı yürütülüyor (trace → metric → log → vendor-neutral)
+- [ ] Exporter failover/queue (sending_queue + retry) backend down senaryosu için ayarlı
+
+---
+
 ## 📚 Devamı
 
 - [opentelemetry.io](https://opentelemetry.io)
