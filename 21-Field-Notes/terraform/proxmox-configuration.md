@@ -278,7 +278,7 @@ resource "proxmox_vm_qemu" "k8s_masters" {
   
   # Cloud-init settings
   ciuser  = "ubuntu"
-  cipassword = "ubuntu"
+  cipassword = "<CI_PASSWORD>"
   
   # Tags
   tags = "kubernetes,master,production"
@@ -348,7 +348,7 @@ resource "proxmox_vm_qemu" "k8s_workers" {
   
   sshkeys = var.ssh_public_key
   ciuser  = "ubuntu"
-  cipassword = "ubuntu"
+  cipassword = "<CI_PASSWORD>"
   
   tags = "kubernetes,worker,${local.worker_nodes[count.index].role}"
   
@@ -413,7 +413,7 @@ resource "proxmox_vm_qemu" "k8s_infra" {
   
   sshkeys = var.ssh_public_key
   ciuser  = "ubuntu"
-  cipassword = "ubuntu"
+  cipassword = "<CI_PASSWORD>"
   
   tags = "kubernetes,infrastructure,${local.infra_nodes[count.index].role}"
   
@@ -478,7 +478,7 @@ resource "proxmox_vm_qemu" "k8s_lb" {
   
   sshkeys = var.ssh_public_key
   ciuser  = "ubuntu"
-  cipassword = "ubuntu"
+  cipassword = "<CI_PASSWORD>"
   
   tags = "loadbalancer,haproxy"
   
@@ -543,7 +543,7 @@ resource "proxmox_vm_qemu" "k8s_storage" {
   
   sshkeys = var.ssh_public_key
   ciuser  = "ubuntu"
-  cipassword = "ubuntu"
+  cipassword = "<CI_PASSWORD>"
   
   tags = "storage,nfs"
   
