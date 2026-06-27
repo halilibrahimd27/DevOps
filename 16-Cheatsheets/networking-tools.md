@@ -1,3 +1,6 @@
+---
+description: "Network teshis araclari cheatsheet'i: DNS icin dig, baglanti ve port testleri, 7 katmanli sorun giderme. Ping doner ama uygulama 503 verir senaryolari icin."
+---
 # Networking Tools Cheatsheet
 
 > *"Pingledi, döndü; curl çalıştı; ama uygulama 503 veriyor."*

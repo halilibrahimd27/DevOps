@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE icin pratik prompt engineering: log analizi, runbook generation, incident summary ve postmortem icin somut prompt pattern'leri ve 5 temel prensip."
+---
 # Prompt Engineering for Ops — DevOps İçin Pratik LLM Kullanımı
 
 > *"LLM'e 'şunu yap' demek = junior'a yarım talimat vermek. Spesifik

@@ -1,3 +1,6 @@
+---
+description: "GitHub Actions CI/CD pipeline kurulum rehberi: repository yapısı, workflow dosyaları, Kustomize tabanlı k8s base/staging/production ortamları ve Docker akışı."
+---
 # 🚀 GitHub Actions Pipeline Kurulum Rehberi
 
 ## 📁 **ADIM 1: Repository Yapısını Organize Et**

@@ -1,3 +1,6 @@
+---
+description: "App-of-Apps pattern: ArgoCD'yi tek bir root Application ile bootstrap edip kendi kendini yöneten self-managed GitOps akışına dönüştürme rehberi."
+---
 # App-of-Apps Pattern — ArgoCD'yi Kendi Kendinden Yönet
 
 > *"ArgoCD'yi `helm install` ile manuel kuran ekip, bir gün

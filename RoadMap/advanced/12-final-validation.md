@@ -1,3 +1,6 @@
+---
+description: "Faz 12 (Gün 27-28): Final kurulum ve doğrulama; tüm sistemin uçtan uca test scriptiyle validasyonu, başarı sayacı ve test kontrollerinin çalıştırılması."
+---
 # 🎉 **FINAL SETUP AND VALIDATION** (Gün 27-28)
 
 ### ✅ **13.1 End-to-End Testing**

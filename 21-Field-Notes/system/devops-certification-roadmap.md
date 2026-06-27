@@ -1,3 +1,6 @@
+---
+description: "2025 DevOps sertifika roadmap'i: entry-level'dan senior'a en değerli 10 sertifika (AWS, Docker DCA, Terraform), süre, maliyet, ROI ve kariyer etkileri."
+---
 # DevOps Sertifika Roadmap: 2025 Senior Seviye Kariyer Rehberi
 
 DevOps mühendisliği 2025'te **%19.7 yıllık büyüme** ile en hızlı gelişen IT alanlarından biri. **1.31 milyon aktif AWS sertifikası** ve **%37 DevOps beceri açığı** ile piyasada güçlü talep var. Bu rehber, entry-level'dan senior seviyeye kadar en değerli 10 sertifika ve stratejik kariyer yolunu sunuyor.

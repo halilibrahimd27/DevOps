@@ -1,3 +1,6 @@
+---
+description: "CI'da PR'in cost impact'ini hesaplama ve PR yorumuna ekleme: Infracost ve Kubecost ile pre-merge maliyet review, sürpriz bill yerine bilincli karar."
+---
 # PR Cost Diff — "Bu PR ne kadara mal olacak?"
 
 > *"Developer PR açıyor: replica 3 → 10, instance type m5.large → r5.4xlarge.

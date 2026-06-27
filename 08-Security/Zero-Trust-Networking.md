@@ -1,3 +1,6 @@
+---
+description: "Zero Trust networking'i uygulanabilir kilan rehber: NIST 800-207 prensipleri, BeyondCorp, her yerde mTLS, service mesh authZ ve workload identity."
+---
 # Zero-Trust Networking — "Network Sınırı" Yalanı Bitti
 
 > *"VPN'in arkasında olan her şey güvenilir" diye düşünmek 2026'da

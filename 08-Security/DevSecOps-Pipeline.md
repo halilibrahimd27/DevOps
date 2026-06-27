@@ -1,3 +1,6 @@
+---
+description: "Pre-commit'ten runtime'a her asamada guvenlik kontrolu olan fail-fast ama developer-friendly DevSecOps pipeline tasarimi: shift-left ve defense in depth."
+---
 # DevSecOps Pipeline — Shift-Left'ten Runtime'a
 
 > *"Security review en sonda, deploy gününden 2 hafta önce başlar"

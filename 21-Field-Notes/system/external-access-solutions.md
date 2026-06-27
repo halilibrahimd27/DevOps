@@ -1,3 +1,6 @@
+---
+description: "Kubernetes servislerine dış erişim çözümleri: kubectl port-forward ile 0.0.0.0 bind, NodePort service ve kalıcı external access yöntemleri; bash örnekleri."
+---
 # Dış Erişim (External Access) Çözümleri
 
 > 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.

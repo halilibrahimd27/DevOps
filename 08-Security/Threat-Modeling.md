@@ -1,3 +1,6 @@
+---
+description: "Threat modeling pratik rehberi: sistemin nasil saldirilabileceginin ve hangi kontrolun hangi tehdidi azalttiginin kaydi; STRIDE/LINDDUN ile yasayan dokuman."
+---
 # Threat Modeling — Sistemsiz Tehdit Avı Bitsin
 
 > *"Saldırgan zaten **size** bir threat model yapıyor. Siz yapmazsanız

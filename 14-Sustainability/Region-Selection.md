@@ -1,3 +1,6 @@
+---
+description: "AWS, GCP ve Azure region'larini karbon yogunluguna gore karsilastiran rehber; latency, maliyet ve data-residency trade-off'lariyla dusuk-karbon region karar matrisi kurma."
+---
 # Region Selection — Cloud Region Karbon Karar Matrisi
 
 > *"Aynı workload'u Frankfurt yerine Stockholm'de çalıştırmak %60

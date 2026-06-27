@@ -1,3 +1,6 @@
+---
+description: "CIS Benchmark esasli adim adim Kubernetes prod-grade hardening: tehdit modeli, API server hardening, RBAC, NetworkPolicy ve Pod Security Standards rehberi."
+---
 # Kubernetes Hardening — 2026 Production Rehberi
 
 > *"Default Kubernetes config'i 'çalışıyor' demek, banka kasasının kapısını

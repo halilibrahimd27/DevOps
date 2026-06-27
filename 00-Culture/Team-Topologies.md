@@ -1,3 +1,7 @@
+---
+description: "Skelton & Pais'in Team Topologies kitabından damıtılmış 4 takım türü (stream-aligned, enabling, complicated-subsystem, platform) ve etkileşim modları rehberi."
+---
+
 # Team Topologies — Ekip Yapısı Olarak Mühendislik
 
 > *Conway's Law: "Sistemler, tasarlayan organizasyonların iletişim

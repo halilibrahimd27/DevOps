@@ -1,3 +1,6 @@
+---
+description: "Çok-paydaşlı DevOps/SRE işlerinde yönetim, ürün, müşteri, hukuk ve security'ye kime ne dilde ne kadar anlatılacağını gösteren paydaş yönetimi rehberi."
+---
 # Stakeholder Management — Kime, Ne Dilde, Ne Kadar
 
 > *"Aynı outage hikâyesini CTO'ya 30 saniyede, müşteri destek

@@ -1,3 +1,6 @@
+---
+description: "Terraform/OpenTofu repo yapısı ve module tasarımı rehberi: mono/multi repo modelleri, vpc/eks/rds modül iskeleti, versioning ve composition pattern örnekleri."
+---
 # Terraform Module Layout — Repo Yapısı + Module Tasarımı
 
 > *"50 service için tek `main.tf` 5000 satır oldu. **Module yok**,

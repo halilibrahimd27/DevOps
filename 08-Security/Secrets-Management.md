@@ -1,3 +1,6 @@
+---
+description: "Production'da sir yonetimi: DB parolasi, API key ve token'lari Vault, ESO, SOPS ve Sealed Secrets ile yoneten stack karsilastirmasi ve karar agaci."
+---
 # Secrets Management — Production'da Sır Yönetimi
 
 > *"Sır, Git history'ye giren her şeydir. Bir kez girdi mi, oradadır —

@@ -1,3 +1,6 @@
+---
+description: "Postgres observability stack rehberi: pg_stat_statements, postgres-exporter, slow query log ve replication monitoring; somut alarm ve dashboard örnekleriyle."
+---
 # Postgres Monitoring — Slow Query, Lock, Bloat, Replication
 
 > *"Postgres 'bir şey yok gibi' çalışırken aslında 5 farklı yerde yangın

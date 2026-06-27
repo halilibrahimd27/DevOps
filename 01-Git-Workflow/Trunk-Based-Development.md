@@ -1,3 +1,6 @@
+---
+description: "Git Flow yerine trunk-based development: kısa ömürlü feature branch, feature flag ve güvenli prod deploy ile main üzerinde hızlı ve güvenli geliştirme rehberi."
+---
 # Trunk-Based Development — Hızın ve Güvenliğin Buluştuğu Yer
 
 > *"Branch'iniz 3 gün yaşıyorsa kötü; 3 hafta yaşıyorsa felaket;

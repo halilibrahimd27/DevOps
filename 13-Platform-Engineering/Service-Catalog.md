@@ -1,3 +1,6 @@
+---
+description: "Backstage Catalog ile servis envanterini tutma, ownership atama, dependency graph görüntüleme ve on-call eşlemesi yapmanın pratik yollarını anlatan rehber."
+---
 # Service Catalog — Servis Envanteri, Ownership, Dependency Graph
 
 > *"50 mikroservis var. 'X servisi kim sahipleniyor?' sorusuna 5 dakikada

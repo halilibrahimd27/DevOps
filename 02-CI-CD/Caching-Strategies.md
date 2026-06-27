@@ -1,3 +1,6 @@
+---
+description: "CI/CD cache katmanlari rehberi: dependency, build, Docker layer ve test result cache stratejileri somut config ornekleriyle; pipeline'i dakikalara indirir."
+---
 # Caching Strategies — Build, Test, Deploy Cache
 
 > *"Cache hit %0 = 'biz yeni başlıyoruz' demek. Production CI'da

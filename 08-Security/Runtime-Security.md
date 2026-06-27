@@ -1,3 +1,6 @@
+---
+description: "Kubernetes'te runtime'da kotu davranisi tespit etmenin modern yolu: Falco (rule-based), Tetragon (eBPF native) ve alarmdan eyleme uzanan zincirin kurulumu."
+---
 # Runtime Security — Falco, Tetragon, eBPF
 
 > *"Build-time tarama duvarı yapar; runtime detection **alarmı çalan

@@ -1,3 +1,6 @@
+---
+description: "Laravel API, TypeScript SPA, Flutter mobil ve Kubernetes için enterprise DevOps proje yapısı: Dockerfile, nginx, ortam dosyaları ve dizin şablonu."
+---
 # 🚀 Enterprise-Grade DevOps Setup - Laravel + TypeScript + Flutter + K8s
 
 ## 📁 Complete Project Structure

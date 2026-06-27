@@ -1,3 +1,6 @@
+---
+description: "Kubernetes multi-tenancy modelleri: soft (namespace + RBAC), hard, vCluster ve cluster-per-tenant; izolasyon, maliyet ve kullanim karsilastirmasi."
+---
 # Multi-Tenancy Patterns — Soft, Hard, Hibrit
 
 > *"Tek cluster + 10 ekip. 'Her ekip kendi namespace'i' diyen ekip,

@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE/Platform CV yazım rehberi: görev yerine etki odaklı yazım, STAR formülü, ATS uyumu ve Türk pazarı ile global pazar farkları üzerine pratik notlar."
+---
 # DevOps / SRE CV Tips — Türk Pazarı + Global
 
 > *"CV'ni 'görev listesi' olarak yazan ekipte kalır; **etki listesi**
@@ -263,7 +266,7 @@ Building reliable systems @ DevHub.io.
 
 ## Recent writing
 - [DevOps Notebook (TR)](https://github.com/.../DevOps) — production-grade Türkçe
-- [Blog: Why we migrated from Helm to Kustomize](...)
+- [Blog: Why we migrated from Helm to Kustomize](https://<YOUR_BLOG>/helm-to-kustomize)
 
 ## Reach me
 - alarm@example.com (general)

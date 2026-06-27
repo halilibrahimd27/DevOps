@@ -1,3 +1,6 @@
+---
+description: "2026'da ekiplerin gerçekten kullandığı DevOps çerçeveleri: CALMS, DORA, platform engineering, GitOps, SRE, DevSecOps, FinOps ve operasyonel pratikler."
+---
 # Modern DevOps 2026 — Metodolojiler, Stratejiler & Kültür
 
 > 2026 itibarıyla *yapan ekiplerin* gerçekten kullandığı çerçeveler,

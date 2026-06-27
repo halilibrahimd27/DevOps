@@ -1,3 +1,6 @@
+---
+description: "28 günlük planı okumadan çalışan bir iskeleti 30 dakikada ayağa kaldırma rehberi: ön koşul checklist, ilk kurulum ve hızlı altyapı deployment adımları."
+---
 # ⚡ 30 Dakikalık Hızlı Kurulum
 
 > Tüm 28 günlük planı okumadan, çalışan bir iskeleti hızlıca ayağa kaldırmak için.
@@ -70,8 +73,8 @@ echo "Applications ready! 🎉"
 
 ## Need Help?
 
-- 📖 **Full Documentation**: [README.md](README.md)
-- 🔧 **Troubleshooting**: [docs/troubleshooting.md](docs/troubleshooting.md)
+- 📖 **Tam rehber**: [advanced-roadmap.md](../advanced-roadmap.md) (28 günlük detaylı plan)
+- 🔧 **Troubleshooting**: kurulum tamamlanınca kendi platformunda `docs/troubleshooting.md` oluştur
 - 💬 **Support**: Contact DevOps team
 
 **Happy deploying!** 🚀🚀🚀

@@ -1,3 +1,6 @@
+---
+description: "Kubernetes için 3 büyük Postgres operator karşılaştırması: CloudNativePG, Crunchy PGO ve Zalando; HA, backup, monitoring ve 2026 için net karar."
+---
 # Postgres Operator Karşılaştırma — CloudNativePG, Crunchy, Zalando
 
 > *"K8s'de Postgres yönetiyorsan **operator zorunlu**. Manuel

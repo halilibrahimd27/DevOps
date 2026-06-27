@@ -1,3 +1,6 @@
+---
+description: "Yazilim emisyonunu gercek metrige donusturen stack rehberi: SCI formulu, Cloud Carbon Footprint, Kepler eBPF ve AWS/GCP/Azure native karbon dashboard'lari adim adim."
+---
 # Measuring Software Carbon — SCI, Cloud Carbon Footprint, Kepler
 
 > *"Yazılım karbonunu ölçmüyorsan, **azaltma iddiası boştur**.

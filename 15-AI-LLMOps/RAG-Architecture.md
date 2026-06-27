@@ -1,3 +1,6 @@
+---
+description: "RAG (Retrieval-Augmented Generation) mimarisi: embedding, vector store, retriever, reranker ve generation asamalarini production'da kurma; LLM'e dis kaynak."
+---
 # RAG Architecture — Retrieval-Augmented Generation
 
 > *"LLM 'her şeyi bildiğinden' emin olduğu **halüsinasyonun**

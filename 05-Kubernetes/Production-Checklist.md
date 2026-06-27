@@ -1,3 +1,6 @@
+---
+description: "50 maddelik Kubernetes prod-readiness checklist: workload tasarimi, resource, security, reliability/HA, observability ve operations/GitOps eksenleri."
+---
 # Kubernetes Production Checklist
 
 > *"`kubectl apply -f` çalıştı diye production'da çalışıyor demek değil."*

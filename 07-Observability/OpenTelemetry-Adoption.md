@@ -1,3 +1,6 @@
+---
+description: "OpenTelemetry (OTel) ile vendor-neutral observability: tek SDK ve OTLP protokolu, Collector mimarisi, auto-correlation ve semantic conventions ile vendor bagimliligini kaldirma."
+---
 # OpenTelemetry Adoption — Vendor-Neutral Observability
 
 > *"Datadog SDK + Prometheus client + Loki driver hep aynı bilgiyi

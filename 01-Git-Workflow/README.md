@@ -1,3 +1,6 @@
+---
+description: "Modern Git iş akışı rehberi indeksi: trunk-based development, conventional commits, code review, stacked diffs ve PR otomasyonu; 2026 branching stack'i."
+---
 # 01 · Git Workflow
 
 > *"Branch'lerin yaşam süresi, bug'ların yaşam süresine eşittir."*

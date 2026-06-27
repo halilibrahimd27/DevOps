@@ -1,3 +1,6 @@
+---
+description: "Kubernetes cluster'i zero-downtime upgrade rehberi: release cycle, upgrade disiplini, rollback, deprecated API gecisi, managed vs self-managed farklari."
+---
 # Kubernetes Upgrade Strategy — Zero-Downtime Versiyon Migration
 
 > *"K8s 4 ayda bir minor versiyon yayınlar. Skip eden ekip 1 yılda

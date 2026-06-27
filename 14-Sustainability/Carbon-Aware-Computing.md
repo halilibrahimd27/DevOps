@@ -1,3 +1,6 @@
+---
+description: "Carbon-aware workload scheduling rehberi: isin ne zaman ve nerede calisacagini sebekenin anlik karbon yogunluguna gore secme, gercek zamanli API'lar, K8s ve CI ornekleri."
+---
 # Carbon-Aware Computing — Düşük-Karbon Saatte Çalış
 
 > *"Aynı işi rüzgârlı bir gece çalıştırmak ile fosil yakıt yüklü

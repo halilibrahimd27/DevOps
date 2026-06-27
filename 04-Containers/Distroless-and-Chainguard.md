@@ -1,3 +1,6 @@
+---
+description: "Distroless ve Chainguard image'lari, niye 2026 standardi olduklari, base image CVE karsilastirmasi, migration stratejisi ve trade-off'lar uzerine pratik rehber."
+---
 # Distroless & Chainguard — 0-CVE Image Stratejisi
 
 > *"Ubuntu base = 100+ CVE, daily. Alpine = ~30 CVE. Distroless =

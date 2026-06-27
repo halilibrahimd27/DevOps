@@ -1,3 +1,6 @@
+---
+description: "RFC, ADR ve Design Doc gibi yazılı iletişim biçimlerinin ne, ne zaman, nasıl yazıldığını ve async toplantısız karar kültürünü anlatan rehber."
+---
 # Documentation as Communication — RFC, ADR, Design Doc
 
 > *"Toplantı yapmak 5 kişinin 1 saatini götürür. **5 sayfalık RFC**

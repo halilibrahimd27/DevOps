@@ -1,3 +1,6 @@
+---
+description: "Audit evidence'ı otomatik toplama disiplini: continuous evidence collection ile SOC 2, ISO 27001, KVKK ve PCI DSS için ortak kanıt pattern'i ve tooling."
+---
 # Audit Evidence Automation — "Audit Gününe Hazırlık" Bitsin
 
 > *"Audit haftasında 80 saat manual evidence toplayan ekip,

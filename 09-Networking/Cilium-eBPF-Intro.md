@@ -1,3 +1,6 @@
+---
+description: "Cilium ve eBPF teknolojisine pratik giris: kube-proxy replacement, sidecar'siz mimari ve modern kernel-tabanli network stack'in nasil kuruldugu anlatilir."
+---
 # Cilium & eBPF — 30 Dakikada Modern Network Stack
 
 > *"kube-proxy, iptables, sidecar — 2014'ün K8s networking

@@ -1,3 +1,6 @@
+---
+description: "Kubecost ile Kubernetes cost visibility: per-namespace, workload ve label bazli dollar maliyet dashboard, allocation modeli, alert ve OpenCost alternatifi."
+---
 # Kubecost Setup — K8s Cost Visibility
 
 > *"K8s cluster $80K/ay maliyet, 'kim kullanıyor?' bilen yok.

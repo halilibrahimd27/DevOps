@@ -1,3 +1,6 @@
+---
+description: "Kubernetes uzerinde Prometheus ve Grafana kurulum dokumantasyonu: sistem gereksinimleri, on kosullar, Helm kurulum adimlari, service konfigurasyonu, erisim ve sorun giderme."
+---
 # Prometheus + Grafana Kubernetes Kurulum Dokümantasyonu
 
 ## 📋 İçindekiler

@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE mülakatlarına özgü system design cheatsheet: infra, deploy, observability, disaster recovery ve maliyet sorularını çözmek için sıralı framework."
+---
 # DevOps/SRE System Design — Cheatsheet
 
 > Geleneksel "Design Twitter" sorularından farklı olarak, DevOps/SRE

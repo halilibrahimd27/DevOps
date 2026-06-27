@@ -1,3 +1,6 @@
+---
+description: "Junior'dan Staff seviyeye 60+ DevOps mülakat sorusu: container, Kubernetes, Git, CI/CD ve daha fazlası için her soruda ne göstermeli ipuçları ve trade-off odağı."
+---
 # DevOps Interview Questions — 60+ soru ile hazırlık
 
 > Mülakatçılar farklı tarzda soruyor: "tanım ezberle" değil **deneyim

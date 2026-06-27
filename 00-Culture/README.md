@@ -1,3 +1,7 @@
+---
+description: "DevOps kültürü referans klasörünün indeksi: blameless postmortem, on-call playbook, DORA/SPACE metrikleri, Team Topologies ve dokümantasyon kültürü."
+---
+
 # 00 · DevOps Kültürü
 
 > *"En zor problem, kodun değil; insanların problemidir."*

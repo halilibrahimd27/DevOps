@@ -1,3 +1,6 @@
+---
+description: "Faz 10 (Gün 23-24): Maliyet optimizasyonu ve performans; AWS Cost and Usage Report kurulumu, S3 bucket ve maliyet raporları için bucket policy ayarları."
+---
 # 📈 **PHASE 10: COST OPTIMIZATION & PERFORMANCE** (Gün 23-24)
 
 ### 💰 **11.1 Cost Monitoring Setup**

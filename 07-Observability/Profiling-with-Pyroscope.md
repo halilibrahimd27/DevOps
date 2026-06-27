@@ -1,3 +1,6 @@
+---
+description: "Continuous profiling rehberi: gozlemlenebilirligin 4. ayagi olarak Pyroscope, eBPF tabanli auto-profiling, flame graph analizi ve production'da line-level performans tespiti."
+---
 # Continuous Profiling — Pyroscope, eBPF Profiling
 
 > *"Trace 'hangi span yavaş' söyler; profiling **hangi line yavaş**

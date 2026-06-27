@@ -1,3 +1,6 @@
+---
+description: "Ingress-NGINX production pattern'leri: TLS termination, rate limit, canary deployment, auth ve WAF ayarlari somut annotation ornekleriyle anlatilir."
+---
 # Ingress-NGINX Patterns — TLS, Rate Limit, Canary, Auth
 
 > *"Ingress-NGINX 2026'da hâlâ en yaygın K8s ingress controller. Yeni

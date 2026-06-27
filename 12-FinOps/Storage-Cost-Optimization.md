@@ -1,3 +1,6 @@
+---
+description: "S3, EBS, snapshot ve backup icin storage maliyet optimizasyonu: lifecycle policy, tier transition, idle volume ve zombie snapshot temizligi ile somut tasarruf."
+---
 # Storage Cost Optimization — S3, EBS, Snapshot, Backup
 
 > *"S3 bill $20K/ay, %80'i 6 ay önceki log + zombie snapshot.

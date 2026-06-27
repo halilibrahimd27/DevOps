@@ -1,3 +1,6 @@
+---
+description: "Surdurulebilir muhendislik ve Green IT bolum indeksi: GSF 8 prensibi, carbon-aware computing, SCI olcumu, dusuk-karbon region secimi ve verimlilik pratikleri rehberleri."
+---
 # 14 · Sustainable Engineering / Green IT
 
 > *"Software is **never** carbon-neutral; it's just CO₂ that you decided

@@ -1,3 +1,6 @@
+---
+description: "LLM safety ve guardrails: prompt injection, jailbreak, PII sizintisi, hallucination ve brand-safety risklerine karsi katmanli savunma ve tehdit modeli."
+---
 # LLM Safety & Guardrails — Production'da Korumalar
 
 > *"LLM'in ne diyebileceği belirsiz; **müşteriye ne diyeceğini**

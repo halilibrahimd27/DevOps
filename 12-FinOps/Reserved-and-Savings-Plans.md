@@ -1,3 +1,6 @@
+---
+description: "AWS Reserved Instances, Savings Plans, GCP CUDs ve Azure Reservations icin uzun vadeli commitment stratejisi; forecast, commitment ladder, over-commit kacinma."
+---
 # Reserved Instances & Savings Plans — Long-Term Commitment
 
 > *"On-demand prod kullanan ekip, **3 yıl Reserved** alabilirdi

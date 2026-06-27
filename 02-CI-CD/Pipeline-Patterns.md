@@ -1,3 +1,6 @@
+---
+description: "CI/CD pipeline patternleri: lint, test, security scan, build, image scan, imzalama, SBOM ve GitOps promote adimlarinin sirali katmanlama referansi."
+---
 # CI/CD Pipeline Patterns
 
 > *"Pipeline'ın 10 dakika sürüyorsa ekip 'bekleyim de bir kahve içeyim'

@@ -1,3 +1,6 @@
+---
+description: "Green Software Foundation'un 8 prensibini somut muhendislik kararlarina ceviren rehber; SCI metrigiyle olcum ve yesil yazilimi CI'da pass/fail metrige donusturme, CSRD/SEC baglamiyla."
+---
 # Green Software Principles — Karbonu Mühendislik Disiplinine Çevirmek
 
 > *"Software is **never** carbon-neutral; it's just CO₂ that you decided

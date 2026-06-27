@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE kariyer rehberi index: mülakat soruları, SRE prep, system design cheatsheet ve CV ipuçları; Junior'dan Principal'a seviye haritası ve maaş tartışması notları."
+---
 # 18 · Career
 
 > *"DevOps mühendisi ne yapar?" sorusu **mülakatçıya** göre değişir;

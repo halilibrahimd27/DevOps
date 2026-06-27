@@ -1,3 +1,6 @@
+---
+description: "SLI, SLO, SLA ve error budget kavramlarını Türkçe ve uygulanabilir biçimde anlatan, kendi servisinin ilk SLO'sunu yazdıran pratik rehber."
+---
 # SLI / SLO / Error Budget — Pratik Rehber
 
 > *"%100 uptime hedef değildir; matematiksel imkansızdır. **%99.9 hedeftir, geri kalan %0.1 mühendislik karar bütçenizdir.**"*
@@ -313,4 +316,4 @@ Bir servisin SLO'su production-ready sayılmadan önce hepsi işaretlenmeli.
 - *The Site Reliability Workbook* — bölüm 2
 - [SRE Book online](https://sre.google/sre-book/service-level-objectives/) — ücretsiz
 - [Awesome SLO](https://github.com/awesome-slo/awesome-slo) — pratik örnekler
-- [`17-Templates/prometheus-rules/`](../17-Templates/prometheus-rules/) — bu repo'da hazır rule'lar
+- [`17-Templates/prometheus-rules/slo-recording-rules.yaml`](../17-Templates/prometheus-rules/slo-recording-rules.yaml) — bu repo'da hazır rule'lar

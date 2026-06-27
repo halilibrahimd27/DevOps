@@ -1,3 +1,6 @@
+---
+description: "LLM uygulamalarini production'a alma: rate limit, input safety, prompt template registry, eval, observability, cost ve guardrail'ler ile LLMOps mimarisi."
+---
 # LLM Uygulamalarını Production'a Almak
 
 > *"Demo'mda harikaydı; production'da p99 latency 12 saniye, bir tenant

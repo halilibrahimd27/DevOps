@@ -1,3 +1,6 @@
+---
+description: "Demand forecasting, headroom hesaplama, load test framework'ü ve 'ne zaman scale up?' sorusunun yöntemsel cevabını veren capacity planning rehberi."
+---
 # Capacity Planning — "Ne Kadar Yeterli?" Sorusunun Mühendislik Cevabı
 
 > *"Yeterli kapasite 'sezgi' değil — **veri** ile kanıtlanır.

@@ -1,3 +1,6 @@
+---
+description: "SLO'yu muhendislik disiplinine cevirme rehberi: SLI/SLO/error budget ozeti, multi-window burn rate alarmlari, error budget policy ve operasyonel tooling."
+---
 # SLO Engineering — Multi-Window, Burn Rate, Error Budget
 
 > *"SLI tanımladın. SLO koydun. **Error budget alarmı yoksa**, SLO

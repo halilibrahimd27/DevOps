@@ -1,3 +1,6 @@
+---
+description: "Production veritabanları bölümünün indeksi: Postgres tuning, backup/restore, HA failover, zero-downtime migration, operator pattern ve connection pooling."
+---
 # 10 · Databases in Production
 
 > *"Bütün startup'ların ilk 5 yıllık problemi 'PostgreSQL'i nasıl ölçeklenir

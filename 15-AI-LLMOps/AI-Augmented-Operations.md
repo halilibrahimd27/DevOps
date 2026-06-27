@@ -1,3 +1,6 @@
+---
+description: "LLM'in DevOps akisindaki pratik kullanimlari: log analiz, runbook, postmortem, alarm triage; agent pattern'leri, use case matrisi ve otomasyon-insan dengesi."
+---
 # AI-Augmented Operations — LLM ile DevOps İşi
 
 > *"LLM'i 'chatbot' sanmak 2024'tü. 2026'da LLM, **DevOps mühendisinin

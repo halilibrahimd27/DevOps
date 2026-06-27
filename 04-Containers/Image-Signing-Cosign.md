@@ -1,3 +1,6 @@
+---
+description: "Container imaj imzalamayi Cosign keyless OIDC ile production'da kurma: tehdit modeli, adimlar, GitHub Actions ve admission verification."
+---
 # Image Signing — Cosign + Keyless OIDC
 
 > *"İmajını imzalamadan registry'ye push'lamak, 'kim koymuş bilemem'

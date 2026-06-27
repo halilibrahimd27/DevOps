@@ -1,3 +1,6 @@
+---
+description: "Faz 7 (Gün 17-18): Secrets management ve güvenlik; HashiCorp Vault'un Helm ile kurulumu, TLS, injector yapılandırması ve kaynak limitlerinin ayarlanması."
+---
 # 🔒 **PHASE 7: SECRETS MANAGEMENT & SECURITY** (Gün 17-18)
 
 ### 🔐 **8.1 HashiCorp Vault Setup**

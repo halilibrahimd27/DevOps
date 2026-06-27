@@ -1,3 +1,6 @@
+---
+description: "DevOps/SRE/Platform işlerinde insan tarafına dair soft skill rehberlerinin dizini: on-call, stakeholder, security, vendor, hayır demek, postmortem, mentoring."
+---
 # 20 · Soft Skills — Mühendislikten Daha Önemli (Bazen)
 
 > *"En iyi mimari kararı veren mühendis, **yanlış kişiye** anlatınca

@@ -1,3 +1,6 @@
+---
+description: "Crossplane ile cloud resource'ları K8s CRD olarak yönetme rehberi: continuous reconciliation, Terraform farkı, Composition pattern ve GitOps native."
+---
 # Crossplane — K8s API ile Cloud Resource Yönet
 
 > *"Terraform'un imperative `apply` döngüsü değil, K8s'in **continuous

@@ -1,3 +1,6 @@
+---
+description: "Platform Engineering bölümünün indeksi: Internal Developer Platform, Backstage kurulumu, golden paths, service catalog ve platform-as-product konularına genel bakış ve dosya rehberi."
+---
 # 13 · Platform Engineering
 
 > *"DevOps takımı 14 ticket'a cevap veriyor; geliştirici beklerken sigara

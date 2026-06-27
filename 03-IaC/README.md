@@ -1,3 +1,6 @@
+---
+description: "Infrastructure as Code bölüm indeksi: Terraform best practices, module layout, OpenTofu migration, Pulumi, Crossplane, drift detection ve IaC karar ağacı."
+---
 # 03 · Infrastructure as Code
 
 > *"Console'dan tıklayarak kurduğun bir kaynak, bir gün biri tarafından

@@ -1,3 +1,6 @@
+---
+description: "GitHub'da PR hijyeni: PR template, otomatik label, semantic-pr-action, commit doğrulama, CODEOWNERS ve Renovate/Dependabot ile PR trafiğini otomasyona bağlama."
+---
 # PR Templates & Automation — PR'ları Standart, Hızlı, İzlenebilir Yap
 
 > *"Her PR description boş, label yok, link yok, checklist yok →

@@ -1,3 +1,6 @@
+---
+description: "GitOps'ta secret yönetimi: Sealed Secrets, SOPS, External Secrets Operator ve ArgoCD Vault Plugin karşılaştırması; Git'te şifreli, cluster'da çözük."
+---
 # Secrets in GitOps — Git'e Sır Koyabilir misin?
 
 > *"GitOps 'her şey Git'te' der. Sırlar da. Ama **plaintext değil** —

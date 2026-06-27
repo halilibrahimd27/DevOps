@@ -1,3 +1,6 @@
+---
+description: "Observability bolumu indeksi: metrics, logs, traces ve profiles dort ayagi ile OpenTelemetry, Prometheus, SLO, alerting, Loki, Tempo ve Pyroscope rehberlerine giris."
+---
 # 07 · Observability
 
 > *"Loglar olmadan çalışmıyor, traces olmadan yavaş, metrics olmadan SLO

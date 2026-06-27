@@ -1,3 +1,6 @@
+---
+description: "AWS Spot, GCP Preemptible ve Azure Spot ile %70 tasarruf: uygun workload secimi, graceful interruption handling ve Karpenter ile mixed fleet stratejisi."
+---
 # Spot Instance Strategy — %70 Tasarruf
 
 > *"Spot %70 daha ucuz — 'ama interrupt edilebilir' diye kullanmayan

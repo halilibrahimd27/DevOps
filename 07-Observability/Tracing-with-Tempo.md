@@ -1,3 +1,6 @@
+---
+description: "Distributed tracing rehberi: OpenTelemetry SDK ile Grafana Tempo kurulumu, trace anatomisi, sampling stratejileri ve production'da trace analizi best practice'leri."
+---
 # Distributed Tracing — Tempo + OpenTelemetry
 
 > *"Microservice X'in p99 8s. Hangi servis yavaş? Logs alone bunu

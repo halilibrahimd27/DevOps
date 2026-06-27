@@ -1,3 +1,6 @@
+---
+description: "Faz 11 (Gün 25-26): Dokümantasyon ve ekip süreçleri; mimari dokümantasyon, mermaid diyagramları ve GitHub'dan EKS'e uzanan CI/CD akışının kayda geçirilmesi."
+---
 # 📚 **PHASE 11: DOCUMENTATION & TEAM PROCESSES** (Gün 25-26)
 
 ### 📖 **12.1 Comprehensive Documentation**

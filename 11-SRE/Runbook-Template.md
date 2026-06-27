@@ -1,3 +1,6 @@
+---
+description: "Prod ortamında alarmlara cevap vermek için runbook'un ne olduğunu, neden ve nasıl yazıldığını anlatan rehber; şablon, örnek ve anti-pattern'ler."
+---
 # Runbook — Alarm Düştüğünde Ne Yap
 
 > *"Gece 03:14, telefon çalıyor. Beynin %30 kapasitede. Runbook

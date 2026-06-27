@@ -1,3 +1,6 @@
+---
+description: "Ingress ve Gateway API'nin yan yana calistirilmasi: gecis stratejisi, hibrit pattern (yeni servis Gateway, eski Ingress) ve hangisini ne zaman sececegin."
+---
 # Ingress vs Gateway API — Yan Yana, Hangisi Ne Zaman
 
 > *"2026'da Ingress 'eskiyen' ama hâlâ yaygın; Gateway API yeni ve

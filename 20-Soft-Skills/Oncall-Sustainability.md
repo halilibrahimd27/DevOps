@@ -1,3 +1,6 @@
+---
+description: "On-call'ı sağlıklı yönetilebilir bir disiplin olarak ele alır: vardiya tasarımı, post-incident dinlenme, burnout sinyalleri ve önleme taktikleri."
+---
 # On-Call Sürdürülebilirliği — Burnout Olmadan Yangın Söndürme
 
 > *"On-call **işin bir parçası**, ama **işin tamamı** olmamalı.

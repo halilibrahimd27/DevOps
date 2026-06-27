@@ -1,3 +1,6 @@
+---
+description: "DevSecOps'un yasal-uyum boyutu: KVKK, GDPR, ISO 27001, SOC 2, EU AI Act, NIS2 ve PCI DSS'in kod, pipeline ve K8s policy ile continuous compliance'a dönüşümü."
+---
 # 19 · Compliance & Legal
 
 > *"Compliance bir 'sertifika asma duvarı' değildir; **mühendislik

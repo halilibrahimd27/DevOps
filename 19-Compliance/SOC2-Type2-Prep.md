@@ -1,3 +1,6 @@
+---
+description: "SOC 2 Type II'nin mühendislik hazırlığı: Trust Service Criteria, observation period, audit evidence automation ve continuous compliance disiplini ile audit günü hazırlığı."
+---
 # SOC 2 Type II — Mühendislik Hazırlığı
 
 > *"SOC 2 Type II 'sertifika asma duvarı' değil — **6 ay süreyle

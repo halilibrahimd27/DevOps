@@ -1,3 +1,6 @@
+---
+description: "Sıfır altyapıdan 28 günde production-grade kurulum rehberi: AWS, Terraform, EKS, ArgoCD, observability, güvenlik ve backup/DR'ı faz faz anlatan ana sayfa."
+---
 # 🏗️ **DevOps Altyapısı Sıfırdan Implementation Guide**
 *Hiçbir şeyin kurulu olmadığını varsayarak adım adım DevOps altyapısı kuracağız.*
 

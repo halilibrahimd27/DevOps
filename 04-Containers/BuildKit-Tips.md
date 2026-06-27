@@ -1,3 +1,6 @@
+---
+description: "BuildKit'in modern Docker build feature'lari: cache mount, secret mount, multi-platform ve frontend syntax. Somut Dockerfile ornekleriyle anlatim."
+---
 # BuildKit Tips — Modern Docker Build
 
 > *"Docker 18.09'tan beri BuildKit var, 2024'te default. Hâlâ

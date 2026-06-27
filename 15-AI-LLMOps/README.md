@@ -1,3 +1,6 @@
+---
+description: "AI/LLMOps bolumu indeksi: RAG, prompt engineering, self-hosted LLM, cost optimization, safety guardrail'leri ve MLOps vs LLMOps karsilastirmasi."
+---
 # 15 · AI / LLMOps
 
 > *"Çalışıyor demo'mda; production'da p99 latency 12 saniye, bir tenant

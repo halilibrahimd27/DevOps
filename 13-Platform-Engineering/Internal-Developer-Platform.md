@@ -1,3 +1,6 @@
+---
+description: "Internal Developer Platform (IDP) kavramını teknolojiden önce kültürel ve ürün bakışıyla anlatan rehber: self-service altın yol, build vs buy ve somut yol haritası."
+---
 # Internal Developer Platform — Niye, Nasıl, Hangi Sırayla
 
 > *"Geliştirici 14 ticket'a soruyor: 'Yeni servis nasıl açılır?' Cevap

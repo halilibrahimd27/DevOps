@@ -1,3 +1,6 @@
+---
+description: "LLM maliyet optimizasyonu: token fiyatlandirma, model tier secimi, prompt caching, batch API, semantic cache ve fine-tuning ROI ile ayni isi %70 ucuza yapma."
+---
 # Model Cost Optimization — LLM Bill'i Yönetmek
 
 > *"OpenAI bill ay sonu $20K. 'Çok mu kullandık?' Hayır, **yanlış

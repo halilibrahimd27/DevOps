@@ -1,3 +1,6 @@
+---
+description: "Kubernetes autoscaling rehberi: HPA (pod sayisi), VPA (pod resource) ve KEDA (event-driven) karsilastirmasi, hangi senaryoda hangisi ve birlikte calisma."
+---
 # HPA, VPA, KEDA — K8s Autoscaling Tam Rehber
 
 > *"3 farklı autoscaler, 3 farklı niche. HPA: pod sayısı CPU'ya göre.

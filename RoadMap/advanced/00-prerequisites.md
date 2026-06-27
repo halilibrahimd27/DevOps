@@ -1,3 +1,6 @@
+---
+description: "DevOps kurulumu öncesi ön koşullar: geliştirici makine kurulumu, WSL2, temel araçlar, Docker ve diğer development tool'larının komut satırıyla hazırlanması."
+---
 # 📋 **ÖN KOŞULLAR VE HAZIRLIK**
 
 ### 🖥️ **1. Geliştirici Makine Kurulumu**
