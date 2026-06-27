@@ -1,3 +1,8 @@
+# Terraform — Modüllerle VM Oluşturma
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```bash
 cat > create_vms_fixed.sh << 'EOF'
 #!/bin/bash
 set -e
@@ -155,3 +160,4 @@ echo "Test: ssh -i ~/.ssh/k8s-cluster ubuntu@<K8S_MASTER_1_IP>"
 EOF
 
 chmod +x create_vms_fixed.sh
+```

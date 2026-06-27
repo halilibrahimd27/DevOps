@@ -1,3 +1,8 @@
+# SSH Bağlantı Testi
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```bash
 # SSH bağlantısını test et
 echo "🔍 Testing SSH connectivity..."
 
@@ -23,3 +28,4 @@ ssh -i ~/.ssh/k8s-cluster -o ConnectTimeout=5 ubuntu@<K8S_INFRA_4_IP> 'echo "✅
 # Load balancer nodes
 ssh -i ~/.ssh/k8s-cluster -o ConnectTimeout=5 ubuntu@<K8S_LB_VIP> 'echo "✅ k8s-lb-1: $(hostname)"'
 ssh -i ~/.ssh/k8s-cluster -o ConnectTimeout=5 ubuntu@<K8S_LB_BACKUP_IP> 'echo "✅ k8s-lb-2: $(hostname)"'
+```

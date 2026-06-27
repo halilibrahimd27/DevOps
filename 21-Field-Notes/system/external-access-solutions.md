@@ -1,3 +1,8 @@
+# Dış Erişim (External Access) Çözümleri
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```bash
 # 🌐 EXTERNAL ACCESS İÇİN ÇÖZÜMLER
 
 # ══════════════════════════════════════════════════════════════
@@ -326,3 +331,4 @@ echo "kubectl port-forward --address 0.0.0.0 service/admin-frontend-service 8081
 echo "kubectl port-forward --address 0.0.0.0 service/backend-service 8082:80 -n development &"
 echo ""
 echo "✅ Then access: http://<K8S_MASTER_IP>:8080"
+```

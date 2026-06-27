@@ -197,7 +197,7 @@ helm install opensearch opensearch/opensearch \
 - Log + IDS + file integrity + vulnerability mgmt birleşik
 - KVKK için audit log + compliance reporting
 
-> Detay: [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../Network/Network%20Segmentation%20and%20Wazuh%20SIEM%20Integration%20Guide.md)
+> Detay: [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../21-Field-Notes/network/network-segmentation-wazuh-siem.md)
 
 ---
 
@@ -321,7 +321,7 @@ Tasarruf: ~%92
 - [`OpenTelemetry-Adoption.md`](OpenTelemetry-Adoption.md)
 - [`Tracing-with-Tempo.md`](Tracing-with-Tempo.md)
 - [`Profiling-with-Pyroscope.md`](Profiling-with-Pyroscope.md)
-- [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../Network/Network%20Segmentation%20and%20Wazuh%20SIEM%20Integration%20Guide.md)
+- [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../21-Field-Notes/network/network-segmentation-wazuh-siem.md)
 - [`19-Compliance/Audit-Evidence-Automation.md`](../19-Compliance/Audit-Evidence-Automation.md)
 
 ---

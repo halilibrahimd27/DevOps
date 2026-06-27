@@ -17,15 +17,15 @@ edit_uri: edit/main/
 docs_dir: site_src
 site_dir: site
 
-# MkDocs build sırasında dahil edilmeyecek dosyalar
+# MkDocs build sırasında dahil edilmeyecek çalışma/meta dosyalar
+# (build-docs.sh zaten yalnız içerik klasörlerini site_src'a stage'ler)
 exclude_docs: |
-  Ansible/SSH CONNECTIVITY TEST
   CLAUDE.md
   CODE_OF_CONDUCT.md
   SECURITY.md
   CONTRIBUTING.md
-  LAUNCH-PLAN.md
-  MARKETING.md
+  AUDIT.md
+  CHANGES-SUMMARY.md
 
 theme:
   name: material

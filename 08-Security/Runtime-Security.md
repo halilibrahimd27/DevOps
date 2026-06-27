@@ -324,7 +324,7 @@ falcosidekick:
 </decoder>
 ```
 
-Bkz: [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../Network/Network%20Segmentation%20and%20Wazuh%20SIEM%20Integration%20Guide.md).
+Bkz: [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../21-Field-Notes/network/network-segmentation-wazuh-siem.md).
 
 ---
 
@@ -431,7 +431,7 @@ cat /etc/shadow
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md)
 - [`Threat-Modeling.md`](Threat-Modeling.md) — coverage matrix sahibi
 - [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md) — alert → IR akışı
-- [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../Network/Network%20Segmentation%20and%20Wazuh%20SIEM%20Integration%20Guide.md)
+- [`Network/Network Segmentation and Wazuh SIEM Integration Guide.md`](../21-Field-Notes/network/network-segmentation-wazuh-siem.md)
 
 ---
 

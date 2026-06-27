@@ -1,3 +1,8 @@
+# Terraform — Proxmox Tam Konfigürasyon
+
+> 🗒️ **Saha notu** — ham komut/konfigürasyon dökümü. Olduğu gibi korunmuştur; kendi ortamına uyarla.
+
+```hcl
 # =====================================================
 # COMPLETE TERRAFORM CONFIGURATION FOR PROXMOX
 # =====================================================
@@ -665,3 +670,4 @@ output "cluster_summary" {
 # base_ip = "192.168.1"
 # gateway = "192.168.1.1"
 # dns_servers = "8.8.8.8,8.8.4.4"
+```

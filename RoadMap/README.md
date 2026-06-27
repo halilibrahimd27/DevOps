@@ -44,7 +44,7 @@ seçtiğin seviyeden başla.
 
     Greenfield bir AWS hesabında EKS + GitOps + observability stack kuracağım. "End-to-end implementation"
 
-    [:octicons-arrow-right-24: Implementation guide](Advanced%20RoadMap.md)
+    [:octicons-arrow-right-24: Implementation guide](advanced-roadmap.md)
 
 </div>
 
@@ -56,7 +56,7 @@ seçtiğin seviyeden başla.
 |---|---|---|
 | **[Modern-DevOps-2026.md](Modern-DevOps-2026.md)** | **Herkes** — felsefe + 2026 stack | CALMS, DORA, modern tool haritası, 60-90 günlük adoption planı. **Buradan başla.** |
 | **[RoadMap.md](RoadMap.md)** | Mid+ — GitOps yapanlar | A→Z GitOps uygulama haritası: planlama, IaC, K8s, CI/CD, observability sırası |
-| **[Advanced RoadMap.md](Advanced%20RoadMap.md)** | Senior — sıfırdan AWS implementation | Geliştirici makinesi → AWS → Terraform → EKS → ArgoCD → monitoring uçtan uca |
+| **[advanced-roadmap.md](advanced-roadmap.md)** | Senior — sıfırdan AWS implementation | Geliştirici makinesi → AWS → Terraform → EKS → ArgoCD → monitoring uçtan uca |
 | **[Planning.md](Planning.md)** | Tech Lead'ler | Proje planlama şablonu — yeni bir altyapı projesi için checklist |
 
 ---
@@ -209,7 +209,7 @@ Bu repo'da hangi noktada olduğunu görmek için:
 
 - **[Modern-DevOps-2026.md](Modern-DevOps-2026.md)** — DevOps felsefesi, CALMS, DORA, 2026 modern stack haritası, 60-90 günlük adoption planı
 - **[RoadMap.md](RoadMap.md)** — A'dan Z'ye GitOps uygulama yol haritası (mid+ için)
-- **[Advanced RoadMap.md](Advanced%20RoadMap.md)** — Sıfırdan AWS + EKS + Terraform implementation (senior için)
+- **[advanced-roadmap.md](advanced-roadmap.md)** — Sıfırdan AWS + EKS + Terraform implementation (senior için)
 - **[Planning.md](Planning.md)** — Yeni proje planlama şablonu (tech lead için)
 
 ---

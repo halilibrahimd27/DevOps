@@ -1,3 +1,5 @@
+# Envanter Yönetimi — Örnek (Master Template)
+
 ## 📂 DEVOPS ENVANTER ANALİZİ — MASTER TEMPLATE
 
 ---
