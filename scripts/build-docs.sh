@@ -137,6 +137,7 @@ nav:
   - "Modern DevOps 2026 — Felsefe + 2026 Stack": Modern-DevOps-2026.md
   - "GitOps A→Z (Mid+)": RoadMap.md
   - "Advanced — AWS/EKS Implementation (Senior)": advanced-roadmap.md
+  - "Advanced — Faz Detayları": advanced
   - "Planning Şablonu (Tech Lead)": Planning.md
 EOF
   echo "  + RoadMap/.pages (yeniden sıralı, Modern-DevOps-2026 başta)"
