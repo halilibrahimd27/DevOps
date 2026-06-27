@@ -9,8 +9,34 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 
 ## [Unreleased]
 
-### Eklendi
-- (Sıradaki içerik buraya)
+### Repo Cilası (chore/repo-polish) — 2026-06
+
+Tam denetim + kalite pası (repo kökünde `AUDIT.md`). İçerik silinmedi; tüm
+değişiklikler repo kökündeki `CHANGES-SUMMARY.md`'de.
+
+#### Eklendi
+- **21-Field-Notes/** bölümü: dağınık saha-notu klasörleri (System/Network/Ansible/
+  Terraform/kubectl) tek bölümde toplandı; her dosya kebab-case + geçerli markdown
+- **RoadMap/advanced/**: 8568 satırlık tek dosya 14 faz sayfası + index'e bölündü
+- **SEO frontmatter**: 190 içerik dosyasına `description` meta açıklaması
+- **17-Templates/terraform/** + **17-Templates/gitignore/**: README'nin vaat ettiği
+  ama eksik olan template'ler eklendi
+- 7 dosyaya anti-pattern tablosu, 12 dosyaya production checklist (CLAUDE.md anatomi)
+
+#### Değiştirildi
+- **README** profesyonel/reklamsız tona çekildi: badge yağmuru → 3 anlamlı badge,
+  pazarlama klişeleri + yıldız-dilenme + rakip-tablosu kaldırıldı, yazar atfı eklendi
+- Sayılar gerçeğe eşlendi: deep-dive **125** (125+ değil), template **19** (25+ değil),
+  satır **~66K**; `mkdocs.yml` site_description da güncellendi
+
+#### Düzeltildi
+- Placeholder hijyeni: hardcoded zayıf parolalar (`cipassword "ubuntu"` vb.) →
+  `<PLACEHOLDER>`; GitHub Action full-semver pin → `@<VERSION>`
+- Kırık iç linkler (Faz 2 bölme artefaktları + pre-existing) düzeltildi
+- Yazım hataları: "Preperation" → preparation, "Manuel" → modules
+- Bayat `exclude_docs` kayıtları (LAUNCH-PLAN.md) temizlendi
+
+Doğrulama: `mkdocs build --strict` 0 uyarı/hata; kırık-link tarama 0; leak-guard temiz.
 
 ---
 
