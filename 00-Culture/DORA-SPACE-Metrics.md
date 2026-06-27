@@ -242,6 +242,39 @@ Gün 7:   Dashboard'u team channel'da haftalık otomatik post yap
 
 ---
 
+## 📋 Checklist — production-ready ölçüm sistemi
+
+Dashboard'u "kuruldu" sayma; aşağıdakiler bitmeden veri güvenilmez.
+
+**Veri toplama**
+- [ ] 4 DORA metriği de otomatik toplanıyor (manuel Excel YOK — manuel veri bayatlar ve güvenilmez)
+- [ ] Deploy event'i tek doğruluk kaynağından geliyor (CI pipeline), elle işaretleme yok
+- [ ] "Failed deploy" tanımı yazılı ve ekipçe onaylı (rollback + hotfix + incident-correlation)
+- [ ] Incident kaynağı (PagerDuty/Opsgenie/issue) deploy'larla otomatik ilişkilendiriliyor
+- [ ] Lead time ölçümü ilk commit timestamp'ından başlıyor (PR açılış'tan değil)
+
+**İstatistik kalitesi**
+- [ ] Lead time ve MTTR için ortalama değil p50 + p95 raporlanıyor (averaj outlier'ı saklar)
+- [ ] Metrikler rolling pencere ile (7d / 30d) gösteriliyor, tek snapshot değil
+- [ ] Düşük hacimli ekipler için sample size belirtiliyor (n<10 deploy → trend yorumlanmaz)
+
+**SPACE dengesi**
+- [ ] DORA yanında en az bir SPACE boyutu (satisfaction/focus) düzenli ölçülüyor
+- [ ] Hız metriklerinin yanında burnout/satisfaction trend'i izleniyor (hız ↑ + memnuniyet ↓ = kırmızı bayrak)
+- [ ] Hiçbir karar tek metriğe dayanmıyor; en az iki sinyal çapraz kontrol ediliyor
+
+**Erişim ve ritim**
+- [ ] Dashboard tüm ekibe açık (sadece yönetici görmüyor — gözetim hissi yaratır)
+- [ ] Haftalık otomatik özet team channel'a post ediliyor (quarterly değil)
+- [ ] Metrikler ekipler arası kıyas için DEĞİL, her ekibin kendi trend'i için kullanılıyor
+- [ ] Gizli veri/credential dashboard URL'lerinde yok (`<GRAFANA_URL>`, `<WEBHOOK_SECRET>` env'de tutuluyor)
+
+**Eylem döngüsü**
+- [ ] Negatif trend için sahip + aksiyon tanımlanıyor (sadece kırmızı ok göstermek yetmez)
+- [ ] Metrik review'ı retrospektifin parçası — veri konuşmaya dönüşüyor
+
+---
+
 ## 📚 Devamı
 
 - [DORA — State of DevOps Report](https://dora.dev) (yıllık)

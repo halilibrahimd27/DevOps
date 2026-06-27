@@ -284,6 +284,27 @@ Eğer gerçekten gerekli:
 
 ---
 
+## 📋 Checklist
+
+Mülakatta tasarımı sunmadan önce/sunarken işaretle — her madde sorulmadan kendin kapat:
+
+- [ ] **Requirements netleştirildi** — functional + non-functional (RPS, kullanıcı, SLO, bütçe) yazıldı; varsayım yapma, sor.
+- [ ] **Somut sayı verildi** — "high scale" değil "10K RPS, 50M user, p99 < 500ms"; sayısız iddia zayıf görünür.
+- [ ] **Her karar trade-off'lu** — "X çünkü Y, ama Z bedeli var"; alternatifsiz seçim olgunluk eksikliği sinyali.
+- [ ] **Failure mode konuşuldu** — node/zone/region down, DB failover, cascade; sadece happy path tasarım eksiktir.
+- [ ] **Availability hedefi tanımlı** — SLO + error budget; "%99.9 → 43 dk/ay down" gibi bütçeye çevir.
+- [ ] **Veri katmanı düşünüldü** — replication, consistency (CAP), backup/restore, RTO/RPO; stateful en zor kısım.
+- [ ] **Deploy stratejisi var** — canary/blue-green + rollback yolu; tasarım deploy edilemiyorsa eksik.
+- [ ] **Observability planlandı** — metrics/logs/traces + alerting; gözlemlenemeyen sistem operasyonda kördür.
+- [ ] **Güvenlik ele alındı** — secret yönetimi, network policy, least-privilege, image scan; sonradan eklenmez.
+- [ ] **Maliyet tartışıldı** — compute/storage/egress kalemleri; mühendis maliyeti de tasarlar.
+- [ ] **Operability söylendi** — on-call, runbook, game day; sistemi kim, nasıl işletecek?
+- [ ] **Vendor lock-in görüldü** — kritik bağımlılık ve çıkış maliyeti açıkça not edildi.
+- [ ] **Evolution çizildi** — bugün 1K RPS, yarın 100K → hangi bileşen önce kırılır, ne değişir?
+- [ ] **Gizli değer placeholder** — gerçek IP/domain/credential yok; `<PLACEHOLDER>` kullanıldı.
+
+---
+
 ## 📚 Devamı
 
 - [System Design Interview — Alex Xu]

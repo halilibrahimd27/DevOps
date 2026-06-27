@@ -402,6 +402,44 @@ Track et:
 
 ---
 
+## 📋 Checklist
+
+Production'a çıkmadan önce her satırı işaretle — biri eksikse pipeline tam değil.
+
+**Pre-commit**
+- [ ] `pre-commit install` repo'yu klonlayan herkeste çalışıyor (CONTRIBUTING'de zorunlu adım).
+- [ ] gitleaks pre-commit hook aktif; secret commit'i lokalde durduruyor.
+- [ ] IDE plugin'leri (Snyk/Semgrep/SonarLint) standart kurulum imajına dahil.
+
+**CI / PR**
+- [ ] gitleaks CI job leak bulunca PR'ı bloklar ve secret rotation ticket'ı açar.
+- [ ] SAST (Semgrep + CodeQL) en az javascript/python/go için çalışıyor.
+- [ ] SCA (OSV-Scanner veya Trivy fs) + Dependabot aktif, lisans taraması açık.
+- [ ] IaC scan (Checkov) `soft_fail: false` ile HIGH/CRITICAL ihlalleri bloklar.
+- [ ] Tüm SARIF çıktıları GitHub Security tab'ına yükleniyor.
+- [ ] Severity threshold tanımlı: LOW bulgular pipeline'ı KIRMIYOR (sadece raporlanıyor).
+
+**Build**
+- [ ] Trivy image scan CRITICAL/HIGH bulguda build'i fail ediyor.
+- [ ] Cosign keyless OIDC ile her imaj imzalanıyor (`id-token: write` izni var).
+- [ ] SBOM (CycloneDX) üretiliyor ve cosign attestation olarak imaja bağlanıyor.
+- [ ] Base image minimal/distroless (örn. Chainguard) ve düzenli güncelleniyor.
+
+**Deploy / Admission**
+- [ ] Kyverno `verify-signature` policy `validationFailureAction: Enforce` modunda.
+- [ ] İmzasız veya doğrulanamayan imaj cluster'a giremiyor (test edildi).
+- [ ] Namespace'lerde Pod Security Standards `restricted` enforce ediliyor.
+- [ ] NetworkPolicy default-deny tanımlı; sadece gerekli trafik açık.
+- [ ] Bypass yetkisi sınırlı kişide ve her bypass audit log'a düşüyor.
+
+**Runtime**
+- [ ] Falco veya Tetragon çalışıyor; alert'ler bir kanala (Slack/SIEM) gidiyor.
+- [ ] kube-apiserver audit log'u merkezi log sistemine akıyor ve saklanıyor.
+- [ ] Threat model tablosundaki her saldırı türü için en az bir aktif kontrol var.
+- [ ] Metrikler (signed image %, CVE MTTR, gate block %) dashboard'da izleniyor.
+
+---
+
 ## 📚 Devamı
 
 - [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
