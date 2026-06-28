@@ -10,6 +10,9 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 ## [Unreleased]
 
 ### Değiştirildi
+- **Hero tagline'ları** insan sesine çekildi (AI-kokan "X gömen, Y kuran mühendis" +
+  buzzword listesi + TR↔EN birebir ayna kaldırıldı); görüşlü/somut bir ifadeyle değiştirildi
+- Hero başlığındaki permalink `#` çıpası gizlendi
 - Sayfa üstündeki **"Görüntüle" / "Düzenle"** (view source / edit this page) action
   butonları kaldırıldı — tek-yazarlı portfolyo sitesinde gereksiz/dağıtıcı
   (`content.action.view` + `content.action.edit` özellikleri çıkarıldı)

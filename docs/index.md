@@ -20,8 +20,8 @@ description: >-
 <span class="role">DevSecOps Engineer</span>
 
 <p class="tagline" markdown>
-Güvenliği pipeline'a gömen, production'da işleyen platform kuran mühendis. Kubernetes, GitOps, IaC, observability ve supply-chain security.
-<span class="en">Security baked into the pipeline. I build platforms that actually run in production — Kubernetes, GitOps, IaC, observability and supply-chain security.</span>
+Güvenliği en sona bırakan pipeline'lara güvenmem. Default config "çalışıyor" demek benim için "henüz kırılmadı" demek — Kubernetes'i de tedarik zincirini de baştan sıkı kurarım, sonradan yamamam.
+<span class="en">I'd rather argue about a threat model on day one than patch a breach on day ninety.</span>
 </p>
 
 <div class="profile-links" markdown>

@@ -18,8 +18,8 @@ hide:
 <span class="role">DevSecOps Engineer</span>
 
 <p class="tagline" markdown>
-Türkiye · Kubernetes, GitOps, IaC, observability & supply-chain security.
-<span class="en">Türkiye · I build secure, observable, production-grade platforms.</span>
+Türkiye · Güvenliği en sona bırakan pipeline'lara güvenmem; Kubernetes'i de tedarik zincirini de baştan sıkı kurarım, sonradan yamamam.
+<span class="en">Türkiye · I'd rather argue about a threat model on day one than patch a breach on day ninety.</span>
 </p>
 
 <div class="profile-links" markdown>

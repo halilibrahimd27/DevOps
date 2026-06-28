@@ -495,6 +495,9 @@
   color: #fff;
 }
 
+/* Hero başlığındaki permalink "#" çıpasını gizle (toc permalink) */
+.profile-hero .headerlink { display: none !important; }
+
 .profile-hero .role {
   display: inline-block;
   margin: 0.5rem 0 0.2rem;
