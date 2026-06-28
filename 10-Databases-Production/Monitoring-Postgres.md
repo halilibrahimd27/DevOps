@@ -1,5 +1,11 @@
 ---
 description: "Postgres observability stack rehberi: pg_stat_statements, postgres-exporter, slow query log ve replication monitoring; somut alarm ve dashboard örnekleriyle."
+tags:
+  - Databases
+  - PostgreSQL
+  - Observability
+  - Monitoring
+  - Prometheus
 ---
 # Postgres Monitoring — Slow Query, Lock, Bloat, Replication
 

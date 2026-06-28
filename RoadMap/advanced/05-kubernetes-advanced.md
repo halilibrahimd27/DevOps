@@ -1,5 +1,11 @@
 ---
 description: "Faz 5 (Gün 11-13): Kubernetes ileri seviye kurulum; dev/staging/prod namespace'leri, RBAC ve Istio injection ile çok-ortamlı cluster yapılandırması."
+tags:
+  - Roadmap
+  - Kubernetes
+  - Service Mesh
+  - Security
+  - Networking
 ---
 # ☸️ **PHASE 5: KUBERNETES ADVANCED SETUP** (Gün 11-13)
 

@@ -1,5 +1,11 @@
 ---
 description: "Faz 6 (Gün 14-16): Observability stack; kube-prometheus-stack ile Prometheus ve Grafana kurulumu, gp3 storage, retention ve kaynak ayarlarının yapılandırması."
+tags:
+  - Roadmap
+  - Observability
+  - Monitoring
+  - Prometheus
+  - Kubernetes
 ---
 # 📊 **PHASE 6: OBSERVABILITY STACK** (Gün 14-16)
 

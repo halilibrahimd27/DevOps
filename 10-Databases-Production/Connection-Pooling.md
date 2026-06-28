@@ -1,5 +1,10 @@
 ---
 description: "Postgres connection pooling rehberi: PgBouncer pratikleri, pgcat ve app-side pooling alternatifleri, pool exhaustion sorunu ve doğru pool size hesabı."
+tags:
+  - Databases
+  - PostgreSQL
+  - Performance
+  - Networking
 ---
 # Connection Pooling — Postgres'in En Sık İhmal Edilen Tarafı
 

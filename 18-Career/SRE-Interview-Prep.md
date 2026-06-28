@@ -1,5 +1,10 @@
 ---
 description: "SRE mülakat hazırlığı: SLO design round, error budget ve kapasite matematiği, incident simulation ve postmortem; SRE rolünde aranan core skill'ler üzerine pratik notlar."
+tags:
+  - Career
+  - SRE
+  - Incident Response
+  - Observability
 ---
 # SRE Interview Prep
 

@@ -1,5 +1,10 @@
 ---
 description: "Çok-paydaşlı DevOps/SRE işlerinde yönetim, ürün, müşteri, hukuk ve security'ye kime ne dilde ne kadar anlatılacağını gösteren paydaş yönetimi rehberi."
+tags:
+  - Soft Skills
+  - Culture
+  - Career
+  - SRE
 ---
 # Stakeholder Management — Kime, Ne Dilde, Ne Kadar
 

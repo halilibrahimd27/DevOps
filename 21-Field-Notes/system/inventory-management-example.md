@@ -1,5 +1,11 @@
 ---
 description: "DevOps envanter yönetimi master şablonu: sunucu/instance envanteri ve kullanıcı erişim envanteri tabloları; hostname, IP, rol, OS ve SSH key kayıtları."
+tags:
+  - Field Notes
+  - Template
+  - Security
+  - AWS
+  - Compliance
 ---
 # Envanter Yönetimi — Örnek (Master Template)
 

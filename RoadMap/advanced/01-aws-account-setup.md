@@ -1,5 +1,10 @@
 ---
 description: "Faz 1 (Gün 1-2): AWS hesap açma, AWS CLI konfigürasyonu, kimlik doğrulama, Organization kurulumu ve Organizational Unit oluşturma adımları."
+tags:
+  - Roadmap
+  - AWS
+  - Security
+  - Compliance
 ---
 # 🏢 **PHASE 1: AWS HESAP VE İLK KURULUMLAR** (Gün 1-2)
 

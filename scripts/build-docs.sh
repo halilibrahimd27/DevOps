@@ -29,6 +29,12 @@ if [ -f docs/index.md ]; then
   echo "  + index.md (hero homepage)"
 fi
 
+# 1b) Etiket indeksi — docs/tags.md (Material tags plugin tags_file)
+if [ -f docs/tags.md ]; then
+  cp docs/tags.md "$STAGE/tags.md"
+  echo "  + tags.md (etiket indeksi)"
+fi
+
 # 2) Kök seviyesi md dosyaları
 for f in CHANGELOG.md Glossary.md; do
   if [ -f "$f" ]; then
@@ -124,6 +130,7 @@ nav:
   - 20-Soft-Skills
   - 21-Field-Notes
   - "📖 Sözlük": Glossary.md
+  - "🏷️ Etiketler": tags.md
   - "📋 Changelog": CHANGELOG.md
 PAGES_EOF
 echo "  + .pages (root nav)"

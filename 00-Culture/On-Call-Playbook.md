@@ -1,5 +1,10 @@
 ---
 description: "Sağlıklı on-call rotation kurma rehberi: primary/secondary roller, alert hijyeni, devir-teslim, eskalasyon ve sürdürülebilir nöbet pratikleri."
+tags:
+  - Culture
+  - Incident Response
+  - SRE
+  - Monitoring
 ---
 
 # On-Call Playbook

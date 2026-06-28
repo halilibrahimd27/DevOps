@@ -1,5 +1,9 @@
 ---
 description: "Platform Engineering bölümünün indeksi: Internal Developer Platform, Backstage kurulumu, golden paths, service catalog ve platform-as-product konularına genel bakış ve dosya rehberi."
+tags:
+  - Platform Engineering
+  - Roadmap
+  - Culture
 ---
 # 13 · Platform Engineering
 

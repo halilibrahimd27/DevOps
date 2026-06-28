@@ -1,5 +1,10 @@
 ---
 description: "Modern Git iş akışı rehberi indeksi: trunk-based development, conventional commits, code review, stacked diffs ve PR otomasyonu; 2026 branching stack'i."
+tags:
+  - Git
+  - CI/CD
+  - Roadmap
+  - Platform Engineering
 ---
 # 01 · Git Workflow
 

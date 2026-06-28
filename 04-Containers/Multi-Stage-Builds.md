@@ -1,5 +1,10 @@
 ---
 description: "Multi-stage Docker build pattern'leri ve anti-pattern'leri: builder/runner ayrimi, dil-spesifik ornekler ve cache optimizasyonu ile imaji 10x kucultme rehberi."
+tags:
+  - Containers
+  - Docker
+  - Performance
+  - Security
 ---
 # Multi-Stage Builds — Küçük, Güvenli, Hızlı Image
 

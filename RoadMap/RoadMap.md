@@ -1,5 +1,11 @@
 ---
 description: "A'dan Z'ye DevOps GitOps yol haritası: her adımda ne yapılacak, hangi araçla ve neden sorularını planlama, IaC ve containerization başlıklarıyla yanıtlar."
+tags:
+  - Roadmap
+  - GitOps
+  - IaC
+  - Containers
+  - CI/CD
 ---
 ## 🗺️ **DevOps GitOps Uygulama Yol Haritası** (A'dan Z'ye)
 

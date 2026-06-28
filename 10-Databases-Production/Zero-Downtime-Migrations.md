@@ -1,5 +1,10 @@
 ---
 description: "Postgres zero-downtime schema migration pattern'leri: expand/contract, online schema change, gh-ost ve pg_repack; naif migration neden coker, somut orneklerle."
+tags:
+  - Databases
+  - PostgreSQL
+  - SRE
+  - Performance
 ---
 # Zero-Downtime Migrations — Schema Değişikliği Yaparken Prod'u Düşürme
 

@@ -1,5 +1,10 @@
 ---
 description: "LLM maliyet optimizasyonu: token fiyatlandirma, model tier secimi, prompt caching, batch API, semantic cache ve fine-tuning ROI ile ayni isi %70 ucuza yapma."
+tags:
+  - AI/LLMOps
+  - Cost Optimization
+  - FinOps
+  - Performance
 ---
 # Model Cost Optimization — LLM Bill'i Yönetmek
 

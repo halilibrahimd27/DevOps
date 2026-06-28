@@ -1,5 +1,10 @@
 ---
 description: "Prod ortamında alarmlara cevap vermek için runbook'un ne olduğunu, neden ve nasıl yazıldığını anlatan rehber; şablon, örnek ve anti-pattern'ler."
+tags:
+  - SRE
+  - Incident Response
+  - Template
+  - Field Notes
 ---
 # Runbook — Alarm Düştüğünde Ne Yap
 

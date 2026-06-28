@@ -1,5 +1,11 @@
 ---
 description: "Kubecost ile Kubernetes cost visibility: per-namespace, workload ve label bazli dollar maliyet dashboard, allocation modeli, alert ve OpenCost alternatifi."
+tags:
+  - FinOps
+  - Cost Optimization
+  - Kubernetes
+  - Observability
+  - Cost
 ---
 # Kubecost Setup — K8s Cost Visibility
 

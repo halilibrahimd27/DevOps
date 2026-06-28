@@ -1,5 +1,10 @@
 ---
 description: "DevOps için vendor seçimi, kontrat müzakeresi, lock-in ölçümü ve escape stratejisini somut tekniklerle anlatan vendor yönetimi rehberi."
+tags:
+  - Soft Skills
+  - FinOps
+  - Cost Optimization
+  - Culture
 ---
 # Vendor Management — Lock-In, Müzakere, Escape Stratejisi
 

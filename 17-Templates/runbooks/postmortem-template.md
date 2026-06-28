@@ -1,5 +1,10 @@
 ---
 description: "Blameless postmortem template: TL;DR, etki metrikleri, UTC zaman çizelgesi, kök neden, savunma katmanları, owner'lı aksiyon maddeleri ve öğrenilen dersler."
+tags:
+  - Template
+  - Incident Response
+  - SRE
+  - DORA
 ---
 # Postmortem: <INCIDENT TITLE>
 

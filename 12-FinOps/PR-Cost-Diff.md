@@ -1,5 +1,11 @@
 ---
 description: "CI'da PR'in cost impact'ini hesaplama ve PR yorumuna ekleme: Infracost ve Kubecost ile pre-merge maliyet review, sürpriz bill yerine bilincli karar."
+tags:
+  - FinOps
+  - Cost Optimization
+  - CI/CD
+  - Terraform
+  - Cost
 ---
 # PR Cost Diff — "Bu PR ne kadara mal olacak?"
 

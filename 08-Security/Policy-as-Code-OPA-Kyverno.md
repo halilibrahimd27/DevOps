@@ -1,5 +1,10 @@
 ---
 description: "Kubernetes admission policy oyuncusu Kyverno ve OPA Gatekeeper karsilastirmasi: hazir policy katalogu ve production'a girerken sart olan 10 policy."
+tags:
+  - Security
+  - Policy as Code
+  - Kubernetes
+  - Compliance
 ---
 # Policy-as-Code — Kyverno vs OPA Gatekeeper
 

@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes öncesi Ansible ile sistem hazırlığı: production inventory dosyası oluşturma, master/worker host tanımları, etcd member ve node label ayarları."
+tags:
+  - Field Notes
+  - Kubernetes
+  - IaC
+  - Containers
+  - Networking
 ---
 # Ansible ile Sistem Hazırlığı
 

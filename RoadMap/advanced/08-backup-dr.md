@@ -1,5 +1,11 @@
 ---
 description: "Faz 8 (Gün 19-20): Backup ve felaket kurtarma; Velero ile Kubernetes yedekleme, S3 bucket oluşturma ve IAM rolüne dayalı bucket policy yapılandırması."
+tags:
+  - Roadmap
+  - Backup
+  - Kubernetes
+  - AWS
+  - SRE
 ---
 # 🗄️ **PHASE 8: BACKUP & DISASTER RECOVERY** (Gün 19-20)
 

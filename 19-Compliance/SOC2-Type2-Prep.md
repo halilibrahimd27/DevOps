@@ -1,5 +1,10 @@
 ---
 description: "SOC 2 Type II'nin mühendislik hazırlığı: Trust Service Criteria, observation period, audit evidence automation ve continuous compliance disiplini ile audit günü hazırlığı."
+tags:
+  - Compliance
+  - Security
+  - Policy as Code
+  - Observability
 ---
 # SOC 2 Type II — Mühendislik Hazırlığı
 

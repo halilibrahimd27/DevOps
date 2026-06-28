@@ -1,5 +1,10 @@
 ---
 description: "CI/CD cache katmanlari rehberi: dependency, build, Docker layer ve test result cache stratejileri somut config ornekleriyle; pipeline'i dakikalara indirir."
+tags:
+  - CI/CD
+  - Performance
+  - Docker
+  - Containers
 ---
 # Caching Strategies — Build, Test, Deploy Cache
 

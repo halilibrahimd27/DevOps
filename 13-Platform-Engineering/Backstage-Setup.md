@@ -1,5 +1,10 @@
 ---
 description: "Spotify'ın açık kaynak Backstage geliştirici portalını sıfırdan prod-grade seviyeye kurma rehberi: catalog, scaffolder, TechDocs, plugin'ler ve OIDC auth adımları."
+tags:
+  - Platform Engineering
+  - Kubernetes
+  - Security
+  - Template
 ---
 # Backstage Setup — IDP'nin Pratik Kuruluşu
 

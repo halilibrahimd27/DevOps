@@ -1,5 +1,10 @@
 ---
 description: "DevOps/SRE/Platform işlerinde insan tarafına dair soft skill rehberlerinin dizini: on-call, stakeholder, security, vendor, hayır demek, postmortem, mentoring."
+tags:
+  - Soft Skills
+  - Culture
+  - Career
+  - SRE
 ---
 # 20 · Soft Skills — Mühendislikten Daha Önemli (Bazen)
 

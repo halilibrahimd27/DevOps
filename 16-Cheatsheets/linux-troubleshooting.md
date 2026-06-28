@@ -1,5 +1,10 @@
 ---
 description: "Linux sorun giderme cheatsheet'i: Brendan Gregg USE metodu ile CPU, bellek, disk ve network teshisi. Production'da neyin yavas oldugunu bulma araclari."
+tags:
+  - Cheatsheet
+  - Incident Response
+  - Performance
+  - SRE
 ---
 # Linux Troubleshooting Cheatsheet
 

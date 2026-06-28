@@ -1,5 +1,10 @@
 ---
 description: "GitOps'ta secret yönetimi: Sealed Secrets, SOPS, External Secrets Operator ve ArgoCD Vault Plugin karşılaştırması; Git'te şifreli, cluster'da çözük."
+tags:
+  - GitOps
+  - Secrets
+  - Security
+  - Kubernetes
 ---
 # Secrets in GitOps — Git'e Sır Koyabilir misin?
 

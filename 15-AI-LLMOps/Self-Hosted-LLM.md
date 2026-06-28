@@ -1,5 +1,11 @@
 ---
 description: "Self-hosted LLM: vLLM, Ollama ve Llama Stack ile kurulum, GPU kapasite planlamasi, production onerileri; privacy, cost ve offline icin self-host artilari."
+tags:
+  - AI/LLMOps
+  - Kubernetes
+  - Cost Optimization
+  - Performance
+  - Security
 ---
 # Self-Hosted LLM — vLLM, Ollama, Llama Stack
 

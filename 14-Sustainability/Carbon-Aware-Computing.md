@@ -1,5 +1,10 @@
 ---
 description: "Carbon-aware workload scheduling rehberi: isin ne zaman ve nerede calisacagini sebekenin anlik karbon yogunluguna gore secme, gercek zamanli API'lar, K8s ve CI ornekleri."
+tags:
+  - Sustainability
+  - Kubernetes
+  - CI/CD
+  - FinOps
 ---
 # Carbon-Aware Computing — Düşük-Karbon Saatte Çalış
 

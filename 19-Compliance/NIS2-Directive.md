@@ -1,5 +1,10 @@
 ---
 description: "EU NIS2 Directive (2022/2555) rehberi: kritik altyapı kapsamı, mühendislik gereksinimleri, yürürlük takvimi, cezalar ve TR şirketlerin AB müşterileriyle etkisi."
+tags:
+  - Compliance
+  - Security
+  - Incident Response
+  - Networking
 ---
 # NIS2 Directive — EU Kritik Altyapı Güvenliği
 

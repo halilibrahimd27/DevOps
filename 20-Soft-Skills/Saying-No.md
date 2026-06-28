@@ -1,5 +1,9 @@
 ---
 description: "DevOps/SRE'de scope creep, premature commitment ve gerçekçi olmayan deadline'lara karşı 'hayır' demeyi profesyonel iletişim aracına çeviren rehber."
+tags:
+  - Soft Skills
+  - Culture
+  - Career
 ---
 # "Hayır" Demek — Soft Skill'in Özü
 

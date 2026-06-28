@@ -1,5 +1,11 @@
 ---
 description: "Production kurulumlardan kalan ham DevOps saha notları: Ansible, Terraform, Kubernetes, kubectl ve sistem rehberlerinin olduğu gibi korunmuş komut dökümleri."
+tags:
+  - Field Notes
+  - Kubernetes
+  - Terraform
+  - IaC
+  - Cheatsheet
 ---
 # 21 · Saha Notları — Field Notes
 

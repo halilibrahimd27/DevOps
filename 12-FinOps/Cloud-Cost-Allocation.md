@@ -1,5 +1,10 @@
 ---
 description: "Cloud faturasini anlamlandirma: kim ne icin harcadi sorusuna cevap; tagging stratejisi, showback, chargeback ve anomaly detection ile maliyet allocation."
+tags:
+  - FinOps
+  - Cost Optimization
+  - AWS
+  - Cost
 ---
 # Cloud Cost Allocation — Faturayı Anlamak
 

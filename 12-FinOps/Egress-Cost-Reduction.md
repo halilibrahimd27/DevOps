@@ -1,5 +1,11 @@
 ---
 description: "AWS, GCP ve Azure'da egress maliyetini azaltma: VPC Endpoints, CDN, peering, single-AZ ve NAT Gateway kontrolu ile gizli bill kalemini somut tasarrufa cevirme."
+tags:
+  - FinOps
+  - Cost Optimization
+  - Networking
+  - AWS
+  - Cost
 ---
 # Egress Cost Reduction — Görünmez Bill Kaleminin Kontrolü
 

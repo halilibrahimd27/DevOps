@@ -1,5 +1,10 @@
 ---
 description: "Production-grade Prometheus best practices: metric naming, cardinality kontrolu, retention politikasi, federation, HA ve recording rules ile OOM'dan kacinma kurallari."
+tags:
+  - Observability
+  - Prometheus
+  - Monitoring
+  - SRE
 ---
 # Prometheus Best Practices — Production-Grade
 

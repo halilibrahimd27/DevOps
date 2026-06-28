@@ -1,5 +1,10 @@
 ---
 description: "Kubernetes'te stateful workload yonetimi: plain StatefulSet'in nerede yeterli oldugu, operator pattern'in ne zaman zorunlu oldugu ve karar agaci."
+tags:
+  - Databases
+  - Kubernetes
+  - PostgreSQL
+  - Platform Engineering
 ---
 # StatefulSet vs Operator — Stateful Workload K8s'de
 

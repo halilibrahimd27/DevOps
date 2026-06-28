@@ -1,5 +1,9 @@
 ---
 description: "Standart Terraform modül iskeleti: main.tf + variables.tf + outputs.tf; tip-güvenli, validation'lı, versiyon-pinli kopyala-yapıştır şablon."
+tags:
+  - Template
+  - Terraform
+  - IaC
 ---
 # Terraform Module Skeleton
 

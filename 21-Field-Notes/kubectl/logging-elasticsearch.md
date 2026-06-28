@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes logging namespace'inde ElasticSearch deployment kurulumu: kubectl apply manifesti, nodeSelector, toleration ve elasticsearch 8.5.1 imajı."
+tags:
+  - Field Notes
+  - Kubernetes
+  - Observability
+  - Monitoring
+  - Containers
 ---
 # kubectl — Logging (ElasticSearch)
 

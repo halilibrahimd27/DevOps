@@ -1,5 +1,9 @@
 ---
 description: "kubectl pratik komut notlari: cluster inspection, etiket filtreleme, JSONPath ile alan secimi, pod debug, rollout, port-forward ve sirali cikti ornekleri."
+tags:
+  - Cheatsheet
+  - Kubernetes
+  - Containers
 ---
 # kubectl Cheatsheet
 

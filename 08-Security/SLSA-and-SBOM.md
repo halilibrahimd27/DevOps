@@ -1,5 +1,10 @@
 ---
 description: "Yazilim tedarik zinciri guvenligi: SLSA seviyeleri, SBOM, provenance ve attestation; Sigstore/cosign/Rekor ile xz-utils tipi saldirilara karsi savunma."
+tags:
+  - Security
+  - SBOM
+  - CI/CD
+  - Compliance
 ---
 # SLSA & SBOM — Supply Chain Integrity
 

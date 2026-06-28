@@ -1,5 +1,10 @@
 ---
 description: "Conventional Commits 1.0 spec: feat/fix/chore commit formatı, niye işe yaradığı ve CI'da nasıl enforce edileceği; otomatik changelog ve semver bump'ın temeli."
+tags:
+  - Git
+  - CI/CD
+  - Policy as Code
+  - Cheatsheet
 ---
 # Conventional Commits — Disiplinli Commit Mesajları
 

@@ -1,5 +1,11 @@
 ---
 description: "LLM'in DevOps akisindaki pratik kullanimlari: log analiz, runbook, postmortem, alarm triage; agent pattern'leri, use case matrisi ve otomasyon-insan dengesi."
+tags:
+  - AI/LLMOps
+  - SRE
+  - Incident Response
+  - Observability
+  - Security
 ---
 # AI-Augmented Operations — LLM ile DevOps İşi
 

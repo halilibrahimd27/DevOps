@@ -1,5 +1,10 @@
 ---
 description: "Ingress'ten Gateway API'ye gecis rehberi: niye gerekli, persona-bazli CRD modeli, adim adim migration plani ve gecis sirasinda beklenen tuzaklar."
+tags:
+  - Networking
+  - Kubernetes
+  - Platform Engineering
+  - Roadmap
 ---
 # Gateway API — Ingress'in Halefi, 2026'da Standart
 

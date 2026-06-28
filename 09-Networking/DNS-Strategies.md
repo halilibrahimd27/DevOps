@@ -1,5 +1,10 @@
 ---
 description: "Kubernetes ortaminda production-grade DNS kurulumu: external-dns, CoreDNS tuning, NodeLocal DNSCache ve split-horizon ile DNS incident'larini onleme rehberi."
+tags:
+  - Networking
+  - Kubernetes
+  - SRE
+  - Incident Response
 ---
 # DNS Strategies — external-dns, NodeLocal, CoreDNS Tuning
 

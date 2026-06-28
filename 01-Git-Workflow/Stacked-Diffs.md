@@ -1,5 +1,10 @@
 ---
 description: "Stacked diffs pattern: büyük feature'ı küçük ve gerçekten review edilebilir PR'lara bölme; Graphite, Sapling veya manuel branch chain ile araç ve workflow."
+tags:
+  - Git
+  - CI/CD
+  - Culture
+  - Field Notes
 ---
 # Stacked Diffs — Büyük Feature'ı Küçük PR'lara Bölme
 

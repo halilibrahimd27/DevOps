@@ -1,5 +1,10 @@
 ---
 description: "DevOps kurulumu öncesi ön koşullar: geliştirici makine kurulumu, WSL2, temel araçlar, Docker ve diğer development tool'larının komut satırıyla hazırlanması."
+tags:
+  - Roadmap
+  - Docker
+  - Containers
+  - Cheatsheet
 ---
 # 📋 **ÖN KOŞULLAR VE HAZIRLIK**
 

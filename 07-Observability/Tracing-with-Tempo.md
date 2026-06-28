@@ -1,5 +1,10 @@
 ---
 description: "Distributed tracing rehberi: OpenTelemetry SDK ile Grafana Tempo kurulumu, trace anatomisi, sampling stratejileri ve production'da trace analizi best practice'leri."
+tags:
+  - Observability
+  - Monitoring
+  - Performance
+  - SRE
 ---
 # Distributed Tracing — Tempo + OpenTelemetry
 

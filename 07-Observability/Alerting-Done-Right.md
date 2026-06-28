@@ -1,5 +1,10 @@
 ---
 description: "Symptom-based, actionable ve az sayida alarm tasarlama rehberi: alarmin 3 sarti, cause vs symptom ayrimi, alert fatigue, runbook ve alert review pratikleri."
+tags:
+  - Observability
+  - Monitoring
+  - Incident Response
+  - SRE
 ---
 # Alerting Done Right — Symptom-Based, Actionable, Az
 

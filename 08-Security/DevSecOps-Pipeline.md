@@ -1,5 +1,10 @@
 ---
 description: "Pre-commit'ten runtime'a her asamada guvenlik kontrolu olan fail-fast ama developer-friendly DevSecOps pipeline tasarimi: shift-left ve defense in depth."
+tags:
+  - Security
+  - CI/CD
+  - Containers
+  - Policy as Code
 ---
 # DevSecOps Pipeline — Shift-Left'ten Runtime'a
 

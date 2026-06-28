@@ -1,5 +1,10 @@
 ---
 description: "GitHub Actions reusable workflow ve composite action ile org-wide CI/CD standardizasyonu: step, job ve workflow seviyesinde soyutlama pratikleri."
+tags:
+  - CI/CD
+  - Git
+  - Template
+  - Platform Engineering
 ---
 # Reusable Workflows — Org-Wide Template
 

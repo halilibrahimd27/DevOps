@@ -1,5 +1,10 @@
 ---
 description: "Faz 12 (Gün 27-28): Final kurulum ve doğrulama; tüm sistemin uçtan uca test scriptiyle validasyonu, başarı sayacı ve test kontrollerinin çalıştırılması."
+tags:
+  - Roadmap
+  - SRE
+  - Performance
+  - Observability
 ---
 # 🎉 **FINAL SETUP AND VALIDATION** (Gün 27-28)
 

@@ -1,5 +1,9 @@
 ---
 description: "DevOps/SRE/Platform CV yazım rehberi: görev yerine etki odaklı yazım, STAR formülü, ATS uyumu ve Türk pazarı ile global pazar farkları üzerine pratik notlar."
+tags:
+  - Career
+  - Soft Skills
+  - Template
 ---
 # DevOps / SRE CV Tips — Türk Pazarı + Global
 

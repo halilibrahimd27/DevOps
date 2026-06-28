@@ -1,5 +1,11 @@
 ---
 description: "Junior'dan Staff seviyeye 60+ DevOps mülakat sorusu: container, Kubernetes, Git, CI/CD ve daha fazlası için her soruda ne göstermeli ipuçları ve trade-off odağı."
+tags:
+  - Career
+  - Kubernetes
+  - CI/CD
+  - Containers
+  - Git
 ---
 # DevOps Interview Questions — 60+ soru ile hazırlık
 

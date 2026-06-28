@@ -1,5 +1,11 @@
 ---
 description: "Container imaj imzalamayi Cosign keyless OIDC ile production'da kurma: tehdit modeli, adimlar, GitHub Actions ve admission verification."
+tags:
+  - Containers
+  - Security
+  - SBOM
+  - CI/CD
+  - Threat Modeling
 ---
 # Image Signing — Cosign + Keyless OIDC
 

@@ -1,5 +1,11 @@
 ---
 description: "GitHub Actions CI/CD pipeline kurulum rehberi: repository yapısı, workflow dosyaları, Kustomize tabanlı k8s base/staging/production ortamları ve Docker akışı."
+tags:
+  - Field Notes
+  - CI/CD
+  - Kubernetes
+  - Docker
+  - GitOps
 ---
 # 🚀 GitHub Actions Pipeline Kurulum Rehberi
 

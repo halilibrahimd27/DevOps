@@ -1,5 +1,10 @@
 ---
 description: "Code review'i bilgi paylaşımı ve kalite aracına çeviren pratikler: review'ın 3 amacı, nit/blocker/question kategori sistemi, reviewer ve author rehberi."
+tags:
+  - Git
+  - Culture
+  - Soft Skills
+  - Cheatsheet
 ---
 # Code Review Checklist — İyi Review, İyi Reviewer
 

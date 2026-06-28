@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes multi-tenancy modelleri: soft (namespace + RBAC), hard, vCluster ve cluster-per-tenant; izolasyon, maliyet ve kullanim karsilastirmasi."
+tags:
+  - Kubernetes
+  - Security
+  - Networking
+  - Platform Engineering
+  - Policy as Code
 ---
 # Multi-Tenancy Patterns — Soft, Hard, Hibrit
 

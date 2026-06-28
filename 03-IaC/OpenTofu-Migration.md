@@ -1,5 +1,9 @@
 ---
 description: "Terraform'dan OpenTofu'ya geçiş rehberi: HashiCorp BSL license sorunu, MPL 2.0 forku, uyumluluk farkları ve 2026'da neye geçilmeli sorusunun pratik cevabı."
+tags:
+  - IaC
+  - Terraform
+  - Compliance
 ---
 # OpenTofu Migration — Terraform'dan Bağımsız Olmak
 

@@ -1,5 +1,9 @@
 ---
 description: "Docker pratik komut notlari: image build, build-arg, BuildKit/buildx ile multi-platform build ve cache, run, exec, network, volume ve prune islemleri."
+tags:
+  - Cheatsheet
+  - Docker
+  - Containers
 ---
 # Docker Cheatsheet
 

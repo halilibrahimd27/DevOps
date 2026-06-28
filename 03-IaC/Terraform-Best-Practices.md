@@ -1,5 +1,10 @@
 ---
 description: "Terraform/OpenTofu 2026 production rehberi: remote state, versiyonlu module, PR'da plan, manuel apply, for_each, sensitive marking ve sürekli drift izleme."
+tags:
+  - IaC
+  - Terraform
+  - CI/CD
+  - Security
 ---
 # Terraform Best Practices
 

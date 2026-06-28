@@ -1,5 +1,10 @@
 ---
 description: "WebAssembly (WASM) ve WASI'nin server-side runtime olarak container'a gore avantaj/dezavantajlari ve 2026'da ne zaman tercih edilecegi."
+tags:
+  - Containers
+  - Docker
+  - Performance
+  - Field Notes
 ---
 # Container vs WASM — Yeni Runtime Geliyor mu?
 

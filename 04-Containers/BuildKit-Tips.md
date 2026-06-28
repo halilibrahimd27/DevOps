@@ -1,5 +1,10 @@
 ---
 description: "BuildKit'in modern Docker build feature'lari: cache mount, secret mount, multi-platform ve frontend syntax. Somut Dockerfile ornekleriyle anlatim."
+tags:
+  - Containers
+  - Docker
+  - Performance
+  - Secrets
 ---
 # BuildKit Tips — Modern Docker Build
 

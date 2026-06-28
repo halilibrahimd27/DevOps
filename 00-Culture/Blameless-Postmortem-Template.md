@@ -1,5 +1,10 @@
 ---
 description: "Suçlamayan (blameless) postmortem felsefesi ve şablonu: neden blameless, blameful/blameless ton karşılaştırması, dolu örnek ve kontrol listesi."
+tags:
+  - Culture
+  - Incident Response
+  - SRE
+  - Template
 ---
 
 # Blameless Postmortem — Felsefe ve Şablon

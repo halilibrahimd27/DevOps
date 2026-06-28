@@ -1,5 +1,11 @@
 ---
 description: "On-call'ı sağlıklı yönetilebilir bir disiplin olarak ele alır: vardiya tasarımı, post-incident dinlenme, burnout sinyalleri ve önleme taktikleri."
+tags:
+  - Soft Skills
+  - SRE
+  - Incident Response
+  - Sustainability
+  - Culture
 ---
 # On-Call Sürdürülebilirliği — Burnout Olmadan Yangın Söndürme
 

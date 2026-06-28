@@ -1,5 +1,11 @@
 ---
 description: "LLM uygulamalarini production'a alma: rate limit, input safety, prompt template registry, eval, observability, cost ve guardrail'ler ile LLMOps mimarisi."
+tags:
+  - AI/LLMOps
+  - Observability
+  - Security
+  - Cost Optimization
+  - Platform Engineering
 ---
 # LLM Uygulamalarını Production'a Almak
 

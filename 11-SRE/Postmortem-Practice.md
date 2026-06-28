@@ -1,5 +1,10 @@
 ---
 description: "Blameless postmortem kültürünün rutine dönüştürülmesini, yazma süreci, fasilitasyon, action item yönetimi ve kültürel sürdürülebilirliği anlatır."
+tags:
+  - SRE
+  - Incident Response
+  - Culture
+  - Soft Skills
 ---
 # Postmortem Practice — Blameless'i Rutin Haline Getirmek
 

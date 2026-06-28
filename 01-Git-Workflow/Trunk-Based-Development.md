@@ -1,5 +1,10 @@
 ---
 description: "Git Flow yerine trunk-based development: kısa ömürlü feature branch, feature flag ve güvenli prod deploy ile main üzerinde hızlı ve güvenli geliştirme rehberi."
+tags:
+  - Git
+  - CI/CD
+  - DORA
+  - Platform Engineering
 ---
 # Trunk-Based Development — Hızın ve Güvenliğin Buluştuğu Yer
 
