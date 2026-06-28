@@ -9,6 +9,12 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 
 ## [Unreleased]
 
+---
+
+## [1.2.1] — 2026-06-28
+
+Portfolyo cilası — site sunumu rafine edildi.
+
 ### Değiştirildi
 - **Hero tagline'ları** insan sesine çekildi (AI-kokan "X gömen, Y kuran mühendis" +
   buzzword listesi + TR↔EN birebir ayna kaldırıldı); görüşlü/somut bir ifadeyle değiştirildi
@@ -16,6 +22,8 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 - Sayfa üstündeki **"Görüntüle" / "Düzenle"** (view source / edit this page) action
   butonları kaldırıldı — tek-yazarlı portfolyo sitesinde gereksiz/dağıtıcı
   (`content.action.view` + `content.action.edit` özellikleri çıkarıldı)
+- **CHANGELOG** yayınlanan siteden çıkarıldı (portfolyo nav'ında yersiz); dosya repo'da kalır
+- X/Twitter profil linki kaldırıldı (v1.2.0'da başlandı; GitHub · LinkedIn · e-posta kaldı)
 
 ---
 
@@ -108,7 +116,8 @@ olarak işaretlendi: 21 ana bölüm, 125+ deep-dive, 65K+ satır Türkçe içeri
 
 ---
 
-[unreleased]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/halilibrahimd27/DevOps/releases/tag/v1.0.0

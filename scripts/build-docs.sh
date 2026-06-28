@@ -50,7 +50,9 @@ if [ -f docs/tags.md ]; then
 fi
 
 # 2) Kök seviyesi md dosyaları
-for f in CHANGELOG.md Glossary.md; do
+# Not: CHANGELOG.md bilinçli olarak siteye STAGE EDİLMEZ (portfolyo sitesinde nav sekmesi
+# olarak yersiz duruyor). Dosya repo'da kalır (GitHub'da + sürüm geçmişi için).
+for f in Glossary.md; do
   if [ -f "$f" ]; then
     cp "$f" "$STAGE/"
     echo "  + $f"
@@ -146,7 +148,6 @@ nav:
   - 21-Field-Notes
   - "📖 Sözlük": Glossary.md
   - "🏷️ Etiketler": tags.md
-  - "📋 Changelog": CHANGELOG.md
 PAGES_EOF
 echo "  + .pages (root nav)"
 
