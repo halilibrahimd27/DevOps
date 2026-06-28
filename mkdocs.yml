@@ -46,8 +46,6 @@ theme:
     - search.share
     - content.code.copy
     - content.code.annotate
-    - content.action.edit
-    - content.action.view
     - content.tabs.link
     - content.tooltips
     - toc.follow

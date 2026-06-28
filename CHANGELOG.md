@@ -9,6 +9,11 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 
 ## [Unreleased]
 
+### Değiştirildi
+- Sayfa üstündeki **"Görüntüle" / "Düzenle"** (view source / edit this page) action
+  butonları kaldırıldı — tek-yazarlı portfolyo sitesinde gereksiz/dağıtıcı
+  (`content.action.view` + `content.action.edit` özellikleri çıkarıldı)
+
 ---
 
 ## [1.2.0] — 2026-06-28
