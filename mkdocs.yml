@@ -174,5 +174,8 @@ extra_css:
 extra_javascript:
   - assets/extra.js
 
-strict: true
+# strict: false — docs_dir (site_src) build-time generated; git-revision-date plugin
+# CI'da (CI=true) "no git logs" warning üretir, strict bunları error'a çevirip build'i kırar.
+# Link bütünlüğü ayrı lychee CI job'ında kontrol ediliyor (.lychee.toml).
+strict: false
 use_directory_urls: true

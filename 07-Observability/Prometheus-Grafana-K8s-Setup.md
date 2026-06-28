@@ -126,7 +126,7 @@ echo "✅ Kurulum tamamlandı!"
 
 # Grafana Konfigürasyonu
 grafana:
-  adminPassword: "admin123!"
+  adminPassword: "<GRAFANA_ADMIN_PASSWORD>"   # prod: admin.existingSecret kullan (bkz. Anti-Pattern)
   
   persistence:
     enabled: true

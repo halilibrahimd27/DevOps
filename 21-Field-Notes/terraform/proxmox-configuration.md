@@ -670,7 +670,7 @@ output "cluster_summary" {
 # -----------------------------------------------------
 # proxmox_api_url = "https://192.168.1.100:8006/api2/json"
 # proxmox_user = "terraform@pve"
-# proxmox_password = "your-password"
+# proxmox_password = "<PROXMOX_PASSWORD>"
 # proxmox_node = "pve"
 # template_name = "ubuntu-22.04-template"
 # network_bridge = "vmbr0"
