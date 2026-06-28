@@ -580,7 +580,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.28"
+  default     = "1.30"
 }
 
 variable "subnet_ids" {
@@ -801,7 +801,7 @@ resource "aws_eks_addon" "coredns" {
 resource "aws_eks_addon" "kube_proxy" {
   cluster_name = aws_eks_cluster.main.name
   addon_name   = "kube-proxy"
-  addon_version = "v1.28.2-eksbuild.2"
+  addon_version = "v1.30.0-eksbuild.1"  # 'aws eks describe-addon-versions' ile cluster sürümüne uygun olanı seç
   resolve_conflicts_on_create = "OVERWRITE"
 }
 
@@ -1277,7 +1277,7 @@ variable "availability_zones" {
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.28"
+  default     = "1.30"
 }
 
 variable "db_name" {
@@ -1305,10 +1305,10 @@ environment     = "dev"
 project_name    = "mycompany"
 vpc_cidr        = "10.0.0.0/16"
 availability_zones = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
-kubernetes_version = "1.28"
+kubernetes_version = "1.30"
 db_name         = "mycompanydb"
 db_username     = "admin"
-db_password     = "SuperSecurePassword123!"
+db_password     = "<DB_PASSWORD>"   # tfvars'a düz yazma — prod: secret manager / TF_VAR_db_password env
 EOF
 
 cat > outputs.tf << 'EOF'

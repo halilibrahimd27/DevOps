@@ -500,3 +500,18 @@ Production-ready cost allocation için somut maddeler:
 - [AWS Well-Architected — Cost Optimization Pillar](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/)
 - [OpenCost docs](https://www.opencost.io)
 - _Right Sizing → 12-FinOps/Right-Sizing.md_ *(yakında)*
+
+---
+
+## 📚 Referanslar
+
+- [Kubecost / OpenCost kurulumu](Kubecost-Setup.md) — pod/namespace seviye K8s allocation
+- [Right-Sizing](Right-Sizing.md) — request/limit ayarlama, idle israfı kapatma
+- [Reserved & Savings Plans](Reserved-and-Savings-Plans.md) — commit stratejisi ve cliff yönetimi
+- [Egress maliyet azaltma](Egress-Cost-Reduction.md) — data transfer'in gizli faturası
+- [PR-time Cost Diff (Infracost)](PR-Cost-Diff.md) — merge öncesi maliyet görünürlüğü
+- [AWS Well-Architected — Cost Optimization Pillar](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/)
+
+---
+
+> *"Etiketlenmemiş maliyet sahipsiz maliyettir; faturayı allocation'a bağlamadan optimizasyon değil, sadece tahmin yaparsın."*

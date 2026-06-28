@@ -9,6 +9,8 @@ tags:
 ---
 # DevOps/SRE System Design — Cheatsheet
 
+> *"İyi system design cevabı kutu çizmek değil, her kararı sayı, trade-off, failure mode ve maliyetle savunmaktır."*
+
 > Geleneksel "Design Twitter" sorularından farklı olarak, DevOps/SRE
 > mülakatlarında **infra**, **deploy**, **observability** odaklı sorular gelir.
 
@@ -321,3 +323,18 @@ Mülakatta tasarımı sunmadan önce/sunarken işaretle — her madde sorulmadan
 - [The Site Reliability Workbook — Google]
 - [`05-Kubernetes/Production-Checklist.md`](../05-Kubernetes/Production-Checklist.md)
 - [`11-SRE/SLI-SLO-Error-Budget.md`](../11-SRE/SLI-SLO-Error-Budget.md)
+
+---
+
+## 📚 Referanslar
+
+- [SLO Engineering](../07-Observability/SLO-Engineering.md) — availability hedefini error budget'a çevir; mülakatta "%99.9 → 43 dk/ay" demek bu.
+- [OpenTelemetry Adoption](../07-Observability/OpenTelemetry-Adoption.md) — observability sorusunda vendor-neutral instrumentation argümanı.
+- [Multi-Tenancy Patterns](../05-Kubernetes/Multi-Tenancy-Patterns.md) — soft vs hard tenant izolasyonu trade-off'u.
+- [Spot Instance Strategy](../12-FinOps/Spot-Instance-Strategy.md) — cost optimization sorusunda spot/on-demand mix gerekçesi.
+- [Incident Response](../11-SRE/Incident-Response.md) — failure mode ve operability tarafını somutlaştır.
+- [Kubernetes Docs](https://kubernetes.io/docs/) — cluster topology iddialarını resmi kaynağa dayandır.
+
+---
+
+> *"DevOps/SRE system design mülakatı kutu çizmekle değil, somut sayı verip her kararın trade-off'unu, failure mode'unu ve işletme maliyetini açıkça konuşmakla geçilir."*

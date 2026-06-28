@@ -440,3 +440,18 @@ prompt-customer-support v2.0.0-rc.1 vs v1.5.0
 - [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents)
 - [LangChain — Building LLM apps in production](https://python.langchain.com)
 - [Langfuse docs](https://langfuse.com/docs)
+
+---
+
+## 📚 Referanslar
+
+- [`Safety-and-Guardrails.md`](Safety-and-Guardrails.md) — input/output guardrail, PII, prompt injection derinlemesine
+- [`Model-Cost-Optimization.md`](Model-Cost-Optimization.md) — token maliyeti, semantic cache, model routing detayları
+- [`RAG-Architecture.md`](RAG-Architecture.md) — hybrid search, chunking, reranker pattern'leri
+- [`../07-Observability/OpenTelemetry-Adoption.md`](../07-Observability/OpenTelemetry-Adoption.md) — trace/span altyapısı (LLM trace'i buraya oturur)
+- [`../08-Security/Secrets-Management.md`](../08-Security/Secrets-Management.md) — API key/token saklama, rotation
+- [OpenTelemetry docs](https://opentelemetry.io/docs/) — trace standardı
+
+---
+
+> *"Production'da LLM'i ayakta tutan model değil; versiyonlu prompt, CI'daki eval, per-tenant kota, token maliyeti, guardrail ve trace'ten oluşan çevresidir — demoda çalışması hiçbir şey kanıtlamaz."*

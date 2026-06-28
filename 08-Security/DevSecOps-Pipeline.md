@@ -264,7 +264,7 @@ Cluster'a sadece güvenli imajların deploy edilmesini garanti et.
 
 ```yaml
 # Kyverno ClusterPolicy — sadece imzalı imaj
-apiVersion: kyverno.io/v2beta1
+apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
   name: verify-signature
@@ -455,3 +455,18 @@ Production'a çıkmadan önce her satırı işaretle — biri eksikse pipeline t
 - [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
 - [Sigstore documentation](https://docs.sigstore.dev)
 - [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — hazır policy'ler
+
+---
+
+## 📚 Referanslar
+
+- [`SLSA-and-SBOM.md`](SLSA-and-SBOM.md) — supply chain provenance, SBOM ve attestation derinlemesine.
+- [`Container-Image-Scanning.md`](Container-Image-Scanning.md) — Trivy/imaj tarama ve base image seçimi.
+- [`Policy-as-Code-OPA-Kyverno.md`](Policy-as-Code-OPA-Kyverno.md) — admission control ve Kyverno policy detayları.
+- [`Runtime-Security.md`](Runtime-Security.md) — Falco/Tetragon ve eBPF runtime savunması.
+- [`Threat-Modeling.md`](Threat-Modeling.md) — saldırı yüzeyini sistematik çıkarma.
+- [SLSA framework](https://slsa.dev) — supply chain bütünlük seviyeleri (resmi).
+
+---
+
+> *"DevSecOps 'güvenlik ekibinin işi' değil, pipeline'a gömülü kapılardır: imzasız imaj, taranmamış bağımlılık ve policy'siz cluster prod'a değil kırmızıya gider."*

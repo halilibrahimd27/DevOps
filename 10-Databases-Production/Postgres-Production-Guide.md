@@ -44,8 +44,9 @@ konularını derler. Postgres 16/17 referans alır.
 # Total RAM × 25% — query buffer cache
 shared_buffers = 4GB
 
-# Per-query work memory — sıralama, hash join
-# Total RAM × 25% / max_connections * 2
+# Per-query work memory — sıralama, hash join (operasyon BAŞINA, bağlantı başına değil)
+# Muhafazakâr başla (16-64MB); EXPLAIN ANALYZE'da disk-temp görürsen kademeli artır.
+# DİKKAT: toplam tüketim ≈ work_mem × eşzamanlı sort/hash op sayısı → agresif değer OOM riski.
 work_mem = 16MB
 
 # Maintenance (VACUUM, CREATE INDEX) — Total RAM × 5%

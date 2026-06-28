@@ -301,7 +301,7 @@ response = anthropic.messages.create(
 - **Total**: 2-6s
 
 ### 3. **Cost**
-- Embedding: $0.0001 / 1K token (OpenAI small)
+- Embedding: ~$0.02 / 1M token (OpenAI text-embedding-3-small; ≈ $0.00002/1K)
 - Vector store: storage + index
 - LLM: $1-15 / 1M token (model'e göre)
 

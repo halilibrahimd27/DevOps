@@ -290,3 +290,17 @@ Dashboard'u "kuruldu" sayma; aşağıdakiler bitmeden veri güvenilmez.
 - [SPACE Framework paper](https://queue.acm.org/detail.cfm?id=3454124) — Microsoft Research
 - *Accelerate* — Forsgren, Humble, Kim (DORA'nın bilimsel temeli)
 - [Four Keys project (Google)](https://github.com/dora-team/fourkeys) — açık kaynak DORA dashboard
+
+---
+
+## 📚 Referanslar
+
+- [SLI / SLO / Error Budget](../11-SRE/SLI-SLO-Error-Budget.md) — MTTR ve CFR'ı error budget ile bağla; deploy freeze mantığı buradan gelir
+- [SLO Engineering](../07-Observability/SLO-Engineering.md) — DORA metriklerini SLO dashboard'una taşımanın pratiği
+- [Incident Response](../11-SRE/Incident-Response.md) — MTTR'ı düşürmek için müdahale akışı ve runbook automation
+- [Blameless Postmortem Template](Blameless-Postmortem-Template.md) — CFR/MTTR verisini suçlama değil öğrenmeye çevirmek için
+- [DORA — State of DevOps](https://dora.dev) — metriklerin kaynağı ve yıllık benchmark'lar
+
+---
+
+> *"DORA'nın dört metriği hızı ve stabiliteyi ölçer; SPACE ise o sayıları manipülasyona ve ekibi tüketmeye karşı dengeler — tek metriğe bakan, ölçtüğünü değil ekibini bozar."*

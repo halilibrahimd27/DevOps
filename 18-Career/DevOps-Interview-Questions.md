@@ -549,3 +549,7 @@ Mülakata girmeden önce hazır olduğunu doğrula.
 - [The DevOps Handbook]
 - [Site Reliability Engineering — Google] (ücretsiz online)
 - KodeKloud, A Cloud Guru, Linux Foundation kursları
+
+---
+
+> *"Mülakat tanım ezberini değil, trade-off'u kendi yaşadığın incident üzerinden savunabilmeni ölçer; bilmediğini saklamak yerine nasıl öğreneceğini göster."*

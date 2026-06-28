@@ -153,6 +153,22 @@ legacy.example.com → Ingress (geçici)
 
 ---
 
+## 📋 Checklist
+
+```
+[ ] Gateway API CRD'leri kurulu ve controller (Cilium / Envoy / Contour) ayağa kalkmış
+[ ] Yeni servis onboarding rehberi "default = HTTPRoute" diyor, Ingress sadece istisna
+[ ] Hibrit dönemde aynı host'ta Ingress + Gateway çakışması yok (path/subdomain ayrımı net)
+[ ] Eski LB (Ingress) ve yeni LB (Gateway) ayrımı veya path-split bilinçli karar olarak yazılı
+[ ] Mevcut Ingress'ler `ingress2gateway` ile dönüştürülüp manuel review'dan geçiyor
+[ ] Migration big-bang değil; servis-bazlı PR + canary ile ilerliyor
+[ ] gRPC/TCP/UDP gereken servisler Gateway API'ye yönlendiriliyor (Ingress'te bırakılmıyor)
+[ ] Eski Ingress için 12-16 haftalık sunset hedefi ve takip metriği (kalan Ingress sayısı) var
+[ ] Migration sırasında DNS/external IP değişmiyor (kullanıcıya kesinti yok)
+```
+
+---
+
 > *"2026 = **geçiş yılı**. Yeni doğanları Gateway API'de yetiştir,
 > yaşlıları sevgiyle eskiyle bırak (geçici), planlı sunset ile
 > yarına Gateway API-only."*

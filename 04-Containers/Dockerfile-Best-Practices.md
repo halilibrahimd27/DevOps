@@ -406,3 +406,35 @@ hadolint Dockerfile
 - [Distroless](https://github.com/GoogleContainerTools/distroless)
 - [Chainguard Images](https://images.chainguard.dev)
 - [`05-Kubernetes/Production-Checklist.md`](../05-Kubernetes/Production-Checklist.md) — image kullanımı için
+
+---
+
+## 📋 Checklist
+
+```
+[ ] Multi-stage build kullanılıyor; build araçları final imajda yok
+[ ] Base image küçük ve sabit (distroless/chainguard/alpine) — `:latest` yok, tag pinli
+[ ] `.dockerignore` var; `.git`, `.env`, `node_modules` build context'e gitmiyor
+[ ] Layer sırası cache dostu: dependency manifest önce, kaynak kod sonra
+[ ] Container non-root çalışıyor (`USER` set; UID 65532 gibi numeric)
+[ ] Secret build/runtime'da imaja gömülmüyor — BuildKit secret mount veya runtime injection
+[ ] `CMD`/`ENTRYPOINT` exec (array) form; signal handling için tini/dumb-init (Node/Python/PHP)
+[ ] CI'da vulnerability scan (Trivy/Grype/Scout) HIGH+CRITICAL'da fail ediyor
+[ ] OCI label'lar (source, revision, version) eklenmiş; imaj imzalanıyor (cosign)
+[ ] Final imaj boyut hedefini tutuyor; `dive`/`docker history` ile gizli yağ kontrol edildi
+```
+
+---
+
+## 📚 Referanslar
+
+- [`Multi-Stage-Builds.md`](Multi-Stage-Builds.md) — multi-stage derinlik
+- [`Distroless-and-Chainguard.md`](Distroless-and-Chainguard.md) — minimal base image seçimi
+- [`Image-Signing-Cosign.md`](Image-Signing-Cosign.md) — imzalama ve verify akışı
+- [`../08-Security/Container-Image-Scanning.md`](../08-Security/Container-Image-Scanning.md) — CVE tarama pipeline'ı
+- [`../08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md) — supply chain ve SBOM
+- [Docker Build best practices](https://docs.docker.com/build/building/best-practices/) — resmi dokümantasyon
+
+---
+
+> *"İyi Dockerfile şans değil disiplindir: multi-stage ile derleme artığını dışarıda bırak, katmanları cache dostu sırala, sürümleri pinle ve root'u terk et — `:latest` ile yetinen imaj production'a değil çöpe gider."*

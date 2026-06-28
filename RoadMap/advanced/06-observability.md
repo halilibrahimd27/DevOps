@@ -100,7 +100,7 @@ alertmanager:
         send_resolved: true
 
 grafana:
-  adminPassword: 'AdminPassword123!'
+  adminPassword: '<GRAFANA_ADMIN_PASSWORD>'   # prod: admin.existingSecret veya $(openssl rand -base64 32)
   persistence:
     enabled: true
     storageClassName: gp3
@@ -319,7 +319,7 @@ config:
     opensearch.hosts: [https://opensearch-cluster-master:9200]
     opensearch.ssl.verificationMode: none
     opensearch.username: admin
-    opensearch.password: admin
+    opensearch.password: <OPENSEARCH_PASSWORD>
     opensearch.requestHeadersAllowlist: [authorization, securitytenant]
     opensearch_security.multitenancy.enabled: true
     opensearch_security.multitenancy.tenants.preferred: [Private, Global]
@@ -422,7 +422,7 @@ config:
         Index fluentbit
         Type _doc
         HTTP_User admin
-        HTTP_Passwd admin
+        HTTP_Passwd <OPENSEARCH_PASSWORD>
         tls On
         tls.verify Off
         Suppress_Type_Name On
@@ -436,7 +436,7 @@ config:
         Index fluentbit-systemd
         Type _doc
         HTTP_User admin
-        HTTP_Passwd admin
+        HTTP_Passwd <OPENSEARCH_PASSWORD>
         tls On
         tls.verify Off
         Suppress_Type_Name On
@@ -502,7 +502,7 @@ spec:
     opensearch:
       serverUrls: https://opensearch-cluster-master.logging.svc.cluster.local:9200
       username: admin
-      password: admin
+      password: <OPENSEARCH_PASSWORD>
       tls:
         insecureSkipVerify: true
   collector:

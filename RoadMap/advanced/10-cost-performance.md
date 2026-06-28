@@ -62,7 +62,7 @@ rm cost-bucket-policy.json
 EOF
 
 chmod +x ~/devops-infrastructure/scripts/setup-cost-monitoring.sh
-./~/devops-infrastructure/scripts/setup-cost-monitoring.sh
+~/devops-infrastructure/scripts/setup-cost-monitoring.sh
 
 # 11.1.2 Kubecost kurulumu
 helm repo add kubecost https://kubecost.github.io/cost-analyzer/
@@ -229,7 +229,12 @@ spec:
 apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
 metadata:
-      name: kube-prometheus-stack-prometheus
+  name: kube-prometheus-stack-prometheus
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: prometheus-kube-prometheus-prometheus
   updatePolicy:
     updateMode: "Auto"
   resourcePolicy:

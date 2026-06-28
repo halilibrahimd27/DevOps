@@ -8,6 +8,8 @@ tags:
 ---
 # Flutter CI/CD için Gerekli Tüm Şeyler - Komple Checklist
 
+> *"Flutter mobil pipeline'ın zorluğu derleme değil; imzalama anahtarlarını ve store kimlik bilgilerini sızdırmadan, baştan sona elle dokunmadan otomatikleştirmektir."*
+
 ## 📑 İçindekiler
 1. [Hesaplar ve Üyelikler](#1-hesaplar-ve-üyelikler)
 2. [Android Gereksinimleri](#2-android-gereksinimleri)
@@ -920,4 +922,6 @@ Flutter CI/CD kurarken sık yapılan ve mutlaka kaçınılması gereken hatalar:
 
 
 Bu checklist'i takip ederek eksiksiz bir CI/CD altyapısı kurabilirsiniz! Her maddeyi tamamladıkça işaretleyin. 🚀
+
+> *"Flutter CI/CD'de asıl iş kodda değil, store hesapları-imzalama anahtarları-service account izinlerini sızdırmadan otomatikleştirmekte; manuel imzalanan her build teknik borçtur."*
 

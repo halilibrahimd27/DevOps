@@ -93,13 +93,19 @@ jobs:
             FAIL=1
           fi
 
-          echo "🔍 Generic high-entropy hardcoded credential ('password'/'secret'/'token'='...')..."
-          if grep -rEn -i '(password|passwd|secret|api[_-]?key|access[_-]?token|bearer)\s*[:=]\s*["'"'"'][A-Za-z0-9+/=_-]{20,}["'"'"']' \
+          echo "🔍 Generic hardcoded credential (password/secret/token = '...')..."
+          # Char class = any non-quote/non-space char (özel karakterler dahil) → 'Passw0rd!' gibi
+          # değerler artık taramayı ES GEÇMEZ. Min 6 = inandırıcı-secret tabanı (eski 20 çok yüksekti).
+          # Allowlist: placeholder / secret-ref / env / komut-substitusyonu / örnek değerleri eler.
+          grep -rEn -i '(password|passwd|secret|api[_-]?key|access[_-]?token|bearer)\s*[:=]\s*["'"'"'][^"'"'"'[:space:]]{6,}["'"'"']' \
               --include="*.md" --include="*.yaml" --include="*.yml" \
               --exclude-dir=.git . \
-              | grep -viE '(<[A-Z_]+>|YOUR_|REPLACE_|REDACTED|placeholder|example|change[-_]?me|xxxxx+|\\$\{[A-Z_]+\}|valuefrom|secretkeyref|secretref|fromsecret)' \
-              || true | head -1 | grep -q .; then
-            echo "::warning::Possible hardcoded credential. Manual review required."
+              | grep -viE '(<[A-Za-z_]+>|YOUR_|REPLACE_|REDACTED|placeholder|example|change[-_]?me|x{4,}|ghp_x|\$\{?[A-Za-z_]+\}?|\$\(|valuefrom|secretkeyref|secretref|fromsecret|existingsecret|base64)' \
+              > "${RUNNER_TEMP:-/tmp}/cred_hits.txt" || true
+          if [ -s "${RUNNER_TEMP:-/tmp}/cred_hits.txt" ]; then
+            echo "::error::Olası hardcoded credential — <PLACEHOLDER> veya secret referansı kullan:"
+            cat "${RUNNER_TEMP:-/tmp}/cred_hits.txt"
+            FAIL=1
           fi
 
           echo "🔍 Public IPv4 (excluding RFC1918, loopback, examples)..."

@@ -8,10 +8,10 @@ tags:
 ---
 # PCI DSS v4.0 — Kart Verisi İşleyenler İçin
 
-> *"Kredi kartı verisi tutuyorsan **PCI DSS** zorunluluk. v4.0
-> 2024'te yürürlükte, 2025 sonu **tam uyumluluk** dedline.
-> Tokenization yapmayan ekip, **6 ay** içinde compliance migration
-> yaşayacak."*
+> *"Kredi kartı verisi tutuyorsan **PCI DSS** zorunluluk. v4.0'ın
+> future-dated gereksinimleri **31 Mart 2025**'ten beri tam yürürlükte —
+> yani 2026'da artık 'geçiş' değil, **denetimde kanıt sunma** zamanı.
+> Tokenization yapmayan ekip her audit'te yeniden yanar."*
 
 Bu rehber PCI DSS v4.0'ın mühendislik gereksinimlerini, tokenization
 stratejisini, scope reduction'ı ve TR e-ticaret bağlamını anlatır.

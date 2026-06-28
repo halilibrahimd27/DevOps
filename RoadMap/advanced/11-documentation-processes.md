@@ -796,8 +796,8 @@ kubectl logs -f job/load-test-1 -n dev
 ```bash
 # Create secret in Vault
 vault kv put secret/dev/app-config \
-  database_password="super-secret" \
-  api_key="api-key-value"
+  database_password="<DB_PASSWORD>" \
+  api_key="<API_KEY>"
 
 # Create ExternalSecret to sync
 kubectl apply -f - <<EOF

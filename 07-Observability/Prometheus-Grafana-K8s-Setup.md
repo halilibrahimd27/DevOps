@@ -9,6 +9,8 @@ tags:
 ---
 # Prometheus + Grafana Kubernetes Kurulum Dokümantasyonu
 
+> *"Monitoring stack'i kurmak değil, onu güvenli, kalıcı ve alarm üretir hale getirmek işin kendisidir; varsayılan Helm kurulumu prod değildir."*
+
 ## 📋 İçindekiler
 - [Sistem Gereksinimleri](#sistem-gereksinimleri)
 - [Ön Koşullar](#ön-koşullar)
@@ -653,3 +655,5 @@ Bu dokümantasyon ile Kubernetes cluster'ınızda production-ready Prometheus + 
 Herhangi bir sorun yaşarsanız, yukarıdaki troubleshooting bölümünü kontrol edin veya community forumlarından destek alın.
 
 **Happy Monitoring!** 🚀📊
+
+> *"kube-prometheus-stack'i Helm ile kurmak bir saatlik iş; asıl iş retention, resource limit, RBAC ve alert kurallarını gün bir'de ayarlayıp stack'i kendi kör noktası olmaktan çıkarmaktır."*

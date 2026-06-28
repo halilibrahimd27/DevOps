@@ -281,7 +281,7 @@ kubectl exec vault-0 -n vault -- env VAULT_TOKEN=$CLUSTER_ROOT_TOKEN vault secre
 # Test secrets ekle
 kubectl exec vault-0 -n vault -- env VAULT_TOKEN=$CLUSTER_ROOT_TOKEN vault kv put secret/dev/database \
   username=myapp \
-  password=SuperSecretPassword123!
+  password=<DB_PASSWORD>
 
 kubectl exec vault-0 -n vault -- env VAULT_TOKEN=$CLUSTER_ROOT_TOKEN vault kv put secret/dev/api-keys \
   github-token=ghp_xxxxxxxxxxxx \

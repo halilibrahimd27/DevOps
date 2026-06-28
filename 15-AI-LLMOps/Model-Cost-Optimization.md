@@ -20,9 +20,9 @@ prompt caching, batch API, semantic cache, fine-tuning ROI — somut
 
 ## 💰 LLM Cost Driver'ları
 
-### Token-based pricing (2026 referans)
+### Token-based pricing (2026-Q2 referans — fiyatlar hızla değişir, sağlayıcı sayfasından doğrula)
 ```
-Anthropic Claude Opus 4.7:
+Anthropic Claude Opus 4.8:
   Input:  $15/M token
   Output: $75/M token
 

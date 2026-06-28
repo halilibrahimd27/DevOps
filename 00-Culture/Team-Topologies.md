@@ -274,3 +274,18 @@ Bir org yapısını "Team Topologies uyumlu" saymadan önce şunları doğrula:
 - [TeamTopologies.com](https://teamtopologies.com) — örnekler ve workshop'lar
 - *Topologies of Team* — InfoQ talk (free YouTube)
 - [`13-Platform-Engineering/`](../13-Platform-Engineering/) — platform team detayları
+
+---
+
+## 📚 Referanslar
+
+- *Team Topologies* — Matthew Skelton & Manuel Pais (kitap, **must read**)
+- [TeamTopologies.com](https://teamtopologies.com) — resmi site, örnekler ve workshop'lar
+- [`13-Platform-Engineering/Platform-as-Product.md`](../13-Platform-Engineering/Platform-as-Product.md) — platform team'i ürün gibi yönetmek
+- [`13-Platform-Engineering/Internal-Developer-Platform.md`](../13-Platform-Engineering/Internal-Developer-Platform.md) — self-service IDP detayları
+- [`11-SRE/SLI-SLO-Error-Budget.md`](../11-SRE/SLI-SLO-Error-Budget.md) — stream-aligned ekibin "you run it" sorumluluğu
+- [`20-Soft-Skills/Stakeholder-Management.md`](../20-Soft-Skills/Stakeholder-Management.md) — ekipler arası etkileşim modlarının insani tarafı
+
+---
+
+> *"Org şemanı mimarine göre değil, mimarini org şemana göre kurarsın; o yüzden takım sınırlarını cognitive load'a göre çiz ve etkileşim modlarına son tarih koy — yoksa Conway's Law senin yerine karar verir."*

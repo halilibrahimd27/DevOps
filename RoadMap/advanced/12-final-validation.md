@@ -390,7 +390,7 @@ Password: $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath
 
 # Grafana
 Username: admin
-Password: AdminPassword123!
+Password: <GRAFANA_ADMIN_PASSWORD>   # values.yaml'da set ettiğin değer
 
 # Vault Root Token
 Token: $(cat cluster-keys.json | jq -r ".root_token")

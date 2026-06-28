@@ -550,3 +550,18 @@ açık risk.
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
 - [`17-Templates/github-actions/terraform-plan.yml`](../17-Templates/github-actions/terraform-plan.yml)
 - [`16-Cheatsheets/terraform.md`](../16-Cheatsheets/terraform.md)
+
+---
+
+## 📚 Referanslar
+
+- [Module Layout](Terraform-Module-Layout.md) — module iskeleti ve versiyonlama detayı
+- [Drift Detection](Drift-Detection.md) — scheduled plan ve alarm kurulumu
+- [OpenTofu Migration](OpenTofu-Migration.md) — binary swap ile geçiş adımları
+- [Pulumi vs Terraform](Pulumi-vs-Terraform.md) — IaC araç karşılaştırması
+- [Policy as Code (OPA/Kyverno)](../08-Security/Policy-as-Code-OPA-Kyverno.md) — plan üzerinde policy gate
+- [Secrets Management](../08-Security/Secrets-Management.md) — Vault/SM ile gerçek secret yönetimi
+
+---
+
+> *"Terraform'u güvenli yapan kod değil; kilitli remote state, PR'da görünen plan, onay gate'inin arkasındaki manuel apply ve sürekli drift izlemedir — bunlar yoksa elindeki sadece pahalı bir silahtır."*

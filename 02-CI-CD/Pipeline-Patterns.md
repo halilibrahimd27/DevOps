@@ -420,9 +420,42 @@ Her ekip nerede olduğunu bilmeli ve bir sonraki seviyeyi hedeflemeli.
 
 ---
 
+## 📋 Checklist
+
+```
+[ ] PR feedback süresi < 10 dk — geçen pipeline'lar paralel/cache ile sıkıştırıldı
+[ ] Pipeline fail-fast: bir aşama fail = sonrakiler skip
+[ ] Bağımsız aşamalar (lint/test/sast/sca) paralel fan-out ile koşuyor
+[ ] Stack'e göre cache aktif (npm/pip/go/cargo/m2/BuildKit)
+[ ] Cloud auth OIDC ile — uzun-ömürlü key repo'da yok
+[ ] GitHub Actions `permissions:` explicit kısıtlandı (default read+write değil)
+[ ] Secret'lar Secrets/Vault'tan; YAML içinde plain yok, log'a echo edilmiyor
+[ ] Image build → sign + SBOM → vulnerability scan zinciri kuruldu
+[ ] Production deploy CI'dan otomatik değil; GitOps PR + manual approval üzerinden
+[ ] `latest` tag yasak — semantic/SHA-pinned tag deploy ediliyor
+[ ] DORA metric'ler (deploy freq, lead time, CFR, MTTR) track ediliyor
+```
+
+---
+
+## 📚 Referanslar
+
+- [`Pipeline-Performance.md`](Pipeline-Performance.md) — cache, sharding, selective test derinliği
+- [`Reusable-Workflows.md`](Reusable-Workflows.md) — org-wide callable workflow pattern'leri
+- [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md) — SAST/SCA/scan kapıları
+- [`08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md) — imzalama + provenance + SBOM
+- [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster promote akışı
+- [GitHub Actions docs](https://docs.github.com/en/actions)
+
+---
+
 ## 📚 Devamı
 
 - [`17-Templates/github-actions/`](../17-Templates/github-actions/) — hazır workflow'lar
 - [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md)
 - [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster akışı
 - [Continuous Delivery — Jez Humble & David Farley]
+
+---
+
+> *"Pipeline süslü değil katmanlı olmalı: hızlı geri bildirim için adımları sırala, fail-fast yap, güvenlik kapılarını otomatikleştir — manuel kalan her adım er ya da geç atlanır."*

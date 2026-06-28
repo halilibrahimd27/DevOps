@@ -1,8 +1,8 @@
 site_name: DevOps Notebook
 site_description: >-
-  Türkçe DevOps · DevSecOps · SRE · Platform Engineering başucu kitabı.
-  21 konu, 125 deep-dive, 9 cheatsheet, 19 production-ready template.
-  Kubernetes · Terraform · GitOps · Observability · FinOps · LLMOps · KVKK/GDPR.
+  Halil İbrahim Dürmüş — DevSecOps Engineer. Kubernetes, GitOps, IaC, observability ve
+  supply-chain security üzerine üretim-odaklı çalışmalar. Türkçe DevSecOps başucu kitabı
+  (21 konu · 125 deep-dive · 70K+ satır) ve açık kaynak projeler.
 site_author: Halil İbrahim Dürmüş
 site_url: https://halilibrahimd27.github.io/DevOps/
 copyright: >-
@@ -174,5 +174,5 @@ extra_css:
 extra_javascript:
   - assets/extra.js
 
-strict: false
+strict: true
 use_directory_urls: true

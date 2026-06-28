@@ -203,3 +203,18 @@ Postmortem'in yanlı olmasını engeller.
 - [Google SRE Book — Chapter 15](https://sre.google/sre-book/postmortem-culture/)
 - *The Field Guide to Understanding Human Error* — Sidney Dekker
 - [`17-Templates/runbooks/postmortem-template.md`](../17-Templates/runbooks/postmortem-template.md) — kullanıma hazır
+
+---
+
+## 📚 Referanslar
+
+- [`11-SRE/Postmortem-Practice.md`](../11-SRE/Postmortem-Practice.md) — postmortem pratiği, derin örnekler
+- [`11-SRE/Incident-Response.md`](../11-SRE/Incident-Response.md) — incident yönetimi, IC rolü, escalation
+- [`00-Culture/On-Call-Playbook.md`](On-Call-Playbook.md) — nöbet kültürü, postmortem trigger'larıyla bağ
+- [`07-Observability/SLO-Engineering.md`](../07-Observability/SLO-Engineering.md) — SLO breach → postmortem trigger zinciri
+- [Google SRE Book — Postmortem Culture](https://sre.google/sre-book/postmortem-culture/) — referans kaynak
+- *The Field Guide to Understanding Human Error* — Sidney Dekker (kitap)
+
+---
+
+> *"Kimi suçlayacağını sorduğun an postmortem ölür; doğru soru her zaman 'sistem bu hatayı nasıl mümkün kıldı?'dır."*

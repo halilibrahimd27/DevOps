@@ -15,6 +15,14 @@
 
 set -euo pipefail
 
+# Bu script associative array (declare -A) kullanır → Bash 4.0+ gerekir.
+# macOS varsayılanı Bash 3.2 — `brew install bash` ile güncelle veya `bash` PATH'te 4+ olsun.
+if (( BASH_VERSINFO[0] < 4 )); then
+  echo "HATA: Bash ${BASH_VERSION} bulundu; bu script Bash 4.0+ gerektirir (declare -A)." >&2
+  echo "      macOS: 'brew install bash' sonra 'bash scripts/build-docs.sh' (Homebrew bash'i)." >&2
+  exit 1
+fi
+
 STAGE="site_src"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
@@ -27,6 +35,12 @@ mkdir -p "$STAGE"
 if [ -f docs/index.md ]; then
   cp docs/index.md "$STAGE/index.md"
   echo "  + index.md (hero homepage)"
+fi
+
+# 1a) Hakkımda / About — docs/about.md (portfolyo sayfası)
+if [ -f docs/about.md ]; then
+  cp docs/about.md "$STAGE/about.md"
+  echo "  + about.md (portfolyo / about)"
 fi
 
 # 1b) Etiket indeksi — docs/tags.md (Material tags plugin tags_file)
@@ -106,6 +120,7 @@ done
 cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
   - index.md
+  - "👤 Hakkımda": about.md
   - RoadMap
   - 00-Culture
   - 01-Git-Workflow

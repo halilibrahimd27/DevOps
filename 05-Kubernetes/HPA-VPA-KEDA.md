@@ -312,18 +312,26 @@ START
 HPA pod ekler ama **node yetersizse** ne olur?
 
 ### Cluster Autoscaler
-```yaml
-# AWS EKS örneği
-apiVersion: autoscaling/v1
-kind: ClusterAutoscaler
-spec:
-  resourceLimits:
-    minNodes: 3
-    maxNodes: 50
-  scaleDown:
-    enabled: true
-    delayAfterAdd: 10m
+
+> Cluster Autoscaler bir CRD **değil** — node group'un (ASG) `min`/`max` değerlerini
+> okuyan bir Deployment'tır. Helm ile kurulur; ölçek sınırını CRD'den değil node group'tan alır.
+
+```bash
+# 1) Node group ASG'sini etiketle (autodiscovery için şart):
+#    k8s.io/cluster-autoscaler/enabled        = true
+#    k8s.io/cluster-autoscaler/<CLUSTER_NAME> = owned
+
+# 2) Helm ile kur (IRSA rolü ile — node group'a yazma izni)
+helm repo add autoscaler https://kubernetes.github.io/autoscaler
+helm install cluster-autoscaler autoscaler/cluster-autoscaler \
+  --namespace kube-system \
+  --set autoDiscovery.clusterName=<CLUSTER_NAME> \
+  --set awsRegion=<REGION> \
+  --set 'rbac.serviceAccount.annotations.eks\.amazonaws\.com/role-arn=<IRSA_ROLE_ARN>'
 ```
+
+`minNodes`/`maxNodes` node group'ta tanımlanır; örn. EKS managed node group:
+`--scaling-config minSize=3,maxSize=50,desiredSize=3`.
 
 ### Karpenter (önerilen, AWS)
 ```yaml

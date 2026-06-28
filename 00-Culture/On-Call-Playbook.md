@@ -265,3 +265,18 @@ On-call rotation'ı **production-ready** saymadan önce hepsini işaretle:
 - *Seeking SRE* — David N. Blank-Edelman (kitap)
 - [PagerDuty Incident Response docs](https://response.pagerduty.com)
 - [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template
+
+---
+
+## 📚 Referanslar
+
+- [Blameless Postmortem Template](Blameless-Postmortem-Template.md) — her page sonrası blameless postmortem iskeleti.
+- [Incident Response](../11-SRE/Incident-Response.md) — SEV-1/SEV-2 komut zinciri, IC ve Comms Lead detayı.
+- [Runbook Template](../11-SRE/Runbook-Template.md) — runbook'suz alert canlıya alınmaz; standart şablon.
+- [Alerting Done Right](../07-Observability/Alerting-Done-Right.md) — actionable alert tasarımı, false-positive avı.
+- [SLI/SLO & Error Budget](../11-SRE/SLI-SLO-Error-Budget.md) — page bütçesini error budget'a bağla.
+- [Google SRE Book](https://sre.google/sre-book/table-of-contents/) — on-call ve incident response referansı.
+
+---
+
+> *"On-call'i sürdürülebilir kılan kahramanlık değil; runbook'lu alert, blameless postmortem ve gece uyandıran her page'i kapatacak reliability yatırımıdır."*

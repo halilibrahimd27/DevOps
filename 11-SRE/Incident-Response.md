@@ -222,7 +222,7 @@ actions:
 | Anti-pattern | Niye kötü | Doğru yapan |
 |---|---|---|
 | **"Kök nedeni bulmadan rollback yapmayalım"** | Kullanıcı kanıyor, sen analiz yapıyorsun | Önce mitigate, kök neden postmortem'de |
-| **IC mühendis | Klavyeye dokunan koordine edemez | IC sadece koordinasyon yapar |
+| **IC klavyeye dokunuyor** | Klavyeye dokunan koordine edemez | IC sadece koordinasyon yapar |
 | **CEO bridge'e girip "ne oluyor?" diyor** | IC'nin akışını böler | CL → executive briefing **ayrı** kanalda |
 | **"Sessizce çözeyim, kimse fark etmesin"** | Sonra postmortem yok, öğrenme yok, tekrar olur | Tüm SEV1/SEV2 yazılı raporlanır |
 | **Update yok, "yakında biter"** | Stakeholder güveni biter | "Bilgi yok" bile update'tir |
@@ -291,6 +291,27 @@ Her servisin kendi `runbook/` klasörü:
 - [`00-Culture/Blameless-Postmortem-Template.md`](../00-Culture/Blameless-Postmortem-Template.md)
 - [`00-Culture/On-Call-Playbook.md`](../00-Culture/On-Call-Playbook.md)
 - [`11-SRE/SLI-SLO-Error-Budget.md`](SLI-SLO-Error-Budget.md) — error budget incident'ı tetiklemeli mi?
+
+---
+
+## 📋 Checklist
+
+Production-ready incident response için — yazılı, tatbik edilmiş, otomasyona bağlanmış olmalı.
+
+```
+[ ] Severity matrisi (SEV1-SEV4) tanımlı, herkes biliyor; "kim açar" baştan belli
+[ ] IC rolü ayrı (klavyeye dokunmaz); SME / Comms Lead / Scribe rolleri yazılı
+[ ] Alerting otomatik (Prometheus/Datadog → PagerDuty); müşteri senden önce öğrenmiyor
+[ ] PagerDuty/Opsgenie ack penceresi 5 dk, escalation 5 dk içinde tetikleniyor
+[ ] `/incident` Slack workflow channel + bridge + status page taslağını tek komutla açıyor
+[ ] Assess ilk 10 dk: ne / kaç kullanıcı / ne zamandan beri / recent change cevaplanıyor
+[ ] Mitigation öncelik sırası net (rollback → flag → traffic shift → scale → restart)
+[ ] Status page update aralığı uygulanıyor (SEV1: 15 dk, SEV2: 30 dk); "bilgi yok" da update
+[ ] KVKK: kişisel veri sızıntısında 72 saat bildirim akışı + hukuk onayı hazır 🇹🇷
+[ ] Her SEV1/SEV2 sonrası blameless postmortem (5 iş günü); action item = sahip + due date
+[ ] Game Day ayda 1, runbook kütüphanesi güncel, IC eğitimi (shadow → deputy → solo) işliyor
+[ ] On-call sürdürülebilir: max 48 saat primary, gece vardiyası → ertesi gün izin, 4 saatte IC rotate
+```
 
 ---
 

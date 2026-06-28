@@ -64,6 +64,12 @@ code-fence içine alındı, H1 eklendi):
   kaldırılan eski klasörlerin kopyalama/başlık blokları temizlendi.
 - **Placeholder hijyeni**: `cipassword "ubuntu"` → `<CI_PASSWORD>` (18 yer), zayıf
   parola örnekleri → `<...>` (7 yer), `osv-scanner-action@v1.7.0` → `@<VERSION>`.
+  - **Düzeltme (denetim sonrası):** İlk geçişte `RoadMap/advanced/`'teki bölünmüş dosyalar
+    atlanmıştı. İkinci geçişte 9 zayıf parola daha temizlendi (`AdminPassword123!`,
+    `SuperSecurePassword123!`, `SuperSecretPassword123!`, `POSTGRES_PASSWORD=password`,
+    `opensearch.password: admin`) → `<GRAFANA_ADMIN_PASSWORD>` / `<DB_PASSWORD>` /
+    `<OPENSEARCH_PASSWORD>`. CI leak-scan regex'i de `!`/kısa-parola kaçağını kapatacak
+    şekilde düzeltildi (`quality.yml`).
 - **CHANGELOG.md** — [Unreleased] bölümü dolduruldu.
 
 ---

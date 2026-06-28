@@ -106,11 +106,11 @@ Her adım:
 
 ### 🟦 I. GİTOPS ENTEGRASYONU
 
-| Adım | Konu                                | Araç              | Açıklama                                   |
-| ---- | ----------------------------------- | ----------------- | ------------------------------------------ |
-| I1   | Deployment manifest'lerini Git'e al | GitHub            | `k8s/base`, `k8s/staging` gibi klasörler   |
-| I2   | Jenkins pull & deploy               | Jenkins + kubectl | Koddan çıkan yapı doğrudan uygulanır       |
-| I3   | Git üzerinden rollback              | Git revert + push | Versiyon kontrol ile geri dönüş kolaylaşır |
+| Adım | Konu                                | Araç                   | Açıklama                                                              |
+| ---- | ----------------------------------- | ---------------------- | ------------------------------------------------------------------- |
+| I1   | Manifest'leri Git'e al (tek kaynak) | Git + Kustomize        | `k8s/base`, `k8s/overlays/staging` — Git = single source of truth   |
+| I2   | **Pull-based** reconcile            | ArgoCD / Flux          | Controller cluster içinden Git'i izler, drift'i otomatik düzeltir (CI `kubectl apply` ile *push* etmez) |
+| I3   | Git üzerinden rollback              | `git revert` + auto-sync | Commit geri alınır, controller eski state'e kendiliğinden reconcile eder |
 
 ---
 

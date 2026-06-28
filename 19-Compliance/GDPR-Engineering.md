@@ -24,21 +24,21 @@ verirken yapılması gereken pratik adımları anlatır.
 
 ## 🎯 GDPR'ın Mühendislik Boyutu (Madde Eşlemesi)
 
-| GDPR Madde | Konu | Mühendislik karşılığı |
+| GDPR Article | Konu | Mühendislik karşılığı |
 |---|---|---|
-| **Madde 5** | İşleme prensipleri | Data minimization, purpose limitation, accuracy |
-| **Madde 6-9** | Hukuki sebep | Consent + processing flag DB'de |
-| **Madde 12-14** | Şeffaflık | Privacy notice, data flow disclosure |
-| **Madde 15** | Right to access | Self-service data export |
-| **Madde 16** | Right to rectification | Profile edit + audit |
-| **Madde 17** | Right to erasure | Cascade delete API |
-| **Madde 18** | Right to restrict | Soft-delete flag |
-| **Madde 20** | Data portability | JSON/CSV export |
-| **Madde 25** | Privacy by Design | Default opt-out, encryption |
-| **Madde 32** | Security | TLS, encryption-at-rest, audit |
-| **Madde 33** | Breach notification | 72h to authority |
-| **Madde 35** | DPIA | High-risk processing assessment |
-| **Madde 44-49** | International transfer | SCC, adequacy decision |
+| **Art. 5** | İşleme prensipleri | Data minimization, purpose limitation, accuracy |
+| **Art. 6-9** | Hukuki sebep | Consent + processing flag DB'de |
+| **Art. 12-14** | Şeffaflık | Privacy notice, data flow disclosure |
+| **Art. 15** | Right to access | Self-service data export |
+| **Art. 16** | Right to rectification | Profile edit + audit |
+| **Art. 17** | Right to erasure | Cascade delete API |
+| **Art. 18** | Right to restrict | Soft-delete flag |
+| **Art. 20** | Data portability | JSON/CSV export |
+| **Art. 25** | Privacy by Design | Default opt-out, encryption |
+| **Art. 32** | Security | TLS, encryption-at-rest, audit |
+| **Art. 33** | Breach notification | 72h to authority |
+| **Art. 35** | DPIA | High-risk processing assessment |
+| **Art. 44-49** | International transfer | SCC, adequacy decision |
 
 ---
 

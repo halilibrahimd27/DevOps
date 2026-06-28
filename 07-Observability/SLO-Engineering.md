@@ -182,10 +182,12 @@ slos:
     description: "99% of requests served under 500ms"
     sli:
       events:
+        # bad events = 500ms'den YAVAŞ istekler = toplam − (le=0.5 bucket'ı)
+        # Sıra önemli: count − bucket; ters yazılırsa negatif çıkar ve burn-rate bozulur.
         error_query: |
-          sum(rate(http_request_duration_seconds_bucket{service="payments",le="0.5"}[{{.window}}]))
-          -
           sum(rate(http_request_duration_seconds_count{service="payments"}[{{.window}}]))
+          -
+          sum(rate(http_request_duration_seconds_bucket{service="payments",le="0.5"}[{{.window}}]))
         total_query: |
           sum(rate(http_request_duration_seconds_count{service="payments"}[{{.window}}]))
 ```

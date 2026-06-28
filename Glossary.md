@@ -198,6 +198,7 @@
 | **LINDDUN** | Privacy threat modeling framework |
 | **Linting** | Lint — statik kod kontrolü (kelime kalır) |
 | **Llama** | Meta'nın açık kaynak LLM ailesi |
+| **LLMOps** | LLM'leri production'a alma/işletme disiplini — prompt versiyonlama, eval, guardrail, token maliyeti + gözlemlenebilirlik |
 | **Loki** | Grafana log aggregation |
 | **LRT** | Long-running task (uzun-süreli iş) |
 

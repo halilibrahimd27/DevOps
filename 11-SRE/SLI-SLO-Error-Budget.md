@@ -322,3 +322,18 @@ Bir servisin SLO'su production-ready sayılmadan önce hepsi işaretlenmeli.
 - [SRE Book online](https://sre.google/sre-book/service-level-objectives/) — ücretsiz
 - [Awesome SLO](https://github.com/awesome-slo/awesome-slo) — pratik örnekler
 - [`17-Templates/prometheus-rules/slo-recording-rules.yaml`](../17-Templates/prometheus-rules/slo-recording-rules.yaml) — bu repo'da hazır rule'lar
+
+---
+
+## 📚 Referanslar
+
+- [SLO Engineering](../07-Observability/SLO-Engineering.md) — SLO'yu ölçüm altyapısına oturtma, recording rule pratiği
+- [Alerting Done Right](../07-Observability/Alerting-Done-Right.md) — symptom-based alerting, burn-rate alarmlarını gürültüsüz kurma
+- [Prometheus Best Practices](../07-Observability/Prometheus-Best-Practices.md) — SLI query'leri için metrik tasarımı ve histogram kullanımı
+- [Incident Response](Incident-Response.md) — error budget tükendiğinde devreye giren olay yönetimi
+- [Postmortem Practice](Postmortem-Practice.md) — bütçe yakan olaylardan blameless ders çıkarma
+- [Prometheus dokümantasyonu](https://prometheus.io/docs/) — resmi PromQL ve alerting referansı
+
+---
+
+> *"Müşterinin hissettiği şeyi ölçmeyen SLI gürültüdür; tüketildiğinde deploy'u durdurmayan error budget ise sadece dashboard süsüdür."*

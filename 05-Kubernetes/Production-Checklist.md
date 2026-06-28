@@ -475,3 +475,35 @@ Red flag'ler "neyi yapma"yı söyler; bu tablo "onun yerine ne yap"ı da verir.
 | `cluster-admin` SA | Tek pod compromise = cluster pwn |
 
 > Bu 9 maddeden 1'i bile geçerse: PR red, canlıya çıkmaz.
+
+---
+
+## 📋 Checklist
+
+```
+[ ] Image SHA-pinned veya semantic versioned — `:latest` yok (A2)
+[ ] Replica >= 2 + PDB + topologySpreadConstraints (A4, D4, D5)
+[ ] Her container'da `requests`, memory `limit` zorunlu; BestEffort QoS yok (B1, B3)
+[ ] securityContext sıkı: runAsNonRoot, readOnlyRootFilesystem, drop ALL, seccomp (C1-C5)
+[ ] ServiceAccount least-privilege + NetworkPolicy default-deny (C6, C7)
+[ ] Secret env'de plain değil — Secret/ESO/Sealed Secrets/SOPS (C8)
+[ ] liveness/readiness/startup probe doğru ayrıştırılmış; ağır endpoint'e bağlı değil (D1-D3)
+[ ] preStop hook + yeterli terminationGracePeriodSeconds (A8, A7)
+[ ] Metrics + structured logging + trace context + SLO/alert tanımlı (E1-E6)
+[ ] Manifest GitOps repo'da (ArgoCD/Flux), manuel `kubectl apply` yok (F1)
+[ ] Pre-deploy sanity script çalıştırıldı (kubeconform, kube-linter, trivy, dry-run)
+```
+
+---
+
+## 📚 Referanslar
+
+- [Kubernetes Hardening](../08-Security/Kubernetes-Hardening.md) — securityContext, PSS, RBAC derinliği
+- [Secrets Management](../08-Security/Secrets-Management.md) — ESO, Sealed Secrets, SOPS detayları
+- [Resource Limits Guide](Resource-Limits-Guide.md) — request/limit ve QoS sınıfları
+- [SLI-SLO-Error-Budget](../11-SRE/SLI-SLO-Error-Budget.md) — observability eksenindeki SLO maddeleri
+- [Kubernetes Documentation](https://kubernetes.io/docs/) — resmi kavram ve API referansı
+
+---
+
+> *"Prod-readiness bir his değil, doldurulmuş bir checklist'tir; resource, security ve reliability maddelerinden biri boşsa o manifest henüz prod'a değil PR'a aittir."*

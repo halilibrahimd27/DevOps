@@ -413,7 +413,7 @@ jobs:
     - name: Setup kubectl
       uses: azure/setup-kubectl@v3
       with:
-        version: 'v1.28.0'
+        version: 'v1.30.0'
 
     - name: Setup Kustomize
       run: |
@@ -469,7 +469,7 @@ jobs:
     - name: Setup kubectl
       uses: azure/setup-kubectl@v3
       with:
-        version: 'v1.28.0'
+        version: 'v1.30.0'
 
     - name: Setup Kustomize
       run: |

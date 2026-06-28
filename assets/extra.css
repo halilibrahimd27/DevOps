@@ -432,6 +432,230 @@
 @media print {
   .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
   .md-content { max-width: 100%; }
-  .hero { background: none; color: black; }
-  .hero h1, .hero h3 { color: black; }
+  .hero, .profile-hero { background: none !important; color: black !important; }
+  .hero h1, .hero h3, .profile-hero h1, .profile-hero p { color: black !important; }
 }
+
+/* ============================================================
+ * Portfolio — profil hero (kişi öne çıkar)
+ * ============================================================ */
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 1rem -1.5rem 2.2rem;
+  padding: 3rem 2.5rem;
+  background: var(--dn-gradient);
+  border-radius: 18px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  right: -8%;
+  width: 55%;
+  height: 220%;
+  background: radial-gradient(circle, rgba(244, 81, 30, 0.22) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.profile-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--dn-gradient-accent);
+}
+
+.profile-hero__avatar,
+.profile-hero img {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.32);
+  flex-shrink: 0;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-hero__text { position: relative; z-index: 1; flex: 1; min-width: 0; }
+
+.profile-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0;
+  color: #fff;
+}
+
+.profile-hero .role {
+  display: inline-block;
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.profile-hero .role::before {
+  content: "";
+  display: inline-block;
+  width: 9px; height: 9px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: #69f0ae;
+  box-shadow: 0 0 0 3px rgba(105, 240, 174, 0.3);
+  vertical-align: middle;
+}
+
+.profile-hero .tagline {
+  margin: 0.6rem 0 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 60ch;
+}
+
+.profile-hero .tagline .en {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.profile-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.profile-links .md-button {
+  margin: 0;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(4px);
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+.profile-links .md-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.profile-links .md-button--primary {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.profile-links .md-button--primary:hover { background: #ff7043; }
+
+@media (max-width: 720px) {
+  .profile-hero { flex-direction: column; text-align: center; padding: 2.4rem 1.2rem; gap: 1.2rem; }
+  .profile-hero__avatar, .profile-hero img { width: 120px; height: 120px; }
+  .profile-hero h1 { font-size: 2rem; }
+  .profile-hero .tagline { margin-left: auto; margin-right: auto; }
+  .profile-links { justify-content: center; }
+}
+
+/* ============================================================
+ * Portfolio — bölüm etiketi (eyebrow)
+ * ============================================================ */
+.section-eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
+  margin: 2.5rem 0 -0.4rem;
+}
+
+/* ============================================================
+ * Portfolio — skill chips
+ * ============================================================ */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.skill-chips .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: transform 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+}
+
+.skill-chips .chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .skill-chips .chip:hover { color: var(--md-accent-fg-color); }
+
+/* ============================================================
+ * Portfolio — proje kartlarında repo etiketi
+ * ============================================================ */
+.md-typeset .grid.cards.projects > ul > li,
+.md-typeset .grid.cards.projects > ul > li:hover { border-top: 3px solid var(--md-accent-fg-color); }
+
+/* ============================================================
+ * Portfolio — iletişim bandı
+ * ============================================================ */
+.contact-band {
+  text-align: center;
+  margin: 3rem -1.5rem 1rem;
+  padding: 2.5rem 1.5rem;
+  background: var(--dn-gradient);
+  border-radius: 18px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-band::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--dn-gradient-accent);
+}
+
+.contact-band h2 {
+  color: #fff !important;
+  border: none !important;
+  margin: 0 0 0.5rem !important;
+  font-size: 1.6rem;
+}
+
+.contact-band p { color: rgba(255, 255, 255, 0.88); max-width: 560px; margin: 0 auto 1.4rem; }
+
+.contact-band .md-button {
+  margin: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-band .md-button--primary { background: var(--md-accent-fg-color); border-color: var(--md-accent-fg-color); }
+.contact-band .md-button:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.28); }

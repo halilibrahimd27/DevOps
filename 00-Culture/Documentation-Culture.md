@@ -290,3 +290,18 @@ Bir doc'u "production-ready" saymadan önce:
 - [Google Technical Writing courses](https://developers.google.com/tech-writing) — ücretsiz
 - [Write the Docs community](https://www.writethedocs.org)
 - [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template
+
+---
+
+## 📚 Referanslar
+
+- [`On-Call-Playbook.md`](On-Call-Playbook.md) — runbook'un on-call akışındaki yeri
+- [`Blameless-Postmortem-Template.md`](Blameless-Postmortem-Template.md) — Tier-4 postmortem şablonu
+- [`11-SRE/Runbook-Template.md`](../11-SRE/Runbook-Template.md) — incident anı runbook iskeleti
+- [`11-SRE/Postmortem-Practice.md`](../11-SRE/Postmortem-Practice.md) — postmortem kültürü, drift'e karşı öğrenme
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template dizini
+- [Diátaxis framework](https://diataxis.fr) — tutorial / how-to / reference / explanation ayrımı
+
+---
+
+> *"Dokümantasyon kararı miktar değil sahiplik sorunudur: koddan ayrı yaşayan, owner'sız ve review tarihi geçmiş doc yalan söyler — onu güncelle ya da sil."*

@@ -8,6 +8,8 @@ tags:
 ---
 # SRE Interview Prep
 
+> *"SRE mülakatı tool ezberini değil, güvenilirliği rakamla mühendislik etme refleksini ölçer; downtime'ı budget'a çeviremiyorsan elenirsin."*
+
 > SRE rolünün DevOps'tan ayrılan tarafı: **rakam ile düşünme**, *kasten*
 > arıza çıkarma, *kapasiteyi* değil *güvenilirliği* mühendislik etme.
 
@@ -275,3 +277,7 @@ Tek bir partition/shard tüm trafiği yiyor.
 - *Database Reliability Engineering* — Campbell & Majors
 - [SREcon talks YouTube](https://www.usenix.org/conferences/byname/925)
 - Mock interview: Pramp, Interviewing.io
+
+---
+
+> *"SRE mülakatı 'kaç tool biliyorsun'u değil, downtime'ı dakikaya, dakikayı error budget'a çevirip arızayı önce mitige edebiliyor musun'u ölçer — rakamla düşünmeyi refleks yap."*

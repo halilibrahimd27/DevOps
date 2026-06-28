@@ -432,3 +432,18 @@ Production-ready OTel adoption için:
 - [OTel Demo App](https://opentelemetry.io/docs/demo/) — eksiksiz örnek mikroservis stack
 - [OTel Collector Receivers/Processors/Exporters list](https://github.com/open-telemetry/opentelemetry-collector-contrib)
 - _`07-Observability/Prometheus-Best-Practices.md`_ *(yakında)*
+
+---
+
+## 📚 Referanslar
+
+- [OpenTelemetry resmi dokümantasyon](https://opentelemetry.io/docs/) — SDK, Collector, semantic conventions
+- [OTel Collector Contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) — receiver/processor/exporter listesi
+- [Tracing with Tempo](Tracing-with-Tempo.md) — trace backend, trace ↔ log korelasyonu
+- [Prometheus Best Practices](Prometheus-Best-Practices.md) — metric tarafı, cardinality kontrolü
+- [Logs: Loki vs ELK](Logs-Loki-vs-ELK.md) — log backend seçimi, OTel log pipeline'ı
+- [SLO Engineering](SLO-Engineering.md) — telemetry'den SLI/SLO üretmek
+
+---
+
+> *"OTel'in asıl kazancı dashboard değil, instrumentation'ı backend'den ayırması: kod bir kez yazılır, Collector'da bir satır exporter değiştirerek vendor değiştirilir."*
