@@ -9,34 +9,56 @@ sürümleme [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kuralına
 
 ## [Unreleased]
 
-### Repo Cilası (chore/repo-polish) — 2026-06
+---
 
-Tam denetim + kalite pası (repo kökünde `AUDIT.md`). İçerik silinmedi; tüm
-değişiklikler repo kökündeki `CHANGES-SUMMARY.md`'de.
+## [1.2.0] — 2026-06-28
 
-#### Eklendi
-- **21-Field-Notes/** bölümü: dağınık saha-notu klasörleri (System/Network/Ansible/
-  Terraform/kubectl) tek bölümde toplandı; her dosya kebab-case + geçerli markdown
+Portfolyo + denetim sürümü. Site kişisel **DevSecOps portfolyosuna** dönüştü;
+kapsamlı bir kalite denetimi (P0/P1/P2) uygulandı; editorial anatomi tamamlandı.
+Repo cilası (chore/repo-polish) detayları: `AUDIT.md` + `CHANGES-SUMMARY.md`.
+
+### Eklendi
+- **Kişisel portfolyo sitesi**: kişi-öncelikli ana sayfa (avatar, "DevSecOps Engineer",
+  TR/EN hero, açık kaynak **proje vitrini**, skill chip'leri, iletişim bandı) + çift dil
+  (TR/EN) **Hakkımda** sayfası. (`docs/index.md`, `docs/about.md`, `assets/extra.css`)
+- **Konu etiketleri** (Material `tags` plugin) + etiket indeks sayfası (`docs/tags.md`)
+- **21-Field-Notes/**: dağınık saha-notu klasörleri (System/Network/Ansible/Terraform/
+  kubectl) tek bölümde toplandı; kebab-case + geçerli markdown
 - **RoadMap/advanced/**: 8568 satırlık tek dosya 14 faz sayfası + index'e bölündü
-- **SEO frontmatter**: 190 içerik dosyasına `description` meta açıklaması
-- **17-Templates/terraform/** + **17-Templates/gitignore/**: README'nin vaat ettiği
-  ama eksik olan template'ler eklendi
-- 7 dosyaya anti-pattern tablosu, 12 dosyaya production checklist (CLAUDE.md anatomi)
+- **SEO frontmatter**: ~190 içerik dosyasına `description`
+- **17-Templates/terraform/** + **17-Templates/gitignore/** template'leri
+- Eksik **epigraph / anti-pattern / checklist / referans / kapanış** öğeleri tamamlandı
+  → numaralı (non-FieldNotes) deep-dive'larda CLAUDE.md anatomisi ~%100
 
-#### Değiştirildi
-- **README** profesyonel/reklamsız tona çekildi: badge yağmuru → 3 anlamlı badge,
-  pazarlama klişeleri + yıldız-dilenme + rakip-tablosu kaldırıldı, yazar atfı eklendi
-- Sayılar gerçeğe eşlendi: deep-dive **125** (125+ değil), template **19** (25+ değil),
-  satır **~66K**; `mkdocs.yml` site_description da güncellendi
+### Değiştirildi
+- **README** profesyonel/reklamsız tona çekildi; sayılar gerçeğe eşlendi
+  (deep-dive **125**, template **19**); yazar atfı eklendi
+- Profil sosyal linkleri sadeleştirildi: **X/Twitter kaldırıldı** (GitHub · LinkedIn · e-posta kaldı)
+- **RoadMap GitOps** bölümü push-based (Jenkins+kubectl) → pull-based (ArgoCD/Flux)
+- **15-AI-LLMOps**: model fiyatlarına tarih+kaynak; Claude Opus 4.7 → **4.8**; embedding fiyatı düzeltildi
+- **K8s 1.28 → 1.30** sürüm hizalama (Terraform/EKS/CI) + GPG key uyumu + `registry.k8s.io`
+- `mkdocs.yml strict`: link bütünlüğü ayrı **lychee** CI job'ında (Pages deploy stabilitesi)
 
-#### Düzeltildi
-- Placeholder hijyeni: hardcoded zayıf parolalar (`cipassword "ubuntu"` vb.) →
-  `<PLACEHOLDER>`; GitHub Action full-semver pin → `@<VERSION>`
-- Kırık iç linkler (Faz 2 bölme artefaktları + pre-existing) düzeltildi
-- Yazım hataları: "Preperation" → preparation, "Manuel" → modules
-- Bayat `exclude_docs` kayıtları (LAUNCH-PLAN.md) temizlendi
+### Düzeltildi
+- **Güvenlik/placeholder**: kalan zayıf örnek parolalar → `<PLACEHOLDER>`
+  (RoadMap/advanced, Grafana `adminPassword`, proxmox, ingress-nginx secret ref)
+- **CI leak-scan** regex'i özel karakter + kısa parola kaçağını kapatacak şekilde sertleştirildi
+- **Teknik hatalar**: sahte `ClusterAutoscaler` CRD → gerçek Helm kurulumu; ters Sloth latency
+  SLI matematiği; `work_mem` formül/değer uyumu; VPA YAML indent + `spec/targetRef`;
+  malformed path; Incident-Response tablo hücresi; kyverno `v2beta1` → `v1`
+- **build-docs.sh** Bash 4+ guard; GDPR "Madde" → "Article"; PCI DSS v4.0 deadline güncellendi; Glossary `LLMOps`
+- **CI yeşillendirme**: Pages deploy (`strict` ↔ git-revision-date çakışması) + Quality Gate (leak-guard)
 
-Doğrulama: `mkdocs build --strict` 0 uyarı/hata; kırık-link tarama 0; leak-guard temiz.
+Doğrulama: CI **Pages deploy + Quality Gate yeşil**; canlı site `200`; leak-guard 0 hit;
+`CI=true mkdocs build` EXIT 0.
+
+---
+
+## [1.1.0] — 2026-05-06
+
+### Düzeltildi
+- **CI paths filter**: `pages.yml`'a `assets/**` + `scripts/build-docs.sh` eklendi;
+  `quality.yml` paths filtresi kaldırıldı (her push/PR'da çalışır) — site canlıya yansımama sorunu giderildi
 
 ---
 
@@ -78,5 +100,7 @@ olarak işaretlendi: 21 ana bölüm, 125+ deep-dive, 65K+ satır Türkçe içeri
 
 ---
 
-[unreleased]: https://github.com/halilibrahimd27/DevOps/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/halilibrahimd27/DevOps/releases/tag/v1.0.0

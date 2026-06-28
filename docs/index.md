@@ -28,7 +28,6 @@ Güvenliği pipeline'a gömen, production'da işleyen platform kuran mühendis. 
 [:material-email: E-posta](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
 [:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
-[:fontawesome-brands-x-twitter: X](https://x.com/halilibrahimd27){ .md-button }
 [:material-book-open-variant: Knowledge Base](#flagship){ .md-button }
 </div>
 

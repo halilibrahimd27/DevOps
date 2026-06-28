@@ -155,9 +155,6 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/halilibrahimd
       name: LinkedIn
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/halilibrahimd27
-      name: X
   consent:
     title: Çerez kullanımı
     description: >-
