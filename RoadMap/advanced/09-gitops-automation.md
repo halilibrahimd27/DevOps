@@ -1,5 +1,11 @@
 ---
 description: "Faz 9 (Gün 21-22): GitOps ve deployment otomasyonu; ArgoCD kurulumu, CLI yükleme, initial admin parolası alma ve ArgoCD ingress yapılandırması."
+tags:
+  - Roadmap
+  - GitOps
+  - ArgoCD
+  - Kubernetes
+  - CI/CD
 ---
 # 🎯 **PHASE 9: GITOPS & DEPLOYMENT AUTOMATION** (Gün 21-22)
 

@@ -1,5 +1,10 @@
 ---
 description: "Production'da network sorunlarini sistemli debug etme: tcpdump, ss, dig ve conntrack komutlari ile karar agaci yontemini somut adimlarla anlatan rehber."
+tags:
+  - Networking
+  - SRE
+  - Incident Response
+  - Cheatsheet
 ---
 # Network Troubleshooting — tcpdump, ss, dig, conntrack
 

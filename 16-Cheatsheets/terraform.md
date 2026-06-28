@@ -1,5 +1,9 @@
 ---
 description: "Terraform ve OpenTofu icin komut notlari: init, fmt, validate, plan/apply workflow, state islemleri, import ve console. Komutlar her iki arac icin ayni calisir."
+tags:
+  - Cheatsheet
+  - Terraform
+  - IaC
 ---
 # Terraform / OpenTofu Cheatsheet
 

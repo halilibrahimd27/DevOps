@@ -1,5 +1,10 @@
 ---
 description: "App-of-Apps pattern: ArgoCD'yi tek bir root Application ile bootstrap edip kendi kendini yöneten self-managed GitOps akışına dönüştürme rehberi."
+tags:
+  - GitOps
+  - ArgoCD
+  - Kubernetes
+  - Platform Engineering
 ---
 # App-of-Apps Pattern — ArgoCD'yi Kendi Kendinden Yönet
 

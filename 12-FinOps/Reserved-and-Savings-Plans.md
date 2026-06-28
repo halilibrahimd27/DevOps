@@ -1,5 +1,10 @@
 ---
 description: "AWS Reserved Instances, Savings Plans, GCP CUDs ve Azure Reservations icin uzun vadeli commitment stratejisi; forecast, commitment ladder, over-commit kacinma."
+tags:
+  - FinOps
+  - Cost Optimization
+  - AWS
+  - Cost
 ---
 # Reserved Instances & Savings Plans — Long-Term Commitment
 

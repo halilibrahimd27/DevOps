@@ -1,5 +1,11 @@
 ---
 description: "Sıfırdan production'a DevOps GitOps yol haritası: planlama, envanter, Git stratejisi, güvenlik temelleri ve fazlara bölünmüş kapsamlı uygulama adımları."
+tags:
+  - Roadmap
+  - GitOps
+  - IaC
+  - Security
+  - Git
 ---
 # 🗺️ **DevOps GitOps Kapsamlı Uygulama Yol Haritası** (Sıfırdan Production'a)
 

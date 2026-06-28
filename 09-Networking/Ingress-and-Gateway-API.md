@@ -1,5 +1,9 @@
 ---
 description: "Ingress ve Gateway API'nin yan yana calistirilmasi: gecis stratejisi, hibrit pattern (yeni servis Gateway, eski Ingress) ve hangisini ne zaman sececegin."
+tags:
+  - Networking
+  - Kubernetes
+  - Platform Engineering
 ---
 # Ingress vs Gateway API — Yan Yana, Hangisi Ne Zaman
 

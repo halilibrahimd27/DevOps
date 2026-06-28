@@ -1,5 +1,11 @@
 ---
 description: "Cilium ve eBPF teknolojisine pratik giris: kube-proxy replacement, sidecar'siz mimari ve modern kernel-tabanli network stack'in nasil kuruldugu anlatilir."
+tags:
+  - Networking
+  - Cilium
+  - Kubernetes
+  - Performance
+  - Service Mesh
 ---
 # Cilium & eBPF — 30 Dakikada Modern Network Stack
 

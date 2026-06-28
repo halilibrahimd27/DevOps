@@ -1,5 +1,9 @@
 ---
 description: "DevOps cheatsheet koleksiyonu indeksi: kubectl, docker, git, helm, terraform, aws-cli ve daha fazlasi. Sik kullanilan komutlari gruplayip hizli erisim saglar."
+tags:
+  - Cheatsheet
+  - Roadmap
+  - Field Notes
 ---
 # 16 · Cheatsheets
 

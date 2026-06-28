@@ -1,5 +1,11 @@
 ---
 description: "2025 DevOps sertifika roadmap'i: entry-level'dan senior'a en değerli 10 sertifika (AWS, Docker DCA, Terraform), süre, maliyet, ROI ve kariyer etkileri."
+tags:
+  - Field Notes
+  - Career
+  - Roadmap
+  - Culture
+  - Soft Skills
 ---
 # DevOps Sertifika Roadmap: 2025 Senior Seviye Kariyer Rehberi
 

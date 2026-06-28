@@ -1,5 +1,10 @@
 ---
 description: "Continuous profiling rehberi: gozlemlenebilirligin 4. ayagi olarak Pyroscope, eBPF tabanli auto-profiling, flame graph analizi ve production'da line-level performans tespiti."
+tags:
+  - Observability
+  - Performance
+  - Monitoring
+  - SRE
 ---
 # Continuous Profiling — Pyroscope, eBPF Profiling
 

@@ -1,5 +1,10 @@
 ---
 description: "Production Kubernetes referans seti icindekiler: prod-readiness checklist, resource limitleri, HPA/VPA/KEDA, multi-tenancy, upgrade stratejisi ve pod debugging."
+tags:
+  - Kubernetes
+  - Platform Engineering
+  - SRE
+  - Roadmap
 ---
 # 05 · Kubernetes
 

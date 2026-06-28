@@ -1,5 +1,10 @@
 ---
 description: "Production'da sir yonetimi: DB parolasi, API key ve token'lari Vault, ESO, SOPS ve Sealed Secrets ile yoneten stack karsilastirmasi ve karar agaci."
+tags:
+  - Security
+  - Secrets
+  - Kubernetes
+  - Compliance
 ---
 # Secrets Management — Production'da Sır Yönetimi
 

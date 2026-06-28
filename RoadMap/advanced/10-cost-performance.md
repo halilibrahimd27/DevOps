@@ -1,5 +1,11 @@
 ---
 description: "Faz 10 (Gün 23-24): Maliyet optimizasyonu ve performans; AWS Cost and Usage Report kurulumu, S3 bucket ve maliyet raporları için bucket policy ayarları."
+tags:
+  - Roadmap
+  - FinOps
+  - Cost Optimization
+  - AWS
+  - Performance
 ---
 # 📈 **PHASE 10: COST OPTIMIZATION & PERFORMANCE** (Gün 23-24)
 

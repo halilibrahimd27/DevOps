@@ -1,5 +1,10 @@
 ---
 description: "Demand forecasting, headroom hesaplama, load test framework'ü ve 'ne zaman scale up?' sorusunun yöntemsel cevabını veren capacity planning rehberi."
+tags:
+  - SRE
+  - Performance
+  - Cost Optimization
+  - Monitoring
 ---
 # Capacity Planning — "Ne Kadar Yeterli?" Sorusunun Mühendislik Cevabı
 

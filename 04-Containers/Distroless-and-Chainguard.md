@@ -1,5 +1,10 @@
 ---
 description: "Distroless ve Chainguard image'lari, niye 2026 standardi olduklari, base image CVE karsilastirmasi, migration stratejisi ve trade-off'lar uzerine pratik rehber."
+tags:
+  - Containers
+  - Docker
+  - Security
+  - SBOM
 ---
 # Distroless & Chainguard — 0-CVE Image Stratejisi
 

@@ -1,5 +1,10 @@
 ---
 description: "Terraform/OpenTofu repo yapısı ve module tasarımı rehberi: mono/multi repo modelleri, vpc/eks/rds modül iskeleti, versioning ve composition pattern örnekleri."
+tags:
+  - IaC
+  - Terraform
+  - Template
+  - Networking
 ---
 # Terraform Module Layout — Repo Yapısı + Module Tasarımı
 

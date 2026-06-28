@@ -1,5 +1,11 @@
 ---
 description: "ArgoCD'yi sıfırdan production-grade kurma rehberi: HA, SSO, RBAC, AppProject, notification ve ApplicationSet ile multi-cluster pull-based GitOps."
+tags:
+  - GitOps
+  - ArgoCD
+  - Kubernetes
+  - Security
+  - Platform Engineering
 ---
 # ArgoCD Setup — Production-Grade GitOps Kurulumu
 

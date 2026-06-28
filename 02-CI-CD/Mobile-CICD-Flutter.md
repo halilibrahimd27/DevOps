@@ -1,5 +1,10 @@
 ---
 description: "Flutter CI/CD icin komple checklist: hesaplar, Android/iOS gereksinimleri, Firebase, GitHub kurulumu, kod tarafi duzenlemeler ve toplam maliyet hesabi."
+tags:
+  - CI/CD
+  - Git
+  - Template
+  - Roadmap
 ---
 # Flutter CI/CD için Gerekli Tüm Şeyler - Komple Checklist
 

@@ -1,5 +1,10 @@
 ---
 description: "Faz 2 (Gün 3-5): Terraform ile Infrastructure as Code; S3 ve DynamoDB ile remote state backend kurulumu, versioning ve state locking yapılandırması."
+tags:
+  - Roadmap
+  - Terraform
+  - IaC
+  - AWS
 ---
 # 🛠️ **PHASE 2: TERRAFORM VE INFRASTRUCTURE AS CODE** (Gün 3-5)
 

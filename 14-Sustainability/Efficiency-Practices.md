@@ -1,5 +1,11 @@
 ---
 description: "Yesil yazilim icin hizli uygulanabilen verimlilik pratikleri: ARM/Graviton, spot instance, idle cleanup, compression, caching ve right-sizing; cost-carbon dual ROI ornekleriyle."
+tags:
+  - Sustainability
+  - FinOps
+  - Cost Optimization
+  - Kubernetes
+  - Performance
 ---
 # Efficiency Practices — Quick Wins for Carbon + Cost
 

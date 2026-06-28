@@ -1,5 +1,11 @@
 ---
 description: "Proxmox üzerinde Ubuntu ile Kubernetes cluster kurulum rehberi: makine gereksinimleri, IP planı, eski Docker/Kubernetes temizliği ve adım adım kurulum."
+tags:
+  - Field Notes
+  - Kubernetes
+  - Containers
+  - Docker
+  - Networking
 ---
 # Kubernetes Cluster Kurulum Rehberi - Proxmox Ubuntu
 

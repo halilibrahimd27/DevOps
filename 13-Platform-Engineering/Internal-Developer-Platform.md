@@ -1,5 +1,10 @@
 ---
 description: "Internal Developer Platform (IDP) kavramını teknolojiden önce kültürel ve ürün bakışıyla anlatan rehber: self-service altın yol, build vs buy ve somut yol haritası."
+tags:
+  - Platform Engineering
+  - Culture
+  - Roadmap
+  - Kubernetes
 ---
 # Internal Developer Platform — Niye, Nasıl, Hangi Sırayla
 

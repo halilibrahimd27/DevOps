@@ -1,5 +1,10 @@
 ---
 description: "Loki ve ELK (Elasticsearch + Logstash + Kibana) log stack karsilastirmasi: indexleme felsefesi, depolama maliyeti, sorgu desenleri ve Wazuh entegrasyonu."
+tags:
+  - Observability
+  - Monitoring
+  - Security
+  - Cost Optimization
 ---
 # Logs — Loki vs ELK Stack
 

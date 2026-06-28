@@ -1,5 +1,10 @@
 ---
 description: "Kubernetes cluster node'larına (master, worker, storage, infra, load balancer) SSH erişimini ConnectTimeout ile toplu doğrulayan bash test script'i."
+tags:
+  - Field Notes
+  - Kubernetes
+  - Networking
+  - Cheatsheet
 ---
 # SSH Bağlantı Testi
 

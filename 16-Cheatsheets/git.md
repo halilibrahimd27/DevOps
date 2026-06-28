@@ -1,5 +1,8 @@
 ---
 description: "Git pratik komut notlari: status ve log inspection, gecmis duzenleme, bisect, cherry-pick, reflog ve worktree. Senior dev'lerin gunluk kullandigi ipuclari."
+tags:
+  - Cheatsheet
+  - Git
 ---
 # Git Cheatsheet
 

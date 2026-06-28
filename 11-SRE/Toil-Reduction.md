@@ -1,5 +1,10 @@
 ---
 description: "Google SRE Book'un toil kavramını, nasıl ölçüleceğini, %50 kuralını ve toil'i azaltmanın somut tekniklerini anlatan pratik rehber."
+tags:
+  - SRE
+  - Culture
+  - Performance
+  - Field Notes
 ---
 # Toil Reduction — "Ekibin %50'si Toil'da" Demek
 

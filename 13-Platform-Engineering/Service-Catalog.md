@@ -1,5 +1,9 @@
 ---
 description: "Backstage Catalog ile servis envanterini tutma, ownership atama, dependency graph görüntüleme ve on-call eşlemesi yapmanın pratik yollarını anlatan rehber."
+tags:
+  - Platform Engineering
+  - SRE
+  - Incident Response
 ---
 # Service Catalog — Servis Envanteri, Ownership, Dependency Graph
 

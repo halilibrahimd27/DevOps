@@ -81,6 +81,7 @@ plugins:
         - tr
         - en
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - tags
   - awesome-pages:
       collapse_single_pages: false
       strict: false

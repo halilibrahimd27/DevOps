@@ -1,5 +1,10 @@
 ---
 description: "FinOps Foundation cercevesi (Inform-Optimize-Operate) rehberleri: cost allocation, right-sizing, spot, reserved plan, storage, egress, Kubecost ve PR cost diff."
+tags:
+  - FinOps
+  - Cost Optimization
+  - Roadmap
+  - Cost
 ---
 # 12 · FinOps
 

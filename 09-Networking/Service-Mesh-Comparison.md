@@ -1,5 +1,11 @@
 ---
 description: "Istio, Linkerd ve Cilium service mesh'lerinin 2026 karsilastirmasi: sidecar-less yukselisi, mTLS, observability ve hangi senaryoda hangisini sececegin."
+tags:
+  - Networking
+  - Service Mesh
+  - Kubernetes
+  - Cilium
+  - Observability
 ---
 # Service Mesh Karşılaştırma — Istio, Linkerd, Cilium
 

@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes resource yonetimi rehberi: requests vs limits farki, QoS class'lari, OOMKilled davranisi ve dogru CPU/memory sayilarinin nasil bulunacagi."
+tags:
+  - Kubernetes
+  - Performance
+  - Cost Optimization
+  - SRE
+  - Containers
 ---
 # Resource Limits Guide — Request, Limit, QoS
 

@@ -1,5 +1,10 @@
 ---
 description: "Blameless kültürünü gerçek konuşmaya yansıtma rehberi: fasilitasyon teknikleri, tipik dil tuzakları ve psikolojik güvenlik yaratmanın somut adımları."
+tags:
+  - Soft Skills
+  - Incident Response
+  - SRE
+  - Culture
 ---
 # Postmortem Conversation — Blameless'i Konuşmaya Yansıtmak
 

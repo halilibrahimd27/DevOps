@@ -1,5 +1,10 @@
 ---
 description: "Site Reliability Engineering modülünün indeksi: SLI/SLO/error budget, incident response, runbook, chaos engineering, capacity, toil ve postmortem."
+tags:
+  - SRE
+  - Observability
+  - Incident Response
+  - Roadmap
 ---
 # 11 · Site Reliability Engineering
 

@@ -1,5 +1,11 @@
 ---
 description: "6698 sayılı KVKK'nın DevSecOps açısından pratik rehberi: data inventory, DPIA, encryption, retention ve incident notification için somut tool ve pipeline gate'leri."
+tags:
+  - Compliance
+  - KVKK
+  - Security
+  - Policy as Code
+  - Incident Response
 ---
 # KVKK Pratik Rehberi — Mühendislik Açısından
 

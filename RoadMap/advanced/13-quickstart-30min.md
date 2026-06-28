@@ -1,5 +1,11 @@
 ---
 description: "28 günlük planı okumadan çalışan bir iskeleti 30 dakikada ayağa kaldırma rehberi: ön koşul checklist, ilk kurulum ve hızlı altyapı deployment adımları."
+tags:
+  - Roadmap
+  - AWS
+  - Terraform
+  - Kubernetes
+  - Cheatsheet
 ---
 # ⚡ 30 Dakikalık Hızlı Kurulum
 

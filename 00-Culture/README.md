@@ -1,5 +1,9 @@
 ---
 description: "DevOps kültürü referans klasörünün indeksi: blameless postmortem, on-call playbook, DORA/SPACE metrikleri, Team Topologies ve dokümantasyon kültürü."
+tags:
+  - Culture
+  - SRE
+  - Roadmap
 ---
 
 # 00 · DevOps Kültürü

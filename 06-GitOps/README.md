@@ -1,5 +1,10 @@
 ---
 description: "GitOps bölümü indeksi: ArgoCD, Flux, ApplicationSet, App-of-Apps, Helm/Kustomize ve secret yönetimi rehberlerine bağlantılar ve OpenGitOps prensipleri."
+tags:
+  - GitOps
+  - ArgoCD
+  - Kubernetes
+  - Roadmap
 ---
 # 06 · GitOps
 

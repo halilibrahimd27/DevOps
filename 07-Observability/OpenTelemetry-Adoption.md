@@ -1,5 +1,10 @@
 ---
 description: "OpenTelemetry (OTel) ile vendor-neutral observability: tek SDK ve OTLP protokolu, Collector mimarisi, auto-correlation ve semantic conventions ile vendor bagimliligini kaldirma."
+tags:
+  - Observability
+  - Monitoring
+  - Platform Engineering
+  - SRE
 ---
 # OpenTelemetry Adoption — Vendor-Neutral Observability
 

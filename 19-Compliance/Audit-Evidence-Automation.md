@@ -1,5 +1,11 @@
 ---
 description: "Audit evidence'ı otomatik toplama disiplini: continuous evidence collection ile SOC 2, ISO 27001, KVKK ve PCI DSS için ortak kanıt pattern'i ve tooling."
+tags:
+  - Compliance
+  - Security
+  - Policy as Code
+  - CI/CD
+  - Observability
 ---
 # Audit Evidence Automation — "Audit Gününe Hazırlık" Bitsin
 

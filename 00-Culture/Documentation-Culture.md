@@ -1,5 +1,9 @@
 ---
 description: "Right-sized, role-targeted dokümantasyon kültürü: 4 katmanlı hiyerarşi (README, RFC, ADR, runbook) ve doc rotting'e karşı pratik stratejiler."
+tags:
+  - Culture
+  - Soft Skills
+  - Platform Engineering
 ---
 
 # Documentation Culture

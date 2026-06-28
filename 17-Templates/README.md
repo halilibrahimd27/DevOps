@@ -1,5 +1,12 @@
 ---
 description: "Kopyala-değiştir-kullan DevOps template koleksiyonu: GitHub Actions, Kubernetes, Dockerfile, Terraform, Kyverno, runbook ve Prometheus kuralları; tüm placeholder'lar UPPER_CASE."
+tags:
+  - Template
+  - CI/CD
+  - Kubernetes
+  - Terraform
+  - Security
+  - Observability
 ---
 # 17 · Templates
 

@@ -1,5 +1,10 @@
 ---
 description: "Mühendislik performansı için iki çerçeve: DORA 4 delivery metriği (deploy sıklığı, lead time, MTTR, change failure) ve bütünsel SPACE modeli."
+tags:
+  - Culture
+  - DORA
+  - SRE
+  - Performance
 ---
 
 # DORA & SPACE — Mühendislik Performansı Metrikleri

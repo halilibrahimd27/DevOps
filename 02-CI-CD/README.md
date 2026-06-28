@@ -1,5 +1,9 @@
 ---
 description: "CI/CD bolumu indeksi: pipeline patternleri, GitHub Actions ve GitLab CI tarifleri, caching, reusable workflow ve yavas CI tedavi protokolleri."
+tags:
+  - CI/CD
+  - Git
+  - Roadmap
 ---
 # 02 · CI/CD
 

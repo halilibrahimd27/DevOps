@@ -1,5 +1,10 @@
 ---
 description: "Observability bolumu indeksi: metrics, logs, traces ve profiles dort ayagi ile OpenTelemetry, Prometheus, SLO, alerting, Loki, Tempo ve Pyroscope rehberlerine giris."
+tags:
+  - Observability
+  - Monitoring
+  - Prometheus
+  - SRE
 ---
 # 07 · Observability
 

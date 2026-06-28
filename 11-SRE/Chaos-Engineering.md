@@ -1,5 +1,10 @@
 ---
 description: "Chaos engineering'i game day, fault injection, Litmus ve Chaos Mesh ile ekibin kültürüne entegre etmenin somut yollarını anlatan rehber."
+tags:
+  - SRE
+  - Chaos Engineering
+  - Kubernetes
+  - Culture
 ---
 # Chaos Engineering — Kontrollü Hata Yaratmak
 

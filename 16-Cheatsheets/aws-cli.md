@@ -1,5 +1,9 @@
 ---
 description: "AWS CLI pratik komut notlari: profil ve SSO auth, sts assume-role, EC2/S3/IAM islemleri, query filtreleme ve caller-identity dogrulama ornekleri."
+tags:
+  - Cheatsheet
+  - AWS
+  - Security
 ---
 # AWS CLI Cheatsheet
 

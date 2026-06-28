@@ -1,5 +1,10 @@
 ---
 description: "Stack başına kopyala-yapıştır .gitignore örnekleri (Terraform, Node, Python, Java) + secret-leak önleme anti-pattern tablosu."
+tags:
+  - Template
+  - Git
+  - Security
+  - Secrets
 ---
 # .gitignore Örnekleri — Stack Başına
 

@@ -1,5 +1,11 @@
 ---
 description: "Green Software Foundation'un 8 prensibini somut muhendislik kararlarina ceviren rehber; SCI metrigiyle olcum ve yesil yazilimi CI'da pass/fail metrige donusturme, CSRD/SEC baglamiyla."
+tags:
+  - Sustainability
+  - Observability
+  - Prometheus
+  - CI/CD
+  - Compliance
 ---
 # Green Software Principles — Karbonu Mühendislik Disiplinine Çevirmek
 

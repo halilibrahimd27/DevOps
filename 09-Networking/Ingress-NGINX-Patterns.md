@@ -1,5 +1,9 @@
 ---
 description: "Ingress-NGINX production pattern'leri: TLS termination, rate limit, canary deployment, auth ve WAF ayarlari somut annotation ornekleriyle anlatilir."
+tags:
+  - Networking
+  - Kubernetes
+  - Security
 ---
 # Ingress-NGINX Patterns — TLS, Rate Limit, Canary, Auth
 

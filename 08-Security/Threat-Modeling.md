@@ -1,5 +1,9 @@
 ---
 description: "Threat modeling pratik rehberi: sistemin nasil saldirilabileceginin ve hangi kontrolun hangi tehdidi azalttiginin kaydi; STRIDE/LINDDUN ile yasayan dokuman."
+tags:
+  - Security
+  - Threat Modeling
+  - Compliance
 ---
 # Threat Modeling — Sistemsiz Tehdit Avı Bitsin
 

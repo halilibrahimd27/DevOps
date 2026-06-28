@@ -1,5 +1,11 @@
 ---
 description: "Proxmox üzerinde qm clone ile Kubernetes master ve worker VM'lerini elle oluşturan bash script'i: cores, memory, disk, cloud-init IP ve SSH key ayarları."
+tags:
+  - Field Notes
+  - Terraform
+  - IaC
+  - Kubernetes
+  - Containers
 ---
 # Terraform — Modüllerle VM Oluşturma
 

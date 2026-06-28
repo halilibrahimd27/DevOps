@@ -1,5 +1,10 @@
 ---
 description: "SLI, SLO, SLA ve error budget kavramlarını Türkçe ve uygulanabilir biçimde anlatan, kendi servisinin ilk SLO'sunu yazdıran pratik rehber."
+tags:
+  - SRE
+  - Observability
+  - Monitoring
+  - DORA
 ---
 # SLI / SLO / Error Budget — Pratik Rehber
 

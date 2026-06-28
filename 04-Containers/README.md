@@ -1,5 +1,10 @@
 ---
 description: "Container imajlarini hizli, kucuk ve guvenli yapmak icin 2026 referansi: Dockerfile best practices, multi-stage, distroless, BuildKit ve Cosign imzalama."
+tags:
+  - Containers
+  - Docker
+  - Security
+  - Roadmap
 ---
 # 04 · Containers
 

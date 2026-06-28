@@ -1,5 +1,10 @@
 ---
 description: "Prod-grade PostgreSQL kurulumu için rehber: postgresql.conf tuning, connection pooling, monitoring ve operasyonel kararlar; Postgres 16/17 referansli."
+tags:
+  - Databases
+  - PostgreSQL
+  - Performance
+  - Monitoring
 ---
 # PostgreSQL Production Guide — Tuning, Pooling, Monitoring
 

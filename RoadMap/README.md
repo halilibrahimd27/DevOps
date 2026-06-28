@@ -1,5 +1,10 @@
 ---
 description: "DevOps öğrenme yol haritası index'i: yeni başlayan, junior/mid ve senior/staff için dört ayrı patika önerir; seviyene göre nereden başlayacağını gösterir."
+tags:
+  - Roadmap
+  - Career
+  - Culture
+  - Soft Skills
 ---
 # 🗺️ Yol Haritası — Hangi Seviyedeysen Oradan Başla
 

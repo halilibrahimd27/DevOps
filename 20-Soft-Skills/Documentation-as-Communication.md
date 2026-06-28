@@ -1,5 +1,10 @@
 ---
 description: "RFC, ADR ve Design Doc gibi yazılı iletişim biçimlerinin ne, ne zaman, nasıl yazıldığını ve async toplantısız karar kültürünü anlatan rehber."
+tags:
+  - Soft Skills
+  - Culture
+  - Template
+  - Career
 ---
 # Documentation as Communication — RFC, ADR, Design Doc
 

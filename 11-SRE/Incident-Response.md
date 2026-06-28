@@ -1,5 +1,10 @@
 ---
 description: "Üretimde incident çıktığında ne yapılır, kim ne der, kim karar verir sorularına net cevap veren; IC rolü, severity ve iletişim odaklı pratik rehber."
+tags:
+  - SRE
+  - Incident Response
+  - Monitoring
+  - Soft Skills
 ---
 # Incident Response — Yangın Söndürmenin Anatomi'si
 

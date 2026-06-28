@@ -1,5 +1,10 @@
 ---
 description: "Trivy ekseninde shift-left container image tarama rehberi: OS/dil CVE, IaC misconfig, secret ve SBOM taramasi; CI gate'ten admission ve runtime drift'e."
+tags:
+  - Security
+  - Containers
+  - SBOM
+  - CI/CD
 ---
 # Container Image Scanning — CVE'yi Üretime Sokmamak
 

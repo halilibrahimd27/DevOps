@@ -1,5 +1,11 @@
 ---
 description: "S3, EBS, snapshot ve backup icin storage maliyet optimizasyonu: lifecycle policy, tier transition, idle volume ve zombie snapshot temizligi ile somut tasarruf."
+tags:
+  - FinOps
+  - Cost Optimization
+  - AWS
+  - Backup
+  - Cost
 ---
 # Storage Cost Optimization — S3, EBS, Snapshot, Backup
 

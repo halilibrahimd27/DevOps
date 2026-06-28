@@ -1,5 +1,10 @@
 ---
 description: "Internal Developer Platform'un kalbi golden path'leri tasarlama rehberi: opinionated ve otomatik 'yeni servis 5 dakikada' yol haritaları, kapsamı ve adoption ölçümü."
+tags:
+  - Platform Engineering
+  - GitOps
+  - CI/CD
+  - Template
 ---
 # Golden Paths — "Yeni Servis 5 Dakikada"
 

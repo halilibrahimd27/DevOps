@@ -1,5 +1,10 @@
 ---
 description: "SLO'yu muhendislik disiplinine cevirme rehberi: SLI/SLO/error budget ozeti, multi-window burn rate alarmlari, error budget policy ve operasyonel tooling."
+tags:
+  - Observability
+  - SRE
+  - Monitoring
+  - Incident Response
 ---
 # SLO Engineering — Multi-Window, Burn Rate, Error Budget
 

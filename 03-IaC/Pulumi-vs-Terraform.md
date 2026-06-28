@@ -1,5 +1,9 @@
 ---
 description: "Pulumi ile Terraform/OpenTofu karşılaştırması: HCL'e karşı Python/Go/TS gibi genel amaçlı diller, hangi durumda hangisinin tercih edildiği ve geçiş stratejisi."
+tags:
+  - IaC
+  - Terraform
+  - Platform Engineering
 ---
 # Pulumi vs Terraform — General-Purpose Lang vs HCL
 

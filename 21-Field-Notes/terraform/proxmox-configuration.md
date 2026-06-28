@@ -1,5 +1,11 @@
 ---
 description: "Proxmox üzerinde uçtan uca VM provisioning için tam Terraform konfigürasyonu: telmate/proxmox provider, providers.tf, değişkenler ve VM kaynak tanımları."
+tags:
+  - Field Notes
+  - Terraform
+  - IaC
+  - Kubernetes
+  - Template
 ---
 # Terraform — Proxmox Tam Konfigürasyon
 

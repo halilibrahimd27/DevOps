@@ -1,5 +1,10 @@
 ---
 description: "Production veritabanları bölümünün indeksi: Postgres tuning, backup/restore, HA failover, zero-downtime migration, operator pattern ve connection pooling."
+tags:
+  - Databases
+  - PostgreSQL
+  - Postgres HA
+  - Roadmap
 ---
 # 10 · Databases in Production
 

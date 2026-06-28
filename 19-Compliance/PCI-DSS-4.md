@@ -1,5 +1,10 @@
 ---
 description: "PCI DSS v4.0 rehberi: kart verisi işleyen sistemler için mühendislik gereksinimleri, tokenization stratejisi, scope reduction ve TR e-ticaret bağlamı."
+tags:
+  - Compliance
+  - Security
+  - Networking
+  - Secrets
 ---
 # PCI DSS v4.0 — Kart Verisi İşleyenler İçin
 

@@ -1,5 +1,10 @@
 ---
 description: "Postgres yüksek erişilebilirlik (HA) çözümleri: Patroni, Stolon ve CloudNativePG karşılaştırması, otomatik failover, split-brain çözümü ve 2026 önerisi."
+tags:
+  - Databases
+  - PostgreSQL
+  - Postgres HA
+  - SRE
 ---
 # Postgres HA — Patroni, Stolon, CloudNativePG
 

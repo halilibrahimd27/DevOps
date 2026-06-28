@@ -1,5 +1,11 @@
 ---
 description: "RAG (Retrieval-Augmented Generation) mimarisi: embedding, vector store, retriever, reranker ve generation asamalarini production'da kurma; LLM'e dis kaynak."
+tags:
+  - AI/LLMOps
+  - Databases
+  - PostgreSQL
+  - Security
+  - Performance
 ---
 # RAG Architecture — Retrieval-Augmented Generation
 

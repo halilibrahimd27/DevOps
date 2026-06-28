@@ -1,5 +1,10 @@
 ---
 description: "CI/CD pipeline patternleri: lint, test, security scan, build, image scan, imzalama, SBOM ve GitOps promote adimlarinin sirali katmanlama referansi."
+tags:
+  - CI/CD
+  - Security
+  - SBOM
+  - GitOps
 ---
 # CI/CD Pipeline Patterns
 

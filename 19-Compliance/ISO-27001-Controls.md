@@ -1,5 +1,11 @@
 ---
 description: "ISO/IEC 27001:2022 Annex A kontrollerinin mühendislik eşlemesi: hangi kontrol Kyverno policy, GitHub Actions ve tooling ile karşılanır, SOC 2 ile karşılaştırma."
+tags:
+  - Compliance
+  - Security
+  - Policy as Code
+  - Kubernetes
+  - CI/CD
 ---
 # ISO 27001 — Annex A Kontrolleri (Mühendislik Eşlemesi)
 

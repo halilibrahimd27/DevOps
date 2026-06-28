@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes cluster servis parolalarını secret'lardan toplayan bash script'i: Jenkins, Grafana, Elasticsearch kimlikleri ve servis erişim URL'leri."
+tags:
+  - Field Notes
+  - Kubernetes
+  - Secrets
+  - Security
+  - Cheatsheet
 ---
 # Kubernetes Cluster Parolaları (Toplama Script'i)
 

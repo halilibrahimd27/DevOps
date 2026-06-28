@@ -1,5 +1,11 @@
 ---
 description: "Kubernetes manifest stratejisi: Helm, Kustomize ve Raw YAML yaklaşımlarının templating, multi-env ve reusability ekseninde karar ağacı ve karşılaştırması."
+tags:
+  - GitOps
+  - Kubernetes
+  - Helm
+  - IaC
+  - Template
 ---
 # Helm vs Kustomize vs Raw YAML — Manifest Stratejisi Karar Rehberi
 

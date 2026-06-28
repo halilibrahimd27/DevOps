@@ -1,5 +1,10 @@
 ---
 description: "Alert runbook template: adım-adım ilk teşhis komutları, olası sebepler ve çözümler, rollback prosedürü, eskalasyon matrisi ve incident kapanış doğrulaması."
+tags:
+  - Template
+  - Incident Response
+  - SRE
+  - Observability
 ---
 # Runbook: <ALERT_NAME / SCENARIO>
 

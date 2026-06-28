@@ -1,5 +1,9 @@
 ---
 description: "Skelton & Pais'in Team Topologies kitabından damıtılmış 4 takım türü (stream-aligned, enabling, complicated-subsystem, platform) ve etkileşim modları rehberi."
+tags:
+  - Culture
+  - Platform Engineering
+  - Soft Skills
 ---
 
 # Team Topologies — Ekip Yapısı Olarak Mühendislik

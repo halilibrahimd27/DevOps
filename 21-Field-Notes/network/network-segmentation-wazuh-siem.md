@@ -1,5 +1,12 @@
 ---
 description: "DMZ, application ve management zone'larına ayrılmış ağ segmentasyonu mimarisi ve Wazuh SIEM entegrasyonu rehberi; VLAN/subnet planı ve güvenlik şeması."
+tags:
+  - Field Notes
+  - Security
+  - Networking
+  - Kubernetes
+  - Incident Response
+  - Compliance
 ---
 # 🔒 Ağ Segmentasyonu ve Wazuh SIEM Entegrasyon Rehberi
 

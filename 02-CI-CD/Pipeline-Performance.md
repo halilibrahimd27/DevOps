@@ -1,5 +1,9 @@
 ---
 description: "CI pipeline optimizasyonu: caching, parallelization, selective testing ve runner secimi teknikleriyle 30 dakikalik CI'yi 90 saniyeye indirme protokolu."
+tags:
+  - CI/CD
+  - Performance
+  - Cost Optimization
 ---
 # Pipeline Performance — "10 Dakikalık CI"yi 90 Saniyeye İndir
 

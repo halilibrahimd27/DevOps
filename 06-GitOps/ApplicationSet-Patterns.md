@@ -1,5 +1,10 @@
 ---
 description: "ArgoCD ApplicationSet ile multi-cluster ve multi-tenant GitOps: cluster, git, matrix, list ve SCM generator türleriyle Application factory kurma."
+tags:
+  - GitOps
+  - ArgoCD
+  - Kubernetes
+  - Platform Engineering
 ---
 # ApplicationSet — Multi-Cluster ve Multi-Tenant GitOps
 

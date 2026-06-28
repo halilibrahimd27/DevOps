@@ -1,5 +1,11 @@
 ---
 description: "AI/LLMOps bolumu indeksi: RAG, prompt engineering, self-hosted LLM, cost optimization, safety guardrail'leri ve MLOps vs LLMOps karsilastirmasi."
+tags:
+  - AI/LLMOps
+  - Observability
+  - Cost Optimization
+  - Security
+  - Roadmap
 ---
 # 15 · AI / LLMOps
 

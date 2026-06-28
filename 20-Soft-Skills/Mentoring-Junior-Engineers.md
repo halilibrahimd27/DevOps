@@ -1,5 +1,10 @@
 ---
 description: "DevOps/SRE/Platform alanında junior mühendisi yetiştirmenin somut tekniklerini, on-boarding planını, shadow-solo geçişini ve TR iş kültürünü anlatır."
+tags:
+  - Soft Skills
+  - Career
+  - Culture
+  - Platform Engineering
 ---
 # Mentoring Junior Engineers — Infra/SRE Öğretmek
 

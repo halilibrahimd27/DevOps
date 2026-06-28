@@ -1,5 +1,10 @@
 ---
 description: "Surdurulebilir muhendislik ve Green IT bolum indeksi: GSF 8 prensibi, carbon-aware computing, SCI olcumu, dusuk-karbon region secimi ve verimlilik pratikleri rehberleri."
+tags:
+  - Sustainability
+  - FinOps
+  - Kubernetes
+  - Roadmap
 ---
 # 14 · Sustainable Engineering / Green IT
 

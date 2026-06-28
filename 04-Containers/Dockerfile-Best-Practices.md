@@ -1,5 +1,11 @@
 ---
 description: "Build hizi, imaj boyutu ve guvenligi iyilestiren 20 maddelik Dockerfile best practice listesi: multi-stage, layer/cache ve least privilege."
+tags:
+  - Containers
+  - Docker
+  - Security
+  - Performance
+  - Cheatsheet
 ---
 # Dockerfile Best Practices — 20 Madde
 

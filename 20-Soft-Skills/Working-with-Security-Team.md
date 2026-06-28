@@ -1,5 +1,10 @@
 ---
 description: "DevOps/SRE ile Security ekipleri arasındaki sürtünmenin niye olduğunu, nasıl ortadan kalkacağını ve sağlıklı işbirliğinin somut pratiklerini anlatır."
+tags:
+  - Soft Skills
+  - Security
+  - Culture
+  - Compliance
 ---
 # Security Ekibiyle Çalışmak — Düşman Değil, Partner
 

@@ -1,5 +1,12 @@
 ---
 description: "50 maddelik Kubernetes prod-readiness checklist: workload tasarimi, resource, security, reliability/HA, observability ve operations/GitOps eksenleri."
+tags:
+  - Kubernetes
+  - Security
+  - SRE
+  - Observability
+  - GitOps
+  - Cheatsheet
 ---
 # Kubernetes Production Checklist
 

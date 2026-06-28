@@ -1,5 +1,11 @@
 ---
 description: "AWS, GCP ve Azure region'larini karbon yogunluguna gore karsilastiran rehber; latency, maliyet ve data-residency trade-off'lariyla dusuk-karbon region karar matrisi kurma."
+tags:
+  - Sustainability
+  - AWS
+  - Cost Optimization
+  - Compliance
+  - KVKK
 ---
 # Region Selection — Cloud Region Karbon Karar Matrisi
 
