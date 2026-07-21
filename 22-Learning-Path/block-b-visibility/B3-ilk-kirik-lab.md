@@ -163,6 +163,78 @@ Hint'ler bir başarısızlık değil, ayarlı bir güvenlik ağıdır. Ama **erk
 `hint-3`'ü açtıysan sorun değil — ama sonra `solution.md`'yi oku ve **teşhis akışını**
 (cevabı değil, oraya nasıl gidildiğini) ayrıca çalış. Asıl öğretilen o akıştır.
 
+## 9️⃣ Baştan sona bir teşhis: yöntem iş başında
+
+Yöntemi soyut bırakma — bir kez uçtan uca izle. (Bu örnek **kasıtlı olarak K01'in gizli
+sebebiyle örtüşmez**; amaç cevabı vermek değil, akışı göstermek.) Belirti şu: *"Uygulama
+açılıyor ama ödeme adımında `name resolution failed` logluyor ve istek düşüyor."*
+
+**1) Belirtiyi netleştir.** Ne zaman başladı, hep mi, ara ara mı?
+
+```bash
+journalctl -u app --since "30 min ago" -p err     # B1
+# 11:02:14 app: ERROR calling payments: dial tcp: lookup api.payments.local: name resolution failed
+```
+
+Hata **DNS** diyor (A3). Hipotez: uygulama `api.payments.local` adını çözemiyor.
+
+**2) Katmanı böl — sorun uygulamada mı, sistemin DNS'inde mi?** Uygulamayı ele, adı
+doğrudan çözmeyi dene:
+
+```bash
+dig +short api.payments.local      # boş dönüyor → sistem de çözemiyor (uygulama masum)
+dig +short google.com              # bu da boş → DNS tümden kırık, yalnız bu ad değil
+```
+
+İki komut arama alanını yarıya böldü: sorun uygulamada değil, **makinenin DNS
+çözümlemesinde**. Uygulamanın loguna daha fazla bakmak zaman kaybı olurdu.
+
+**3) Kök sebebe in — DNS neden kırık?**
+
+```bash
+cat /etc/resolv.conf               # hangi resolver? (A3) — ör. boş ya da erişilemez bir IP
+ss -u -a | grep :53                # DNS trafiği gidiyor mu (A2)
+ping -c1 <RESOLVER_IP>             # resolver'a ağ var mı
+```
+
+`resolv.conf`'taki resolver'a `ping` gitmiyorsa kök sebep **ağ/resolver erişimi**;
+resolver doğru ama yanıt vermiyorsa **resolver servisi**. Her adımda bir hipotezi bir
+çıktıyla eledin — tahmin yok.
+
+**4) Düzelt ve DOĞRULA.** Resolver'ı düzelttikten sonra, "düzelttim" deme — **belirtinin
+gittiğini kanıtla**, üstelik en dıştan (kullanıcının gördüğü yerden):
+
+```bash
+dig +short api.payments.local      # artık bir IP dönüyor
+curl -s http://127.0.0.1/checkout  # 200 — kullanıcı yolu çalışıyor
+journalctl -u app --since "2 min ago" -p err   # boş → yeni hata yok
+```
+
+Bütün akış dört soruya indi: *Ne yanlış? Hangi katmanda? Niçin? Gerçekten düzeldi mi?*
+Kırık lab'da yapman gereken tam olarak bu — sadece sebep her seferinde farklı olur.
+
+## 🔟 Zaman kutusu, yan etki ve ne zaman durulur
+
+Yöntem kadar önemli olan üç disiplin daha var; bunlar E bloğundaki incident çalışmasının
+provasıdır:
+
+- **Zaman kutusu (time-box).** Bir hipoteze saplanma. "15 dakika bu yolu deneyip
+  kanıtlayamazsam geri dönüp katmanı değiştireceğim" de. Kırık lab'da bu, hint açma
+  eşiğindir; gerçek incident'te eskalasyon eşiği.
+- **Yan etkiye dikkat.** Bir düzeltme **yeni** bir arıza doğurabilir (config değiştirdin,
+  başka bir şey bozuldu). Düzelttikten sonra tek belirtiyi değil, sistemin **bütününü**
+  doğrula: `systemctl status`, birkaç uçtan `curl`, `journalctl -p err`.
+- **Ne zaman durup yardım istenir.** Takılmak bir başarısızlık değil; **sessizce
+  saatlerce** takılmak öyle. Kırık lab'da sıra `hint-1 → 2 → 3 → solution.md`. Gerçek
+  hayatta sıra: kanıtladığın şeyi (belirti + denediklerin + eledikleri) yazıp
+  **eskalasyondur** — E2/E3'te göreceğin on-call disiplininin çekirdeği. "Neyi
+  denemedim" değil, "**neyi kanıtladım**" ile eskale edersin.
+
+> 🔒 Baskı altında en sık yapılan hata, teşhisi atlayıp "hızlı düzeltme" denemektir:
+> `chmod 777`, servisi `root` çalıştır, güvenlik kontrolünü kapat. Bu, arızayı kapatıp
+> bir **açık** açar (A1/A6). Zaman kutusu tam da bunu önlemek içindir: acele, güvenliği
+> ilk feda edilen şey yapar.
+
 ---
 
 ## 🚫 Anti-pattern tablosu
@@ -176,6 +248,9 @@ Hint'ler bir başarısızlık değil, ayarlı bir güvenlik ağıdır. Ama **erk
 | Kök sebep yerine belirtiyi düzeltmek | Servisi yeniden başlatmak arızayı geri getirir | Asıl nedeni bul; restart erteleme değil çözüm değil |
 | Teşhisi yazmamak | Bir dahaki sefere sıfırdan; ekip öğrenmez | `teshis.md` tut (E3 postmortem tohumu) |
 | Sadece tahminle çalışmak | "Muhtemelen DB" ≠ teşhis | Kanıt = B → C geçişinin ta kendisi |
+| Tek hipoteze saatlerce saplanmak | Zaman kaybı, tünel görüşü | Zaman kutusu koy; süre dolunca katman değiştir |
+| Düzeltince yalnız tek belirtiyi bakmak | Yan etki yeni arıza doğurmuş olabilir | Bütünü doğrula (`status`, çok uçtan `curl`, `-p err`) |
+| "Neyi denemedim" diye eskale etmek | Karşı taraf sıfırdan başlar | "Neyi **kanıtladım**" ile eskale et (E2/E3) |
 
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |

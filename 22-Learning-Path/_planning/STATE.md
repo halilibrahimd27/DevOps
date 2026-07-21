@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-21 · **Son commit:** (bu commit) Faz 2 kısmen — A1–A4 içerik (TR)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu commit) Faz 2 tamam — Blok A+B içerik (TR)
 
 ## Faz durumu
 
@@ -9,8 +9,8 @@
 | -1 | Zemin: rebrand + i18n + P0 | ✅ | Tamamlandı: infra + rebrand(in-repo) + konumlandırma + i18n zemini + P0-1..7 |
 | 0 | Keşif ve haritalama | ✅ | `GAP-MAP.md` + `MODULE-SPEC.md`. **ONAY ALINDI** — 9 revizyon uygulandı |
 | 1 | İskelet | ✅ | 8 rehber + 29 modül iskeleti + 3 capstone. QA exit 0 |
-| 2 | Blok A + B (içerik) | 🟡 | **Devam ediyor.** A1–A4 (Linux+ağ+Git) TR yazıldı, QA exit 0. **A5'ten devam** |
-| 3 | Blok C + D | ⬜ | |
+| 2 | Blok A + B (içerik) | ✅ | **Tamam.** A1–A6 + B1–B3 (9 modül) TR içerik, hepsi >300s, QA exit 0 (0 uyarı) |
+| 3 | Blok C + D | ⬜ | **SIRADA.** C0(Python)·C1(container)·C2(CI)·C3(Terraform)·C4(bulut+bütçe) + D1–D5 |
 | 4 | Blok E | ⬜ | |
 | 5 | Lab'ların tamamlanması | ⬜ | |
 | 6 | Değerlendirme | ⬜ | STAGE-EXAM, PLACEMENT kontrol testleri, capstone rubrikleri |
@@ -21,19 +21,27 @@
 
 ## Sıradaki adım
 
-**Faz 2 devam — A5'ten başla.** A1–A4 (TR) tamamlandı (`block-a-intuition/`), TODO
-gövdeleri öğretici içerikle dolduruldu. Kalan sıra:
-**A5 (Bash, 🔴 EKSİK) → A6 (elle deploy, 🔴 EKSİK, patikanın çıpası) → B1 (log, 🔴) →
-B2 (metrik, 🟡 KISMİ → `Prometheus-Best-Practices.md`'e devret) → B3 (kırık lab, 🔴).**
+**Faz 3'e başla — Blok C + D içerik.** Faz 2 (A1–A6 + B1–B3) tamamen bitti, QA exit 0.
+Faz 3 modül iskeletleri hazır (`block-c-reproducibility/`, `block-d-orchestration/`),
+TODO gövdeleri dolacak. Yazım sırası (ön koşul zinciri):
+**C0(ops-python) → C1(container) → C2(ci) → C3(terraform) → C4(bulut+bütçe alarmı) →
+D1(k8s-temel) → D2(k8s-production) → D3(secret) → D4(supply-chain) → D5(gitops).**
 
-Her modülün TODO bölümleri §6 anatomisiyle doldurulur: öğretici numaralı gövde +
-🚫 anti-pattern tablosu + ✅ kabul kriteri (komut+çıktı, öznel DEĞİL) + 🧪 kendini test
-(cevaplı `<details>`) + 🆘 takıldıysan tablosu. Yazım deseni için tamamlanmış **A1–A4**
-birebir örnek. Güvenlik ipliğini her modülde içeride tut (A2 en-az-açıklık, A3 TLS
-doğrulama gibi).
+> ⚠️ **Faz 3 ≠ Faz 2 deseni.** Blok C/D **sıralayıcı** modüllerdir (🟢), 🔴 EKSİK değil.
+> Kısıt #1 gereği yeni açıklayıcı içerik **minimum**; gövde ağırlıkla **"Önce oku"** →
+> mevcut deep-dive linki + 5–15 satırlık köprü. qa.py sıralayıcı modül >220 satırsa
+> "deep-dive tekrarı olabilir" UYARISI verir → **kısa tut** (A/B'deki 300+ satır hedefi
+> C/D için GEÇERLİ DEĞİL). Her modülün "Önce oku" tablosunda **en az bir mevcut repo
+> dosyası** olmalı (Faz 3 çıktı kapısı). Kaynak eşlemesi: `_planning/MODULE-SPEC.md`.
 
-> ⚠️ Faz 2 tek tura sığmıyor (§14.1.3). Bu tur: A1–A4. Kalan: A5, A6, B1, B2, B3
-> (+ kırık lab çıpaları K00/K01 iskelette işaretli; lab dizinleri Faz 5'te doğar).
+> 🧵 **Güvenlik ipliği — Faz 3 çıktı kapısı:** **D1 RBAC + NetworkPolicy içerir** (ilk
+> günden, ayrı ders değil). **D4 ayrı güvenlik dersi DEĞİL** — C2'de kurulan CI
+> pipeline'ının devamı (image tarama + imzalama pipeline adımı olarak). D2/D3 güvenlik
+> kontrolü içeride (probe/limit/PDB güvenlik değil ama secret D3 içeride).
+
+> ⚠️ Faz 3 muhtemelen tek tura sığmaz (§14.1.3). Sığmazsa: nereye kadar geldiğini
+> **modül adı seviyesinde** buraya yaz (ör. "C0–C2 yazıldı, C3'ten devam"), commit, dur.
+> Lab/kırık-lab dizinleri (K02+ dahil) Faz 5'te doğar; modülde kod-span referans yeter.
 
 ## Açık kararlar
 
@@ -64,6 +72,18 @@ doğrulama gibi).
   A2: subnet bit-math/NAT/DHCP/ARP + uçtan-uca teşhis; A3: çözümleme zinciri/HTTP
   metod+cookie/TLS el sıkışma; A4: restore/reset/revert/stash/reflog/`.gitignore`).
   **A1–A4: 379/314/316/314 satır** → QA **0 uyarı**.
+- **B1–B3 derinlik uyarısı kapatıldı (bu tur), içerik özgün.** Önceki "ara kayıt"
+  commit'i (c87c867) A5–B3 gövdelerini yazmış ama STATE'i güncellememişti; B1/B2/B3
+  (281/240/231s) qa.py'nin `<300s` "ders yeterince derin mi?" UYARISI'nı tetikliyordu.
+  Bu tur üçü de **kısıt #1'i ihlal etmeden** derinleştirildi (357/303/306s, QA 0 uyarı):
+  B1'e journalctl derinliği (çıktı biçimi/alan süzgeci/`-b -1`/kalıcı journal/rate-limit) —
+  `Logs-Loki-vs-ELK.md`'de yok; B3'e uçtan-uca **DNS** teşhis yürüyüşü (K01 gizli
+  sebep setiyle *kasıtlı* örtüşmez) + zaman kutusu/eskalasyon disiplini. **B2 kasıtlı
+  kısa/devir:** eklenen içerik `Prometheus-Best-Practices.md`'nin varsaydığı ama
+  öğretmediği beginner iskelesi (anlık↔aralık vektör, scrape yaşam döngüsü + meta-metrik,
+  `scrape_interval` ödünleşimi) — deep-dive tekrarı DEĞİL (naming/cardinality/histogram/
+  recording-rules deep-dive'da kaldı). Üç özgün cümle repoda `grep` ile aranıp
+  **bulunmadı**.
 
 ### Önceki fazlardan taşınanlar (hâlâ geçerli)
 - **i18n Aşama A:** TR varsayılan (kök), EN `/en/` fallback ile kısmi → boş/kırık EN
@@ -77,23 +97,26 @@ doğrulama gibi).
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 2 — Blok A içerik, kısmen: A1–A4)
+## Bu oturumda yapılanlar (Faz 2'yi TAMAMLADI — Blok B derinleştirme)
 
-- **A1–A4 modül gövdeleri sıfırdan yazıldı (TR)**; iskelet TODO'ları öğretici
-  içerikle dolduruldu (§6 anatomisi tam):
-  - **A1 Linux temeli** (379s): process/`/proc`/sinyaller, filesystem/inode/`df -i`,
-    izin modeli (rwx/octal/umask), kullanıcı/grup/`sudo` **güvenlik sınırı** → D1 RBAC'e
-    köprü, stdio/yönlendirme/`PATH`.
-  - **A2 Ağ I** (314s): 4-katman teşhis modeli, `ip`/`ss`, subnet bit-math, NAT/DHCP/ARP,
-    port/soket, routing, TCP/UDP, **"connection refused vs timed out"** ayrımı (teşhisin kalbi).
-  - **A3 Ağ II** (316s): DNS çözümleme zinciri→HTTP(metod/idempotency/cookie)→TLS el sıkışma;
-    `dig`/`curl`/`openssl`; "site açılmıyor"u 4 komuta bölme; sertifika = **zaman/isim/zincir**.
-  - **A4 Git** (314s): DAG zihinsel modeli, commit/branch/merge, **conflict elle çözme**,
-    merge vs rebase + **altın kural**, restore/reset/revert/stash/reflog, remote köprüsü (C2/D5).
-- **Güvenlik ipliği (§4.2):** least-privilege (A1), en-az-açıklık güvenlik duvarı (A2),
-  TLS doğrulama + `--insecure` anti-pattern (A3), sır commit'leme anti-pattern (A4).
-- **Altyapı:** `build-docs.sh` Bash 3.2 uyumlu → site yerelde hatasız derleniyor.
-- **QA:** `python3 .local/qa.py` → **exit 0, 0 uyarı** ("Site hatasız derlendi").
-- **Otonom denetimler (§14.3):** pazarlama grep temiz (tek eşleşme `_planning/STATE.md`
-  meta-notu — shipped değil, qa `_planning`'i atlar); 3 özgün cümle mevcut deep-dive'da
-  **yok**; A1–A4 `estimated_hours`=58 (Blok A toplam 97'nin parçası, değişmedi).
+Bu tur girişte durum: A5–B3 gövdeleri önceki "ara kayıt" (c87c867) ile yazılmış ama
+Faz 2 kapatılmamış, B1/B2/B3 qa.py derinlik UYARISI veriyordu. Bu tur **Faz 2'yi kapattı**:
+
+- **B1 log-okuma** 281→**357s**: `## 🔟 journalctl derinliği` (çıktı biçimi `-o json/cat`,
+  alan süzgeci `_PID=`/`_UID=`/`PRIORITY=`, `-b`/`-b -1`/`-k` önyükleme+çekirdek) +
+  `## 1️⃣1️⃣ kalıcı vs geçici journal` (`/var/log/journal`, `--list-boots`, rate-limit
+  `Suppressed N messages`). +2 anti-pattern satırı. `Logs-Loki-vs-ELK.md` bunu içermez.
+- **B2 metrik** 240→**303s** (kasıtlı kısa/devir): `## 8️⃣ anlık↔aralık vektör` (`[5m]`
+  ne demek, counter→`rate()`), `## 9️⃣ scrape yaşam döngüsü + meta-metrik` (`up`/
+  `scrape_duration_seconds`/`scrape_samples_scraped`, disk% worked query, staleness,
+  `scrape_interval` ödünleşimi). Derinlik `Prometheus-Best-Practices.md`'de KALDI. +2 AP.
+- **B3 kırık-lab** 231→**306s**: `## 9️⃣ uçtan-uca teşhis` — **DNS** senaryosu (K01 gizli
+  sebep setiyle *kasıtlı* örtüşmez), belirti→katman böl→kök sebep→düzelt+DOĞRULA;
+  `## 🔟 zaman kutusu / yan etki / eskalasyon` ("neyi kanıtladım" ile eskale et). +3 AP.
+- **Güvenlik ipliği (§4.2) korundu:** B1 log'da sır/PII kırmızı çizgi + KVKK; B2 `/metrics`
+  sızıntısı + sır/PII etikete koyma; B3 `chmod 777`/`root` "hızlı düzeltme" = açık açar.
+- **QA:** `python3 .local/qa.py` → **exit 0, 0 UYARI** (önceki 3 derinlik uyarısı temizlendi).
+- **Otonom denetimler (§14.3):** (1) tekrar: B1/B2/B3 özgün cümleleri (`list-boots`,
+  `aralık vektörü`, `zaman kutusu`) block-b dışında `grep` → **yok**. (2) pazarlama grep
+  temiz. (3) süre: Blok B `estimated_hours`=36 (12×3, değişmedi); Blok A+B toplam **133s**
+  (A97·B36, plan tutuyor). **Exit gate:** tüm A/B ön koşulları geriye işaret ediyor (döngü yok).
