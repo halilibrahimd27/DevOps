@@ -37,21 +37,30 @@ eksik veri geliyor." (Gerçekçi sebep gizli: bozuk/eksik backup / yanlış sır
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 4): backup alınıp **restore edildi ve doğrulandı** — veri bütünlüğü kanıtı
-- [ ] TODO (Faz 4): RTO/RPO ölçüldü ve yazıldı
-- [ ] TODO (Faz 4): K08 kırık lab'ı çözüldü, `verify.sh` geçiyor
+- [ ] Bir backup alındı ve **temiz bir ortama restore edildi**; veri bütünlüğü bir sorguyla (satır sayısı/checksum) doğrulandı
+- [ ] RTO (restore süresi) ve RPO (veri kaybı penceresi) ölçülüp yazıldı
+- [ ] Backup'ın erişim + at-rest şifreleme kontrolü yazıldı (kim erişebilir, şifreli mi)
+- [ ] `bash labs/broken/K08-restore-basarisiz/verify.sh` çözümden sonra sıfır hatayla geçiyor
 
 ## 🧪 Kendini test et
-1. TODO (Faz 4)
-2. TODO (Faz 4)
-3. TODO (Faz 4)
+1. "Backup her gece alınıyor" cümlesi niçin tek başına güvence vermez?
+2. RTO ile RPO farkı ne; hangisini sıfıra yaklaştırmak genelde daha pahalıdır?
+3. Backup dosyaları herkese açık bir bucket'ta duruyor. Sorun ne?
 
-<details><summary>Cevaplar</summary>TODO (Faz 4)</details>
+<details><summary>Cevaplar</summary>
+
+1. Çünkü alınması restore edilebildiğini kanıtlamaz. Bozuk, eksik veya yanlış sürümle alınmış bir backup ancak restore denendiğinde ortaya çıkar — test edilmemiş backup yalnızca bir umuttur. Desenler [`10-Databases-Production/Backup-Restore-Patterns.md`](../../10-Databases-Production/Backup-Restore-Patterns.md)'de.
+2. RTO = geri gelme süresi (kesinti hedefi); RPO = kabul edilen veri kaybı penceresi. RPO'yu sıfıra yaklaştırmak (senkron replikasyon / sürekli WAL) genelde daha pahalıdır, çünkü her yazımı anında ikinci bir yere de yazman gerekir.
+3. Backup veritabanının tamamıdır — açık bucket, tüm veriyi ve genelde en zayıf erişim kontrollü kopyayı sızdırır. Backup en az canlı DB kadar korunmalı: erişim kısıtı + at-rest şifreleme. Şema değişim tarafı [`10-Databases-Production/Zero-Downtime-Migrations.md`](../../10-Databases-Production/Zero-Downtime-Migrations.md)'de.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Restore çalışıyor ama veri eksik | Yanlış sıra / kısmi backup / farklı sürüm | Sıralı bağımlılıkları ve sürüm uyumunu doğrula; tam yedeği kullan |
+| Restore çok uzun sürüyor (RTO aşıldı) | Yöntem yanlış (logical dump, büyük DB) | Fiziksel backup + PITR'e geç; restore süresini önceden ölç |
+| Backup alınıyor ama kimse test etmemiş | Restore prosedürü yazılı değil | Sakin bir günde tam restore provası yap, adımları yaz |
+| Backup'a erişim denetlenmemiş | Şifreleme/erişim kontrolü yok | Erişimi kısıtla, at-rest şifrele, erişimi denetim kaydına bağla |
 
 ## 💼 Portfolyo çıktısı
 Test edilmiş bir restore prosedürü + RTO/RPO raporu — nadir ve değerli bir kanıt.
