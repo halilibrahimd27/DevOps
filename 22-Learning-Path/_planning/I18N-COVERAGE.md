@@ -25,7 +25,7 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 | Öncelik | Kapsam | Durum |
 |---|---|---|
 | **P0** | `README`, `docs/index`, `docs/about`, `Glossary` | ⬜ EN çevirisi yok (fallback TR) |
-| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, PLACEMENT, …) | ⬜ (Faz 1'den itibaren iki dilli üretilecek) |
+| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, PLACEMENT, …) | 🟡 TR iskelet hazır (Faz 1); EN twin Faz 2+ içerikle birlikte (bkz. STATE Açık kararlar) |
 | **P2** | 21 klasör README'si | ⬜ |
 | **P3** | En güçlü 15 deep-dive | ⬜ |
 | **P4** | Kalan içerik | ⬜ |

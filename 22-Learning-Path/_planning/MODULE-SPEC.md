@@ -149,3 +149,49 @@ dosyalarını **ilk günden** içerir.
 4. **K02 (C1 kırık lab) opsiyonel** işaretlendi; C bloğunun zorunlu kırık lab'ı K03'tür.
 5. **Lab numaralandırma sürekli** (L01–L20, K01–K09), bloktan bağımsız artan. Modül ID'si
    ayrı eksen; bir modülde hem build hem kırık lab olabilir (örn. C3 → L11 + K03).
+
+---
+
+## ⚠️ ONAY REVİZYONLARI (kullanıcı — Faz 0 kapısı)
+
+MODULE-SPEC onaylandı ANCAK aşağıdaki 9 revizyon Faz 1 iskeletine
+uygulanacak. Faz 1 bu bölümü girdi alır.
+
+1. **200 satır tavanı yeniden tanımlandı.** §3.1'deki tavan yalnızca
+   🟢 VAR (sıralayıcı) modüller içindir. 🔴 EKSİK modüller reponun tek
+   öğretici içeriğidir: hedef **400–700 satır**. 🟡 KISMİ: 200–400.
+
+2. **A5 bölündü.** `A5 = Bash` (12s, A6 ön koşulu). Python ayrıldı:
+   yeni `C0 — Ops için Python` (30s), ön koşul A5, C2'nin ön koşulu.
+   A6 ön koşulu `A1–A5` → **`A1–A4, A5`** (Python değil).
+
+3. **A4 ve D1 kaynak durumu 🟡 → 🔴 (temeller kısmı).**
+   `01-Git-Workflow/` ve `05-Kubernetes/` temel içermiyor, ileri
+   workflow/production içeriyor. A4: 8→12s. D1: 18→28s.
+
+4. **Süre tahminleri revize.** Blok toplamları: A 97 · B 36 · C 88 ·
+   D 84 · E 64 · F 48 · Capstone 60 = **~477 saat ≈ 40-48 hafta**.
+   Modül bazlı dağılımı Faz 1'de netleştir. 300 saat kabul edilmiyor.
+
+5. **A6'ya kırık lab eklendi: K00** — "systemd servisi ayağa
+   kalkmıyor" (port çakışması / yanlış path / izin). K8s bilgisi
+   gerektirmez, debugging sezgisi burada başlar.
+
+6. **K02 zorunlu** (opsiyonel değil). Container hataları yeni
+   başlayanın en sık takıldığı yer.
+
+7. **G3 kapısı düzeltilecek.** CKS eşlemesinden `F2` çıkarılacak
+   (ileriye bağımlılık) VEYA G3 Blok F sonrasına alınacak. Faz 6.5'te
+   karara bağla, `Açık kararlar`a yaz.
+
+8. **Capstone'lar spec'e eklenecek:** C1-capstone (Blok C sonu),
+   C2-capstone (Blok D sonu), C3-capstone (Blok E sonu). Her biri
+   ~20s. Faz 1 iskeletinde yer alsın.
+
+9. **Blok F'ye teslim edilebilir egzersiz.** En az F1 (maliyet
+   hesaplama egzersizi) ve F4 (gerçek bir ADR + postmortem yaz,
+   rubrikle değerlendir). 42 saat saf okuma kabul edilmiyor.
+
+**B2 notu:** `Prometheus-Grafana-K8s-Setup.md` K8s tabanlı, B2 ise
+D'den önce. B2'nin "Önce oku" tablosunda kullanılamaz — yalnızca
+`Prometheus-Best-Practices.md`.
