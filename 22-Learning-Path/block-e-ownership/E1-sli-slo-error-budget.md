@@ -33,21 +33,28 @@ E2'deki alerting bu SLO'ların üstüne kurulur.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 4): bir servis için SLI + SLO tanımlandı ve metrikle ölçülüyor — kanıt
-- [ ] TODO (Faz 4): error budget hesabı ve tükenme senaryosu yazılı
-- [ ] TODO (Faz 4): "niçin bu SLI, kullanıcı deneyimiyle bağı ne" (yazılı)
+- [ ] Bir servis için bir SLI seçildi (ör. istek başarı oranı) ve Prometheus'ta ölçülüyor — sorgu/panel çıktısıyla kanıt
+- [ ] Bu SLI için bir SLO (ör. 30 gün %99.9) ve karşılık gelen error budget (dk/ay) yazılı hesaplandı
+- [ ] Error budget tükendiğinde ne değişeceği (yayın durur mu, işe ne öncelik verilir) bir cümleyle yazılı savunuldu
 
 ## 🧪 Kendini test et
-1. TODO (Faz 4)
-2. TODO (Faz 4)
-3. TODO (Faz 4)
+1. `%99.9` aylık bir SLO'nun error budget'ı yaklaşık kaç dakikadır ve bu bütçe neyi "satın alır"?
+2. Neden availability SLI'ı için "sunucu ayakta mı" değil de "kullanıcı isteği başardı mı" ölçülür?
+3. Error budget'ın %80'i ayın 10'unda tükendi. Takım daha hızlı mı yayın yapmalı, yavaş mı — niçin?
 
-<details><summary>Cevaplar</summary>TODO (Faz 4)</details>
+<details><summary>Cevaplar</summary>
+
+1. %99.9 → ayda %0.1 → 30 gün için ~43 dk. Bu bütçe, planlı riski (yayın, deney) bilinçli harcadığın bir paydır; sıfır hedeflemek yerine kalanı gözle harcarsın. Matematik [`11-SRE/SLI-SLO-Error-Budget.md`](../../11-SRE/SLI-SLO-Error-Budget.md)'de.
+2. Çünkü kullanıcı sunucunun ayakta olmasını değil, isteğinin çalışmasını umursar. Sunucu `Running` ama 500 dönüyorsa "sunucu ayakta" SLI'ı sağlıklı der, kullanıcı mutsuzdur — SLI kullanıcı deneyimine bağlanmalı. Pratiğe dökme [`07-Observability/SLO-Engineering.md`](../../07-Observability/SLO-Engineering.md)'de.
+3. Yavaşlamalı. Bütçe bitmek üzereyken risk iştahı düşer: yayın dondurulur, öncelik güvenilirliğe kayar. Bütçe bolsa tersine hızlanılabilir — SLO bir hız↔güvenilirlik pazarlığıdır, his değil.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| SLI hep %100 görünüyor | Yanlış tarafı (health-check) ölçüyorsun | Gerçek kullanıcı isteğinin sonucunu ölç; sentetik prob tek başına yetmez |
+| Error budget hesabı tutmuyor | Pencere/oran karışık (haftalık↔aylık) | Sabit bir pencere seç (ör. 30 gün rolling), oranı ona göre çevir |
+| SLO ekipçe takılmıyor | Hedef keyfi, kullanıcıyla bağı yok | Mevcut performansı ölç, hedefi ona +biraz koy; kullanıcı etkisini yaz |
 
 ## 💼 Portfolyo çıktısı
 Bir servis için yazılı SLI/SLO tanımı + error budget hesabı.

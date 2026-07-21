@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 3 tamam — Blok C+D içerik (sıralayıcı + C0/D1 köprü)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 4 tamam — Blok E içerik (E1–E5) + interview coverage
 
 ## Faz durumu
 
@@ -11,8 +11,8 @@
 | 1 | İskelet | ✅ | 8 rehber + 29 modül iskeleti + 3 capstone. QA exit 0 |
 | 2 | Blok A + B (içerik) | ✅ | **Tamam.** A1–A6 + B1–B3 (9 modül) TR içerik, hepsi >300s, QA exit 0 (0 uyarı) |
 | 3 | Blok C + D | ✅ | **Tamam.** C0–C4 + D1–D5 (10 modül) içerik. C88·D84=172s (plan tutuyor). QA exit 0 (0 uyarı) |
-| 4 | Blok E | ⬜ | **SIRADA.** E1–E5 + chaos/ileri kırık lab. Çıktı kapısı: interview coverage |
-| 5 | Lab'ların tamamlanması | ⬜ | |
+| 4 | Blok E | ✅ | **Tamam.** E1–E5 (5 modül) içerik. E toplam=64s (revizyon4 planı tutuyor). QA exit 0 (0 uyarı). `INTERVIEW-COVERAGE.md` yazıldı: 15/15 mid-level soru A–E ile eşleşiyor |
+| 5 | Lab'ların tamamlanması | ⬜ | **SIRADA.** starter/solution/verify.sh/setup.sh/hints. L01–L20 + K00–K09. `bash -n` sözdizimi |
 | 6 | Değerlendirme | ⬜ | STAGE-EXAM, PLACEMENT kontrol testleri, capstone rubrikleri |
 | 6.5 | Sertifika katmanı | ⬜ | G3'te F2→CKS bağımlılığı burada çözülecek (revizyon 7) |
 | 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
@@ -21,28 +21,33 @@
 
 ## Sıradaki adım
 
-**Faz 4'e başla — Blok E içerik.** Faz 3 (C0–C4 + D1–D5) tamamen bitti, QA exit 0.
-Blok E iskeletleri hazır (`block-e-ownership/`), TODO gövdeleri dolacak. Modüller
-(hepsi 🟢 VAR — Faz 3 sıralayıcı deseni, kısa tut):
-**E1(SLI/SLO/error-budget) → E2(alerting+on-call) → E3(incident+postmortem) →
-E4(veritabanı production — özellikle restore) → E5(chaos/ileri kırık lab).**
+**Faz 5'e başla — Lab'ların tamamlanması.** Faz 4 (E1–E5) bitti, QA exit 0.
+Şu ana kadar **modüller lab'ları kod-span olarak referans veriyor** (markdown link değil);
+`labs/build/L##/` ve `labs/broken/K##/` dizinleri **henüz yok** — Faz 5'te doğacaklar.
 
-> ⚠️ **Faz 4 = Faz 3 deseni.** Blok E tümü 🟢 VAR (sıralayıcı). Yeni açıklayıcı içerik
-> **minimum**; gövde "Önce oku" → mevcut deep-dive (11-SRE, 07-Observability, 08-Security,
-> 10-Databases-Production) + kabul kriteri + kırık lab kod-span. **>220 satır = qa UYARISI
-> → kısa tut.** Her modülün "Önce oku"da ≥1 mevcut repo dosyası. Kaynak: `MODULE-SPEC.md`.
+Yapılacak (BUILD-PROMPT §7 anatomisi):
+- **İnşa lab'ları L01–L20:** `README.md` (görev+adım+kabul+ipucu) · `starter/` · `solution/`
+  ("önce kendin dene" uyarısı) · `verify.sh` (mekanik doğrulama).
+- **Kırık lab'lar K00–K09:** `README.md` (SADECE belirti) · `setup.sh` (bilerek bozuk kurar,
+  kind/docker-compose) · `hints/` (hint-1/2/3 kademeli) · `solution.md` (kök sebep + **teşhis
+  akışı** önce) · `verify.sh`. **qa.py kırık lab için 4 zorunlu dosya arar:** README+setup.sh+
+  solution.md+verify.sh (`check_labs`, qa.py:251). Eksikse ERROR.
+- **Tüm `.sh` dosyaları `bash -n` sözdizimi kontrolünden geçmeli** (qa.py:244). Bağımlılıklar
+  README'de listeli.
+- Modüllerdeki lab kod-span'lerini (`labs/build/L##/`) gerçek dizin oluşunca markdown link'e
+  çevirmek OPSİYONEL — qa link denetimi yalnız markdown linkleri kontrol eder, kod-span'i değil.
 
-> 🎯 **Faz 4 çıktı kapısı:** `18-Career/DevOps-Interview-Questions.md` içindeki her
-> mid-seviye soru en az bir A–E modülüyle eşleşiyor. Eşleşmeyen → ya modül ekle ya soruyu
-> F'ye taşı. Tabloyu `_planning/INTERVIEW-COVERAGE.md`'ye yaz.
+> ⚠️ **Faz 5 kesinlikle tek tura sığmaz** (20 build + 10 kırık lab = 30 dizin, her biri
+> 3–5 dosya). §14.1.3: nereye kadar geldiğini **lab no seviyesinde** buraya yaz
+> (ör. "L01–L06 + K00 yazıldı, L07'den devam"), commit, dur. Blok sırasını takip et:
+> önce A/B lab'ları (L01–L08 + K01), sonra C/D (L09–L17 + K02–K06), sonra E (L18–L20 + K07–K09).
 
-> 🧵 **Güvenlik ipliği (Blok E):** E4 restore (test edilmemiş backup ≠ backup) + veri
-> güvenliği; E2 alerting'te gürültü/eskalasyon disiplini; E3 blameless postmortem.
-> Kırık lab: E3→K07 (incident sim), E4→K08 (restore başarısız), E5→K09 (chaos/game day).
+> 🧵 **Güvenlik ipliği (lab'larda):** kırık lab bozukluk türleri gerçekçi olmalı —
+> RBAC forbidden (K04), NetworkPolicy bağlantı kesme, image tarama fail (D4 hattı),
+> secret sızma. K08 restore başarısız + backup erişim; K09 chaos blast-radius.
 
-> ⚠️ Faz 4 muhtemelen tek tura sığmaz (§14.1.3). Sığmazsa: nereye kadar geldiğini
-> **modül adı seviyesinde** buraya yaz (ör. "E1–E3 yazıldı, E4'ten devam"), commit, dur.
-> Lab/kırık-lab dizinleri (K07–K09) Faz 5'te doğar; modülde kod-span referans yeter.
+> 📌 **B2 notu hâlâ geçerli:** `Prometheus-Grafana-K8s-Setup.md` K8s tabanlı → B lab'ında
+> (L08) kullanma; yerel docker-compose Prometheus yeter. Kaynak: `MODULE-SPEC.md`.
 
 ## Açık kararlar
 
@@ -98,32 +103,34 @@ E4(veritabanı production — özellikle restore) → E5(chaos/ileri kırık lab
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 3'ü TAMAMLADI — Blok C + D içerik)
+## Bu oturumda yapılanlar (Faz 4'ü TAMAMLADI — Blok E içerik)
 
-Giriş durumu: Faz 2 kapalı, C/D iskeletleri hazır ama 10 modülde TODO. Bu tur **Faz 3'ü
-kapattı** — 10 modül gövdesi dolduruldu (Kabul kriterleri + Kendini test et Q&A +
-Takıldıysan tablosu; C0'a öğretici gövde, D1'e kavram köprüsü):
+Giriş durumu: Faz 3 kapalı, E iskeletleri hazır ama 5 modülde TODO. Bu tur **Faz 4'ü
+kapattı** — 5 modül gövdesi dolduruldu (Kabul kriterleri doğrulanabilir + Kendini test et
+Q&A + Takıldıysan tablosu). Hepsi 🟢 VAR (sıralayıcı) → Faz 3 deseni, kısa tutuldu:
 
-- **C0 ops-python** 59→**148s** (tek 🔴 EKSİK modül — Python repoda yok): öğretici gövde
-  yazıldı — Bash↔Python sınırı tablosu, `argparse` CLI + çıkış kodu, `urllib`/JSON + timeout,
-  `except: pass` tuzağı, venv/requirements. "Önce oku" A5 + STUDY-METHOD'a bağlandı
-  (placeholder satır kaldırıldı). Level=C olduğu için qa sıralayıcı sayar ama 148<220 → **uyarı yok**.
-- **C1–C4** (sıralayıcı, 69–74s): container/CI/terraform/bulut — kabul kriterleri
-  doğrulanabilir hale getirildi (`docker images` önce/sonra, `:latest` yasağı, state lock/drift,
-  bütçe alarmı test), 3 test sorusu + cevap, 4 satır takıldıysan tablosu. "Önce oku" mevcut.
-- **D1 k8s-temel** (🟡 KISMİ, 66→**85s**): `## 🌉 Köprü` eklendi — Pod→Deployment→Service→
-  Ingress kavram girişi (05-Kubernetes bunu varsayar, öğretmez); placeholder "Önce oku" satırı
-  kaldırıldı. **RBAC + NetworkPolicy ilk günden**: köprü + hardening linki + kabul kriteri +
-  test Q3 + takıldıysan (forbidden, NetworkPolicy bağlantı kesme) hepsinde içeride.
-- **D2–D5** (sıralayıcı, 69–74s): production/secret/supply-chain/gitops. **D4 ayrı güvenlik
-  dersi DEĞİL** — "C2 pipeline'ının devamı" çerçevesi metinde açık (tarama build'i kırıyor,
-  cosign verify, admission policy). D3 secret + leak tarama; D5 drift/OutOfSync + D3'e geri dönüş.
-- **qa.py false-positive düzeltildi:** D4'te "garanti eder/etmez" → qa marketing regex'i
-  `garanti ed`'e takılıyordu (ERROR). Anlamı bozmadan "kanıtlar/kanıtlamaz" yapıldı (§15.4:
-  kontrol yanlış değil, ifade değişti — içerik korundu).
-- **QA:** `python3 .local/qa.py` → **exit 0, 0 UYARI**. Kalan 10 TODO = E1–E5 + F1–F5 (Faz 4/7).
-- **Otonom denetimler (§14.3):** (1) tekrar: 3 özgün cümle (`Bash'in tıkandığı yeri açan`,
-  `çalışıyor ama erişilemiyor`, imza cümlesi) LP dışında `grep` → **yok**; qa duplication da temiz.
-  (2) pazarlama regex → **0 hit**. (3) süre: Blok C=88 (30+14+16+16+12), Blok D=84
-  (28+16+12+14+14), toplam **172s** — revizyon 4 planı (C88·D84) birebir tutuyor; D≥60 alarmı geçti.
-  **Exit gate:** tüm C/D ön koşulları geriye işaret ediyor (döngü yok, qa doğruladı).
+- **E1 SLI/SLO/error-budget** (67s): SLI seçimi + SLO/error-budget hesabı kabul kriterine
+  bağlandı (`%99.9→~43dk/ay`); 3 test Q&A (budget matematiği, health-check yerine kullanıcı
+  isteği, budget tükenince yavaşla). "Önce oku" 11-SRE + 07-Observability (mevcut).
+- **E2 alerting+on-call** (68s): SLO'ya bağlı alarm + gürültü örneği + page/ticket/log
+  sınıflama + **eskalasyon** kabul kriteri. Güvenlik ipliği: eskalasyon zinciri + sessize
+  alma denetim kaydı. cause-based↔symptom-based test.
+- **E3 incident+postmortem** (70s): UTC timeline + blameless postmortem + izlenebilir eylem
+  maddesi (sahip+tarih) + `K07 verify.sh`. "İnsan hatası kök sebep değil" + "niçin daha erken
+  yakalanmadı" test. Kırık lab K07 kod-span.
+- **E4 veritabanı-restore** (73s): temiz ortama restore + bütünlük sorgusu + RTO/RPO +
+  **backup erişim/at-rest şifreleme** kabul kriteri + `K08 verify.sh`. Güvenlik ipliği açık
+  (backup = tüm veri, en zayıf kopya). RPO↔RTO maliyet + açık bucket testi.
+- **E5 chaos** (71s): sınırlı blast radius + hipotez→deney→sonuç raporu + zayıflık→eylem/alarm
+  + `K09 verify.sh`. "Deneyden önce hipotez" + "blast radius" + "bozulmadan geçen game day
+  başarısız mı" test. Kırık lab K09 kod-span.
+- **`_planning/INTERVIEW-COVERAGE.md` yazıldı (Faz 4 çıktı kapısı):** `18-Career/DevOps-
+  Interview-Questions.md` mid-level soruları (11–25) → A–E modül tablosu. **15/15 eşleşiyor,
+  eşleşmeyen yok → F'ye taşınan soru yok, eklenen modül yok. Kapı geçildi.**
+- **QA:** `python3 .local/qa.py` → **exit 0, 0 UYARI**. Kalan 5 TODO = F1–F5 (Faz 7).
+- **Otonom denetimler (§14.3):** (1) tekrar: 3 özgün cümle (`test edilmemiş backup yalnızca
+  bir umuttur`, `Hipotezsiz deney kurcalamadır`, `sistem X'e izin verdi`) LP dışında `grep` →
+  **yok**; qa duplication temiz. (2) pazarlama regex → E modüllerinde **0 hit** (STATE ve D2
+  "garanti ettiği" qa'nın `garanti ed` desenine takılmıyor, ayrıca _planning qa'dan hariç).
+  (3) süre: Blok E=64 (12+12+14+14+12) — revizyon 4 planı (E64) birebir; E≥50 alarmı geçti.
+  **Exit gate:** tüm E ön koşulları geriye işaret ediyor (döngü yok, qa doğruladı).

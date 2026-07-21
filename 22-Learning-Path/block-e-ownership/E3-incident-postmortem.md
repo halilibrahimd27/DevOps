@@ -34,21 +34,30 @@ simülasyonu; birden fazla sinyal, gerçek zaman baskısı. Teşhis + iletişim 
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 4): K07 incident simülasyonu bir zaman çizelgesiyle yönetildi
-- [ ] TODO (Faz 4): suçlamasız bir postmortem yazıldı (kök sebep + eylem maddeleri)
-- [ ] TODO (Faz 4): "hangi eylem maddesi tekrarı önler" (yazılı, izlenebilir)
+- [ ] K07 çok-arızalı incident simülasyonu UTC dakika hassasiyetli bir zaman çizelgesiyle yönetildi — yazılı timeline
+- [ ] Suçlamasız bir postmortem yazıldı: sayısal etki + kök sebep + "niçin daha erken yakalanmadı"
+- [ ] Postmortem'den en az bir izlenebilir eylem maddesi (sahip + son tarih) çıkarıldı
+- [ ] `bash labs/broken/K07-incident-sim/verify.sh` çözümden sonra sıfır hatayla geçiyor
 
 ## 🧪 Kendini test et
-1. TODO (Faz 4)
-2. TODO (Faz 4)
-3. TODO (Faz 4)
+1. Incident'te ilk atanması gereken rol nedir ve niçin teknik düzeltmeden önce gelir?
+2. "İnsan hatası" niçin bir kök sebep değildir?
+3. Postmortem'de daha değerli bölüm hangisi: kök sebep mi, "niçin daha erken yakalanmadı" mı?
 
-<details><summary>Cevaplar</summary>TODO (Faz 4)</details>
+<details><summary>Cevaplar</summary>
+
+1. Incident Commander (koordinasyon + iletişim). Çünkü paralel çalışan kişiler tek karar noktası ve net iletişim olmadan birbirini ezer; düzeltme kaosa döner. Rol ayrımı [`11-SRE/Incident-Response.md`](../../11-SRE/Incident-Response.md)'de.
+2. Çünkü sistemi bir insanın yanlış yapmasına izin verecek şekilde tasarladıysan hata kaçınılmazdı — kök sebep o tasarımdır (eksik guard-rail, kırılgan süreç). "İnsan hatası" araştırmayı durdurur, sistemi değiştirmez.
+3. İkincisi. Kök sebep bu olayı açıklar; "niçin daha erken yakalanmadı" (eksik alarm/test/inceleme) tekrarı önleyen katmandır — asıl öğrenme oradadır. Şablon [`00-Culture/Blameless-Postmortem-Template.md`](../../00-Culture/Blameless-Postmortem-Template.md)'de.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Herkes aynı anda düzeltmeye çalışıyor | Koordinasyon rolü yok | Bir Incident Commander ata; roller ve tek karar noktası netleşsin |
+| Timeline sonradan çıkarılamıyor | Anlık kayıt tutulmadı | Olay anında zaman damgalı not tut (bir chat kanalı yeter) |
+| Postmortem kişiyi suçluyor | Blameless çerçeve yok | Dili sisteme çevir: "X kişisi hata yaptı" değil "sistem X'e izin verdi" |
+| Eylem maddeleri takip edilmiyor | Sahip/tarih yok | Her maddeye sahip + son tarih + izleneceği yeri ekle |
 
 ## 💼 Portfolyo çıktısı
 Yazılmış bir blameless postmortem — F4'te yazma örneği olarak da kullanılır.

@@ -34,21 +34,30 @@ game day; blast radius sınırlı, gözlem ve öğrenme merkezde.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 4): sınırlı blast radius ile bir arıza enjekte edildi ve gözlemlendi
-- [ ] TODO (Faz 4): game day bir hipotez → sonuç raporuyla belgelendi
-- [ ] TODO (Faz 4): bulunan zayıflık için bir eylem maddesi/alarm oluşturuldu
+- [ ] Sınırlı blast radius ile bir arıza (ör. bir Pod/bağımlılık düşürme) enjekte edildi ve etkisi gözlemlendi — metrik/log kanıtı
+- [ ] Game day bir hipotez → deney → sonuç raporuyla yazıldı
+- [ ] Bulunan en az bir zayıflık bir eylem maddesine ve (gerekliyse) yeni bir alarma çevrildi
+- [ ] `bash labs/broken/K09-chaos-gameday/verify.sh` çözümden sonra sıfır hatayla geçiyor
 
 ## 🧪 Kendini test et
-1. TODO (Faz 4)
-2. TODO (Faz 4)
-3. TODO (Faz 4)
+1. Chaos deneyine başlamadan önce yazılması gereken tek şey nedir?
+2. "Blast radius'u sınırlamak" pratikte ne demek?
+3. Hiçbir şey bozulmadan geçen bir game day başarısız mıdır?
 
-<details><summary>Cevaplar</summary>TODO (Faz 4)</details>
+<details><summary>Cevaplar</summary>
+
+1. Bir hipotez: "X düşerse sistem Y şekilde bozulmadan ayakta kalır." Hipotezsiz deney kurcalamadır; ölçülebilir bir beklenti olmadan sonucu yorumlayamazsın. İlkeler [`11-SRE/Chaos-Engineering.md`](../../11-SRE/Chaos-Engineering.md)'de.
+2. Deneyi en küçük güvenli kapsama hapsetmek: tek replica, tek namespace, düşük trafik penceresi ve hazır bir geri-alma. Amaç öğrenmek, gerçek kullanıcıyı vurmak değil.
+3. Hayır — hipotezini doğruladıysan (sistem beklendiği gibi dayandı) bu değerli bir kanıttır. Ama hiç zayıflık çıkmıyorsa deney fazla küçük olabilir; kapsamı kontrollüce büyüt. Kapasite bağı [`11-SRE/Capacity-Planning.md`](../../11-SRE/Capacity-Planning.md)'de.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Deney gerçek kullanıcıyı vurdu | Blast radius sınırlanmadı | Kapsamı küçült (tek replica/namespace), düşük trafikte ve geri-alma hazırken yap |
+| Sonuç yorumlanamıyor | Hipotez yoktu | Önce "beklentim şu" yaz, sonra enjekte et; sapmayı ölç |
+| Bulgu kayboldu | Rapor/eylem maddesi yok | Game day'i hipotez→sonuç formatında yaz; zayıflığı eylem/alarma bağla |
+| Aynı arıza tekrar sürpriz oldu | Öğrenme alarma dönüşmedi | Bulunan zayıflık için E2 tarzı bir alarm ekle |
 
 ## 💼 Portfolyo çıktısı
 Bir game day raporu (hipotez, deney, bulgu, eylem) — olgun bir sahiplik kanıtı.
