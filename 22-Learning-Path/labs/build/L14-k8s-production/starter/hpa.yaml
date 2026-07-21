@@ -1,0 +1,18 @@
+# hpa.yaml — SEN doldur. CPU %50 hedef, min 2 max 5.
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: lab-app
+  namespace: lab
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: lab-app
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        # TODO: target.type Utilization, averageUtilization 50

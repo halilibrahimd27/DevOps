@@ -1,0 +1,10 @@
+# pdb.yaml (referans) — drain'de en az 1 replika ayakta.
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: lab-app
+  namespace: lab
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: { app: lab-app }

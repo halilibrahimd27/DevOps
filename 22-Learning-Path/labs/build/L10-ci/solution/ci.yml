@@ -1,0 +1,30 @@
+# .github/workflows/ci.yml (referans) — aynı akışın GitHub Actions hâli.
+# Sürümler örnekte placeholder; gerçek repoda SHA-pin kullan (P0 fix #4 deseni).
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@<VERSION>
+
+      - name: test
+        run: |
+          pip install pytest
+          pytest -q
+
+      # SHA'yı tag olarak kullan — :latest DEĞİL
+      - name: build
+        run: |
+          TAG="${GITHUB_SHA::7}"
+          docker build -t "ghcr.io/<OWNER>/lab-app:${TAG}" .
+
+      - name: login + push
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          TAG="${GITHUB_SHA::7}"
+          docker push "ghcr.io/<OWNER>/lab-app:${TAG}"

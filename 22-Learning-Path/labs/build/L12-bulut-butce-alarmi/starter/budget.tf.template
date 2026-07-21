@@ -1,0 +1,19 @@
+# budget.tf — SEN doldur. Kopyala: cp budget.tf.template budget.tf
+# BU İLK ADIM. Kaynak açmadan önce koruma.
+
+# TODO: aylık maliyet bütçesi + %80 eşiğinde e-posta bildirimi
+# resource "aws_budgets_budget" "monthly" {
+#   name         = "lab-monthly-guardrail"
+#   budget_type  = "COST"
+#   limit_amount = "5"
+#   limit_unit   = "USD"
+#   time_unit    = "MONTHLY"
+#
+#   notification {
+#     comparison_operator        = "GREATER_THAN"
+#     threshold                  = 80
+#     threshold_type             = "PERCENTAGE"
+#     notification_type          = "ACTUAL"
+#     subscriber_email_addresses = ["<YOUR_EMAIL>"]   # gerçek adresi repoya YAZMA
+#   }
+# }

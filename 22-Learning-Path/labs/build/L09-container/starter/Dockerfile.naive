@@ -1,0 +1,15 @@
+# Dockerfile.naive — BİLEREK KÖTÜ (tek stage, şişkin). Referans "önce".
+# Build araçlarını final image'a taşır; root çalışır; cache-dostu değil.
+FROM python:3.12
+
+WORKDIR /app
+# Kötü: build araçları final image'da kalıyor (yüzlerce MB)
+RUN apt-get update && apt-get install -y build-essential
+# Kötü: önce tüm kodu kopyalıyor → her kod değişiminde pip yeniden çalışır
+COPY . .
+RUN pip install -r requirements.txt
+
+ENV APP_PORT=8000
+EXPOSE 8000
+# Kötü: root çalışıyor
+CMD ["python", "app.py"]

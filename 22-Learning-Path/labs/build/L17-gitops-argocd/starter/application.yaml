@@ -1,0 +1,17 @@
+# application.yaml — SEN doldur. ArgoCD'ye "şu Git yolunu bu cluster'a uygula" der.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lab-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    # TODO: repoURL: <GIT_REPO_URL>   (kendi depon)
+    # TODO: path: apps/lab            (manifestlerin yolu)
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lab
+  # TODO: syncPolicy.automated (selfHeal: true, prune: true)
+  #       + syncOptions: CreateNamespace=true

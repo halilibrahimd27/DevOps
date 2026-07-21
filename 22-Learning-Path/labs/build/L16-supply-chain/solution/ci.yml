@@ -1,0 +1,30 @@
+# .github/workflows/ci.yml (referans) — L10 CI'ına supply-chain halkaları.
+# Sürümler placeholder; gerçek repoda SHA-pin (P0 fix #4 deseni).
+name: ci-supply-chain
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write        # cosign keyless (OIDC) için
+    steps:
+      - uses: actions/checkout@<VERSION>
+
+      - name: build
+        run: |
+          TAG="${GITHUB_SHA::7}"
+          docker build -t "ghcr.io/<OWNER>/lab-app:${TAG}" .
+
+      - name: scan (kapı)
+        uses: aquasecurity/trivy-action@<VERSION>
+        with:
+          image-ref: "ghcr.io/<OWNER>/lab-app:${{ github.sha }}"
+          severity: "HIGH,CRITICAL"
+          exit-code: "1"        # açık varsa iş kırılır
+
+      - name: sign (keyless)
+        run: |
+          TAG="${GITHUB_SHA::7}"
+          cosign sign --yes "ghcr.io/<OWNER>/lab-app:${TAG}"

@@ -1,0 +1,25 @@
+# deployment.yaml — SEN düzelt. Şu an sırrı DÜZ METİN almaya çalışıyor (kötü).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-app
+  namespace: lab
+  labels: { app: lab-app }
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: lab-app }
+  template:
+    metadata:
+      labels: { app: lab-app }
+    spec:
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.27-alpine
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_PASSWORD
+              # KÖTÜ: value düz metin → Git'e sızar.
+              # TODO: bunu secretKeyRef (name: app-db, key: password) ile değiştir.
+              value: "<DB_PASSWORD>"

@@ -1,0 +1,15 @@
+# rbac.yaml — SEN doldur. EN AZ YETKİ: sadece pod okuma.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: lab-pod-reader
+  namespace: lab
+rules:
+  # TODO: resources ["pods"], verbs ["get","list","watch"] — delete YOK
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: lab-pod-reader-bind
+  namespace: lab
+# TODO: roleRef → lab-pod-reader ; subjects → ServiceAccount lab-sa

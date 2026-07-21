@@ -1,0 +1,23 @@
+# deployment.yaml — SEN doldur (D1 üstüne production ayarları).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-app
+  namespace: lab
+  labels: { app: lab-app }
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: lab-app }
+  template:
+    metadata:
+      labels: { app: lab-app }
+    spec:
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.27-alpine
+          ports:
+            - containerPort: 8080
+          # TODO: resources.requests + resources.limits (cpu/memory)
+          # TODO: readinessProbe → httpGet path / port 8080
+          # TODO: livenessProbe  → httpGet path / port 8080

@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 5 kısmi — Blok A+B lab'ları (L01–L08 + K00–K01)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 5 kısmi — Blok C+D lab'ları (L09–L17 + K02–K06)
 
 ## Faz durumu
 
@@ -12,7 +12,7 @@
 | 2 | Blok A + B (içerik) | ✅ | **Tamam.** A1–A6 + B1–B3 (9 modül) TR içerik, hepsi >300s, QA exit 0 (0 uyarı) |
 | 3 | Blok C + D | ✅ | **Tamam.** C0–C4 + D1–D5 (10 modül) içerik. C88·D84=172s (plan tutuyor). QA exit 0 (0 uyarı) |
 | 4 | Blok E | ✅ | **Tamam.** E1–E5 (5 modül) içerik. E toplam=64s (revizyon4 planı tutuyor). QA exit 0 (0 uyarı). `INTERVIEW-COVERAGE.md` yazıldı: 15/15 mid-level soru A–E ile eşleşiyor |
-| 5 | Lab'ların tamamlanması | 🟡 | **DEVAM.** Blok A+B lab'ları yazıldı: L01–L08 (build) + K00, K01 (kırık). 18 script `bash -n` temiz, QA exit 0. **Kalan:** L09–L20 + K02–K09 |
+| 5 | Lab'ların tamamlanması | 🟡 | **DEVAM.** Blok A+B (L01–L08+K00–K01) **ve** Blok C+D (L09–L17+K02–K06) lab'ları yazıldı. 39 script `bash -n` temiz, kırık lab 4-dosya tam, QA exit 0 (0 uyarı). **Kalan (yalnız Blok E):** L18–L20 + K07–K09 |
 | 6 | Değerlendirme | ⬜ | STAGE-EXAM, PLACEMENT kontrol testleri, capstone rubrikleri |
 | 6.5 | Sertifika katmanı | ⬜ | G3'te F2→CKS bağımlılığı burada çözülecek (revizyon 7) |
 | 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
@@ -21,20 +21,25 @@
 
 ## Sıradaki adım
 
-**Faz 5 DEVAM — `L09-container`'dan başla.** Blok A+B lab'ları bu tur bitti:
-`labs/build/L01–L08` + `labs/broken/K00, K01` + `labs/README.md`. QA exit 0.
+**Faz 5 DEVAM — `L18-sli-slo`'dan başla.** Blok C+D lab'ları bu tur bitti:
+`labs/build/L09–L17` + `labs/broken/K02–K06`. QA exit 0. Blok A+B önceki turda bitmişti.
 
-**Kalan iş (blok sırasıyla):**
-- **Blok C/D build:** L09-container · L10-ci · L11-terraform (yerel: LocalStack) ·
-  L12-bulut-butce-alarmi (**ilk adım bütçe alarmı**) · L13-k8s-temel (kind/k3s) ·
-  L14-k8s-production · L15-secret-yonetimi · L16-supply-chain (C2 pipeline üstüne) ·
-  L17-gitops-argocd (kind+ArgoCD).
-- **Blok C/D kırık:** K02-container-hatasi (image tag/port/env) · K03-terraform-state
-  (state lock/drift) · K04-imagepullbackoff-rbac (**RBAC forbidden / NetworkPolicy** güvenlik
-  ipliği) · K05-oomkilled-probe · K06-argocd-out-of-sync.
-- **Blok E build:** L18-sli-slo · L19-alerting · L20-veritabani-restore.
-- **Blok E kırık:** K07-incident-sim (çok-arızalı) · K08-restore-basarisiz (**backup erişim**) ·
-  K09-chaos-gameday (blast radius sınırlı).
+**Kalan iş (yalnız Blok E — sonra Faz 5 → ✅):**
+- **Blok E build:** L18-sli-slo (SLI/SLO/error budget hesabı; yerel Prometheus L08
+  desenini kullan) · L19-alerting (Alertmanager kuralı + on-call disiplini) ·
+  L20-veritabani-restore (**restore** — test edilmemiş backup backup değildir; yerel
+  postgres dump/restore).
+- **Blok E kırık:** K07-incident-sim (**çok-arızalı** incident; K04/K05 deseninde birden
+  fazla katman) · K08-restore-basarisiz (**backup erişim/bozuk dump** — restore fail) ·
+  K09-chaos-gameday (blast radius sınırlı; tek namespace/tek servis, kind).
+- Bittiğinde: `check_labs` + `bash -n` temizken ve modül→lab pointer'ları (aşağıya bak)
+  güncellendiğinde **Faz 5 → ✅**.
+
+> 📌 **Modül→lab pointer'ları henüz güncellenmedi (bilinçli).** C/D modüllerindeki
+> `## 🔨 Lab` satırları hâlâ "👉 `labs/build/L09-...` — Faz 5'te oluşturulacak." diyor;
+> dizinler artık **var**. Faz 5 kapanışında (E lab'ları bitince) bu 14 pointer'ı canlı
+> markdown link'e çevir ve "Faz 5'te oluşturulacak" ibaresini kaldır. Alternatif: Faz 8
+> entegrasyonunda. QA'yı kırmıyor (code-span), o yüzden acil değil.
 
 **Yerleşik desen (A+B lab'larında kanıtlandı, aynen sürdür):**
 - Build lab = `README.md` (görev/adım/kabul/ipucu) + `starter/<dosya>` + `solution/<dosya>` +
@@ -47,9 +52,9 @@
 - Modül→lab linkleri: `../../../block-x/<ID>-...md` (labs/build/L##/'den 3 seviye yukarı).
   Lab→kırık lab linki: `../../broken/K##-.../`.
 
-> ⚠️ Faz 5 hâlâ tek tura sığmaz. Sonraki tur bir sonraki blok chunk'ını yaz
-> (öneri: C/D build+kırık = L09–L17 + K02–K06), STATE'i güncelle, commit, dur.
-> Tüm build+kırık bitince `check_labs` + `bash -n` temizken Faz 5 → ✅.
+> ⚠️ Faz 5'in son chunk'ı kaldı: **Blok E lab'ları (L18–L20 + K07–K09)**. Sonraki tur
+> bunları yaz, modül→lab pointer'larını güncelle, STATE'i güncelle, commit, **Faz 5 → ✅**,
+> dur. (Blok E tek chunk'a sığar: 3 build + 3 kırık.)
 
 > 📌 **B2/L08 kararı uygulandı:** L08 yerel **docker-compose** Prometheus + node-exporter
 > kullandı (K8s Prometheus-Grafana-K8s-Setup.md'ye dokunulmadı). C/D lab'larında da yerel-önce:
@@ -104,7 +109,35 @@
   recording-rules deep-dive'da kaldı). Üç özgün cümle repoda `grep` ile aranıp
   **bulunmadı**.
 
-### Faz 5'te alınanlar (bu tur)
+### Faz 5'te alınanlar (bu tur — Blok C+D lab'ları)
+- **Yerel-önce her lab'da korundu.** C1/C2 docker + yerel `registry:2`; C3/C4 **LocalStack**
+  (bulutsuz, `test`/`test` sahte kimlik — leak guard'ın `{12,}` uzunluk eşiğinin altında,
+  gerçek credential değil); D1–D5 **kind** + guard'lı `kubectl`. Hiçbir lab gerçek para/bulut
+  şart koşmaz (C4 bütçe alarmı hariç, o da `validate/plan` ile yerelde doğrulanır).
+- **verify.sh iki mod (A/B deseni sürdü):** mekanik artefakt denetimi (report.txt/manifest
+  grep) **+** guard'lı canlı kontrol (docker/kubectl/terraform varsa çalışır, yoksa `⚠️` ile
+  atlanır). Böylece hepsi CI'da `bash -n` ve öğrenci makinesinde anlamlı.
+- **Lab image sürümleri pinli (placeholder değil):** `postgres:16-alpine`,
+  `nginxinc/nginx-unprivileged:1.27-alpine`, `python:3.12-slim`, `registry:2`,
+  `busybox:1.36`. Çalışması gereken lab artefaktı reprodüksiyon için gerçek tag ister
+  (`:latest` yasak — P0 #4 deseni). GitHub Actions örneklerinde (`ci.yml`) sürümler
+  `@<VERSION>` placeholder (CLAUDE.md kuralı; gerçek repoda SHA-pin notu düşüldü).
+- **Kırık lab kök sebepleri ayrıştırıldı (çakışma yok):** K02=port eşleme (host:container
+  sağ taraf yanlış) · K03=**bayat state lock** (`.terraform.tfstate.lock.info` → force-unlock;
+  gap #8) · K04=**çok-arızalı: ImagePullBackOff + izinsiz default-deny NetworkPolicy**
+  (güvenlik ipliği) · K05=**çok-arızalı: OOMKilled (32Mi limit) + yanlış probe portu (9999)** ·
+  K06=**drift + auto-sync kapalı** (L17 önkoşullu; `syncPolicy.automated` geri açılır).
+  K04/K05 D-bloğu için bilerek çok-arızalı (BUILD-PROMPT §7.2 "D ve E'de birden fazla").
+- **K06 L17 önkoşullu:** ArgoCD+Git gerçek runtime gerektirdiği için K06 setup, L17'nin
+  `argocd/lab-app` Application'ını arar; yoksa "L17'yi tamamla" der (guard). Mekanik QA
+  (4 dosya + bash -n) bundan bağımsız geçer. Makul varsayım; dependency zinciri D5-içi.
+- **"garanti ed" qa marketing regex çakışması düzeltildi:** L10 README "neyi garanti eder"
+  → "neyi kanıtlar". qa.py'nin `garanti ed` deseni bunu yakalıyordu; teknik "garanti"
+  (K8s requests, L14) noun kullanımı desende yok, dokunulmadı. §14.3(2) LP `.md` taramasında
+  0 hit.
+- **Modül→lab pointer'ları bu tur GÜNCELLENMEDİ (bilinçli):** bkz. Sıradaki adım notu.
+
+### Faz 5'te alınanlar (önceki tur — Blok A+B lab'ları)
 - **Lab image sürümleri pinlendi (placeholder değil).** L08 compose'da `prom/prometheus:v2.53.0`
   ve `prom/node-exporter:v1.8.2` **gerçek sürümle** pinlendi. CLAUDE.md'nin `<VERSION>` kuralı
   *dokümantasyon snippet'leri* içindir; **çalışması gereken lab artefaktı** reprodüksiyon için
@@ -136,45 +169,56 @@
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 5 KISMİ — Blok A+B lab'ları)
+## Bu oturumda yapılanlar (Faz 5 KISMİ — Blok C+D lab'ları)
 
-Giriş durumu: Faz 4 kapalı, `labs/` dizini **yoktu**; modüller lab'ları kod-span olarak
-referans veriyordu. Bu tur **Blok A ve B'nin tüm lab'ları** sıfırdan yazıldı (BUILD-PROMPT
-§7 anatomisi). Otonom sözleşme §14.1.2: bir turda en fazla bir faz; Faz 5 tek tura sığmadığı
-için A+B chunk yazıldı, kalan lab no seviyesinde `Sıradaki adım`a not düşüldü.
+Giriş durumu: Faz 5'in A+B chunk'ı (L01–L08 + K00–K01) önceki turda bitmişti. Bu tur
+**Blok C ve D'nin tüm lab'ları** yazıldı (BUILD-PROMPT §7 anatomisi). Otonom sözleşme
+§14.1.3: Faz 5 tek tura sığmadığı için C+D chunk yazıldı, kalan (yalnız Blok E) lab no
+seviyesinde `Sıradaki adım`a not düşüldü.
 
-**İnşa lab'ları (8):**
-- **L01-linux-temeli** (A1): process bul/incele + 750/640 izin + servis kullanıcısı.
-  starter playground'u bilerek dağınık kurar; verify izinleri + report.txt'i denetler.
-- **L02-ag-tcp-ip** (A2): 127.0.0.1:8080 dinlet + `ss` kanıtı + **refused↔timeout** ayrımı.
-- **L03-dns-http-tls** (A3): openssl kendinden-imzalı yerel HTTPS; DNS/HTTP/TLS katmanlarını
-  tek tek yürü, DNS ve TLS'i **ayrı** boz. `lab.example` (RFC 2606).
-- **L04-git** (A4): sıfırdan repo, bilerek conflict + çöz, merge↔rebase grafik farkı.
-- **L05-bash** (A5): `set -euo pipefail` + 2 argüman doğrulama + log özetleyip rapor yazan
-  + shellcheck-temiz script. verify script'i çalıştırıp çıktısını denetler.
-- **L06-elle-deploy** (A6): **container YOK** elle deploy — app.py (stdlib) + systemd unit +
-  nginx ters vekil + ufw + PostgreSQL + reboot testi + KURULUM.md. En büyük lab; solution/
-  tam referans (unit+nginx.conf+env.example+KURULUM.md).
-- **L07-log-okuma** (B1): app'i 3 şekilde boz, her birini `journalctl` süzgeciyle bul;
-  `leaky.py` sır sızdırır → güvenli hâle getir.
-- **L08-metrik** (B2): yerel docker-compose Prometheus+node-exporter; 2 altın sinyal PromQL;
-  `high_cardinality.py` ile seri patlaması gözlemi (CARD 10→100000).
+**İnşa lab'ları (9) — L09…L17:**
+- **L09-container** (C1): naive tek-stage Dockerfile (build-essential şişkin, "önce") →
+  multi-stage non-root (`--prefix=/install`, "sonra"); `docker compose` app+postgres;
+  katman cache gözlemi. verify: `>=2 FROM + COPY --from=` + `:latest yok` + report boyutları.
+- **L10-ci** (C2): yerel `registry:2`; `pytest → docker build → SHA-tag → push` pipeline
+  (`set -euo pipefail`); GH Actions `ci.yml` ikizi (`@<VERSION>`). verify: test/build/push +
+  `:latest` yasağı + "yeşil neyi kanıtlar".
+- **L11-terraform** (C3): **LocalStack** (`test`/`test`, 4566); `aws_s3_bucket`+`aws_ssm_parameter`;
+  apply→destroy→apply idempotency; state açıklaması.
+- **L12-bulut-butce-alarmi** (C4): **ADIM 1 = bütçe alarmı** (`aws_budgets_budget`+2 bildirim,
+  `<YOUR_EMAIL>`); ADIM 2 = LocalStack S3 aç/kapa; free-tier listesi + VPC/IAM/compute tanımı.
+- **L13-k8s-temel** (D1): kind; Deployment+Service+Ingress **+ en-az-yetki RBAC (delete yok)
+  + default-deny NetworkPolicy + izin kuralı** (güvenlik ipliği ilk gün). verify: 6 kind +
+  Role'de delete olmaması + `auth can-i` kanıtı.
+- **L14-k8s-production** (D2): request/limit + readiness/liveness probe + PDB(minAvailable:1) +
+  HPA(CPU %50, metrics-server). verify: request/limit+2 probe+HPA+PDB.
+- **L15-secret-yonetimi** (D3): `kubectl create secret` (kabuktan) → `secretKeyRef`;
+  base64≠şifreleme kanıtı; gitleaks/`trivy fs` taraması; SealedSecrets/SOPS/ESO yazılı.
+- **L16-supply-chain** (D4): L10 pipeline üstüne **trivy tarama KAPISI** (`--exit-code 1
+  --severity HIGH,CRITICAL`) + SBOM (cyclonedx) + `cosign sign/verify`; `ci.yml` trivy-action
+  `@<VERSION>`. verify: tarama kapısı + cosign + report gerekçe/SBOM.
+- **L17-gitops-argocd** (D5): kind+ArgoCD; `argoproj.io/Application` (repoURL+path+syncPolicy
+  automated/selfHeal); drift→OutOfSync→self-heal geri çekme. NOT-YET'e link (App-of-Apps hayır).
 
-**Kırık lab'lar (2):**
-- **K00-systemd-ayaga-kalkmiyor** (A6): kök sebep = eksik `EnvironmentFile` (systemd
-  ön-hazırlık hatası, app'e hiç ulaşmaz). hints 3 kademe + solution teşhis akışı önce.
-- **K01-kirik-vm** (B3): kök sebep = **port çakışması** (decoy servis 8080'i tutar,
-  `EADDRINUSE`). B3'ün DNS yürüyüşünden kasıtlı farklı. `status→journalctl→ss` teşhis üçlüsü.
-
-**+ `labs/README.md`** (iki lab türü anatomisi + "önce kendin dene" kuralı).
+**Kırık lab'lar (5) — K02…K06 (hepsi 4 zorunlu dosya + 3 kademe hint):**
+- **K02-container-hatasi** (C1): kök sebep = port eşleme `"8080:80"` ama app 5000 dinliyor
+  (`HOST:CONTAINER` sağ taraf yanlış). `ps→logs→eşleme` teşhis üçlüsü.
+- **K03-terraform-state** (C3): kök sebep = **bayat state kilidi** (yarıda kalan apply
+  `.terraform.tfstate.lock.info` bıraktı) → `force-unlock`. (gap #8 kesin takılma noktası.)
+- **K04-imagepullbackoff-rbac** (D1): **çok-arızalı** — (1) yok-olan image tag → ImagePullBackOff,
+  (2) izinsiz default-deny NetworkPolicy → Running olsa da erişilemez. Güvenlik ipliği.
+- **K05-oomkilled-probe** (D2): **çok-arızalı** — (1) `limits.memory:32Mi` + ~40MB app →
+  OOMKilled(137), (2) readinessProbe port 9999 → hiç Ready olmaz. `Last State` teşhisi.
+- **K06-argocd-out-of-sync** (D5): kök sebep = `syncPolicy.automated` kaldırılmış + drift →
+  OutOfSync kendiliğinden düzelmiyor. **L17 önkoşullu** (setup `argocd/lab-app` arar, guard'lı).
 
 **Doğrulama:**
-- `bash -n`: **18/18 lab script'i temiz.**
-- Kırık lab 4 zorunlu dosya (README+setup.sh+solution.md+verify.sh): **K00, K01 tam.**
+- `bash -n`: **tüm yeni C/D script'leri temiz** (qa toplamı **39/39** lab scripti).
+- Kırık lab 4 zorunlu dosya: **K02–K06 tam** (qa `check_labs` geçti).
 - **`python3 .local/qa.py` → exit 0, 0 UYARI** (mkdocs derlendi, `_planning` sızmadı,
-  kırık link yok, leak yok).
-- **§14.3 otonom denetimler:** (1) pazarlama regex `22-Learning-Path/labs/` → **0 hit**.
-  (2) tekrar: 3 özgün lab cümlesi (`sonraki her soyutlamanın`, `Reddedilmek iyi haberdir`,
-  `Cardinality, Prometheus'u öldüren`) LP-dışı repoda `grep` → **0 dosya**; qa duplication
-  temiz. (3) süre: lab'ların estimated_hours frontmatter'ı yok (modül değil) → süre denetimi
-  N/A; lab sayısı hedefe uygun (A+B: 8 build + 2 kırık, plan L01–L08+K00–K01 birebir).
+  kırık link yok, leak yok, duplication yok).
+- **§14.3 otonom denetimler:** (1) tekrar: 3 özgün lab cümlesi (`Container "Up" ≠`,
+  `koruma, koruyacağı şeyden önce`, `RESTARTS bir sayaç`) LP-dışı repoda `grep` → **0 dosya**.
+  (2) pazarlama: LP `.md` içinde qa `garanti ed` deseni → düzeltildi (L10), şimdi **0 hit**.
+  (3) süre: lab'lar estimated_hours taşımaz (modül değil) → N/A; lab sayısı plana birebir
+  (C/D: 9 build + 5 kırık = L09–L17 + K02–K06).

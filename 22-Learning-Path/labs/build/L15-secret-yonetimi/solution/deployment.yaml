@@ -1,0 +1,26 @@
+# deployment.yaml (referans) — sır secretKeyRef ile; manifestte değer YOK.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-app
+  namespace: lab
+  labels: { app: lab-app }
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: lab-app }
+  template:
+    metadata:
+      labels: { app: lab-app }
+    spec:
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.27-alpine
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-db      # kubectl create secret ile önceden oluşturuldu
+                  key: password     # değer manifeste GİRMEZ → Git temiz kalır

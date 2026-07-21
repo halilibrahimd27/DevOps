@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# pipeline.sh — SEN doldur. L10 akışına tarama + SBOM + imza ekle.
+# Kopyala: cp pipeline.sh.template pipeline.sh
+set -euo pipefail
+
+REGISTRY="localhost:5000"
+IMAGE="lab-app"
+TAG="$(git rev-parse --short HEAD 2>/dev/null || echo dev)"
+IMG="$REGISTRY/$IMAGE:$TAG"
+
+echo "== test =="
+pytest -q
+
+echo "== build =="
+docker build -t "$IMG" .
+
+echo "== scan (KAPI) =="
+# TODO: trivy image --exit-code 1 --severity HIGH,CRITICAL "$IMG"
+
+echo "== sbom =="
+# TODO: trivy image --format cyclonedx -o sbom.json "$IMG"
+
+echo "== sign =="
+# TODO: cosign sign --key cosign.key "$IMG"
+# TODO: cosign verify --key cosign.pub "$IMG"
+
+echo "== push =="
+docker push "$IMG"
+echo "OK → $IMG"
