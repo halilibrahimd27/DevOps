@@ -1,0 +1,14 @@
+# L08 — Prometheus scrape yapılandırması (yerel)
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: node
+    static_configs:
+      - targets: ["node-exporter:9100"]
+
+  # high_cardinality.py'yi host'ta çalıştırırsan bu hedef onu scrape eder.
+  # (Docker Desktop / Linux host-gateway ile 127.0.0.1 host'a bakar.)
+  - job_name: lab
+    static_configs:
+      - targets: ["host.docker.internal:9110"]

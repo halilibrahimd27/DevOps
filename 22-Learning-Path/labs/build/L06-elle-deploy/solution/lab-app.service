@@ -1,0 +1,23 @@
+# /etc/systemd/system/lab-app.service — L06 referans systemd unit
+[Unit]
+Description=lab-app (elle deploy)
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=labsvc
+Group=labsvc
+EnvironmentFile=/etc/lab-app/app.env
+ExecStart=/usr/bin/python3 /opt/lab-app/app.py
+Restart=on-failure
+RestartSec=2
+# Sıkılaştırma — compromised process'in zararını sınırla
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/log/lab-app
+
+[Install]
+WantedBy=multi-user.target

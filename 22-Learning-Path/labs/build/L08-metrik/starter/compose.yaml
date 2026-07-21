@@ -1,0 +1,18 @@
+# L08 — yerel Prometheus + node-exporter (K8s gerekmez)
+# Sürümler pinlenmiştir (reprodüksiyon için); :latest kullanma.
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  node-exporter:
+    image: prom/node-exporter:v1.8.2
+    ports:
+      - "127.0.0.1:9100:9100"

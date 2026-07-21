@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 4 tamam — Blok E içerik (E1–E5) + interview coverage
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 5 kısmi — Blok A+B lab'ları (L01–L08 + K00–K01)
 
 ## Faz durumu
 
@@ -12,7 +12,7 @@
 | 2 | Blok A + B (içerik) | ✅ | **Tamam.** A1–A6 + B1–B3 (9 modül) TR içerik, hepsi >300s, QA exit 0 (0 uyarı) |
 | 3 | Blok C + D | ✅ | **Tamam.** C0–C4 + D1–D5 (10 modül) içerik. C88·D84=172s (plan tutuyor). QA exit 0 (0 uyarı) |
 | 4 | Blok E | ✅ | **Tamam.** E1–E5 (5 modül) içerik. E toplam=64s (revizyon4 planı tutuyor). QA exit 0 (0 uyarı). `INTERVIEW-COVERAGE.md` yazıldı: 15/15 mid-level soru A–E ile eşleşiyor |
-| 5 | Lab'ların tamamlanması | ⬜ | **SIRADA.** starter/solution/verify.sh/setup.sh/hints. L01–L20 + K00–K09. `bash -n` sözdizimi |
+| 5 | Lab'ların tamamlanması | 🟡 | **DEVAM.** Blok A+B lab'ları yazıldı: L01–L08 (build) + K00, K01 (kırık). 18 script `bash -n` temiz, QA exit 0. **Kalan:** L09–L20 + K02–K09 |
 | 6 | Değerlendirme | ⬜ | STAGE-EXAM, PLACEMENT kontrol testleri, capstone rubrikleri |
 | 6.5 | Sertifika katmanı | ⬜ | G3'te F2→CKS bağımlılığı burada çözülecek (revizyon 7) |
 | 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
@@ -21,26 +21,39 @@
 
 ## Sıradaki adım
 
-**Faz 5'e başla — Lab'ların tamamlanması.** Faz 4 (E1–E5) bitti, QA exit 0.
-Şu ana kadar **modüller lab'ları kod-span olarak referans veriyor** (markdown link değil);
-`labs/build/L##/` ve `labs/broken/K##/` dizinleri **henüz yok** — Faz 5'te doğacaklar.
+**Faz 5 DEVAM — `L09-container`'dan başla.** Blok A+B lab'ları bu tur bitti:
+`labs/build/L01–L08` + `labs/broken/K00, K01` + `labs/README.md`. QA exit 0.
 
-Yapılacak (BUILD-PROMPT §7 anatomisi):
-- **İnşa lab'ları L01–L20:** `README.md` (görev+adım+kabul+ipucu) · `starter/` · `solution/`
-  ("önce kendin dene" uyarısı) · `verify.sh` (mekanik doğrulama).
-- **Kırık lab'lar K00–K09:** `README.md` (SADECE belirti) · `setup.sh` (bilerek bozuk kurar,
-  kind/docker-compose) · `hints/` (hint-1/2/3 kademeli) · `solution.md` (kök sebep + **teşhis
-  akışı** önce) · `verify.sh`. **qa.py kırık lab için 4 zorunlu dosya arar:** README+setup.sh+
-  solution.md+verify.sh (`check_labs`, qa.py:251). Eksikse ERROR.
-- **Tüm `.sh` dosyaları `bash -n` sözdizimi kontrolünden geçmeli** (qa.py:244). Bağımlılıklar
-  README'de listeli.
-- Modüllerdeki lab kod-span'lerini (`labs/build/L##/`) gerçek dizin oluşunca markdown link'e
-  çevirmek OPSİYONEL — qa link denetimi yalnız markdown linkleri kontrol eder, kod-span'i değil.
+**Kalan iş (blok sırasıyla):**
+- **Blok C/D build:** L09-container · L10-ci · L11-terraform (yerel: LocalStack) ·
+  L12-bulut-butce-alarmi (**ilk adım bütçe alarmı**) · L13-k8s-temel (kind/k3s) ·
+  L14-k8s-production · L15-secret-yonetimi · L16-supply-chain (C2 pipeline üstüne) ·
+  L17-gitops-argocd (kind+ArgoCD).
+- **Blok C/D kırık:** K02-container-hatasi (image tag/port/env) · K03-terraform-state
+  (state lock/drift) · K04-imagepullbackoff-rbac (**RBAC forbidden / NetworkPolicy** güvenlik
+  ipliği) · K05-oomkilled-probe · K06-argocd-out-of-sync.
+- **Blok E build:** L18-sli-slo · L19-alerting · L20-veritabani-restore.
+- **Blok E kırık:** K07-incident-sim (çok-arızalı) · K08-restore-basarisiz (**backup erişim**) ·
+  K09-chaos-gameday (blast radius sınırlı).
 
-> ⚠️ **Faz 5 kesinlikle tek tura sığmaz** (20 build + 10 kırık lab = 30 dizin, her biri
-> 3–5 dosya). §14.1.3: nereye kadar geldiğini **lab no seviyesinde** buraya yaz
-> (ör. "L01–L06 + K00 yazıldı, L07'den devam"), commit, dur. Blok sırasını takip et:
-> önce A/B lab'ları (L01–L08 + K01), sonra C/D (L09–L17 + K02–K06), sonra E (L18–L20 + K07–K09).
+**Yerleşik desen (A+B lab'larında kanıtlandı, aynen sürdür):**
+- Build lab = `README.md` (görev/adım/kabul/ipucu) + `starter/<dosya>` + `solution/<dosya>` +
+  `verify.sh`. verify.sh çoğunlukla öğrencinin `report.txt`/artefakt'ını grep'ler + varsa
+  canlı `curl`/`ss` kontrolü; her verify.sh içinde `ok()/no()` PASS/FAIL çerçevesi.
+- Kırık lab = `README.md` (SADECE belirti) + `setup.sh` (sudo/systemd guard'lı, heredoc'la app
+  yazar, bilerek bozar) + `hints/hint-1..3.md` (yön→daralt→neredeyse cevap) + `solution.md`
+  (önce **teşhis akışı**, sonra kök sebep) + `verify.sh`. **qa.py `check_labs` 4 zorunlu dosyayı
+  arar:** README+setup.sh+solution.md+verify.sh.
+- Modül→lab linkleri: `../../../block-x/<ID>-...md` (labs/build/L##/'den 3 seviye yukarı).
+  Lab→kırık lab linki: `../../broken/K##-.../`.
+
+> ⚠️ Faz 5 hâlâ tek tura sığmaz. Sonraki tur bir sonraki blok chunk'ını yaz
+> (öneri: C/D build+kırık = L09–L17 + K02–K06), STATE'i güncelle, commit, dur.
+> Tüm build+kırık bitince `check_labs` + `bash -n` temizken Faz 5 → ✅.
+
+> 📌 **B2/L08 kararı uygulandı:** L08 yerel **docker-compose** Prometheus + node-exporter
+> kullandı (K8s Prometheus-Grafana-K8s-Setup.md'ye dokunulmadı). C/D lab'larında da yerel-önce:
+> C1/C2 docker, D1+ kind/k3s.
 
 > 🧵 **Güvenlik ipliği (lab'larda):** kırık lab bozukluk türleri gerçekçi olmalı —
 > RBAC forbidden (K04), NetworkPolicy bağlantı kesme, image tarama fail (D4 hattı),
@@ -91,6 +104,26 @@ Yapılacak (BUILD-PROMPT §7 anatomisi):
   recording-rules deep-dive'da kaldı). Üç özgün cümle repoda `grep` ile aranıp
   **bulunmadı**.
 
+### Faz 5'te alınanlar (bu tur)
+- **Lab image sürümleri pinlendi (placeholder değil).** L08 compose'da `prom/prometheus:v2.53.0`
+  ve `prom/node-exporter:v1.8.2` **gerçek sürümle** pinlendi. CLAUDE.md'nin `<VERSION>` kuralı
+  *dokümantasyon snippet'leri* içindir; **çalışması gereken lab artefaktı** reprodüksiyon için
+  gerçek tag ister (`:latest` yasak — P0 fix #4 deseni). Placeholder güvenliği (IP/credential)
+  korundu; sürüm pin bir ihlal değil.
+- **verify.sh iki mod:** (a) mekanik artefakt denetimi — öğrencinin `report.txt`/dosya izinleri/
+  git durumu grep'lenir; (b) canlı kontrol — `curl`/`ss`/`systemctl` varsa çalışır, yoksa
+  `⚠️` ile **atlanır** (hata değil). Böylece verify.sh hem CI'da (`bash -n`) hem öğrencinin
+  makinesinde anlamlı. Öznel "anladım" kriteri yok → qa `check_modules` deseniyle uyumlu.
+- **Kırık lab kök sebepleri ayrıştırıldı (çakışma yok):** K00 = eksik `EnvironmentFile`
+  (systemd ön-hazırlık hatası); K01 = **port çakışması** (decoy servis 8080'i tutar).
+  İkisi de B3 modülünün DNS teşhis yürüyüşünden **kasıtlı farklı** (STATE B3 notu korundu).
+- **Lab placeholder güvenliği:** tüm .sh/.yaml/.env örneklerinde yalnız `127.0.0.1`/`10.x`/
+  `lab.example` (RFC 2606) + `<DB_PASSWORD>` placeholder. `app.env.example` `.env` uzantısı
+  taşımaz (leak guard'ın taradığı uzantı listesinde yok) ama yine de placeholder yazıldı.
+  qa leak guard temiz.
+- **labs/README.md eklendi** (modül değil → frontmatter gerekmez; MOD_RE eşleşmez). İki lab
+  türünün anatomisi + "önce kendin dene" kuralı + bağımlılık notu.
+
 ### Önceki fazlardan taşınanlar (hâlâ geçerli)
 - **i18n Aşama A:** TR varsayılan (kök), EN `/en/` fallback ile kısmi → boş/kırık EN
   sayfa yok. **Aşama B** (EN varsayılan): EN kapsama ≥ %60 olunca; şimdi değil.
@@ -103,34 +136,45 @@ Yapılacak (BUILD-PROMPT §7 anatomisi):
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 4'ü TAMAMLADI — Blok E içerik)
+## Bu oturumda yapılanlar (Faz 5 KISMİ — Blok A+B lab'ları)
 
-Giriş durumu: Faz 3 kapalı, E iskeletleri hazır ama 5 modülde TODO. Bu tur **Faz 4'ü
-kapattı** — 5 modül gövdesi dolduruldu (Kabul kriterleri doğrulanabilir + Kendini test et
-Q&A + Takıldıysan tablosu). Hepsi 🟢 VAR (sıralayıcı) → Faz 3 deseni, kısa tutuldu:
+Giriş durumu: Faz 4 kapalı, `labs/` dizini **yoktu**; modüller lab'ları kod-span olarak
+referans veriyordu. Bu tur **Blok A ve B'nin tüm lab'ları** sıfırdan yazıldı (BUILD-PROMPT
+§7 anatomisi). Otonom sözleşme §14.1.2: bir turda en fazla bir faz; Faz 5 tek tura sığmadığı
+için A+B chunk yazıldı, kalan lab no seviyesinde `Sıradaki adım`a not düşüldü.
 
-- **E1 SLI/SLO/error-budget** (67s): SLI seçimi + SLO/error-budget hesabı kabul kriterine
-  bağlandı (`%99.9→~43dk/ay`); 3 test Q&A (budget matematiği, health-check yerine kullanıcı
-  isteği, budget tükenince yavaşla). "Önce oku" 11-SRE + 07-Observability (mevcut).
-- **E2 alerting+on-call** (68s): SLO'ya bağlı alarm + gürültü örneği + page/ticket/log
-  sınıflama + **eskalasyon** kabul kriteri. Güvenlik ipliği: eskalasyon zinciri + sessize
-  alma denetim kaydı. cause-based↔symptom-based test.
-- **E3 incident+postmortem** (70s): UTC timeline + blameless postmortem + izlenebilir eylem
-  maddesi (sahip+tarih) + `K07 verify.sh`. "İnsan hatası kök sebep değil" + "niçin daha erken
-  yakalanmadı" test. Kırık lab K07 kod-span.
-- **E4 veritabanı-restore** (73s): temiz ortama restore + bütünlük sorgusu + RTO/RPO +
-  **backup erişim/at-rest şifreleme** kabul kriteri + `K08 verify.sh`. Güvenlik ipliği açık
-  (backup = tüm veri, en zayıf kopya). RPO↔RTO maliyet + açık bucket testi.
-- **E5 chaos** (71s): sınırlı blast radius + hipotez→deney→sonuç raporu + zayıflık→eylem/alarm
-  + `K09 verify.sh`. "Deneyden önce hipotez" + "blast radius" + "bozulmadan geçen game day
-  başarısız mı" test. Kırık lab K09 kod-span.
-- **`_planning/INTERVIEW-COVERAGE.md` yazıldı (Faz 4 çıktı kapısı):** `18-Career/DevOps-
-  Interview-Questions.md` mid-level soruları (11–25) → A–E modül tablosu. **15/15 eşleşiyor,
-  eşleşmeyen yok → F'ye taşınan soru yok, eklenen modül yok. Kapı geçildi.**
-- **QA:** `python3 .local/qa.py` → **exit 0, 0 UYARI**. Kalan 5 TODO = F1–F5 (Faz 7).
-- **Otonom denetimler (§14.3):** (1) tekrar: 3 özgün cümle (`test edilmemiş backup yalnızca
-  bir umuttur`, `Hipotezsiz deney kurcalamadır`, `sistem X'e izin verdi`) LP dışında `grep` →
-  **yok**; qa duplication temiz. (2) pazarlama regex → E modüllerinde **0 hit** (STATE ve D2
-  "garanti ettiği" qa'nın `garanti ed` desenine takılmıyor, ayrıca _planning qa'dan hariç).
-  (3) süre: Blok E=64 (12+12+14+14+12) — revizyon 4 planı (E64) birebir; E≥50 alarmı geçti.
-  **Exit gate:** tüm E ön koşulları geriye işaret ediyor (döngü yok, qa doğruladı).
+**İnşa lab'ları (8):**
+- **L01-linux-temeli** (A1): process bul/incele + 750/640 izin + servis kullanıcısı.
+  starter playground'u bilerek dağınık kurar; verify izinleri + report.txt'i denetler.
+- **L02-ag-tcp-ip** (A2): 127.0.0.1:8080 dinlet + `ss` kanıtı + **refused↔timeout** ayrımı.
+- **L03-dns-http-tls** (A3): openssl kendinden-imzalı yerel HTTPS; DNS/HTTP/TLS katmanlarını
+  tek tek yürü, DNS ve TLS'i **ayrı** boz. `lab.example` (RFC 2606).
+- **L04-git** (A4): sıfırdan repo, bilerek conflict + çöz, merge↔rebase grafik farkı.
+- **L05-bash** (A5): `set -euo pipefail` + 2 argüman doğrulama + log özetleyip rapor yazan
+  + shellcheck-temiz script. verify script'i çalıştırıp çıktısını denetler.
+- **L06-elle-deploy** (A6): **container YOK** elle deploy — app.py (stdlib) + systemd unit +
+  nginx ters vekil + ufw + PostgreSQL + reboot testi + KURULUM.md. En büyük lab; solution/
+  tam referans (unit+nginx.conf+env.example+KURULUM.md).
+- **L07-log-okuma** (B1): app'i 3 şekilde boz, her birini `journalctl` süzgeciyle bul;
+  `leaky.py` sır sızdırır → güvenli hâle getir.
+- **L08-metrik** (B2): yerel docker-compose Prometheus+node-exporter; 2 altın sinyal PromQL;
+  `high_cardinality.py` ile seri patlaması gözlemi (CARD 10→100000).
+
+**Kırık lab'lar (2):**
+- **K00-systemd-ayaga-kalkmiyor** (A6): kök sebep = eksik `EnvironmentFile` (systemd
+  ön-hazırlık hatası, app'e hiç ulaşmaz). hints 3 kademe + solution teşhis akışı önce.
+- **K01-kirik-vm** (B3): kök sebep = **port çakışması** (decoy servis 8080'i tutar,
+  `EADDRINUSE`). B3'ün DNS yürüyüşünden kasıtlı farklı. `status→journalctl→ss` teşhis üçlüsü.
+
+**+ `labs/README.md`** (iki lab türü anatomisi + "önce kendin dene" kuralı).
+
+**Doğrulama:**
+- `bash -n`: **18/18 lab script'i temiz.**
+- Kırık lab 4 zorunlu dosya (README+setup.sh+solution.md+verify.sh): **K00, K01 tam.**
+- **`python3 .local/qa.py` → exit 0, 0 UYARI** (mkdocs derlendi, `_planning` sızmadı,
+  kırık link yok, leak yok).
+- **§14.3 otonom denetimler:** (1) pazarlama regex `22-Learning-Path/labs/` → **0 hit**.
+  (2) tekrar: 3 özgün lab cümlesi (`sonraki her soyutlamanın`, `Reddedilmek iyi haberdir`,
+  `Cardinality, Prometheus'u öldüren`) LP-dışı repoda `grep` → **0 dosya**; qa duplication
+  temiz. (3) süre: lab'ların estimated_hours frontmatter'ı yok (modül değil) → süre denetimi
+  N/A; lab sayısı hedefe uygun (A+B: 8 build + 2 kırık, plan L01–L08+K00–K01 birebir).
