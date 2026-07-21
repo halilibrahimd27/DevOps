@@ -159,7 +159,68 @@ karşılığıdır: çözünürlük bedava değildir.
 > [`Prometheus-Best-Practices.md`](../../07-Observability/Prometheus-Best-Practices.md).
 > Şimdilik tek kural yeter: **yüksek-cardinality değeri etikete koyma.**
 
-## 8️⃣ (Kısaca) görselleştirme
+## 8️⃣ `[5m]` ne demek: anlık vektör vs aralık vektörü
+
+PromQL'de her sorgu iki tür sonuçtan birini döndürür ve beginner'ı en çok bu ayrım
+takar:
+
+| Tür | Ne döndürür | Örnek |
+|---|---|---|
+| **Anlık vektör** (instant) | Her seri için **tek**, en güncel değer | `node_memory_MemAvailable_bytes` |
+| **Aralık vektörü** (range) | Her seri için **son N zamanın ham noktaları** | `node_cpu_seconds_total[5m]` |
+
+`[5m]` bir metriği aralık vektörüne çevirir: "son 5 dakikanın bütün ölçüm noktaları".
+Tek başına grafiklenemez — bir **dizidir**, tek sayı değil. `rate()`, `increase()`,
+`avg_over_time()` gibi fonksiyonlar **aralık vektörü ister** ve onu tek anlık değere
+indirir:
+
+```promql
+node_cpu_seconds_total                 # anlık: sürekli artan ham counter (anlamsız)
+node_cpu_seconds_total[5m]             # aralık: son 5 dk'nın ham noktaları (grafiklenemez)
+rate(node_cpu_seconds_total[5m])       # ikisinin evliliği: saniyelik artış hızı ✅
+```
+
+"`expected type range vector` / no data" hatasının neredeyse tümü bu karışıklıktan gelir:
+counter'ı `rate()`'siz koydun ya da gauge'a gereksiz `[5m]` verdin. Kural: **counter →
+her zaman `rate(...[aralık])`; gauge → çıplak (anlık).**
+
+## 9️⃣ Bir scrape'i adım adım izle + meta-metrikler
+
+Her `scrape_interval`'de (ör. 15 sn) Prometheus tek tek şunu yapar: hedefin `/metrics`
+ucuna bir `GET` atar → cevabı ayrıştırır → her seriye o anki değeri **kendi zaman
+damgasıyla** yazar. Uygulama bu süreçten habersizdir; sadece güncel değerleri sunar.
+
+Prometheus bu scrape'in kendisi hakkında da **meta-metrik** üretir — bunlar "gözü gören
+göz" gibidir, hedeflerin sağlığını hedefe hiç dokunmadan gösterir:
+
+| Meta-metrik | Ne söyler | Niçin bakarsın |
+|---|---|---|
+| `up` | Hedef erişilebildi mi (1/0) | İlk sağlık göstergen; alarmın çekirdeği (E2) |
+| `scrape_duration_seconds` | Scrape ne kadar sürdü | Yavaşlıyorsa hedef veya `/metrics` şişiyor |
+| `scrape_samples_scraped` | Kaç seri geldi | **Cardinality erken uyarısı** — aniden şişerse §7 |
+
+Worked örnek — A6 VM'inde kök diskin doluluk yüzdesini tek sorguyla oku (iki gauge'ı
+böl, `1 -` ile "dolu" oranına çevir):
+
+```promql
+100 * (1 - node_filesystem_avail_bytes{mountpoint="/"}
+           / node_filesystem_size_bytes{mountpoint="/"})
+```
+
+Bu, B1'deki `df -h`'nin metrik karşılığıdır: aynı gerçeği tek seferlik komut yerine
+**zamanla** görürsün — disk yavaşça mı doluyor, birden mi sıçradı? "Disk dolu" bir kırık
+lab kök sebebidir (B3); onu bir olaydan **önce** eğilim olarak görmek, arızayı önlemektir.
+
+> **Staleness (bayatlık):** bir hedef kaybolursa Prometheus onun serilerini ~5 dk sonra
+> "stale" işaretler ve grafik kesilir. `up == 0` gördüğünde, veri yokluğu değil **hedefin
+> düştüğü** anlamına gelir — ikisini karıştırma.
+
+`scrape_interval` bir **ödünleşimdir**: kısaltmak (ör. 5 sn) daha ince çözünürlük verir
+ama her hedef için daha çok seri-noktası → daha çok disk/CPU. Uzatmak (ör. 60 sn) ucuzdur
+ama iki ölçüm arasındaki ani sıçramayı kaçırırsın. Başlangıç için 15 sn makul; "daha sık
+ölçmek" bir refleks değil, gerekçe isteyen bir karardır (retention hesabı deep-dive'da).
+
+## 🔟 (Kısaca) görselleştirme
 
 Metrik ham sayıdır; onu bir panoda görürsün (Grafana). Bu modülde amaç Prometheus'ta
 sorguyu yazıp okuyabilmek; Grafana panosu ve alerting E bloğunda derinleşir. Şimdilik
@@ -183,6 +244,8 @@ Prometheus'un kendi Graph arayüzü yeter.
 | Metrik var, log yok (veya tersi) | Biri eğilimi, diğeri olayı verir; yarısı kör | İkisini birlikte kullan (B1 + B2) |
 | Retention/limit düşünmeden ölçmek | Disk/bellek dolar, 6 ay sonra OOM | Retention + cardinality bütçesi (deep-dive) |
 | Exporter'ı `push` sanıp veri "göndermeye" çalışmak | Prometheus **çeker**; model yanlış | Uygulama `/metrics` sunar, Prometheus scrape eder |
+| Counter'a `[5m]` verip `rate()` unutmak | "expected range vector" / anlamsız çizgi | Counter → `rate(...[5m])`; gauge → çıplak |
+| `up == 0`'ı "veri yok" sanmak | Hedef düşmüş, susmak değil; alarm kaçar | `up`/`scrape_*` meta-metriklerini izle |
 
 ## 📖 Önce/İleri oku
 | Kaynak | Ne için | Ne zaman |

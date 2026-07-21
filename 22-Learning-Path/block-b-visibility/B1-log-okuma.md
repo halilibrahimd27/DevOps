@@ -212,6 +212,80 @@ journalctl -u app --since "1 min ago" -p err   # boş → yeni hata yok
 Bu akış — belirti → log → kanıt → düzelt → doğrula — B3'teki kırık lab'ın ve E3'teki
 postmortem'in çekirdeğidir. Fark yalnızca ölçek.
 
+## 🔟 journalctl'in derinliği: biçim, alan, önyükleme
+
+Dört süzgeç (`-u`, `--since`, `-p`, `-f`) iş görür ama bir arızada seni asıl hızlandıran
+üç şey daha var: **çıktı biçimi**, **alan süzgeci** ve **önyükleme (boot) sınırı**.
+
+### Çıktı biçimini değiştir
+Aynı logu farklı biçimde okumak farklı soruları açar:
+
+```bash
+journalctl -u app -o short-iso        # UTC/ISO zaman damgası (korelasyon için — B2)
+journalctl -u app -o json-pretty      # tüm alanları gör (structured log'un ham hâli)
+journalctl -u app -o cat              # yalnız mesaj, meta yok — göz taraması için
+```
+
+`-o json-pretty`, bir log satırının journald'da *aslında* hangi alanları taşıdığını
+gösterir (`_PID`, `_SYSTEMD_UNIT`, `_HOSTNAME`, `PRIORITY`…). Bu alanlar süzülebilir —
+işte asıl güç burada.
+
+### Alanla süzmek: `-u`'dan daha keskin
+`-u` servise göre süzer; ama bazen "şu tek process" ya da "şu kullanıcı" gerekir:
+
+```bash
+journalctl _PID=812                    # yalnız 812 numaralı process'in çıktısı
+journalctl _UID=1000                   # belirli bir kullanıcının servisleri (A1 UID)
+journalctl _SYSTEMD_UNIT=app.service PRIORITY=3   # app + yalnız 'err' (3=err)
+```
+
+Alan süzgeçleri **VE** mantığıyla birleşir. Bir arızada "812 no'lu process bugün ne hata
+verdi?" tek satırda ifade edilir — milyon satır yerine on satır okursun.
+
+### Önyükleme ve çekirdek: nereye bakacağını bil
+Sistem yeniden başladıysa, "hata restart'tan önce miydi sonra mıydı?" kritik sorudur:
+
+```bash
+journalctl -b                          # yalnız BU önyüklemeden beri (restart sonrası)
+journalctl -b -1                       # bir ÖNCEKİ önyükleme (çökme öncesi log)
+journalctl --list-boots                # önyükleme geçmişi + kimlikleri
+journalctl -k                          # yalnız çekirdek (kernel) mesajları = dmesg
+```
+
+`-b -1` bir çökmeyi araştırırken paha biçilmez: sistem sertçe kapandıysa, **çöküşten
+hemen önceki** logu ancak önceki önyüklemeye bakarak görürsün. `-k` ise OOM killer, disk
+G/Ç hatası, donanım uyarısı gibi çekirdek düzeyi sorunları ayıklar (A1'deki `dmesg`'in
+journald karşılığı).
+
+## 1️⃣1️⃣ Log kalıcı mı, geçici mi — ve niçin kayboluyor
+
+Yeni bir sistemde `journalctl -b -1` çoğu zaman **boş** döner. Sebebi bir hata değil,
+bir **yapılandırma**: journald varsayılan olarak logu belleğe/`/run`'a (geçici) yazar ve
+her yeniden başlatmada **silinir**. Kalıcı olması için diskte bir dizin gerekir:
+
+```bash
+journalctl --list-boots                # tek satır dönüyorsa log kalıcı DEĞİL
+ls /var/log/journal 2>/dev/null || echo "kalıcı journal yok"
+sudo mkdir -p /var/log/journal && sudo systemd-tmpfiles --create --prefix /var/log/journal
+sudo systemctl restart systemd-journald   # artık restart'lar arası log kalır
+```
+
+> Bunu bir arıza *öncesi* kur. Çöken sistemin logu, çökmeden önce diske yazılmadıysa
+> kaybolur; "loga bakalım" dediğinde bakacak bir şey kalmaz. Kalıcı journal, teşhisin ön
+> koşuludur.
+
+Bir de **hız sınırı (rate limiting)** var: journald saniyede çok fazla satır gelirse
+bir kısmını **düşürür** ve `Suppressed N messages` yazar. Bir servis log'a boğuluyorsa
+(gürültü) hem sinyal kaybolur hem de gerçekten önemli satır düşebilir:
+
+```bash
+journalctl -u app | grep -i "suppressed"   # log düşürülmüş mü?
+```
+
+Çözüm satır sınırını yükseltmek değil, **daha az/daha anlamlı loglamaktır** (§2 önem
+düzeyleri): production'da `debug` kapalı, her istek için tek özet satır. Bu, "her şeyi
+loglama" ilkesinin (kapanış cümlesi) altyapı tarafındaki kanıtıdır.
+
 ---
 
 ## 🚫 Anti-pattern tablosu
@@ -225,6 +299,8 @@ postmortem'in çekirdeğidir. Fark yalnızca ölçek.
 | Hipotezi kanıtsız kabul etmek | Yanlış yeri düzeltip zaman kaybedersin | Her hipotezi bir log satırıyla doğrula |
 | Zaman damgasını yerel/formatsız yazmak | Sistemler arası korelasyon kırılır | UTC + ISO-8601 (`...T10:03:12Z`) |
 | Log'u tek gerçek kaynak sanmak | Eğilimi/oranı göremezsin | Log (olay) + metrik (eğilim) birlikte — B2 |
+| Kalıcı journal kurmamak | Çökme sonrası `-b -1` boş; kanıt yok | `/var/log/journal` oluştur, journald restart |
+| Log düşürülmesini görmezden gelmek | `Suppressed N messages` = kayıp sinyal | Az/anlamlı logla; `debug` kapalı |
 
 ## 📖 İleri okuma (şimdi değil, sonra)
 | Kaynak | Ne için | Ne zaman |
