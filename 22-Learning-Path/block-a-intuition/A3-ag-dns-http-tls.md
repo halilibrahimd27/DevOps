@@ -123,6 +123,29 @@ curl -I https://example.com     # -I: yalnız yanıt başlıkları (HEAD isteği
 curl -s -o /dev/null -w "%{http_code}\n" https://example.com   # yalnız durum kodu
 ```
 
+### Metodlar ve idempotency
+
+Metod, isteğin **niyetini** söyler. En çok göreceklerin:
+
+| Metod | Niyet | Idempotent mi? |
+|---|---|---|
+| `GET` | Oku, yan etkisiz | Evet (tekrarı aynı sonuç) |
+| `POST` | Yeni kaynak/işlem oluştur | **Hayır** (tekrar = ikinci kayıt) |
+| `PUT` | Kaynağı tümüyle değiştir | Evet |
+| `DELETE` | Kaynağı sil | Evet (silinmiş yine silinmiş) |
+
+**Idempotency** — "aynı isteği iki kez göndermek zarar verir mi?" — pratik bir sorudur:
+bir istek zaman aşımına uğrayıp tekrar denendiğinde `GET`/`PUT`/`DELETE` güvenlidir,
+`POST` ise çift kayıt üretebilir. Retry/otomasyon tasarlarken (C2, E bloğu) bu ayrım
+önemlidir.
+
+### Oturum: cookie nasıl taşınır
+
+HTTP **durumsuzdur** (her istek bağımsız). "Giriş yaptım, hatırlanıyorum" hissi
+**cookie** ile olur: sunucu `Set-Cookie` ile bir oturum kimliği verir, tarayıcı sonraki
+her istekte `Cookie` başlığıyla geri gönderir. Bir "neden sürekli çıkış yapıyorum" ya da
+"oturum başka kullanıcıya karışıyor" arızasında ilk bakılan yer bu iki başlıktır.
+
 ### Durum kodları — sınıfını oku, ezberleme
 
 | Sınıf | Anlam | Sık örnek |
@@ -164,6 +187,22 @@ echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/
 
 curl -v https://example.com 2>&1 | grep -E "subject:|issuer:|expire"
 ```
+
+### El sıkışma nasıl olur — kabaca
+
+TCP bağlantısı kurulduktan sonra (A2) TLS el sıkışması başlar:
+
+1. **ClientHello** — istemci desteklediği TLS sürümünü ve şifre setlerini önerir.
+2. **ServerHello + sertifika** — sunucu seçimini bildirir ve **sertifikasını** sunar.
+3. **Doğrulama** — istemci sertifikayı güven zincirine (CA) kadar doğrular: imza geçerli
+   mi, isim eşleşiyor mu, süresi dolmuş mu?
+4. **Anahtar anlaşması** — iki taraf, sonraki trafiği şifreleyecek ortak bir oturum
+   anahtarında anlaşır. Bundan sonrası şifrelidir.
+
+Kritik nokta: adım 3, `notAfter`/isim/zincir kontrollerinin yapıldığı yerdir — üç sertifika
+hatası tam da burada patlar. `openssl s_client -connect <host>:443 -servername <host>`
+bu el sıkışmayı elle yürütüp her adımın çıktısını gösterir; `-servername` (SNI) doğru
+sertifikanın sunulması için gereklidir (tek IP çok site barındırabilir).
 
 ### En sık üç sertifika hatası
 
