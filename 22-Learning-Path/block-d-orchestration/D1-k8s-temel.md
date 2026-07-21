@@ -22,10 +22,19 @@ C3'te altyapıyı kod yaptın; şimdi container'ları elle değil, bir orkestrat
 çalıştırıyorsun. RBAC ve NetworkPolicy bu modülün **sonradan eklenen bölümü değil,
 ilk günüdür** — çünkü güvenlik bir blok değil, bloklara dağılmış bir ipliktir.
 
+## 🌉 Köprü: Pod → Deployment → Service → Ingress
+`05-Kubernetes/` dokümanları bu dört kavramı bildiğini varsayar. Kısa tanımlar — gerisi lab'da:
+
+- **Pod:** K8s'in çalıştırdığı en küçük birim; içinde bir (bazen birkaç) container. Kısa ömürlüdür — ölür, yeni bir IP'yle yeniden doğar. Bu yüzden bir Pod'a doğrudan bağlanmazsın.
+- **Deployment:** "Şu image'dan hep N kopya ayakta olsun" der. Pod ölürse yenisini açar; güncellemede eskiyi yenisiyle yavaşça değiştirir (rolling update).
+- **Service:** Değişen Pod IP'lerinin önünde **sabit bir iç adres**. "Hangi Pod'a?" sorusunu `label selector` ile çözer — bu yüzden yanlış label = trafik gitmez.
+- **Ingress:** Cluster **dışından** gelen HTTP(S) trafiğini bir Service'e yönlendiren kural; TLS sonlandırma genelde burada olur.
+
+Bu zincir kırılırsa (yanlış selector, eksik Ingress kuralı) uygulama "çalışıyor ama erişilemiyor" olur — K04 kırık lab'ının tam senaryosu.
+
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
 |---|---|---|
-| (K8s kavram girişi köprüsü — Faz 3: Pod/Deployment/Service/Ingress) | temel | — |
 | [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md) | **RBAC, NetworkPolicy, PSS — ilk günden** | ~40 dk |
 | [`05-Kubernetes/Debugging-Pods.md`](../../05-Kubernetes/Debugging-Pods.md) | Pod arızası daraltma | ~25 dk |
 
@@ -39,21 +48,31 @@ selector / RBAC forbidden / NetworkPolicy engeli.)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): image bir Deployment olarak çalışıyor, Service + Ingress'ten erişiliyor
-- [ ] TODO (Faz 3): en az yetkili bir RBAC rolü + bir NetworkPolicy uygulanmış — doğrulama
-- [ ] TODO (Faz 3): K04 kırık lab'ı çözüldü, `verify.sh` geçiyor
+- [ ] image bir Deployment olarak çalışıyor; Service + Ingress üzerinden dışarıdan erişiliyor — `kubectl get` / curl kanıtı
+- [ ] En az yetkili bir RBAC Role/RoleBinding + bir NetworkPolicy uygulanmış; yetkisiz erişimin reddedildiği gösteriliyor
+- [ ] `bash labs/broken/K04-imagepullbackoff-rbac/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] Bir Pod'un `Pending`/`CrashLoopBackOff` olma sebebini üç komutla daraltabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3) — senaryo: "Pod Pending, ilk üç kontrolün?"
-3. TODO (Faz 3)
+1. Bir Pod `Pending` durumunda. Dokümana bakmadan ilk üç kontrolün ne?
+2. Service var, Pod'lar ayakta ama trafik gitmiyor. En olası sebep ne?
+3. Yeni bir ekip üyesine cluster erişimi vereceksin. Niçin `cluster-admin` yerine dar bir Role verirsin?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. (a) `kubectl describe pod <ad>` → `Events` bölümü (en hızlı ipucu); (b) node kaynağı / scheduling — CPU-bellek yetiyor mu, taint/toleration var mı; (c) image çekiliyor mu (`ImagePullBackOff`?). Daraltma yürüyüşü [`05-Kubernetes/Debugging-Pods.md`](../../05-Kubernetes/Debugging-Pods.md)'de.
+2. **Label selector uyuşmazlığı.** Service'in selector'ı Pod label'larıyla eşleşmiyorsa `kubectl get endpoints <svc>` boş döner ve trafik hiçbir Pod'a gitmez. Önce endpoints'e bak.
+3. En az yetki: dar bir Role sızsa bile hasar o namespace/fiil ile sınırlı kalır; `cluster-admin` sızarsa saldırgan tüm cluster'ı ele geçirir. Güvenlik bir blok değil, ilk günden içeride — gerekçe [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md)'de.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| `ImagePullBackOff` | Yanlış image adı/tag ya da registry auth | `kubectl describe pod` events; tag'i ve pull secret'ı doğrula |
+| Pod `Pending` kalıyor | Node kaynağı yok / scheduling kısıtı | `describe` events; node `Allocatable`; taint/toleration kontrol et |
+| Service'e trafik gitmiyor | Selector Pod label'larıyla uyuşmuyor | `kubectl get endpoints <svc>` boş mu; label'ları eşitle |
+| `kubectl` "forbidden" | RBAC yetkisi yok | `kubectl auth can-i ...`; gereken fiil/kaynağı dar bir Role'e ekle |
+| NetworkPolicy sonrası bağlantı koptu | Politika gereken trafiği de kesti | Önce default-deny, sonra gereken akışı **açıkça** izin ver |
 
 ## 💼 Portfolyo çıktısı
 kind/k3s üzerinde RBAC + NetworkPolicy ile çalışan bir uygulama manifest seti.

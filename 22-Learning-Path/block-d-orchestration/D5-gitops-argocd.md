@@ -37,21 +37,30 @@ uyumsuz / senkron olmuyor." (Gerçekçi sebep gizli: drift / hatalı manifest / 
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): tek uygulama ArgoCD ile Git'ten yönetiliyor, senkron — doğrulama
-- [ ] TODO (Faz 3): elle yapılan bir drift ArgoCD tarafından gösteriliyor/düzeltiliyor
-- [ ] TODO (Faz 3): K06 kırık lab'ı çözüldü, `verify.sh` geçiyor
+- [ ] Tek bir uygulama ArgoCD ile Git'ten yönetiliyor ve `Synced/Healthy` durumda — kanıt
+- [ ] Elle yapılan bir drift ArgoCD tarafından `OutOfSync` gösteriliyor ve (auto/manual) düzeltiliyor
+- [ ] `bash labs/broken/K06-argocd-out-of-sync/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] "Git tek gerçek kaynak" ilkesinin bir operasyonel sonucunu (elle değişiklik niçin geri alınır) anlatabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3)
-3. TODO (Faz 3)
+1. GitOps'ta bir üretim değişikliğini nasıl yaparsın; `kubectl edit` niçin anti-pattern?
+2. ArgoCD bir Pod'u sürekli eski hâline döndürüyor. Sebebi ne, bu bir hata mı?
+3. Tek app'i GitOps'la sağlam yönetmeden App-of-Apps / ApplicationSet'e geçmek niçin erken?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. Değişikliği **Git'te** (manifest) yapar, ArgoCD'nin cluster'ı ona yakınsamasını izlersin. `kubectl edit` cluster'ı Git'in bilmediği bir duruma sokar (drift); ArgoCD ya geri alır ya `OutOfSync` gösterir → kaynak-of-truth ikiye bölünür. Kurulum [`06-GitOps/ArgoCD-Setup.md`](../../06-GitOps/ArgoCD-Setup.md)'de.
+2. Biri Git dışında elle değişiklik yapmıştır; ArgoCD auto-sync ile bunu Git'teki hâle geri çeker. Bu bir hata değil, **tasarlanan davranıştır** — drift'i düzeltmek GitOps'un işidir.
+3. Çünkü çoklu-app soyutlamaları tek app'in sorunlarını (drift, sync, sır) çözmez, çoğaltır. Önce bir app'i güvenle yönet. Erken karmaşıklık gerekçesi [`NOT-YET.md`](../NOT-YET.md)'de.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| App `OutOfSync` kalıyor | Git'te olmayan elle değişiklik / hatalı manifest | Git'i doğru kaynak yap; farkı ArgoCD diff'inden oku |
+| ArgoCD Git'e erişemiyor | Repo kimlik / erişim yok | Repo credential'ını ve URL'i doğrula |
+| Değişiklik uygulanmıyor | Auto-sync kapalı / izlenen path yanlış | Sync policy'yi ve izlenen path'i kontrol et |
+| Sır ArgoCD üzerinden sızıyor | Düz metin manifest | D3'e dön: şifreli referans / harici store kullan |
 
 ## 💼 Portfolyo çıktısı
 Git'ten yönetilen tek bir uygulama (ArgoCD) — GitOps'un somut örneği.
