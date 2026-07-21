@@ -1,0 +1,10 @@
+2026-01-01T10:00:01 INFO servis basladi
+2026-01-01T10:00:02 INFO saglik kontrolu ok
+2026-01-01T10:00:05 WARN yavas yanit (820ms)
+2026-01-01T10:00:07 INFO istek islendi
+2026-01-01T10:00:09 ERROR veritabani baglantisi reddedildi
+2026-01-01T10:00:10 INFO yeniden deneniyor
+2026-01-01T10:00:12 ERROR veritabani baglantisi reddedildi
+2026-01-01T10:00:14 WARN kuyruk birikiyor
+2026-01-01T10:00:16 INFO baglanti geri geldi
+2026-01-01T10:00:18 INFO istek islendi

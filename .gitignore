@@ -101,3 +101,9 @@ LAUNCH-PLAN.md
 SOCIAL-DRAFTS.md
 
 .local/
+
+# ───── Öğrenme patikası inşa lab'ları ─────
+# `build/` ve `*.log` genel kalıpları labs/build/ içeriğini (starter/sample.log dahil)
+# yanlışlıkla ignore ediyordu. Bu lab'lar teslim edilebilir müfredat içeriğidir — izle.
+!22-Learning-Path/labs/build/
+!22-Learning-Path/labs/build/**

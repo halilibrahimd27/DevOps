@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# summarize.sh — bir log dosyasını özetle, raporu yaz.
+# Bu bir İSKELET. TODO'ları doldur, ./summarize.sh olarak kaydet.
+set -euo pipefail
+
+# TODO 1: tam iki argüman gelmezse kullanım bas ve exit 1
+# LOG="$1"; OUT="$2"
+
+# TODO 2: LOG dosyası yoksa hata ver ve exit 1
+
+# TODO 3: rapora yaz —
+#   toplam satır: N
+#   ERROR: M
+#   seviye dağılımı (INFO/WARN/ERROR sayımı, en sık üçü)
+
+echo "TODO: bu iskeleti doldur"
+exit 1
