@@ -58,8 +58,12 @@ doğrulama gibi).
 - **A3 örnek IP'leri belge bloğuna çevrildi.** `example.com`'un gerçek IP'si sızmıştı
   → `192.0.2.10` (RFC 5737) + `2001:db8::10` (RFC 3849). `example.com` (RFC 2606 rezerve
   isim) kaldı — placeholder güvenliği korundu (qa leak guard temiz).
-- **EKSİK modül uzunluk uyarıları beklenen.** qa.py 260 satırda WARN verir; revizyon 1
-  🔴 EKSİK için 400–700 hedefler. A1=335, A3=262 → WARN (akış durmaz). A1–A4: 335/244/262/260.
+- **Modül derinliği revizyon 1 hedefine çekildi.** qa.py 🔴 EKSİK modüller için ~400–700
+  satır derinlik denetliyor; ilk taslak (244–335) "ders yeterince derin mi?" uyarısı aldı →
+  dördü de **gerçek beginner içerikle** derinleştirildi (A1: stdio/redirect/`PATH`;
+  A2: subnet bit-math/NAT/DHCP/ARP + uçtan-uca teşhis; A3: çözümleme zinciri/HTTP
+  metod+cookie/TLS el sıkışma; A4: restore/reset/revert/stash/reflog/`.gitignore`).
+  **A1–A4: 379/314/316/314 satır** → QA **0 uyarı**.
 
 ### Önceki fazlardan taşınanlar (hâlâ geçerli)
 - **i18n Aşama A:** TR varsayılan (kök), EN `/en/` fallback ile kısmi → boş/kırık EN
@@ -77,18 +81,19 @@ doğrulama gibi).
 
 - **A1–A4 modül gövdeleri sıfırdan yazıldı (TR)**; iskelet TODO'ları öğretici
   içerikle dolduruldu (§6 anatomisi tam):
-  - **A1 Linux temeli** (335s): process/`/proc`/sinyaller, filesystem/inode/`df -i`,
-    izin modeli (rwx/octal/umask), kullanıcı/grup/`sudo` **güvenlik sınırı** → D1 RBAC'e köprü.
-  - **A2 Ağ I** (244s): 4-katman teşhis modeli, `ip`/`ss`, port/soket, routing,
-    **"connection refused vs timed out"** ayrımı (teşhisin kalbi).
-  - **A3 Ağ II** (262s): DNS→HTTP→TLS zinciri, `dig`/`curl`/`openssl`; "site açılmıyor"u
-    4 komuta bölme; sertifika hataları = **zaman/isim/zincir**.
-  - **A4 Git** (260s): DAG zihinsel modeli, commit/branch/merge, **conflict elle çözme**,
-    merge vs rebase + **altın kural** (paylaşılanı rebase etme), remote köprüsü (C2/D5).
+  - **A1 Linux temeli** (379s): process/`/proc`/sinyaller, filesystem/inode/`df -i`,
+    izin modeli (rwx/octal/umask), kullanıcı/grup/`sudo` **güvenlik sınırı** → D1 RBAC'e
+    köprü, stdio/yönlendirme/`PATH`.
+  - **A2 Ağ I** (314s): 4-katman teşhis modeli, `ip`/`ss`, subnet bit-math, NAT/DHCP/ARP,
+    port/soket, routing, TCP/UDP, **"connection refused vs timed out"** ayrımı (teşhisin kalbi).
+  - **A3 Ağ II** (316s): DNS çözümleme zinciri→HTTP(metod/idempotency/cookie)→TLS el sıkışma;
+    `dig`/`curl`/`openssl`; "site açılmıyor"u 4 komuta bölme; sertifika = **zaman/isim/zincir**.
+  - **A4 Git** (314s): DAG zihinsel modeli, commit/branch/merge, **conflict elle çözme**,
+    merge vs rebase + **altın kural**, restore/reset/revert/stash/reflog, remote köprüsü (C2/D5).
 - **Güvenlik ipliği (§4.2):** least-privilege (A1), en-az-açıklık güvenlik duvarı (A2),
   TLS doğrulama + `--insecure` anti-pattern (A3), sır commit'leme anti-pattern (A4).
 - **Altyapı:** `build-docs.sh` Bash 3.2 uyumlu → site yerelde hatasız derleniyor.
-- **QA:** `python3 .local/qa.py` → **exit 0** (2 beklenen uzunluk uyarısı; "Site hatasız derlendi").
+- **QA:** `python3 .local/qa.py` → **exit 0, 0 uyarı** ("Site hatasız derlendi").
 - **Otonom denetimler (§14.3):** pazarlama grep temiz (tek eşleşme `_planning/STATE.md`
   meta-notu — shipped değil, qa `_planning`'i atlar); 3 özgün cümle mevcut deep-dive'da
   **yok**; A1–A4 `estimated_hours`=58 (Blok A toplam 97'nin parçası, değişmedi).

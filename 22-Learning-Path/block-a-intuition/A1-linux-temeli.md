@@ -263,6 +263,50 @@ yapabilir. Bu yüzden: günlük iş normal kullanıcıyla, yükseltme gerektiği
 `sudo` ile. Servisler `root` değil, kendi sınırlı kullanıcılarıyla çalışır. Bu alışkanlık
 container (D bloğu) dünyasında "root çalıştırma" anti-pattern'i olarak geri gelecek.
 
+## 6️⃣ Girdi/çıktı, yönlendirme ve ortam
+
+Her process üç standart akışla doğar: **stdin** (0, girdi), **stdout** (1, normal çıktı),
+**stderr** (2, hata çıktısı). Bunları yönlendirebilmek, "çıktıyı bir dosyaya al", "hatayı
+ayır", "iki komutu birbirine bağla" demenin yoludur — ve teşhis için vazgeçilmezdir.
+
+```bash
+komut > out.txt         # stdout'u dosyaya yaz (üzerine)
+komut >> out.txt        # stdout'u dosyaya EKLE (sonuna)
+komut 2> err.txt        # yalnız stderr'i dosyaya
+komut > out.txt 2>&1    # stdout + stderr'i aynı dosyaya
+komut 2>/dev/null       # hataları at (sessizle) — dikkatli kullan
+komutA | komutB         # A'nın stdout'unu B'nin stdin'ine bağla (pipe)
+```
+
+> `2>&1` sırası önemlidir: "stderr'i, stdout'un **o an gittiği yere** yönlendir".
+> `> out.txt 2>&1` doğru; `2>&1 > out.txt` stderr'i eski yerde bırakır. Bir komutun
+> hatasını göremiyorsan, çoğu zaman stderr'i yanlış yönlendirmişsindir.
+
+Pipe (`|`) Unix'in kalbidir: küçük araçları zincirleyip büyük iş yaparsın. A5'te bunun
+üstüne script kuracaksın; şimdilik zinciri gör:
+
+```bash
+ps aux | grep nginx | grep -v grep | awk '{print $2}'   # nginx PID'lerini süz
+journalctl -u <SERVİS> | grep -i error | tail -20        # son 20 hata satırı (B1'de derinleşir)
+```
+
+### Ortam değişkenleri ve `PATH`
+
+Her process bir **ortam** (environment) taşır: `KEY=VALUE` çiftleri. En kritiği `PATH` —
+kabuk bir komutu hangi dizinlerde arayacağını buradan bilir:
+
+```bash
+echo "$PATH"            # komutların arandığı dizinler (: ile ayrık)
+which <komut>           # bir komut PATH'te nerede bulunuyor
+export APP_ENV=prod     # bu kabuk (ve çocukları) için bir değişken tanımla
+env | sort              # tüm ortam değişkenleri
+```
+
+"command not found" hatasının sık sebebi, komutun `PATH`'te olmamasıdır (özellikle
+`sudo` altında `PATH` farklı olabilir). Sırları (parola, token) ortam değişkenine koymak
+yaygındır ama dikkat: `env` çıktısı ve `/proc/<PID>/environ` onları sızdırabilir — sır
+yönetimi D3'ün konusu.
+
 ---
 
 ## 🚫 Anti-pattern tablosu

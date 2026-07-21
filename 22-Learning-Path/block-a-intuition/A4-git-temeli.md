@@ -191,6 +191,60 @@ git pull                           # uzaktakileri getir + birleştir (fetch + me
 D5'te `main`'e bir merge, üretime deploy anlamına gelecek. O yüzden temiz geçmiş
 sadece estetik değil — **otomasyonun girdisi.**
 
+## 7️⃣ Geri alma: restore, reset, revert, stash
+
+Yeni başlayanı en çok korkutan yer "yanlış yaptım, nasıl geri alırım". Üç farklı "geri
+alma" vardır ve karıştırılırsa veri kaybettirir:
+
+| Komut | Ne yapar | Ne zaman |
+|---|---|---|
+| `git restore <dosya>` | Çalışma dizinindeki değişikliği **at** (son commit'e döndür) | Henüz commit'lemediğin bir hatayı silmek |
+| `git restore --staged <dosya>` | Staging'den çıkar (değişiklik kalır) | Yanlış `add`'i geri almak |
+| `git revert <commit>` | O commit'i **iptal eden yeni bir commit** ekler | **Paylaşılmış** geçmişte güvenli geri alma |
+| `git reset --soft <commit>` | HEAD'i geri al, değişiklikleri staging'de bırak | Son commit'leri yeniden düzenlemek (yerel) |
+| `git reset --hard <commit>` | HEAD'i geri al, **her şeyi sil** | ⚠️ Yerel; yanlış kullanınca iş kaybolur |
+
+> **Altın ayrım:** `revert` **ekleyerek** geri alır (geçmiş korunur, paylaşımda güvenli).
+> `reset` **silerek/oynatarak** geri alır (geçmişi yeniden yazar, yalnız yerelde). Bir
+> commit çoktan push edildiyse `revert` kullan, `reset --hard` değil.
+
+### Geçici olarak kenara koy: stash
+
+Bir işin ortasındasın ama acil başka bir şey yapman gerekti. Yarım işi commit'lemeden
+kenara koy:
+
+```bash
+git stash            # çalışma dizinini temizle, değişiklikleri kenara koy
+git switch main      # acil işi yap
+git stash pop        # geri dön, kenara koyduğun işi geri getir
+```
+
+### `.gitignore` — neyi takip ETME
+
+Bazı dosyalar repoya asla girmemeli: sırlar (`.env`), üretilen çıktılar (`node_modules/`,
+`__pycache__/`, `site/`), yerel ayarlar. Bunları `.gitignore` ile dışla:
+
+```gitignore
+.env
+*.log
+node_modules/
+site/
+```
+
+> Bir dosya bir kez commit'lendiyse `.gitignore` onu **geri almaz** (zaten takipte).
+> Önce `git rm --cached <dosya>` ile takipten çıkar, sonra ignore et. Sızan bir sır için
+> bu bile yetmez: geçmişte kalır — **anahtarı döndür.**
+
+### Kayıp değil: reflog
+
+"Commit'im gitti" neredeyse hiç doğru değildir. `git reflog` HEAD'in gittiği her yeri
+tutar; yanlış bir `reset`'ten bile geri dönebilirsin:
+
+```bash
+git reflog                     # HEAD'in tüm geçmişi (son hareketler üstte)
+git reset --hard <iyi_hash>    # reflog'da gördüğün sağlam noktaya dön
+```
+
 ---
 
 ## 🚫 Anti-pattern tablosu
