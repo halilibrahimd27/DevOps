@@ -25,7 +25,7 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 | Öncelik | Kapsam | Durum |
 |---|---|---|
 | **P0** | `README`, `docs/index`, `docs/about`, `Glossary` | ⬜ EN çevirisi yok (fallback TR) |
-| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, PLACEMENT, …) | 🟡 TR iskelet hazır (Faz 1); EN twin Faz 2+ içerikle birlikte (bkz. STATE Açık kararlar) |
+| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, modüller, …) | 🟡 TR yazılıyor (Faz 2: A1–A4 hazır). **EN twin BLOKE** — `qa.py` `^[A-F]\d+-` dosyalarda TR bölüm başlığı zorunlu tutuyor; `.en.md` twin QA'yı kırar. Önce `qa.py` locale-farkındalığı gerekir (bkz. STATE Açık kararlar). |
 | **P2** | 21 klasör README'si | ⬜ |
 | **P3** | En güçlü 15 deep-dive | ⬜ |
 | **P4** | Kalan içerik | ⬜ |
