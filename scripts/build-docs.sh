@@ -15,13 +15,8 @@
 
 set -euo pipefail
 
-# Bu script associative array (declare -A) kullanır → Bash 4.0+ gerekir.
-# macOS varsayılanı Bash 3.2 — `brew install bash` ile güncelle veya `bash` PATH'te 4+ olsun.
-if (( BASH_VERSINFO[0] < 4 )); then
-  echo "HATA: Bash ${BASH_VERSION} bulundu; bu script Bash 4.0+ gerektirir (declare -A)." >&2
-  echo "      macOS: 'brew install bash' sonra 'bash scripts/build-docs.sh' (Homebrew bash'i)." >&2
-  exit 1
-fi
+# Taşınabilirlik: associative array (declare -A, Bash 4+) yerine "anahtar|değer"
+# satırlı indeksli diziler kullanılır → macOS varsayılan Bash 3.2 dahil her yerde çalışır.
 
 STAGE="site_src"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -93,36 +88,39 @@ fi
 echo ""
 echo "🏷️  Klasör başlıkları (.pages):"
 
-declare -A TITLES=(
-  ["00-Culture"]="00 · Kültür"
-  ["01-Git-Workflow"]="01 · Git"
-  ["02-CI-CD"]="02 · CI/CD"
-  ["03-IaC"]="03 · IaC"
-  ["04-Containers"]="04 · Containers"
-  ["05-Kubernetes"]="05 · Kubernetes"
-  ["06-GitOps"]="06 · GitOps"
-  ["07-Observability"]="07 · Observability"
-  ["08-Security"]="08 · Security"
-  ["09-Networking"]="09 · Networking"
-  ["10-Databases-Production"]="10 · Databases"
-  ["11-SRE"]="11 · SRE"
-  ["12-FinOps"]="12 · FinOps"
-  ["13-Platform-Engineering"]="13 · Platform"
-  ["14-Sustainability"]="14 · Sustainability"
-  ["15-AI-LLMOps"]="15 · AI/LLMOps"
-  ["16-Cheatsheets"]="16 · Cheatsheets"
-  ["17-Templates"]="17 · Templates"
-  ["18-Career"]="18 · Career"
-  ["19-Compliance"]="19 · Compliance"
-  ["20-Soft-Skills"]="20 · Soft Skills"
-  ["21-Field-Notes"]="21 · Saha Notları"
-  ["RoadMap"]="🗺️ Yol Haritası"
+# "dizin|başlık" satırları (Bash 3.2 uyumlu indeksli dizi; başlık/dizin '|' içermez)
+TITLES=(
+  "00-Culture|00 · Kültür"
+  "01-Git-Workflow|01 · Git"
+  "02-CI-CD|02 · CI/CD"
+  "03-IaC|03 · IaC"
+  "04-Containers|04 · Containers"
+  "05-Kubernetes|05 · Kubernetes"
+  "06-GitOps|06 · GitOps"
+  "07-Observability|07 · Observability"
+  "08-Security|08 · Security"
+  "09-Networking|09 · Networking"
+  "10-Databases-Production|10 · Databases"
+  "11-SRE|11 · SRE"
+  "12-FinOps|12 · FinOps"
+  "13-Platform-Engineering|13 · Platform"
+  "14-Sustainability|14 · Sustainability"
+  "15-AI-LLMOps|15 · AI/LLMOps"
+  "16-Cheatsheets|16 · Cheatsheets"
+  "17-Templates|17 · Templates"
+  "18-Career|18 · Career"
+  "19-Compliance|19 · Compliance"
+  "20-Soft-Skills|20 · Soft Skills"
+  "21-Field-Notes|21 · Saha Notları"
+  "RoadMap|🗺️ Yol Haritası"
 )
 
-for dir in "${!TITLES[@]}"; do
+for entry in "${TITLES[@]}"; do
+  dir="${entry%%|*}"
+  title="${entry#*|}"
   if [ -d "$STAGE/$dir" ]; then
-    printf "title: %s\n" "${TITLES[$dir]}" > "$STAGE/$dir/.pages"
-    echo "  + $dir/.pages → ${TITLES[$dir]}"
+    printf "title: %s\n" "$title" > "$STAGE/$dir/.pages"
+    echo "  + $dir/.pages → $title"
   fi
 done
 
@@ -182,16 +180,18 @@ fi
 
 # 9) Saha Notları alt-klasör başlıkları
 if [ -d "$STAGE/21-Field-Notes" ]; then
-  declare -A FN_TITLES=(
-    ["ansible"]="Ansible"
-    ["kubectl"]="kubectl"
-    ["network"]="Network / SIEM"
-    ["system"]="System Setup"
-    ["terraform"]="Terraform"
+  FN_TITLES=(
+    "ansible|Ansible"
+    "kubectl|kubectl"
+    "network|Network / SIEM"
+    "system|System Setup"
+    "terraform|Terraform"
   )
-  for sub in "${!FN_TITLES[@]}"; do
+  for entry in "${FN_TITLES[@]}"; do
+    sub="${entry%%|*}"
+    title="${entry#*|}"
     if [ -d "$STAGE/21-Field-Notes/$sub" ]; then
-      printf "title: %s\n" "${FN_TITLES[$sub]}" > "$STAGE/21-Field-Notes/$sub/.pages"
+      printf "title: %s\n" "$title" > "$STAGE/21-Field-Notes/$sub/.pages"
     fi
   done
   echo "  + 21-Field-Notes/*/.pages"
