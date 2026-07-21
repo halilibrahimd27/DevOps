@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 💬 Discussions
-    url: https://github.com/halilibrahimd27/DevOps/discussions
+    url: https://github.com/halilibrahimd27/devsecops-handbook/discussions
     about: Genel tartışma, deneyim paylaşımı, "siz nasıl yapıyorsunuz" soruları
   - name: 📚 Modern DevOps 2026
-    url: https://github.com/halilibrahimd27/DevOps/blob/main/RoadMap/Modern-DevOps-2026.md
+    url: https://github.com/halilibrahimd27/devsecops-handbook/blob/main/RoadMap/Modern-DevOps-2026.md
     about: Önce burayı oku — sıkça sorulan konuların büyük kısmı kapsanıyor

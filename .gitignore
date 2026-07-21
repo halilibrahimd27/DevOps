@@ -99,3 +99,5 @@ monitoring/**/upload/
 MARKETING.md
 LAUNCH-PLAN.md
 SOCIAL-DRAFTS.md
+
+.local/

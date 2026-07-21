@@ -81,7 +81,7 @@ içerik DEĞİL):
 
 | Kaldırılan | Neden |
 |---|---|
-| "Türkiye'nin en kapsamlı …" başlığı | Doğrulanamaz pazarlama iddiası (CLAUDE.md ihlali) |
+| Superlatif konumlandırma başlığı ("en kapsamlı …") | Doğrulanamaz pazarlama iddiası (CLAUDE.md ihlali) |
 | "🆚 Diğer Türkçe DevOps Kaynakları ile" rakip-karşılaştırma tablosu | Satışçı ton |
 | "⭐ Yıldız bırakırsan…" + "🌟 Repo'yu desteklemek istiyorsan" tablosu | Yıldız-dilenme |
 | Star-history grafiği + Awesome rozeti + ~5 fazla shields badge | Badge yağmuru |

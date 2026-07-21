@@ -135,11 +135,11 @@ Türkiye · Güvenliği en sona bırakan pipeline'lara güvenmem; Kubernetes'i d
 
 <div class="grid cards projects" markdown>
 
--   :material-book-open-page-variant:{ .lg .middle } __DevOps Notebook__
+-   :material-book-open-page-variant:{ .lg .middle } __The DevSecOps Handbook__
 
     ---
 
-    Türkçe DevSecOps başucu kitabı — 21 konu, 125 deep-dive, 70K+ satır. Bu sitenin kendisi.
+    Derin TR/EU regülasyon kapsamı olan DevSecOps handbook — 21 konu, 125 deep-dive, 70K+ satır. Bu sitenin kendisi.
 
     [:octicons-arrow-right-24: Keşfet](index.md)
 

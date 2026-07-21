@@ -117,7 +117,7 @@ Bu klasörler elle yazılmış, kişisel/yaşanmış, yargılı saha notları (C
 
 `README.md` (272 satır) CLAUDE.md §"Yapılması Yasak / Pazarlama Tonu" kuralını ihlal ediyor:
 - 🔴 Badge yağmuru (8+ shields + "Awesome" rozeti)
-- 🔴 "**Türkiye'nin en kapsamlı** Türkçe DevSecOps kaynağı"
+- 🔴 Doğrulanamaz superlatif konumlandırma iddiası (kaldırıldı)
 - 🔴 Yıldız dilenme: "⭐ Yıldız bırakırsan repo daha çok kişiye ulaşır"
 - 🔴 Rakip-dövme tablosu: "🆚 Diğer Türkçe DevOps Kaynakları ile … Diğerleri (genelde)"
 - 🔴 "125+ deep-dive … **production-tested**" — doğrulanamaz iddia

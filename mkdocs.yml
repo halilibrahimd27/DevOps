@@ -1,16 +1,15 @@
-site_name: DevOps Notebook
+site_name: The DevSecOps Handbook
 site_description: >-
   Halil İbrahim Dürmüş — DevSecOps Engineer. Kubernetes, GitOps, IaC, observability ve
-  supply-chain security üzerine üretim-odaklı çalışmalar. Türkçe DevSecOps başucu kitabı
-  (21 konu · 125 deep-dive · 70K+ satır) ve açık kaynak projeler.
+  supply-chain security üzerine üretim-odaklı bir DevSecOps handbook — derin TR/EU
+  regülasyon kapsamıyla (21 konu · 125 deep-dive · 70K+ satır) ve açık kaynak projeler.
 site_author: Halil İbrahim Dürmüş
-site_url: https://halilibrahimd27.github.io/DevOps/
+site_url: https://halilibrahimd27.github.io/devsecops-handbook/
 copyright: >-
-  Copyright &copy; 2026 Halil İbrahim Dürmüş — MIT License ·
-  <a href="#__consent">Çerez ayarları</a>
+  Copyright &copy; 2026 Halil İbrahim Dürmüş — MIT License
 
-repo_name: halilibrahimd27/DevOps
-repo_url: https://github.com/halilibrahimd27/DevOps
+repo_name: halilibrahimd27/devsecops-handbook
+repo_url: https://github.com/halilibrahimd27/devsecops-handbook
 edit_uri: edit/main/
 
 # site_src/ build-time generated (scripts/build-docs.sh oluşturur)
@@ -26,6 +25,7 @@ exclude_docs: |
   CONTRIBUTING.md
   AUDIT.md
   CHANGES-SUMMARY.md
+  _planning/
 
 theme:
   name: material
@@ -83,6 +83,25 @@ plugins:
   - awesome-pages:
       collapse_single_pages: false
       strict: false
+  # awesome-pages i18n'den ÖNCE gelir (nav'ı i18n locale'lere göre böler).
+  # Aşama A: TR varsayılan (kök), EN /en/ altında kısmi. Çeviri yoksa TR'ye fallback.
+  # İç linkler locale eki olmadan yazılır: [x](Kubernetes-Hardening.md) ✅ / .tr.md ❌
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - locale: tr
+          default: true
+          name: Türkçe
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            "🗺️ Yol Haritası": "🗺️ Roadmap"
+            "👤 Hakkımda": "👤 About"
+            "📖 Sözlük": "📖 Glossary"
+            "🏷️ Etiketler": "🏷️ Tags"
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
@@ -153,15 +172,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/halilibrahimd
       name: LinkedIn
-  consent:
-    title: Çerez kullanımı
-    description: >-
-      Bu site sayfa kullanımını anlamak için anonim çerezler kullanır.
-      Onay verirsen ne ararken zorlandığını görüp içeriği iyileştirebiliyorum.
-    actions:
-      - accept
-      - reject
-      - manage
+  # Çerez onay banner'ı kaldırıldı: sitede analytics/gtag yok, dolayısıyla
+  # kullanılmayan bir çerez için izin istemek yanlıştı. Analytics eklenirse
+  # extra.analytics + consent birlikte geri gelir.
 
 extra_css:
   - assets/extra.css
