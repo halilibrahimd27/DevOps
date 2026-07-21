@@ -1,0 +1,10 @@
+# pdb.yaml — SEN doldur. Drain sırasında en az 1 replika ayakta.
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: lab-app
+  namespace: lab
+spec:
+  # TODO: minAvailable: 1
+  selector:
+    matchLabels: { app: lab-app }

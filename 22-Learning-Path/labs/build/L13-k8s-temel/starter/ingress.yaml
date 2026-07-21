@@ -1,0 +1,17 @@
+# ingress.yaml — SEN doldur. host lab.example → lab-svc:80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lab-ing
+  namespace: lab
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: lab.example
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                # TODO: name: lab-svc  /  port: number: 80

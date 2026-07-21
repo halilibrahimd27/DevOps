@@ -1,0 +1,35 @@
+# deployment.yaml — HAZIR. Non-root, resources, kendi ServiceAccount'u.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-app
+  namespace: lab
+  labels:
+    app: lab-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lab-app
+  template:
+    metadata:
+      labels:
+        app: lab-app
+    spec:
+      serviceAccountName: lab-sa
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.27-alpine   # 8080 dinler, root değil
+          ports:
+            - containerPort: 8080
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits:   { cpu: "200m", memory: "128Mi" }
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]

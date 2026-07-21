@@ -1,0 +1,12 @@
+# service.yaml (referans) — selector Deployment label'ı ile birebir.
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab-svc
+  namespace: lab
+spec:
+  selector:
+    app: lab-app          # Deployment template.labels ile AYNI
+  ports:
+    - port: 80
+      targetPort: 8080    # container 8080 dinliyor

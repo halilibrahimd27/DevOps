@@ -1,0 +1,31 @@
+# app/deployment.yaml (referans) — starter ile aynı; Git'teki gerçek replica=2.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-app
+  namespace: lab
+  labels: { app: lab-app }
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: lab-app }
+  template:
+    metadata:
+      labels: { app: lab-app }
+    spec:
+      containers:
+        - name: web
+          image: nginxinc/nginx-unprivileged:1.27-alpine
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab-svc
+  namespace: lab
+spec:
+  selector: { app: lab-app }
+  ports:
+    - port: 80
+      targetPort: 8080

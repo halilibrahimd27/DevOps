@@ -1,0 +1,21 @@
+# compose.yaml (referans çözüm) — app + db, sürüm pinli, sır kabuktan.
+services:
+  app:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_NAME: app
+      DB_USER: app
+      # ':?' → değişken yoksa compose hata verir; sır image'a gömülmez
+      DB_PASSWORD: ${DB_PASSWORD:?export DB_PASSWORD first}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres:16-alpine            # :latest DEĞİL
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?export DB_PASSWORD first}
+    # Not: kalıcı veri için bir named volume ekleyebilirsin (bu lab'da opsiyonel).

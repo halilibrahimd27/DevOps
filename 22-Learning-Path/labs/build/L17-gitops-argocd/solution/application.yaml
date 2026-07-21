@@ -1,0 +1,21 @@
+# application.yaml (referans) — otomatik sync + self-heal. Önce KENDİN dene.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lab-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: <GIT_REPO_URL>       # kendi depon (fork)
+    path: apps/lab                # manifestlerin yolu
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lab
+  syncPolicy:
+    automated:
+      selfHeal: true              # cluster Git'ten saparsa geri çek
+      prune: true                 # Git'ten silineni cluster'dan da sil
+    syncOptions:
+      - CreateNamespace=true

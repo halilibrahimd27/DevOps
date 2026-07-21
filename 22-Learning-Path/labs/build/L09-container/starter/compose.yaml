@@ -1,0 +1,21 @@
+# compose.yaml — SEN doldur. app + db birlikte ayağa kalkacak.
+# DB_PASSWORD kabuktan gelir:  export DB_PASSWORD='<kendi-secimin>'
+services:
+  app:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_NAME: app
+      DB_USER: app
+      # TODO: DB_PASSWORD'ü kabuktan al (${DB_PASSWORD:?...})
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    # TODO: postgres image'ını SÜRÜMLE pinle (:latest YASAK)
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app
+      # TODO: POSTGRES_PASSWORD'ü kabuktan al

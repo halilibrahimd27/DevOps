@@ -1,0 +1,31 @@
+# networkpolicy.yaml — SEN doldur. Önce reddet, sonra tek tek aç.
+# NOT: kind varsayılan CNI (kindnet) NetworkPolicy uygular; Calico da olur.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-ingress
+  namespace: lab
+spec:
+  podSelector: {}          # tüm Pod'lar
+  policyTypes: ["Ingress"]
+  # ingress kuralı YOK → hiçbir gelen bağlantı kabul edilmez
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-from-ingress-ns
+  namespace: lab
+spec:
+  podSelector:
+    matchLabels:
+      app: lab-app
+  policyTypes: ["Ingress"]
+  ingress:
+    - from:
+        # TODO: ingress-nginx namespace'inden gelen trafiğe izin ver
+        # - namespaceSelector:
+        #     matchLabels:
+        #       kubernetes.io/metadata.name: ingress-nginx
+      ports:
+        - protocol: TCP
+          port: 8080

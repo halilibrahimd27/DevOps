@@ -1,0 +1,12 @@
+# service.yaml — SEN doldur. ClusterIP 80 → hedef 8080.
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab-svc
+  namespace: lab
+spec:
+  selector:
+    # TODO: Deployment label'ı ile BİREBİR eşleşmeli (app: lab-app)
+  ports:
+    - port: 80
+      # TODO: targetPort: 8080

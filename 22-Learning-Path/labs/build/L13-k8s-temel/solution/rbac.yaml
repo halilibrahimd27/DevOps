@@ -1,0 +1,24 @@
+# rbac.yaml (referans) — en az yetki: sadece pod okuma, delete YOK.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: lab-pod-reader
+  namespace: lab
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]   # delete/create/update YOK
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: lab-pod-reader-bind
+  namespace: lab
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: lab-pod-reader
+subjects:
+  - kind: ServiceAccount
+    name: lab-sa
+    namespace: lab
