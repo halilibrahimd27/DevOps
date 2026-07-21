@@ -1,0 +1,62 @@
+---
+description: "İleri kırık lab / chaos: sistemi kontrollü biçimde bozup dayanıklılığını kanıtlamak — game day."
+level: E
+module: E5
+estimated_hours: 12
+prerequisites: [E3, D2]
+tags: [Learning Path, SRE, Chaos]
+---
+# E5 — İleri Kırık Lab / Chaos
+
+> *"Sistemin nasıl bozulduğunu bilmiyorsan, onun güvenilir olduğunu da bilemezsin — sadece henüz bozulmadığını bilirsin."*
+
+**Blok:** E — Sahiplik · **Süre:** ~12 saat · **Ön koşul:** [`E3`](E3-incident-postmortem.md), [`D2`](../block-d-orchestration/D2-k8s-production.md)
+
+## 🎯 Bu modülü bitirdiğinde
+- Kontrollü bir şekilde (blast radius sınırlı) bir arıza enjekte edersin.
+- Bir game day yürütür, hipotez → deney → gözlem döngüsünü uygularsın.
+- Bulduğun zayıflığı bir eylem maddesine ve (varsa) yeni bir alarma çevirirsin.
+
+## 🧠 Niye bu, niye şimdi
+E1–E4'te sistemi ölçtün, alarmladın, incident yönettin, restore ettin. E5 bunu
+proaktif yapar: arızayı beklemeden, kontrollü biçimde sen çıkarırsın. Bu, E → F
+geçişinden önceki son sahiplik sınavıdır.
+
+## 📖 Önce oku
+| Kaynak | Ne için | Süre |
+|---|---|---|
+| [`11-SRE/Chaos-Engineering.md`](../../11-SRE/Chaos-Engineering.md) | chaos ilkeleri + game day | ~30 dk |
+| [`11-SRE/Capacity-Planning.md`](../../11-SRE/Capacity-Planning.md) | yük/kapasite bağı | ~20 dk |
+
+## 💥 Kırık lab
+👉 `labs/broken/K09-chaos-gameday/` — Faz 5'te. Çok-arızalı, hipotez temelli bir
+game day; blast radius sınırlı, gözlem ve öğrenme merkezde.
+
+## ✅ Kabul kriterleri
+Hepsi doğrulanmadan sonraki modüle geçme:
+- [ ] TODO (Faz 4): sınırlı blast radius ile bir arıza enjekte edildi ve gözlemlendi
+- [ ] TODO (Faz 4): game day bir hipotez → sonuç raporuyla belgelendi
+- [ ] TODO (Faz 4): bulunan zayıflık için bir eylem maddesi/alarm oluşturuldu
+
+## 🧪 Kendini test et
+1. TODO (Faz 4)
+2. TODO (Faz 4)
+3. TODO (Faz 4)
+
+<details><summary>Cevaplar</summary>TODO (Faz 4)</details>
+
+## 🆘 Takıldıysan
+| Belirti | Muhtemel sebep | Ne yap |
+|---|---|---|
+| TODO | TODO | TODO |
+
+## 💼 Portfolyo çıktısı
+Bir game day raporu (hipotez, deney, bulgu, eylem) — olgun bir sahiplik kanıtı.
+
+## ⏭️ Sırada
+Blok E bitti → **kapı projesi**: [`Capstone 3`](../capstones/CAP3-blok-e-sonu.md).
+Sonra [`F1 — Maliyet (FinOps)`](../block-f-judgment/F1-maliyet-finops.md).
+
+---
+
+> *"Chaos, sistemi kırmak değil; onun nerede kırılgan olduğunu güvenli bir günde öğrenmektir."*
