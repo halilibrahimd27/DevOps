@@ -33,21 +33,30 @@ biter ve dikkatli bulut kullanımı başlar.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): faturalama alarmı kuruldu, bir bildirime bağlı ve **test edildi** — kanıt
-- [ ] TODO (Faz 3): küçük bir kaynak Terraform ile açılıp `destroy` ile kapatıldı
-- [ ] TODO (Faz 3): "hangi servisler free tier, hangileri değil" (yazılı not)
+- [ ] Faturalama/bütçe alarmı kuruldu, bir bildirim kanalına bağlı ve **tetiklenerek** test edildi — kanıt
+- [ ] Küçük bir kaynak Terraform ile açıldı, `destroy` ile kapatıldı — açık kaynak kalmadığı doğrulandı
+- [ ] Hangi servislerin free tier kapsamında, hangilerinin saat/GB başına ücretli olduğunu yazılı listeledin
+- [ ] VPC, IAM ve compute kavramlarını kendi cümlelerinle tanımlayabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3)
-3. TODO (Faz 3)
+1. Buluta ilk dokunuşta **kaynak açmadan önce** bütçe alarmı kurmak niçin bir tercih değil, kural?
+2. IAM'de "en az yetki" ne demek; root/admin anahtarıyla günlük iş yapmak niçin tehlikeli?
+3. Bir lab bitti. Maliyeti sıfıra indirmek için hangi tek alışkanlık seni korur, niye?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. Çünkü bulutta maliyet **sen fark etmeden** birikir: unutulan bir disk, yük dengeleyici veya IP saat başına sayar. Alarm, faturayı ay sonunda değil ilk saatte görmeni sağlar. Yerel alternatifler + alarm kurulumu [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md)'de.
+2. En az yetki: bir kimliğe yalnız işini yapacak kadar izin ver, fazlasını değil. Root/admin anahtarı sızarsa saldırgan her şeyi yapar; dar bir rol sızsa bile hasar sınırlı kalır. Günlük iş için ayrı, kısıtlı bir kimlik kullan.
+3. `destroy` (ya da lab kaynaklarını kapatma) alışkanlığı. Buluta açtığın her kaynağı iş bitince kapat — "sonra kapatırım" en pahalı cümledir.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Ay sonu beklenmedik fatura | Unutulan kaynak (yük dengeleyici, disk, IP) | Alarmı düşük eşiğe kur; `destroy` alışkanlığı; maliyet gezginini incele |
+| Alarm hiç tetiklenmiyor | Bildirim kanalı doğrulanmamış | Alarmı elle düşük eşikle test et; e-posta/webhook aboneliğini onayla |
+| `apply` "access denied" | IAM izni eksik | Gereken izni dar kapsamda ekle; admin anahtarı kullanma |
+| Free tier sanılan servis ücretli | Egress / NAT / veri transferi gizli maliyet | Fiyatlandırmayı önceden oku; egress ve yönetilen servislere dikkat |
 
 ## 💼 Portfolyo çıktısı
 Bütçe alarmı + `destroy`'lu disiplinli bir bulut kurulum notu.

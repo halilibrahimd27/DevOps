@@ -38,21 +38,30 @@ zorunlu kırık lab'ıdır.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): A6 ortamı Terraform ile sıfırdan `apply` ile kuruluyor (yerelde)
-- [ ] TODO (Faz 3): `destroy` sonrası tekrar `apply` ile aynı sonuç — tekrarlanabilirlik kanıtı
-- [ ] TODO (Faz 3): K03 kırık lab'ı çözüldü, `verify.sh` geçiyor
+- [ ] A6 ortamı Terraform ile sıfırdan `terraform apply` ile kuruluyor (yerelde, LocalStack)
+- [ ] `terraform destroy` sonrası tekrar `apply` aynı sonucu üretiyor — tekrarlanabilirlik kanıtı
+- [ ] `bash labs/broken/K03-terraform-state/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] State'in ne olduğunu ve niçin paylaşılan/kilitlenen bir yerde durması gerektiğini yazılı anlatabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3)
-3. TODO (Faz 3)
+1. Terraform state nedir? Niçin "gerçek dünyanın fotoğrafı" değil, "Terraform'un ne yaptığının kaydı"dır?
+2. İki kişi aynı anda `apply` çalıştırırsa ne olur, bunu ne engeller?
+3. Biri konsoldan elle bir kaynağı değiştirdi. Sonraki `plan` ne gösterir, buna ne denir, nasıl düzeltirsin?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. State, Terraform'un yönettiği kaynakların bir eşlemesidir: hangi kaynağı hangi gerçek nesneyle ilişkilendirdiğini tutar. Gerçek dünya bundan bağımsız değişebilir (elle müdahale); Terraform yalnız kendi kaydını bilir, farkı `plan`'da yüzeye çıkarır. Detay [`03-IaC/Terraform-Best-Practices.md`](../../03-IaC/Terraform-Best-Practices.md).
+2. İki eşzamanlı `apply` state'i bozabilir. Bunu **state lock** engeller: ilk işlem kilidi alır, ikincisi bekler. Bu yüzden state uzak ve kilitlenebilir bir arka uçta durmalı (yerel dosya değil).
+3. `plan` beklenmedik bir fark gösterir — buna **drift** denir. Ya elle değişikliği geri alıp `apply` ile koda hizala, ya değişikliği kalıcıysa koda yansıt. `ignore_changes` yalnız son çaredir.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| `apply` "state locked" diyor | Önceki işlem kilidi bırakmış / eşzamanlı çalışma | Çalışan işlem yoksa `force-unlock` (dikkatle); state'i ekiple uzak arka uçta paylaş |
+| `plan` her seferinde değişiklik gösteriyor | Drift veya provider'ın normalize etmediği alan | Elle değişikliği geri al ya da koda yansıt; `ignore_changes` son çare |
+| `destroy` bazı kaynakları bırakıyor | Bağımlılık / `prevent_destroy` koruması | Bağımlılık sırasını çöz; koruma bayrağını gözden geçir |
+| Yerelde gerçek buluta gidiyor | Provider endpoint'i LocalStack'e yönlendirilmemiş | Endpoint'i yerel öykünücüye çevir; gerçek bulut C4'e kadar yok |
 
 ## 💼 Portfolyo çıktısı
 A6 altyapısının kod hâli (Terraform modülü) — sıfırdan kurulabilir, gösterilebilir.

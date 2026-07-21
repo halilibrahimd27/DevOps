@@ -34,21 +34,30 @@ parçası olur, sonradan yapılan ayrı bir iş değil.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): pipeline'da image taraması var ve eşik aşımında kırılıyor — kanıt
-- [ ] TODO (Faz 3): image imzalanıyor ve doğrulanıyor — cosign çıktısı
-- [ ] TODO (Faz 3): "imzasız image'ı cluster niçin reddetmeli" (yazılı)
+- [ ] C2 pipeline'ına image taraması eklendi; tanımlı eşik (ör. HIGH/CRITICAL) aşılınca pipeline **kırılıyor** — kanıt
+- [ ] image imzalanıyor ve `cosign verify` ile doğrulanıyor — çıktı
+- [ ] "imzasız / taranmamış image'ı cluster niçin reddetmeli" — yazılı gerekçe
+- [ ] Bir SBOM'un ne olduğunu ve hangi soruyu (hangi bileşen, hangi sürüm) yanıtladığını anlatabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3)
-3. TODO (Faz 3)
+1. Image taramasını build'i **kırmayan** bir rapor adımı olarak koymak niçin çoğu zaman işe yaramaz?
+2. Bir image imzalamak neyi kanıtlar, neyi kanıtlamaz?
+3. Kritik bir açık bulundu ama henüz düzeltmesi yok. Pipeline'ı kırmak mı, istisna açmak mı? Kararı nasıl verirsin?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. Kırmayan bir tarama sadece bir uyarı üretir; kimse okumaz ve açık image'la birlikte production'a gider. Kontrol ancak **kırıyorsa** kontroldür. Pipeline'a yerleştirme [`08-Security/DevSecOps-Pipeline.md`](../../08-Security/DevSecOps-Pipeline.md)'de.
+2. İmza, image'ın **kim tarafından üretildiğini ve o günden beri değişmediğini** kanıtlar (bütünlük + köken). İçindeki açıkların olmadığını **kanıtlamaz** — imzalı bir image de savunmasız olabilir. Bu yüzden tarama + imzalama birlikte gerekir.
+3. İkili değil: **düzeltmesi olan** HIGH/CRITICAL'da kır; düzeltmesi yoksa süreli, gerekçeli, sahibi belli bir istisna aç ve düzeltme çıkınca kapat. Kör "hepsini kır" ekibi kontrolü baypas etmeye iter.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Tarama hep yeşil ama açık var | Eşik gevşek / açık DB'si güncel değil | Eşiği HIGH/CRITICAL kıracak şekilde ayarla; tarayıcı DB'sini güncelle |
+| Pipeline her açıkta kırılıyor, ekip bıktı | Gürültü yönetimi yok | Sadece düzeltmesi olan HIGH+ kır; istisnaları süreli ve gerekçeli tut |
+| `cosign verify` başarısız | İmzalayan kimlik / anahtar uyuşmuyor | İmzalayan kimliği ve doğrulama anahtarını eşleştir |
+| Cluster imzasız image'ı kabul ediyor | Admission policy yok | Kyverno/Gatekeeper ile imza doğrulamayı zorunlu kıl |
 
 ## 💼 Portfolyo çıktısı
 Tarama + imzalama adımları olan bir CI pipeline'ı — DevSecOps'un somut kanıtı.

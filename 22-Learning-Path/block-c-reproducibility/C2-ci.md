@@ -33,21 +33,30 @@ devamıdır**, ayrı bir ders değil.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 3): commit → test → build → registry akışı yeşil geçiyor — pipeline logu
-- [ ] TODO (Faz 3): image registry'de sürümlü etiketle yayımlanıyor (`:latest` değil)
-- [ ] TODO (Faz 3): "kırık bir adımı nasıl teşhis ettin" (yazılı)
+- [ ] commit → test → build → registry akışı yeşil geçiyor — pipeline logu gösterilebiliyor
+- [ ] image registry'ye sürümlü etiketle (`:latest` değil; ör. commit SHA / semver) yayımlanıyor
+- [ ] Kırık bir adımın hangi aşamada, niçin patladığını logdan okuyup düzeltebiliyorsun — yazılı teşhis notu
+- [ ] "Pipeline yeşil ama neyi doğruladı" sorusunu kendi pipeline'ın için yazılı yanıtlayabiliyorsun
 
 ## 🧪 Kendini test et
-1. TODO (Faz 3)
-2. TODO (Faz 3)
-3. TODO (Faz 3)
+1. Bir test yerelde geçip pipeline'da patlıyor. Bunun en yaygın iki sebebi ne?
+2. `:latest` etiketi production'da niçin yasak? Bir image'ı sürümlemenin sağlam bir yolu ne?
+3. Pipeline'ın 8 dakika sürüyor ve ekibi yavaşlatıyor. İlk optimizasyonun ne olurdu, niye?
 
-<details><summary>Cevaplar</summary>TODO (Faz 3)</details>
+<details><summary>Cevaplar</summary>
+
+1. (a) Ortam farkı — yerelde farklı bir bağımlılık sürümü, farklı bir env değişkeni ya da yüklü bir araç var; (b) gizli yerel durum — yerelde var olan bir dosya/kimlik CI'ın temiz ortamında yok. Çözüm: sürümleri lock dosyasıyla sabitle, CI'ın kullandığı env'i logla.
+2. `:latest` değişebilir bir referanstır: aynı etiket bugün ve yarın farklı bir image'ı gösterebilir → hangi sürümün çalıştığını bilemezsin, geri alamazsın. Değişmez bir kimlik kullan: commit SHA veya semver. Detay [`02-CI-CD/Pipeline-Patterns.md`](../../02-CI-CD/Pipeline-Patterns.md).
+3. Cache. Bağımlılık ve Docker katman cache'i çoğu pipeline'da en büyük tekrarı yapan adımdır; bağımsız işleri paralelleştirmek ikinci adımdır. "Önce ölç, sonra optimize et" — hangi adımın uzun sürdüğünü logdan gör.
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| Yerelde geçen test CI'da patlıyor | Ortam farkı (bağımlılık sürümü, env) | Sürümleri lock'la; CI'ın env'ini logla; temiz ortamda tekrar üret |
+| `docker push` reddediliyor | Registry kimlik doğrulaması eksik/yanlış | Registry credential'ını secret olarak ver; login adımını doğrula |
+| Pipeline her commit'te sıfırdan kuruyor | Cache yok | Bağımlılık/katman cache ekle (`02-CI-CD/Caching-Strategies.md`) |
+| Build yeşil ama image çalışmıyor | Pipeline image'ı gerçekten çalıştırmıyor | Bir "smoke test" adımı ekle: container'ı ayağa kaldır, sağlık kontrolü yap |
 
 ## 💼 Portfolyo çıktısı
 Yeşil bir CI pipeline'ı ve registry'de sürümlü image'lar — CV'de somut bir satır.
