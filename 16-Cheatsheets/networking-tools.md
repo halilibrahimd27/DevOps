@@ -1,5 +1,5 @@
 ---
-description: "Network teshis araclari cheatsheet'i: DNS icin dig, baglanti ve port testleri, 7 katmanli sorun giderme. Ping doner ama uygulama 503 verir senaryolari icin."
+description: "Network teşhis araçları cheatsheet'i: DNS için dig, bağlantı ve port testleri, 7 katmanlı sorun giderme. Ping döner ama uygulama 503 verir senaryoları için."
 tags:
   - Cheatsheet
   - Networking

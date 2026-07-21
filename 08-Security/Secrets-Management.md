@@ -1,5 +1,5 @@
 ---
-description: "Production'da sir yonetimi: DB parolasi, API key ve token'lari Vault, ESO, SOPS ve Sealed Secrets ile yoneten stack karsilastirmasi ve karar agaci."
+description: "Production'da sır yönetimi: DB parolası, API key ve token'ları Vault, ESO, SOPS ve Sealed Secrets ile yöneten stack karşılaştırması ve karar ağacı."
 tags:
   - Security
   - Secrets

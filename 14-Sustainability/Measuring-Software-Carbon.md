@@ -1,5 +1,5 @@
 ---
-description: "Yazilim emisyonunu gercek metrige donusturen stack rehberi: SCI formulu, Cloud Carbon Footprint, Kepler eBPF ve AWS/GCP/Azure native karbon dashboard'lari adim adim."
+description: "Yazılım emisyonunu gerçek metriğe dönüştüren stack rehberi: SCI formülü, Cloud Carbon Footprint, Kepler eBPF ve AWS/GCP/Azure native karbon dashboard'ları adım adım."
 tags:
   - Sustainability
   - Observability

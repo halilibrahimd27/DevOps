@@ -1,5 +1,5 @@
 ---
-description: "Helm 3+ icin komut notlari: repo yonetimi, chart template debug, release kurulumu/upgrade, hook'lar ve OCI registry. Tiller'siz, namespace bazli release."
+description: "Helm 3+ için komut notları: repo yönetimi, chart template debug, release kurulumu/upgrade, hook'lar ve OCI registry. Tiller'sız, namespace bazlı release."
 tags:
   - Cheatsheet
   - Helm

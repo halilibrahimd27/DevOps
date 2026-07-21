@@ -403,6 +403,8 @@ tfsec .
 checkov -d . --framework terraform
 ```
 
+> ℹ️ **tfsec → Trivy:** tfsec 2023'te Trivy'ye konsolide edildi (yeni check gelmiyor); yeni kurulumda `trivy config .` kullan.
+
 ### Compliance
 
 ```bash

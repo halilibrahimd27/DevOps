@@ -401,6 +401,8 @@ checkov -d .
 conftest test --policy=policies/ main.tf
 ```
 
+> ℹ️ **tfsec → Trivy:** tfsec 2023'te Trivy'ye konsolide edildi (yeni check gelmiyor); yeni kurulumda `trivy config .` kullan.
+
 ---
 
 ## 🚫 Anti-Pattern Tablosu

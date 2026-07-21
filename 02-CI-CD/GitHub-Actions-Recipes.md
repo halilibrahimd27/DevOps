@@ -1,5 +1,5 @@
 ---
-description: "GitHub Actions production tarifleri: OIDC cloud auth, matrix build, reusable workflow, caching ve secret yonetimi somut YAML ornekleriyle anlatilir."
+description: "GitHub Actions production tarifleri: OIDC cloud auth, matrix build, reusable workflow, caching ve secret yönetimi somut YAML örnekleriyle anlatılır."
 tags:
   - CI/CD
   - Git

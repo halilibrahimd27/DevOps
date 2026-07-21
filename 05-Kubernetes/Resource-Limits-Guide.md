@@ -1,5 +1,5 @@
 ---
-description: "Kubernetes resource yonetimi rehberi: requests vs limits farki, QoS class'lari, OOMKilled davranisi ve dogru CPU/memory sayilarinin nasil bulunacagi."
+description: "Kubernetes resource yönetimi rehberi: requests vs limits farkı, QoS class'ları, OOMKilled davranışı ve doğru CPU/memory sayılarının nasıl bulunacağı."
 tags:
   - Kubernetes
   - Performance

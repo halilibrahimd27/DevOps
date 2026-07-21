@@ -224,7 +224,7 @@ Bu ay 35 dk down olduysa: 8 dk kaldı → riskli deploy yapma.
 | SAST | Semgrep, CodeQL | Snyk, Veracode |
 | SCA / Dep scan | OSV-Scanner, Trivy | Snyk, Mend |
 | Container scan | Trivy, Grype | Snyk Container, Wiz |
-| IaC scan | Checkov, tfsec, KICS | Bridgecrew, Wiz |
+| IaC scan | Checkov, Trivy (config), KICS | Bridgecrew, Wiz |
 | Policy | OPA/Rego, Kyverno | Styra |
 | Runtime | Falco, Tetragon, Cilium | Sysdig, Wiz Runtime |
 | Supply chain | Sigstore (cosign), in-toto | Chainguard |

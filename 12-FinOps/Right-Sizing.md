@@ -1,5 +1,5 @@
 ---
-description: "AWS, GCP ve Kubernetes icin right-sizing rehberi: kullanim profiline gore instance kuculttme, CPU/memory hedefleri, tooling ve ne zaman kuculteleceginin karari."
+description: "AWS, GCP ve Kubernetes için right-sizing rehberi: kullanım profiline göre instance küçültme, CPU/memory hedefleri, tooling ve ne zaman küçültüleceğinin kararı."
 tags:
   - FinOps
   - Cost Optimization

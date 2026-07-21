@@ -355,7 +355,7 @@ plugin "terraform" {
 - ✅ `for_each` > `count`
 - ✅ Module versiyonlu (Git tag, registry)
 - ✅ `terraform plan` PR'da otomatik (atlantis / GH Actions)
-- ✅ `terraform fmt -check` + `tflint` + `tfsec` CI'da
+- ✅ `terraform fmt -check` + `tflint` + `trivy config` CI'da (tfsec 2023'te Trivy'ye konsolide edildi)
 - ✅ Sensitive variable'lar `sensitive = true`
 - ✅ Production'a `apply` sadece pipeline'dan
 - ❌ State Git'te asla

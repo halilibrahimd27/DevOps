@@ -1,5 +1,5 @@
 ---
-description: "DevSecOps bolumu indeksi: shift-left pipeline, secrets yonetimi, image scanning, Kubernetes hardening, SLSA/SBOM, policy-as-code ve zero-trust rehberleri."
+description: "DevSecOps bölümü indeksi: shift-left pipeline, secrets yönetimi, image scanning, Kubernetes hardening, SLSA/SBOM, policy-as-code ve zero-trust rehberleri."
 tags:
   - Security
   - Kubernetes

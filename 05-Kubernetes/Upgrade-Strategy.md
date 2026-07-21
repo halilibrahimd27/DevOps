@@ -1,5 +1,5 @@
 ---
-description: "Kubernetes cluster'i zero-downtime upgrade rehberi: release cycle, upgrade disiplini, rollback, deprecated API gecisi, managed vs self-managed farklari."
+description: "Kubernetes cluster'ı zero-downtime upgrade rehberi: release cycle, upgrade disiplini, rollback, deprecated API geçişi, managed vs self-managed farkları."
 tags:
   - Kubernetes
   - SRE
