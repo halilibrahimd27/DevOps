@@ -13,7 +13,7 @@ servis çalıştırmaz. Yine de aşağıdaki durumlarda güvenlik bildirimi yap�
 
 Public issue açmak yerine **özel bildirim** tercih edilir:
 
-1. GitHub Security Advisory: [yeni advisory aç](https://github.com/halilibrahimd27/DevOps/security/advisories/new) (önerilen)
+1. GitHub Security Advisory: [yeni advisory aç](https://github.com/halilibrahimd27/devsecops-handbook/security/advisories/new) (önerilen)
 2. veya repo sahibine **DM** ile ulaş (GitHub profilinde)
 
 Public issue **yalnızca** olası bilgi sızıntısı zaten genel bilgi haline

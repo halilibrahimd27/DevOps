@@ -99,7 +99,7 @@ Bir tane bile gerçek değer çıkarsa **placeholder'a çevir** ve commit et.
 
 ## 💡 İçerik fikrin var ama yazacak vaktin yok mu?
 
-[Issue aç](https://github.com/halilibrahimd27/DevOps/issues) ve `good first issue`
+[Issue aç](https://github.com/halilibrahimd27/devsecops-handbook/issues) ve `good first issue`
 etiketi iste. Belki başka biri yazar.
 
 ---

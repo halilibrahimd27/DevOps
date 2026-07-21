@@ -81,6 +81,14 @@ if [ -d assets ]; then
   echo "  + assets/"
 fi
 
+# 5a) CNAME — custom domain kullanılıyorsa. site_src/ her build'de silinip yeniden
+# oluştuğu için CNAME'i buraya kopyalamazsak GitHub Pages her deploy'da custom
+# domain ayarını kaybeder. Kökte CNAME yoksa bu adım sessizce atlanır.
+if [ -f CNAME ]; then
+  cp CNAME "$STAGE/CNAME"
+  echo "  + CNAME ($(cat CNAME))"
+fi
+
 # 6) Klasör başlıkları için .pages dosyaları (awesome-pages plugin)
 echo ""
 echo "🏷️  Klasör başlıkları (.pages):"

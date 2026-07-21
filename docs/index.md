@@ -5,8 +5,8 @@ hide:
 title: Halil İbrahim Dürmüş — DevSecOps Engineer
 description: >-
   Halil İbrahim Dürmüş — DevSecOps Engineer. Kubernetes, GitOps, IaC, observability,
-  supply-chain security ve SRE üzerine üretim-odaklı çalışmalar. Türkçe DevSecOps
-  başucu kitabı (21 konu, 125 deep-dive) ve açık kaynak projeler.
+  supply-chain security ve SRE üzerine üretim-odaklı çalışmalar. Derin TR/EU regülasyon
+  kapsamı olan bir DevSecOps handbook (21 konu, 125 deep-dive) ve açık kaynak projeler.
 ---
 
 <div class="profile-hero" markdown>
@@ -38,23 +38,23 @@ Güvenliği en sona bırakan pipeline'lara güvenmem. Default config "çalışı
 
     Merhaba 👋 Ben Halil. **DevSecOps** odaklı çalışıyorum: CI/CD pipeline'larına güvenlik kapıları
     gömmek, Kubernetes üzerinde güvenilir platformlar kurmak, IaC ile altyapıyı kod gibi yönetmek ve
-    her şeyi observability ile görünür kılmak. Aşağıdaki **DevOps Notebook**, sahada öğrendiklerimi
-    Türkçe ve eylemsel biçimde damıttığım amiral gemim — yanında açık kaynak projelerim.
+    her şeyi observability ile görünür kılmak. Aşağıdaki **The DevSecOps Handbook**, sahada öğrendiklerimi
+    eylemsel biçimde damıttığım amiral gemim — yanında açık kaynak projelerim.
 
 === "🇬🇧 English"
 
     Hi 👋 I'm Halil, a **DevSecOps** engineer. I bake security gates into CI/CD pipelines, build reliable
-    platforms on Kubernetes, manage infrastructure as code, and make everything observable. The
-    **DevOps Notebook** below is my flagship — a distilled, opinionated Turkish handbook of what I've
-    learned in production — alongside my open-source projects.
+    platforms on Kubernetes, manage infrastructure as code, and make everything observable. **The
+    DevSecOps Handbook** below is my flagship — a distilled, opinionated handbook of what I've learned
+    in production, with deep TR/EU regulatory coverage — alongside my open-source projects.
 
 ---
 
 <span class="section-eyebrow">Flagship</span>
 
-## :material-book-open-page-variant: DevOps Notebook { #flagship }
+## :material-book-open-page-variant: The DevSecOps Handbook { #flagship }
 
-Production'da işleyen modern **DevOps · DevSecOps · SRE · Platform Engineering** pratiklerinin Türkçe başucu kitabı. Konferans slaytı değil — **oncall'da işine yarayan referans**.
+Production'da işleyen modern **DevOps · DevSecOps · SRE · Platform Engineering** pratikleri — derin TR/EU regülasyon kapsamıyla. Konferans slaytı değil — **oncall'da işine yarayan referans**.
 
 <div class="hero-stats" markdown>
 
@@ -256,7 +256,7 @@ Knowledge base'in yanında, üretim için yazdığım açık kaynak araçlar:
 
     ---
 
-    3. parti API **schema değişikliği tespiti** — plugin tabanlı, severity-aware monitoring. Breaking change'i sen değil o yakalar.
+    Üçüncü parti API **schema değişikliği tespiti** — plugin tabanlı, severity-aware monitoring. Breaking change'i sen değil o yakalar.
 
     [:fontawesome-brands-github: Repo](https://github.com/halilibrahimd27/api-sentinel)
 

@@ -99,7 +99,7 @@ olarak işaretlendi: 21 ana bölüm, 125+ deep-dive, 65K+ satır Türkçe içeri
   - lychee link checker
   - placeholder/credential leak guard (AWS, Google, Slack token, private key, public IP)
   - PR'da repo istatistik özeti
-- **MkDocs Material site**: <https://halilibrahimd27.github.io/DevOps/>
+- **MkDocs Material site**: <https://halilibrahimd27.github.io/devsecops-handbook/>
   - Tam metin arama (TR + EN)
   - Karanlık/aydınlık tema
   - Mermaid diyagram desteği
@@ -116,8 +116,8 @@ olarak işaretlendi: 21 ana bölüm, 125+ deep-dive, 65K+ satır Türkçe içeri
 
 ---
 
-[unreleased]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.1...HEAD
-[1.2.1]: https://github.com/halilibrahimd27/DevOps/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/halilibrahimd27/DevOps/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/halilibrahimd27/DevOps/releases/tag/v1.0.0
+[unreleased]: https://github.com/halilibrahimd27/devsecops-handbook/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/halilibrahimd27/devsecops-handbook/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/halilibrahimd27/devsecops-handbook/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/halilibrahimd27/devsecops-handbook/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/halilibrahimd27/devsecops-handbook/releases/tag/v1.0.0

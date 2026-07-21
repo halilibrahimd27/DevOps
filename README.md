@@ -1,16 +1,16 @@
 <div align="center">
 
-# 🛠️ DevOps Notebook — Türkçe DevSecOps Rehberi
+# 🛠️ The DevSecOps Handbook
 
-*Production'a yönelik modern DevOps · DevSecOps · SRE pratiklerinin Türkçe, eylemsel referansı.*
+*Production'a yönelik modern DevOps · DevSecOps · SRE pratikleri — derin TR/EU regülasyon kapsamıyla, eylemsel bir handbook.*
 
 Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Platform Engineering · FinOps · LLMOps · Compliance
 
-[![Site](https://img.shields.io/badge/canlı_site-halilibrahimd27.github.io%2FDevOps-8A2BE2?style=flat-square)](https://halilibrahimd27.github.io/DevOps/)
+[![Site](https://img.shields.io/badge/canlı_site-halilibrahimd27.github.io%2Fdevsecops-handbook-8A2BE2?style=flat-square)](https://halilibrahimd27.github.io/devsecops-handbook/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/halilibrahimd27/DevOps?style=flat-square)](https://github.com/halilibrahimd27/DevOps/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/halilibrahimd27/devsecops-handbook?style=flat-square)](https://github.com/halilibrahimd27/devsecops-handbook/commits/main)
 
-[Site](https://halilibrahimd27.github.io/DevOps/) · [İçindekiler](#-i̇çindekiler) · [Hızlı Başlangıç](#-hızlı-başlangıç) · [Sözlük](Glossary.md) · [Katkı](CONTRIBUTING.md)
+[Site](https://halilibrahimd27.github.io/devsecops-handbook/) · [İçindekiler](#-i̇çindekiler) · [Hızlı Başlangıç](#-hızlı-başlangıç) · [Sözlük](Glossary.md) · [Katkı](CONTRIBUTING.md)
 
 </div>
 
@@ -193,7 +193,7 @@ Bu repodan ayrılan tamamlayıcı projeler:
 
 PR'lar memnuniyetle. Önce [CONTRIBUTING.md](CONTRIBUTING.md) ve yazım rehberi [CLAUDE.md](CLAUDE.md)'yi oku.
 
-> *Issue açarken spesifik ol:* "Kubernetes hardening'de X eksik" gibi. "Daha çok içerik ekle" tarzı genel issue'lar [good first issue](https://github.com/halilibrahimd27/DevOps/labels/good%20first%20issue) etiketiyle paslanır.
+> *Issue açarken spesifik ol:* "Kubernetes hardening'de X eksik" gibi. "Daha çok içerik ekle" tarzı genel issue'lar [good first issue](https://github.com/halilibrahimd27/devsecops-handbook/labels/good%20first%20issue) etiketiyle paslanır.
 
 ## 📜 Lisans
 

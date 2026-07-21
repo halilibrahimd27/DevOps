@@ -7,9 +7,9 @@ body:
         Bu repo'daki bir konu hakkında sorun varsa burada sor!
 
         Önce şunlara bakmayı dene:
-        - [📚 İçindekiler](https://github.com/halilibrahimd27/DevOps#-içindekiler)
-        - [📖 Glossary](https://github.com/halilibrahimd27/DevOps/blob/main/Glossary.md)
-        - Mevcut [discussions](https://github.com/halilibrahimd27/DevOps/discussions)
+        - [📚 İçindekiler](https://github.com/halilibrahimd27/devsecops-handbook#-içindekiler)
+        - [📖 Glossary](https://github.com/halilibrahimd27/devsecops-handbook/blob/main/Glossary.md)
+        - Mevcut [discussions](https://github.com/halilibrahimd27/devsecops-handbook/discussions)
 
   - type: textarea
     id: question

@@ -16,12 +16,35 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # 1) Broken link check — iç ve dış linkler
-  # NOT: continue-on-error true — repo'da tarihsel olarak 404 olan dış kaynaklar
-  # var (3rd-party domain'leri kapanmış vb.). Bunlar issue olarak ayrı takip edilir.
-  # Gerçek regression'ı yakalamak için job sonucu summary'de görünür ama push'u bloklamaz.
-  link-check:
-    name: Broken link check (lychee)
+  # 1a) İç link kontrolü — repo içi dosya/path linkleri. FAIL ETTİRİR.
+  # Kırık iç link bir regresyondur ve düzeltilebilir → build'i kırar.
+  # --offline: sadece yerel dosya linklerini doğrular, ağ isteği atmaz.
+  internal-links:
+    name: Internal link check (lychee, offline)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run lychee (offline — internal links only)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --no-progress
+            --exclude-path .git
+            --exclude-path node_modules
+            --exclude-path site_src
+            --exclude-path site
+            --config .lychee.toml
+            './**/*.md'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 1b) Dış link kontrolü — 3rd-party URL'ler. RAPOR-ONLY, push'u bloklamaz.
+  # NOT: repo'da tarihsel olarak 404 olan dış kaynaklar var (domain kapanmış vb.);
+  # bunlar issue olarak ayrı takip edilir. Job sonucu summary'de görünür.
+  external-links:
+    name: External link check (lychee, report-only)
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
@@ -32,7 +55,7 @@ jobs:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
-      - name: Run lychee
+      - name: Run lychee (external URLs)
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
@@ -40,6 +63,8 @@ jobs:
             --max-cache-age 14d
             --no-progress
             --max-concurrency 6
+            --scheme https
+            --scheme http
             --exclude-path .git
             --exclude-path node_modules
             --exclude-path site_src
