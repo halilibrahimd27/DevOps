@@ -1,5 +1,5 @@
 ---
-description: "Kubernetes'te stateful workload yonetimi: plain StatefulSet'in nerede yeterli oldugu, operator pattern'in ne zaman zorunlu oldugu ve karar agaci."
+description: "Kubernetes'te stateful workload yönetimi: plain StatefulSet'in nerede yeterli olduğu, operator pattern'in ne zaman zorunlu olduğu ve karar ağacı."
 tags:
   - Databases
   - Kubernetes

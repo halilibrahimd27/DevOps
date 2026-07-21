@@ -1,5 +1,5 @@
 ---
-description: "Ingress ve Gateway API'nin yan yana calistirilmasi: gecis stratejisi, hibrit pattern (yeni servis Gateway, eski Ingress) ve hangisini ne zaman sececegin."
+description: "Ingress ve Gateway API'nin yan yana çalıştırılması: geçiş stratejisi, hibrit pattern (yeni servis Gateway, eski Ingress) ve hangisini ne zaman seçeceğin."
 tags:
   - Networking
   - Kubernetes

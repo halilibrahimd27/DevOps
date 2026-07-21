@@ -1,5 +1,5 @@
 ---
-description: "Kubernetes multi-tenancy modelleri: soft (namespace + RBAC), hard, vCluster ve cluster-per-tenant; izolasyon, maliyet ve kullanim karsilastirmasi."
+description: "Kubernetes multi-tenancy modelleri: soft (namespace + RBAC), hard, vCluster ve cluster-per-tenant; izolasyon, maliyet ve kullanım karşılaştırması."
 tags:
   - Kubernetes
   - Security

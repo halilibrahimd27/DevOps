@@ -1,5 +1,5 @@
 ---
-description: "Green Software Foundation'un 8 prensibini somut muhendislik kararlarina ceviren rehber; SCI metrigiyle olcum ve yesil yazilimi CI'da pass/fail metrige donusturme, CSRD/SEC baglamiyla."
+description: "Green Software Foundation'un 8 prensibini somut mühendislik kararlarına çeviren rehber; SCI metriğiyle ölçüm ve yeşil yazılımı CI'da pass/fail metriğe dönüştürme, CSRD/SEC bağlamıyla."
 tags:
   - Sustainability
   - Observability

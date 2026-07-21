@@ -1,5 +1,5 @@
 ---
-description: "Multi-stage Docker build pattern'leri ve anti-pattern'leri: builder/runner ayrimi, dil-spesifik ornekler ve cache optimizasyonu ile imaji 10x kucultme rehberi."
+description: "Multi-stage Docker build pattern'leri ve anti-pattern'leri: builder/runner ayrımı, dil-spesifik örnekler ve cache optimizasyonu ile imajı 10x küçültme rehberi."
 tags:
   - Containers
   - Docker

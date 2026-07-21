@@ -1,5 +1,5 @@
 ---
-description: "Linux sorun giderme cheatsheet'i: Brendan Gregg USE metodu ile CPU, bellek, disk ve network teshisi. Production'da neyin yavas oldugunu bulma araclari."
+description: "Linux sorun giderme cheatsheet'i: Brendan Gregg USE metodu ile CPU, bellek, disk ve network teşhisi. Production'da neyin yavaş olduğunu bulma araçları."
 tags:
   - Cheatsheet
   - Incident Response

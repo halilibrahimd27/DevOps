@@ -1,5 +1,5 @@
 ---
-description: "Kubernetes networking rehber dizini: cluster ici/disi network kavramlari, eBPF dunyasi, service mesh ve Ingress'ten Gateway API'ye gecis konulari."
+description: "Kubernetes networking rehber dizini: cluster içi/dışı network kavramları, eBPF dünyası, service mesh ve Ingress'ten Gateway API'ye geçiş konuları."
 tags:
   - Networking
   - Kubernetes

@@ -1,5 +1,5 @@
 ---
-description: "Ingress'ten Gateway API'ye gecis rehberi: niye gerekli, persona-bazli CRD modeli, adim adim migration plani ve gecis sirasinda beklenen tuzaklar."
+description: "Ingress'ten Gateway API'ye geçiş rehberi: niye gerekli, persona-bazlı CRD modeli, adım adım migration planı ve geçiş sırasında beklenen tuzaklar."
 tags:
   - Networking
   - Kubernetes

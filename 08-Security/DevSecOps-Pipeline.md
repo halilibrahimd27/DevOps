@@ -1,5 +1,5 @@
 ---
-description: "Pre-commit'ten runtime'a her asamada guvenlik kontrolu olan fail-fast ama developer-friendly DevSecOps pipeline tasarimi: shift-left ve defense in depth."
+description: "Pre-commit'ten runtime'a her aşamada güvenlik kontrolü olan fail-fast ama developer-friendly DevSecOps pipeline tasarımı: shift-left ve defense in depth."
 tags:
   - Security
   - CI/CD
@@ -222,7 +222,7 @@ Terraform / CloudFormation / K8s YAML için.
         with: { sarif_file: checkov.sarif }
 ```
 
-Alternatifler: tfsec, KICS, Trivy config.
+Alternatifler: KICS, `trivy config` (tfsec 2023'te Trivy'ye konsolide edildi).
 
 ---
 

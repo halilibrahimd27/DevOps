@@ -1,5 +1,5 @@
 ---
-description: "Surdurulebilir muhendislik ve Green IT bolum indeksi: GSF 8 prensibi, carbon-aware computing, SCI olcumu, dusuk-karbon region secimi ve verimlilik pratikleri rehberleri."
+description: "Sürdürülebilir mühendislik ve Green IT bölüm indeksi: GSF 8 prensibi, carbon-aware computing, SCI ölçümü, düşük-karbon region seçimi ve verimlilik pratikleri rehberleri."
 tags:
   - Sustainability
   - FinOps

@@ -81,11 +81,15 @@ jobs:
           tflint --init
           tflint --format compact
 
-      - name: tfsec (security scan)
-        uses: aquasecurity/tfsec-action@v1
+      # tfsec 2023'te Trivy'ye konsolide edildi (yeni check gelmiyor) → trivy config.
+      # Mutable ref yerine sürüme/SHA'ya pinle.
+      - name: Trivy IaC config scan
+        uses: aquasecurity/trivy-action@<VERSION>  # ör. @<SHA>  # v0.x.x
         with:
-          working_directory: ${{ inputs.working-directory }}
-          soft_fail: false
+          scan-type: config
+          scan-ref: ${{ inputs.working-directory }}
+          severity: CRITICAL,HIGH
+          exit-code: 1
 
       - name: terraform plan
         id: plan

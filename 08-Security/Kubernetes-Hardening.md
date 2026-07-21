@@ -1,5 +1,5 @@
 ---
-description: "CIS Benchmark esasli adim adim Kubernetes prod-grade hardening: tehdit modeli, API server hardening, RBAC, NetworkPolicy ve Pod Security Standards rehberi."
+description: "CIS Benchmark esaslı adım adım Kubernetes prod-grade hardening: tehdit modeli, API server hardening, RBAC, NetworkPolicy ve Pod Security Standards rehberi."
 tags:
   - Security
   - Kubernetes
