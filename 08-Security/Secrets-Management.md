@@ -581,3 +581,7 @@ vault audit log içinde:
 > *"Sırrın güvenliği teknolojinin değil **disiplinin** ürünüdür. En iyi
 > Vault kurulumu, ekibin 'secret commit etmemeyi' refleks haline
 > getirmeyen bir kültürle çalışmaz."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D3`](../22-Learning-Path/block-d-orchestration/D3-secret-yonetimi.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

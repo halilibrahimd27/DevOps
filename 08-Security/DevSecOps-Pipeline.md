@@ -470,3 +470,7 @@ Production'a çıkmadan önce her satırı işaretle — biri eksikse pipeline t
 ---
 
 > *"DevSecOps 'güvenlik ekibinin işi' değil, pipeline'a gömülü kapılardır: imzasız imaj, taranmamış bağımlılık ve policy'siz cluster prod'a değil kırmızıya gider."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D4`](../22-Learning-Path/block-d-orchestration/D4-supply-chain.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

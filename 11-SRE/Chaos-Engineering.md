@@ -337,3 +337,7 @@ spec:
 > *"Chaos engineering 'risk yaratmak' değil — **risk öğrenmek**.
 > Yangın çıkmadan yangın söndürme tatbikatı yapan ekip, **gerçek
 > yangında** sakin durur."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E5`](../22-Learning-Path/block-e-ownership/E5-chaos.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

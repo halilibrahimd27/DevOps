@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 7 TAMAM — Blok F (F1–F5 içerik) + PORTFOLIO.md + CV-Tips çift yönlü bağ
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 8 TAMAM — entegrasyon: kök README + RoadMap redirect + build-docs nav + 43 deep-dive geri-link
 
 ## Faz durumu
 
@@ -16,32 +16,33 @@
 | 6 | Değerlendirme | ✅ | **Tamam.** 5 STAGE-EXAM (A–E, blok klasörlerinde) + PLACEMENT 2 kontrol testi dolduruldu + 3 capstone (şartname/kabul/rubrik/portfolyo şablonu). Her sınav sorusu modül kabul kriterine izlenebilir (traceability sütunu). QA exit 0 (0 uyarı) |
 | 6.5 | Sertifika katmanı | ✅ | **Tamam.** README + G1/G2/G3 + HOW-TO-CERTIFY (§8.2 9 bölüm/kapı, sürüm uyarısı, domain×modül boşluk sütunu). Redirect + RoadMap/CV-Tips entegrasyonu + DCA legacy notu + çelişki temizliği. G3'te F2→CKS ileri-link + sıra notu (revizyon 7). QA exit 0 (0 uyarı) |
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
-| 8 | Entegrasyon | ⬜ | 22 nav başlığı + geri-linkler. (Not: `2[0-9]-*` globu 22'yi zaten stage ediyor; `_planning` `exclude_docs`'ta) |
+| 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ⬜ | TROUBLESHOOTING.md 40+ madde burada dolar |
 | 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, L06 starter app, EN twin'ler, A1/A6 review maddeleri |
 
 ## Sıradaki adım
 
-**Faz 8 — Entegrasyon.** Faz 7 bu tur kapandı. Faz 8'de yapılacaklar (BUILD-PROMPT §10 Faz 8):
-- **Kök `README.md`:** patika **Hızlı Başlangıç'ın ilk satırı** olacak (repo kök README'si,
-  `22-Learning-Path/` değil — `/Users/halil/Halil/projects/DevOps/README.md`).
-- **`RoadMap/README.md`:** "A — Yeni Başlayan" bölümü patikaya yönlendirilir; **eski liste
-  özet olarak kalır** (silme, özetle + link ver). Faz -1'de kırık ön-koşul zinciri tespiti
-  buradaydı — patika o boşluğu kapatıyor, RoadMap artık patikaya işaret etmeli.
-- **`scripts/build-docs.sh`:** `22-Learning-Path` stage edilir (not: `2[0-9]-*` globu 22'yi
-  zaten yakalıyor — **doğrula, gerekiyorsa `.pages` başlığı ekle**), `.pages` başlığı
-  `🎓 Öğrenme Patikası / Learning Path`, kök nav'da **`RoadMap`'ten ÖNCE**; `_planning/`
-  stage EDİLMEZ. `nav_translations` ile EN başlık.
-- **`mkdocs.yml`:** `exclude_docs`'a `_planning` (STATE'e göre zaten ekli olabilir — **doğrula**).
-- **Mevcut deep-dive'lara geri-link satırı** (§3 kısıt #2'nin **tek istisnası**): "Bu doküman
-  `<D#>` modülünde kullanılıyor" — dosya sonuna tek satır. Hangi deep-dive'lar hangi modülde
-  "Önce oku"da anılıyorsa onlara. Kapsamı dar tut, her dosyaya değil.
-- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 8 → ✅**, dur.
-
-> ✅ **G3 CKS↔F2 ileri-linki (revizyon 7) — Faz 7'de HEDEF DOLDU:** `F2-tehdit-uyum.md`
-> artık içerik dolu (tehdit modeli + kontrol/kanıt haritası, KVKK/SOC2 örnekleri). G3'ün
-> `F2`'ye verdiği ileri-link gerçek içeriğe bağlanıyor; F2 "hangi kontrolü niye" ihtiyacını
-> (STRIDE + kontrol eşleme) karşılıyor. Link canlı, QA temiz. Bu madde **kapandı.**
+**Faz 9 — Düşmanca gözden geçirme ("yeni başlayan simülasyonu").** Faz 8 bu tur kapandı.
+Faz 9'da yapılacaklar (BUILD-PROMPT §10 Faz 9):
+- **Rolü değiştir:** DevSecOps hakkında hiçbir şey bilmeyen biri ol, **A1'den sırayla** oku.
+  Her modülde ara ve `_planning/REVIEW-FINDINGS.md`'ye yaz: (a) o ana kadar tanımlanmamış
+  terim, (b) henüz öğrenilmemiş bir şeyi varsayan adım, (c) öznel kabul kriteri, (d)
+  doğrulanamayan lab / ölü link, (e) gerçekçi olmayan süre, (f) iki modül arası açıklanmamış
+  sıçrama, (g) dış kaynak sözleşmesine (§9: 4 alan) uymayan link, (h) güvenlik ipliği kopmuş
+  D-modülü.
+- **`TROUBLESHOOTING.md` 40+ madde burada dolar** (§5 dizin yapısı; hata → sebep → çözüm).
+  Şu an dosya iskelet/az dolu olabilir — **kontrol et**, `ImagePullBackOff`/RBAC forbidden/
+  terraform state lock/DNS/PVC binding/OOMKilled gibi kesin takılma noktalarını doldur.
+  Kırık lab solution.md'lerindeki teşhis akışlarıyla çapraz bağla.
+- Her bulguyu düzelt, düzeltmeleri de gözden geçir, **liste boşalana kadar tekrarla.**
+- **Çıktı kapısı:** açık bulgu yok · terim envanteri (`_planning/GLOSSARY-COVERAGE.md`)
+  çıkarıldı, her teknik terim ya bir modülde tanımlı ya `Glossary.md`'de var.
+- Faz 9 muhtemelen tek tura sığmaz → §14.1(3): nereye kadar gelindiğini modül adı seviyesinde
+  `Sıradaki adım`'a yaz, commit at, dur.
+- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 9 → ✅**, dur.
+- **Faz 9.5 (ZORUNLU, en son):** A0 modülü + L06 starter app + EN twin'ler + A1/A6 review
+  maddeleri. EN twin katmanı hâlâ `qa.py` `.en.md` çakışmasına takılı (bkz. Faz 2 kararı) —
+  kullanıcı `qa.py`'yi genişletmeden EN twin yazılamaz. Bu turda GİRME; Faz 9'u bitir.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -63,7 +64,33 @@
 
 ## Açık kararlar
 
-### Faz 7 kapanışı (bu tur)
+### Faz 8 kapanışı (bu tur)
+- **Geri-link kapsamı = yalnız "Önce oku" tablosunda anılan deep-dive'lar (43 dosya).** §8/§10
+  Faz 8 "Hangi deep-dive'lar hangi modülde 'Önce oku'da anılıyorsa onlara. Kapsamı dar tut,
+  her dosyaya değil" der. Modüllerin **yalnız `## 📖 Önce oku` bölümünü** ayrıştıran script
+  ile 43 hedef bulundu (Kendini-test/Takıldıysan linkleri hariç → daha dar, daha savunulabilir).
+  125 deep-dive'ın ~1/3'ü; "her dosyaya değil" kuralına uyar. Çok-modüllü dosyalar (ör.
+  Blameless-Postmortem → E3+F4) tüm modülleri linkli listeler.
+- **Geri-link = §3 kısıt #2'nin ADLI istisnası.** "00-21 değiştirme, tek istisna Faz 8 dosya
+  sonuna tek satır geri-link." 43 dosyaya `---` + tek blockquote (`🎓 Öğrenme Patikası: Bu
+  doküman [`X`](...) modülünde "Önce oku" kaynağı...`). İçerik yeniden yazılmadı, salt footer.
+  Idempotent script (marker varsa atlar). 46 hedef link (`os.path.exists`) doğrulandı, kırık 0.
+- **22-Learning-Path zaten `2[0-9]-*` globuna dahil** (build-docs.sh:58) — doğrulandı, glob
+  değişmedi. Eklenen: (a) `_planning` staging'den `rm -rf` (çift emniyet; `exclude_docs`'ta
+  da var), (b) özel `.pages` (başlık `🎓 Öğrenme Patikası` + iç sıra: README→rehberler→
+  bloklar→capstone/sertifika/lab), (c) 9 alt-klasör başlığı (Blok A..F, Capstone, Sertifika,
+  Lab), (d) kök nav'da `22-Learning-Path` **RoadMap'ten önce**.
+- **`.pages` başlığı TR, EN nav_translations'ta** (§8 "nav_translations ile EN başlık"):
+  `"🎓 Öğrenme Patikası": "🎓 Learning Path"` — mevcut Roadmap/About/Sözlük/Etiketler
+  deseniyle birebir. BUILD-PROMPT'taki `🎓 Öğrenme Patikası / Learning Path` ifadesi bu
+  iki-dilli çift olarak yorumlandı (RoadMap deseni), tek string değil.
+- **RoadMap "A — Yeni Başlayan" eski liste `<details>` arşivinde korundu** (§10 "eski liste
+  özet olarak kalır" — silme). Üstüne redirect kutusu: gap #1'i (linux-troubleshooting =
+  ileri SRE materyali) açıkça anlatıp patikaya yönlendirir. `🆕 0'dan başlıyorum` kartı da
+  patikaya bağlandı. Ünvan/süre iddiası ("90 günde junior") kaldırıldı → patika bunu vaat etmez.
+- **`site_src/` + `site/` gitignore'da** — commit'e girmiyor (doğrulandı, git status'ta yok).
+
+### Faz 7 kapanışı (önceki tur)
 - **`18-Career/CV-Tips.md` düzenlendi — §10 Faz 7'nin ADLI istisnası.** §3 kısıt #2 "00-21
   değiştirme, tek istisna Faz 8 geri-link" der; ANCAK §10 Faz 7 açıkça "`18-Career/CV-Tips.md`
   ile çift yönlü bağla" diyerek bu dosyayı isimle çağırır (Faz 6.5 de aynı gerekçeyle
@@ -208,7 +235,53 @@
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 7 — Blok F + kariyer köprüsü, KAPANDI)
+## Bu oturumda yapılanlar (Faz 8 — Entegrasyon, KAPANDI)
+
+**Giriş durumu:** Faz 7 önceki tur kapanmıştı (STATE ✅). Bu tur `STATE.md` okundu, QA giriş
+kontrolü (`qa.py` exit 0, PAUSE yok, branch `feat/learning-path`, temiz working tree) yapıldı,
+Faz 8'e geçildi.
+
+**Bu tur yapılan (§10 Faz 8):**
+1. **Kök `README.md`** — patika **Hızlı Başlangıç'ın 1. satırı**: yeni `🎓 Sıfırdan
+   başlıyorum` satırı → `22-Learning-Path/README.md`. Eski `🆕 "DevOps nedir?"` satırı
+   Modern-DevOps-2026'yı "alanın kuşbakışı" olarak yeniden çerçeveledi (kırık ön-koşul
+   zinciri artık beginner'ı yanlış yere yollamıyor). TOC "Yol Haritası & Felsefe"ye de
+   patika satırı eklendi (RoadMap'ten önce).
+2. **`RoadMap/README.md`** — "A — Yeni Başlayan" patikaya yönlendirildi: intro'ya + section A
+   başına redirect kutusu (gap #1'i açıkça anlatır), `🆕 0'dan başlıyorum` kartı patikaya
+   bağlandı, **eski 90 günlük haftalık liste `<details>` arşivinde korundu** (silinmedi,
+   özetlendi). "90 günde junior" ünvan/süre iddiası kaldırıldı.
+3. **`scripts/build-docs.sh`** — (a) `_planning` staging'den `rm -rf` (stage EDİLMEZ); (b)
+   `22-Learning-Path/.pages` özel blok: başlık `🎓 Öğrenme Patikası` + iç sıra (README önce);
+   (c) 9 alt-klasör başlığı (Blok A..F + Capstone/Sertifika/Lab); (d) kök nav'da
+   `22-Learning-Path` **RoadMap'ten ÖNCE**. `2[0-9]-*` globu 22'yi zaten stage ediyor (doğrulandı).
+4. **`mkdocs.yml`** — `nav_translations`'a `"🎓 Öğrenme Patikası": "🎓 Learning Path"`.
+   `exclude_docs`'ta `_planning` zaten vardı (doğrulandı, dokunulmadı).
+5. **43 deep-dive'a geri-link** (§3 kısıt #2 tek istisnası) — yalnız "Önce oku"da anılan
+   dosyalara, idempotent script ile dosya sonuna `---` + tek blockquote. Çok-modüllü dosyalar
+   tüm modülleri linkler.
+
+**Doğrulama:**
+- **`bash scripts/build-docs.sh` + `python3 -m mkdocs build --clean` → exit 0**, iki locale
+  (TR kök + EN `/en/`) derlendi. `site/`'te `_planning` YOK; `22-Learning-Path` TR+EN'de var.
+  (INFO anchor uyarıları dokunmadığım 3 dosyada — Mobile-CICD/Prometheus-Grafana/Modern-DevOps —
+  önceden vardı, error değil.)
+- **`python3 .local/qa.py` → exit 0, 0 UYARI.** 29 modül, 49 lab scripti, kırık iç link yok
+  (46 geri-link hedefi + README/RoadMap redirect linkleri `os.path.exists` ile doğrulandı).
+- **§14.3(1) tekrar:** bu faz yeni modül prose'u yazmadı (salt geri-link footer + nav/README
+  config) → deep-dive tekrarı yok; qa `check_duplication` temiz.
+- **§14.3(2) pazarlama/ünvan:** düzenlenen dosyalar (README/RoadMap/geri-linkler) grep → 0 hit.
+  LP'deki 3 "garanti" = önceden kabul edilmiş teknik K8s usage (D2/L14/K05).
+- **§14.3(3) süre:** yeni modül yok → kümülatif değişmedi (~477s).
+
+**Değişen dosyalar (bu tur):** kök `README.md` · `RoadMap/README.md` · `scripts/build-docs.sh` ·
+`mkdocs.yml` · **43 deep-dive** (`00-Culture`…`20-Soft-Skills` + `16-Cheatsheets` + `19`/`20`)
+geri-link footer'ı · `_planning/STATE.md`. `00-21` edit'leri = §3 kısıt #2'nin **Faz 8 adlı
+istisnası** (dosya sonuna tek satır geri-link).
+
+---
+
+## Önceki oturum (Faz 7 — Blok F + kariyer köprüsü, KAPANDI)
 
 **Giriş durumu:** Faz 6.5 önceki tur kapanmıştı (STATE ✅). Bu tur `STATE.md` okundu,
 QA giriş kontrolü (`qa.py` exit 0, PAUSE yok) yapıldı, Faz 7'ye geçildi.
@@ -248,7 +321,7 @@ QA giriş kontrolü (`qa.py` exit 0, PAUSE yok) yapıldı, Faz 7'ye geçildi.
 
 ---
 
-## Önceki oturum (Faz 6.5 — Sertifika katmanı, KAPANDI)
+## Daha önceki oturum (Faz 6.5 — Sertifika katmanı, KAPANDI)
 
 **Giriş durumu — önemli:** Önceki tur kapı dosyalarını (G1/G2/G3 + HOW-TO-CERTIFY +
 README) yazmış ve `d18804f` commit'iyle işlemiş ama **STATE'i güncellememişti** (Faz 6.5

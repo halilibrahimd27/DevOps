@@ -323,3 +323,7 @@ Vendor down, SLA breach.
 > *"Vendor seçimi 'kullanılabilir mi?' değil, **'kullanmaktan
 > vazgeçebilir miyim?'** sorusudur. İkincisinin cevabı 'hayır'sa,
 > **gerçek müşteri** sen değilsin — vendor'sın."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F5`](../22-Learning-Path/block-f-judgment/F5-stakeholder-vendor.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

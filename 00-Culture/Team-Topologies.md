@@ -289,3 +289,7 @@ Bir org yapısını "Team Topologies uyumlu" saymadan önce şunları doğrula:
 ---
 
 > *"Org şemanı mimarine göre değil, mimarini org şemana göre kurarsın; o yüzden takım sınırlarını cognitive load'a göre çiz ve etkileşim modlarına son tarih koy — yoksa Conway's Law senin yerine karar verir."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F3`](../22-Learning-Path/block-f-judgment/F3-platform-idp.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

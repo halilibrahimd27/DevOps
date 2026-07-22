@@ -283,3 +283,7 @@ cosign verify --key cosign.pub <REGISTRY>/<APP>:<TAG>
 > *"İmza 'paranoyak güvenlik' değil — **modern supply chain'in
 > imzasıdır**. İmzalanmamış imaj = **anonim koli**: kim koydu
 > bilinmez, **açmak risklidir**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D4`](../22-Learning-Path/block-d-orchestration/D4-supply-chain.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

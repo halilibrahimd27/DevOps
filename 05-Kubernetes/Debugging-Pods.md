@@ -341,3 +341,7 @@ kubectl get pod <POD> -o yaml | grep -A 10 livenessProbe
 > *"Pod debug 'tool seçmek' değil — **systemic flow**. describe →
 > logs --previous → exec/debug → network test. **5 dakikada
 > root cause** ya da **60 dakika tahminle** geçen vardiya."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D1`](../22-Learning-Path/block-d-orchestration/D1-k8s-temel.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

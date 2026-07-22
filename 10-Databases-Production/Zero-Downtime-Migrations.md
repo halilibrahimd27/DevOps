@@ -388,3 +388,7 @@ jobs:
 > *"Schema migration **sprint sonuna sıkıştırılmaz**. Expand/contract
 > 'gereksiz formalite' değil — **rollback hakkını**'nı saklayan tek
 > disiplindir."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E4`](../22-Learning-Path/block-e-ownership/E4-veritabani-restore.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

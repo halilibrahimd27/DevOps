@@ -316,3 +316,7 @@ time() - max(data_pipeline_last_processed_timestamp)
 > *"SLO 'metric tanımla, hedef koy' değil — **multi-window burn
 > rate + error budget policy**. Disipline edilmemiş SLO, ekibin
 > 'iyi niyetidir', uygulanmaz."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E1`](../22-Learning-Path/block-e-ownership/E1-sli-slo-error-budget.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

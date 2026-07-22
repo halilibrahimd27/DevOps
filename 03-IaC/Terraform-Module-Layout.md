@@ -467,3 +467,7 @@ conftest test --policy=policies/ main.tf
 > rahatlığı**. Doğru struct ile 50 service tek YAML editi gibi
 > olur; yanlış struct'la 5 service 'mı kopyaladım, mı edit ettim'
 > karmaşası."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C3`](../22-Learning-Path/block-c-reproducibility/C3-terraform.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

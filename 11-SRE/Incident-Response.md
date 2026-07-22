@@ -317,3 +317,7 @@ Production-ready incident response için — yazılı, tatbik edilmiş, otomasyo
 
 > *"En iyi incident response — incident'ın olmaması." — Doğru.
 > Ama olduğunda, ekibin pratiği değil **prosedürü** kazanır.*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E3`](../22-Learning-Path/block-e-ownership/E3-incident-postmortem.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

@@ -542,3 +542,7 @@ ArgoCD'nin kendi başına secret çözümü yok. Üç ana yaklaşım:
 > *"GitOps cluster'ı bir **fonksiyon** yapar: input Git, output cluster
 > state. Aralarına manuel müdahale eklediğin an, fonksiyon değil
 > **dilek listesi**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D5`](../22-Learning-Path/block-d-orchestration/D5-gitops-argocd.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

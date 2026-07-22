@@ -415,3 +415,7 @@ groups:
 > *"CVE bulundu" demek "exploit edilebilir" demek değildir; ama
 > ölçeklendirilebilir bir filtreyle **muhtemelen exploit edilebilir
 > olanlar**'a odaklanmak — security ekibinin uyumadığı tek tampon."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D4`](../22-Learning-Path/block-d-orchestration/D4-supply-chain.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

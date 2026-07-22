@@ -264,3 +264,7 @@ Yanıt:
 > *"Sürekli 'evet' diyen mühendis, **hiçbir şeyin sahibi**
 > değildir. 'Hayır'ları seçmeyen kariyerin yönetiminde değil, **rüzgârın
 > savurduğu** yerdedir."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F5`](../22-Learning-Path/block-f-judgment/F5-stakeholder-vendor.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

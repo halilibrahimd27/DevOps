@@ -331,3 +331,7 @@ aws ec2 describe-snapshots --owner-ids self \
 | EC2 SSH erişimi yok | SSM Session Manager kullan (instance role gerekli) |
 | S3 bucket yanlışlıkla public | `aws s3api put-public-access-block` ile kapat |
 | Region farkı yüzünden resource görmüyor | `--region` ekle veya `AWS_DEFAULT_REGION` set et |
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C4`](../22-Learning-Path/block-c-reproducibility/C4-bulut-butce-alarmi.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

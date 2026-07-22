@@ -504,3 +504,7 @@ patches:
 > *"Manifest stratejisi 'tool seçimi' değil, **mühendislik tarz
 > kararıdır**. Yanlış seçim 6 ay sonra fark edilir, doğru seçim
 > 6 yıl ses çıkarmaz."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D5`](../22-Learning-Path/block-d-orchestration/D5-gitops-argocd.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

@@ -305,3 +305,7 @@ Bir doc'u "production-ready" saymadan önce:
 ---
 
 > *"Dokümantasyon kararı miktar değil sahiplik sorunudur: koddan ayrı yaşayan, owner'sız ve review tarihi geçmiş doc yalan söyler — onu güncelle ya da sil."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F4`](../22-Learning-Path/block-f-judgment/F4-yazma-adr-rfc.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

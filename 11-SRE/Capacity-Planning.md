@@ -343,3 +343,7 @@ class APIUser(HttpUser):
 > *"Capacity 'çok kaynak' değil — **doğru kaynak doğru zamanda**.
 > Forecast olmadan scale, **paranın israfı**; load test olmadan
 > büyüme, **müşterinin israfı**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E5`](../22-Learning-Path/block-e-ownership/E5-chaos.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

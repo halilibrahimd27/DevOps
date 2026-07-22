@@ -359,3 +359,7 @@ KVKK kapsamında threat modeling LINDDUN kategorilerini özellikle gerektirir:
 > *"Threat modeling 'paranoid olmak' değil — **disiplinli paranoyaktır**.
 > Hangi tehdidi gözden kaçırdığını sistematik bilirsin; nelerin endişe
 > edilmeye değmediğini de aynı sistemle bilirsin."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F2`](../22-Learning-Path/block-f-judgment/F2-tehdit-uyum.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

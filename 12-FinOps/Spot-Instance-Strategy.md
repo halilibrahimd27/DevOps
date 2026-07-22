@@ -249,3 +249,7 @@ m5.large baseline:
 > *"Spot %70 daha ucuz, **'kullanılmıyor' bahanesi yok**. Workload
 > classify + Karpenter + termination handler = $5K-50K aylık
 > tasarruf, **2 hafta implementation**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F1`](../22-Learning-Path/block-f-judgment/F1-maliyet-finops.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

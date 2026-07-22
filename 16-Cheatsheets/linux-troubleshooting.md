@@ -331,3 +331,7 @@ setfacl -m u:appuser:rw <FILE>
 | DNS yavaş | `dig +trace <DOMAIN>`, `/etc/resolv.conf`, NodeLocal DNSCache |
 | SSH yavaş login | DNS reverse: `/etc/ssh/sshd_config` `UseDNS no` |
 | Time drift | `timedatectl status`, `chronyc sources` |
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`B3`](../22-Learning-Path/block-b-visibility/B3-ilk-kirik-lab.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

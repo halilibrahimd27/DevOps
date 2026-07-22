@@ -16,6 +16,11 @@ DevOps öğrenmek **lineer değildir**. Junior'sın diye 90 günde her şeyi
 detaylarını bilmen şart değil. Bu klasör **dört ayrı patika** önerir:
 seçtiğin seviyeden başla.
 
+> 🎓 **Sıfırdan mı başlıyorsun?** Bu sayfa *seviyene göre yön* verir; ama hiç DevOps
+> bilmiyorsan başlangıç yeri burası değil. Yönlendirmesiz, adım adım müfredat
+> [**Öğrenme Patikası**](../22-Learning-Path/README.md)'ndadır: oku → inşa et → doğrula →
+> sonraki modül. Bu sayfa "kuşbakışı harita", patika ise "adım adım rota".
+
 ---
 
 ## 🚦 Sen Kim Hissediyorsun?
@@ -28,7 +33,7 @@ seçtiğin seviyeden başla.
 
     Linux, Git, Docker yeni kavramlar. Bilgisayar mühendisliği veya bootcamp'ten geliyorum. "DevOps nedir, nereden başlayayım?"
 
-    [:octicons-arrow-right-24: 90 günlük temel patika](#a-yeni-baslayan)
+    [:octicons-arrow-right-24: Öğrenme Patikası — sıfırdan başla](../22-Learning-Path/README.md)
 
 -   :material-account-tie:{ .lg .middle } __⚙️ Junior/Mid mühendisim__
 
@@ -71,7 +76,16 @@ seçtiğin seviyeden başla.
 
 ## A — Yeni Başlayan { #a-yeni-baslayan }
 
-> 🎯 **Hedef**: 90 günde "production'a çıkmaya hazır junior DevOps".
+> 🎓 **Bu bölüm [Öğrenme Patikası](../22-Learning-Path/README.md)'na taşındı.** Sıfırdan
+> başlıyorsan aşağıdaki haftalık listeyi takip etme. Nedeni: liste "Hafta 1-2: Linux →
+> linux-troubleshooting.md" der, oysa o dosya orta/ileri SRE materyalidir (USE method,
+> Netflix 60-saniye protokolü) — yeni başlayan ilk gün duvara çarpar. Patika bu ön-koşul
+> zincirini yönlendirmesiz kurar: **oku → inşa et → doğrula → sonraki modül.**
+>
+> 👉 **Başla:** [`22-Learning-Path/README.md`](../22-Learning-Path/README.md) · Nereden
+> gireceğini [`PLACEMENT.md`](../22-Learning-Path/PLACEMENT.md) belirler (üç giriş rampası).
+
+<details><summary>📋 Eski 90 günlük özet liste — arşiv (patika bunun yerine geçer)</summary>
 
 ### Hafta 1-2 — Temel Bilgisayar Bilgisi
 - **Linux komut satırı**: file, process, permission, systemd → [16 · Cheatsheets / linux-troubleshooting.md](../16-Cheatsheets/linux-troubleshooting.md)
@@ -109,6 +123,8 @@ seçtiğin seviyeden başla.
 - [ ] Linux'ta troubleshooting yapabilirim (top, journalctl, netstat)
 
 > ⏭️ **Sırada**: B patikasına geç (mid-level).
+
+</details>
 
 ---
 

@@ -507,3 +507,7 @@ Red flag'ler "neyi yapma"yı söyler; bu tablo "onun yerine ne yap"ı da verir.
 ---
 
 > *"Prod-readiness bir his değil, doldurulmuş bir checklist'tir; resource, security ve reliability maddelerinden biri boşsa o manifest henüz prod'a değil PR'a aittir."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D2`](../22-Learning-Path/block-d-orchestration/D2-k8s-production.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

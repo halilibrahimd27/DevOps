@@ -279,3 +279,7 @@ SRE                    → Reliability of platform itself
 > *"Platform-as-Product 'yeni hot kelime' değil, **disiplin değişimi**.
 > Platform team gerçek **müşteri** olarak gördüğü mühendisin **NPS'ini
 > ölçen ekip**, kendi bütçesini **ROI ile savunabilir**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F3`](../22-Learning-Path/block-f-judgment/F3-platform-idp.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

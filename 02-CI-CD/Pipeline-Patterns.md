@@ -459,3 +459,7 @@ Her ekip nerede olduğunu bilmeli ve bir sonraki seviyeyi hedeflemeli.
 ---
 
 > *"Pipeline süslü değil katmanlı olmalı: hızlı geri bildirim için adımları sırala, fail-fast yap, güvenlik kapılarını otomatikleştir — manuel kalan her adım er ya da geç atlanır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C2`](../22-Learning-Path/block-c-reproducibility/C2-ci.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.
