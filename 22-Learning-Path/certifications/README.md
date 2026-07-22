@@ -65,7 +65,21 @@ sayfada net tutuyoruz çünkü sertifika satan her yer tersini söyler.
 | [`G2-cka.md`](G2-cka.md) | Blok D kapısı: CKA — performans sınavı mekaniği |
 | [`G3-cks-aws-saa.md`](G3-cks-aws-saa.md) | Blok E kapısı: CKS *veya* AWS SAA dal seçimi |
 | [`HOW-TO-CERTIFY.md`](HOW-TO-CERTIFY.md) | Sınava hazırlanmanın **kendisi** bir beceri: müfredat eşleme, aktif hatırlama, zaman yönetimi, ne zaman girilmez |
-| [`HOW-TO-CERTIFY.md`](HOW-TO-CERTIFY.md) | Piyasadaki diğer sertifikalar — neden bu patikanın parçası değiller |
+
+---
+
+## 🚪 Bu patikanın parçası olmayan sertifikalar
+
+3 kapı bir **seçim**dir, koleksiyon değil. Aşağıdakiler kasıtlı olarak dışarıda —
+neyi niye ertelediğimiz [`../NOT-YET.md`](../NOT-YET.md)'de:
+
+- **CKAD** — CKA'nın alt kümesini test eder; ikisi birden CV süsü.
+- **AWS DevOps Pro / GCP Professional** — professional seviye; associate'i ve gerçek işi atlamak. Çok sonra.
+- **Vault Associate, Prometheus (PCA)** — dar araç sınavları; blok kapısı değil, merak.
+
+> ⚠️ **Docker DCA** öneri listesinde **yok.** 2019'da Mirantis'e devredildi; bugünkü
+> statüsü kaynaklarda çelişkili ve piyasa Linux Foundation Kubernetes hattına (CKA/CKS)
+> kaydı. Legacy / tartışmalı statü — bir kenarda not olarak kalır, kapı değil.
 
 ---
 
