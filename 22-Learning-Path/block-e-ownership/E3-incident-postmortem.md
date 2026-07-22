@@ -29,7 +29,7 @@ bu modüldeki postmortem pratiğine dayanır.
 | [`00-Culture/Blameless-Postmortem-Template.md`](../../00-Culture/Blameless-Postmortem-Template.md) | şablon | ~20 dk |
 
 ## 💥 Kırık lab
-👉 `labs/broken/K07-incident-sim/` — Faz 5'te. Belirti: çok-arızalı bir incident
+👉 [`labs/broken/K07-incident-sim/`](../labs/broken/K07-incident-sim/) — Belirti: çok-arızalı bir incident
 simülasyonu; birden fazla sinyal, gerçek zaman baskısı. Teşhis + iletişim birlikte ölçülür.
 
 ## ✅ Kabul kriterleri

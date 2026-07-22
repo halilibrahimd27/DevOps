@@ -29,10 +29,10 @@ değişiklik Git'te olur, cluster otomatik yakınsar. Çoklu-app soyutlamaları
 | [`06-GitOps/Helm-vs-Kustomize-vs-Raw.md`](../../06-GitOps/Helm-vs-Kustomize-vs-Raw.md) | manifest yaklaşımı | ~20 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L17-gitops-argocd/` — Faz 5'te (yerel: kind + ArgoCD).
+👉 [`labs/build/L17-gitops-argocd/`](../labs/build/L17-gitops-argocd/) — yerel: kind + ArgoCD.
 
 ## 💥 Kırık lab
-👉 `labs/broken/K06-argocd-out-of-sync/` — Faz 5'te. Belirti: "Uygulama Git'le
+👉 [`labs/broken/K06-argocd-out-of-sync/`](../labs/broken/K06-argocd-out-of-sync/) — Belirti: "Uygulama Git'le
 uyumsuz / senkron olmuyor." (Gerçekçi sebep gizli: drift / hatalı manifest / erişim.)
 
 ## ✅ Kabul kriterleri

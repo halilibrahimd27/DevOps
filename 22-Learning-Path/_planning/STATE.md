@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 5 kısmi — Blok C+D lab'ları (L09–L17 + K02–K06)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 6 TAMAM — 5 STAGE-EXAM + PLACEMENT kontrol testleri + 3 capstone içeriği (rubrik + portfolyo şablonu)
 
 ## Faz durumu
 
@@ -12,8 +12,8 @@
 | 2 | Blok A + B (içerik) | ✅ | **Tamam.** A1–A6 + B1–B3 (9 modül) TR içerik, hepsi >300s, QA exit 0 (0 uyarı) |
 | 3 | Blok C + D | ✅ | **Tamam.** C0–C4 + D1–D5 (10 modül) içerik. C88·D84=172s (plan tutuyor). QA exit 0 (0 uyarı) |
 | 4 | Blok E | ✅ | **Tamam.** E1–E5 (5 modül) içerik. E toplam=64s (revizyon4 planı tutuyor). QA exit 0 (0 uyarı). `INTERVIEW-COVERAGE.md` yazıldı: 15/15 mid-level soru A–E ile eşleşiyor |
-| 5 | Lab'ların tamamlanması | 🟡 | **DEVAM.** Blok A+B (L01–L08+K00–K01) **ve** Blok C+D (L09–L17+K02–K06) lab'ları yazıldı. 39 script `bash -n` temiz, kırık lab 4-dosya tam, QA exit 0 (0 uyarı). **Kalan (yalnız Blok E):** L18–L20 + K07–K09 |
-| 6 | Değerlendirme | ⬜ | STAGE-EXAM, PLACEMENT kontrol testleri, capstone rubrikleri |
+| 5 | Lab'ların tamamlanması | ✅ | **Tamam.** L01–L20 (20 build) + K00–K09 (10 kırık) tam. 49 script `bash -n` temiz, kırık lab 4-dosya tam. Blok E lab'ları (L18–L20 + K07–K09) doğrulandı; 30 modül→lab pointer'ı canlı markdown link'e çevrildi. QA exit 0 (0 uyarı) |
+| 6 | Değerlendirme | ✅ | **Tamam.** 5 STAGE-EXAM (A–E, blok klasörlerinde) + PLACEMENT 2 kontrol testi dolduruldu + 3 capstone (şartname/kabul/rubrik/portfolyo şablonu). Her sınav sorusu modül kabul kriterine izlenebilir (traceability sütunu). QA exit 0 (0 uyarı) |
 | 6.5 | Sertifika katmanı | ⬜ | G3'te F2→CKS bağımlılığı burada çözülecek (revizyon 7) |
 | 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
 | 8 | Entegrasyon | ⬜ | 22 nav başlığı + geri-linkler. (Not: `2[0-9]-*` globu 22'yi zaten stage ediyor; `_planning` `exclude_docs`'ta) |
@@ -22,53 +22,75 @@
 
 ## Sıradaki adım
 
-**Faz 5 DEVAM — `L18-sli-slo`'dan başla.** Blok C+D lab'ları bu tur bitti:
-`labs/build/L09–L17` + `labs/broken/K02–K06`. QA exit 0. Blok A+B önceki turda bitmişti.
+**Faz 6.5 — Sertifika katmanı.** Faz 6 bu tur kapandı (5 STAGE-EXAM + PLACEMENT
+kontrol testleri + 3 capstone içeriği). Faz 6.5'te yapılacaklar (BUILD-PROMPT §8 tamamı):
+- **`21-Field-Notes/system/devops-certification-roadmap.md`'yi taşı** →
+  `22-Learning-Path/certifications/` altına; §8.1'deki sorunları düzelt (10-sertifika/48-ay
+  koleksiyon planı → 3 kapı; pazarlama tonu; kaynaksız istatistikler %19.7/1.31M/%42.77/
+  %26.6/25.5 milyar $; USD maaş bantları; yazım hataları). **Docker DCA'yı öneri listesinden
+  çıkar** ("legacy/tartışmalı statü" notuyla). `21-Field-Notes/` altında yönlendirme satırı bırak.
+- **3 kapı dosyası** `certifications/G#-<sertifika>.md`: G1 (Blok C sonu) KCNA **veya**
+  Terraform Associate · G2 (Blok D sonu) CKA · G3 (Blok E sonu) CKS **veya** AWS SAA.
+  Her biri §8.2'deki 9 bölüm (Hazır mısın? / Ne ölçer-ölçmez / Hangi modüller karşılıyor
+  [domain×modül tablosu boşluk sütunuyla] / Resmi müfredat / Hazırlık planı / Pratik ortamı
+  [yerel-önce] / Sınav günü / Hazır olduğunu nereden anlarsın / Geçemezsen [utanç yok]).
+- **`certifications/HOW-TO-CERTIFY.md`** (§8.2 son) + **`certifications/README.md`**
+  (§8.3: "3 kapı vardır, 10 değil" tek duruş).
+- **Sürüm uyarısı kutusu** (§8.3) sertifika/sürüme bağlı her sayfanın başına.
+- **`RoadMap/README.md` ve `18-Career/CV-Tips.md`** buraya link verecek şekilde güncellenir.
+  **Repoda sertifika konusunda çelişen iki cümle kalmayacak** (§8.1 çelişkisi çözülür).
+- Bittiğinde: QA exit 0, STATE güncelle, commit, **Faz 6.5 → ✅**, dur.
 
-**Kalan iş (yalnız Blok E — sonra Faz 5 → ✅):**
-- **Blok E build:** L18-sli-slo (SLI/SLO/error budget hesabı; yerel Prometheus L08
-  desenini kullan) · L19-alerting (Alertmanager kuralı + on-call disiplini) ·
-  L20-veritabani-restore (**restore** — test edilmemiş backup backup değildir; yerel
-  postgres dump/restore).
-- **Blok E kırık:** K07-incident-sim (**çok-arızalı** incident; K04/K05 deseninde birden
-  fazla katman) · K08-restore-basarisiz (**backup erişim/bozuk dump** — restore fail) ·
-  K09-chaos-gameday (blast radius sınırlı; tek namespace/tek servis, kind).
-- Bittiğinde: `check_labs` + `bash -n` temizken ve modül→lab pointer'ları (aşağıya bak)
-  güncellendiğinde **Faz 5 → ✅**.
+> ⚠️ **G3 CKS↔F2 bağımlılığı (revizyon 7, Faz 0'da ertelendi):** G3 CKS dalı F2 (tehdit
+> modelleme + uyum) kavramlarına dayanır ama F2 Faz 7'de yazılıyor. Faz 6.5'te G3'ü yaz
+> ama F2'ye ileri-link verirken "F2 Blok F'te; CKS'e Blok E sonunda değil, F2 sonrası gir"
+> notu düş. `MODULE-SPEC.md` revizyon 7 kararı burada uygulanır.
 
-> 📌 **Modül→lab pointer'ları henüz güncellenmedi (bilinçli).** C/D modüllerindeki
-> `## 🔨 Lab` satırları hâlâ "👉 `labs/build/L09-...` — Faz 5'te oluşturulacak." diyor;
-> dizinler artık **var**. Faz 5 kapanışında (E lab'ları bitince) bu 14 pointer'ı canlı
-> markdown link'e çevir ve "Faz 5'te oluşturulacak" ibaresini kaldır. Alternatif: Faz 8
-> entegrasyonunda. QA'yı kırmıyor (code-span), o yüzden acil değil.
+> 📌 **Faz 6.5 kaynağı:** taşınacak dosya `21-Field-Notes/system/devops-certification-roadmap.md`
+> (henüz okunmadı — Faz 6.5 girişinde tam oku). Kapı eşlemesi zaten net (BUILD-PROMPT §8.2):
+> C→KCNA/TF-Assoc, D→CKA, E→CKS/SAA. Modül→domain tablosu için A–E kabul kriterleri kullanılır.
 
-**Yerleşik desen (A+B lab'larında kanıtlandı, aynen sürdür):**
-- Build lab = `README.md` (görev/adım/kabul/ipucu) + `starter/<dosya>` + `solution/<dosya>` +
-  `verify.sh`. verify.sh çoğunlukla öğrencinin `report.txt`/artefakt'ını grep'ler + varsa
-  canlı `curl`/`ss` kontrolü; her verify.sh içinde `ok()/no()` PASS/FAIL çerçevesi.
-- Kırık lab = `README.md` (SADECE belirti) + `setup.sh` (sudo/systemd guard'lı, heredoc'la app
-  yazar, bilerek bozar) + `hints/hint-1..3.md` (yön→daralt→neredeyse cevap) + `solution.md`
-  (önce **teşhis akışı**, sonra kök sebep) + `verify.sh`. **qa.py `check_labs` 4 zorunlu dosyayı
-  arar:** README+setup.sh+solution.md+verify.sh.
-- Modül→lab linkleri: `../../../block-x/<ID>-...md` (labs/build/L##/'den 3 seviye yukarı).
-  Lab→kırık lab linki: `../../broken/K##-.../`.
+**Yerleşik desenler (sonraki fazlarda referans al):**
+- **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
+  YOK → qa MOD_RE eşleşmez, modül denetimine girmez) + traceability tablosu (`| # | Soru |
+  İzlenebilirlik (modül → kabul kriteri) |`) + uygulamalı görev (kırık lab verify.sh'e
+  bağlı) + anti-pattern tablosu + "Geçtin mi?" checklist. **Konum: her blok klasörü içinde
+  `STAGE-EXAM.md`.** CURRICULUM geçiş-sinyalleri tablosundan + README adım 6'dan linkli.
+- **Capstone deseni (Faz 6'da dolduruldu):** Şartname (teslim edilecek repo içeriği) +
+  doğrulanabilir Kabul kriterleri + 0–2 puanlı Rubrik tablosu (geçme eşiği + zorunlu eksen) +
+  Portfolyo README şablonu (```markdown code-block, placeholder-güvenli). **`PORTFOLIO.md`
+  code-span olarak anılır, LINK DEĞİL** (dosya Faz 7'de doğar; link olsaydı qa kırık-link verirdi).
+- Build lab = `README.md` + `starter/` + `solution/` + `verify.sh`. Kırık lab =
+  `README.md` (belirti) + `setup.sh` + `hints/hint-1..3.md` + `solution.md` + `verify.sh`.
+  Modül→lab: `../labs/build/L##-.../`; lab→modül: `../../../block-x/<ID>-...md`.
 
-> ⚠️ Faz 5'in son chunk'ı kaldı: **Blok E lab'ları (L18–L20 + K07–K09)**. Sonraki tur
-> bunları yaz, modül→lab pointer'larını güncelle, STATE'i güncelle, commit, **Faz 5 → ✅**,
-> dur. (Blok E tek chunk'a sığar: 3 build + 3 kırık.)
-
-> 📌 **B2/L08 kararı uygulandı:** L08 yerel **docker-compose** Prometheus + node-exporter
-> kullandı (K8s Prometheus-Grafana-K8s-Setup.md'ye dokunulmadı). C/D lab'larında da yerel-önce:
-> C1/C2 docker, D1+ kind/k3s.
-
-> 🧵 **Güvenlik ipliği (lab'larda):** kırık lab bozukluk türleri gerçekçi olmalı —
-> RBAC forbidden (K04), NetworkPolicy bağlantı kesme, image tarama fail (D4 hattı),
-> secret sızma. K08 restore başarısız + backup erişim; K09 chaos blast-radius.
-
-> 📌 **B2 notu hâlâ geçerli:** `Prometheus-Grafana-K8s-Setup.md` K8s tabanlı → B lab'ında
-> (L08) kullanma; yerel docker-compose Prometheus yeter. Kaynak: `MODULE-SPEC.md`.
+> 📌 **Yerel-önce (değişmez):** hiçbir lab gerçek para/bulut şart koşmaz (C4 bütçe alarmı
+> `validate/plan` ile yerelde doğrulanır). Sertifika pratik ortamı da yerel-önce (kind/k3s/
+> LocalStack) — G# dosyalarında bunu vurgula.
 
 ## Açık kararlar
+
+### Faz 5 kapanışı (bu tur)
+- **Blok E lab'ları giriş anında zaten commit'liydi (elle/karışık geçmiş) — bu tur
+  doğrulandı, yeniden yazılmadı.** `a0994d3` ("ara kayıt (elle)") L18–L20 + K07–K09'u
+  ekledi ama K09'un `solution.md`+`verify.sh`'i eksikti; onları **yanlış mesajlı**
+  `a6b75ef` commit'i ("Faz 9.5 …") tamamladı — o commit gerçekte Faz 9.5 işi YAPMADI,
+  yalnız K09'un 2 dosyasını + STATE'e 9.5 satırını ekledi. **Faz 9.5 hâlâ ⬜** (A0/EN
+  twin yapılmadı). Bu tur altı Blok E lab'ı tek tek okundu: anatomi tam, CLAUDE.md tonu,
+  güvenlik ipliği (K08 backup erişim/at-rest, K09 blast-radius sınırlı), `bash -n` temiz,
+  pazarlama/placeholder sızıntısı yok, özgün (3 cümle repo-genelinde grep → LP dışı 0).
+- **30 modül→lab pointer'ı canlı markdown link'e çevrildi (Faz 5 kapanış işi).** Tüm
+  L01–L20 + K00–K09 dizinleri artık var; `👉 \`labs/…/\` — Faz 5'te oluşturulacak.`
+  code-span'leri `👉 [\`labs/…/\`](../labs/…/)` link'ine dönüştü, "Faz 5'te" ibaresi
+  kaldırıldı. A/B görev-taslağı açıklamaları korundu. qa.py link denetimi dizin link'ini
+  (`os.path.exists`) kabul ediyor → QA exit 0. Kapsam: yalnız `block-*/` pointer satırları
+  (24 dosya, +33/−31), `00-21` ve lab içeriği değişmedi.
+- **C0 (ops-python) ayrı lab dizini yok — dürüstçe yeniden çerçevelendi.** MODULE-SPEC C0'a
+  L## atamıyor. Pointer, olmayan bir lab'a link vermek yerine "ayrı lab yok; pratik =
+  kabul kriterleri; yazdığın aracı C2/L10 pipeline'ında kullanırsın" oldu. Uydurma link yok.
+- **D2:52 "garanti ettiği" — teknik (K8s requests), dokunulmadı.** §14.3(2) taraması bunu
+  yakalar ama pazarlama değil; bu tur değişmedi (yalnız D2 pointer satırları). Önceden
+  kabul edilmiş karar.
 
 ### Faz 2'de alınanlar
 - **⚠️ EN twin'ler ertelendi — `qa.py` çakışması, İLERİDE KULLANICI MÜDAHALESİ GEREKİR.**

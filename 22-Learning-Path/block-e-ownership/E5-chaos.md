@@ -29,7 +29,7 @@ geçişinden önceki son sahiplik sınavıdır.
 | [`11-SRE/Capacity-Planning.md`](../../11-SRE/Capacity-Planning.md) | yük/kapasite bağı | ~20 dk |
 
 ## 💥 Kırık lab
-👉 `labs/broken/K09-chaos-gameday/` — Faz 5'te. Çok-arızalı, hipotez temelli bir
+👉 [`labs/broken/K09-chaos-gameday/`](../labs/broken/K09-chaos-gameday/) — Çok-arızalı, hipotez temelli bir
 game day; blast radius sınırlı, gözlem ve öğrenme merkezde.
 
 ## ✅ Kabul kriterleri

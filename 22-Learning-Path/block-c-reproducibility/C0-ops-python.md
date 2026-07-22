@@ -108,7 +108,9 @@ except FileNotFoundError as e:
 - **Küçük tut:** amacın ürün değil, tekrar eden işi bitirmek. Bir betik bir şey yapsın, onu iyi yapsın.
 
 ## 🔨 Lab
-👉 `labs/build/` içinde ops-python görevi — Faz 5'te oluşturulacak.
+Ayrı bir lab dizini yok — bu modülün pratiği aşağıdaki **kabul kriterleridir**:
+`argparse`'li bir CLI + JSON çeken bir betik yaz. Burada yazdığın aracı sonra
+[`C2`](C2-ci.md) CI lab'ında ([`L10`](../labs/build/L10-ci/)) pipeline'a koyarsın.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

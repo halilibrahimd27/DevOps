@@ -29,10 +29,10 @@ production ayarları gerekir. E bloğundaki SLO (E1) ve chaos (E5) bu ayarların
 | [`05-Kubernetes/Resource-Limits-Guide.md`](../../05-Kubernetes/Resource-Limits-Guide.md) | request/limit | ~25 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L14-k8s-production/` — Faz 5'te.
+👉 [`labs/build/L14-k8s-production/`](../labs/build/L14-k8s-production/)
 
 ## 💥 Kırık lab
-👉 `labs/broken/K05-oomkilled-probe/` — Faz 5'te. Belirti: "Pod sürekli yeniden
+👉 [`labs/broken/K05-oomkilled-probe/`](../labs/broken/K05-oomkilled-probe/) — Belirti: "Pod sürekli yeniden
 başlıyor / trafik almıyor." (Gerçekçi sebep gizli: OOMKilled / yanlış probe / eksik limit.)
 
 ## ✅ Kabul kriterleri

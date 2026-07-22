@@ -266,7 +266,7 @@ git reset --hard <iyi_hash>    # reflog'da gördüğün sağlam noktaya dön
 | `git help <komut>` (örn. `git help rebase`) | Her komutun resmi, tam referansı | Bir davranışı merak ettiğinde |
 
 ## 🔨 Lab
-👉 `labs/build/L04-git/` — Faz 5'te oluşturulacak. (Görev taslağı: sıfırdan repo,
+👉 [`labs/build/L04-git/`](../labs/build/L04-git/) — (Görev taslağı: sıfırdan repo,
 iki branch, bilerek bir conflict üret ve çöz; aynı işi bir kez merge, bir kez rebase
 ile yapıp grafik farkını gör.)
 

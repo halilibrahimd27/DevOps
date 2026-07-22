@@ -30,7 +30,7 @@ parçası olur, sonradan yapılan ayrı bir iş değil.
 | [`08-Security/DevSecOps-Pipeline.md`](../../08-Security/DevSecOps-Pipeline.md) | pipeline'a yerleştirme | ~25 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L16-supply-chain/` — Faz 5'te (C2 pipeline'ının üstüne).
+👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/) — C2 pipeline'ının üstüne.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

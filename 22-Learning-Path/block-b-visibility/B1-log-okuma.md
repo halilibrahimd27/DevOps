@@ -309,7 +309,7 @@ loglama" ilkesinin (kapanış cümlesi) altyapı tarafındaki kanıtıdır.
 | [`19-Compliance/KVKK-Practical.md`](../../19-Compliance/KVKK-Practical.md) | Log'da PII'nin uyum boyutu | F2 (uyum) öncesi merak seviyesinde |
 
 ## 🔨 Lab
-👉 `labs/build/L07-log-okuma/` — Faz 5'te oluşturulacak. (Görev taslağı: A6 uygulamanı
+👉 [`labs/build/L07-log-okuma/`](../labs/build/L07-log-okuma/) — (Görev taslağı: A6 uygulamanı
 üç farklı şekilde boz, her birini yalnız `journalctl` süzgeçleriyle bul; bir de bilerek
 sır sızan bir log satırı yaz ve onu güvenli hâle getir.)
 

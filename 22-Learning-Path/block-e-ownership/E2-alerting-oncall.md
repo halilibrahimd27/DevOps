@@ -28,7 +28,7 @@ haberdar olacağını kurar. E3'teki incident response bu alarmlarla tetiklenir.
 | [`00-Culture/On-Call-Playbook.md`](../../00-Culture/On-Call-Playbook.md) | nöbet disiplini | ~25 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L19-alerting/` — Faz 5'te.
+👉 [`labs/build/L19-alerting/`](../labs/build/L19-alerting/)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

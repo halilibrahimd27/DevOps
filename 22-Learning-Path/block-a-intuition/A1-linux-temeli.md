@@ -331,7 +331,7 @@ yönetimi D3'ün konusu.
 > `man` içinde `/` ile aratmayı alışkanlık edin — bu tek başına bir beceridir.
 
 ## 🔨 Lab
-👉 `labs/build/L01-linux-temeli/` — Faz 5'te oluşturulacak. (Görev taslağı: verilen bir
+👉 [`labs/build/L01-linux-temeli/`](../labs/build/L01-linux-temeli/) — (Görev taslağı: verilen bir
 process'i bul-incele-durdur; bir dizin ağacının izinlerini `750`/`640` düzenine çek;
 bir servis kullanıcısı yarat.)
 

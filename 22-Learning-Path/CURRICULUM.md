@@ -128,6 +128,20 @@ somutlaştırır:
 | D → E | Kendi kurduğun bir şey senin hatanla bozuldu ve sen geri getirdin mi? |
 | E → F | Bir şeye "hayır" dedin ve gerekçeni yazılı savundun mu? |
 
+Bu sinyaller her blok sonunda bir **sınavla** somutlaşır — her soru bir modülün
+kabul kriterine izlenebilir, öznel "anladım" yoktur:
+
+| Blok | Sınav | Kapı |
+|---|---|---|
+| A | [`block-a-intuition/STAGE-EXAM.md`](block-a-intuition/STAGE-EXAM.md) | A → B |
+| B | [`block-b-visibility/STAGE-EXAM.md`](block-b-visibility/STAGE-EXAM.md) | B → C |
+| C | [`block-c-reproducibility/STAGE-EXAM.md`](block-c-reproducibility/STAGE-EXAM.md) | C → D (+ [`Capstone 1`](capstones/CAP1-blok-c-sonu.md)) |
+| D | [`block-d-orchestration/STAGE-EXAM.md`](block-d-orchestration/STAGE-EXAM.md) | D → E (+ [`Capstone 2`](capstones/CAP2-blok-d-sonu.md)) |
+| E | [`block-e-ownership/STAGE-EXAM.md`](block-e-ownership/STAGE-EXAM.md) | E → F (+ [`Capstone 3`](capstones/CAP3-blok-e-sonu.md)) |
+
+> Blok F bir sınavla kapanmaz — çıktısı yazıdır (ADR/RFC/postmortem) ve son iki
+> kapı kendi kendine geçilemez (aşağıda **Dürüst tavan**).
+
 ---
 
 ## 🔒 En katı kural: Blok B bitmeden Blok C'ye geçilmez

@@ -266,12 +266,12 @@ amaç `443` dinleyen, sertifikayı sunan bir nginx görmek.
 | [`21-Field-Notes/ansible/system-preparation.md`](../../21-Field-Notes/ansible/system-preparation.md) | Gerçek bir sistem hazırlama notunun nasıl göründüğü | ~20 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L06-elle-deploy/` — Faz 5'te oluşturulacak. (Görev taslağı: sıfır VM'den
+👉 [`labs/build/L06-elle-deploy/`](../labs/build/L06-elle-deploy/) — (Görev taslağı: sıfır VM'den
 başlayıp DB + uygulama + systemd unit + nginx + firewall'ı elle kur, reboot'tan sağ
 çıkar, tüm adımları `KURULUM.md`'ye yaz.)
 
 ## 💥 Kırık lab
-👉 `labs/broken/K00-systemd-ayaga-kalkmiyor/` — Faz 5'te. Belirti: "systemd servisi
+👉 [`labs/broken/K00-systemd-ayaga-kalkmiyor/`](../labs/broken/K00-systemd-ayaga-kalkmiyor/) — Belirti: "systemd servisi
 ayağa kalkmıyor." Sebep gizli (port çakışması / yanlış `ExecStart` path / izin / eksik
 `EnvironmentFile`). K8s bilgisi gerektirmez; debugging sezgisi tam burada başlar.
 
