@@ -98,6 +98,7 @@ eksik bıraktıkları değil, **erken koyduklarıdır.**
 | [`PROGRESS-TEMPLATE.md`](PROGRESS-TEMPLATE.md) | Kendine kopyalayacağın ilerleme dosyası |
 | [`COST-GUARDRAILS.md`](COST-GUARDRAILS.md) | Yerel alternatifler + bulut bütçe alarmı |
 | [`NOT-YET.md`](NOT-YET.md) | "Henüz değil" listesi ve gerekçeleri |
+| [`PORTFOLIO.md`](PORTFOLIO.md) | Hangi modül/capstone hangi CV satırına karşılık gelir |
 | `block-a … block-f/` | Modül dosyaları (A1…F5) |
 | `capstones/` | Blok C/D/E sonu teslim projeleri |
 | `labs/` | İnşa lab'ları + kırık lab'lar |

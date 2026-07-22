@@ -25,31 +25,47 @@ izlenebilir biçimde yazmaktır. Bu modül saf okuma değil, **yazma egzersizidi
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
 |---|---|---|
-| [`20-Soft-Skills/Documentation-as-Communication.md`](../../20-Soft-Skills/Documentation-as-Communication.md) | yazma bir iletişim | ~30 dk |
-| [`00-Culture/Documentation-Culture.md`](../../00-Culture/Documentation-Culture.md) | doküman kültürü | ~20 dk |
+| [`20-Soft-Skills/Documentation-as-Communication.md`](../../20-Soft-Skills/Documentation-as-Communication.md) | yazmak bir iletişim aracıdır, okuyucu odaklı | ~30 dk |
+| [`00-Culture/Documentation-Culture.md`](../../00-Culture/Documentation-Culture.md) | kararı yazılı tutma kültürü | ~20 dk |
+| [`00-Culture/Blameless-Postmortem-Template.md`](../../00-Culture/Blameless-Postmortem-Template.md) | postmortem şablonu (E3'ten hatırla) | ~15 dk |
 
 ## 🔨 Teslim edilebilir egzersiz
-👉 Faz 7'de: **gerçek bir ADR + bir postmortem yaz** ve bir rubrikle değerlendir
-(karar netliği, alternatifler, sonuçlar, izlenebilir eylemler). 42 saatlik F bloğu
-saf okuma değildir; buranın çıktısı yazılı eserdir.
+Bu modülün çıktısı **yazılı eserdir**, saf okuma değil. İki belge üret:
+1. **Bir ADR** (Architecture Decision Record): patika boyunca verdiğin gerçek bir kararı belgele —
+   örn. "C1'de multi-stage image niçin", "D3'te secret'i niçin şu yolla yönettim". Bölümler:
+   bağlam → değerlendirilen seçenekler → verilen karar → sonuçları (olumlu ve olumsuz).
+2. **Bir postmortem'i rubrikle değerlendir**: E3'te (ya da K07'de) yazdığın postmortem'i aşağıdaki
+   rubrikle puanla, düşük eksenleri **düzelt**, düzeltilmiş sürümü teslim et.
+
+**Rubrik (her eksen 0–2):** karar/kök-sebep netliği · değerlendirilen alternatifler · sonuçların
+dürüstlüğü (olumsuzlar da yazılı mı) · izlenebilir eylem maddeleri (sahip + son tarih).
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] TODO (Faz 7): gerçek bir kararı belgeleyen bir ADR yazıldı (bağlam, seçenekler, sonuç)
-- [ ] TODO (Faz 7): bir postmortem rubrikle değerlendirildi ve eksikleri düzeltildi
-- [ ] TODO (Faz 7): "bir RFC'de itirazları önceden nasıl karşılarsın" (yazılı)
+- [ ] Bir `adr-001-<konu>.md` yazıldı: bağlam, en az 2 seçenek, karar ve **olumsuz** sonuçlar dahil
+- [ ] Bir postmortem yukarıdaki rubrikle puanlandı; her eksen için puan + düşük eksenlerin düzeltmesi yazılı
+- [ ] "Bir RFC'de en güçlü itirazı önceden nasıl karşılarsın" bir paragrafta yazıldı
+- [ ] ADR'deki her eylem/sonuç maddesi izlenebilir (sahip veya kaynak modül adı taşıyor)
 
 ## 🧪 Kendini test et
-1. TODO (Faz 7)
-2. TODO (Faz 7)
-3. TODO (Faz 7)
+1. Bir ADR'de "değerlendirilen seçenekler" bölümü niçin "verilen karar" bölümünden daha değerlidir?
+2. Bir RFC'yi yayımlamadan önce en güçlü itirazı kendin yazmak niçin ikna gücünü artırır?
+3. Postmortem'de "olumsuz sonuçlar" bölümünü boş bırakmak niçin bir kırmızı bayraktır?
 
-<details><summary>Cevaplar</summary>TODO (Faz 7)</details>
+<details><summary>Cevaplar</summary>
+
+1. Çünkü kararın *niçin* verildiğini ve hangi alternatiflerin niçin elendiğini gösterir; altı ay sonra "niye böyle yapmışız?" sorusunun cevabı orada. Yalnız sonuç, bağlam olmadan yeniden tartışılır — [`20-Soft-Skills/Documentation-as-Communication.md`](../../20-Soft-Skills/Documentation-as-Communication.md).
+2. İtirazı okuyucudan önce sen dile getirirsen tartışma "haklı mısın" değil "hangi trade-off" eksenine kayar; savunmacı değil, güvenilir görünürsün. En sık itirazları önceden karşıla — [`00-Culture/Documentation-Culture.md`](../../00-Culture/Documentation-Culture.md).
+3. Her kararın bedeli vardır; olumsuz yok demek ya dürüst değilsin ya yeterince düşünmedin demektir. Trade-off'u yazmayan doküman güven kaybettirir — [`20-Soft-Skills/Documentation-as-Communication.md`](../../20-Soft-Skills/Documentation-as-Communication.md).
+</details>
 
 ## 🆘 Takıldıysan
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
-| TODO | TODO | TODO |
+| ADR "şunu yaptık" listesine dönüyor | Bağlam ve alternatifler atlandı | Önce problemi ve elenen seçenekleri yaz; karar en sona gelir |
+| Postmortem kişiyi suçluyor | Blameless çerçeve yok | Dili sisteme çevir (E3) — "sistem X'e izin verdi"; şablona dön |
+| RFC savunmacı okunuyor | İtirazlar bastırılıyor | En güçlü itirazı kendin yaz ve yanıtla; tartışmayı trade-off'a taşı |
+| Eylem maddeleri takip edilemiyor | Sahip/tarih yok | Her maddeye sahip + son tarih + izleneceği yer ekle |
 
 ## 💼 Portfolyo çıktısı
 Yazılmış bir ADR + bir postmortem — L2 iletişiminin en somut kanıtı.

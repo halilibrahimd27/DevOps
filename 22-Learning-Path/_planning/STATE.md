@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 6.5 TAMAM — sertifika katmanı kapandı (redirect + entegrasyon + DCA notu + çelişki temizliği)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 7 TAMAM — Blok F (F1–F5 içerik) + PORTFOLIO.md + CV-Tips çift yönlü bağ
 
 ## Faz durumu
 
@@ -15,43 +15,33 @@
 | 5 | Lab'ların tamamlanması | ✅ | **Tamam.** L01–L20 (20 build) + K00–K09 (10 kırık) tam. 49 script `bash -n` temiz, kırık lab 4-dosya tam. Blok E lab'ları (L18–L20 + K07–K09) doğrulandı; 30 modül→lab pointer'ı canlı markdown link'e çevrildi. QA exit 0 (0 uyarı) |
 | 6 | Değerlendirme | ✅ | **Tamam.** 5 STAGE-EXAM (A–E, blok klasörlerinde) + PLACEMENT 2 kontrol testi dolduruldu + 3 capstone (şartname/kabul/rubrik/portfolyo şablonu). Her sınav sorusu modül kabul kriterine izlenebilir (traceability sütunu). QA exit 0 (0 uyarı) |
 | 6.5 | Sertifika katmanı | ✅ | **Tamam.** README + G1/G2/G3 + HOW-TO-CERTIFY (§8.2 9 bölüm/kapı, sürüm uyarısı, domain×modül boşluk sütunu). Redirect + RoadMap/CV-Tips entegrasyonu + DCA legacy notu + çelişki temizliği. G3'te F2→CKS ileri-link + sıra notu (revizyon 7). QA exit 0 (0 uyarı) |
-| 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
+| 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ⬜ | 22 nav başlığı + geri-linkler. (Not: `2[0-9]-*` globu 22'yi zaten stage ediyor; `_planning` `exclude_docs`'ta) |
 | 9 | Düşmanca gözden geçirme | ⬜ | TROUBLESHOOTING.md 40+ madde burada dolar |
 | 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, L06 starter app, EN twin'ler, A1/A6 review maddeleri |
 
 ## Sıradaki adım
 
-**Faz 7 — Blok F + kariyer köprüsü.** Faz 6.5 bu tur kapandı. Faz 7'de yapılacaklar
-(BUILD-PROMPT §10 Faz 7 + §4.2 Blok F + §4.6):
-- **F1–F5 içeriği** — modül iskeletleri Faz 1'de var (`block-f-judgment/`), şu an TODO.
-  **Üçüncü bakış çerçevesiyle** yaz (§4.2 sonu): aynı sistemlere para/organizasyon/risk
-  gözüyle dön — "K8s'i D'de nasıl çalıştığı, E'de nasıl bozulduğu, F'de ne kadara mal
-  olduğu ve kimin sahiplendiği için okuyorsun." F1 Maliyet/FinOps · F2 Tehdit modelleme +
-  uyum (KVKK/GDPR/SOC2) · F3 Platform/IDP/Team Topologies · F4 Yazma (ADR/RFC/postmortem) ·
-  F5 Stakeholder/"hayır"/vendor.
-- **Kaynak klasörler** (mevcut deep-dive'ları saran modüller, kısıt #1 — kopyalama, LINK):
-  `12-FinOps`, `13-Platform-Engineering`, `19-Compliance` (KVKK/SOC2/ISO27001 zaten var),
-  `20-Soft-Skills`. Bunları "modern trend" değil **karar müfredatı** olarak çerçevele.
-- **F1/F4 teslim egzersizleri** işaretli (revizyon 9): F1 maliyet trade-off yazımı, F4 ADR/RFC/
-  postmortem yazma çıktısı. Kabul kriterleri **yazılı çıktı** üzerinden doğrulanabilir olmalı.
-- **`PORTFOLIO.md`** (§5 kök dosya, §10 Faz 7): hangi modül CV'de hangi satıra karşılık gelir.
-  Capstone'lar (CAP1–3) zaten portfolyo README şablonu üretiyor; PORTFOLIO.md bunları CV
-  satırlarına bağlar. **`18-Career/CV-Tips.md` ile çift yönlü bağla.**
-- Süre: F planı **~48s** (revizyon 4: A97·B36·C88·D84·E64·**F48**+capstone60=~477s).
-  F5 modülü büyükse F5a/F5b bölünebilir (§4.2 blok-içi serbest).
-- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 7 → ✅**, dur.
+**Faz 8 — Entegrasyon.** Faz 7 bu tur kapandı. Faz 8'de yapılacaklar (BUILD-PROMPT §10 Faz 8):
+- **Kök `README.md`:** patika **Hızlı Başlangıç'ın ilk satırı** olacak (repo kök README'si,
+  `22-Learning-Path/` değil — `/Users/halil/Halil/projects/DevOps/README.md`).
+- **`RoadMap/README.md`:** "A — Yeni Başlayan" bölümü patikaya yönlendirilir; **eski liste
+  özet olarak kalır** (silme, özetle + link ver). Faz -1'de kırık ön-koşul zinciri tespiti
+  buradaydı — patika o boşluğu kapatıyor, RoadMap artık patikaya işaret etmeli.
+- **`scripts/build-docs.sh`:** `22-Learning-Path` stage edilir (not: `2[0-9]-*` globu 22'yi
+  zaten yakalıyor — **doğrula, gerekiyorsa `.pages` başlığı ekle**), `.pages` başlığı
+  `🎓 Öğrenme Patikası / Learning Path`, kök nav'da **`RoadMap`'ten ÖNCE**; `_planning/`
+  stage EDİLMEZ. `nav_translations` ile EN başlık.
+- **`mkdocs.yml`:** `exclude_docs`'a `_planning` (STATE'e göre zaten ekli olabilir — **doğrula**).
+- **Mevcut deep-dive'lara geri-link satırı** (§3 kısıt #2'nin **tek istisnası**): "Bu doküman
+  `<D#>` modülünde kullanılıyor" — dosya sonuna tek satır. Hangi deep-dive'lar hangi modülde
+  "Önce oku"da anılıyorsa onlara. Kapsamı dar tut, her dosyaya değil.
+- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 8 → ✅**, dur.
 
-> ⚠️ **G3 CKS↔F2 ileri-linki (revizyon 7) — Faz 6.5'te KONDU, Faz 7'de HEDEFİ DOLAR:**
-> `G3-cks-aws-saa.md` şu an `F2-tehdit-uyum.md`'ye ileri-link + "CKS'e F2 sonrası gir"
-> sıra notu veriyor. F2 hâlâ iskelet/TODO. Faz 7'de F2 içeriği yazılınca G3'ün linki
-> gerçek içeriğe bağlanır — F2 yazarken CKS'in "hangi kontrolü niye" ihtiyacını (tehdit
-> çerçevesi) karşıladığından emin ol. Link zaten canlı (skeleton var), QA kırılmaz.
-
-> 📌 **Faz 7 kaynak durumu:** `12-FinOps` (Cost-Optimization/Right-Sizing/FinOps-*),
-> `13-Platform-Engineering` (Backstage/IDP/Crossplane), `19-Compliance` (KVKK-Practical/
-> SOC2-Type2-Prep/ISO-27001-Controls/GDPR), `20-Soft-Skills` (ADR/RFC/postmortem yazımı,
-> stakeholder) — hepsi mevcut, F modülleri bunları saracak. Kaynaksız F modülü kalmamalı.
+> ✅ **G3 CKS↔F2 ileri-linki (revizyon 7) — Faz 7'de HEDEF DOLDU:** `F2-tehdit-uyum.md`
+> artık içerik dolu (tehdit modeli + kontrol/kanıt haritası, KVKK/SOC2 örnekleri). G3'ün
+> `F2`'ye verdiği ileri-link gerçek içeriğe bağlanıyor; F2 "hangi kontrolü niye" ihtiyacını
+> (STRIDE + kontrol eşleme) karşılıyor. Link canlı, QA temiz. Bu madde **kapandı.**
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -73,7 +63,30 @@
 
 ## Açık kararlar
 
-### Faz 5 kapanışı (bu tur)
+### Faz 7 kapanışı (bu tur)
+- **`18-Career/CV-Tips.md` düzenlendi — §10 Faz 7'nin ADLI istisnası.** §3 kısıt #2 "00-21
+  değiştirme, tek istisna Faz 8 geri-link" der; ANCAK §10 Faz 7 açıkça "`18-Career/CV-Tips.md`
+  ile çift yönlü bağla" diyerek bu dosyayı isimle çağırır (Faz 6.5 de aynı gerekçeyle
+  düzenlemişti). Değişiklik minimal: Referanslar listesine **tek satır** PORTFOLIO.md link'i.
+  İçerik yeniden yazılmadı.
+- **Kısıt #1 (kopyalama değil, LINK) korundu.** F1–F5 "sıralayıcı" modüller: her biri 75–79
+  satır (qa `≤220` sıralayıcı eşiğinin çok altında), "Önce oku" tabloları `12-FinOps`/
+  `13-Platform-Engineering`/`19-Compliance`/`20-Soft-Skills`/`08-Security` deep-dive'larına
+  link veriyor, açıklayıcı içerik tekrar edilmedi. §14.3(1) 4 özgün cümle grep → LP dışı 0.
+- **"senior olur" substring tuzağı (qa marketing regex):** PORTFOLIO.md'de ünvan iddiasını
+  **reddeden** cümle ilk taslakta "mid/senior olursun demez" yazıyordu; `senior olur`
+  substring'i qa.py `check_marketing`'e takılırdı (regex bağlam/negasyon anlamaz). Cümle
+  "şu ünvana geçersin gibi bir cümle burada geçmez" olarak yeniden yazıldı. Kandırma değil —
+  anlam aynı (ünvan reddi), yalnız yasak substring kaldırıldı.
+- **F teslim egzersizleri "yazılı çıktı" ile doğrulanabilir yapıldı (revizyon 9 + §12.3).**
+  F1 `finops-analiz.md`, F2 `tehdit-modeli.md`, F3 `golden-path-onerisi.md`, F4 ADR+postmortem,
+  F5 `karar-yazisi.md`. Kabul kriterleri dosya varlığı/içerik üzerinden ölçülür, "anladım" yok
+  (qa öznel-kriter deseni temiz). §4.5 NOT-YET ilkesi F3'te ("ne zaman erken") pekiştirildi.
+- **PORTFOLIO.md CV bulle şablonlarında metrik `<...>` placeholder.** §1 "kaynaksız istatistik
+  yok" + CLAUDE.md placeholder güvenliği: uydurma sayı yerine öğrencinin kendi ölçtüğü değeri
+  yazacağı `<önce>`/`<sonra>` placeholder'ı. `%X artış` kalıbından kaçınıldı (qa marketing).
+
+### Faz 5 kapanışı (önceki tur)
 - **Blok E lab'ları giriş anında zaten commit'liydi (elle/karışık geçmiş) — bu tur
   doğrulandı, yeniden yazılmadı.** `a0994d3` ("ara kayıt (elle)") L18–L20 + K07–K09'u
   ekledi ama K09'un `solution.md`+`verify.sh`'i eksikti; onları **yanlış mesajlı**
@@ -195,7 +208,47 @@
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 6.5 — Sertifika katmanı, KAPANDI)
+## Bu oturumda yapılanlar (Faz 7 — Blok F + kariyer köprüsü, KAPANDI)
+
+**Giriş durumu:** Faz 6.5 önceki tur kapanmıştı (STATE ✅). Bu tur `STATE.md` okundu,
+QA giriş kontrolü (`qa.py` exit 0, PAUSE yok) yapıldı, Faz 7'ye geçildi.
+
+**Bu tur yapılan (§10 Faz 7 + §4.2 Blok F + §4.6):**
+1. **F1–F5 içeriği yazıldı** (`block-f-judgment/`) — iskeletlerdeki tüm `TODO`'lar dolduruldu.
+   Her modül **üçüncü bakış çerçevesiyle** (§4.2 sonu): aynı sistemlere para/organizasyon/risk
+   gözüyle dönüş. **F1** maliyet ayrımı + trade-off · **F2** STRIDE tehdit modeli + KVKK/SOC2
+   kontrol/kanıt eşleme · **F3** platform/golden-path/Team Topologies (NOT-YET "ne zaman erken"
+   pekiştirildi) · **F4** ADR + rubrikli postmortem (yazma egzersizi) · **F5** gerekçeli "hayır"
+   + vendor/kilitlenme. Her modül: "Önce oku" (2–3 mevcut deep-dive link), teslim egzersizi,
+   **yazılı çıktıyla doğrulanabilir** kabul kriterleri, 3 kendini-test (cevaplar repo linkli),
+   4-satır "Takıldıysan" tablosu.
+2. **`PORTFOLIO.md` oluşturuldu** (§5 kök dosya) — modül/capstone → CV satırı eşlemesi.
+   Kanıt→etki ilkesi, 3 eşleme tablosu (capstone / F eseri / blok→yetenek), 4-adım
+   eser→bulle akışı, 8-satır anti-pattern tablosu, checklist, referanslar. Ünvan iddiası
+   açıkça reddedildi; CV metrikleri `<...>` placeholder (uydurma sayı yok).
+3. **CV-Tips çift yönlü bağ** — `18-Career/CV-Tips.md` Referanslar'a tek satır PORTFOLIO.md
+   link'i (PORTFOLIO zaten CV-Tips'e "Deneyim/Yetenekler" bölümlerine link veriyor).
+4. **Entegrasyon köprüleri:** `README.md` "Bu klasörde ne var" tablosuna PORTFOLIO.md satırı;
+   F5 "Sırada" → PORTFOLIO.md canlı link; CAP1–3 "Faz 7'de eklenecek `PORTFOLIO.md`"
+   code-span'leri → canlı link + present tense (dosya artık var).
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0, 0 UYARI.** "5 modülde TODO" notu kayboldu (F1–F5 doldu),
+  29 modül bütünlük geçti, 49 lab scripti `bash -n` temiz, site derlendi, `_planning` sızmadı.
+- **§14.3(1) tekrar:** F modüllerinden 4 özgün cümle repo-genelinde grep → LP dışında 0 hit.
+  qa `check_duplication` (2-ardışık-satır örtüşme) temiz. Kısıt #1 uyumlu (linkler, kopya değil).
+- **§14.3(2) pazarlama:** qa `check_marketing` deseni LP'de (`_planning` hariç) → 0 hit.
+  PORTFOLIO'daki "senior olur" substring tuzağı önden yakalanıp reddedici cümle yeniden yazıldı.
+- **§14.3(3) süre:** F toplam = 10+12+10+10+6 = **48s** — revizyon 4 planı (F48) birebir tutuyor.
+  Kümülatif: A97·B36·C88·D84·E64·F48 + capstone60 ≈ 477s (plan sabit).
+
+**Değişen dosyalar (bu tur):** `block-f-judgment/F1..F5.md` (içerik) · `PORTFOLIO.md` (yeni) ·
+`README.md` · `capstones/CAP1..CAP3.md` (PORTFOLIO link) · `18-Career/CV-Tips.md` (tek satır) ·
+`_planning/STATE.md`. `00-21` edit'i yalnız CV-Tips (§10 Faz 7 adlı istisna) — tek satır geri-link.
+
+---
+
+## Önceki oturum (Faz 6.5 — Sertifika katmanı, KAPANDI)
 
 **Giriş durumu — önemli:** Önceki tur kapı dosyalarını (G1/G2/G3 + HOW-TO-CERTIFY +
 README) yazmış ve `d18804f` commit'iyle işlemiş ama **STATE'i güncellememişti** (Faz 6.5
