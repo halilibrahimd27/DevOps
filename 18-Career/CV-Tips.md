@@ -146,7 +146,13 @@ Methodology:                 GitOps, Trunk-based, Blameless postmortem, SLO/SLI
 | **HashiCorp Vault Associate** | Secrets |
 | **CNCF Prometheus** | Monitoring |
 
-> 🔑 **TR pazarı**: CKA + AWS SAA en sık. CKS + AWS DevOps Pro **fark yaratır**.
+> 🔑 **TR pazarı**: CKA + AWS SAA en sık. CKS + AWS DevOps Pro daha derin bir dal.
+
+> 🎓 **Bu patikanın sertifika duruşu koleksiyon değil, 3 kapı** —
+> [`22-Learning-Path/certifications/`](../22-Learning-Path/certifications/README.md).
+> Yukarıdaki tablo bir piyasa haritasıdır, yapılacaklar listesi değil: kapılar
+> CKA · (KCNA / Terraform Associate) · (CKS / AWS SAA) hattını izler. Professional
+> seviye (AWS DevOps Pro) çok sonra gelir — önce blok, sonra kapı.
 
 ---
 

@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 6 TAMAM — 5 STAGE-EXAM + PLACEMENT kontrol testleri + 3 capstone içeriği (rubrik + portfolyo şablonu)
+**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 6.5 TAMAM — sertifika katmanı kapandı (redirect + entegrasyon + DCA notu + çelişki temizliği)
 
 ## Faz durumu
 
@@ -14,7 +14,7 @@
 | 4 | Blok E | ✅ | **Tamam.** E1–E5 (5 modül) içerik. E toplam=64s (revizyon4 planı tutuyor). QA exit 0 (0 uyarı). `INTERVIEW-COVERAGE.md` yazıldı: 15/15 mid-level soru A–E ile eşleşiyor |
 | 5 | Lab'ların tamamlanması | ✅ | **Tamam.** L01–L20 (20 build) + K00–K09 (10 kırık) tam. 49 script `bash -n` temiz, kırık lab 4-dosya tam. Blok E lab'ları (L18–L20 + K07–K09) doğrulandı; 30 modül→lab pointer'ı canlı markdown link'e çevrildi. QA exit 0 (0 uyarı) |
 | 6 | Değerlendirme | ✅ | **Tamam.** 5 STAGE-EXAM (A–E, blok klasörlerinde) + PLACEMENT 2 kontrol testi dolduruldu + 3 capstone (şartname/kabul/rubrik/portfolyo şablonu). Her sınav sorusu modül kabul kriterine izlenebilir (traceability sütunu). QA exit 0 (0 uyarı) |
-| 6.5 | Sertifika katmanı | ⬜ | G3'te F2→CKS bağımlılığı burada çözülecek (revizyon 7) |
+| 6.5 | Sertifika katmanı | ✅ | **Tamam.** README + G1/G2/G3 + HOW-TO-CERTIFY (§8.2 9 bölüm/kapı, sürüm uyarısı, domain×modül boşluk sütunu). Redirect + RoadMap/CV-Tips entegrasyonu + DCA legacy notu + çelişki temizliği. G3'te F2→CKS ileri-link + sıra notu (revizyon 7). QA exit 0 (0 uyarı) |
 | 7 | Blok F + kariyer köprüsü | ⬜ | PORTFOLIO.md + F egzersizleri (revizyon 9) |
 | 8 | Entegrasyon | ⬜ | 22 nav başlığı + geri-linkler. (Not: `2[0-9]-*` globu 22'yi zaten stage ediyor; `_planning` `exclude_docs`'ta) |
 | 9 | Düşmanca gözden geçirme | ⬜ | TROUBLESHOOTING.md 40+ madde burada dolar |
@@ -22,33 +22,36 @@
 
 ## Sıradaki adım
 
-**Faz 6.5 — Sertifika katmanı.** Faz 6 bu tur kapandı (5 STAGE-EXAM + PLACEMENT
-kontrol testleri + 3 capstone içeriği). Faz 6.5'te yapılacaklar (BUILD-PROMPT §8 tamamı):
-- **`21-Field-Notes/system/devops-certification-roadmap.md`'yi taşı** →
-  `22-Learning-Path/certifications/` altına; §8.1'deki sorunları düzelt (10-sertifika/48-ay
-  koleksiyon planı → 3 kapı; pazarlama tonu; kaynaksız istatistikler %19.7/1.31M/%42.77/
-  %26.6/25.5 milyar $; USD maaş bantları; yazım hataları). **Docker DCA'yı öneri listesinden
-  çıkar** ("legacy/tartışmalı statü" notuyla). `21-Field-Notes/` altında yönlendirme satırı bırak.
-- **3 kapı dosyası** `certifications/G#-<sertifika>.md`: G1 (Blok C sonu) KCNA **veya**
-  Terraform Associate · G2 (Blok D sonu) CKA · G3 (Blok E sonu) CKS **veya** AWS SAA.
-  Her biri §8.2'deki 9 bölüm (Hazır mısın? / Ne ölçer-ölçmez / Hangi modüller karşılıyor
-  [domain×modül tablosu boşluk sütunuyla] / Resmi müfredat / Hazırlık planı / Pratik ortamı
-  [yerel-önce] / Sınav günü / Hazır olduğunu nereden anlarsın / Geçemezsen [utanç yok]).
-- **`certifications/HOW-TO-CERTIFY.md`** (§8.2 son) + **`certifications/README.md`**
-  (§8.3: "3 kapı vardır, 10 değil" tek duruş).
-- **Sürüm uyarısı kutusu** (§8.3) sertifika/sürüme bağlı her sayfanın başına.
-- **`RoadMap/README.md` ve `18-Career/CV-Tips.md`** buraya link verecek şekilde güncellenir.
-  **Repoda sertifika konusunda çelişen iki cümle kalmayacak** (§8.1 çelişkisi çözülür).
-- Bittiğinde: QA exit 0, STATE güncelle, commit, **Faz 6.5 → ✅**, dur.
+**Faz 7 — Blok F + kariyer köprüsü.** Faz 6.5 bu tur kapandı. Faz 7'de yapılacaklar
+(BUILD-PROMPT §10 Faz 7 + §4.2 Blok F + §4.6):
+- **F1–F5 içeriği** — modül iskeletleri Faz 1'de var (`block-f-judgment/`), şu an TODO.
+  **Üçüncü bakış çerçevesiyle** yaz (§4.2 sonu): aynı sistemlere para/organizasyon/risk
+  gözüyle dön — "K8s'i D'de nasıl çalıştığı, E'de nasıl bozulduğu, F'de ne kadara mal
+  olduğu ve kimin sahiplendiği için okuyorsun." F1 Maliyet/FinOps · F2 Tehdit modelleme +
+  uyum (KVKK/GDPR/SOC2) · F3 Platform/IDP/Team Topologies · F4 Yazma (ADR/RFC/postmortem) ·
+  F5 Stakeholder/"hayır"/vendor.
+- **Kaynak klasörler** (mevcut deep-dive'ları saran modüller, kısıt #1 — kopyalama, LINK):
+  `12-FinOps`, `13-Platform-Engineering`, `19-Compliance` (KVKK/SOC2/ISO27001 zaten var),
+  `20-Soft-Skills`. Bunları "modern trend" değil **karar müfredatı** olarak çerçevele.
+- **F1/F4 teslim egzersizleri** işaretli (revizyon 9): F1 maliyet trade-off yazımı, F4 ADR/RFC/
+  postmortem yazma çıktısı. Kabul kriterleri **yazılı çıktı** üzerinden doğrulanabilir olmalı.
+- **`PORTFOLIO.md`** (§5 kök dosya, §10 Faz 7): hangi modül CV'de hangi satıra karşılık gelir.
+  Capstone'lar (CAP1–3) zaten portfolyo README şablonu üretiyor; PORTFOLIO.md bunları CV
+  satırlarına bağlar. **`18-Career/CV-Tips.md` ile çift yönlü bağla.**
+- Süre: F planı **~48s** (revizyon 4: A97·B36·C88·D84·E64·**F48**+capstone60=~477s).
+  F5 modülü büyükse F5a/F5b bölünebilir (§4.2 blok-içi serbest).
+- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 7 → ✅**, dur.
 
-> ⚠️ **G3 CKS↔F2 bağımlılığı (revizyon 7, Faz 0'da ertelendi):** G3 CKS dalı F2 (tehdit
-> modelleme + uyum) kavramlarına dayanır ama F2 Faz 7'de yazılıyor. Faz 6.5'te G3'ü yaz
-> ama F2'ye ileri-link verirken "F2 Blok F'te; CKS'e Blok E sonunda değil, F2 sonrası gir"
-> notu düş. `MODULE-SPEC.md` revizyon 7 kararı burada uygulanır.
+> ⚠️ **G3 CKS↔F2 ileri-linki (revizyon 7) — Faz 6.5'te KONDU, Faz 7'de HEDEFİ DOLAR:**
+> `G3-cks-aws-saa.md` şu an `F2-tehdit-uyum.md`'ye ileri-link + "CKS'e F2 sonrası gir"
+> sıra notu veriyor. F2 hâlâ iskelet/TODO. Faz 7'de F2 içeriği yazılınca G3'ün linki
+> gerçek içeriğe bağlanır — F2 yazarken CKS'in "hangi kontrolü niye" ihtiyacını (tehdit
+> çerçevesi) karşıladığından emin ol. Link zaten canlı (skeleton var), QA kırılmaz.
 
-> 📌 **Faz 6.5 kaynağı:** taşınacak dosya `21-Field-Notes/system/devops-certification-roadmap.md`
-> (henüz okunmadı — Faz 6.5 girişinde tam oku). Kapı eşlemesi zaten net (BUILD-PROMPT §8.2):
-> C→KCNA/TF-Assoc, D→CKA, E→CKS/SAA. Modül→domain tablosu için A–E kabul kriterleri kullanılır.
+> 📌 **Faz 7 kaynak durumu:** `12-FinOps` (Cost-Optimization/Right-Sizing/FinOps-*),
+> `13-Platform-Engineering` (Backstage/IDP/Crossplane), `19-Compliance` (KVKK-Practical/
+> SOC2-Type2-Prep/ISO-27001-Controls/GDPR), `20-Soft-Skills` (ADR/RFC/postmortem yazımı,
+> stakeholder) — hepsi mevcut, F modülleri bunları saracak. Kaynaksız F modülü kalmamalı.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -192,56 +195,47 @@ kontrol testleri + 3 capstone içeriği). Faz 6.5'te yapılacaklar (BUILD-PROMPT
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 5 KISMİ — Blok C+D lab'ları)
+## Bu oturumda yapılanlar (Faz 6.5 — Sertifika katmanı, KAPANDI)
 
-Giriş durumu: Faz 5'in A+B chunk'ı (L01–L08 + K00–K01) önceki turda bitmişti. Bu tur
-**Blok C ve D'nin tüm lab'ları** yazıldı (BUILD-PROMPT §7 anatomisi). Otonom sözleşme
-§14.1.3: Faz 5 tek tura sığmadığı için C+D chunk yazıldı, kalan (yalnız Blok E) lab no
-seviyesinde `Sıradaki adım`a not düşüldü.
+**Giriş durumu — önemli:** Önceki tur kapı dosyalarını (G1/G2/G3 + HOW-TO-CERTIFY +
+README) yazmış ve `d18804f` commit'iyle işlemiş ama **STATE'i güncellememişti** (Faz 6.5
+hâlâ ⬜). O commit `21-Field-Notes/system/devops-certification-roadmap.md`'yi **sildi**
+(221 satır) — §8.1'in istediği gibi *taşımadı*, geriye **yönlendirme bırakmadı** →
+`21-Field-Notes/README.md:47` kırık link (qa UYARI). `LANDSCAPE.md` ara dosyası (pazarlama
+dolu) commit edilmeden silinmişti. Bu tur önce **gerçek durum doğrulandı** (5 kapı dosyası
+okundu: hepsi §8.2 9-bölüm tam, sürüm uyarılı, domain×modül boşluk sütunlu, ton temiz),
+sonra **eksik §8 teslimatları tamamlandı**.
 
-**İnşa lab'ları (9) — L09…L17:**
-- **L09-container** (C1): naive tek-stage Dockerfile (build-essential şişkin, "önce") →
-  multi-stage non-root (`--prefix=/install`, "sonra"); `docker compose` app+postgres;
-  katman cache gözlemi. verify: `>=2 FROM + COPY --from=` + `:latest yok` + report boyutları.
-- **L10-ci** (C2): yerel `registry:2`; `pytest → docker build → SHA-tag → push` pipeline
-  (`set -euo pipefail`); GH Actions `ci.yml` ikizi (`@<VERSION>`). verify: test/build/push +
-  `:latest` yasağı + "yeşil neyi kanıtlar".
-- **L11-terraform** (C3): **LocalStack** (`test`/`test`, 4566); `aws_s3_bucket`+`aws_ssm_parameter`;
-  apply→destroy→apply idempotency; state açıklaması.
-- **L12-bulut-butce-alarmi** (C4): **ADIM 1 = bütçe alarmı** (`aws_budgets_budget`+2 bildirim,
-  `<YOUR_EMAIL>`); ADIM 2 = LocalStack S3 aç/kapa; free-tier listesi + VPC/IAM/compute tanımı.
-- **L13-k8s-temel** (D1): kind; Deployment+Service+Ingress **+ en-az-yetki RBAC (delete yok)
-  + default-deny NetworkPolicy + izin kuralı** (güvenlik ipliği ilk gün). verify: 6 kind +
-  Role'de delete olmaması + `auth can-i` kanıtı.
-- **L14-k8s-production** (D2): request/limit + readiness/liveness probe + PDB(minAvailable:1) +
-  HPA(CPU %50, metrics-server). verify: request/limit+2 probe+HPA+PDB.
-- **L15-secret-yonetimi** (D3): `kubectl create secret` (kabuktan) → `secretKeyRef`;
-  base64≠şifreleme kanıtı; gitleaks/`trivy fs` taraması; SealedSecrets/SOPS/ESO yazılı.
-- **L16-supply-chain** (D4): L10 pipeline üstüne **trivy tarama KAPISI** (`--exit-code 1
-  --severity HIGH,CRITICAL`) + SBOM (cyclonedx) + `cosign sign/verify`; `ci.yml` trivy-action
-  `@<VERSION>`. verify: tarama kapısı + cosign + report gerekçe/SBOM.
-- **L17-gitops-argocd** (D5): kind+ArgoCD; `argoproj.io/Application` (repoURL+path+syncPolicy
-  automated/selfHeal); drift→OutOfSync→self-heal geri çekme. NOT-YET'e link (App-of-Apps hayır).
-
-**Kırık lab'lar (5) — K02…K06 (hepsi 4 zorunlu dosya + 3 kademe hint):**
-- **K02-container-hatasi** (C1): kök sebep = port eşleme `"8080:80"` ama app 5000 dinliyor
-  (`HOST:CONTAINER` sağ taraf yanlış). `ps→logs→eşleme` teşhis üçlüsü.
-- **K03-terraform-state** (C3): kök sebep = **bayat state kilidi** (yarıda kalan apply
-  `.terraform.tfstate.lock.info` bıraktı) → `force-unlock`. (gap #8 kesin takılma noktası.)
-- **K04-imagepullbackoff-rbac** (D1): **çok-arızalı** — (1) yok-olan image tag → ImagePullBackOff,
-  (2) izinsiz default-deny NetworkPolicy → Running olsa da erişilemez. Güvenlik ipliği.
-- **K05-oomkilled-probe** (D2): **çok-arızalı** — (1) `limits.memory:32Mi` + ~40MB app →
-  OOMKilled(137), (2) readinessProbe port 9999 → hiç Ready olmaz. `Last State` teşhisi.
-- **K06-argocd-out-of-sync** (D5): kök sebep = `syncPolicy.automated` kaldırılmış + drift →
-  OutOfSync kendiliğinden düzelmiyor. **L17 önkoşullu** (setup `argocd/lab-app` arar, guard'lı).
+**Bu tur yapılan (Faz 6.5 eksiklerini kapatma):**
+1. **§8.1 redirect** — `21-Field-Notes/system/devops-certification-roadmap.md` yeniden
+   yazıldı: kısa yönlendirme sayfası (frontmatter + tablo → `certifications/` 5 dosyası).
+   Eski "48 ayda 10 sertifika" planının kaldırıldığını açıkça söyler. **qa UYARI kayboldu.**
+2. **`21-Field-Notes/README.md:47`** — "Senior seviye sertifika kariyer rehberi" →
+   "3 sertifika kapısına yönlendirir (3 kapı, 10 değil)". Yanlış çerçeve düzeltildi.
+3. **§8.2 entegrasyon — `RoadMap/README.md:179`** anti-pattern satırı: "Bir tane al" →
+   "Blok başına 1 kapı — 3 kapı, 10 değil" + `certifications/` linki. Çelişki kalktı.
+4. **§8.2 entegrasyon — `18-Career/CV-Tips.md`** §📜 Sertifikalar: 9-sertifika tablosunun
+   altına "bu patikanın duruşu koleksiyon değil 3 kapı" kutusu + `certifications/` linki;
+   "fark yaratır" pazarlama tonu yumuşatıldı. Tablo "piyasa haritası, yapılacaklar değil".
+5. **§8.1 DCA + `certifications/README.md`** — LANDSCAPE'ten kalan çift/kırık-niyet satırı
+   (68) kaldırıldı; yeni "🚪 Bu patikanın parçası olmayan sertifikalar" bölümü: CKAD/AWS
+   DevOps Pro/GCP/Vault/PCA neden dışarıda + **Docker DCA legacy/tartışmalı statü notu**
+   (öneri listesinde yok, kenarda not) + `../NOT-YET.md` linki.
 
 **Doğrulama:**
-- `bash -n`: **tüm yeni C/D script'leri temiz** (qa toplamı **39/39** lab scripti).
-- Kırık lab 4 zorunlu dosya: **K02–K06 tam** (qa `check_labs` geçti).
-- **`python3 .local/qa.py` → exit 0, 0 UYARI** (mkdocs derlendi, `_planning` sızmadı,
-  kırık link yok, leak yok, duplication yok).
-- **§14.3 otonom denetimler:** (1) tekrar: 3 özgün lab cümlesi (`Container "Up" ≠`,
-  `koruma, koruyacağı şeyden önce`, `RESTARTS bir sayaç`) LP-dışı repoda `grep` → **0 dosya**.
-  (2) pazarlama: LP `.md` içinde qa `garanti ed` deseni → düzeltildi (L10), şimdi **0 hit**.
-  (3) süre: lab'lar estimated_hours taşımaz (modül değil) → N/A; lab sayısı plana birebir
-  (C/D: 9 build + 5 kırık = L09–L17 + K02–K06).
+- **`python3 .local/qa.py` → exit 0, 0 UYARI** (önceki tek UYARI = field-notes kırık link
+  artık yok; mkdocs derlendi, `_planning` sızmadı, kırık iç link yok, leak yok).
+- **§8.1 no-contradiction sweep:** repoda kalan tüm "10 sertifika / 48 ay / koleksiyon"
+  mentionları **anti-pattern çerçevesinde** (NOT-YET satırı, G3 "eleştirdiği koleksiyon",
+  README anti-pattern tablosu, redirect açıklaması). Çelişen iki cümle yok.
+- **§14.3 otonom denetimler:** (1) tekrar: kapı dosyaları mevcut deep-dive'lara link veriyor,
+  yeni açıklayıcı içerik yok (kısıt #1 uyumlu). (2) pazarlama: `grep -iE "maaş|ROI|%..artış|
+  en kapsamlı|garanti"` LP'de → yalnız önceden-kabul teknik "garanti" (K8s requests: D2/L14/
+  K05) + STATE meta; bu turdan **0 yeni pazarlama**. (3) süre: kapı dosyaları modül değil
+  (estimated_hours yok) → N/A. 5 kapı dosyası zaten plana birebir (G1/G2/G3 + HOW-TO + README).
+
+**Değişen dosyalar (bu tur):** `21-Field-Notes/system/devops-certification-roadmap.md` (yeni
+redirect) · `21-Field-Notes/README.md` · `RoadMap/README.md` · `18-Career/CV-Tips.md` ·
+`22-Learning-Path/certifications/README.md` · `_planning/STATE.md`. **Kapı içeriği (G1/G2/G3/
+HOW-TO) `d18804f`'te zaten doğruydu — dokunulmadı.** `00-21` dosya edit'leri §8'in açık
+istisnası (§8.1/§8.2 bu dosyaları isimle sayar).

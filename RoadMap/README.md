@@ -176,7 +176,7 @@ seçtiğin seviyeden başla.
 | 90 günde 21 bölümü bitirmeye çalışmak | Yüzeysel kalır, 6 ayda unutulur | Patikana sadık kal, derinleş |
 | Sadece tool öğrenmek (Terraform/K8s) | "Niye" eksik, kararları yapamazsın | Kavram + tool beraber |
 | Junior'ken Platform Engineering | Developer pain'i bilmeden çözüm tasarlanmaz | Önce uygulama yaz, sonra platform |
-| Sertifika koleksiyonu | CKA + CKAD + CKS + AWS SAA → CV süsü | Bir tane al, gerçek proje yap |
+| Sertifika koleksiyonu | CKA + CKAD + CKS + AWS SAA peş peşe → CV süsü | Blok başına 1 kapı — 3 kapı, 10 değil: [`certifications/`](../22-Learning-Path/certifications/README.md) |
 | Production deneyimi olmadan FinOps | Maliyet senaryolarını yaşamamışsın | Önce bütçe sahipliği al |
 
 ---

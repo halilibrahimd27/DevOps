@@ -44,7 +44,7 @@ anti-pattern → checklist) zorlanmadılar — değerleri "olduğu gibi
 | [GitHub Actions Pipeline Kurulumu](system/github-actions-pipeline-setup.md) | CI/CD pipeline adım adım |
 | [Envanter Yönetimi Örneği](system/inventory-management-example.md) | DevOps envanter master template |
 | [Dış Erişim Çözümleri](system/external-access-solutions.md) | External access / port-forward / ingress çözümleri |
-| [DevOps Sertifika Roadmap](system/devops-certification-roadmap.md) | Senior seviye sertifika kariyer rehberi |
+| [DevOps Sertifika Kapıları](system/devops-certification-roadmap.md) | Öğrenme patikasının 3 sertifika kapısına yönlendirir (3 kapı, 10 değil) |
 
 ### kubectl
 | Dosya | Ne anlatır |
