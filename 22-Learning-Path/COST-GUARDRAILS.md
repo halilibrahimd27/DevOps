@@ -31,6 +31,41 @@ nasıl koruyacağını gösterir.
 
 ---
 
+## 🐧 Yerel Linux'u ayağa kaldır — A1 buradan başlar
+
+A1'den itibaren her şey bir Linux kutusunun içinde çalışır. Aşağıdakilerden **birini**
+seç; hepsi ücretsiz. Amaç: içine girip komut çalıştırabildiğin bir Ubuntu.
+
+### Windows → WSL2 (en hızlı)
+```powershell
+# PowerShell'i yönetici olarak aç:
+wsl --install -d Ubuntu
+# yeniden başlat → kullanıcı adı + parola belirle → hazırsın
+wsl                            # bundan sonra Linux kabuğuna böyle girersin
+```
+
+### macOS / Linux / Windows → Multipass (gerçek VM, taşınabilir)
+```bash
+# kur: https://multipass.run  (macOS: brew install --cask multipass)
+multipass launch --name lab --cpus 2 --memory 2G --disk 10G
+multipass shell lab            # artık VM'in içindesin
+```
+> Apple Silicon Mac'te Multipass **arm64** bir VM üretir; indireceğin binary'lerde
+> mimariyi `uname -m` ile doğrula (B2'deki node_exporter/Prometheus adımı bunu yapar).
+
+### Herhangi bir OS → VirtualBox + Ubuntu Server (grafiksel kurulum)
+1. VirtualBox'ı ve Ubuntu Server ISO'sunu indir.
+2. Yeni VM: 2 vCPU, 2 GB RAM, 10 GB disk; ISO'yu tak, kurulumu tamamla.
+3. VM'i başlat, belirlediğin kullanıcı adı + parolayla gir.
+
+Hangisini seçtiysen, **kutunun içinde** doğrula:
+```bash
+uname -a && whoami && ip a     # Linux çekirdeği + kullanıcın + ağ arayüzün gelmeli
+```
+Çıktı geliyorsa ortam hazır — [`A1`](block-a-intuition/A1-linux-temeli.md)'e dön.
+
+---
+
 ## ☁️ Buluta geçtiğinde — C4'ün ilk işi bütçe alarmı
 
 C4 (bulut temelleri) buluta ilk dokunuşundur ve **ilk lab'ı bir bütçe alarmı

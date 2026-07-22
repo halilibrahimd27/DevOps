@@ -296,7 +296,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
 | `CONFLICT (content)` | İki taraf aynı satırı değiştirdi | İşaretçileri elle çöz → `git add` → `git commit` |
-| Yanlış branch'te commit'ledim | `switch` unutuldu | `git log` ile commit'i gör; `git switch` + `git cherry-pick` ya da `reset --soft` |
+| Yanlış branch'te commit'ledim | `switch` unutuldu | `git log`'la commit'i gör; `git reset --soft HEAD~1` ile commit'i çöz (değişiklik durur), `git switch <doğru-branch>`'e geç ve tekrar commit'le |
 | "Commit'im kayboldu" | Branch/HEAD kaydı ya da reset | `git reflog` — HEAD'in tüm geçmişi; commit orada durur |
 | `rebase` ortasında kaldım | Çakışma çözülmeyi bekliyor | Çöz → `git add` → `git rebase --continue`; çıkış: `--abort` |
 | `push` reddedildi (non-fast-forward) | Uzakta senden yeni commit var | Önce `git pull` (getir+birleştir), sonra `push` |

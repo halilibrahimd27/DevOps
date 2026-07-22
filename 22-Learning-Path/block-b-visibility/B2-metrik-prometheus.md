@@ -78,12 +78,13 @@ A6 VM'inde node_exporter'ı (makine metrikleri: CPU/bellek/disk) **systemd servi
 kur — Docker gerekmez (o Blok C konusu):
 
 ```bash
-# 1) binary'yi indir — <VERSION> yerine resmi release'teki güncel sürümü yaz (:latest yok)
+# 1) sürüm + mimariyi belirle — <VERSION> yerine resmi release'teki güncel sürümü yaz (:latest yok)
 VER=<VERSION>
+case "$(uname -m)" in x86_64) ARCH=amd64;; aarch64|arm64) ARCH=arm64;; esac  # VM'in mimarisi (Apple Silicon → arm64)
 curl -sSL -o /tmp/node_exporter.tgz \
-  "https://github.com/prometheus/node_exporter/releases/download/v${VER}/node_exporter-${VER}.linux-amd64.tar.gz"
+  "https://github.com/prometheus/node_exporter/releases/download/v${VER}/node_exporter-${VER}.linux-${ARCH}.tar.gz"
 tar -xzf /tmp/node_exporter.tgz -C /tmp
-sudo install "/tmp/node_exporter-${VER}.linux-amd64/node_exporter" /usr/local/bin/
+sudo install "/tmp/node_exporter-${VER}.linux-${ARCH}/node_exporter" /usr/local/bin/
 
 # 2) ayrı servis kullanıcısı + systemd unit (A6'daki kalıp)
 sudo useradd --system --no-create-home --shell /usr/sbin/nologin node_exporter
@@ -103,21 +104,54 @@ sudo systemctl daemon-reload && sudo systemctl enable --now node_exporter
 curl -s http://127.0.0.1:9100/metrics | head    # metrikler geliyor mu (A3 curl)
 ```
 
-Prometheus'un kendisi de aynı kalıpla kurulur (release'ten binary indir, `prometheus.yml`
-ile `--config.file` vererek systemd unit'i yaz). Hızlı yol istersen L08 lab'ı aynı yığını
-küçük bir `docker compose` ile de verir — ama Docker'ı **C1'de** öğreneceksin; oradaki
-`docker compose up -d` şimdilik yalnız hazır bir reçetedir.
+**Prometheus'un kendisini** de aynı kalıpla (binary + ayrı servis kullanıcısı + systemd
+unit) kur — ama node_exporter'dan iki farkı var: bir **config dosyası** (`prometheus.yml`)
+okur ve **9090** portunda bir web arayüzü sunar:
 
-`prometheus.yml` — hedefi tanımla:
+```bash
+# 1) binary'yi indir (node_exporter'daki VER + ARCH kalıbıyla)
+PVER=<VERSION>
+curl -sSL -o /tmp/prom.tgz \
+  "https://github.com/prometheus/prometheus/releases/download/v${PVER}/prometheus-${PVER}.linux-${ARCH}.tar.gz"
+tar -xzf /tmp/prom.tgz -C /tmp
+sudo install "/tmp/prometheus-${PVER}.linux-${ARCH}/prometheus" /usr/local/bin/
 
-```yaml
+# 2) config + veri dizini + servis kullanıcısı (hedefi = node_exporter burada tanımlarsın)
+sudo useradd --system --no-create-home --shell /usr/sbin/nologin prometheus
+sudo mkdir -p /etc/prometheus /var/lib/prometheus
+sudo tee /etc/prometheus/prometheus.yml >/dev/null <<'YML'
 scrape_configs:
   - job_name: node
     static_configs:
       - targets: ["127.0.0.1:9100"]
+YML
+sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus
+
+# 3) systemd unit — config dosyası ve veri yolu bayrakla verilir (node_exporter'da yoktu)
+sudo tee /etc/systemd/system/prometheus.service >/dev/null <<'UNIT'
+[Unit]
+Description=Prometheus
+After=network.target
+[Service]
+User=prometheus
+ExecStart=/usr/local/bin/prometheus \
+  --config.file=/etc/prometheus/prometheus.yml \
+  --storage.tsdb.path=/var/lib/prometheus \
+  --web.listen-address=127.0.0.1:9090
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+UNIT
+
+sudo systemctl daemon-reload && sudo systemctl enable --now prometheus
+curl -s http://127.0.0.1:9090/-/ready    # "Prometheus is Ready." → ayakta
 ```
 
-Prometheus'u başlat, arayüzünde **Status → Targets** ile hedefin `UP` olduğunu doğrula.
+Hızlı yol istersen L08 lab'ı aynı yığını küçük bir `docker compose` ile de verir — ama
+Docker'ı **C1'de** öğreneceksin; oradaki `docker compose up -d` şimdilik yalnız hazır
+bir reçetedir, kavramı değil.
+
+Prometheus arayüzünü tarayıcıdan aç (`127.0.0.1:9090`), **Status → Targets** ile hedefin `UP` olduğunu doğrula.
 `up` metriğinin kendisi ilk sağlık göstergendir: `1` = hedef erişilebilir, `0` = değil.
 
 ## 4️⃣ Üç metrik türü
@@ -141,7 +175,7 @@ Prometheus arayüzünde (Graph sekmesi) dene:
 up                                        # hangi hedefler ayakta (1/0)
 rate(node_cpu_seconds_total{mode="idle"}[5m])   # 5 dk'lık CPU idle hızı
 node_memory_MemAvailable_bytes            # anlık boş bellek
-rate(http_requests_total{status="500"}[5m])     # 5 dk'lık hata hızı (uygulama exporter'ıyla)
+rate(http_requests_total{status="500"}[5m])     # hata hızı — ŞİMDİ "no data" verir (uygulama exporter'ı E1'de; §6'ya bak)
 ```
 
 `rate(...[5m])` bir counter'ın son 5 dakikadaki saniyelik artış hızını verir — "toplam

@@ -139,11 +139,17 @@ sudo useradd --system --no-create-home --shell /usr/sbin/nologin appsvc
 Ortam (sır) dosyası — izinleri kilitle:
 
 ```bash
-echo 'DB_URL=postgresql://appuser:<DB_PASSWORD>@127.0.0.1:5432/appdb' \
-  | sudo tee /etc/app.env >/dev/null
+sudo tee /etc/app.env >/dev/null <<'ENV'
+APP_HOST=127.0.0.1
+APP_PORT=8000
+DB_URL=postgresql://appuser:<DB_PASSWORD>@127.0.0.1:5432/appdb
+ENV
 sudo chown appsvc:appsvc /etc/app.env
 sudo chmod 600 /etc/app.env            # yalnız sahibi okur (A1 izin modeli)
 ```
+
+`app.py` `APP_HOST`/`APP_PORT`'u bu dosyadan okur; `DB_URL` ise korunması gereken
+**sır** örneğidir (izin `600` — yalnız servis kullanıcısı görür).
 
 Unit dosyası — `/etc/systemd/system/app.service`:
 
@@ -155,14 +161,15 @@ After=network.target postgresql.service
 [Service]
 User=appsvc
 EnvironmentFile=/etc/app.env
-WorkingDirectory=/opt/app
-ExecStart=/opt/app/app
+WorkingDirectory=/opt/lab-app
+ExecStart=/usr/bin/python3 /opt/lab-app/app.py
 Restart=on-failure
 # güvenlik sıkılaştırma:
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true
-ReadWritePaths=/opt/app/data
+# Bu uygulama diske yazmıyor; yazsaydı yazılabilir yolu burada açardın:
+# ReadWritePaths=/opt/lab-app/data
 
 [Install]
 WantedBy=multi-user.target

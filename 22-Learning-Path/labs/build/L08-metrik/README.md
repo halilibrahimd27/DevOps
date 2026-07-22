@@ -16,7 +16,8 @@ bir numaralı hatadır — bir kez gözünle görmen gerekir.
 
 ## Görev
 
-1. **Yığını başlat.**
+1. **Yığını başlat.** (systemd yolunu izlediysen node_exporter+Prometheus'u B2 §3'te
+   zaten kurdun — bu docker adımını atla, doğrudan 2'ye geç.)
    ```bash
    cd starter && docker compose up -d
    # Prometheus:  http://127.0.0.1:9090
