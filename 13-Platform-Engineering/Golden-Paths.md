@@ -451,3 +451,7 @@ PROPOSE → BUILD → BETA → GA → MAINTAIN → DEPRECATE
 > *"Golden path 'doc kısayolu' değil — **mühendislik kararının
 > kristalleşmesi**. 'En iyi yol' yerine **'kolay olan yol'** olunca,
 > herkes kolay olanı seçer; standart **kendiliğinden** yayılır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F3`](../22-Learning-Path/block-f-judgment/F3-platform-idp.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

@@ -311,3 +311,7 @@ evidence/
 > kanıtıdır. Audit gününe sıkıştıran ekip yorulur ve bug'lar
 > birikir; **continuous** yapan ekip günde 5 dakika ayırır,
 > audit gününde ise 'rapor zaten orada' der."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F2`](../22-Learning-Path/block-f-judgment/F2-tehdit-uyum.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

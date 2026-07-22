@@ -218,3 +218,7 @@ Postmortem'in yanlı olmasını engeller.
 ---
 
 > *"Kimi suçlayacağını sorduğun an postmortem ölür; doğru soru her zaman 'sistem bu hatayı nasıl mümkün kıldı?'dır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E3`](../22-Learning-Path/block-e-ownership/E3-incident-postmortem.md) ve [`F4`](../22-Learning-Path/block-f-judgment/F4-yazma-adr-rfc.md) modüllerinde "Önce oku" kaynağı olarak kullanılıyor.

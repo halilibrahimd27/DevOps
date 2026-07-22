@@ -78,3 +78,7 @@ Maliyeti finans değil, mühendislik problemi olarak ele alır.
 - ❌ "Reserved alıp unutmak" — expiry planı yok, cliff'e çarpıyor
 - ❌ Kubernetes overcommit'i göz ardı etmek — "biraz fazla request olsun" → cluster hep büyür
 - ❌ Egress'i göz ardı etmek — gizli en büyük gider kalemi
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F1`](../22-Learning-Path/block-f-judgment/F1-maliyet-finops.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

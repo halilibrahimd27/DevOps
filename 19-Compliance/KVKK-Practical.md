@@ -411,3 +411,7 @@ KVKK Madde 9: yurt dışı aktarım için **yeterli korumaya sahip ülke** veya
 > yapıyoruz' der. **Pipeline gate** olarak okuyan ekip, kanıtı her
 > deploy'da otomatik üretir. İkisinin de aynı kanunu okuduğunu kimse
 > tahmin etmez."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F2`](../22-Learning-Path/block-f-judgment/F2-tehdit-uyum.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

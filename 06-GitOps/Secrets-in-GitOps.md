@@ -442,3 +442,7 @@ provider:
 > seçilirse Git tek kaynak olur, secret'lar Vault'tan akar; yanlış
 > seçilirse ya Git'te plaintext, ya manuel kubectl, ya da **iki
 > sistem arasında drift**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D3`](../22-Learning-Path/block-d-orchestration/D3-secret-yonetimi.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

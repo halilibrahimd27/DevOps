@@ -280,3 +280,7 @@ On-call rotation'ı **production-ready** saymadan önce hepsini işaretle:
 ---
 
 > *"On-call'i sürdürülebilir kılan kahramanlık değil; runbook'lu alert, blameless postmortem ve gece uyandıran her page'i kapatacak reliability yatırımıdır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E2`](../22-Learning-Path/block-e-ownership/E2-alerting-oncall.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

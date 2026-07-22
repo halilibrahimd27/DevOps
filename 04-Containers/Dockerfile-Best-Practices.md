@@ -438,3 +438,7 @@ hadolint Dockerfile
 ---
 
 > *"İyi Dockerfile şans değil disiplindir: multi-stage ile derleme artığını dışarıda bırak, katmanları cache dostu sırala, sürümleri pinle ve root'u terk et — `:latest` ile yetinen imaj production'a değil çöpe gider."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C1`](../22-Learning-Path/block-c-reproducibility/C1-container.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

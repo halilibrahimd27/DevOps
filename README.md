@@ -43,7 +43,8 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 
 | Durumun | Buradan başla |
 |---|---|
-| 🆕 **"DevOps nedir?" — yeni başlıyorum** | [RoadMap/Modern-DevOps-2026.md](RoadMap/Modern-DevOps-2026.md) |
+| 🎓 **Sıfırdan başlıyorum, yol göster** | **[22-Learning-Path/](22-Learning-Path/README.md)** — hiçbir adımda "şimdi ne yapayım" bırakmayan müfredat: oku → inşa et → doğrula → sonraki modül |
+| 🗺️ **Alanın kuşbakışı — "2026'da ne kullanılıyor?"** | [RoadMap/Modern-DevOps-2026.md](RoadMap/Modern-DevOps-2026.md) |
 | 🏗️ **Sıfırdan altyapı kuracağım** | [RoadMap/advanced-roadmap.md](RoadMap/advanced-roadmap.md) → [05-Kubernetes/Production-Checklist.md](05-Kubernetes/Production-Checklist.md) |
 | 🔥 **Şu an yangın söndürüyorum** | [16-Cheatsheets/](16-Cheatsheets/) → [11-SRE/Incident-Response.md](11-SRE/Incident-Response.md) |
 | 📦 **Yeni servis konteynerleştireceğim** | [04-Containers/Dockerfile-Best-Practices.md](04-Containers/Dockerfile-Best-Practices.md) → [17-Templates/dockerfiles/](17-Templates/dockerfiles/) |
@@ -69,6 +70,7 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 ### 🧭 Yol Haritası & Felsefe
 | Bölüm | Konu |
 |---|---|
+| [22-Learning-Path/](22-Learning-Path/) | 🎓 **Öğrenme Patikası** — sıfırdan başlayanın yönlendirmesiz ilerlediği müfredat: 6 blok, 29 modül, lab + kırık lab + sertifika kapıları (oku → inşa et → doğrula) |
 | [RoadMap/](RoadMap/) | Yol haritaları + **Modern DevOps 2026** kültür/metodoloji rehberi + 28 günlük AWS/EKS implementation |
 | [00-Culture/](00-Culture/) | DevOps kültürü, blameless postmortem, on-call playbook, DORA/SPACE, Team Topologies |
 

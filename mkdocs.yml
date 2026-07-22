@@ -98,6 +98,7 @@ plugins:
           name: English
           build: true
           nav_translations:
+            "🎓 Öğrenme Patikası": "🎓 Learning Path"
             "🗺️ Yol Haritası": "🗺️ Roadmap"
             "👤 Hakkımda": "👤 About"
             "📖 Sözlük": "📖 Glossary"

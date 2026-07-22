@@ -428,3 +428,7 @@ jobs:
 > *"GitHub Actions ile **3 satırda** OIDC + multi-arch build +
 > sign + deploy yapabiliyorsan hazırsın. **40 satır YAML kopyala-
 > yapıştır** yapıyorsan, **reusable workflow** öğrenme zamanı."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C2`](../22-Learning-Path/block-c-reproducibility/C2-ci.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

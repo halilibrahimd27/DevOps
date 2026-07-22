@@ -290,3 +290,7 @@ Bkz [`SLO-Engineering.md`](SLO-Engineering.md).
 > *"Alarm'ın değeri **sayısı değil, her birinin kalitesi**. Az +
 > actionable + symptom-based + runbook'lu = ekibin **iyi
 > uyuduğu** sistem. Spam = burnout fabrikası."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E2`](../22-Learning-Path/block-e-ownership/E2-alerting-oncall.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

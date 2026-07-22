@@ -371,3 +371,7 @@ EOF
 > *"Multi-stage build 'optional' değil — **2026 Dockerfile standardı**.
 > 1 GB image push edip 'storage pahalı' diyen ekip, **30 MB image**
 > ile aynı işi yapanı kıskanır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C1`](../22-Learning-Path/block-c-reproducibility/C1-container.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

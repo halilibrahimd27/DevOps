@@ -567,3 +567,7 @@ açık risk.
 ---
 
 > *"Terraform'u güvenli yapan kod değil; kilitli remote state, PR'da görünen plan, onay gate'inin arkasındaki manuel apply ve sürekli drift izlemedir — bunlar yoksa elindeki sadece pahalı bir silahtır."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`C3`](../22-Learning-Path/block-c-reproducibility/C3-terraform.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

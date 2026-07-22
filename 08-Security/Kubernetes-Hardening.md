@@ -595,3 +595,7 @@ Aynı cluster'da farklı ekipler:
 > *"Hardening 'bir sefer yapılır' değil — **continuous compliance**.
 > Cluster bir hafta sonra checklist'in dışına kayar; otomasyon yoksa
 > drift fark edilmez."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D1`](../22-Learning-Path/block-d-orchestration/D1-k8s-temel.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

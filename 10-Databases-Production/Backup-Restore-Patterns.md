@@ -407,3 +407,7 @@ aws s3api put-object-lock-configuration \
 > *"Backup yapmak kolay; **restore yapmak** maharettir. Test edilen
 > backup, müşteri verisinin sigortasıdır. Test edilmemiş ise sadece
 > bir **rahatlama hapı**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E4`](../22-Learning-Path/block-e-ownership/E4-veritabani-restore.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

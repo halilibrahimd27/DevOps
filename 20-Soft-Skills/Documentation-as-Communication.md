@@ -409,3 +409,7 @@ docs/
 > Ama bir kez kurulduğunda toplantı sayısı yarıya düşer, karar
 > kalitesi iki katına çıkar, **6 ay sonra gelen yeni mühendis**
 > kendi başına anlayabilir hale gelir."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F4`](../22-Learning-Path/block-f-judgment/F4-yazma-adr-rfc.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

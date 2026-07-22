@@ -54,13 +54,20 @@ for f in Glossary.md; do
   fi
 done
 
-# 3) Numaralı klasörler (00-21)
+# 3) Numaralı klasörler (00-22 — 22-Learning-Path glob'a dahil)
 for d in 0[0-9]-* 1[0-9]-* 2[0-9]-*; do
   if [ -d "$d" ]; then
     cp -r "$d" "$STAGE/"
     echo "  + $d/"
   fi
 done
+
+# 3a) Öğrenme Patikası: _planning/ çalışma alanı siteye STAGE EDİLMEZ.
+# (mkdocs.yml exclude_docs'ta da var — çift emniyet; burada dosya hiç kopyalanmasın.)
+if [ -d "$STAGE/22-Learning-Path/_planning" ]; then
+  rm -rf "$STAGE/22-Learning-Path/_planning"
+  echo "  - 22-Learning-Path/_planning (stage edilmedi)"
+fi
 
 # 4) Ek klasörler (RoadMap top-level öğrenme yolu; saha notları 21-Field-Notes/ altında)
 for d in RoadMap; do
@@ -129,6 +136,7 @@ cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
   - index.md
   - "👤 Hakkımda": about.md
+  - 22-Learning-Path
   - RoadMap
   - 00-Culture
   - 01-Git-Workflow
@@ -176,6 +184,53 @@ fi
 if [ -d "$STAGE/RoadMap/advanced" ]; then
   printf "title: Advanced — AWS/EKS\n" > "$STAGE/RoadMap/advanced/.pages"
   echo "  + RoadMap/advanced/.pages"
+fi
+
+# 8a) Öğrenme Patikası (22-Learning-Path) — başlık + iç sıra (README önce, sonra
+# rehberler, sonra bloklar/capstone/sertifika/lab). EN başlık nav_translations'ta.
+if [ -d "$STAGE/22-Learning-Path" ]; then
+  cat > "$STAGE/22-Learning-Path/.pages" <<'EOF'
+title: 🎓 Öğrenme Patikası
+nav:
+  - README.md
+  - CURRICULUM.md
+  - PLACEMENT.md
+  - STUDY-METHOD.md
+  - PROGRESS-TEMPLATE.md
+  - COST-GUARDRAILS.md
+  - TROUBLESHOOTING.md
+  - NOT-YET.md
+  - PORTFOLIO.md
+  - block-a-intuition
+  - block-b-visibility
+  - block-c-reproducibility
+  - block-d-orchestration
+  - block-e-ownership
+  - block-f-judgment
+  - capstones
+  - certifications
+  - labs
+EOF
+  echo "  + 22-Learning-Path/.pages (başlık + iç sıra)"
+  LP_TITLES=(
+    "block-a-intuition|Blok A · Sezgi"
+    "block-b-visibility|Blok B · Görebilmek"
+    "block-c-reproducibility|Blok C · Tekrarlanabilirlik"
+    "block-d-orchestration|Blok D · Orkestrasyon"
+    "block-e-ownership|Blok E · Sahiplik"
+    "block-f-judgment|Blok F · Karar"
+    "capstones|Capstone Projeleri"
+    "certifications|Sertifika Kapıları"
+    "labs|Lab'lar"
+  )
+  for entry in "${LP_TITLES[@]}"; do
+    sub="${entry%%|*}"
+    title="${entry#*|}"
+    if [ -d "$STAGE/22-Learning-Path/$sub" ]; then
+      printf "title: %s\n" "$title" > "$STAGE/22-Learning-Path/$sub/.pages"
+    fi
+  done
+  echo "  + 22-Learning-Path/block-*/.pages"
 fi
 
 # 9) Saha Notları alt-klasör başlıkları

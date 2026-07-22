@@ -348,3 +348,7 @@ kube_pod_container_status_terminated_reason{reason="OOMKilled"}
 > *"Resource set'i 'tahmin' değil, **veri**. Profile et, hesapla,
 > test et. Yanlış set'lenmiş limit, **gece OOMKilled** alarmı.
 > Doğru set'lenmiş limit, **predictable** prod."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`D2`](../22-Learning-Path/block-d-orchestration/D2-k8s-production.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

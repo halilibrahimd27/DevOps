@@ -330,3 +330,7 @@ Not-Worth-It: "Maliyet/fayda yatmıyor — şu sayılar..."
 > *"Mühendislik bilgini stakeholder anlamadığında, **teknik
 > doğruluğun** bir kazanım değildir. İletişim, mühendisliğin
 > **tamamlayıcısı** değil, **çarpanıdır**."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F5`](../22-Learning-Path/block-f-judgment/F5-stakeholder-vendor.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

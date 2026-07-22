@@ -337,3 +337,7 @@ Bir servisin SLO'su production-ready sayılmadan önce hepsi işaretlenmeli.
 ---
 
 > *"Müşterinin hissettiği şeyi ölçmeyen SLI gürültüdür; tüketildiğinde deploy'u durdurmayan error budget ise sadece dashboard süsüdür."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`E1`](../22-Learning-Path/block-e-ownership/E1-sli-slo-error-budget.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.

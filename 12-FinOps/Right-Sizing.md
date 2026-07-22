@@ -220,3 +220,7 @@ FROM pg_stat_database;
 > *"Right-sizing 'bir kerelik temizlik' değil — **quarterly disiplin**.
 > Profile değişir, traffic büyür/azalır. Disipline edilmemiş ekibin
 > AWS bill'i her 6 ayda %20 şişer."*
+
+---
+
+> 🎓 **Öğrenme Patikası:** Bu doküman [`F1`](../22-Learning-Path/block-f-judgment/F1-maliyet-finops.md) modülünde "Önce oku" kaynağı olarak kullanılıyor.
