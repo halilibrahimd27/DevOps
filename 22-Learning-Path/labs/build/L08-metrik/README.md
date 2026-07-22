@@ -8,8 +8,11 @@ seri sayısının nasıl patladığını gözlemlersin. Cardinality, Prometheus'
 bir numaralı hatadır — bir kez gözünle görmen gerekir.
 
 ## Gerekenler
-- `docker` + `docker compose` (yerel; K8s **gerekmez**). Tarayıcı (Prometheus UI).
-- Alternatif: node_exporter + Prometheus'u systemd ile de kurabilirsin (B2 modülü anlatır).
+- **Container'dan önce olduğun için asıl yol systemd:** node_exporter + Prometheus'u
+  A6 VM'inde systemd ile kur — tam adımlar [`B2` §3](../../../block-b-visibility/B2-metrik-prometheus.md)'te.
+- **Hızlı yol (isteğe bağlı):** `docker` + `docker compose` varsa aşağıdaki yığını tek
+  komutla ayağa kaldırırsın. Docker'ı **C1'de** öğreneceksin; buradaki `docker compose up -d`
+  şimdilik yalnız hazır bir reçetedir, kavramı değil. Tarayıcı (Prometheus UI) gerekir.
 
 ## Görev
 

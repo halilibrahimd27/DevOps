@@ -74,15 +74,39 @@ Prometheus bunu `<VM_IP>:9100/metrics` gibi bir adresten çeker. "Kim kimi çeke
 
 ## 3️⃣ Exporter kur ve topla
 
-A6 VM'inde node_exporter (makine metrikleri: CPU/bellek/disk) ve Prometheus'u kur:
+A6 VM'inde node_exporter'ı (makine metrikleri: CPU/bellek/disk) **systemd servisi olarak**
+kur — Docker gerekmez (o Blok C konusu):
 
 ```bash
-# node_exporter'ı bir systemd servisi yap (A6'daki unit kalıbı)
-curl -sL https://github.com/prometheus/node_exporter/releases/latest/download/... \
-  -o /tmp/node_exporter.tgz     # <VERSION>'ı resmi sürümle değiştir
-# ... aç, /usr/local/bin'e koy, systemd unit yaz, enable --now
+# 1) binary'yi indir — <VERSION> yerine resmi release'teki güncel sürümü yaz (:latest yok)
+VER=<VERSION>
+curl -sSL -o /tmp/node_exporter.tgz \
+  "https://github.com/prometheus/node_exporter/releases/download/v${VER}/node_exporter-${VER}.linux-amd64.tar.gz"
+tar -xzf /tmp/node_exporter.tgz -C /tmp
+sudo install "/tmp/node_exporter-${VER}.linux-amd64/node_exporter" /usr/local/bin/
+
+# 2) ayrı servis kullanıcısı + systemd unit (A6'daki kalıp)
+sudo useradd --system --no-create-home --shell /usr/sbin/nologin node_exporter
+sudo tee /etc/systemd/system/node_exporter.service >/dev/null <<'UNIT'
+[Unit]
+Description=Prometheus Node Exporter
+After=network.target
+[Service]
+User=node_exporter
+ExecStart=/usr/local/bin/node_exporter --web.listen-address=127.0.0.1:9100
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+UNIT
+
+sudo systemctl daemon-reload && sudo systemctl enable --now node_exporter
 curl -s http://127.0.0.1:9100/metrics | head    # metrikler geliyor mu (A3 curl)
 ```
+
+Prometheus'un kendisi de aynı kalıpla kurulur (release'ten binary indir, `prometheus.yml`
+ile `--config.file` vererek systemd unit'i yaz). Hızlı yol istersen L08 lab'ı aynı yığını
+küçük bir `docker compose` ile de verir — ama Docker'ı **C1'de** öğreneceksin; oradaki
+`docker compose up -d` şimdilik yalnız hazır bir reçetedir.
 
 `prometheus.yml` — hedefi tanımla:
 
@@ -105,7 +129,9 @@ Prometheus'u başlat, arayüzünde **Status → Targets** ile hedefin `UP` oldu�
 | **Histogram** | Değerleri kovalara dağıtır | `http_request_duration_seconds` — gecikme dağılımı |
 
 Kural: bir şeyin **oranını/hızını** istiyorsan counter (üstüne `rate()` uygula);
-**anlık seviye** istiyorsan gauge; **dağılım/percentile** (p95 gecikme) istiyorsan histogram.
+**anlık seviye** istiyorsan gauge; **dağılım/percentile** istiyorsan histogram. (p95 gecikme =
+isteklerin %95'inin altında kaldığı süre; ortalamadan daha dürüsttür, çünkü birkaç yavaş
+isteği ortalama gizler ama p95 gizlemez.)
 
 ## 5️⃣ İlk PromQL sorguların
 
@@ -135,6 +161,11 @@ signals"ı — E1'de SLO'ya dönüşecek):
 | **Saturation** | Kaynak ne kadar dolu? | CPU/bellek/disk doluluk |
 
 Bu dördü, bir servisin sağlığını tek bakışta özetler. Fazlasını sonra eklersin.
+
+> ⚠️ Latency/Traffic/Errors örnekleri (`http_requests_total`, `http_request_duration_seconds`)
+> bir **uygulama exporter'ı** gerektirir — uygulamayı enstrümante etmeyi ileride (E1'de SLO
+> kurarken) yaparsın; bu modülde henüz üretmiyorsun. Şimdi node_exporter'ın verdiği
+> **Saturation** (CPU/bellek/disk) ile pratik yap — L08 lab'ı tam bunu yaptırır.
 
 ## 7️⃣ Cardinality: metriğin gizli maliyeti
 

@@ -15,7 +15,7 @@ tags: [Learning Path, Security, Kubernetes]
 ## 🎯 Bu modülü bitirdiğinde
 - Bir sırrı image'a/repoya gömmeden bir Pod'a güvenle iletirsin.
 - K8s Secret'ın ne olduğunu, ne olmadığını (varsayılan şifreleme değil) açıklarsın.
-- GitOps akışında sırların nasıl taşındığını (referans, harici store) gerekçelendirirsin.
+- GitOps akışında sırların nasıl taşındığını (referans, harici store) gerekçelendirirsin — *önizleme*: GitOps'u D5'te öğreneceksin; burada yalnız "sır Git'e düz metin yazılmaz" ilkesi yeter.
 
 ## 🧠 Niye bu, niye şimdi
 D1'de uygulama çalışıyor ama gerçek uygulamalar sır (DB şifresi, API anahtarı)

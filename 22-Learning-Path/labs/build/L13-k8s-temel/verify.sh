@@ -6,8 +6,8 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-# manifestleri starter/ (öğrenci) veya solution/ içinde ara
-manifests(){ cat starter/*.yaml solution/*.yaml 2>/dev/null; }
+# manifestleri ÖĞRENCİNİN çalıştığı starter/ içinde ara (solution/ referanstır, denetlenmez)
+manifests(){ cat starter/*.yaml 2>/dev/null; }
 ALL="$(manifests)"
 
 check_kind(){ echo "$ALL" | grep -qE "^kind:\s*$1" && ok "$1 manifesti var" || no "$1 manifesti eksik"; }

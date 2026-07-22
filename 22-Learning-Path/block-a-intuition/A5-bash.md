@@ -134,8 +134,8 @@ En sık kullanılan testler:
 
 ```bash
 for svc in nginx postgresql app; do
-  systemctl is-active "$svc"          # her servisin durumu
-done
+  systemctl is-active "$svc"          # her servisin durumu (systemctl'i A6'da öğreneceksin;
+done                                  # burada önemli olan `for` döngüsü kalıbı)
 ```
 
 Bir dosyayı **satır satır** güvenle okumak (log işlemenin temeli):
@@ -251,10 +251,14 @@ Halka halka: `grep` süz → `awk` 7. alanı (yol) al → `sort | uniq -c` say �
 | Geçici dosyayı elle adlandırmak (`/tmp/x`) | Çakışma + çıkışta çöp kalır | `mktemp` + `trap ... EXIT` ile temizle |
 
 ## 📖 İleri okuma (şimdi değil, sonra)
-| Kaynak | Ne için | Ne zaman |
+> Bunlar yönlendirilmiş bir adım değil, **ihtiyaç anında** açacağın referanslardır
+> (dört-alanlı dış-kaynak sözleşmesi yönlendirilmiş okuma linkleri içindir, bu tür
+> tekil arama için değil). Süre: her biri 2–5 dk, tek bir soruya bakarsın.
+
+| Kaynak | Ne için | Ne zaman açarsın |
 |---|---|---|
 | `man bash` / `help set` | Her davranışın resmi referansı | Bir bayrağın ne yaptığını merak ettiğinde |
-| [ShellCheck wiki](https://www.shellcheck.net/wiki/) | Her uyarı kodunun açıklaması | `shellcheck` bir uyarı verdiğinde |
+| [ShellCheck wiki](https://www.shellcheck.net/wiki/) | `shellcheck`'in verdiği uyarı kodunun (ör. SC2086) açıklaması | `shellcheck` bir uyarı verdiğinde, o kodu ara |
 
 ## 🔨 Lab
 👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/) — (Görev taslağı: iki argüman alan,

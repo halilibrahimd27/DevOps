@@ -11,9 +11,11 @@ if ! command -v kubectl >/dev/null 2>&1 || ! kubectl cluster-info >/dev/null 2>&
   if [ -f env/deployment.yaml ]; then
     grep -qE 'memory:\s*"?32Mi' env/deployment.yaml && no "memory limit hâlâ 32Mi (OOM sürer)" || ok "memory limit yükseltilmiş (mekanik)"
     grep -qE 'port:\s*9999' env/deployment.yaml && no "readinessProbe hâlâ 9999 portunda" || ok "probe portu düzeltilmiş (mekanik)"
+  else
+    no "env/ yok — lab çalıştırılmadı. Bir kind/k3s cluster kur, 'bash setup.sh' çalıştır, sonra düzelt."
   fi
   echo "----------------------------------------"
-  [ "$FAIL" -eq 0 ] && { echo "GEÇTİ ✅ (mekanik) — cluster'da tam doğrula."; exit 0; } || { echo "BAŞARISIZ ❌"; exit 1; }
+  [ "$FAIL" -eq 0 ] && { echo "GEÇTİ ✅ (mekanik) — cluster'da tam doğrula."; exit 0; } || { echo "BAŞARISIZ ❌  ($FAIL hata)"; exit 1; }
 fi
 
 # 1) Pod Ready

@@ -11,9 +11,11 @@ if ! command -v kubectl >/dev/null 2>&1 || ! kubectl cluster-info >/dev/null 2>&
   # mekanik yedek: env manifestleri düzeltilmiş mi?
   if [ -f env/deployment.yaml ]; then
     grep -q 'does-not-exist' env/deployment.yaml && no "env/deployment.yaml hâlâ bozuk tag içeriyor" || ok "deployment tag düzeltilmiş (mekanik)"
+  else
+    no "env/ yok — lab çalıştırılmadı. Bir kind/k3s cluster kur, 'bash setup.sh' çalıştır, sonra düzelt."
   fi
   echo "----------------------------------------"
-  [ "$FAIL" -eq 0 ] && { echo "GEÇTİ ✅ (mekanik) — cluster'da bash verify.sh ile tam doğrula."; exit 0; } || { echo "BAŞARISIZ ❌"; exit 1; }
+  [ "$FAIL" -eq 0 ] && { echo "GEÇTİ ✅ (mekanik) — cluster'da bash verify.sh ile tam doğrula."; exit 0; } || { echo "BAŞARISIZ ❌  ($FAIL hata)"; exit 1; }
 fi
 
 # 1) Pod Running (image düzeldi)

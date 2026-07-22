@@ -24,8 +24,9 @@ TLS'i (A3) anlamak için önce paketin, portun ve rotanın ne olduğunu görmen 
 kopuşun **hangi katmanda** olduğunu daraltmaktır. Bu modül o daraltma refleksini kurar.
 
 ## 📖 Nasıl çalışılır
-Gövdeyi oku, her komutu kendi makinende çalıştır. İki makine gerekince: bir VM + host,
-ya da iki kind/Docker container işini görür ([`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md)).
+Gövdeyi oku, her komutu kendi makinende çalıştır. İki makine gerekince: bir VM + host
+makinen, ya da iki VM işini görür ([`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md)).
+(Container tabanlı kurulumu Blok C'de öğrenince tekrar deneyebilirsin — burada henüz gerek yok.)
 Modern araç `iproute2` (`ip`, `ss`); `ifconfig`/`netstat` eski ve bazı sistemlerde yok —
 `ip`/`ss` öğren.
 

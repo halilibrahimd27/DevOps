@@ -9,6 +9,8 @@ tags: [Learning Path, Stage Exam]
 
 **Kapı:** Blok A sonu (A6'dan sonra, B1'den önce) · **Ön koşul:** [`A1`](A1-linux-temeli.md)–[`A6`](A6-elle-deploy.md) kabul kriterleri geçilmiş
 
+> ℹ️ Tüm `bash labs/...` komutlarını **`22-Learning-Path/` kökünden** çalıştır (modüllerdeki kabul kriterleriyle aynı yol).
+
 Bu sınav yeni bir konu öğretmez; öğrendiklerinin **kanıtıdır.** İki parça vardır:
 yazılı kavram soruları ve elle çalıştırılan uygulamalı görev. Ölçüt "biliyorum"
 değil — komutun çalışması, çıktının doğru olması ve gerekçeni yazabilmen. Her soru
@@ -49,7 +51,7 @@ Bu görev A1–A6'yı tek senaryoda birleştirir ve A→B sinyalinin ta kendisid
 [`K00 — systemd ayağa kalkmıyor`](../labs/broken/K00-systemd-ayaga-kalkmiyor/) kırık
 lab'ını çöz. `README.md` yalnız belirtiyi verir; sebebi sen bulacaksın.
 
-- [ ] `bash ../labs/broken/K00-systemd-ayaga-kalkmiyor/verify.sh` sıfır hatayla geçiyor
+- [ ] `bash labs/broken/K00-systemd-ayaga-kalkmiyor/verify.sh` sıfır hatayla geçiyor
 - [ ] Kök sebebi ve **teşhis akışını** (belirti → daraltma → kök sebep → düzeltme → doğrulama) yazdın
 - [ ] En fazla `hint-1`/`hint-2` kullandın; `hint-3`/`solution.md` açtıysan bu sefer geçmedin sayılır
 
@@ -61,8 +63,9 @@ lab'ını çöz. `README.md` yalnız belirtiyi verir; sebebi sen bulacaksın.
 - [ ] `ss -tlnp` çıktısında app yalnız `127.0.0.1`, nginx `0.0.0.0:80` dinliyor — gösterdin
 
 **Görev C — Katman daraltma (zamanlı):** Görev A'daki arızayı bulurken kullandığın
-**ilk üç komutu** ve her birinin niçin o sırada geldiğini yaz. Süre hedefi: doküman
-açmadan **5 dakikanın altında** doğru katmana inmek.
+**ilk üç komutu** ve her birinin niçin o sırada geldiğini yaz. Esnek hedef (zorunlu
+değil): zamanla, doküman açmadan birkaç dakikada doğru katmana inebilmek — hız değil,
+**doğru sıra** önemli.
 
 ---
 

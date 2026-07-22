@@ -32,7 +32,7 @@ haberdar olacağını kurar. E3'teki incident response bu alarmlarla tetiklenir.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] SLO'ya bağlı, tetiklenip çözülen bir alarm kuralı yazıldı ve bir kez ateşlendi — Alertmanager/panel çıktısıyla kanıt
+- [ ] SLO'ya bağlı, tetiklenip çözülen bir alarm kuralı yazıldı ve bir kez ateşlendi — Alertmanager/panel çıktısıyla kanıt (PromQL'i havadan kurma: L19 README **Görev 1** hangi kuralı yazacağını adım adım verir — hata oranı 1 dk'da eşiği aşınca)
 - [ ] En az bir "gürültü alarmı" örneği ve niçin sessize alındığı/kaldırıldığı yazıldı
 - [ ] Her alarm "gece 3'te uyandırmalı mı?" testine göre sınıflandırıldı (page / ticket / log) — yazılı tablo
 - [ ] Bir alarm çözülmezse kime, ne zaman yükseleceği (eskalasyon) yazılı tanımlandı

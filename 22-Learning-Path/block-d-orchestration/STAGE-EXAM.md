@@ -9,6 +9,8 @@ tags: [Learning Path, Stage Exam]
 
 **Kapı:** Blok D sonu (D5'ten sonra, E1'den önce) · **Ön koşul:** [`D1`](D1-k8s-temel.md)–[`D5`](D5-gitops-argocd.md) kabul kriterleri geçilmiş
 
+> ℹ️ Her `verify.sh`'i ilgili lab dizininde ya da `22-Learning-Path/` kökünden (`bash labs/broken/…/verify.sh`) çalıştır. K04–K06 canlı bir cluster (kind) gerektirir; cluster yoksa `verify.sh` **kırmızı** döner (atlanmış sayılmaz).
+
 Blok D bir DevSecOps bloğudur: güvenlik ayrı bir bölüm değil, **her modülün
 içindeki iplik.** Bu sınav da öyle — RBAC, NetworkPolicy, secret ve supply-chain
 soruları K8s sorularından ayrılmaz. Her soru bir modülün kabul kriterine izlenebilir.
@@ -40,7 +42,7 @@ soruları K8s sorularından ayrılmaz. Her soru bir modülün kabul kriterine iz
 
 **Görev A — Üç kırık lab (çekirdek, ikisi çok-arızalı):**
 
-- [ ] [`K04 — ImagePullBackOff + RBAC/NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/): `verify.sh` yeşil; **iki** arızayı da (yok-olan tag + izinsiz default-deny) buldun
+- [ ] [`K04 — ImagePullBackOff + NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/): `verify.sh` yeşil; **iki** arızayı da (yok-olan tag + izinsiz default-deny) buldun (RBAC `forbidden` burada refleks olarak `solution.md`'de anlatılır, bu lab'da arıza değil)
 - [ ] [`K05 — OOMKilled + probe`](../labs/broken/K05-oomkilled-probe/): `verify.sh` yeşil; **iki** arızayı da (32Mi limit + yanlış probe portu) buldun
 - [ ] [`K06 — ArgoCD OutOfSync`](../labs/broken/K06-argocd-out-of-sync/): `verify.sh` yeşil; auto-sync geri açıldı
 

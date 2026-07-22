@@ -9,9 +9,18 @@ ya trafik alır almaz düşer — bunu K05'te bizzat yaşayacaksın.
 
 ## Gerekenler
 - D1'deki kind cluster (`kind create cluster --name lab-d1`), `kubectl`.
-- HPA için **metrics-server** (kind'da ayrıca kurulur; kind'da genelde
-  `--kubelet-insecure-tls` bayrağı gerekir).
 - Yük üretmek için `kubectl run` + basit bir istek döngüsü (veya `hey`).
+
+### metrics-server'ı kind'a kur (HPA bunu ister)
+kind'ın kubelet sertifikası self-signed olduğu için `--kubelet-insecure-tls` gerekir:
+```bash
+# <VERSION> yerine resmi release sürümünü yaz (:latest kullanma)
+kubectl apply -f "https://github.com/kubernetes-sigs/metrics-server/releases/download/<VERSION>/components.yaml"
+kubectl -n kube-system patch deploy metrics-server --type=json \
+  -p='[{"op":"add","path":"/spec/template/spec/containers/0/args/-","value":"--kubelet-insecure-tls"}]'
+kubectl -n kube-system rollout status deploy/metrics-server
+kubectl top nodes        # değer dönüyorsa metrics-server çalışıyor
+```
 
 ## Görev
 

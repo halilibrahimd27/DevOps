@@ -6,17 +6,18 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-# 0) canlı kontrol (opsiyonel): restore hedefinde 1000 satır var mı
+# 0) canlı kontrol: docker varsa restore GERÇEKTEN çalışmış olmalı (E4'ün tezi:
+#    "test edilmemiş backup, backup değildir" — burada satır sayısıyla kanıtlanır).
 if command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1; then
   cnt="$(docker compose -f starter/compose.yaml exec -T db_restore \
          psql -U postgres -d shop -tAc 'SELECT count(*) FROM orders;' 2>/dev/null | tr -d '[:space:]')"
   if [ "$cnt" = "1000" ]; then
     ok "db_restore'da orders = 1000 (restore doğrulandı, canlı)"
   else
-    printf '  ⚠️  Canlı restore kontrolü atlandı/eksik (db_restore satır=%s; yığın kapalı olabilir)\n' "${cnt:-yok}"
+    no "db_restore.orders = ${cnt:-'?'} (beklenen 1000) — yığını başlat (docker compose up -d) ve tam backup'ı temiz db'ye restore et; count ile doğrula"
   fi
 else
-  printf '  ⚠️  docker compose yok — canlı restore kontrolü atlandı (report.txt denetlenir)\n'
+  printf '  ⚠️  docker compose yok — canlı restore kontrolü atlandı (report.txt denetlenir; cluster/docker'"'"'da tam doğrula)\n'
 fi
 
 if [ ! -f report.txt ]; then

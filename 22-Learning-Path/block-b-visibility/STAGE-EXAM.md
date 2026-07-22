@@ -9,6 +9,8 @@ tags: [Learning Path, Stage Exam]
 
 **Kapı:** Blok B sonu (B3'ten sonra, C0/C1'den önce) · **Ön koşul:** [`B1`](B1-log-okuma.md)–[`B3`](B3-ilk-kirik-lab.md) kabul kriterleri geçilmiş
 
+> ℹ️ Tüm `bash labs/...` komutlarını **`22-Learning-Path/` kökünden** çalıştır.
+
 Bu sınavın tek ölçütü şudur: **her iddianın arkasında bir çıktı var mı?** "Sanırım
 DB yavaş" cevap değildir; "şu metrik şu eşiği şu dakikada aştı, şu log satırı bunu
 doğruluyor" cevaptır. Her soru bir modülün kabul kriterine izlenebilir.
@@ -39,7 +41,7 @@ doğruluyor" cevaptır. Her soru bir modülün kabul kriterine izlenebilir.
 **Görev A — Kırık VM'yi teşhis et (çekirdek):**
 [`K01 — kırık VM`](../labs/broken/K01-kirik-vm/) lab'ını çöz.
 
-- [ ] `bash ../labs/broken/K01-kirik-vm/verify.sh` sıfır hatayla geçiyor
+- [ ] `bash labs/broken/K01-kirik-vm/verify.sh` sıfır hatayla geçiyor
 - [ ] Kök sebebi **log/metrik kanıtıyla** gösteren bir `teshis.md` yazdın:
       belirti → daraltma → kök sebep → düzeltme → doğrulama
 - [ ] Düzeltmeden sonra belirtinin **gittiğini** ayrı bir komutla kanıtladın (sadece "düzelttim" değil)

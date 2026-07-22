@@ -78,7 +78,9 @@ sudo systemctl status postgresql       # çalışıyor mu (A1'deki durum kontrol
 ```
 
 Uygulama için ayrı bir kullanıcı ve veritabanı oluştur — `postgres` süper kullanıcısını
-uygulamaya verme (least-privilege):
+uygulamaya verme (least-privilege). Aşağıdaki `psql <<'SQL' … SQL` kalıbı bir
+**heredoc**'tur: `<<` işareti, araya yazdığın iki satır SQL'i `psql`'e girdi olarak besler
+(veritabanına elle bağlanmadan çalıştırmanın kısa yolu).
 
 ```bash
 sudo -u postgres psql <<'SQL'
@@ -100,19 +102,22 @@ hatası mı? Belirtiyi ayır.
 
 ## 3️⃣ Uygulamayı elle çalıştır — ve öl
 
-Basit bir uygulaman olsun (örnek: DB'den bir sayaç okuyup HTTP'de döndüren bir Flask/
-Node servisi; deposunu A4'teki Git ile klonla). Önce **elle, ön planda** çalıştır:
+Sıfırdan uygulama yazmak bu modülün konusu değil; hazır bir örnek kullan. Lab bir
+tane veriyor: [`labs/build/L06-elle-deploy/starter/app.py`](../labs/build/L06-elle-deploy/starter/app.py)
+— yalnız Python stdlib ile çalışan küçük bir HTTP servisi (`/health` → `ok`, `/db` →
+`pg_isready` sonucu). Onu VM'ine kopyala (ör. `/opt/lab-app/app.py`) ve önce **elle, ön
+planda** çalıştır:
 
 ```bash
-cd /opt/app
-DB_URL="postgresql://appuser:<DB_PASSWORD>@127.0.0.1:5432/appdb" ./app
-# Uygulama 127.0.0.1:<APP_PORT> dinliyor...
+cd /opt/lab-app
+DB_URL="postgresql://appuser:<DB_PASSWORD>@127.0.0.1:5432/appdb" python3 app.py
+# Uygulama 127.0.0.1:8000 dinliyor... (dışarıya nginx bakacak)
 ```
 
 Başka bir terminalden iste (A3'teki `curl`):
 
 ```bash
-curl -s http://127.0.0.1:<APP_PORT>/health   # {"status":"ok"}
+curl -s http://127.0.0.1:8000/health   # ok
 ```
 
 Şimdi terminali kapat (`Ctrl+C`) ve tekrar iste: **`connection refused`.** Uygulama

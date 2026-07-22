@@ -114,6 +114,9 @@ method her kaynak için üç soru sorar:
 | **S**aturation | Kuyruk/bekleme var mı? | `uptime` (load), `vmstat` |
 | **E**rrors | Hata sayacı artıyor mu? | `dmesg`, `journalctl -p err` |
 
+> `mpstat`/`vmstat`/`dmesg` yeni olabilir — şimdilik derinliğine girme; `top`, `uptime`
+> ve `journalctl -k` (= `dmesg`) yeter. Ayrıntı aşağıdaki cheatsheet deep-dive'ında.
+
 Derinlik (Brendan Gregg'in USE method'u, 60-saniye protokolü):
 [`16-Cheatsheets/linux-troubleshooting.md`](../../16-Cheatsheets/linux-troubleshooting.md).
 Bu cheatsheet artık **senin için okunabilir** — A1–A6 ve B1–B2'yi bitirdin; başlangıçta

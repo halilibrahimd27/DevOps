@@ -13,7 +13,7 @@ tags: [Learning Path, GitOps]
 **Blok:** D — Orkestrasyon · **Süre:** ~14 saat · **Ön koşul:** [`D1`](D1-k8s-temel.md), [`C2`](../block-c-reproducibility/C2-ci.md)
 
 ## 🎯 Bu modülü bitirdiğinde
-- ArgoCD'yi kurar, tek bir uygulamayı Git'ten declaratively yönetirsin.
+- ArgoCD'yi kurar, tek bir uygulamayı Git'ten **bildirimsel olarak** (declarative — istenen durumu Git'te tanımlar, ArgoCD uygular) yönetirsin.
 - Drift (elle yapılan değişiklik) olduğunda ArgoCD'nin nasıl davrandığını gösterirsin.
 - "Git tek gerçek kaynak" ilkesinin operasyonel sonuçlarını açıklarsın.
 
