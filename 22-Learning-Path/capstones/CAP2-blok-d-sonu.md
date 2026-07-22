@@ -55,8 +55,8 @@ Her eksen 0–2. **Geçme ≥ 10/12 ve güvenlik eksenlerinin hiçbiri 0/1 deği
 
 ## 💼 Portfolyo çıktısı
 CV'de "K8s + güvenlik ipliği" satırının kanıtı. `SECURITY.md`, mülakatta "güvenliği
-nasıl entegre ettin?" sorusunun somut cevabıdır. Repo README şablonu (Faz 7'de
-`PORTFOLIO.md` modül↔CV eşlemesini ekleyecek):
+nasıl entegre ettin?" sorusunun somut cevabıdır. Repo README şablonu; CV satırına
+eşlemesi [`PORTFOLIO.md`](../PORTFOLIO.md)'de:
 
 ```markdown
 # <PROJE_ADI> — K8s'te Güvenli Deploy

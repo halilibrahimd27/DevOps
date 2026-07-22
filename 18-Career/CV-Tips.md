@@ -347,6 +347,7 @@ Building reliable systems @ DevHub.io.
 - [`SRE-Interview-Prep.md`](SRE-Interview-Prep.md)
 - [`DevOps-Interview-Questions.md`](DevOps-Interview-Questions.md)
 - [`System-Design-Cheatsheet.md`](System-Design-Cheatsheet.md)
+- [`22-Learning-Path/PORTFOLIO.md`](../22-Learning-Path/PORTFOLIO.md) — hangi öğrenme modülü/capstone hangi CV satırına ve etki bulle'ına karşılık gelir
 
 ---
 

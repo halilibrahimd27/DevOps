@@ -55,8 +55,8 @@ Her eksen 0–2 (0 = yok, 1 = kısmen, 2 = tam). **Geçme ≥ 8/10 ve hiçbir ek
 
 ## 💼 Portfolyo çıktısı
 Bu capstone bir **portfolyo projesidir** — CV'de "tekrarlanabilir altyapı" satırının
-kanıtıdır. Repo README'sinde şu şablonu kullan (Faz 7'de `PORTFOLIO.md` modül↔CV
-satırı eşlemesini ekleyecek):
+kanıtıdır. Repo README'sinde şu şablonu kullan; bu çıktının CV satırına eşlemesi
+[`PORTFOLIO.md`](../PORTFOLIO.md)'de:
 
 ```markdown
 # <PROJE_ADI> — Tekrarlanabilir Deploy

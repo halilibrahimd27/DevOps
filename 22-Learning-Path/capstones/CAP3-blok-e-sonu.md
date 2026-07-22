@@ -54,8 +54,8 @@ Her eksen 0–2. **Geçme ≥ 10/12 ve restore ekseni 2 (test edilmemiş backup 
 ## 💼 Portfolyo çıktısı
 CV'de "sistem sahipliği / SRE" satırının kanıtı. `postmortem-<id>.md` ve `restore.md`,
 mülakatta "bir incident'i nasıl yönettin / backup'ı gerçekten test ettin mi?"
-sorularının somut cevabıdır. Repo README şablonu (Faz 7'de `PORTFOLIO.md`
-modül↔CV eşlemesini ekleyecek):
+sorularının somut cevabıdır. Repo README şablonu; CV satırına eşlemesi
+[`PORTFOLIO.md`](../PORTFOLIO.md)'de:
 
 ```markdown
 # <PROJE_ADI> — Sahiplenilen Servis
