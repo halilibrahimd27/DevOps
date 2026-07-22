@@ -1,0 +1,23 @@
+# L18 — yerel Prometheus + kendi trafiğini üreten servis (K8s gerekmez)
+# Sürümler pinlenmiştir (reprodüksiyon için); :latest kullanma.
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  app:
+    image: python:3.12-slim
+    working_dir: /app
+    command: ["python", "/app/slo_app.py"]
+    environment:
+      ERROR_RATE: "0.005"   # %0.5 hata → ölçülen SLI ~%99.5
+      RPS: "50"
+    volumes:
+      - ./slo_app.py:/app/slo_app.py:ro
+    ports:
+      - "127.0.0.1:9200:9200"

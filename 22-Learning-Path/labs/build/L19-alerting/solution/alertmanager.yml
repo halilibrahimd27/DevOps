@@ -1,0 +1,12 @@
+# L19 — referans Alertmanager yapılandırması. starter/alertmanager.yml olarak kopyalanır.
+# Dış entegrasyon yok; alarm Alertmanager içinde "active" görünür (UI /#/alerts).
+route:
+  receiver: gunlukce
+  group_by: [alertname]
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+
+receivers:
+  - name: gunlukce
+    # Kanal (Slack/PagerDuty/e-posta) burada tanımlanır. Lab'da boş — kural test ediliyor.

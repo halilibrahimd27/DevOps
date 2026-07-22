@@ -1,0 +1,8 @@
+# L18 — Prometheus scrape yapılandırması (yerel)
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: app
+    static_configs:
+      - targets: ["app:9200"]

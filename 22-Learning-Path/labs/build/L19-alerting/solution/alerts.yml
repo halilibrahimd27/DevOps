@@ -1,0 +1,15 @@
+# L19 — referans alarm kuralı. starter/alerts.yml olarak kopyalanır.
+# Hata oranı SLO eşiğini (son 1 dk %1) aşarsa ateşler. app %5 hatayla çalışır → ateşler.
+groups:
+  - name: slo-alarmlari
+    rules:
+      - alert: YuksekHataOrani
+        expr: |
+          sum(rate(http_requests_total{status="500"}[1m]))
+            / sum(rate(http_requests_total[1m])) > 0.01
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: "Hata oranı SLO eşiğinin üstünde — error budget yanıyor"
+          description: "Son 1 dk hata oranı %1 SLO eşiğini aştı; kullanıcı etkisi var, incele."

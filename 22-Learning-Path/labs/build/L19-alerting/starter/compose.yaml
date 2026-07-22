@@ -1,0 +1,33 @@
+# L19 — yerel Prometheus + Alertmanager + kendi trafiğini üreten servis
+# Sürümler pinlenmiştir (reprodüksiyon için); :latest kullanma.
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./alerts.yml:/etc/prometheus/alerts.yml:ro
+
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+    ports:
+      - "127.0.0.1:9093:9093"
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+
+  app:
+    image: python:3.12-slim
+    working_dir: /app
+    command: ["python", "/app/slo_app.py"]
+    environment:
+      ERROR_RATE: "0.05"   # %5 → SLO hata-oranı alarmı ateşlenir
+      RPS: "50"
+    volumes:
+      - ./slo_app.py:/app/slo_app.py:ro
+    ports:
+      - "127.0.0.1:9200:9200"
