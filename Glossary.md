@@ -158,6 +158,7 @@
 | **IaC** | Infrastructure as Code (kod olarak altyapı) |
 | **IAM** | Identity and Access Management (kimlik ve erişim yönetimi) |
 | **IC** | Incident Commander (incident komutanı) |
+| **ICMP** | Internet Control Message Protocol — `ping`/`traceroute`'un kullandığı, port kavramı olmayan ulaşılabilirlik protokolü |
 | **IDP** | Internal Developer Platform |
 | **IdP** | Identity Provider (kimlik sağlayıcı) |
 | **Idempotent** | İdempotent — aynı işlem N kez = 1 kez |

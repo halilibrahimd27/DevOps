@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-22 · **Son commit:** (bu tur) Faz 8 TAMAM — entegrasyon: kök README + RoadMap redirect + build-docs nav + 43 deep-dive geri-link
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9 KISMEN — Blok A+B düşmanca review düzeltildi (13 bulgu) + REVIEW-FINDINGS.md (40 bulgu) + TROUBLESHOOTING 55 madde
 
 ## Faz durumu
 
@@ -17,32 +17,44 @@
 | 6.5 | Sertifika katmanı | ✅ | **Tamam.** README + G1/G2/G3 + HOW-TO-CERTIFY (§8.2 9 bölüm/kapı, sürüm uyarısı, domain×modül boşluk sütunu). Redirect + RoadMap/CV-Tips entegrasyonu + DCA legacy notu + çelişki temizliği. G3'te F2→CKS ileri-link + sıra notu (revizyon 7). QA exit 0 (0 uyarı) |
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
-| 9 | Düşmanca gözden geçirme | ⬜ | TROUBLESHOOTING.md 40+ madde burada dolar |
-| 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, L06 starter app, EN twin'ler, A1/A6 review maddeleri |
+| 9 | Düşmanca gözden geçirme | 🟡 | **KISMEN.** TROUBLESHOOTING 55 madde ✅ · REVIEW-FINDINGS.md 40 bulgu (6 blok) ✅ · Blok A (A-01..05) + B (B-01..08) düzeltildi ✅ · Blok C/D/E/F bulguları AÇIK · GLOSSARY-COVERAGE.md pending. QA exit 0 |
+| 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, EN twin'ler. (L06 starter app ARTIK VAR — Faz 9'da doğrulandı, listeden düştü) |
 
 ## Sıradaki adım
 
-**Faz 9 — Düşmanca gözden geçirme ("yeni başlayan simülasyonu").** Faz 8 bu tur kapandı.
-Faz 9'da yapılacaklar (BUILD-PROMPT §10 Faz 9):
-- **Rolü değiştir:** DevSecOps hakkında hiçbir şey bilmeyen biri ol, **A1'den sırayla** oku.
-  Her modülde ara ve `_planning/REVIEW-FINDINGS.md`'ye yaz: (a) o ana kadar tanımlanmamış
-  terim, (b) henüz öğrenilmemiş bir şeyi varsayan adım, (c) öznel kabul kriteri, (d)
-  doğrulanamayan lab / ölü link, (e) gerçekçi olmayan süre, (f) iki modül arası açıklanmamış
-  sıçrama, (g) dış kaynak sözleşmesine (§9: 4 alan) uymayan link, (h) güvenlik ipliği kopmuş
-  D-modülü.
-- **`TROUBLESHOOTING.md` 40+ madde burada dolar** (§5 dizin yapısı; hata → sebep → çözüm).
-  Şu an dosya iskelet/az dolu olabilir — **kontrol et**, `ImagePullBackOff`/RBAC forbidden/
-  terraform state lock/DNS/PVC binding/OOMKilled gibi kesin takılma noktalarını doldur.
-  Kırık lab solution.md'lerindeki teşhis akışlarıyla çapraz bağla.
-- Her bulguyu düzelt, düzeltmeleri de gözden geçir, **liste boşalana kadar tekrarla.**
-- **Çıktı kapısı:** açık bulgu yok · terim envanteri (`_planning/GLOSSARY-COVERAGE.md`)
-  çıkarıldı, her teknik terim ya bir modülde tanımlı ya `Glossary.md`'de var.
-- Faz 9 muhtemelen tek tura sığmaz → §14.1(3): nereye kadar gelindiğini modül adı seviyesinde
-  `Sıradaki adım`'a yaz, commit at, dur.
-- Bittiğinde: QA exit 0, §14.3 self-check, STATE güncelle, commit, **Faz 9 → ✅**, dur.
-- **Faz 9.5 (ZORUNLU, en son):** A0 modülü + L06 starter app + EN twin'ler + A1/A6 review
-  maddeleri. EN twin katmanı hâlâ `qa.py` `.en.md` çakışmasına takılı (bkz. Faz 2 kararı) —
-  kullanıcı `qa.py`'yi genişletmeden EN twin yazılamaz. Bu turda GİRME; Faz 9'u bitir.
+**Faz 9 — DEVAM: Blok C düzeltmelerinden başla.** Bulguların tamamı (40 adet, 6 blok)
+`_planning/REVIEW-FINDINGS.md`'de tablo halinde, durum kolonuyla (`✅ düzeltildi` /
+`⬜ açık` / `➖ değişiklik yok`). Bu tur Blok A+B kapandı; **sıradaki iş açık `⬜` bulguları
+blok blok kapatmak:**
+
+1. **Blok C (C-01..C-07)** — C-01/C-03 (C0 Python sözdizimi köprüsü + tutorial'ı 4-alanlı
+   zorunlu "Önce oku" yap), C-02 semver / C-04 LocalStack / C-07 NAT+egress+free-tier
+   glossları + Glossary, C-05 (C0 self-test forward-ref), C-06 (C4 son kabul kriteri →
+   yazılı `report.txt`). C0-ops-python.md + C2/C3/C4 + Glossary.
+2. **Blok D (D-01..D-08)** — GÜVENLİK İPLİĞİ KRİTİK: D-01 (L13 NetworkPolicy verify.sh
+   kelime-grep yerine canlı `wget` exit + CNI/kind sürüm), D-02 (D4 🎯↔kabul uyumu + admission
+   köprüsü + Policy-as-Code-OPA-Kyverno.md linki), D-03 (D1 köprüye RBAC+NetworkPolicy tanımı),
+   D-04 (kind/k3s Glossary+gloss), D-05 (D2 drain kriteri↔L14), D-06 (D1 önkoşul `[C1,C2]`'ye
+   indir — spec uyumu), D-07 (ingress controller notu + taint/toleration). D-08 = §9 kapsam
+   kararı (A-05 ile aynı, STUDY-METHOD kontrol et).
+3. **Blok E (E-01..E-06)** — E-01 Alertmanager tanım+Glossary, E-02 E4 şema-hedefi kabul
+   kriterine bağla, E-03 E2 önkoşula B2, E-04 burn-rate köprüsü, E-05 ack gloss+Glossary,
+   E-06 E5 kabul#3 ilkeyle çelişkiyi yumuşat.
+4. **Blok F (F-01..F-05)** — F-01 grep kontrolü, F-02..05 Glossary (egress/ADR/right-sizing/
+   reserved/bilişsel yük), F-04 Capstone linkleri. F-06 = ➖ (sınırda, ihlal değil).
+5. **Çıktı kapısı (EN SON):** tüm `⬜` kapandıktan sonra `_planning/GLOSSARY-COVERAGE.md`
+   terim envanterini çıkar — her teknik terim ya modülde tanımlı ya `Glossary.md`'de.
+   Sonra Faz 9 → ✅.
+
+Her tur: bir(-iki) blok kapat, REVIEW-FINDINGS durum kolonunu güncelle, QA exit 0,
+§14.3 self-check, STATE güncelle, commit, dur. **Blok D'ye özen** — güvenlik ipliği
+bulguları (D-01/D-02) lab verify.sh düzenlemesi içerir, `bash -n` + qa şart.
+
+- **Faz 9.5 (ZORUNLU, en son):** A0 modülü + EN twin'ler + kalan review maddeleri.
+  NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
+  `KURULUM.template.md`) — 9.5 listesinden düşürüldü (A-02 düzeltmesinde doğrulandı).
+  EN twin katmanı hâlâ `qa.py` `.en.md` çakışmasına takılı (Faz 2 kararı) — kullanıcı
+  müdahalesi gerekir. Bu turda GİRME.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -64,7 +76,31 @@ Faz 9'da yapılacaklar (BUILD-PROMPT §10 Faz 9):
 
 ## Açık kararlar
 
-### Faz 8 kapanışı (bu tur)
+### Faz 9 kararları (bu tur — Blok A+B review)
+- **§9 kapsam kararı (A-05/D-08/C-03'te tekrar eder):** Dört-alan dış-kaynak sözleşmesi
+  **yönlendirilmiş dış okuma** linkleri içindir. İhtiyaç-anında tekil referans (man page,
+  tool wiki, GitHub release sürüm bakışı) muaf — muafiyet A5 modülünde açıkça yazılı
+  ("dört-alanlı sözleşme yönlendirilmiş okuma içindir, tekil arama için değil"). İç repo
+  "Önce oku" deep-dive linkleri 3-alanlı hafif formatta kalır (§9 "dış link" der). **İstisna
+  C-03:** C0'da Python tutorial'ı C-01 nedeniyle fiilen zorunlu → orada 4 alanla verilmeli.
+- **B-04 süre — DEĞİŞMEDİ (gerekçeli ➖):** Denetçi B3=12s'i "şişkin" buldu. §3.5 "süreyi
+  kısa göstermek güven kaybının en hızlı yolu" — asıl risk DÜŞÜK tahmin; şişkin tahmin
+  öğreneni erken bitirince olumlu. Blok toplamı B36 onaylı plan. Süre = modül + lab + yazım
+  + acemi tekrarı. Hours düşürülmedi.
+- **A-05 ShellCheck linki — DEĞİŞMEDİ (➖):** §9 muafiyeti in-module belgeli (yukarı).
+- **A-02 (A6 unit) L06 app.py ile hizalandı:** app `APP_HOST`/`APP_PORT` okur (`DB_URL`
+  değil — `pg_isready` defaults kullanır); app.env'e `APP_PORT` eklendi, `DB_URL` "korunan
+  sır örneği" olarak kaldı; `ReadWritePaths` yorumlandı (app diske yazmıyor). Unit artık
+  birebir kopyalanınca çalışır.
+- **B-01 Prometheus kurulumu B2 §3'e eklendi:** node_exporter reçetesinin yanına tam
+  systemd Prometheus (config heredoc + `--config.file`/`--storage.tsdb.path`/9090 + servis
+  kullanıcısı). "aynı kalıpla kurulur" tek-cümle geçiştirmesi kaldırıldı. Kısıt #1: temel
+  kurulum adımları, `Prometheus-Best-Practices.md` deep-dive'ının (naming/retention/recording
+  rules) tekrarı DEĞİL — §14.3(1) grep temiz.
+- **REVIEW-FINDINGS.md `_planning`'de** (siteye stage edilmez) — 40 bulgu, blok blok, durum
+  kolonlu. Faz 9'un canlı iş listesi burası; her tur güncellenir.
+
+### Faz 8 kapanışı (önceki tur)
 - **Geri-link kapsamı = yalnız "Önce oku" tablosunda anılan deep-dive'lar (43 dosya).** §8/§10
   Faz 8 "Hangi deep-dive'lar hangi modülde 'Önce oku'da anılıyorsa onlara. Kapsamı dar tut,
   her dosyaya değil" der. Modüllerin **yalnız `## 📖 Önce oku` bölümünü** ayrıştıran script
@@ -235,7 +271,45 @@ Faz 9'da yapılacaklar (BUILD-PROMPT §10 Faz 9):
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 8 — Entegrasyon, KAPANDI)
+## Bu oturumda yapılanlar (Faz 9 — Blok A+B düşmanca review, KISMEN)
+
+**Giriş durumu:** Faz 8 önceki tur kapanmıştı. `e47d703 "wip: ara kayıt"` commit'i Faz 9'u
+başlatmış (TROUBLESHOOTING 55 madde + dağınık modül/verify.sh rötuşları) ama REVIEW-FINDINGS
+oluşturmamış ve STATE'i güncellememişti. Bu tur giriş kontrolü: `qa.py` exit 0, PAUSE yok,
+branch `feat/learning-path`, temiz tree. TROUBLESHOOTING dolu (55 madde > 40 kapısı) doğrulandı.
+
+**Bu tur yapılan (§10 Faz 9 — yeni başlayan simülasyonu):**
+1. **6 paralel "yeni başlayan" denetçisi** (blok başına biri) A1→F5 sırayla okudu; 40 bulgu
+   çıktı → `_planning/REVIEW-FINDINGS.md` (8 kategori, önem sıralı, durum kolonlu).
+2. **Blok A düzeltildi (5 bulgu):** A-01 COST-GUARDRAILS'e somut Linux kurulum bölümü
+   (WSL2/Multipass/VirtualBox); A-02 A6 systemd unit L06 app.py ile hizalandı (kopyalayınca
+   çalışır); A-03 A4 `cherry-pick` (öğretilmemiş) → `reset --soft`+`switch`; A-04 ICMP gloss
+   + Glossary; A-05 ➖ (§9 muafiyeti belgeli).
+3. **Blok B düzeltildi (8 bulgu):** B-01 B2 §3'e tam Prometheus systemd kurulumu; B-02 L08
+   Görev 1'e systemd-atlama notu; B-03 node_exporter/Prometheus indirmesi `uname -m`→ARCH
+   (arm64 tuzağı); B-05 §5 app-metrik sorgusuna "şimdi no-data" notu; B-06 systemd-tmpfiles
+   gloss; B-07 B1 yanlış "K00/K01 disk-dolu" iddiası genelleştirildi; B-04/B-08 ➖ (gerekçe
+   Açık kararlar'da).
+4. **Glossary.md:** `ICMP` eklendi (A-04). (semver/LocalStack/kind/k3s/NAT/egress/Alertmanager/
+   ack/ADR… ilgili blok turlarında eklenecek — REVIEW-FINDINGS'te izli.)
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0.** 29 modül, 49 lab scripti `bash -n`, kırık iç link yok
+  (COST-GUARDRAILS→A1 yeni linki dahil), site iki locale derlendi, `_planning` sızmadı.
+- **§14.3(1) tekrar:** yeni prose (Prometheus kurulum, Linux setup, glosslar) → 3 özgün cümle
+  repo-genelinde grep, yalnız kendi hedef dosyasında. Deep-dive tekrarı yok (kısıt #1).
+- **§14.3(2) pazarlama/ünvan:** 22-LP grep → yalnız önceden-kabul teknik "garanti" (K05/L14
+  `requests`). Yeni pazarlama 0.
+- **§14.3(3) süre:** yeni modül yok (mevcut A/B modüllerine ekleme) → kümülatif ~477s sabit.
+
+**Değişen dosyalar (bu tur):** `_planning/REVIEW-FINDINGS.md` (yeni) · `COST-GUARDRAILS.md` ·
+`Glossary.md` · `block-a-intuition/A2,A4,A6` · `block-b-visibility/B1,B2` ·
+`labs/build/L08-metrik/README.md` · `_planning/STATE.md`. **`Glossary.md` = 00-21 dışı kök
+dosya** (patika terimleri; qa MOD_RE eşleşmez). **`block-*`/`labs` = patika içi** (00-21 değil).
+
+---
+
+## Önceki oturum (Faz 8 — Entegrasyon, KAPANDI)
 
 **Giriş durumu:** Faz 7 önceki tur kapanmıştı (STATE ✅). Bu tur `STATE.md` okundu, QA giriş
 kontrolü (`qa.py` exit 0, PAUSE yok, branch `feat/learning-path`, temiz working tree) yapıldı,

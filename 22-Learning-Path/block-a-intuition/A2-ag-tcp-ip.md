@@ -252,7 +252,7 @@ bağlanamıyorum"u tahmin değil **kanıt** hâline getirir — B3'teki ilk kır
 | Servisi `0.0.0.0`'a bağlayıp güvenli sanmak | Tüm arayüzlerden erişilebilir; istemeden dışarı açılır | Gerekmiyorsa `127.0.0.1`; dışa açılış bilinçli olsun |
 | "Timeout" ve "refused"u aynı kefeye koymak | İki bambaşka sebebi karıştırır, yanlış yerde arattırır | Önce hangisi olduğunu belirle, sonra dallan |
 | Ağ arıza aramasına uygulamadan başlamak | Alttaki IP/port hatasını üstte boşuna ararsın | Aşağıdan yukarı: arayüz → rota → port → uygulama |
-| `ping` çalışıyor diye "ağ tamam" demek | `ping` ICMP'dir; TCP portu yine kapalı olabilir | Portu `nc`/`ss` ile ayrıca doğrula |
+| `ping` çalışıyor diye "ağ tamam" demek | `ping` ICMP'dir (port kavramı olmayan, ulaşılabilirliği ölçen ağ protokolü); TCP portu yine kapalı olabilir | Portu `nc`/`ss` ile ayrıca doğrula |
 | `netstat`/`ifconfig`'e yapışmak | Deprecated; bazı sistemlerde yok | `ss` ve `ip` kullan |
 | Güvenlik için portu "gizlemek" (obscurity) | Port taraması saniyeler sürer; gizlemek koruma değil | Erişimi kuralla kapat (güvenlik duvarı), gizleme değil |
 | Her yeri açan geniş güvenlik duvarı kuralı | Saldırı yüzeyini büyütür | En az açıklık: yalnız gereken port/kaynak |

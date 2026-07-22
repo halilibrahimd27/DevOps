@@ -125,8 +125,9 @@ sistemleri (Loki, ELK) tam olarak bu alanlar üzerinden filtreler ve panolar ür
 
 ## 6️⃣ Disk dolması: log'un fiziksel sınırı
 
-Log sonsuz değildir; yazıldığı disk dolar ve **dolu disk bir arıza sebebidir** (K00/K01
-kırık lab'larının klasik kök sebeplerinden). journald'ın ne kadar yer tuttuğunu gör ve sınırla:
+Log sonsuz değildir; yazıldığı disk dolar ve **dolu disk bir arıza sebebidir** (kırık
+sistemlerin klasik kök sebeplerinden biri — sonraki bloklarda karşına çıkacak). journald'ın
+ne kadar yer tuttuğunu gör ve sınırla:
 
 ```bash
 journalctl --disk-usage                    # journald ne kadar yer tutuyor
@@ -267,6 +268,7 @@ her yeniden başlatmada **silinir**. Kalıcı olması için diskte bir dizin ger
 journalctl --list-boots                # tek satır dönüyorsa log kalıcı DEĞİL
 ls /var/log/journal 2>/dev/null || echo "kalıcı journal yok"
 sudo mkdir -p /var/log/journal && sudo systemd-tmpfiles --create --prefix /var/log/journal
+# systemd-tmpfiles: dizinin doğru sahip/izinlerini systemd kurallarına göre uygular
 sudo systemctl restart systemd-journald   # artık restart'lar arası log kalır
 ```
 
