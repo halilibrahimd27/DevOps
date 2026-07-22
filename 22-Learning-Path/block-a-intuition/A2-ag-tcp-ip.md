@@ -266,7 +266,7 @@ bağlanamıyorum"u tahmin değil **kanıt** hâline getirir — B3'teki ilk kır
 > ötesindedir. Şimdi açma; D1'den sonra anlamlı olacak.
 
 ## 🔨 Lab
-👉 `labs/build/L02-ag-tcp-ip/` — Faz 5'te oluşturulacak. (Görev taslağı: bir servisi
+👉 [`labs/build/L02-ag-tcp-ip/`](../labs/build/L02-ag-tcp-ip/) — (Görev taslağı: bir servisi
 farklı portlarda/arayüzlerde bağla, `ss`/`nc` ile dinleneni doğrula; "refused" ve
 "timeout" durumlarını bilerek üret ve ayırt et.)
 

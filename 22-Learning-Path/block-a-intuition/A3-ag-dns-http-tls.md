@@ -268,7 +268,7 @@ tahmin yerine yaptığı budur.
 | [`08-Security/`](../../08-Security/) klasörü | TLS/PKI'nin güvenlik derinliği | **D bloğundan sonra** — sertifika yönetimi orada |
 
 ## 🔨 Lab
-👉 `labs/build/L03-dns-http-tls/` — Faz 5'te oluşturulacak. (Görev taslağı: bir ismi
+👉 [`labs/build/L03-dns-http-tls/`](../labs/build/L03-dns-http-tls/) — (Görev taslağı: bir ismi
 çöz, HTTP yanıt başlıklarını oku, sertifikanın süresini/sahibini doğrula; DNS ile
 TLS'i bilerek bozup her birini ayrı ayrı teşhis et.)
 

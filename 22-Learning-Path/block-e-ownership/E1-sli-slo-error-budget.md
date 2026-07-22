@@ -29,7 +29,7 @@ E2'deki alerting bu SLO'ların üstüne kurulur.
 | [`07-Observability/SLO-Engineering.md`](../../07-Observability/SLO-Engineering.md) | pratiğe dökme | ~25 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L18-sli-slo/` — Faz 5'te.
+👉 [`labs/build/L18-sli-slo/`](../labs/build/L18-sli-slo/)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

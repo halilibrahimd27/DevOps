@@ -254,7 +254,7 @@ Prometheus'un kendi Graph arayüzü yeter.
 | [`07-Observability/Alerting-Done-Right.md`](../../07-Observability/Alerting-Done-Right.md) | Metrikten alarma geçiş | **E2 öncesi** — şimdi değil |
 
 ## 🔨 Lab
-👉 `labs/build/L08-metrik/` — Faz 5'te oluşturulacak. (Görev taslağı: A6 VM'inde
+👉 [`labs/build/L08-metrik/`](../labs/build/L08-metrik/) — (Görev taslağı: A6 VM'inde
 node_exporter + Prometheus'u systemd ile kur, dört altın sinyalden en az ikisini PromQL
 ile sorgula, bir de bilerek yüksek-cardinality bir etiket ekleyip seri sayısının nasıl
 patladığını gözlemle.)

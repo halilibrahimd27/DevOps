@@ -29,7 +29,7 @@ biter ve dikkatli bulut kullanımı başlar.
 | [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md) | yerel alternatif + bütçe alarmı | ~15 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L12-bulut-butce-alarmi/` — Faz 5'te. **İlk adım: bütçe alarmı.**
+👉 [`labs/build/L12-bulut-butce-alarmi/`](../labs/build/L12-bulut-butce-alarmi/) — **İlk adım: bütçe alarmı.**
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

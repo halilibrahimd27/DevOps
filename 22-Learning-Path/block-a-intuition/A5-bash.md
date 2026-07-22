@@ -257,7 +257,7 @@ Halka halka: `grep` süz → `awk` 7. alanı (yol) al → `sort | uniq -c` say �
 | [ShellCheck wiki](https://www.shellcheck.net/wiki/) | Her uyarı kodunun açıklaması | `shellcheck` bir uyarı verdiğinde |
 
 ## 🔨 Lab
-👉 `labs/build/L05-bash/` — Faz 5'te oluşturulacak. (Görev taslağı: iki argüman alan,
+👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/) — (Görev taslağı: iki argüman alan,
 `set -euo pipefail` kullanan, bir log dosyasını özetleyip sonucu bir rapor dosyasına
 yazan ve `shellcheck`'ten temiz geçen bir script.)
 

@@ -29,7 +29,7 @@ nasıl yönetileceği kritik olur.
 | [`06-GitOps/Secrets-in-GitOps.md`](../../06-GitOps/Secrets-in-GitOps.md) | GitOps'ta sır | ~20 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L15-secret-yonetimi/` — Faz 5'te.
+👉 [`labs/build/L15-secret-yonetimi/`](../labs/build/L15-secret-yonetimi/)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

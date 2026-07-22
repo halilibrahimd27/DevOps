@@ -29,7 +29,7 @@ devamıdır**, ayrı bir ders değil.
 | [`02-CI-CD/GitHub-Actions-Recipes.md`](../../02-CI-CD/GitHub-Actions-Recipes.md) | çalışır örnekler | ~30 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L10-ci/` — Faz 5'te oluşturulacak.
+👉 [`labs/build/L10-ci/`](../labs/build/L10-ci/)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

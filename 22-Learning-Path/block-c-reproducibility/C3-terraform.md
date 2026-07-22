@@ -29,10 +29,10 @@ dokunmadan yeniden kurabiliyor musun?"
 | [`03-IaC/Terraform-Module-Layout.md`](../../03-IaC/Terraform-Module-Layout.md) | modül düzeni | ~20 dk |
 
 ## 🔨 Lab
-👉 `labs/build/L11-terraform/` — Faz 5'te oluşturulacak (yerel: LocalStack).
+👉 [`labs/build/L11-terraform/`](../labs/build/L11-terraform/) — yerel: LocalStack.
 
 ## 💥 Kırık lab
-👉 `labs/broken/K03-terraform-state/` — Faz 5'te. Belirti: "apply beklenmedik
+👉 [`labs/broken/K03-terraform-state/`](../labs/broken/K03-terraform-state/) — Belirti: "apply beklenmedik
 sonuç veriyor / kilitli." (Gerçekçi sebep gizli: state lock / drift.) Blok C'nin
 zorunlu kırık lab'ıdır.
 
