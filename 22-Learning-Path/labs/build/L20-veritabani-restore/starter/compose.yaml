@@ -1,0 +1,20 @@
+# L20 — kaynak DB (seed'li) + temiz restore hedefi. İkisi de aynı major sürüm.
+# Sürümler pinlenmiştir (reprodüksiyon için); :latest kullanma.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: labpass   # lab-only, gerçek sır değil (kısa, placeholder)
+      POSTGRES_DB: shop
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+
+  db_restore:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: labpass   # lab-only, gerçek sır değil
+      POSTGRES_DB: shop
+    ports:
+      - "127.0.0.1:5433:5432"
