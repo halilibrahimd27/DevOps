@@ -254,8 +254,8 @@ journalctl -k                          # yalnız çekirdek (kernel) mesajları =
 
 `-b -1` bir çökmeyi araştırırken paha biçilmez: sistem sertçe kapandıysa, **çöküşten
 hemen önceki** logu ancak önceki önyüklemeye bakarak görürsün. `-k` ise OOM killer, disk
-G/Ç hatası, donanım uyarısı gibi çekirdek düzeyi sorunları ayıklar (A1'deki `dmesg`'in
-journald karşılığı).
+G/Ç hatası, donanım uyarısı gibi çekirdek düzeyi sorunları ayıklar — bağımsız `dmesg`
+komutunun (çekirdek halka tamponu mesajları) journald karşılığı.
 
 ## 1️⃣1️⃣ Log kalıcı mı, geçici mi — ve niçin kayboluyor
 
@@ -343,7 +343,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 | `-f` canlı ama hiçbir şey akmıyor | İstek gelmiyor / uygulama sessiz | Başka terminalden `curl` at, tekrar bak |
 | Disk doldu uyarısı | Log rotation yok | `journalctl --vacuum-time=7d`; `df -h` |
 | Log'da parola gördüm | Uygulama sır logluyor | Uygulamada logu düzelt; **sızan sırrı döndür** |
-| Zaman damgaları tutmuyor | Yerel saat / saat kayması | UTC'ye geç; NTP senkronunu kontrol et |
+| Zaman damgaları tutmuyor | Yerel saat / saat kayması | UTC'ye geç; NTP (saat senkron protokolü) durumunu kontrol et |
 
 ## 💼 Portfolyo çıktısı
 Doğrudan bir artefakt değil; bir teşhis alışkanlığı. B3'teki kırık lab'da ve E

@@ -22,6 +22,10 @@ C1'de image'ı elle ürettin; her değişiklikte bunu elle yapmak sürdürüleme
 adımları her commit'e bağlar. D4 (supply chain: tarama + imzalama) **bu pipeline'ın
 devamıdır**, ayrı bir ders değil.
 
+> 📦 **Registry** = image deposu: C1'de ürettiğin container image'larını sürümlü etiketle
+> yayımlayıp sakladığın yer (ör. GitHub Container Registry / GHCR, AWS ECR, Docker Hub).
+> CI'ın son adımı image'ı buraya *push* eder; K8s (Blok D) sonra buradan *pull* eder.
+
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
 |---|---|---|

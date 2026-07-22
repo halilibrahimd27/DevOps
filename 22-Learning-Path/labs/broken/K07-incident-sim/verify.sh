@@ -6,13 +6,21 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-if ! command -v kubectl >/dev/null 2>&1 || ! kubectl cluster-info >/dev/null 2>&1; then
-  echo "  ⚠️  kubectl/cluster yok — bu lab canlı bir cluster ile doğrulanır."
-  echo "GEÇTİ ✅ (canlı doğrulama atlandı)"; exit 0
-fi
-if ! kubectl get ns inc >/dev/null 2>&1; then
-  echo "  ⚠️  inc namespace yok — önce bash setup.sh."
-  echo "GEÇTİ ✅ (ortam yok, atlandı)"; exit 0
+if ! command -v kubectl >/dev/null 2>&1 || ! kubectl cluster-info >/dev/null 2>&1 || ! kubectl get ns inc >/dev/null 2>&1; then
+  echo "  ⚠️  kubectl/cluster/inc yok — canlı erişim doğrulanamadı; incident belgeleri denetlenir."
+  if [ -f timeline.md ] && grep -qiE 'utc|[0-9]{2}:[0-9]{2}' timeline.md; then
+    ok "timeline.md var (zaman damgalı)"
+  else
+    no "timeline.md yok/zaman damgasız — UTC dakika hassasiyetli bir timeline yaz"
+  fi
+  if [ -f postmortem.md ] && grep -qiE 'kök sebep|root cause' postmortem.md && grep -qiE 'sahip|owner|son tarih|due' postmortem.md; then
+    ok "postmortem.md var (kök sebep + sahipli eylem maddesi)"
+  else
+    no "postmortem.md yok/eksik — kök sebep + sahip/son tarihli eylem maddesi ekle"
+  fi
+  echo "----------------------------------------"
+  [ "$FAIL" -eq 0 ] && { echo "GEÇTİ ✅ (mekanik — belgeler tam; erişimi cluster'da doğrula)"; exit 0; } \
+                    || { echo "BAŞARISIZ ❌  ($FAIL hata) — incident belgelerini tamamla."; exit 1; }
 fi
 
 # 1) pod'lar çalışıyor mu (ARIZA 1 giderildi: config key doğru)

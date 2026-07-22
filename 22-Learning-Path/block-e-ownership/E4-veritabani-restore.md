@@ -58,12 +58,12 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 | Belirti | Muhtemel sebep | Ne yap |
 |---|---|---|
 | Restore çalışıyor ama veri eksik | Yanlış sıra / kısmi backup / farklı sürüm | Sıralı bağımlılıkları ve sürüm uyumunu doğrula; tam yedeği kullan |
-| Restore çok uzun sürüyor (RTO aşıldı) | Yöntem yanlış (logical dump, büyük DB) | Fiziksel backup + PITR'e geç; restore süresini önceden ölç |
+| Restore çok uzun sürüyor (RTO aşıldı) | Yöntem yanlış (logical dump, büyük DB) | Fiziksel backup + PITR'e (Point-In-Time Recovery — WAL ile belirli bir ana dönüş) geç; restore süresini önceden ölç |
 | Backup alınıyor ama kimse test etmemiş | Restore prosedürü yazılı değil | Sakin bir günde tam restore provası yap, adımları yaz |
 | Backup'a erişim denetlenmemiş | Şifreleme/erişim kontrolü yok | Erişimi kısıtla, at-rest şifrele, erişimi denetim kaydına bağla |
 
 ## 💼 Portfolyo çıktısı
-Test edilmiş bir restore prosedürü + RTO/RPO raporu — nadir ve değerli bir kanıt.
+Test edilmiş bir restore prosedürü + RTO/RPO raporu.
 
 ## ⏭️ Sırada
 [`E5 — İleri Kırık Lab / Chaos`](E5-chaos.md)

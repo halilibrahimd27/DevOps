@@ -22,6 +22,19 @@ Bu, patikanın **bulut kullanan ilk modülüdür.** C3'te öğrendiğin Terrafor
 buluta taşırsın; ama önce maliyet korkuluğunu kurarsın. Yerel-önce ilkesi burada
 biter ve dikkatli bulut kullanımı başlar.
 
+## 🧩 Üç bulut temeli (kısa köprü)
+Bulut sağlayıcıları yüzlerce servis sunar; ama neredeyse her şey şu üçünün üstüne oturur —
+ve üçü de daha önce **elle gördüğün** bir şeyin bulut soyutlamasıdır:
+
+| Kavram | Ne demek | Daha önce nerede gördün |
+|---|---|---|
+| **Compute** | İşini çalıştıran CPU/bellek — sanal makine (ör. AWS EC2), container servisi ya da fonksiyon | A6'da elle kurduğun VM'in bulut hâli |
+| **VPC** (Virtual Private Cloud) | Kaynaklarının içinde yaşadığı **izole özel ağ**: subnet, routing, firewall (security group) | A2'deki IP/subnet/port kavramının bulutta yönetilen hâli |
+| **IAM** (Identity and Access Management) | **Kim neyi yapabilir** — kullanıcı/rol + izin politikaları | A1'deki kullanıcı/grup/izin ve "en az yetki"nin bulut karşılığı |
+
+Derinlik bu modülün konusu değil; amaç faturayı ve erişimi anlayacak kadar tanımak. Terimlerin
+kısa tanımları için [`Glossary.md`](../../Glossary.md) (VPC/IAM/Compute).
+
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
 |---|---|---|
@@ -33,7 +46,7 @@ biter ve dikkatli bulut kullanımı başlar.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] Faturalama/bütçe alarmı kuruldu, bir bildirim kanalına bağlı ve **tetiklenerek** test edildi — kanıt
+- [ ] Faturalama/bütçe alarmı kuruldu, bir bildirim kanalına bağlı; **forecast (öngörü) eşiği aşılınca ya da elle düşük eşikle tetiklenerek** test edildi — ya da gerçek hesapta nasıl test edileceği yazılı (gerçek fatura verisi saatler/gün gecikir; L12 yerelde bunu `plan`/config ile doğrular)
 - [ ] Küçük bir kaynak Terraform ile açıldı, `destroy` ile kapatıldı — açık kaynak kalmadığı doğrulandı
 - [ ] Hangi servislerin free tier kapsamında, hangilerinin saat/GB başına ücretli olduğunu yazılı listeledin
 - [ ] VPC, IAM ve compute kavramlarını kendi cümlelerinle tanımlayabiliyorsun

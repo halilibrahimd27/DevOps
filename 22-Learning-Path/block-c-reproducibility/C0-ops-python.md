@@ -28,9 +28,12 @@ yüzden C0, A5 ile C2 arasında bir köprüdür.
 | [`A5 — Bash`](../block-a-intuition/A5-bash.md) | Bash nerede tıkanır — Python'un başladığı sınır | ~15 dk |
 | [`STUDY-METHOD.md`](../STUDY-METHOD.md) | dış kaynak sözleşmesi — resmi Python turu buradan | ~10 dk |
 
-Repoda Python'u öğreten bir doküman **yok** (bilinçli boşluk). Bu modülün gövdesi o
-temeli verir; sözdizimi derinliği için dış kaynak sözleşmesine göre resmi tutorial'a
-gidersin (`STUDY-METHOD.md`). Amaç dili baştan sona öğrenmek değil, **iş görecek kadarı**.
+Repoda Python'u öğreten bir doküman **yok** (bilinçli boşluk). Bu modülün gövdesi
+ops için gereken temeli **kendi başına verir** — dışarıya çıkmadan lab'ı yapabilirsin.
+Sözdizimini daha derin merak edersen resmi Python tutorial'ı (docs.python.org/3/tutorial)
+isteğe bağlı bir referanstır; oraya giderken dört-alanlı sözleşmeye uy (niye/ne/süre/dönüş
+doğrulaması — [`STUDY-METHOD.md`](../STUDY-METHOD.md)). Amaç dili baştan sona öğrenmek
+değil, **iş görecek kadarı**.
 
 ## 🐍 Python nerede, Bash nerede
 Python'u bir dil olarak değil, **Bash'in tıkandığı yeri açan bir araç** olarak öğren.
@@ -117,7 +120,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] `argparse` ile argüman + hata yönetimi olan, sıfır/sıfır-dışı çıkış kodu döndüren çalışan bir CLI aracı yazdın
 - [ ] Bir API'den JSON çekip özetleyen, timeout + durum kontrolü olan bir betik yazdın — çıktısı gösterilebiliyor
 - [ ] "Bu işi niçin Bash yerine Python'da (ya da tersi) yazdım" — yazılı gerekçe
-- [ ] `except: pass` ile hata yutmanın niçin tehlikeli olduğunu kendi cümlelerinle anlatabiliyorsun
+- [ ] `except: pass` ile hata yutmanın niçin tehlikeli olduğunu kendi cümlelerinle **yazdın** (aracının README/notuna)
 
 ## 🧪 Kendini test et
 1. Bir betiği ne zaman Bash'ten Python'a taşırsın? İki somut sinyal ver.

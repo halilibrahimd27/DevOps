@@ -7,12 +7,12 @@ ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
 if ! command -v kubectl >/dev/null 2>&1 || ! kubectl cluster-info >/dev/null 2>&1; then
-  echo "  ⚠️  kubectl/cluster yok — bu lab canlı ArgoCD ile doğrulanır (L17 önkoşul)."
-  echo "GEÇTİ ✅ (canlı doğrulama atlandı)"; exit 0
+  echo "  ❌ kubectl/cluster yok — bu lab canlı ArgoCD ile doğrulanır (L17 önkoşul)."
+  echo "DOĞRULANMADI ❌ — kind + ArgoCD (L17) kurup 'bash setup.sh' çalıştır, sonra tekrar dene."; exit 1
 fi
 if ! kubectl -n argocd get application lab-app >/dev/null 2>&1; then
-  echo "  ⚠️  argocd/lab-app yok — önce L17 + setup.sh."
-  echo "GEÇTİ ✅ (önkoşul yok, atlandı)"; exit 0
+  echo "  ❌ argocd/lab-app yok — önce L17 + setup.sh."
+  echo "DOĞRULANMADI ❌ — L17'yi tamamla ve 'bash setup.sh' çalıştır."; exit 1
 fi
 
 # 1) Sync durumu

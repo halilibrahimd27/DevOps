@@ -27,8 +27,10 @@ varsaymaz — komutu ezberlemeni değil, **sistemin sana ne söylediğini duyman
 ## 📖 Nasıl çalışılır
 Bu modülün gövdesi reponun **öğretici** içeriğidir; bir link listesi değil. Her bölümü
 oku, komutu **kendi makinende çalıştır**, çıktıyı kendi gözünle gör. Yerel bir Linux'a
-ihtiyacın var: fiziksel makine, WSL2 (Windows), bir sanal makine (VirtualBox + Ubuntu
-Server) ya da bir container. Kurulum yolu [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md)'de.
+ihtiyacın var: fiziksel makine, WSL2 (Windows üstünde gerçek Linux çekirdeği çalıştıran
+katman) ya da bir sanal makine (VirtualBox + Ubuntu Server). Kurulum yolu
+[`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md)'de. (Container'ı bilerek saymadık — o bir
+Blok C kavramı; A1'de gerçek bir işletim sistemini elle görmen gerekiyor.)
 Okuma/yapma oranı için [`STUDY-METHOD.md`](../STUDY-METHOD.md)'ye bak — kural basit:
 **okuduğun her komutu çalıştırmadan sonraki bölüme geçme.**
 
@@ -119,7 +121,7 @@ kill -KILL $PID     # zorla: çekirdek process'i anında yok eder — SIGKILL (-
 | Sinyal | Ne yapar | Ne zaman |
 |---|---|---|
 | `TERM` (15) | Nazik kapatma; process temizlik yapabilir | **Varsayılan seçimin bu olsun** |
-| `HUP` (1) | Config reload (nginx, çoğu daemon) | Yeniden başlatmadan ayar yenilemek |
+| `HUP` (1) | Config reload (nginx ve çoğu _daemon_ — arka planda sürekli çalışan servis) | Yeniden başlatmadan ayar yenilemek |
 | `KILL` (9) | Anında sonlandırma; temizlik YOK | Yalnız `TERM`'e cevap vermeyince |
 
 > 🚫 `kill -9`'u refleks yapma. `KILL` process'e "kapan" deme şansı bile tanımaz:
@@ -337,7 +339,7 @@ bir servis kullanıcısı yarat.)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] Bir process'i isimle bulup PID'ini, çalışma dizinini ve açık dosyalarını gösteren komut dizisini çalıştırdın (`pgrep` → `/proc/<PID>/` veya `lsof -p`) ve çıktıyı okuyabiliyorsun.
+- [ ] Bir process'i isimle bulup PID'ini, çalışma dizinini ve **en az bir açık dosyasını** gösteren komut dizisini çalıştırdın (`pgrep` → `/proc/<PID>/` veya `lsof -p`) ve bu üç değeri `report.txt`'e yazdın.
 - [ ] Bir dosyanın iznini `chmod 640`'a çekip `stat` (veya `ls -l`) ile doğruladın; sahibini `chown` ile değiştirip gösterdin.
 - [ ] `df -h` ile `df -i` çıktılarını yan yana koyup "disk dolu"nun iki farklı anlamını **yazılı** açıkladın.
 - [ ] Kullanıcı vs grup vs `sudo` sınırını, "en az yetki" ilkesine bağlayarak kendi cümlelerinle **yazdın** (3-5 cümle).

@@ -6,7 +6,8 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-DEP="$(cat starter/deployment.yaml solution/deployment.yaml 2>/dev/null)"
+# ÖĞRENCİNİN çalıştığı starter/ denetlenir (solution/ referanstır)
+DEP="$(cat starter/deployment.yaml 2>/dev/null)"
 
 # 1) secretKeyRef kullanılıyor
 echo "$DEP" | grep -qE 'secretKeyRef' && ok "Deployment sırrı secretKeyRef ile alıyor" || no "Deployment'ta secretKeyRef yok — düz metin parolayı değiştir"

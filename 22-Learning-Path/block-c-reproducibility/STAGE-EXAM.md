@@ -9,6 +9,8 @@ tags: [Learning Path, Stage Exam]
 
 **Kapı:** Blok C sonu (C4'ten sonra, D1'den önce) · **Ön koşul:** [`C0`](C0-ops-python.md)–[`C4`](C4-bulut-butce-alarmi.md) kabul kriterleri geçilmiş
 
+> ℹ️ Tüm `bash labs/...` komutlarını **`22-Learning-Path/` kökünden** çalıştır.
+
 Blok C'nin tek iddiası şudur: **aynı girdiyle aynı sistemi ikinci kez kurabilmek.**
 Bu sınav onu ölçer. Her soru bir modülün kabul kriterine izlenebilir.
 
@@ -40,8 +42,8 @@ Bu sınav onu ölçer. Her soru bir modülün kabul kriterine izlenebilir.
 
 **Görev A — İki kırık lab (çekirdek):**
 
-- [ ] [`K02 — container hatası`](../labs/broken/K02-container-hatasi/): `bash ../labs/broken/K02-container-hatasi/verify.sh` çözümden sonra sıfır hatayla geçiyor
-- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/): `bash ../labs/broken/K03-terraform-state/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] [`K02 — container hatası`](../labs/broken/K02-container-hatasi/): `bash labs/broken/K02-container-hatasi/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/): `bash labs/broken/K03-terraform-state/verify.sh` çözümden sonra sıfır hatayla geçiyor
 - [ ] Her ikisi için kök sebep + teşhis akışını yazdın (K03 = bayat state kilidi → `force-unlock`)
 
 **Görev B — Tekrarlanabilirlik kanıtı:**

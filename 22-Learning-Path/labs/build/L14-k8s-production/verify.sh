@@ -6,8 +6,9 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-ALL="$(cat starter/*.yaml solution/*.yaml 2>/dev/null)"
-DEP="$(cat starter/deployment.yaml solution/deployment.yaml 2>/dev/null)"
+# ÖĞRENCİNİN çalıştığı starter/ denetlenir (solution/ referanstır)
+ALL="$(cat starter/*.yaml 2>/dev/null)"
+DEP="$(cat starter/deployment.yaml 2>/dev/null)"
 
 echo "$DEP" | grep -qE 'requests:' && echo "$DEP" | grep -qE 'limits:' && ok "Deployment request + limit içeriyor" || no "Deployment'ta request/limit eksik"
 echo "$DEP" | grep -qE 'readinessProbe' && ok "readinessProbe var" || no "readinessProbe eksik"

@@ -6,7 +6,8 @@ PASS=0; FAIL=0
 ok(){ printf '  ✅ %s\n' "$1"; PASS=$((PASS+1)); }
 no(){ printf '  ❌ %s\n' "$1"; FAIL=$((FAIL+1)); }
 
-APP="$(cat starter/application.yaml solution/application.yaml 2>/dev/null)"
+# ÖĞRENCİNİN çalıştığı starter/ denetlenir (solution/ referanstır)
+APP="$(cat starter/application.yaml 2>/dev/null)"
 
 echo "$APP" | grep -qE 'argoproj.io' && echo "$APP" | grep -qE 'kind:\s*Application' && ok "ArgoCD Application manifesti var" || no "argoproj.io Application manifesti eksik"
 echo "$APP" | grep -qE 'repoURL' && echo "$APP" | grep -qE 'path:' && ok "source (repoURL + path) tanımlı" || no "source.repoURL/path eksik"

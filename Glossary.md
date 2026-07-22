@@ -47,6 +47,8 @@
 | **Cardinality** | Bir metric'in unique label kombinasyon sayısı (Prometheus) |
 | **Carbon-aware** | Workload'u düşük-karbon zaman/yerde çalıştırma |
 | **Chainguard Images** | 0-CVE hedefli, daily-rebuild distroless alternatif |
+| **Chaos engineering** | Sistemi kontrollü biçimde bilerek bozarak dayanıklılığı kanıtlama pratiği (game day) |
+| **Compute** | Hesaplama kaynağı — bir işi çalıştıran CPU/bellek (VM, container, sunucu) |
 | **CD** | Continuous Delivery / Deployment (sürekli teslim) — CD kalır |
 | **CI** | Continuous Integration (sürekli entegrasyon) — CI kalır |
 | **CIDR** | IP adres bloğu notasyonu |
@@ -73,6 +75,8 @@
 | EN | TR / Açıklama |
 |---|---|
 | **DAG** | Directed Acyclic Graph (yönlü döngüsüz çizge); pipeline yapısı |
+| **Daemon** | Arka planda sürekli çalışan servis process'i (ör. nginx, sshd) |
+| **dmesg** | Çekirdek halka tamponu mesajları (donanım/sürücü/OOM); `journalctl -k` karşılığı |
 | **DDoS** | Distributed Denial of Service (dağıtık hizmet engelleme) |
 | **DCS** | Distributed Configuration Store (etcd / consul; Patroni için) |
 | **DeepSeek** | Open-source LLM (671B param MoE, ~37B active) |
@@ -229,6 +233,7 @@
 | **NodePort** | K8s service tip (port-bazlı) |
 | **NodeLocal DNSCache** | Node-level DNS cache, CoreDNS yükünü azaltır |
 | **NPS** | Net Promoter Score (müşteri/dev memnuniyet ölçümü) |
+| **NTP** | Network Time Protocol — makine saatini senkron tutar; kayması log/sertifika hatasına yol açar |
 
 ## O
 
@@ -255,6 +260,8 @@
 | **Patroni** | Postgres HA tool |
 | **PCI DSS** | Payment Card Industry Data Security Standard |
 | **PDB** | PodDisruptionBudget (K8s) |
+| **Percentile (p95)** | Dağılım yüzdeliği; p95 gecikme = isteklerin %95'inin altında kaldığı süre |
+| **PITR** | Point-In-Time Recovery — WAL ile veritabanını belirli bir ana geri alma |
 | **PgBouncer** | Postgres connection pooler |
 | **pgcat** | Modern Rust-based Postgres pooler |
 | **PII** | Personally Identifiable Information (kişisel veri) |
@@ -288,6 +295,7 @@
 | **RAG** | Retrieval-Augmented Generation (LLM + dış kaynak) |
 | **RBAC** | Role-Based Access Control |
 | **Reconciliation** | Uzlaşma / sürekli senkron — ArgoCD/Flux Git ↔ cluster |
+| **Registry** | Image deposu — container image'larını sürümlü yayımlayıp sakladığın yer (ör. GHCR, ECR) |
 | **Rego** | OPA'nın policy DSL'i |
 | **Rekor** | Sigstore transparent log |
 | **Renovate** | Dependency update bot |
@@ -355,6 +363,7 @@
 | **Tag** | Tag — image versiyonu (kelime kalır) |
 | **Tail Sampling** | Trace tamamlandıktan sonra sample karar (Otel) |
 | **TDE** | Transparent Data Encryption (DB) |
+| **Team Topologies** | Ekip etkileşim modeli: stream-aligned, platform, enabling, complicated-subsystem |
 | **Telemetry** | Telemetri |
 | **Tempo** | Grafana distributed tracing backend |
 | **Terraform** | Terraform (kalır) |
@@ -366,6 +375,7 @@
 | **Tokenization** | PAN → token (PCI scope reduction) |
 | **Trivy** | Aqua Security scanner |
 | **Trunk-Based Development / TBD** | Trunk-based — tek ana branch geliştirme |
+| **Twelve-Factor App (12-Factor)** | Modern uygulama ilkeleri; ör. log'u dosyaya değil stdout'a yaz |
 
 ## U
 
@@ -382,6 +392,7 @@
 | **Validating** | Validating admission — kabul kontrolü (red/onay) |
 | **Vault** | HashiCorp secret manager |
 | **Velocity** | Velocity / hız |
+| **Vendor lock-in / kilitlenme** | Bir sağlayıcıya, çıkış maliyetini yükseltecek kadar bağımlı olma |
 | **VERBİS** | Veri Sorumluları Sicil Bilgi Sistemi (KVK) |
 | **Versioning** | Versiyonlama |
 | **VirtualService** | Istio L7 routing CRD |
@@ -400,6 +411,7 @@
 | **WAL** | Write-Ahead Log (Postgres) |
 | **WAL-G** | WAL archiving tool |
 | **WASM** | WebAssembly (server-side runtime alternatif) |
+| **WSL2** | Windows Subsystem for Linux 2 — Windows üstünde gerçek Linux çekirdeği |
 | **Watcher** | İzleyici — controller pattern |
 | **Webhook** | Webhook (kalır) |
 | **Wolfi** | Chainguard'ın mini distro'su |

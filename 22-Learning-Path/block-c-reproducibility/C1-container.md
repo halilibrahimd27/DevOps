@@ -41,7 +41,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] A6 uygulaması bir image olarak çalışıyor; `docker compose up` ile uygulama + DB birlikte ayağa kalkıyor
 - [ ] Multi-stage ile image küçüldü — `docker images` çıktısında önce/sonra boyut farkı gösterilebiliyor
 - [ ] `bash labs/broken/K02-container-hatasi/verify.sh` yardımsız çözümden sonra sıfır hatayla geçiyor
-- [ ] Bir katmanın niçin cache'lendiğini/geçersizleştiğini kendi cümlelerinle anlatabiliyorsun
+- [ ] Bir katmanın niçin cache'lendiğini/geçersizleştiğini kendi cümlelerinle **yazdın** (L09 `report.txt`)
 
 ## 🧪 Kendini test et
 1. Bir image katmanı nedir? Dockerfile'da bağımlılık kurulumunu kaynak kodu kopyalamadan **önce** koymak build süresini niçin kısaltır?

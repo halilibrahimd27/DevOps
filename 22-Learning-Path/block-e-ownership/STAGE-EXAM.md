@@ -9,6 +9,8 @@ tags: [Learning Path, Stage Exam]
 
 **Kapı:** Blok E sonu (E5'ten sonra, F1'den önce) · **Ön koşul:** [`E1`](E1-sli-slo-error-budget.md)–[`E5`](E5-chaos.md) kabul kriterleri geçilmiş
 
+> ℹ️ Her `verify.sh`'i `22-Learning-Path/` kökünden (`bash labs/broken/…/verify.sh`) çalıştır. K08 belge/erişim kontrolüyle yerelde de anlamlıdır; K07 incident belgelerini, K09 canlı cluster'ı denetler — ortam yoksa `verify.sh` yeşil dönmez.
+
 Blok E, "çalıştıran"dan "sahip"e geçiştir. Bu sınav sahipliğin **mekaniğini**
 ölçebilir: SLO tanımlı mı, alarm ateşleniyor mu, restore gerçekten test edildi mi.
 Her soru bir modülün kabul kriterine izlenebilir.
