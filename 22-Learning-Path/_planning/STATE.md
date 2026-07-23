@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — A0 modülü yazıldı + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre edildi (QA exit 0, 30 modül). EN twin katmanı hâlâ qa.py bloke → PAUSE oluşturuldu (kullanıcı müdahalesi)
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P0 katmanı** üretildi (README/docs-index/docs-about/Glossary `.en.md`). Kullanıcı `qa.py`'ye locale-farkındalığı ekledi (`LOCALE_RE`) + PAUSE'u sildi → blok kalktı. QA exit 0 (1 uyarı: qa.py docs/index locale-twin false-positive)
 
 ## Faz durumu
 
@@ -18,36 +18,33 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler | 🟡 | **A0 TAMAM (bu tur):** modül + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre, QA exit 0 (30 modül). **EN twin BLOKE** — qa.py `.en.md`'yi modül denetiminden ayırmalı (§15.4: qa.py'ye dokunamam) → `.local/PAUSE`. (L06 starter app ARTIK VAR — Faz 9'da doğrulandı) |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM** (önceki tur). **EN twin: P0 TAMAM (bu tur)** — README/docs-index/docs-about/Glossary `.en.md`. qa.py bloğu KALKTI (kullanıcı `LOCALE_RE` ekledi). Kalan: P1 patika omurgası → P2 21-README → P3/P4. QA exit 0 (1 uyarı: docs/index locale-twin false-positive). |
 
 ## Sıradaki adım
 
-**⏸ PAUSE — kullanıcı müdahalesi bekleniyor (`.local/PAUSE`).** BUILD-PROMPT §10 program
-(`-1 → … → 9`) tamamen bitti. Faz 9.5'in A0 parçası **bu tur teslim edildi**; geriye
-yalnızca **EN twin katmanı** kaldı ve o, **benim geçemediğim bir çıktı kapısı** (§14.2-b):
-`qa.py`'yi değiştirmeden (§15.4 yasak) EN twin üretilemez.
+**Faz 9.5 · EN twin — P1 patika omurgası (`22-Learning-Path/`).** P0 (bu tur) bitti; sıra
+patika omurgasının `.en.md` twin'lerinde. Dosya-seviyesinde başlangıç sırası (küçükten büyüğe,
+qa `check_modules` locale-muaf olduğu için modüller de dahil):
 
-**Bu tur bitti (Faz 9.5 · A0):**
-1. **`block-a-intuition/A0-baslamadan-once.md`** — 330 satır, öğretici, TR. Frontmatter
-   (`level: A`, `module: A0`, `estimated_hours: 6`, `prerequisites: []`), tam modül anatomisi,
-   QA `check_modules` uyumlu (300–800 satır bandı → uyarı yok). İçerik A1'in sistem-derinliğiyle
-   örtüşmez: DevSecOps'un şekli + ortam kurulumu (COST-GUARDRAILS'e devir) + terminal ergonomisi
-   + gezinme/yardım minimumu + nano + patikanın kullanım kılavuzu.
-2. **Entegrasyon:** A1 önkoşulu `[]`→`[A0]` (DAG: A0 → A1, geriye işaret ✓) · CURRICULUM
-   (satır + mermaid + toplam 30 modül/~483s + "A0 tek giriş" metni) · README (rampa/A0…F5/
-   ~483s) · PLACEMENT (yeni-mezun rampası A0, "emin değilsen A0") · COST-GUARDRAILS başlık
-   A0/A1 · MODULE-SPEC onay-sonrası ek (şeffaflık: A0 review-turu eklemesi, onaylı 28'in dışı).
+1. **Rehber dosyaları** (frontmatter'sız/hafif → düşük risk): `NOT-YET.en.md` (33s) ·
+   `PLACEMENT.en.md` (88s) · `PROGRESS-TEMPLATE.en.md` (93s) · `STUDY-METHOD.en.md` (101s) ·
+   `README.en.md` (108s) · `COST-GUARDRAILS.en.md` (111s) · `TROUBLESHOOTING.en.md` (133s) ·
+   `PORTFOLIO.en.md` (133s) · `CURRICULUM.en.md` (177s — mermaid + tablolar dikkat).
+2. **Modül twin'leri** `block-*/<ID>-*.en.md` (A0…F5, 30 modül). Artık BLOKE değil:
+   `check_modules`/`check_curriculum` `LOCALE_RE` ile `.en.md`'yi ayırıyor → EN başlık serbest.
+3. **İç link kuralı (değişmez):** twin'lerde link hedefi locale eki ALMAZ (`[x](A1-....md)`,
+   `.en.md` DEĞİL). Modül→lab ve modül→modül path'leri kaynakla birebir.
 
-**KALAN İŞ = EN twin katmanı (kullanıcıyı bekliyor):** `qa.py` (`qa.py:153` `MOD_RE`,
-`qa.py:175` zorunlu Türkçe başlıklar) `^[A-F]\d+-` eşleşen **her** dosyada Türkçe bölüm
-başlıklarını arar → `A1-….en.md` İngilizce başlıkla QA'yı **kırar**; Türkçe başlık + İngilizce
-gövde koymak **kandırma** olur (§15.4). Çözüm bende değil: **kullanıcı qa.py'yi `.en.md` locale
-dosyalarını `check_modules`'tan ayıracak şekilde genişletmeli.** O yapılınca EN twin ayrı bir
-i18n turu olarak üretilir (I18N-COVERAGE P1 sırası: README/index/about/Glossary → patika omurgası
-→ 21 klasör README → deep-dive'lar). Kullanıcı `.local/PAUSE`'u silince döngü devam eder.
+**P1 taktiği (P0'da işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı ruleset
+(yapıyı koru, yalnız prose çevir, hedef path'i koru, positioning reframe, placeholder
+güvenliği), sonra qa.py + build + spot-read ile doğrula. Her tur bir P1 dilimi bitir, STATE'e
+dosya-seviyesinde nereye gelindiğini yaz, commit, dur.
 
 > NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
-> `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, bu tur da değişmedi.
+> `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, hâlâ mevcut.
+
+> NOT: **`README.en.md` iki anlama gelir.** Kök `README.en.md` (bu tur, GitHub landing, P0) ≠
+> `22-Learning-Path/README.en.md` (P1, henüz yok). Karıştırma.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -69,7 +66,40 @@ i18n turu olarak üretilir (I18N-COVERAGE P1 sırası: README/index/about/Glossa
 
 ## Açık kararlar
 
-### Faz 9.5 (bu tur — A0 + entegrasyon)
+### Faz 9.5 · EN twin P0 (bu tur)
+- **Blok kalktı — kullanıcı `qa.py`'yi genişletti (§15.4 sınırı korunarak).** `qa.py:156`
+  `LOCALE_RE = \.[a-z]{2}\.md$`; `check_modules` (`qa.py:162`) ve `check_curriculum`
+  (`qa.py:228`) artık `.en.md`/`.tr.md`'yi modül denetiminden ayırıyor. Ben `qa.py`'ye
+  DOKUNMADIM (§15.4 yasak); kullanıcı yaptı + `.local/PAUSE`'u sildi = döngü devam sinyali
+  (§14.2). Faz 2'den beri bekleyen EN twin tıkanması böyle çözüldü.
+- **Kapsam = P0 (I18N-COVERAGE öncelik sırası).** Bir turda EN twin katmanının tamamı
+  (P0…P4, 300+ sayfa) sığmaz → §14.1.3 dosya-seviyesi dilim. P0 = `README`/`docs-index`/
+  `docs-about`/`Glossary` — dokümante edilmiş ilk adım. 4 `.en.md` üretildi.
+- **`README.en.md` siteye stage EDİLMEZ (bilinçli).** Site homepage'i `docs/index.md`
+  (build-docs.sh:7), README değil. `README.en.md` GitHub landing için — kökte, linkleri
+  köke göre çözülür (qa temiz). Coverage oranı SİTE sayfası sayar → README dışı (3/334 ≈ %0.9).
+- **build-docs.sh 3 satır eklendi (izinli — infra, qa.py değil, 00-21 değil):**
+  `docs/index.en.md`→`index.en.md`, `docs/about.en.md`→`about.en.md`, `Glossary.en.md` stage.
+  Numaralı klasörler (`cp -r`) zaten tüm `.en.md`'leri özyineli kopyalar → P1'de ek satır gerekmez.
+- **QA'daki 1 UYARI = qa.py false-positive, içerik kusuru DEĞİL (§15.1 → buraya not).**
+  `check_links` yalnız `docs/index.md`'yi pop eder (`qa.py:140`), locale twin'ini (`docs/index.en.md`)
+  etmez. `docs/index.en.md` site-kökü göreli link kullanır (`00-Culture/` vb. — staged konumda
+  `$STAGE/index.en.md` için DOĞRU); kaynak `docs/`'a göre çözülünce 29 "kırık" görünür → LP-dışı
+  → UYARI (HATA değil, akış durmaz). **Kanıtlandı:** build sonrası `site/en/08-Security/
+  DevSecOps-Pipeline/` vb. hedefler VAR; `/en/index.html` İngilizce intro ile render (TR fallback
+  değil). Doğru düzeltme: kullanıcı `qa.py:140`'ı `docs/index.<locale>.md` da pop edecek şekilde
+  genişletebilir (analog fix). Ben qa.py'ye dokunamam → not bırakıldı.
+- **docs/about.en.md ve Glossary.en.md temiz (uyarı yok):** about yalnız `index.md`'ye linkler
+  (`docs/index.md` var → çözülür); Glossary'de iç markdown link yok.
+- **Positioning reframe uygulandı (Faz -1(b) kuralı EN tarafında):** hiçbir twin "Türkçe
+  kaynak/rehber/yazılır" demiyor → "deep TR/EU regulatory coverage olan handbook". KVKK/BDDK
+  içeriği kaldı, global okur çerçevesiyle. Grep doğrulaması temiz.
+- **Çeviri subagent deseni (P1'de tekrar kullan):** 4 paralel sonnet subagent, dosya başına bir,
+  sıkı ruleset (yapı byte-korunur, yalnız prose+frontmatter description çevrilir, link path'i
+  ek-siz korunur, `{ #anchor }` id'leri sabit, placeholder güvenliği). README subagent'ı ToC +
+  Quick-Start anchor'larını çevrilen başlık slug'ına göre güncelledi (proaktif, doğru).
+
+### Faz 9.5 (önceki tur — A0 + entegrasyon)
 - **A0'ın kapsamı = A1'in ÖNÜ, tekrarı değil (kısıt #1).** A1 process/izin/kullanıcı
   derinliğine iner; A0 ondan önceki katmandır: çalışan terminal + ortam + ergonomi +
   oryantasyon. Kurulum adımları tekrar edilmedi → `COST-GUARDRAILS.md`'ye devredildi.
@@ -307,7 +337,50 @@ i18n turu olarak üretilir (I18N-COVERAGE P1 sırası: README/index/about/Glossa
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9.5 — A0, KISMEN → PAUSE)
+## Bu oturumda yapılanlar (Faz 9.5 — EN twin P0)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, temiz tree. **`.local/PAUSE`
+SİLİNMİŞ** (kullanıcı = döngü devam sinyali, §14.2). **`qa.py` DEĞİŞMİŞ** — kullanıcı
+`LOCALE_RE` (`qa.py:156`) ekleyip `check_modules`/`check_curriculum`'u locale-farkında yaptı →
+Faz 2'den beri bekleyen EN twin bloğu kalktı. Giriş `qa.py` exit 0 (30 modül).
+
+**Bu tur yapılan (Faz 9.5 · EN twin P0 dilimi — §14.1.3 dosya-seviyesi):**
+1. **4 EN twin `.en.md` üretildi** (4 paralel sonnet subagent, dosya başına bir, sıkı ruleset):
+   - `README.en.md` (210s) — kök GitHub landing; positioning reframe (tagline/felsefe bullet1/
+     "66K satır Türkçe"→"66K lines"); ToC + Quick-Start anchor'ları çevrilen slug'a güncellendi.
+   - `docs/index.en.md` (330s) — EN hero homepage; TR/EN content-tab tek İngilizce paragrafa
+     indirildi, `<span class="en">` tagline promote+span silindi, `{ #flagship/#kategoriler/
+     #hizli-basla }` id'leri sabit, TR-spesifik kart global çerçeveye alındı.
+   - `docs/about.en.md` (151s) — EN about; mevcut İngilizce tab içeriği promote edildi.
+   - `Glossary.en.md` (511s, 310 terim) — başlık/intro reframe (Türkçeleştirme felsefesi
+     çıkarıldı), tablo başlığı `| Term | Definition |`, TR açıklamalar İngilizce'ye; TR karşılık
+     yararlı yerde parantezde kaldı (KVKK/VERBİS TR-regülasyon bağlamı korundu).
+2. **build-docs.sh:** `docs/index.en.md`→`index.en.md`, `docs/about.en.md`→`about.en.md`,
+   `Glossary.en.md` stage satırları eklendi (izinli infra; qa.py/00-21 değil).
+3. **I18N-COVERAGE.md:** P0 ✅ (2026-07-23), P1 "sıradaki/BLOKE değil", EN oran %0.9 notu.
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0 (1 UYARI).** 30 modül, 49 lab scripti, site iki locale
+  hatasız derlendi, `_planning` sızmadı. Tek uyarı = `docs/index.en.md` locale-twin
+  false-positive (yukarı Açık kararlar'da kanıtla açıklandı; içerik kusuru değil).
+- **Site kanıtı:** `site/en/index.html` İngilizce intro ile render (TR fallback DEĞİL);
+  `site/en/{about,Glossary}/` üretildi; EN homepage'in site-kökü göreli linkleri (`08-Security/
+  DevSecOps-Pipeline/` vb.) `site/en/…`'de gerçek hedeflere çözülüyor.
+- **§14.3(1) tekrar:** `.en.md` twin'ler İngilizce → TR deep-dive'larla `check_duplication`
+  örtüşmesi yok (qa temiz). P0 dosyaları LP-dışı zaten duplication denetimine girmez.
+- **§14.3(2) pazarlama/ünvan:** twin'lerde "Türkçe kaynak/written in turkish" grep → 0;
+  `.en.md` link'lerinde locale eki grep → 0.
+- **§14.3(3) süre:** yeni modül yok (çeviri) → kümülatif ~483s sabit.
+
+**Değişen dosyalar (bu tur):** `README.en.md` (yeni) · `docs/index.en.md` (yeni) ·
+`docs/about.en.md` (yeni) · `Glossary.en.md` (yeni) · `scripts/build-docs.sh` ·
+`22-Learning-Path/_planning/I18N-COVERAGE.md` · `22-Learning-Path/_planning/STATE.md`.
+Hepsi kök `.en.md` twin + docs + infra + `_planning`; **hiçbir 00-21 içerik dosyası değişmedi**,
+`qa.py`'ye dokunulmadı.
+
+---
+
+## Önceki oturum (Faz 9.5 — A0, KISMEN → PAUSE)
 
 **Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, PAUSE yok, temiz tree,
 `qa.py` exit 0 (29 modül). Faz -1…9 hepsi ✅; sıradaki iş Faz 9.5 (A0 + EN twin).
