@@ -16,9 +16,9 @@ geçmen gerekir. Geçemezsen atlamıyorsun — orası senin başlangıcın.
 
 | Rampa | Nereden girer | Koşul |
 |---|---|---|
-| Yeni mezun / kariyer değiştiren | **A1** | Koşulsuz — buradan başla. |
-| Backend / yazılım geliştirici | A1–A5 hızlı kontrol → **A6** | A1–A5 kontrol testini geçersen doğrudan A6. |
-| Sistem yöneticisi / IT | A1–A3 atlanabilir → **A6, B1** | A1–A3 kontrol testini geçersen A4–A5'i tazeleyip A6'ya. |
+| Yeni mezun / kariyer değiştiren | **A0** | Koşulsuz — buradan başla (ortam + terminal). |
+| Backend / yazılım geliştirici | A1–A5 hızlı kontrol → **A6** | Ortamın zaten var → A0'ı 20 dakikalık kontrol turu yap; A1–A5 kontrol testini geçersen doğrudan A6. |
+| Sistem yöneticisi / IT | A1–A3 atlanabilir → **A6, B1** | Ortamın zaten var → A0'ı atla; A1–A3 kontrol testini geçersen A4–A5'i tazeleyip A6'ya. |
 
 > ⚠️ Hiçbir rampa **A6'yı atlamaz.** A6 (bir uygulamayı elle ayağa kaldırma) tüm
 > patikanın çıpasıdır; sonraki her soyutlama ona geri referans verir.
@@ -79,7 +79,7 @@ Geliştirici kod ve Git bilir; A1–A5'i atlayıp A6'ya geçebilir ama **kanıtl
 
 ## 🧭 Emin değilsen
 
-Emin değilsen **atlamayı deneme — A1'den başla.** Bildiğin modüller hızlı geçer;
+Emin değilsen **atlamayı deneme — A0'dan başla.** Bildiğin modüller hızlı geçer;
 bilmediğini sandığın yerlerde boşlukları kapatırsın. Boşluk testi (patikanın temel
 ilkesi): *Sadece bu modüle ve ön koşullarına sahip biri bunu tamamlayabilmeli.*
 

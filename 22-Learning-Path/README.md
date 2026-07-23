@@ -19,7 +19,7 @@ zaten bir deep-dive'da anlatılıyorsa, modül ona **link verir.**
 
 ## 🎯 Bu patika kimin için
 
-- **Yeni mezun / kariyer değiştiren** — hiçbir ön bilgi varsaymaz, A1'den başlar.
+- **Yeni mezun / kariyer değiştiren** — hiçbir ön bilgi varsaymaz, A0'dan (ortam + terminal) başlar.
 - **Backend / yazılım geliştirici** — kod bilir, işletim/ağ/deploy tarafını doldurur.
 - **Sistem yöneticisi / IT** — Linux/ağ bilir, otomasyon ve orkestrasyona geçer.
 
@@ -66,7 +66,7 @@ Detay + mermaid bağımlılık grafiği: [`CURRICULUM.md`](CURRICULUM.md).
 ## ⏱️ Ne kadar sürer
 
 Süreyi kısa göstermek güven kaybetmenin en hızlı yoludur. Haftada **10–12 saat**
-çalışan biri için kaba aralık: **~40–48 hafta** (toplam ~477 saat, capstone'lar dahil).
+çalışan biri için kaba aralık: **~40–48 hafta** (toplam ~483 saat, capstone'lar dahil).
 Bu bir yarış değil; kabul kriterlerini gerçekten geçmek takvimden önemlidir.
 
 > ⛔ Bu patika sana bir **ünvan** vaat etmez ("şu kadar ayda şu ünvana ulaşırsın"
@@ -99,7 +99,7 @@ eksik bıraktıkları değil, **erken koyduklarıdır.**
 | [`COST-GUARDRAILS.md`](COST-GUARDRAILS.md) | Yerel alternatifler + bulut bütçe alarmı |
 | [`NOT-YET.md`](NOT-YET.md) | "Henüz değil" listesi ve gerekçeleri |
 | [`PORTFOLIO.md`](PORTFOLIO.md) | Hangi modül/capstone hangi CV satırına karşılık gelir |
-| `block-a … block-f/` | Modül dosyaları (A1…F5) |
+| `block-a … block-f/` | Modül dosyaları (A0…F5) |
 | `capstones/` | Blok C/D/E sonu teslim projeleri |
 | `labs/` | İnşa lab'ları + kırık lab'lar |
 

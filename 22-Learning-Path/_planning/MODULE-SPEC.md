@@ -195,3 +195,28 @@ uygulanacak. Faz 1 bu bölümü girdi alır.
 **B2 notu:** `Prometheus-Grafana-K8s-Setup.md` K8s tabanlı, B2 ise
 D'den önce. B2'nin "Önce oku" tablosunda kullanılamaz — yalnızca
 `Prometheus-Best-Practices.md`.
+
+---
+
+## 🔧 ONAY SONRASI EK — A0 (Faz 9.5, düşmanca review turu)
+
+> Bu ek, Faz 0 onayından **sonra** düşmanca gözden geçirme (Faz 9) turlarında
+> kararlaştırıldı; yukarıdaki onaylı 28-modül tablosunun parçası değildir. Şeffaflık
+> için burada kayıt altına alınır — spec ile gerçek dosya seti ayrışmasın.
+
+**Gerekçe.** "Yeni başlayan simülasyonu" (Faz 9) şunu ortaya çıkardı: A1 doğrudan
+process/izin/kullanıcı modeline giriyor ama "hiçbir ön bilgi varsaymaz" sözünü
+tutabilmesi için önce **çalışan bir terminal + ortam + patikanın kullanım kılavuzu**
+gerekiyor. Bu boşluk A1'e sığmaz (A1 zaten 400–700 satır öğretici); ayrı bir ısınma
+modülü olarak açıldı.
+
+| ID | Modül adı | Blok / L | Saat | Ön koşul | Kaynak durumu | Build lab | Kırık lab |
+|---|---|---|---|---|---|---|---|
+| A0 | Başlamadan önce: ortam, terminal, patika nasıl işler | A / L0 | 6 | — | 🔴 EKSİK | — | — |
+
+- **Ön koşul yok** → yeni tek giriş noktası (A1'in ön koşulu `[]` → `[A0]` oldu; DAG: A0 → A1).
+- **Lab yok** (C0 deseni): pratik = kabul kriterleri (ortamı kur + kanıtla). Uydurma lab yok.
+- **Kısıt #1:** kurulum adımlarını tekrar etmez — `COST-GUARDRAILS.md`'ye devreder; içerik
+  terminal ergonomisi + oryantasyon (A1'in sistem-derinliğiyle örtüşmez).
+- **Süre etkisi:** Blok A 97 → **103**; toplam 477 → **483** (§3.5 dürüst tavan: düşük
+  gösterme yok, A0 gerçek iş).
