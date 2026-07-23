@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P1b: Blok C+D modül twin'leri** (12 dosya: C0–C4 + Blok C STAGE-EXAM · D1–D5 + Blok D STAGE-EXAM). 12 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset. Başlık paritesi 12/12, link locale-eksiz (0 sızıntı), positioning/pazarlama temiz, güvenlik ipliği korundu (D1/D4). QA exit 0 (1 uyarı: önceki turdan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %7.2 → %10.8.
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P1b: Blok E+F modül twin'leri** (11 dosya: E1–E5 + Blok E STAGE-EXAM · F1–F5 — **Blok F'de STAGE-EXAM yok**). Bununla **P1b TAMAM** (A0…F5 + A–E STAGE-EXAM = 35 dosya). 11 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset. Başlık paritesi 11/11, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, güvenlik ipliği korundu (E4 backup at-rest/erişim, F2 KVKK→GDPR→SOC 2), F-blok `## 🔨 Deliverable exercise` başlığı 5/5 tutarlı. QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %10.8 → %14.1. **Sıra: P2 (21 klasör README'si).**
 
 ## Faz durumu
 
@@ -18,34 +18,35 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b Blok A+B ✅ · P1b Blok C+D ✅ (bu tur)** — 12 twin: C0–C4 + Blok C STAGE-EXAM (6) · D1–D5 + Blok D STAGE-EXAM (6). Kalan: **P1b = Blok E+F** (10 modül + Blok E STAGE-EXAM = 11 dosya) → P2 21-README → P3/P4. EN kapsama %7.2 → %10.8. QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turdan; yeni kırık link 0). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b TAMAM ✅ (A+B · C+D · E+F — bu tur)** — bu tur 11 twin: E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5, Blok F STAGE-EXAM yok). P1b toplam 35 dosya (30 modül + 5 STAGE-EXAM). Kalan: **P2 (21 klasör README'si)** → P3 (15 deep-dive) → P4 (kalan). EN kapsama %10.8 → %14.1. QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P1b: Blok E'den devam (`block-*/<ID>-*.en.md`).** P0 + P1a (9 rehber)
-+ **P1b Blok A+B (12 twin)** + **P1b Blok C+D (12 twin, bu tur)** bitti. Sıra **Blok E modül
-twin'lerinde**, ardından **Blok F** — bu son P1b dilimi (11 dosya):
+**Faz 9.5 · EN twin — P2: 21 klasör README'si (`NN-*/README.en.md`).** P0 + P1a (9 rehber)
++ **P1b TAMAM** (A+B 12 · C+D 12 · E+F 11 = 35 dosya) bitti. Sıra **21 konu klasörünün
+README twin'leri** (`00-Culture` … `20-Soft-Skills`; bazı numara boş olabilir — `ls -d [0-2][0-9]-*/`
+ile gerçek listeyi çıkar, her birinde `README.md` var mı `ls NN-*/README.md` ile doğrula):
 
-1. **Blok E** (5 + STAGE-EXAM): `block-e-ownership/` → `E1-sli-slo-error-budget.en.md` ·
-   `E2-alerting-oncall.en.md` · `E3-incident-postmortem.en.md` · `E4-veritabani-restore.en.md`
-   · `E5-chaos.en.md` · `STAGE-EXAM.en.md` (dosya adlarını `ls block-e-ownership/*.md` ile doğrula).
-2. **Blok F** (5, **STAGE-EXAM YOK**): `block-f-judgment/` → `F1-maliyet-finops.en.md` ·
-   `F2-tehdit-uyum.en.md` · `F3-platform-idp.en.md` · `F4-yazma-adr-rfc.en.md` ·
-   `F5-stakeholder-vendor.en.md`. E + F = 11 dosya; tek turda sığarsa birlikte al, sığmazsa
-   E'yi bitir → F sıradaki tur. Blok A+B/C+D deseni: 12 paralel sonnet subagent, dosya başına bir.
-3. **STAGE-EXAM.md** dosyaları (Blok E'de VAR, F'de YOK) da twin'lenir — modül değil ama site
-   sayfası. Blok twin'iyle birlikte al.
-4. **İç link kuralı (değişmez):** twin'lerde link hedefi locale eki ALMAZ (`[E1](E1-....md)`,
-   `.en.md` DEĞİL). Modül→lab (`../labs/build/L##-.../`) ve modül→modül path'leri kaynakla birebir.
-5. **Modül twin'i qa `check_modules`'ten MUAF** (`LOCALE_RE`, `qa.py:156`) — İngilizce başlık
-   serbest; ama yine de kaynak modülün bölüm iskeletini (🎯/Önce oku/Kabul/Kendini test/
-   Takıldıysan/Sırada) koru, salt prose çevir. **P1b bitince → P2 (21 klasör README'si).**
+1. **Hedef:** her `NN-*/README.md` → `NN-*/README.en.md`. Bu README'ler klasörün "İçindekiler"
+   tablosu + kısa giriş; **modül değil** (frontmatter'sız ya da minimal) → qa `MOD_RE` eşleşmez,
+   modül bütünlük denetimine girmez. Yine de yapı byte-korunur, yalnız prose + (varsa) frontmatter
+   `description` çevrilir.
+2. **İç link kuralı (değişmez):** README içindeki deep-dive linkleri locale eki ALMAZ
+   (`[x](Kubernetes-Hardening.md)`, `.en.md` DEĞİL). Tablo satırlarındaki relative path'ler kaynakla birebir.
+3. **Dilimleme (§14.1.3):** 21 README tek tura sığmayabilir → 2 dilime böl (örn. 00–10, sonra
+   11–20). Blok deseni: paralel sonnet subagent, dosya başına bir. Nereye gelindiğini STATE'e
+   **klasör-numarası seviyesinde** yaz.
+4. **build-docs.sh'e dokunma:** `NN-*` klasörleri zaten `2[0-9]-*` DEĞİL ama `cp -r` ile
+   staging'e giriyor mu doğrula (P0'da numaralı klasörler `cp -r` ile stage ediliyordu). Şüphede
+   `site_src/NN-*/README.en.md` + `/en/NN-*/` render kontrolü yap; gerekiyorsa **yalnız** stage
+   satırı ekle (izinli infra; qa.py/00-21 içeriği değil).
+5. **P2 bitince → P3 (en güçlü 15 deep-dive) → P4 (kalan).** Aşama B eşiği (%60) hâlâ uzak.
 
-**P1 taktiği (P0 + P1a'da işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı
+**P1/P2 taktiği (P0…P1b'de 4 kez işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı
 ruleset (yapıyı byte-koru, yalnız prose+frontmatter description çevir, hedef path'i locale-eksiz
 koru, `{ #anchor }` sabit, positioning reframe, placeholder güvenliği, kod/komut verbatim),
-sonra qa.py + iki-locale build + spot-read ile doğrula. Her tur bir P1b dilimi (bir-iki blok)
-bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
+sonra qa.py + iki-locale build + spot-read ile doğrula. Her tur bir dilim bitir,
+STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 
 > NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
 > `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, hâlâ mevcut.
@@ -73,16 +74,55 @@ bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 
 ## Açık kararlar
 
-> ⚠️ **ATANMAMIŞ DEĞİŞİKLİK — kök `README.en.md` (bu turda BENİM işim DEĞİL).** Tur başında
-> tree temizdi (`git status --porcelain` boş); tur sonunda kök `README.en.md`'de tek satır fark
-> belirdi: LinkedIn URL'i `.../in/halilibrahimd` → `.../in/halil-ibrahim-durmus/`. Bu değişikliği
-> YAPMADIM (C+D çeviri kapsamı dışı; hiçbir subagent'a atanmadı; kaynağı belirsiz). Kullanıcının
-> kendi profil URL'i olduğu için **tahminle commit ETMEDİM, geri de ALMADIM** — working-tree'de
-> bırakıldı. Bu turun commit'i yalnız 14 kendi dosyamı içerir (12 twin + STATE + I18N-COVERAGE).
-> **Sonraki tur uyarısı:** `git add -A` ile süpürme; kullanıcı kararı beklenir (bilinçli
-> düzeltmeyse ayrı commit'lenir, değilse `git checkout -- README.en.md`).
+> ✅ **ÇÖZÜLDÜ (önceki tur açık kararı) — kök `README.en.md` LinkedIn URL'i.** C+D turundaki
+> atanmamış `README.en.md` farkı (`.../in/halilibrahimd` → `.../in/halil-ibrahim-durmus/`)
+> kullanıcı tarafından commit'lendi: `3c10144 fix(README): update LinkedIn profile link`. Bilinçli
+> kullanıcı düzeltmesiymiş → doğru bırakılmış (tahminle commit/geri-al yapmamıştım).
+>
+> ⚠️ **ATANMAMIŞ DEĞİŞİKLİK — kök `README.md` (TR) (bu turda BENİM işim DEĞİL).** Tur başında
+> `git status --porcelain` yalnız ` M README.md` gösterdi: TR README'de aynı LinkedIn düzeltmesi
+> (`.../in/halilibrahimd` → `.../in/halil-ibrahim-durmus/`) — yani kullanıcının `README.en.md`'de
+> yaptığı düzeltmenin TR eşleniği. Bu değişikliği YAPMADIM (E+F çeviri kapsamı dışı; hiçbir
+> subagent'a atanmadı). Kullanıcının kendi profil URL'i + `README.en.md` commit'iyle tutarlı
+> olduğu için **tahminle commit ETMEDİM, geri de ALMADIM** — working-tree'de bırakıldı. Bu turun
+> commit'i yalnız 13 kendi dosyamı içerir (11 twin + STATE + I18N-COVERAGE). **Sonraki tur
+> uyarısı:** `git add -A` ile süpürme; kullanıcı kararı beklenir (bilinçli düzeltme gibi
+> görünüyor → kullanıcı ayrı commit'ler, değilse `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P1b (bu tur — Blok C+D: 12 modül/exam twin'i)
+### Faz 9.5 · EN twin P1b (bu tur — Blok E+F: 11 modül/exam twin'i · P1b TAMAMLANDI)
+- **Dilim = Blok E + Blok F (11 dosya) — P1b'nin son dilimi.** §14.1.3 dosya-seviyesi dilim:
+  E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5). **Blok F'de STAGE-EXAM YOK** (CURRICULUM: "Block F
+  doesn't close with an exam") → P1b toplamı = 30 modül + 5 STAGE-EXAM (A–E) = 35 dosya, hepsi
+  bitti. A+B (12) · C+D (12) · E+F (11) turlarının kadans deseni birebir. Sıradaki-adım kuralı 3:
+  STAGE-EXAM (Blok E'de VAR) blok twin'iyle birlikte alındı.
+- **11 paralel çeviri subagent (sonnet), dosya başına bir — A+B/C+D/P1a/P0 deseni tekrar.** Ruleset:
+  yapı byte-korunur (başlık sayısı/sıra, tablo, kod bloğu, `<details>`, `---`, blockquote), yalnız
+  prose + frontmatter `description` çevrilir; link hedefi locale-eksiz (`[E1](E1-....md)`, `.en.md`
+  DEĞİL); modül→lab/modül→modül path'leri kaynakla birebir; komut/YAML/SQL/çıktı verbatim, yalnız
+  kod-içi `#` yorum prose'u çevrildi; kanonik blok adları (E→Ownership, F→Judgment); `~N saat`→`~Nh`;
+  placeholder EN-kanonik. 11/11 rapor + bağımsız orchestrator doğrulaması: başlık paritesi 11/11
+  (10/10/10/11/10/6 · 10/10/10/10/10), link-leak 0, residual TR-başlık 0, pazarlama/positioning (TR+EN) 0.
+- **F-blok ortak `## 🔨 Deliverable exercise` başlığı (5/5 tutarlı).** F1–F5'te `## 🔨 Lab` yerine
+  `## 🔨 Teslim edilebilir egzersiz` var (F modülleri "sıralayıcı", lab yok — teslim egzersizi
+  var). Kanonik H2 haritasında olmayan bu başlık **5 dosyada da** `## 🔨 Deliverable exercise`
+  olarak çevrildi (grep 5/5). Teslim dosya adları (`finops-analiz.md`, `tehdit-modeli.md`,
+  `golden-path-onerisi.md`, `karar-yazisi.md`) verbatim korundu — öğrencinin ürettiği çıktı, link değil.
+- **Güvenlik ipliği korundu (§12.4).** E4 twin'inde "test edilmemiş backup, backup değildir" +
+  backup at-rest şifreleme/erişim kontrolü/audit çerçevesi birebir; F2 twin'inde KVKK→GDPR→SOC 2
+  regülasyon→kontrol→kanıt zinciri ve STRIDE korundu (KVKK 6 / GDPR 4 / SOC 2 4 geçiş sayısı).
+  Blok E STAGE-EXAM'de güvenlik-iplik çerçevesi (Blok D deseni) taşındı.
+- **Positioning reframe (EN tarafı):** F2 KVKK "AB-dışı veri koruma rejiminin mühendislik
+  kontrolüne çevrilmesi" olarak global okur çerçevesiyle; hiçbir twin "Turkish resource/guide"
+  demiyor (grep temiz). F5 vendor tartışması nötr buy-vs-build ödünleşimi (vendor-övgü tonu yok).
+- **Modül twin'i qa `check_modules`'ten MUAF (`LOCALE_RE`, qa.py:156).** qa hâlâ "30 modül" sayar
+  (twin'ler modül-bütünlük denetimine girmez) — beklenen davranış. build-docs.sh'e dokunulmadı;
+  `block-{e,f}-*` twin'leri `2[0-9]-*` `cp -r` ile özyineli stage oluyor (doğrulandı: 11 staged;
+  `/en/…/E1-sli-slo-error-budget/` "When you finish this module", `/en/…/F2-tehdit-uyum/`
+  "F — Judgment" ile İngilizce render). EN kapsama %10.8 → %14.1 (47 site sayfası / 334).
+- **QA'daki 1 UYARI = önceki turlardan kalan `docs/index.en.md` false-positive.** Bu turun 11 twin'i
+  **yeni kırık link 0** ekledi; sayı değişmedi (29 kırık link / 1 dosya, birebir aynı).
+
+### Faz 9.5 · EN twin P1b (önceki tur — Blok C+D: 12 modül/exam twin'i)
 - **Dilim = Blok C + Blok D (12 dosya).** §14.1.3 dosya-seviyesi dilim: tüm P1b (30 modül +
   5 STAGE-EXAM = 35 dosya) bir tura sığmaz. A+B önceki tur (12); bu tur C+D (12) — önceki turun
   kadans deseniyle birebir. Kalan E+F (11 dosya) = sıradaki tur(lar). C STAGE-EXAM ve D
@@ -428,7 +468,51 @@ bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9.5 — EN twin P1b: Blok C+D, 12 twin)
+## Bu oturumda yapılanlar (Faz 9.5 — EN twin P1b: Blok E+F, 11 twin · P1b TAMAMLANDI)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, `.local/PAUSE` yok. Giriş HEAD
+`3c10144`. Working-tree'de ` M README.md` (kullanıcının LinkedIn TR düzeltmesi — benim işim değil,
+bkz. Açık kararlar). Faz -1…9 hepsi ✅; Faz 9.5 sürüyor (A0 ✅, EN twin P0 ✅, P1a ✅, P1b A+B ✅,
+P1b C+D ✅); sıradaki iş EN twin P1b Blok E+F (P1b'nin son dilimi).
+
+**Bu tur yapılan (Faz 9.5 · EN twin P1b · Blok E+F dilimi — §14.1.3 dosya-seviyesi · P1b tamam):**
+1. **11 EN twin `.en.md` üretildi** (11 paralel sonnet subagent, dosya başına bir, sıkı ruleset):
+   - **Blok E (6):** `block-e-ownership/` → `E1-sli-slo-error-budget.en.md` · `E2-alerting-oncall.en.md` ·
+     `E3-incident-postmortem.en.md` · `E4-veritabani-restore.en.md` · `E5-chaos.en.md` · `STAGE-EXAM.en.md`.
+   - **Blok F (5):** `block-f-judgment/` → `F1-maliyet-finops.en.md` · `F2-tehdit-uyum.en.md` ·
+     `F3-platform-idp.en.md` · `F4-yazma-adr-rfc.en.md` · `F5-stakeholder-vendor.en.md` (**STAGE-EXAM yok**).
+2. **`_planning/I18N-COVERAGE.md`:** P1b → ✅ TAMAM (A0…F5 + A–E STAGE-EXAM = 35); kapsama %10.8 → %14.1.
+3. **build-docs.sh'e dokunulmadı** — `block-*` twin'leri `2[0-9]-*` `cp -r` ile özyineli stage
+   oluyor (doğrulandı: `site_src/22-Learning-Path/block-{e,f}-*/*.en.md` = 11).
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0 (1 UYARI).** 30 modül (twin'ler `LOCALE_RE` ile muaf), 49 lab
+  scripti, site iki locale hatasız derlendi, `_planning` sızmadı. Tek uyarı = önceki turların
+  `docs/index.en.md` false-positive'i (29 kırık link / 1 dosya, birebir aynı); **bu turdan yeni kırık link 0**.
+- **Yapısal parite (11/11 OK):** `grep -cE '^#{1,6} '` başlık sayısı kaynak=twin
+  (E: 10/10/10/11/10/6 · F: 10/10/10/10/10); link locale-eki grep → 0; residual TR-başlık grep → 0;
+  her twin frontmatter `description` var; F-blok `## 🔨 Deliverable exercise` 5/5; metadata blok adı
+  E→Ownership / F→Judgment 11/11; positioning + pazarlama (TR+EN) → 0.
+- **İki-locale build:** `build-docs.sh` + `mkdocs build --clean` exit 0; 11 twin staged;
+  `site/en/…/block-e-ownership/E1-sli-slo-error-budget/` "When you finish this module" ile,
+  `…/block-f-judgment/F2-tehdit-uyum/` "F — Judgment" ile İngilizce render; `…/block-e-ownership/
+  STAGE-EXAM/` render; `_planning` YOK (0).
+- **Spot-read:** `E4-veritabani-restore.en.md` + `F2-tehdit-uyum.en.md` akıcı/sadık — E4 güvenlik
+  ipliği (backup at-rest/erişim/audit) + "untested backup is not a backup" korundu; F2 KVKK→GDPR→
+  SOC 2 kontrol zinciri + üçüncü-bakış (risk/uyum) çerçevesi korundu; komut/YAML/SQL verbatim.
+- **§14.3(1) tekrar:** çeviri (deep-dive rewrite değil); `check_duplication` exit-0'da geçti.
+  **§14.3(2):** TR+EN pazarlama/ünvan → 0. **§14.3(3) süre:** yeni modül yok → kümülatif ~483s sabit.
+
+**Değişen dosyalar (bu tur):** `22-Learning-Path/block-e-ownership/{E1-sli-slo-error-budget,
+E2-alerting-oncall,E3-incident-postmortem,E4-veritabani-restore,E5-chaos,STAGE-EXAM}.en.md` (6 yeni) ·
+`22-Learning-Path/block-f-judgment/{F1-maliyet-finops,F2-tehdit-uyum,F3-platform-idp,F4-yazma-adr-rfc,
+F5-stakeholder-vendor}.en.md` (5 yeni) · `_planning/I18N-COVERAGE.md` · `_planning/STATE.md`.
+Hepsi patika-içi `.en.md` twin + `_planning`; **hiçbir 00-21 içerik dosyası değişmedi**, `qa.py`'ye
+dokunulmadı, `build-docs.sh` değişmedi. (` M README.md` commit'e DAHİL EDİLMEDİ — kullanıcı işi.)
+
+---
+
+## Önceki oturum (Faz 9.5 — EN twin P1b: Blok C+D, 12 twin)
 
 **Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, temiz tree, `.local/PAUSE` yok.
 Giriş HEAD `275e2de`. Faz -1…9 hepsi ✅; Faz 9.5 sürüyor (A0 ✅, EN twin P0 ✅, P1a ✅, P1b A+B ✅);
