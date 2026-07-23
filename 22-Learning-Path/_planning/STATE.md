@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P1a: 9 rehber dosyası** twin'i üretildi (`22-Learning-Path/` README/CURRICULUM/NOT-YET/PLACEMENT/PROGRESS-TEMPLATE/STUDY-METHOD/COST-GUARDRAILS/TROUBLESHOOTING/PORTFOLIO `.en.md`). 9 paralel çeviri subagent, sıkı ruleset. QA exit 0 (1 uyarı: önceki turdan kalan qa.py docs/index locale-twin false-positive; yeni kırık link 0)
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P1b: Blok A+B modül twin'leri** (12 dosya: A0–A6 + Blok A STAGE-EXAM · B1–B3 + Blok B STAGE-EXAM). 12 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset. Başlık paritesi 12/12, link locale-eksiz (0 sızıntı), positioning/pazarlama temiz. QA exit 0 (1 uyarı: önceki turdan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %3.6 → %7.2.
 
 ## Faz durumu
 
@@ -18,18 +18,19 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 TAMAM · P1a TAMAM (bu tur)** — 9 rehber dosyası (`22-Learning-Path/` README/CURRICULUM/NOT-YET/PLACEMENT/PROGRESS-TEMPLATE/STUDY-METHOD/COST-GUARDRAILS/TROUBLESHOOTING/PORTFOLIO). Kalan: **P1b = 30 modül twin'i** (A0…F5) → P2 21-README → P3/P4. EN kapsama %0.9 → %3.6. QA exit 0 (1 uyarı: docs/index locale-twin false-positive, önceki turdan). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b Blok A+B ✅ (bu tur)** — 12 twin: A0–A6 + Blok A STAGE-EXAM (8) · B1–B3 + Blok B STAGE-EXAM (4). Kalan: **P1b = Blok C/D/E/F** (20 modül + C/D/E STAGE-EXAM = 23 dosya) → P2 21-README → P3/P4. EN kapsama %3.6 → %7.2. QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turdan; yeni kırık link 0). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P1b: 30 modül twin'i (`block-*/<ID>-*.en.md`).** P0 + P1a (9 rehber
-dosyası) bitti. Sıra **modül `.en.md` twin'lerinde**. Blok-blok dilimlemeyi öner (bir turda
-bir-iki blok — modüller derin, TROUBLESHOOTING/CURRICULUM boyutunda):
+**Faz 9.5 · EN twin — P1b: Blok C'den devam (`block-*/<ID>-*.en.md`).** P0 + P1a (9 rehber)
++ **P1b Blok A+B (12 twin, bu tur)** bitti. Sıra **Blok C modül twin'lerinde**. Blok-blok
+dilimle (bir turda bir-iki blok — modüller derin):
 
-1. **Blok A** (7): `block-a-intuition/` → `A0-baslamadan-once.en.md` · `A1-linux-temeli.en.md` ·
-   `A2-*.en.md` · `A3-*.en.md` · `A4-*.en.md` · `A5-*.en.md` · `A6-*.en.md` (dosya adlarını
-   `ls block-a-intuition/*.md` ile doğrula).
-2. **Blok B** (3) → **C** (6: C0…C4 + C0 dahil) → **D** (5) → **E** (5) → **F** (5).
+1. **Blok C** (5 + STAGE-EXAM): `block-c-reproducibility/` → `C0-ops-python.en.md` ·
+   `C1-container.en.md` · `C2-ci.en.md` · `C3-terraform.en.md` · `C4-bulut-butce-alarmi.en.md`
+   · `STAGE-EXAM.en.md` (dosya adlarını `ls block-c-reproducibility/*.md` ile doğrula).
+2. **Blok D** (5 + STAGE-EXAM) → **E** (5 + STAGE-EXAM) → **F** (5, STAGE-EXAM YOK).
+   Blok A+B deseni: 12 paralel sonnet subagent, dosya başına bir; aşağıdaki ruleset aynen.
 3. **STAGE-EXAM.md** dosyaları (her blok klasöründe) da twin'lenir — modül değil ama site
    sayfası. Blok twin'iyle birlikte al.
 4. **İç link kuralı (değişmez):** twin'lerde link hedefi locale eki ALMAZ (`[x](A1-....md)`,
@@ -70,7 +71,31 @@ bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 
 ## Açık kararlar
 
-### Faz 9.5 · EN twin P1a (bu tur — 9 rehber dosyası)
+### Faz 9.5 · EN twin P1b (bu tur — Blok A+B: 12 modül/exam twin'i)
+- **Dilim = Blok A + Blok B (12 dosya).** §14.1.3 dosya-seviyesi dilim: tüm P1b (30 modül +
+  5 STAGE-EXAM = 35 dosya) bir tura sığmaz. A+B = ilk iki blok, birbirine kapalı set; STAGE-EXAM
+  twin'leri blok twin'iyle birlikte alındı (Sıradaki-adım kuralı 3). Kalan C/D/E/F = sıradaki tur(lar).
+- **12 paralel çeviri subagent (sonnet), dosya başına bir — P0/P1a deseni tekrar.** Ruleset:
+  yapı byte-korunur (başlık sayısı/sıra, tablo, kod bloğu, `<details>`, `---`), yalnız prose +
+  frontmatter `description` çevrilir; link hedefi locale-eksiz (`[A2](A2-ag-tcp-ip.md)`, `.en.md`
+  DEĞİL); `{ #anchor }` sabit; modül→lab/modül→modül path'leri kaynakla birebir; kod/komut/çıktı
+  verbatim; **kod-içi yorum prose'u çevrildi** (P1a COST-GUARDRAILS deseni: `# Open PowerShell…`),
+  komut token'ı değil; kanonik blok adları (A→Intuition, B→Visibility); `~N saat`→`~Nh`;
+  positioning reframe; placeholder güvenliği. 12/12 rapor: başlık paritesi eşit, link ek-siz.
+- **Modül twin'i qa `check_modules`'ten MUAF (`LOCALE_RE`, qa.py:156).** Bu yüzden qa hâlâ
+  "30 modül" sayar (twin'ler modül-bütünlük denetimine girmez) — beklenen davranış, eksik değil.
+  İngilizce başlık serbest; yine de kaynak modülün bölüm iskeleti (🎯/Önce oku/Kabul/Kendini test/
+  Takıldıysan/Sırada) korundu, salt prose çevrildi (residual TR-başlık grep → 0).
+- **Blok F'de STAGE-EXAM YOK** (CURRICULUM: "Block F doesn't close with an exam"). P1b toplamı =
+  30 modül + 5 STAGE-EXAM (A–E) = 35 dosya. Bu tur 12 bitti; kalan 23 (C/D/E/F).
+- **build-docs.sh'e dokunulmadı** — `block-*` `2[0-9]-*` `cp -r` globuyla zaten özyineli stage
+  oluyor (doğrulandı: `site_src/22-Learning-Path/block-{a,b}-*/*.en.md` = 12; `/en/…/A1-linux-
+  temeli/` İngilizce render). P1a'daki gibi ek satır gerekmedi.
+- **EN kapsama %3.6 → %7.2** (24 site sayfası / 334). Aşama B eşiği hâlâ %60.
+- **QA'daki 1 UYARI = önceki turdan kalan `docs/index.en.md` false-positive** (P0 Açık
+  kararlar'da kanıtla açıklandı). Bu turun 12 twin'i **yeni kırık link 0** ekledi; sayı değişmedi.
+
+### Faz 9.5 · EN twin P1a (önceki tur — 9 rehber dosyası)
 - **Dilim seçimi = 9 rehber dosyası (P1'in "P1a" alt-dilimi).** §14.1.3 dosya-seviyesi dilim:
   bir turda tüm P1 (9 rehber + 30 modül + 6 STAGE-EXAM) sığmaz. Rehber dosyaları düşük-riskli
   ve kendi içinde kapalı bir set (birbirine + modüllere link verir, modüller henüz twin'lenmedi
@@ -365,7 +390,50 @@ bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9.5 — EN twin P1a: 9 rehber dosyası)
+## Bu oturumda yapılanlar (Faz 9.5 — EN twin P1b: Blok A+B, 12 twin)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, temiz tree, `.local/PAUSE` yok.
+Giriş `qa.py` exit 0 (30 modül, 1 uyarı = önceki turun docs/index.en.md false-positive'i).
+Faz -1…9 hepsi ✅; Faz 9.5 sürüyor (A0 ✅, EN twin P0 ✅, P1a ✅); sıradaki iş EN twin P1b.
+
+**Bu tur yapılan (Faz 9.5 · EN twin P1b · Blok A+B dilimi — §14.1.3 dosya-seviyesi):**
+1. **12 EN twin `.en.md` üretildi** (12 paralel sonnet subagent, dosya başına bir, sıkı ruleset):
+   - **Blok A (8):** `block-a-intuition/` → `A0-baslamadan-once.en.md` · `A1-linux-temeli.en.md` ·
+     `A2-ag-tcp-ip.en.md` · `A3-ag-dns-http-tls.en.md` · `A4-git-temeli.en.md` · `A5-bash.en.md` ·
+     `A6-elle-deploy.en.md` · `STAGE-EXAM.en.md`.
+   - **Blok B (4):** `block-b-visibility/` → `B1-log-okuma.en.md` · `B2-metrik-prometheus.en.md` ·
+     `B3-ilk-kirik-lab.en.md` · `STAGE-EXAM.en.md`.
+2. **`_planning/I18N-COVERAGE.md`:** P1b → 🟡 Blok A+B ✅ (12) / kalan C-F (23); kapsama %3.6 → %7.2.
+3. **build-docs.sh'e dokunulmadı** — `block-*` twin'leri `2[0-9]-*` `cp -r` ile özyineli stage
+   oluyor (doğrulandı: `site_src/22-Learning-Path/block-{a,b}-*/*.en.md` = 12).
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0 (1 UYARI).** 30 modül (twin'ler `LOCALE_RE` ile muaf), 49 lab
+  scripti, site iki locale hatasız derlendi, `_planning` sızmadı. Tek uyarı = önceki turun
+  `docs/index.en.md` false-positive'i; **bu turdan yeni kırık link 0**.
+- **Yapısal parite (12/12 OK):** `grep -cE '^#{1,6} '` başlık sayısı kaynak=twin
+  (25/35/35/37/28/26/27/6 · 38/32/24/6); link locale-eki grep → 0; `.tr.md)` grep → 0; residual
+  TR-başlık grep → 0; her twin frontmatter `description` var; positioning + pazarlama (TR+EN) → 0.
+- **İki-locale build:** `build-docs.sh` + `mkdocs build --clean` exit 0; `site/en/22-Learning-Path/
+  block-a-intuition/A1-linux-temeli/` "When you finish this module" ile İngilizce render;
+  `site/en/…/STAGE-EXAM/` + B1 render; `_planning` YOK.
+- **Spot-read:** `A1-linux-temeli.en.md` akıcı/sadık — metadata `**Block:** A — Intuition ·
+  **Duration:** ~16h`; kod-içi yorum çevrildi (`# See the process chain…`, `← your shell`),
+  komut/çıktı verbatim (`ps -o pid,ppid,user,comm --forest`).
+- **§14.3(1) tekrar:** 3 özgün EN cümle repo-genelinde grep → yalnız kendi twin'i (deep-dive
+  rewrite değil; `check_duplication` exit-0'da geçti). **§14.3(2):** TR+EN pazarlama/ünvan → 0.
+  **§14.3(3) süre:** yeni modül yok (çeviri) → kümülatif ~483s sabit.
+
+**Değişen dosyalar (bu tur):** `22-Learning-Path/block-a-intuition/{A0-baslamadan-once,A1-linux-
+temeli,A2-ag-tcp-ip,A3-ag-dns-http-tls,A4-git-temeli,A5-bash,A6-elle-deploy,STAGE-EXAM}.en.md`
+(8 yeni) · `22-Learning-Path/block-b-visibility/{B1-log-okuma,B2-metrik-prometheus,B3-ilk-kirik-
+lab,STAGE-EXAM}.en.md` (4 yeni) · `_planning/I18N-COVERAGE.md` · `_planning/STATE.md`. Hepsi
+patika-içi `.en.md` twin + `_planning`; **hiçbir 00-21 içerik dosyası değişmedi**, `qa.py`'ye
+dokunulmadı, `build-docs.sh` değişmedi.
+
+---
+
+## Önceki oturum (Faz 9.5 — EN twin P1a: 9 rehber dosyası)
 
 **Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, temiz tree, `.local/PAUSE` yok.
 Giriş `qa.py` exit 0 (30 modül, 1 uyarı = önceki turun docs/index.en.md false-positive'i).
