@@ -3,14 +3,14 @@ description: "Linux temeli: process, filesystem, izin ve kullanıcı/grup — he
 level: A
 module: A1
 estimated_hours: 16
-prerequisites: []
+prerequisites: [A0]
 tags: [Learning Path, Linux]
 ---
 # A1 — Linux Temeli: Process, Filesystem, İzin, Kullanıcı/Grup
 
 > *"Bir mühendisin altındaki her soyutlama eninde sonunda bir Linux process'ine iner."*
 
-**Blok:** A — Sezgi · **Süre:** ~16 saat · **Ön koşul:** yok (patikanın giriş noktası)
+**Blok:** A — Sezgi · **Süre:** ~16 saat · **Ön koşul:** [`A0`](A0-baslamadan-once.md) (çalışan bir terminal)
 
 ## 🎯 Bu modülü bitirdiğinde
 - Çalışan bir process'i bulur, kaynağını (CPU/bellek/açık dosya) inceler ve durdurabilirsin.

@@ -1,5 +1,5 @@
 ---
-description: "Müfredat: 6 blok, 29 modül, bağımlılık grafiği ve geçiş sinyalleri. Blok sırası pazarlık konusu değil."
+description: "Müfredat: 6 blok, 30 modül, bağımlılık grafiği ve geçiş sinyalleri. Blok sırası pazarlık konusu değil."
 tags: [Learning Path]
 ---
 # 🗺️ Müfredat — Bloklar, Bağımlılık, Geçiş Sinyalleri
@@ -24,7 +24,8 @@ Seviye ekseni araç sayısı değil, **sorumluluk yarıçapıdır:**
 
 | ID | Modül | Blok | Süre | Ön koşul |
 |---|---|---|---|---|
-| A1 | Linux temeli: process, filesystem, izin, kullanıcı/grup | A · L0 | ~16s | — |
+| A0 | Başlamadan önce: ortam, terminal, patika nasıl işler | A · L0 | ~6s | — |
+| A1 | Linux temeli: process, filesystem, izin, kullanıcı/grup | A · L0 | ~16s | A0 |
 | A2 | Ağ I: TCP/IP, port, routing | A · L0 | ~14s | A1 |
 | A3 | Ağ II: DNS → HTTP → TLS/sertifika | A · L0 | ~16s | A2 |
 | A4 | Git temeli: commit, branch, merge, rebase, conflict | A · L0 | ~12s | A1 |
@@ -54,8 +55,8 @@ Seviye ekseni araç sayısı değil, **sorumluluk yarıçapıdır:**
 | F4 | Yazma: ADR, RFC, postmortem | F · L2 | ~10s | E3 |
 | F5 | Stakeholder yönetimi, "hayır" demek, vendor | F · L2 | ~6s | F3 |
 
-**Toplam:** 29 modül · ~453 saat · + 3 capstone (~60 saat) = **~477 saat**.
-Blok toplamları: A 97 · B 36 · C 88 · D 84 · E 64 · F 48 · Capstone 60.
+**Toplam:** 30 modül · ~423 saat · + 3 capstone (~60 saat) = **~483 saat**.
+Blok toplamları: A 103 · B 36 · C 88 · D 84 · E 64 · F 48 · Capstone 60.
 
 Kapı projeleri: **Capstone 1** (Blok C sonu), **Capstone 2** (Blok D sonu),
 **Capstone 3** (Blok E sonu) → [`capstones/`](capstones/).
@@ -67,6 +68,7 @@ Kapı projeleri: **Capstone 1** (Blok C sonu), **Capstone 2** (Blok D sonu),
 ```mermaid
 graph LR
   subgraph A["Blok A — Sezgi"]
+    A0 --> A1
     A1 --> A2 --> A3
     A1 --> A4 --> A5
     A1 --> A5
@@ -110,8 +112,8 @@ graph LR
 ```
 
 **Doğrulama:** Her modülün her ön koşulu kendisinden **önce** gelir; döngü yoktur;
-hiçbir modül sonraki bloğu ön koşul saymaz; A1 hiçbir şeyi ön koşul saymaz (tek
-giriş noktası).
+hiçbir modül sonraki bloğu ön koşul saymaz; A0 hiçbir şeyi ön koşul saymaz (tek
+giriş noktası — sıfırdan başlayan buradan girer).
 
 ---
 

@@ -31,10 +31,11 @@ nasıl koruyacağını gösterir.
 
 ---
 
-## 🐧 Yerel Linux'u ayağa kaldır — A1 buradan başlar
+## 🐧 Yerel Linux'u ayağa kaldır — A0/A1 buradan başlar
 
-A1'den itibaren her şey bir Linux kutusunun içinde çalışır. Aşağıdakilerden **birini**
-seç; hepsi ücretsiz. Amaç: içine girip komut çalıştırabildiğin bir Ubuntu.
+A0'da ortamını kurarken, A1'den itibaren de her şey bir Linux kutusunun içinde çalışır.
+Aşağıdakilerden **birini** seç; hepsi ücretsiz. Amaç: içine girip komut
+çalıştırabildiğin bir Ubuntu.
 
 ### Windows → WSL2 (en hızlı)
 ```powershell

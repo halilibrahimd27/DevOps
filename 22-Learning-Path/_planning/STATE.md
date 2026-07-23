@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9 TAMAM — Blok E+F düşmanca review düzeltildi (12 bulgu) + GLOSSARY-COVERAGE.md çıkarıldı (açık terim boşluğu 0)
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — A0 modülü yazıldı + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre edildi (QA exit 0, 30 modül). EN twin katmanı hâlâ qa.py bloke → PAUSE oluşturuldu (kullanıcı müdahalesi)
 
 ## Faz durumu
 
@@ -18,31 +18,36 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, EN twin'ler. (L06 starter app ARTIK VAR — Faz 9'da doğrulandı, listeden düştü) |
+| 9.5 | A0 + geri-dönük düzeltmeler | 🟡 | **A0 TAMAM (bu tur):** modül + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre, QA exit 0 (30 modül). **EN twin BLOKE** — qa.py `.en.md`'yi modül denetiminden ayırmalı (§15.4: qa.py'ye dokunamam) → `.local/PAUSE`. (L06 starter app ARTIK VAR — Faz 9'da doğrulandı) |
 
 ## Sıradaki adım
 
-**Faz 9 KAPANDI (✅).** BUILD-PROMPT §10'un son fazı (`-1 → … → 9`) bitti: 40 düşmanca-review
-bulgusunun tamamı `_planning/REVIEW-FINDINGS.md`'de kapalı, çıktı kapısı
-`_planning/GLOSSARY-COVERAGE.md` çıkarıldı (açık terim boşluğu 0). QA exit 0.
+**⏸ PAUSE — kullanıcı müdahalesi bekleniyor (`.local/PAUSE`).** BUILD-PROMPT §10 program
+(`-1 → … → 9`) tamamen bitti. Faz 9.5'in A0 parçası **bu tur teslim edildi**; geriye
+yalnızca **EN twin katmanı** kaldı ve o, **benim geçemediğim bir çıktı kapısı** (§14.2-b):
+`qa.py`'yi değiştirmeden (§15.4 yasak) EN twin üretilemez.
 
-**Sıradaki iş = Faz 9.5 (STATE'e eklenmiş ZORUNLU ek faz — BUILD-PROMPT §10'da yok, önceki
-review turlarında tanımlandı). Bu turda GİRİLMEDİ (§14 tek-faz kuralı).** İçerik:
+**Bu tur bitti (Faz 9.5 · A0):**
+1. **`block-a-intuition/A0-baslamadan-once.md`** — 330 satır, öğretici, TR. Frontmatter
+   (`level: A`, `module: A0`, `estimated_hours: 6`, `prerequisites: []`), tam modül anatomisi,
+   QA `check_modules` uyumlu (300–800 satır bandı → uyarı yok). İçerik A1'in sistem-derinliğiyle
+   örtüşmez: DevSecOps'un şekli + ortam kurulumu (COST-GUARDRAILS'e devir) + terminal ergonomisi
+   + gezinme/yardım minimumu + nano + patikanın kullanım kılavuzu.
+2. **Entegrasyon:** A1 önkoşulu `[]`→`[A0]` (DAG: A0 → A1, geriye işaret ✓) · CURRICULUM
+   (satır + mermaid + toplam 30 modül/~483s + "A0 tek giriş" metni) · README (rampa/A0…F5/
+   ~483s) · PLACEMENT (yeni-mezun rampası A0, "emin değilsen A0") · COST-GUARDRAILS başlık
+   A0/A1 · MODULE-SPEC onay-sonrası ek (şeffaflık: A0 review-turu eklemesi, onaylı 28'in dışı).
 
-1. **A0 modülü** — MODULE-SPEC'te işaretli beginner "ısınma/ön-koşul" modülü. `block-a-intuition/`
-   altına, A1'den önce. Frontmatter (`level: A`, `module: A0`, ön koşul yok), tam modül anatomisi,
-   QA `check_modules` uyumu. CURRICULUM/README/PLACEMENT'a A0 satırı; A1 önkoşuluna A0 ekle
-   (DAG: A0 → A1). qa.py MOD_RE (`^[A-F]\d+-`) A0-... ile eşleşir → zorunlu bölümler tam olmalı.
-2. **EN twin katmanı — HÂLÂ BLOKE.** `qa.py` (değiştiremem, §15.4) `^[A-F]\d+-` eşleşen her
-   dosyada Türkçe bölüm başlıklarını zorunlu tutar → `A1-….en.md` İngilizce başlıkla QA'yı
-   kırar; Türkçe başlık + İngilizce gövde **kandırma** olur. **Kullanıcı müdahalesi gerekir:**
-   qa.py `.en.md` locale dosyalarını modül denetiminden ayırmalı. Bu bloke sürerken A0'ı da
-   yalnız TR üret; EN twin ayrı i18n turu (I18N-COVERAGE P1). Bu turda GİRME.
-3. NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
-   `KURULUM.template.md`) — 9.5 listesinden düşürüldü (Faz 9 A-02 turunda doğrulandı).
+**KALAN İŞ = EN twin katmanı (kullanıcıyı bekliyor):** `qa.py` (`qa.py:153` `MOD_RE`,
+`qa.py:175` zorunlu Türkçe başlıklar) `^[A-F]\d+-` eşleşen **her** dosyada Türkçe bölüm
+başlıklarını arar → `A1-….en.md` İngilizce başlıkla QA'yı **kırar**; Türkçe başlık + İngilizce
+gövde koymak **kandırma** olur (§15.4). Çözüm bende değil: **kullanıcı qa.py'yi `.en.md` locale
+dosyalarını `check_modules`'tan ayıracak şekilde genişletmeli.** O yapılınca EN twin ayrı bir
+i18n turu olarak üretilir (I18N-COVERAGE P1 sırası: README/index/about/Glossary → patika omurgası
+→ 21 klasör README → deep-dive'lar). Kullanıcı `.local/PAUSE`'u silince döngü devam eder.
 
-Her tur: bir faz (Faz 9.5) → A0'ı yaz + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre et,
-QA exit 0, §14.3 self-check, STATE güncelle, commit, dur.
+> NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
+> `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, bu tur da değişmedi.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -64,7 +69,30 @@ QA exit 0, §14.3 self-check, STATE güncelle, commit, dur.
 
 ## Açık kararlar
 
-### Faz 9 kapanışı (bu tur — Blok E+F + çıktı kapısı)
+### Faz 9.5 (bu tur — A0 + entegrasyon)
+- **A0'ın kapsamı = A1'in ÖNÜ, tekrarı değil (kısıt #1).** A1 process/izin/kullanıcı
+  derinliğine iner; A0 ondan önceki katmandır: çalışan terminal + ortam + ergonomi +
+  oryantasyon. Kurulum adımları tekrar edilmedi → `COST-GUARDRAILS.md`'ye devredildi.
+  §14.3(1): 3 özgün A0 cümlesi repo-genelinde grep → yalnız A0. Gezinme bölümü (`pwd/ls/cd`)
+  bilinçli **ergonomik** (dolaşmak), A1'in FHS/find/izin derinliğiyle örtüşmez.
+- **A0 lab'sız (C0 deseni):** MODULE-SPEC A0'a L## atamaz; pratik = kabul kriterleri (ortamı
+  kur + `uname/whoami/nano/man` ile kanıtla). Uydurma lab linki yok. Kabul kriterleri
+  doğrulanabilir (komut çıktısı / yazılı cümle) — "anladım" yok (qa öznel-kriter deseni temiz).
+- **Süre: A0 = 6s → Blok A 97 → 103, toplam 477 → 483.** §3.5 dürüst tavan: A0 gerçek iş
+  (VM kurulumu + terminal alışkanlığı yeni başlayan için saatler alır), düşük gösterilmedi.
+  CURRICULUM'daki stale "~453s modül" figürü de bu tur ~423'e düzeltildi (blok toplamı 417→423).
+- **DAG: A0 → A1 geriye işaret ediyor** (rank ("A",0) < ("A",1)) → qa `check_modules` ön-koşul
+  denetimi temiz. A0 yeni **tek giriş noktası**; CURRICULUM/PLACEMENT "A1 tek giriş" metinleri
+  A0'a güncellendi. Developer/sysadmin rampaları A0'ı atlayabilir (ortam zaten var — PLACEMENT'ta yazılı).
+- **MODULE-SPEC'e onay-sonrası ek yazıldı (şeffaflık):** STATE "A0 MODULE-SPEC'te işaretli"
+  diyordu ama DEĞİLDİ — A0 Faz 9 review turlarında kararlaştırılan onay-sonrası eklemedir.
+  Onaylı 28-modül tablosu **yeniden yazılmadı**; alta ayrı "ONAY SONRASI EK" bölümü eklendi
+  (gerekçe + tek-satır tablo + süre etkisi). `_planning` dosyası → site/qa etkisi yok.
+- **EN twin = §14.2-b tıkanma (kullanıcı-gated).** BUILD-PROMPT §10 program bitti; kalan tek
+  iş EN twin ve o qa.py değişikliği olmadan üretilemez. Bu turda A0 (bloke-olmayan iş) bitirildi,
+  sonra `.local/PAUSE` oluşturuldu. Loop kill-switch: kullanıcı qa.py'yi genişletip PAUSE'u silince devam.
+
+### Faz 9 kapanışı (önceki tur — Blok E+F + çıktı kapısı)
 - **Giriş durumu = limit-break kurtarma.** Önceki tur (`0de0c00 "wip: Faz 9 ara kayıt (limit
   molası)"`) Blok C+D bulgularını (14) düzeltip commit etmiş (REVIEW-FINDINGS C/D ✅) ama
   STATE Faz-durumu tablosunu güncellememişti; ayrıca Blok E+F için **inline düzeltmeleri
@@ -279,7 +307,42 @@ QA exit 0, §14.3 self-check, STATE güncelle, commit, dur.
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9 — Blok E+F + çıktı kapısı, KAPANDI)
+## Bu oturumda yapılanlar (Faz 9.5 — A0, KISMEN → PAUSE)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, PAUSE yok, temiz tree,
+`qa.py` exit 0 (29 modül). Faz -1…9 hepsi ✅; sıradaki iş Faz 9.5 (A0 + EN twin).
+
+**Bu tur yapılan (§10 sonrası STATE-ek Faz 9.5 · A0 parçası):**
+1. **A0 modülü yazıldı** — `block-a-intuition/A0-baslamadan-once.md` (330s, TR, öğretici).
+   İçerik: DevSecOps'un şekli · ortam kur (4 parça, COST-GUARDRAILS'e devir) · terminal
+   ergonomisi (prompt/`$`↔`#`/Ctrl-C/D/L/Tab/history/kopyala-yapıştır güvenliği) · gezinme
+   minimumu (5 komut) · yardım (`--help`/`man`/hata okuma) · nano · patika kullanım kılavuzu.
+   Anti-pattern tablosu (8 satır) + doğrulanabilir kabul kriterleri + 3 kendini-test + Takıldıysan.
+2. **Entegrasyon (5 dosya):** A1 önkoşulu `[A0]` + "Ön koşul" satırı · CURRICULUM (tablo satırı
+   + mermaid `A0-->A1` + toplam 30 modül/~483s + "A0 tek giriş" + description 30) · README
+   (yeni-mezun rampası A0 + `A0…F5` + ~483s) · PLACEMENT (rampa tablosu + "emin değilsen A0") ·
+   COST-GUARDRAILS başlık `A0/A1`.
+3. **MODULE-SPEC onay-sonrası ek** (şeffaflık — A0 review eklemesidir, onaylı 28'in dışı).
+4. **`.local/PAUSE` oluşturuldu** — EN twin qa.py-bloke; kullanıcı müdahalesi bekleniyor.
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0.** 30 modül (A0 eklendi), 49 lab scripti `bash -n`, kırık
+  iç link yok (A0'ın 5 iç linki + A1↔A0 dahil), site iki locale derlendi, `_planning` sızmadı.
+- **İki-locale build:** `build-docs.sh` + `mkdocs build --clean` exit 0; A0 TR'de render, EN
+  fallback'te var, `site/`'te `_planning` YOK.
+- **§14.3(1) tekrar:** 3 özgün A0 cümlesi grep → yalnız A0 (deep-dive tekrarı yok, kısıt #1).
+- **§14.3(2) pazarlama/ünvan:** A0 grep → 0 hit.
+- **§14.3(3) süre:** A0=6s; Blok A frontmatter toplamı = 103 (6+16+14+16+12+12+27), CURRICULUM
+  ile tutuyor. Kümülatif 477 → 483.
+
+**Değişen dosyalar (bu tur):** `block-a-intuition/A0-baslamadan-once.md` (yeni) ·
+`block-a-intuition/A1-linux-temeli.md` (önkoşul) · `CURRICULUM.md` · `README.md` ·
+`PLACEMENT.md` · `COST-GUARDRAILS.md` · `_planning/MODULE-SPEC.md` · `_planning/STATE.md` ·
+`.local/PAUSE` (yeni). Hepsi patika içi (00-21 değil) + `_planning` + PAUSE.
+
+---
+
+## Önceki oturum (Faz 9 — Blok E+F + çıktı kapısı, KAPANDI)
 
 **Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, PAUSE yok. `qa-report.txt`
 GEÇTİ ama bayat (son commit sonrası). Working tree'de 5 dosya `M` (E1/E2/E4/E5/F1) —
