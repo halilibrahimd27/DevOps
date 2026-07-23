@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-2 (count-4 "yakın-kaçıran" #6–10, 5 deep-dive)** (`13-Platform-Engineering/Internal-Developer-Platform`, `13-Platform-Engineering/Platform-as-Product`, `13-Platform-Engineering/Service-Catalog` = Platform kalan 3 (F3) · `12-FinOps/Cloud-Cost-Allocation`, `12-FinOps/Egress-Cost-Reduction` = FinOps ilk 2 (F1) → 5 yeni `.en.md`). 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset baştan uygulandı → plain/untagged fenced blok içi prose çevrildi (Platform-as-Product 7 tag'siz blok: quarterly survey/NPS/OKR/roadmap/team-roles/beta-rollout/checklist; Cloud-Cost ASCII showback-dashboard etiketleri `Mart`→`March`/`%96`→`96%` — box-char + `eks-prod-cluster`/`rds-payments-primary` identifier + rakam verbatim), kod-yorumu `# …` + HCL `error_message` string çevrildi; yalnız gerçek verbatim-artifact (komut, YAML/JSON/HCL/`kind:`/`apiVersion:` key, SQL identifier, cloud tag KEY, path, link target, ürün adı) korundu. Bağımsız orchestrator doğrulaması: başlık paritesi 5/5 (30/32/30/45/37), tablo 5/5 (41/36/38/28/22), fence 5/5 (16/14/26/32/30), gerçek Türkçe kalıntısı **0** (`[ışğİŞĞ]` excl `/var/` = boş, 5/5), link locale-eksiz (0 sızıntı), positioning temiz. Marketing-grep 4 hit (Platform-as-Product:211/283 "ROI", Egress:186/264 "ROI") = **kaynak-sadık teknik FinOps terim FP** (kaynakta zaten var: Platform-as-Product:210/281, Egress:186/264; qa `22-Learning-Path/`-scope dışı → flag'lemez). QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu turdan yeni kırık link 0). İki-locale build (python3 -m mkdocs) exit 0, 5 sayfa `/en/…/` İngilizce render (EN-marker 107/92/112/180/66; TR root "Servis Envanteri" ↔ EN `/en/` "Service Inventory"). EN kapsama %26.3 → %27.8 (93/334). **Sıra: P4 slice-3 (FinOps kalan 5: Kubecost/PR-Cost-Diff/Reserved/Right-Sizing/Spot).**
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-3 (FinOps kalan 5, #11–15)** (`12-FinOps/Kubecost-Setup`, `12-FinOps/PR-Cost-Diff`, `12-FinOps/Reserved-and-Savings-Plans`, `12-FinOps/Right-Sizing`, `12-FinOps/Spot-Instance-Strategy` = FinOps deep-dive'larının kalan 5'i, F1 kaynağı → 5 yeni `.en.md`). 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset baştan verildi + **aynı-klasör gold-standard referans `Cloud-Cost-Allocation.en.md`** (slice-2'de üretilmişti) gösterildi → remediation gerekmedi, ilk çeviride doğru geldi. Plain/untagged fenced blok içi prose çevrildi: ASCII allocation-tree/decision-tree etiketleri (box-char + `eks-*`/instance identifier sabit), kod-yorumu `# %40 verim altı`→`# below 40% efficiency` / `# YANLIŞ`→`# WRONG`, SQL yorumu `shared_buffers artır`→`increase shared_buffers`, checklist `[ ]` satırları, cost-calc blokları (`/ay`→`/mo`, `Tasarruf`→`Savings`, kolon hizası yeniden pad'lendi); `%70`/`%40-50` → `70%`/`40-50%` İngilizce yüzde konvansiyonu. Yalnız gerçek verbatim-artifact korundu: komut, YAML/JSON key, `kind: VerticalPodAutoscaler`/`NodePool`/`PodDisruptionBudget`, instance type (m5.large, i3.2xlarge), `capacity-type: spot`, RI/SP/CUD ürün terimi, PromQL, path, link target, ürün adı. Bağımsız orchestrator doğrulaması: başlık paritesi 5/5 (24/22/25/30/20), tablo 5/5 (17/10/35/15/29), fence 5/5 (22/26/18/22/18), satır deltası 0/0/-1/0/0, gerçek Türkçe kalıntısı **0** (`[ışğİŞĞ]` excl `/var/` = boş, 5/5), link locale-eksiz (0 sızıntı), positioning temiz. **Pazarlama/ROI grep bu dilim 0 hit** (önceki dilimlerin FinOps-ROI FP'si yok — bu 5 kaynak teknik-artifact yoğun, ROI prose'u geçmiyor). QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu turdan yeni kırık link 0). İki-locale build (python3 -m mkdocs) exit 0, 5 sayfa `/en/…/` İngilizce render (EN-marker 20/27/15/14/16), `_planning` sızmadı. EN kapsama %27.8 → %29.3 (98/334). **Sıra: P4 slice-4 (Storage-Cost-Optimization + Zero-Downtime-Migrations + SLO-Engineering + `06-GitOps/*` başı, #16–18+).**
 
 ## Faz durumu
 
@@ -18,25 +18,25 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-2 hazır, 10/…)** — bu tur P4 slice-2: 5 yeni `.en.md` (count-4 "yakın-kaçıran" #6–10: Internal-Developer-Platform, Platform-as-Product, Service-Catalog = Platform kalan 3, F3 · Cloud-Cost-Allocation, Egress-Cost-Reduction = FinOps ilk 2, F1). Oturmuş genişletilmiş ruleset baştan uygulandı (plain/untagged blok prose çevrildi — Platform-as-Product 7 tag'siz blok + Cloud-Cost ASCII dashboard etiketleri; kod-yorumu + HCL string; YAML/JSON/HCL-key/link-target/komut verbatim). Başlık/tablo/fence paritesi 5/5 (30·32·30·45·37 / 41·36·38·28·22 / 16·14·26·32·30), gerçek Türkçe kalıntısı 0, link locale-eksiz, positioning temiz (ROI = kaynak-sadık teknik FinOps FP). Kalan: **P4 çok turlu** (slice planı I18N-COVERAGE'da; sıra slice-3 = FinOps kalan 5). EN kapsama %26.3 → %27.8 (93/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-3 hazır, 15/…)** — bu tur P4 slice-3: 5 yeni `.en.md` (FinOps kalan 5, #11–15: Kubecost-Setup, PR-Cost-Diff, Reserved-and-Savings-Plans, Right-Sizing, Spot-Instance-Strategy = `12-FinOps` deep-dive'larının kalanı, F1 kaynağı). Oturmuş genişletilmiş ruleset baştan verildi + aynı-klasör gold-standard `Cloud-Cost-Allocation.en.md` gösterildi → remediation gerekmedi. Plain/untagged blok prose çevrildi (ASCII allocation/decision-tree etiketleri, kod-yorumu + SQL yorumu, checklist, cost-calc blokları `/ay`→`/mo`; `%70`→`70%` yüzde konvansiyonu); YAML/`kind:`-key/instance-type/`capacity-type: spot`/RI-SP-CUD-terim/PromQL/link-target/komut verbatim. Başlık/tablo/fence paritesi 5/5 (24·22·25·30·20 / 17·10·35·15·29 / 22·26·18·22·18), satır deltası 0/0/-1/0/0, gerçek Türkçe kalıntısı 0, link locale-eksiz, positioning temiz. **Pazarlama/ROI grep bu dilim 0 hit** (bu 5 kaynak teknik-artifact yoğun; önceki dilimlerin FinOps-ROI FP'si yok). Kalan: **P4 çok turlu** (slice planı I18N-COVERAGE'da; sıra slice-4 = Storage-Cost-Optimization + Zero-Downtime-Migrations + SLO-Engineering + `06-GitOps/*` başı). EN kapsama %27.8 → %29.3 (98/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-2 BİTTİ (10/…); sıra slice-3.**
-P0 + P1a (9) + P1b (35) + P2 (21) + P3 (15) + P4 slice-1 (5) + **P4 slice-2 (5) = 90 twin dosyası**
-bitti (site sayfası 93, P0 README dahil değil). Kalan = **P4**: numaralı klasörlerdeki (00-21) henüz
-twin'lenmemiş ~195+ deep-dive + `16-Cheatsheets/` (9) + `17-Templates/` (index'ler) + `21-Field-Notes/`.
-Aşama B eşiği (%60) hâlâ uzak (%27.8) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
+**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-3 BİTTİ (15/…); sıra slice-4.**
+P0 + P1a (9) + P1b (35) + P2 (21) + P3 (15) + P4 slice-1 (5) + P4 slice-2 (5) + **P4 slice-3 (5) = 95 twin dosyası**
+bitti (site sayfası 98, P0 README dahil değil). Kalan = **P4**: numaralı klasörlerdeki (00-21) henüz
+twin'lenmemiş ~190+ deep-dive + `16-Cheatsheets/` (9) + `17-Templates/` (index'ler) + `21-Field-Notes/`.
+`12-FinOps/` artık **tam twin'li** (7/7: Cloud-Cost-Allocation, Egress + bu turun 5'i).
+Aşama B eşiği (%60) hâlâ uzak (%29.3) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
 
-1. **P4 slice-3 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #11–15):**
-   `12-FinOps/Kubecost-Setup.md`, `12-FinOps/PR-Cost-Diff.md`, `12-FinOps/Reserved-and-Savings-Plans.md`,
-   `12-FinOps/Right-Sizing.md`, `12-FinOps/Spot-Instance-Strategy.md` (FinOps kalan 5). **Sıra kaynağı:**
-   I18N-COVERAGE.md → "P4 — dilim planı" tablosu (count-4 "yakın-kaçıran" güçten-zayıfa → sonra kalan
-   00-21 klasör sırasıyla → `16-Cheatsheets/` → `17-Templates/` → en son `21-Field-Notes/`). Slice-4 =
-   Storage-Cost-Optimization + Zero-Downtime-Migrations + SLO-Engineering + `06-GitOps/*` başı (#16–18+);
-   slice-5+ = kalan 00-21 klasör sırasıyla. **Her tur bir dilim; nereye gelindiğini STATE + I18N-COVERAGE
-   dilim tablosunda işaretle.** NOT: `12-FinOps/Right-Sizing.md` frontmatter'ında `kuculttme` yazım hatası
-   Faz -1'de düzeltildi mi kontrol et; twin'de `<VERSION>`/EN-kanonik yaz.
+1. **P4 slice-4 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #16–18 + #19+ başı):**
+   `12-FinOps/Storage-Cost-Optimization.md`, `10-Databases-Production/Zero-Downtime-Migrations.md`,
+   `07-Observability/SLO-Engineering.md` (#16–18) + `06-GitOps/*` klasörünün ilk 2 dosyası
+   (klasör sırasıyla; sonraki tur `ls 06-GitOps/*.md` ile kesin adları belirle, `.en.md`'siz olanı seç).
+   **Sıra kaynağı:** I18N-COVERAGE.md → "P4 — dilim planı" tablosu (count-4 "yakın-kaçıran" güçten-zayıfa →
+   sonra kalan 00-21 klasör sırasıyla → `16-Cheatsheets/` → `17-Templates/` → en son `21-Field-Notes/`).
+   Slice-5+ = kalan `06-GitOps/*` + `05-Kubernetes/*` + `04-Containers/*` + `03-IaC/*` → sonra kalan 00-21
+   klasör sırasıyla. **Her tur bir dilim; nereye gelindiğini STATE + I18N-COVERAGE dilim tablosunda işaretle.**
 2. **Ruleset — slice-2/slice-3'te oturmuş genişletilmiş kural (baştan uygula):** yapı byte-korunur
    (başlık/tablo/kod bloğu+dil-tag/`<details>`/`---`/blockquote/`{ #anchor }`), iç link locale-eksiz
    `.md`, komut/YAML/PromQL/SQL/çıktı **token'ları** verbatim, placeholder EN-kanonik, KVKK/BDDK
@@ -125,7 +125,41 @@ dilim bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 > kullanıcı kararı beklenir (bilinçli düzeltme gibi görünüyor → kullanıcı ayrı commit'ler, değilse
 > `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P4 slice-2 (bu tur — count-4 "yakın-kaçıran" #6–10: Platform kalan 3 + FinOps ilk 2)
+### Faz 9.5 · EN twin P4 slice-3 (bu tur — FinOps kalan 5, #11–15)
+- **Dilim = P4 slice-3 (5 dosya).** I18N-COVERAGE "P4 — dilim planı" #11–15 (deterministik):
+  `12-FinOps/Kubecost-Setup.md` (257s), `PR-Cost-Diff.md` (262s), `Reserved-and-Savings-Plans.md` (235s),
+  `Right-Sizing.md` (226s), `Spot-Instance-Strategy.md` (255s) = `12-FinOps` deep-dive'larının kalan 5'i
+  (F1 kaynağı). Slice-2'de FinOps ilk 2'si (Cloud-Cost-Allocation, Egress) twin'lenmişti → **FinOps klasörü
+  bu turla tam** (7/7). `Right-Sizing` frontmatter `kuculttme` yazım hatası Faz -1'de düzeltilmişti (doğrulandı:
+  kaynak "küçültme" diyor) → twin İngilizce "downsizing/right-sizing".
+- **5 paralel çeviri subagent (dosya başına bir, sonnet) — P0…P4 slice-2 deseni (11. kez).** Oturmuş
+  genişletilmiş ruleset baştan verildi + **aynı-klasör gold-standard referans `Cloud-Cost-Allocation.en.md`**
+  gösterildi → remediation gerekmedi, ilk çeviride doğru.
+- **Plain/untagged blok prose doğru çevrildi:** Kubecost ASCII allocation-tree (`$32K/ay`→`$32K/mo`,
+  box-char + `eks-*` identifier sabit) + kod-yorumu `# %40 verim altı`→`# below 40% efficiency`;
+  PR-Cost-Diff decision-tree + iyi/kötü senaryo diyalogları + adoption checklist + shell mesaj
+  `%$PERCENT`→`$PERCENT%`; Right-Sizing PromQL yorumu `# CPU p95 (1 hafta)`→`# (1 week)` + SQL yorumu
+  `shared_buffers artır`→`increase shared_buffers`; Reserved commitment-vs-PAYG blok (`$69/ay`→`$69/mo`,
+  `%38 tasarruf`→`38% savings`, kolon yeniden pad'lendi); Spot cost-calc (`saat`→`hour`, `ay`→`month`,
+  `Tasarruf`→`Savings`). Yüzde konvansiyonu `%70`/`%40-50`→`70%`/`40-50%`. Yalnız gerçek verbatim-artifact
+  korundu: komut, YAML/JSON key, `kind: VerticalPodAutoscaler`/`NodePool`/`PodDisruptionBudget`, instance
+  type (m5.large, i3.2xlarge), `capacity-type: spot`, RI/SP/CUD ürün terimi, PromQL, path, link target
+  (`F1-maliyet-finops.md` dahil locale-eksiz).
+- **Bağımsız orchestrator doğrulaması (subagent raporuna körü körüne güvenilmedi):** başlık paritesi
+  5/5 (24/22/25/30/20), tablo 5/5 (17/10/35/15/29), fence 5/5 (22/26/18/22/18), satır deltası
+  0/0/-1/0/0 (Reserved prose-wrap), gerçek Türkçe kalıntısı **0** (`[ışğİŞĞ]` excl `/var/` = boş, 5/5),
+  link locale-eksiz (0 sızıntı), positioning (TR-resource) temiz.
+- **Pazarlama/ROI grep bu dilim 0 hit — önceki dilimlerin FinOps-ROI FP'si YOK.** Bu 5 kaynak
+  teknik-artifact yoğun (komut/YAML/PromQL/tablo); ROI prose'u geçmiyor → §14.3(2) grep tertemiz döndü.
+- **build-docs.sh'e dokunulmadı** — 5 `.en.md` numaralı klasörde (`0[0-9]-*/1[0-9]-*` `cp -r`) otomatik
+  staged (doğrulandı: 5 staged); iki-locale build (python3 -m mkdocs) exit 0, 5 sayfa `/en/…/` İngilizce
+  render (EN-marker 20/27/15/14/16), `_planning` sızmadı. EN kapsama %27.8 → %29.3 (98/334).
+- **QA exit 0 (1 UYARI = önceki turlardan kalan `docs/index.en.md` false-positive).** Bu turun 5
+  twin'i **yeni kırık link 0**; sayı değişmedi (29 kırık link / 1 dosya).
+- **Working-tree bu tur TEMİZ girdi** (` M README.md` yok). Commit: **7 kendi dosyam** = 5 yeni
+  `.en.md` (P4 slice-3) + STATE + I18N-COVERAGE. Dosyalar tek tek `git add`, `git add -A` KULLANILMADI (§14.4).
+
+### Faz 9.5 · EN twin P4 slice-2 (önceki tur — count-4 "yakın-kaçıran" #6–10: Platform kalan 3 + FinOps ilk 2)
 - **Dilim = P4 slice-2 (5 dosya).** I18N-COVERAGE "P4 — dilim planı" #6–10 (deterministik):
   `13-Platform-Engineering/Internal-Developer-Platform.md` (398s), `Platform-as-Product.md` (285s),
   `Service-Catalog.md` (400s) = Platform kalan 3 (F3 kaynağı) · `12-FinOps/Cloud-Cost-Allocation.md`
