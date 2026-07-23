@@ -20,7 +20,9 @@ tags: [Learning Path, SRE]
 ## 🧠 Niye bu, niye şimdi
 B2'de metrikleri, D2'de production ayarlarını kurdun. E1 bu metrikleri bir
 **sahiplik sözleşmesine** çevirir: neyin "yeterince iyi" olduğunu sen tanımlarsın.
-E2'deki alerting bu SLO'ların üstüne kurulur.
+Bütçe sabit değildir: ne kadar hızlı tükendiğine **burn rate** (yakma hızı) denir —
+normal hızın kaç katıyla harcanıyor. E2'deki alerting bu SLO'ların ve burn rate'in
+üstüne kurulur.
 
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |

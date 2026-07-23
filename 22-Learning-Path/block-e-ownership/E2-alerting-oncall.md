@@ -19,7 +19,9 @@ tags: [Learning Path, SRE]
 
 ## 🧠 Niye bu, niye şimdi
 E1'de "yeterince iyi"yi tanımladın; E2 o eşik aşıldığında **kimin, ne zaman**
-haberdar olacağını kurar. E3'teki incident response bu alarmlarla tetiklenir.
+haberdar olacağını kurar. Bu modülün alarm kuralları B2'de kurduğun Prometheus/PromQL
+üstüne yazılır (E1 zaten B2'yi ön koşul sayar — metriği ölçemediğin bir şeye alarm
+koyamazsın). E3'teki incident response bu alarmlarla tetiklenir.
 
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
@@ -32,7 +34,7 @@ haberdar olacağını kurar. E3'teki incident response bu alarmlarla tetiklenir.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
-- [ ] SLO'ya bağlı, tetiklenip çözülen bir alarm kuralı yazıldı ve bir kez ateşlendi — Alertmanager/panel çıktısıyla kanıt (PromQL'i havadan kurma: L19 README **Görev 1** hangi kuralı yazacağını adım adım verir — hata oranı 1 dk'da eşiği aşınca)
+- [ ] SLO'ya bağlı, tetiklenip çözülen bir alarm kuralı yazıldı ve bir kez ateşlendi — Alertmanager (Prometheus'un alarmları gruplayan/yönlendiren/susturan bileşeni; L19'da kurarsın) veya panel çıktısıyla kanıt (PromQL'i havadan kurma: L19 README **Görev 1** hangi kuralı yazacağını adım adım verir — hata oranı 1 dk'da eşiği aşınca)
 - [ ] En az bir "gürültü alarmı" örneği ve niçin sessize alındığı/kaldırıldığı yazıldı
 - [ ] Her alarm "gece 3'te uyandırmalı mı?" testine göre sınıflandırıldı (page / ticket / log) — yazılı tablo
 - [ ] Bir alarm çözülmezse kime, ne zaman yükseleceği (eskalasyon) yazılı tanımlandı
@@ -45,7 +47,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 <details><summary>Cevaplar</summary>
 
 1. İkincisi. CPU %80 bir belirti olabilir ama tek başına eylem gerektirmez (cause-based, sık gürültü); "bütçe şu hızda yanıyor" kullanıcı etkisine bağlıdır ve eyleme çağırır (symptom-based). Ayrım [`07-Observability/Alerting-Done-Right.md`](../../07-Observability/Alerting-Done-Right.md)'de.
-2. Gerçek alarmın gürültü içinde kaçırılmasına yol açar — görevli artık bakmaz. Ölçüsü: alarm başına eyleme dönüşme oranı; "ack'lenip kapatılan" çok, "eyleme dönen" azsa alarm gürültüdür.
+2. Gerçek alarmın gürültü içinde kaçırılmasına yol açar — görevli artık bakmaz. Ölçüsü: alarm başına eyleme dönüşme oranı; "ack'lenip (onaylanıp) kapatılan" çok, "eyleme dönen" azsa alarm gürültüdür. (ack = alarmı gördüm/üstleniyorum onayı.)
 3. Hayır. Susturmak semptomu gizler. Önce eyleme çağırıp çağırmadığına bak: çağırmıyorsa kuralı düzelt/kaldır, çağırıyorsa runbook yaz. Susturma yalnızca bilinçli, süreli ve denetim kaydı bırakan bir işlemdir. Nöbet disiplini [`00-Culture/On-Call-Playbook.md`](../../00-Culture/On-Call-Playbook.md)'de.
 </details>
 

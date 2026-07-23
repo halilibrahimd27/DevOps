@@ -15,8 +15,11 @@
 
 | EN | TR / Açıklama |
 |---|---|
+| **ack** | onaylama — bir alarmı "gördüm / üstleniyorum" onayı; ack'lenip kapatılan çok ama eyleme dönen az ise alarm gürültüdür |
 | **Admission Controller** | K8s API server'da kabul kontrolcüsü; istek validate/mutate eder |
+| **ADR** | Architecture Decision Record — bir mimari kararı bağlamı ve elenen seçenekleriyle kaydeden kısa doküman |
 | **Agent (LLM)** | LLM-based otomasyonu; tool çağrısı + reasoning ile çalışır |
+| **Alertmanager** | Prometheus'un alarmları gruplayan / yönlendiren / susturan bileşeni; kural Prometheus'ta ateşlenir, bildirimi Alertmanager gönderir |
 | **AppArmor** | Linux Mandatory Access Control; profil bazlı uygulama izolasyonu |
 | **API** | API (çevirme — endüstri standardı) |
 | **Artifact** | İmaj/paket/binary; CI çıktısı (kelime kalır) |
@@ -48,6 +51,7 @@
 | **Carbon-aware** | Workload'u düşük-karbon zaman/yerde çalıştırma |
 | **Chainguard Images** | 0-CVE hedefli, daily-rebuild distroless alternatif |
 | **Chaos engineering** | Sistemi kontrollü biçimde bilerek bozarak dayanıklılığı kanıtlama pratiği (game day) |
+| **Cognitive load** | Bilişsel yük — bir ekibin aynı anda taşıdığı zihinsel yük; Team Topologies / platform bunu azaltmayı hedefler |
 | **Compute** | Hesaplama kaynağı — bir işi çalıştıran CPU/bellek (VM, container, sunucu) |
 | **CD** | Continuous Delivery / Deployment (sürekli teslim) — CD kalır |
 | **CI** | Continuous Integration (sürekli entegrasyon) — CI kalır |
@@ -309,7 +313,9 @@
 | **Reranker** | RAG'da retrieval kalitesini iyileştiren ikinci pass |
 | **Replication lag** | Replikasyon gecikmesi |
 | **Reproducible build** | Tekrar üretilebilir build |
+| **Reserved Instance (RI)** | Rezerve kapasite — 1–3 yıllık taahhütle indirimli bulut compute; öngörülebilir sürekli yük için on-demand'dan ucuz |
 | **RFC** | Request For Comments (tasarım dokümanı) |
+| **Right-sizing** | Kaynağı gerçek kullanıma göre boyutlama — fazla ayrılan CPU/bellek/instance tipini gerçek talebe indirip israfı kesme |
 | **Rollback** | Geri alma / rollback |
 | **Rollout** | Aşamalı deploy |
 | **RPO / RTO** | Recovery Point Objective (veri kaybı toleransı) / Recovery Time Objective (kurtarma süresi) |

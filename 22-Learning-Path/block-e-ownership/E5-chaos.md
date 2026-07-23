@@ -36,7 +36,7 @@ game day; blast radius sınırlı, gözlem ve öğrenme merkezde.
 Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] Sınırlı blast radius ile bir arıza (ör. bir Pod/bağımlılık düşürme) enjekte edildi ve etkisi gözlemlendi — metrik/log kanıtı
 - [ ] Game day bir hipotez → deney → sonuç raporuyla yazıldı
-- [ ] Bulunan en az bir zayıflık bir eylem maddesine ve (gerekliyse) yeni bir alarma çevrildi
+- [ ] Deneyin çıktısı bir eyleme bağlandı: bulunan bir zayıflık bir eylem maddesine/alarma çevrildi **ya da** (zayıflık çıkmadıysa) doğrulanan dayanıklılığın hangi kanıtla artık izlendiği/korunduğu yazıldı
 - [ ] `bash labs/broken/K09-chaos-gameday/verify.sh` çözümden sonra sıfır hatayla geçiyor
 
 ## 🧪 Kendini test et

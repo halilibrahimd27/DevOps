@@ -65,37 +65,44 @@
 | D-07 | b | D1:33,65,74 | Ingress'in çalışması için ingress controller gerektiği söylenmiyor; `taint/toleration` tanımsız. | Ingress tanımına not: "kural tek başına yetmez — trafiği fiilen karşılayan bir **ingress controller** (ör. ingress-nginx) kurulu olmalı; yoksa kural yazılıdır ama kimse uygulamaz". Pending satırına taint/toleration tek-cümle gloss + Glossary `Taint/Toleration`. | ✅ |
 | D-08 | g | D1–D5 "Önce oku" | Dış link yok (ihlal yok); ama "Önce oku" tabloları 3 alanlı, §9'un "dönünce doğrulama" disiplini iç okumalara taşınmamış. | STUDY-METHOD §9'a **iki istisna açıkça yazıldı**: (1) ihtiyaç-anında tekil referans (man/wiki/release) muaf, (2) repo-içi "Önce oku" deep-dive linkleri 3 alanla yeter — "dönünce doğrulama"yı modülün **kabul kriterleri** yapar. A-05/C-03 kararı artık merkezi belgeli (yalnız A5 modülünde değil). | ✅ |
 
-## Blok E (E1–E5) — AÇIK (sonraki tur)
+## Blok E (E1–E5) — düzeltildi bu tur
 
-| ID | Kat | Yer | Bulgu | Öneri | Durum |
+| ID | Kat | Yer | Bulgu | Karar | Durum |
 |---|---|---|---|---|---|
-| E-01 | b | E2:35,18 | `Alertmanager` kabul kriterinde kanıt aracı olarak isteniyor ama A–D'de öğretilmemiş, Glossary'de yok, modülde tanımsız (ilk tanım L19'da). | E2'ye inline tanım + Glossary; ya da "L19'da tanışacaksın" önizleme notu. | ⬜ |
-| E-02 | f | E4:18 | Hedef #3 "sıfır kesintili şema değişikliği" ilan edilip okuma veriliyor ama hiçbir kabul kriteri/test/lab sınamıyor (öksüz çıktı). | Kabul kriteri/kendini-test ekle VEYA hedefi "farkında ol" seviyesine indir. | ⬜ |
-| E-03 | b | E2:6,13 | Önkoşul `[E1,B1]`; E2 baştan sona PromQL üstüne kurulu, gerçek metrik önkoşulu B2 yalnız dolaylı. | Önkoşula B2 ekle (`[E1,B2]` veya `[E1,B1,B2]`). | ⬜ |
-| E-04 | f | E2:41 | Kendini-test #1 "burn rate" muhakemesi ister ama E1 yalnız statik aylık bütçe öğretti; burn rate metinde tanımsız (yalnız Glossary'de). | E1/E2'ye tek cümle burn-rate köprüsü. | ⬜ |
-| E-05 | a | E2:48,58 | `ack`/`ack'lenmezse` tanımsız; Glossary'de yok. | "onaylama (ack)" gloss + Glossary. | ⬜ |
-| E-06 | c/f | E5:39 vs 45-51 | Kabul #3 "en az bir zayıflık eylem maddesine çevrildi" zorunlu; modülün kendi ilkesi (K09: "hiçbir şey bozulmayan game day başarısız değildir") tersini öğretiyor — çelişki. | Kriteri "bir zafiyet VEYA doğrulanmış dayanıklılık kanıtı eylem/alarma bağlandı"ya yumuşat. | ⬜ |
+| E-01 | b | E2:35,18 | `Alertmanager` kabul kriterinde kanıt aracı olarak isteniyor ama A–D'de öğretilmemiş, Glossary'de yok, modülde tanımsız (ilk tanım L19'da). | E2 kabul kriterine inline tanım eklendi ("Prometheus'un alarmları gruplayan/yönlendiren/susturan bileşeni; L19'da kurarsın") + `Glossary.md` A bölümüne `Alertmanager`. | ✅ |
+| E-02 | f | E4:18 | Hedef #3 "sıfır kesintili şema değişikliği" ilan edilip okuma veriliyor ama hiçbir kabul kriteri/test/lab sınamıyor (öksüz çıktı). | E4 kabul kriterlerine yazılı kriter eklendi: sıfır-kesintili şema değişiminin niçin çok-adımlı/sıralı yapıldığını (ekle→çift-yaz→doldur→at) bir cümleyle yazılı açıkla. Hedef artık öksüz değil. | ✅ |
+| E-03 | b | E2:6,13 | Önkoşul `[E1,B1]`; E2 baştan sona PromQL üstüne kurulu, gerçek metrik önkoşulu B2 yalnız dolaylı. | Prose köprü: E2 "Niye bu" bölümü alarm kurallarının **B2'de kurulan Prometheus/PromQL üstüne** yazıldığını ve E1'in zaten B2'yi ön koşul saydığını (`E1 prereq = [B2,D2]` → E2→E1→B2 transitif) açıkça yazar. Frontmatter değişmedi (MODULE-SPEC/DAG uyumu korunur); bağımlılık zinciri zaten sağlam. | ✅ |
+| E-04 | f | E2:41 | Kendini-test #1 "burn rate" muhakemesi ister ama E1 yalnız statik aylık bütçe öğretti; burn rate metinde tanımsız (yalnız Glossary'de). | E1 "Niye bu" bölümüne tek-cümle burn-rate köprüsü ("bütçe ne kadar hızlı tükeniyor = yakma hızı, normal hızın kaç katı"); E2 zaten burn rate'e dayanıyor. `Glossary.md` Burn rate vardı. | ✅ |
+| E-05 | a | E2:48,58 | `ack`/`ack'lenmezse` tanımsız; Glossary'de yok. | E2 Cevaplar bölümüne inline gloss ("ack = alarmı gördüm/üstleniyorum onayı") + `Glossary.md` A bölümüne `ack`. | ✅ |
+| E-06 | c/f | E5:39 vs 45-51 | Kabul #3 "en az bir zayıflık eylem maddesine çevrildi" zorunlu; modülün kendi ilkesi (K09: "hiçbir şey bozulmayan game day başarısız değildir") tersini öğretiyor — çelişki. | Kriter yumuşatıldı: "bir zayıflık eylem maddesine/alarma çevrildi **ya da** (zayıflık çıkmadıysa) doğrulanan dayanıklılığın hangi kanıtla izlendiği yazıldı". Çelişki kalktı; her iki game day sonucu da geçerli çıktı üretir. | ✅ |
 
-## Blok F (F1–F5) — AÇIK (sonraki tur)
+## Blok F (F1–F5) — düzeltildi bu tur
 
-| ID | Kat | Yer | Bulgu | Öneri | Durum |
+| ID | Kat | Yer | Bulgu | Karar | Durum |
 |---|---|---|---|---|---|
-| F-01 | c/d | F1:45 | Kabul #4 (iş dilinde savunma) `grep -c "" finops-analiz.md` "boş değil" ile doğrulanıyor — alakasız tek satır bile geçer (öznel kriter objektif kılıfında). | Komutu kaldır (yazılı-artefakt kriteri bırak) veya paragrafı gerçekten yoklayan kontrole çevir. | ⬜ |
-| F-02 | a | F1:16,35 (Glossary) | `egress` F1 maliyet ekseni + kabul kriteri kalemi ama Glossary'de yok, ana metinde glose edilmiyor. | Glossary'ye `egress`. (C-07 ile birleşir.) | ⬜ |
-| F-03 | a | F4 (Glossary) | Modül ekseni `ADR` Glossary'de yok; kardeş `RFC` ekli — tutarsızlık. | Glossary'ye `ADR — Architecture Decision Record`. | ⬜ |
-| F-04 | b/d | F1:34, F2:34 | "Capstone 1/2" linksiz anılıyor; dosyalar `CAP1-*/CAP2-*`. Eşleme okuyucuya bırakılmış. | İlk anışta `capstones/CAP1-...md` relative link. | ⬜ |
-| F-05 | a | F1:17; F3:17,30 (Glossary) | `right-sizing`/`reserved`/`bilişsel yük` Glossary'de yok (deep-dive'da tanımlı, hafif). | Glossary kısa satırlar. | ⬜ |
+| F-01 | c/d | F1:45 | Kabul #4 (iş dilinde savunma) `grep -c "" finops-analiz.md` "boş değil" ile doğrulanıyor — alakasız tek satır bile geçer (öznel kriter objektif kılıfında). | `grep -c` kaldırıldı; kriter yazılı-artefakt kontrolüne çevrildi: `finops-analiz.md` içinde **ayrı bir "İş tarafı" paragrafı** (aylık maliyet + kesinti/risk sonucu, yalnız teknik terim değil). Objektif kılıf düştü, gerçek yazılı çıktı kaldı. | ✅ |
+| F-02 | a | F1:16,35 (Glossary) | `egress` F1 maliyet ekseni + kabul kriteri kalemi ama Glossary'de yok, ana metinde glose edilmiyor. | `Glossary.md` E bölümünde `egress` (C-07 turunda eklendi). | ✅ |
+| F-03 | a | F4 (Glossary) | Modül ekseni `ADR` Glossary'de yok; kardeş `RFC` ekli — tutarsızlık. | `Glossary.md` A bölümüne `ADR — Architecture Decision Record`. F4 zaten inline açıyor. | ✅ |
+| F-04 | b/d | F1:34, F2:34 | "Capstone 1/2" linksiz anılıyor; dosyalar `CAP1-*/CAP2-*`. Eşleme okuyucuya bırakılmış. | F1 teslim egzersizinde Capstone 1/2 canlı relative link'e çevrildi (`../capstones/CAP1-blok-c-sonu.md` / `CAP2-blok-d-sonu.md`). | ✅ |
+| F-05 | a | F1:17; F3:17,30 (Glossary) | `right-sizing`/`reserved`/`bilişsel yük` Glossary'de yok (deep-dive'da tanımlı, hafif). | `Glossary.md`: `Right-sizing` + `Reserved Instance (RI)` (R bölümü), `Cognitive load` (bilişsel yük; C bölümü). | ✅ |
 | F-06 | kısıt#1 | F4:36,40-41 | F4 ADR yapısını + rubriği inline gömüyor (sıralayıcıya en yakın "yeniden yazma"); egzersiz iskelesi olarak kabul edilebilir, ihlal değil. | İsteğe bağlı: rubriği bir şablona bağla. | ➖ (sınırda) |
 
 ---
 
-## GLOSSARY-COVERAGE.md (çıktı kapısı) — YAPILACAK
+## GLOSSARY-COVERAGE.md (çıktı kapısı) — ✅ ÇIKARILDI
 
-Faz 9 çıktı kapısı: her teknik terim ya bir modülde tanımlı ya `Glossary.md`'de. Yukarıdaki
-terim bulguları (ICMP✅, semver, LocalStack, kind, k3s, NAT, egress, free tier, Alertmanager,
-ack, ADR, right-sizing, reserved, bilişsel yük, burn rate, taint/toleration) kapatıldıkça
-`_planning/GLOSSARY-COVERAGE.md` envanteri çıkarılacak. Bu, tüm blok bulguları kapandıktan
-sonraki son adımdır.
+Faz 9 çıktı kapısı: her teknik terim ya bir modülde tanımlı ya `Glossary.md`'de.
+`_planning/GLOSSARY-COVERAGE.md` envanteri çıkarıldı: Faz 9'da tespit edilen 16 terim
+(ICMP, semver, LocalStack, Free tier, NAT, egress, kind, k3s, Taint/Toleration, burn rate,
+Alertmanager, ack, ADR, Right-sizing, Reserved Instance, Cognitive load) hepsi inline gloss
+ve/veya Glossary ile kapatıldı — **açık terim boşluğu 0**. Bu turda Glossary'ye eklenen 6
+satır: `ack`, `ADR`, `Alertmanager`, `Cognitive load`, `Reserved Instance (RI)`, `Right-sizing`.
+
+## Faz 9 kapanış özeti
+
+Tüm blok bulguları kapandı: A (5) ✅ · B (8) ✅ · C (7) ✅ · D (8) ✅ · E (6) ✅ · F (6) ✅.
+`⬜` açık bulgu kalmadı. `➖` gerekçeli-değişmez: A-05, B-04, F-06. Çıktı kapısı
+(GLOSSARY-COVERAGE.md) çıkarıldı. **Faz 9 → ✅.**
 
 ## §9 kapsam kararı (tekrar eden — A-05/D-08/C-03)
 

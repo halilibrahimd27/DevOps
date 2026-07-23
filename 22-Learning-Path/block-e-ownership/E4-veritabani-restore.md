@@ -40,6 +40,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] Bir backup alındı ve **temiz bir ortama restore edildi**; veri bütünlüğü bir sorguyla (satır sayısı/checksum) doğrulandı
 - [ ] RTO (restore süresi) ve RPO (veri kaybı penceresi) ölçülüp yazıldı
 - [ ] Backup'ın erişim + at-rest şifreleme kontrolü yazıldı (kim erişebilir, şifreli mi)
+- [ ] Sıfır kesintili bir şema değişiminin niçin çok adımlı/sıralı yapılması gerektiği (ör. önce kolonu ekle → çift-yaz → doldur → en son eskisini at) bir cümleyle yazılı açıklandı
 - [ ] `bash labs/broken/K08-restore-basarisiz/verify.sh` çözümden sonra sıfır hatayla geçiyor
 
 ## 🧪 Kendini test et
