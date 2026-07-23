@@ -5,10 +5,10 @@
 Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 `fallback_to_default: true`.
 
-**EN kapsama:** 83 site sayfası / 334 TR temel sayfası ≈ **%24.9** (Aşama B eşiği %60).
+**EN kapsama:** 88 site sayfası / 334 TR temel sayfası ≈ **%26.3** (Aşama B eşiği %60).
 (P0: 3 sayfa + P1a rehber twin'leri: 9 sayfa + P1b Blok A+B: 12 sayfa + P1b Blok C+D:
 12 sayfa + P1b Blok E+F: 11 sayfa + P2 21 klasör README'si: 21 sayfa + P3 slice-1: 5 deep-dive
-+ P3 slice-2: 5 deep-dive + P3 slice-3: 5 deep-dive = 83. Kök `README.en.md` GitHub-only, siteye stage edilmez → oran dışı.)
++ P3 slice-2: 5 deep-dive + P3 slice-3: 5 deep-dive + P4 slice-1: 5 deep-dive = 88. Kök `README.en.md` GitHub-only, siteye stage edilmez → oran dışı.)
 
 ## Aşama
 
@@ -34,7 +34,7 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 | **P1b** | Patika omurgası — **30 modül** + **5 STAGE-EXAM** twin'i `block-*/<ID>-*.en.md` (A0…F5) | ✅ **EN twin hazır — tüm bloklar (A0…F5 + A–E STAGE-EXAM)** (2026-07-23). Bu tur 11 twin: E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5, **Blok F'de STAGE-EXAM yok**). Önceki turlar: A+B (12) · C+D (12). Toplam 35 dosya (30 modül + 5 STAGE-EXAM). Her dilim: 12/11 paralel çeviri subagent, dosya başına bir, sıkı ruleset. Bu tur başlık paritesi 11/11, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, kod-yorumu çevrildi/komut+YAML+SQL verbatim; F-blok ortak `## 🔨 Deliverable exercise` başlığı 5/5 tutarlı; güvenlik ipliği (E4 backup at-rest/erişim, F2 KVKK→GDPR→SOC 2 kontrol zinciri) korundu; `/en/…/E1-sli-slo-error-budget/` + `/en/…/F2-tehdit-uyum/` İngilizce render, qa exit 0. `qa.py` locale-farkındalığı (`LOCALE_RE`) modül twin'lerini bütünlük denetiminden muaf tutuyor. |
 | **P2** | 21 klasör README'si | ✅ **EN twin hazır** (2026-07-23) — 21 `.en.md` (`00-Culture` … `20-Soft-Skills`). 11'i (00–10) önceki kesintili turdan **untracked** geldi (structure-preserving; başlık/tablo paritesi + link-leak + positioning doğrulandı → benimsendi); 10'u (11–20) bu tur 10 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset ile üretildi. Başlık/tablo paritesi 21/21, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, KVKK 19-Compliance'ta global-okur çerçevesiyle reframe. build-docs.sh `0[0-9]-*/1[0-9]-*` `cp -r` ile özyineli stage (ek satır gerekmedi); `/en/19-Compliance/` + `/en/11-SRE/` İngilizce render, qa exit 0. |
 | **P3** | En güçlü 15 deep-dive | ✅ **EN twin hazır — 15/15 tamam** (2026-07-23) — slice-3 = deep-dive 11–15 (count-4 DevSecOps güvenlik+güvenilirlik çekirdeği): `08-Security/Secrets-Management.en.md`, `08-Security/DevSecOps-Pipeline.en.md`, `11-SRE/Incident-Response.en.md`, `10-Databases-Production/Backup-Restore-Patterns.en.md`, `11-SRE/Chaos-Engineering.en.md`. 5 paralel çeviri subagent, dosya başına bir, **düzeltilmiş genişletilmiş ruleset** (slice-2 dersini baştan uyguladı): plain/untagged fenced blok içindeki prose (checklist `[ ]` etiketi, ASCII decision-tree/flow-diagram etiketi `EVET`→`YES`/`HAYIR`→`NO`, kod yorumu `# tek seferlik`→`# one-shot`, template örnek satırı, Kyverno `message:`) İngilizce'ye çevrildi; yalnız gerçek verbatim-artifact (komut, YAML key + `kind: PodChaos`/`NetworkChaos`, metric/PromQL `http_5xx_rate > 0.05`, path, link target, SHA-pin action ref) korundu. Bağımsız orchestrator doğrulaması: başlık paritesi 5/5 (63/33/30/50/28), tablo 5/5 (45/21/43/42/60), fence 5/5 (50/28/12/32/20), gerçek Türkçe kalıntısı **0** (excl `/var/`+VERBİS), link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz (yalnız Chaos "ROI report" = kaynakta zaten var, sadık çeviri + qa scope dışı FP). Satır deltası 0/0/-1/-1/+1 (prose-wrap + Incident 1 satır "no Turkish translation" reframe). build-docs.sh dokunulmadı (`0[0-9]-*/1[0-9]-*` `cp -r` otomatik stage); 5 sayfa `/en/…/` İngilizce render (EN-marker 176/80/90/135/100), iki-locale build hatasız, qa exit 0. slice-1 (K8s-Hardening, Threat-Modeling, SLI-SLO, Pipeline-Patterns, KVKK) + slice-2 (Documentation, linux-troubleshooting, Prometheus-Best-Practices, Alerting-Done-Right, Blameless-Postmortem) önceki turlar. **P3 kapandı → sıra P4 (kalan içerik).** |
-| **P4** | Kalan içerik | ⬜ |
+| **P4** | Kalan içerik | 🟡 **slice-1 hazır** (2026-07-23) — 5 `.en.md`, count-4 "yakın-kaçıran" sırasının başı (güçten zayıfa): `20-Soft-Skills/Vendor-Management`, `20-Soft-Skills/Stakeholder-Management`, `20-Soft-Skills/Saying-No` (F5 sources) + `13-Platform-Engineering/Backstage-Setup`, `13-Platform-Engineering/Golden-Paths` (F3). 5 paralel çeviri subagent, dosya başına bir, genişletilmiş ruleset (plain-blok dialogue/checklist/kod-yorumu prose çevrildi; YAML-key/`kind:`/link-target/komut verbatim). Bağımsız orchestrator doğrulaması: başlık 5/5 (32/42/31/40/30), tablo 5/5 (46/60/18/27/34), fence 5/5 (8/18/16/38/10), gerçek Türkçe kalıntısı **0** (excl `/var/`), link locale-eksiz (0 sızıntı), positioning temiz (ROI/guarantee = kaynak-sadık teknik terim, qa `22-Learning-Path/`-scope dışı FP). qa exit 0, iki-locale build hatasız, 5 sayfa `/en/…/` İngilizce render (EN-marker 85/…/26/…/38). **Kalan P4 çok turlu** (slice planı ↓). |
 
 ### P3 — 15 deep-dive listesi ve seçim kuralı
 
@@ -67,6 +67,33 @@ CLAUDE.md örnekleri + güvenlik ipliği.)
 > `12-FinOps/*`, `10-Databases-Production/Zero-Downtime-Migrations.md`, `07-Observability/SLO-Engineering.md`,
 > `06-GitOps/*`, `05-Kubernetes/*`, `04-Containers/*`, `03-IaC/Terraform-Best-Practices.md` — hepsi count-4,
 > 15'in dışında kaldı; P4'te gelir.
+
+### P4 — dilim planı (deterministik, 5 dosya/dilim, güçten zayıfa)
+
+Önce "yakın-kaçıran" listesi (count-4, sıra yukarıdaki gibi) → sonra kalan 00-21 deep-dive'ları klasör
+sırasıyla → `16-Cheatsheets/` → `17-Templates/` index'leri → en son `21-Field-Notes/`.
+
+| # | Dosya | Dilim |
+|---|---|---|
+| 1 | `20-Soft-Skills/Vendor-Management.md` | **1 ✅** |
+| 2 | `20-Soft-Skills/Stakeholder-Management.md` | **1 ✅** |
+| 3 | `20-Soft-Skills/Saying-No.md` | **1 ✅** |
+| 4 | `13-Platform-Engineering/Backstage-Setup.md` | **1 ✅** |
+| 5 | `13-Platform-Engineering/Golden-Paths.md` | **1 ✅** |
+| 6 | `13-Platform-Engineering/Internal-Developer-Platform.md` | 2 |
+| 7 | `13-Platform-Engineering/Platform-as-Product.md` | 2 |
+| 8 | `13-Platform-Engineering/Service-Catalog.md` | 2 |
+| 9 | `12-FinOps/Cloud-Cost-Allocation.md` | 2 |
+| 10 | `12-FinOps/Egress-Cost-Reduction.md` | 2 |
+| 11 | `12-FinOps/Kubecost-Setup.md` | 3 |
+| 12 | `12-FinOps/PR-Cost-Diff.md` | 3 |
+| 13 | `12-FinOps/Reserved-and-Savings-Plans.md` | 3 |
+| 14 | `12-FinOps/Right-Sizing.md` | 3 |
+| 15 | `12-FinOps/Spot-Instance-Strategy.md` | 3 |
+| 16 | `12-FinOps/Storage-Cost-Optimization.md` | 4 |
+| 17 | `10-Databases-Production/Zero-Downtime-Migrations.md` | 4 |
+| 18 | `07-Observability/SLO-Engineering.md` | 4 |
+| 19+ | `06-GitOps/*`, `05-Kubernetes/*`, `04-Containers/*`, `03-IaC/Terraform-Best-Practices.md` → sonra kalan 00-21 → `16-Cheatsheets/` → `17-Templates/` → `21-Field-Notes/` | 5+ |
 
 ## Notlar
 
