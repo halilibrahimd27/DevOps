@@ -29,7 +29,7 @@ dokunmadan yeniden kurabiliyor musun?"
 | [`03-IaC/Terraform-Module-Layout.md`](../../03-IaC/Terraform-Module-Layout.md) | modül düzeni | ~20 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L11-terraform/`](../labs/build/L11-terraform/) — yerel: LocalStack.
+👉 [`labs/build/L11-terraform/`](../labs/build/L11-terraform/) — yerel: **LocalStack** (AWS servislerini yerelde taklit eden öykünücü — bulut/para gerekmez; [`Glossary.md`](../../Glossary.md)).
 
 ## 💥 Kırık lab
 👉 [`labs/broken/K03-terraform-state/`](../labs/broken/K03-terraform-state/) — Belirti: "apply beklenmedik

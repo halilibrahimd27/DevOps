@@ -101,6 +101,7 @@
 |---|---|
 | **eBPF** | Extended Berkeley Packet Filter (kernel programlama framework'ü) |
 | **EBS** | AWS Elastic Block Store |
+| **egress** | Dışarı çıkan ağ trafiği; bulutta veri-çıkış (data transfer out) çoğu zaman ücretlidir |
 | **EKS** | AWS Elastic Kubernetes Service |
 | **Encryption-at-rest / -in-transit** | Depodayken / iletim sırasında şifreleme |
 | **Endpoint** | Endpoint (kalır), bazen "uç nokta" |
@@ -120,6 +121,7 @@
 | **FinOps** | Finance + Operations — bulut maliyet yönetimi |
 | **Flame Graph** | Profile görselleştirme (CPU time per function) |
 | **Flux** | GitOps tool (CNCF) |
+| **Free tier** | Bulut sağlayıcının ücretsiz kullanım katmanı; sınır (saat/GB/istek) aşılınca ücret başlar |
 | **Fulcio** | Sigstore short-lived cert authority |
 
 ## G
@@ -183,6 +185,8 @@
 | **KEDA** | Kubernetes Event-Driven Autoscaler |
 | **Kepler** | eBPF-tabanlı pod-level energy ölçümü |
 | **Keyless signing** | Anahtar-siz imzalama (cosign + OIDC) |
+| **kind** | Kubernetes-in-Docker — Docker konteynerlerinde çalışan yerel tek-makine cluster (test/öğrenme) |
+| **k3s** | Hafif, tek-binary Kubernetes dağıtımı (kenar/yerel/küçük ortam) |
 | **KMS** | Key Management Service |
 | **Kubecost** | K8s per-namespace cost dashboard |
 | **kube-proxy** | K8s service network bileşeni |
@@ -204,6 +208,7 @@
 | **Linting** | Lint — statik kod kontrolü (kelime kalır) |
 | **Llama** | Meta'nın açık kaynak LLM ailesi |
 | **LLMOps** | LLM'leri production'a alma/işletme disiplini — prompt versiyonlama, eval, guardrail, token maliyeti + gözlemlenebilirlik |
+| **LocalStack** | AWS servislerini yerelde taklit eden öykünücü — bulut/para gerekmeden Terraform/CLI pratiği |
 | **Loki** | Grafana log aggregation |
 | **LRT** | Long-running task (uzun-süreli iş) |
 
@@ -227,6 +232,7 @@
 | EN | TR / Açıklama |
 |---|---|
 | **Namespace** | İsim alanı / namespace (kelime kalır) |
+| **NAT** | Network Address Translation — özel IP'leri tek dış IP'ye çevirir; bulutta NAT Gateway egress'i ücretlendirir |
 | **NetworkPolicy** | K8s ağ kuralı (kelime kalır) |
 | **NIST** | US National Institute of Standards and Technology |
 | **NIS2** | EU Network and Information Security Directive 2 |
@@ -330,6 +336,7 @@
 | **seccomp** | Linux secure computing mode (syscall filter) |
 | **SELinux** | Security-Enhanced Linux MAC |
 | **Self-heal** | Otomatik düzelme (ArgoCD selfHeal) |
+| **semver** | Semantic Versioning — `MAJOR.MINOR.PATCH` sürüm şeması (ör. `1.4.2`); değişmez sürüm etiketi |
 | **Service Account / SA** | K8s servis hesabı |
 | **Service Mesh** | Service mesh (kalır) |
 | **SEV1 / SEV2** | Severity 1 / 2 — incident etki seviyesi |
@@ -363,6 +370,7 @@
 |---|---|
 | **Tag** | Tag — image versiyonu (kelime kalır) |
 | **Tail Sampling** | Trace tamamlandıktan sonra sample karar (Otel) |
+| **Taint / Toleration** | Node'un "beni seçme" işareti (taint) ↔ Pod'un "yine de seçilebilirim" izni (toleration) — scheduling kontrolü |
 | **TDE** | Transparent Data Encryption (DB) |
 | **Team Topologies** | Ekip etkileşim modeli: stream-aligned, platform, enabling, complicated-subsystem |
 | **Telemetry** | Telemetri |

@@ -39,7 +39,7 @@ başlıyor / trafik almıyor." (Gerçekçi sebep gizli: OOMKilled / yanlış pro
 Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] Uygun request/limit + readiness/liveness probe uygulanmış; `kubectl describe`/metrikle doğrulanıyor
 - [ ] HPA yük altında replica sayısını artırıyor — `kubectl get hpa` / metrik kanıtı (HPA metrics-server ister; kind kurulumu L14 README'de)
-- [ ] Bir **PodDisruptionBudget** uygulandı (`kubectl get pdb`); gönüllü kesintide (drain) en az bir replica ayakta kalıyor — kanıt
+- [ ] Bir **PodDisruptionBudget** uygulandı (`kubectl get pdb` `ALLOWED DISRUPTIONS` gösteriyor); gönüllü kesinti (drain) sırasında PDB'nin en az bir replica'yı niçin ayakta tuttuğunu **yazılı açıklıyorsun** (tek-node kind'de gerçek drain yapılamaz — davranışı `min-available`/`maxUnavailable` üzerinden anlatırsın)
 - [ ] `bash labs/broken/K05-oomkilled-probe/verify.sh` çözümden sonra sıfır hatayla geçiyor
 - [ ] request ile limit farkını ve bir Pod'un niçin OOMKilled olduğunu yazılı anlatabiliyorsun
 
