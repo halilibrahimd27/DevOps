@@ -1,9 +1,12 @@
 # I18N-COVERAGE — Çeviri Durumu ve Öncelik
 
-**Son güncelleme:** 2026-07-21
+**Son güncelleme:** 2026-07-23
 
 Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 `fallback_to_default: true`.
+
+**EN kapsama:** 3 site sayfası / 334 TR temel sayfası ≈ **%0.9** (Aşama B eşiği %60).
+(`README.en.md` GitHub-only, siteye stage edilmez → oran dışı.)
 
 ## Aşama
 
@@ -24,8 +27,8 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 
 | Öncelik | Kapsam | Durum |
 |---|---|---|
-| **P0** | `README`, `docs/index`, `docs/about`, `Glossary` | ⬜ EN çevirisi yok (fallback TR) |
-| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, modüller, …) | 🟡 TR yazılıyor (Faz 2: A1–A4 hazır). **EN twin BLOKE** — `qa.py` `^[A-F]\d+-` dosyalarda TR bölüm başlığı zorunlu tutuyor; `.en.md` twin QA'yı kırar. Önce `qa.py` locale-farkındalığı gerekir (bkz. STATE Açık kararlar). |
+| **P0** | `README`, `docs/index`, `docs/about`, `Glossary` | ✅ **EN twin hazır** (2026-07-23) — `README.en.md`, `docs/index.en.md`, `docs/about.en.md`, `Glossary.en.md`. build-docs.sh 3 site sayfasını stage ediyor; iki-locale build hatasız. |
+| **P1** | Patika omurgası (`22-Learning-Path/` README, CURRICULUM, NOT-YET, PLACEMENT, PROGRESS-TEMPLATE, STUDY-METHOD, COST-GUARDRAILS, TROUBLESHOOTING, PORTFOLIO + A0…F5 modülleri) | ⬜ **Sıradaki** — `qa.py` locale-farkındalığı geldi (`LOCALE_RE`, `check_modules`/`check_curriculum` `.en.md`'yi ayırıyor) → EN twin artık BLOKE değil. Modül `.en.md` twin'leri modül-bütünlük denetiminden muaf. |
 | **P2** | 21 klasör README'si | ⬜ |
 | **P3** | En güçlü 15 deep-dive | ⬜ |
 | **P4** | Kalan içerik | ⬜ |

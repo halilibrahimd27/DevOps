@@ -27,15 +27,25 @@ rm -rf "$STAGE"
 mkdir -p "$STAGE"
 
 # 1) Hero homepage — docs/index.md (Material grid cards'lı, README değil)
+# EN twin (docs/index.en.md) da varsa stage edilir; i18n suffix şeması onu
+# /en/ homepage'i yapar (site-kökü göreli linkler staged konumda doğru çözülür).
 if [ -f docs/index.md ]; then
   cp docs/index.md "$STAGE/index.md"
   echo "  + index.md (hero homepage)"
+fi
+if [ -f docs/index.en.md ]; then
+  cp docs/index.en.md "$STAGE/index.en.md"
+  echo "  + index.en.md (EN homepage twin)"
 fi
 
 # 1a) Hakkımda / About — docs/about.md (portfolyo sayfası)
 if [ -f docs/about.md ]; then
   cp docs/about.md "$STAGE/about.md"
   echo "  + about.md (portfolyo / about)"
+fi
+if [ -f docs/about.en.md ]; then
+  cp docs/about.en.md "$STAGE/about.en.md"
+  echo "  + about.en.md (EN about twin)"
 fi
 
 # 1b) Etiket indeksi — docs/tags.md (Material tags plugin tags_file)
@@ -47,7 +57,7 @@ fi
 # 2) Kök seviyesi md dosyaları
 # Not: CHANGELOG.md bilinçli olarak siteye STAGE EDİLMEZ (portfolyo sitesinde nav sekmesi
 # olarak yersiz duruyor). Dosya repo'da kalır (GitHub'da + sürüm geçmişi için).
-for f in Glossary.md; do
+for f in Glossary.md Glossary.en.md; do
   if [ -f "$f" ]; then
     cp "$f" "$STAGE/"
     echo "  + $f"
