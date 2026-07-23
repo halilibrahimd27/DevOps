@@ -29,11 +29,17 @@ yüzden C0, A5 ile C2 arasında bir köprüdür.
 | [`STUDY-METHOD.md`](../STUDY-METHOD.md) | dış kaynak sözleşmesi — resmi Python turu buradan | ~10 dk |
 
 Repoda Python'u öğreten bir doküman **yok** (bilinçli boşluk). Bu modülün gövdesi
-ops için gereken temeli **kendi başına verir** — dışarıya çıkmadan lab'ı yapabilirsin.
-Sözdizimini daha derin merak edersen resmi Python tutorial'ı (docs.python.org/3/tutorial)
-isteğe bağlı bir referanstır; oraya giderken dört-alanlı sözleşmeye uy (niye/ne/süre/dönüş
-doğrulaması — [`STUDY-METHOD.md`](../STUDY-METHOD.md)). Amaç dili baştan sona öğrenmek
+ops için gereken temeli **kendi başına verir**: aşağıdaki **Python sözdizimi köprüsü**
++ örnekler, lab'ı dışarıya çıkmadan bitirmene yeter. Amaç dili baştan sona öğrenmek
 değil, **iş görecek kadarı**.
+
+Sözdizimini köprünün ötesinde derinleştirmek **opsiyoneldir** — lab için şart değil.
+Gidersen, resmi Python turu bir dış kaynaktır ve dört-alanlı sözleşmeye uyar
+([`STUDY-METHOD.md`](../STUDY-METHOD.md)):
+
+| Kaynak | Niye gidiyorsun | Orada ne yapacaksın | Süre | Dönünce doğrulama |
+|---|---|---|---|---|
+| Resmi Python turu (`docs.python.org/3/tutorial`) | Sözdizimini köprünün ötesine taşımak (opsiyonel) | Bölüm 3–5'i (sayı/metin/liste, `if`/`for`, sözlük) okuyup örnekleri kendi yorumlayıcında çalıştır | ~2 saat | Bir `dict`'i `for` ile gezip f-string ile yazdıran 5 satırı **bakmadan** yazabiliyorsun |
 
 ## 🐍 Python nerede, Bash nerede
 Python'u bir dil olarak değil, **Bash'in tıkandığı yeri açan bir araç** olarak öğren.
@@ -46,6 +52,27 @@ Python'u bir dil olarak değil, **Bash'in tıkandığı yeri açan bir araç** o
 | Tekrar kullanılacak, test edilecek, başkasının okuyacağı araç | **Python** |
 
 Kural: bir Bash betiği 30 satırı geçtiyse ya da içinde JSON ayrıştırıyorsan dur — bu iş Python'a geçmiş demektir.
+
+## 🧩 Python sözdizimi — Bash'ten gelenler için
+Aşağıdaki örnekleri okuyabilmen için Bash'ten farklı **altı şey** yeter. Bunları bilirsen
+lab'ı dışarı çıkmadan bitirirsin; gerisi ihtiyaç anında aranır.
+
+| Bash | Python | Not |
+|---|---|---|
+| `VAR=deger` / `$VAR` | `var = "deger"` / `var` | `$` yok; değişkene doğrudan adıyla erişilir |
+| `if [ ... ]; then … fi` | `if ...:` + **girinti** | Blok `:` ile açılır; `fi`/`done` yok — bloğu **girinti** belirler |
+| `for x in ...; do … done` | `for x in ...:` + girinti | aynı mantık, `do`/`done` yok |
+| (harici komut çağırmak) | `import json` | hazır yetenek `import` ile gelir, ayrı süreç değil |
+| `${arr[0]}` | `d["anahtar"]` / `liste[0]` | sözlük (`dict`) ve liste — anahtar/indeksle eriş |
+| `"merhaba $ad"` | `f"merhaba {ad}"` | f-string: `{}` içine değişken/ifade koyulur |
+
+İki şey daha:
+- **`with open(...) as f:`** — dosyayı/bağlantıyı açar, blok bitince **otomatik kapatır**;
+  Bash'teki gibi elle temizlik yapmana gerek kalmaz. Örnek 2'deki `urlopen` bu yüzden `with` ile.
+- **Girinti kutsaldır.** Bloğu süsleme parantezi değil, satır başındaki boşluk belirler.
+  Karışık tab/boşluk → `IndentationError`. Bir dosyada tek stil kullan (4 boşluk).
+
+Bu kadarıyla aşağıdaki üç örneği satır satır okuyabilirsin.
 
 ## 1️⃣ İlk araç: argüman + hata + çıkış kodu
 İyi bir ops aracı argüman alır, hatayı yutmaz ve **çıkış koduyla konuşur** (0 = başarı,
@@ -125,7 +152,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 ## 🧪 Kendini test et
 1. Bir betiği ne zaman Bash'ten Python'a taşırsın? İki somut sinyal ver.
 2. `except: pass` niçin ops'ta bir hata değil, bir tuzaktır?
-3. Aracın bir CI adımında çalışacak. Onu "pipeline dostu" yapan iki şey ne, niye?
+3. Aracın ileride bir **CI adımında** çalışacak (CI'ı [`C2`](C2-ci.md)'de göreceksin — şimdilik "her commit'te otomatik çalışan komut dizisi" kadarını bil). Onu bu dizide sorunsuz kullanılır ("pipeline dostu") yapan iki şey ne, niye?
 
 <details><summary>Cevaplar</summary>
 

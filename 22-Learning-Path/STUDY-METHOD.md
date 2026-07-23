@@ -50,6 +50,15 @@ Dört alanı olmayan dış link **link dökümüdür ve bu patikada yasaktır.**
 sadece "şu adrese bak" yazan bir link görürsen, o bir hatadır — Faz 9 denetiminde
 düzeltilir.
 
+> **İki istisna — bunlar link dökümü değildir:**
+> 1. **İhtiyaç-anında tekil referans.** Bir `man` sayfası, tool wiki'si ya da bir
+>    GitHub release'inin güncel sürüm numarası gibi, "gidip bir şey öğrenmek" için
+>    değil, tek bir bilgiyi **anında** almak için bakılan kaynak dört alan istemez.
+>    Yönlendirilmiş okuma değil, sözlük bakışıdır.
+> 2. **Repo-içi "Önce oku" linkleri.** Modüllerin `📖 Önce oku` tablosundaki
+>    deep-dive linkleri dış kaynak değildir; kaynak + ne için + süre (üç alan) yeter.
+>    "Dönünce doğrulama" işini modülün **kabul kriterleri** zaten yapar.
+
 ---
 
 ## 🧱 Takıldığında

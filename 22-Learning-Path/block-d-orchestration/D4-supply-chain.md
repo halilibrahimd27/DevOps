@@ -14,7 +14,7 @@ tags: [Learning Path, Security, Supply-Chain]
 
 ## 🎯 Bu modülü bitirdiğinde
 - C2 pipeline'ına image açık taraması (vuln scan) ekler, kırılma eşiğini belirlersin.
-- Image'ı imzalar ve cluster'ın yalnızca imzalı image kabul etmesini sağlarsın.
+- Image'ı imzalar (`cosign`) ve imzayı doğrularsın; **imzasız/taranmamış image'ı cluster'ın niçin ve nerede (admission aşamasında) reddetmesi gerektiğini** açıklarsın.
 - Bir SBOM'un ne işe yaradığını ve tedarik zinciri riskini nasıl azalttığını açıklarsın.
 
 ## 🧠 Niye bu, niye şimdi
@@ -22,12 +22,21 @@ C2'de image üretip yayımladın; ama neyi yayımladığını doğrulamadın. D4
 pipeline'a güvenlik iplik olarak eklenir — tarama ve imzalama build adımının
 parçası olur, sonradan yapılan ayrı bir iş değil.
 
+> 🚪 **İmza pipeline'da üretilir, cluster'da zorlanır.** Bu modülün lab'ı (L16) imzayı
+> **üretir ve doğrular** — `cosign sign`/`verify`. "Cluster yalnızca imzalı image
+> kabul etsin" kuralını fiilen **zorlayan** yer ise farklı bir katman: bir *admission
+> controller* (Kyverno / Sigstore policy) her image'ı API'ye kabul edilmeden önce
+> denetler. Bu modülde admission'ı **kavram olarak** öğrenirsin (nerede devreye girer,
+> niçin gerekir); politikayı elle kurmak policy-as-code konusudur — "Önce oku"daki
+> Kyverno dokümanı başlangıç noktan.
+
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
 |---|---|---|
 | [`08-Security/Container-Image-Scanning.md`](../../08-Security/Container-Image-Scanning.md) | tarama (Trivy) | ~30 dk |
 | [`04-Containers/Image-Signing-Cosign.md`](../../04-Containers/Image-Signing-Cosign.md) | imzalama (cosign) | ~25 dk |
 | [`08-Security/DevSecOps-Pipeline.md`](../../08-Security/DevSecOps-Pipeline.md) | pipeline'a yerleştirme | ~25 dk |
+| [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../../08-Security/Policy-as-Code-OPA-Kyverno.md) | admission ile imza zorlama — nerede devreye girer | ~20 dk |
 
 ## 🔨 Lab
 👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/) — C2 pipeline'ının üstüne.

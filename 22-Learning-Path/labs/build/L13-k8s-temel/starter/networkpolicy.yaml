@@ -1,5 +1,9 @@
 # networkpolicy.yaml — SEN doldur. Önce reddet, sonra tek tek aç.
-# NOT: kind varsayılan CNI (kindnet) NetworkPolicy uygular; Calico da olur.
+# NOT: NetworkPolicy'yi ancak onu ZORLAYAN bir CNI uygular. Güncel kind (kindnet)
+#   sürümleri zorlar; eski sürüm/kurulum zorlamayabilir — bu sürüme bağlıdır.
+#   Yazdıktan sonra probe Pod'unun GERÇEKTEN reddedildiğini doğrula (README Görev 4).
+#   Bağlantı hâlâ açıksa CNI policy uygulamıyordur: kind'i güncelle ya da policy
+#   zorlayan bir CNI (ör. Calico) kur. verify.sh bunu canlı sınar.
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:

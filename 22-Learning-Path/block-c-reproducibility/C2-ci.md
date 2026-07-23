@@ -38,7 +38,7 @@ devamıdır**, ayrı bir ders değil.
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] commit → test → build → registry akışı yeşil geçiyor — pipeline logu gösterilebiliyor
-- [ ] image registry'ye sürümlü etiketle (`:latest` değil; ör. commit SHA / semver) yayımlanıyor
+- [ ] image registry'ye sürümlü etiketle (`:latest` değil; ör. commit SHA / semver — `MAJOR.MINOR.PATCH`, ör. `1.4.2`) yayımlanıyor
 - [ ] Kırık bir adımın hangi aşamada, niçin patladığını logdan okuyup düzeltebiliyorsun — yazılı teşhis notu
 - [ ] "Pipeline yeşil ama neyi doğruladı" sorusunu kendi pipeline'ın için yazılı yanıtlayabiliyorsun
 

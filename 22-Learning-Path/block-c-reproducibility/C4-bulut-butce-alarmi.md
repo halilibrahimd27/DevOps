@@ -33,7 +33,7 @@ ve üçü de daha önce **elle gördüğün** bir şeyin bulut soyutlamasıdır:
 | **IAM** (Identity and Access Management) | **Kim neyi yapabilir** — kullanıcı/rol + izin politikaları | A1'deki kullanıcı/grup/izin ve "en az yetki"nin bulut karşılığı |
 
 Derinlik bu modülün konusu değil; amaç faturayı ve erişimi anlayacak kadar tanımak. Terimlerin
-kısa tanımları için [`Glossary.md`](../../Glossary.md) (VPC/IAM/Compute).
+kısa tanımları için [`Glossary.md`](../../Glossary.md) (VPC/IAM/Compute · free tier · egress · NAT).
 
 ## 📖 Önce oku
 | Kaynak | Ne için | Süre |
@@ -48,8 +48,8 @@ kısa tanımları için [`Glossary.md`](../../Glossary.md) (VPC/IAM/Compute).
 Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] Faturalama/bütçe alarmı kuruldu, bir bildirim kanalına bağlı; **forecast (öngörü) eşiği aşılınca ya da elle düşük eşikle tetiklenerek** test edildi — ya da gerçek hesapta nasıl test edileceği yazılı (gerçek fatura verisi saatler/gün gecikir; L12 yerelde bunu `plan`/config ile doğrular)
 - [ ] Küçük bir kaynak Terraform ile açıldı, `destroy` ile kapatıldı — açık kaynak kalmadığı doğrulandı
-- [ ] Hangi servislerin free tier kapsamında, hangilerinin saat/GB başına ücretli olduğunu yazılı listeledin
-- [ ] VPC, IAM ve compute kavramlarını kendi cümlelerinle tanımlayabiliyorsun
+- [ ] Hangi servislerin **free tier** (ücretsiz kullanım katmanı) kapsamında, hangilerinin saat/GB başına ücretli olduğunu yazılı listeledin
+- [ ] VPC, IAM ve compute kavramlarını kendi cümlelerinle **yazdın** (L12 `report.txt` — `verify.sh` bu üç tanımı da arar)
 
 ## 🧪 Kendini test et
 1. Buluta ilk dokunuşta **kaynak açmadan önce** bütçe alarmı kurmak niçin bir tercih değil, kural?
@@ -69,7 +69,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 | Ay sonu beklenmedik fatura | Unutulan kaynak (yük dengeleyici, disk, IP) | Alarmı düşük eşiğe kur; `destroy` alışkanlığı; maliyet gezginini incele |
 | Alarm hiç tetiklenmiyor | Bildirim kanalı doğrulanmamış | Alarmı elle düşük eşikle test et; e-posta/webhook aboneliğini onayla |
 | `apply` "access denied" | IAM izni eksik | Gereken izni dar kapsamda ekle; admin anahtarı kullanma |
-| Free tier sanılan servis ücretli | Egress / NAT / veri transferi gizli maliyet | Fiyatlandırmayı önceden oku; egress ve yönetilen servislere dikkat |
+| Free tier sanılan servis ücretli | Egress (dışarı veri-çıkış) / NAT / veri transferi gizli maliyet | Fiyatlandırmayı önceden oku; egress ve yönetilen servislere dikkat |
 
 ## 💼 Portfolyo çıktısı
 Bütçe alarmı + `destroy`'lu disiplinli bir bulut kurulum notu.
