@@ -63,15 +63,15 @@ Evaluate each threat type one by one:
 Root = attacker goal, branches = ways to reach that goal.
 
 ```
-Root: Müşteri kart numaralarını çal
-├── App'e SQLi
-│   ├── Input validation yok
-│   └── Prepared statement yok
-├── DB'ye direkt erişim
-│   ├── DB internet'e açık
+Root: Steal customer card numbers
+├── SQLi into the app
+│   ├── No input validation
+│   └── No prepared statement
+├── Direct DB access
+│   ├── DB exposed to the internet
 │   ├── Weak DB password
 │   └── Compromised admin laptop
-└── Backup'tan oku
+└── Read from backup
     ├── Backup S3 public
     └── Backup unencrypted
 ```
@@ -146,17 +146,17 @@ Every unmitigated threat → JIRA/Linear ticket + owner + due date.
 **Status:** Draft / Review / Accepted  
 
 ## 1. System Overview
-<2-3 cümle: ne yapıyor, kim kullanıyor>
+<2-3 sentences: what it does, who uses it>
 
 ## 2. Data Flow Diagram
-[Mermaid veya draw.io]
+[Mermaid or draw.io]
 
-## 3. Assets (korunması gereken)
+## 3. Assets (to be protected)
 | Asset | Sensitivity | Notes |
 |---|---|---|
-| Müşteri PII | High | KVKK kapsamında |
-| Kart numaraları | Critical | PCI DSS — saklanmıyor, tokenize |
-| API keys | High | Vault'ta |
+| Customer PII | High | Within KVKK scope |
+| Card numbers | Critical | PCI DSS — not stored, tokenized |
+| API keys | High | In Vault |
 
 ## 4. Trust Boundaries
 - Internet ↔ DMZ (WAF, rate limit)
@@ -165,23 +165,23 @@ Every unmitigated threat → JIRA/Linear ticket + owner + due date.
 - App ↔ 3rd party (mTLS + signed JWT)
 
 ## 5. Threat Analysis (STRIDE)
-[Komponent x STRIDE matrisi yukarıdaki gibi]
+[Component x STRIDE matrix as above]
 
 ## 6. Risk Register
-[Likelihood × Impact tablosu]
+[Likelihood × Impact table]
 
 ## 7. Mitigation Plan
-| Tehdit | Mitigasyon | Owner | Due | Status |
+| Threat | Mitigation | Owner | Due | Status |
 |---|---|---|---|---|
 
 ## 8. Out of Scope
-- DDoS at L3/L4 (CloudFlare gateway katmanında)
+- DDoS at L3/L4 (at the CloudFlare gateway layer)
 - Insider with full admin access (compensating: audit + vault)
 
 ## 9. Assumptions
-- Cluster K8s 1.30+ ve PSS restricted enforce
-- Tüm imajlar cosign ile imzalı
-- mTLS service mesh ile her yerde
+- Cluster K8s 1.30+ and PSS restricted enforce
+- All images signed with cosign
+- mTLS everywhere via service mesh
 
 ## 10. References
 - [Kubernetes-Hardening.md](Kubernetes-Hardening.md)
@@ -326,19 +326,19 @@ Under KVKK, threat modeling specifically requires the LINDDUN categories:
 ## 📋 Threat Modeling Checklist
 
 ```
-[ ] Her yeni servis için TM doc var (PR template'inde zorunlu alan)
-[ ] TM Git'te, kodla aynı repo'da (yaşar)
-[ ] Mermaid DFD + trust boundary'ler net
-[ ] STRIDE her komponent için tablolu
-[ ] Risk register: L × I matris
+[ ] Every new service has a TM doc (mandatory field in the PR template)
+[ ] TM lives in Git, in the same repo as the code (it stays alive)
+[ ] Mermaid DFD + trust boundaries are clear
+[ ] STRIDE tabulated for every component
+[ ] Risk register: L × I matrix
 [ ] Mitigation: owner + due date + status
-[ ] Out-of-scope açıkça belirtilmiş
-[ ] Assumptions yazılı (security context, mTLS, vb.)
-[ ] PR review'da TM güncellemesi gerektiren değişiklik kontrol ediliyor
-[ ] Yıllık tüm critical servis TM'leri refresh
-[ ] Security ekibi review imzalı (sign-off)
-[ ] Tehdit catalog: tekrar eden pattern'lerin internal kütüphanesi
-[ ] PII varsa LINDDUN da yapıldı
+[ ] Out-of-scope explicitly stated
+[ ] Assumptions documented (security context, mTLS, etc.)
+[ ] PR review checks for changes that require a TM update
+[ ] Annual refresh of all critical services' TMs
+[ ] Security team review signed off (sign-off)
+[ ] Threat catalog: internal library of recurring patterns
+[ ] If PII is involved, LINDDUN was also done
 ```
 
 ---

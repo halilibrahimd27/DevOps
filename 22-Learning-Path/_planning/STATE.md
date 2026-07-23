@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P3 slice-1: 5 CLAUDE.md "İyi doküman" örneği** (`08-Security/Kubernetes-Hardening`, `08-Security/Threat-Modeling`, `11-SRE/SLI-SLO-Error-Budget`, `02-CI-CD/Pipeline-Patterns`, `19-Compliance/KVKK-Practical` → 5 `.en.md`). 5 paralel çeviri subagent (dosya başına bir), sıkı ruleset. Bağımsız orchestrator doğrulaması: başlık paritesi 5/5 (53/40/40/41/41), tablo paritesi 5/5 (42/76/41/25/30), link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, KVKK global-okur reframe ("AB-dışı veri koruma rejimi → mühendislik kontrolü"), kod/formül/PromQL verbatim. QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %20.4 → %21.9 (73/334). **P3 15-liste + seçim kuralı I18N-COVERAGE.md'ye yazıldı. Sıra: P3 slice-2 (deep-dive 6–10).**
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P3 slice-2: deep-dive 6–10** (`20-Soft-Skills/Documentation-as-Communication`, `16-Cheatsheets/linux-troubleshooting`, `07-Observability/Prometheus-Best-Practices`, `07-Observability/Alerting-Done-Right`, `00-Culture/Blameless-Postmortem-Template` → 5 yeni `.en.md`). 5 paralel çeviri subagent. **BULGU + DÜZELTME (§14.3 öz-denetim):** ilk çeviri — ve geriye dönük slice-1 — plain/untagged fenced blokların içindeki Türkçe prose'u (checklist bölümü, ASCII diyagram/attack-tree etiketleri, kod yorumları `# YANLIŞ`→`# WRONG`, template örnek satırları) çevirmeden bırakmıştı; İngilizce twin'de Türkçe checklist = okuyucu duvarı, yani gerçek kusur. 5 remediation subagent: slice-2 Documentation + slice-1'in 4 dosyası (Pipeline-Patterns, K8s-Hardening, Threat-Modeling, SLI-SLO) düzeltildi (KVKK zaten temizdi). Bağımsız orchestrator doğrulaması (10 twin): başlık/tablo/fence paritesi 10/10 (source ile birebir), gerçek Türkçe kalıntısı **0** (yalnız `/var/…` path + `VERBİS` özel-isim false-positive), link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz. QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). İki-locale build hatasız, 5 slice-2 sayfası `/en/…/` İngilizce render. EN kapsama %21.9 → %23.4 (78/334). **Sıra: P3 slice-3 (deep-dive 11–15) → P4.**
 
 ## Faz durumu
 
@@ -18,41 +18,47 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 🟡 slice-1 (5/15) — bu tur** — bu tur 5 `.en.md` (CLAUDE.md "İyi doküman" örnekleri: K8s-Hardening, Threat-Modeling, SLI-SLO, Pipeline-Patterns, KVKK). Başlık/tablo paritesi 5/5, link locale-eksiz, positioning/KVKK-reframe temiz. Kalan: **P3 slice-2 (deep-dive 6–10) → slice-3 (11–15)** → P4 (kalan). EN kapsama %20.4 → %21.9 (73/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 🟡 slice-2 (10/15) — bu tur** — bu tur 5 yeni `.en.md` (deep-dive 6–10: Documentation-as-Communication, linux-troubleshooting, Prometheus-Best-Practices, Alerting-Done-Right, Blameless-Postmortem). **+ plain-blok Türkçe-kalıntı düzeltmesi** (slice-2 Documentation + slice-1'in 4 dosyası): checklist/diyagram/kod-yorumu prose'u İngilizce'ye çevrildi, yapı byte-korundu. Başlık/tablo/fence paritesi 10/10, gerçek Türkçe kalıntısı 0, link locale-eksiz, positioning temiz. Kalan: **P3 slice-3 (deep-dive 11–15)** → P4 (kalan). EN kapsama %21.9 → %23.4 (78/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P3 slice-2: en güçlü 15 deep-dive'ın 6–10'u (`NN-*/<Doc>.en.md`).**
-P0 + P1a (9) + P1b (35) + P2 (21) + **P3 slice-1 (5/15) TAMAM** bitti. Bunlar **tam teknik
-doküman** (224–601 satır), README değil; büyük oldukları için **bir tura sığmaz → 3–5'lik
-dilimlere böl** (§14.1.3, dosya-seviyesi). **P3'ün 15-listesi ve seçim kuralı
+**Faz 9.5 · EN twin — P3 slice-3: en güçlü 15 deep-dive'ın 11–15'i (`NN-*/<Doc>.en.md`).**
+P0 + P1a (9) + P1b (35) + P2 (21) + **P3 slice-1 (5/15) + slice-2 (5/15) = 10/15 TAMAM** bitti.
+Bunlar **tam teknik doküman** (224–601 satır), README değil; büyük oldukları için **bir tura sığmaz →
+3–5'lik dilimlere böl** (§14.1.3, dosya-seviyesi). **P3'ün 15-listesi ve seçim kuralı
 `_planning/I18N-COVERAGE.md`'de tablo olarak yazılı** (objektif: `## 📖 Önce oku` link-sayısı
 + CLAUDE.md örnek + güvenlik çekirdeği tiebreak). Slice numaraları o tablonun `Slice` kolonunda.
 
-1. **Slice-1 (5 CLAUDE.md örneği) bitti** (K8s-Hardening, Threat-Modeling, SLI-SLO,
-   Pipeline-Patterns, KVKK). **Sıra: slice-2 = deep-dive 6–10** →
-   `20-Soft-Skills/Documentation-as-Communication.md`, `16-Cheatsheets/linux-troubleshooting.md`,
-   `07-Observability/Prometheus-Best-Practices.md`, `07-Observability/Alerting-Done-Right.md`,
-   `00-Culture/Blameless-Postmortem-Template.md` (hepsi count-6). **Sonra slice-3 = deep-dive
-   11–15** (`08-Security/Secrets-Management`, `08-Security/DevSecOps-Pipeline`,
-   `11-SRE/Incident-Response`, `10-Databases-Production/Backup-Restore-Patterns`,
-   `11-SRE/Chaos-Engineering`).
-2. **Ruleset P2 ile aynı** ama içerik büyük: yapı byte-korunur (başlık/tablo/kod bloğu/`<details>`/
-   `---`/blockquote), yalnız prose + frontmatter `description`; iç link locale-eksiz `.md`;
-   kod/YAML/komut/çıktı verbatim, yalnız kod-içi `#` yorum prose'u çevrilir; placeholder EN-kanonik;
-   KVKK/BDDK global-okur çerçevesi. **Modül DEĞİL** (00-21 deep-dive, `MOD_RE ^[A-F]\d+-` eşleşmez)
-   → qa modül-bütünlük denetimine girmez.
-3. **Dilim başına 3–5 deep-dive, paralel sonnet subagent (dosya başına bir).** Nereye gelindiğini
-   STATE'e **dosya-adı seviyesinde** yaz ("X.md, Y.md çevrildi; Z.md'den devam"). build-docs.sh'e
-   dokunma (`0[0-9]-*/1[0-9]-*` `cp -r` özyineli stage — P2'de doğrulandı, ek satır gerekmedi).
-4. **P3 bitince → P4 (kalan içerik).** Aşama B eşiği (%60) hâlâ uzak (%20.4).
+1. **Slice-1 (5) + slice-2 (5) bitti.** **Sıra: slice-3 = deep-dive 11–15** →
+   `08-Security/Secrets-Management.md`, `08-Security/DevSecOps-Pipeline.md`,
+   `11-SRE/Incident-Response.md`, `10-Databases-Production/Backup-Restore-Patterns.md`,
+   `11-SRE/Chaos-Engineering.md` (hepsi count-4, DevSecOps güvenlik+güvenilirlik çekirdeği).
+2. **Ruleset — DÜZELTİLDİ (slice-2'de bulundu, kritik):** yapı byte-korunur (başlık/tablo/kod bloğu/
+   `<details>`/`---`/blockquote/`{ #anchor }`), iç link locale-eksiz `.md`, komut/YAML/PromQL/SQL/
+   çıktı **token'ları** verbatim, placeholder EN-kanonik, KVKK/BDDK global-okur çerçevesi. **ÇEVRİLİR:**
+   prose + frontmatter `description` + **plain/untagged fenced blok içindeki prose** — yani (a) checklist
+   bölümü `[ ]` satırları, (b) ASCII diyagram/tree/attack-tree **etiket** metni (box-drawing char'lar
+   sabit), (c) kod yorumları `# …` (marker sabit, `# YANLIŞ`→`# WRONG`, `# … için`→`# for …`),
+   (d) `​```markdown` template örnek satırları + `<placeholder-açıklaması>` metni, (e) Kyverno/Falco
+   `message:`/`desc:` gibi prose string değerleri. **YALNIZ gerçek verbatim-artifact korunur**
+   (komut, YAML/JSON key, metric/label adı, PromQL, path `/var/…`, URL, link target, kod identifier).
+   > ⚠️ İlk P3 ruleset "kod/YAML/komut verbatim, yalnız kod-içi `#` yorum çevrilir" diyordu; bu
+   > checklist'leri ve diyagram etiketlerini yanlışlıkla dışarıda bıraktı → İngilizce twin'de Türkçe
+   > checklist kaldı (slice-1'de 4 dosya, slice-2 ilk çeviride 1 dosya). Bu tur remediation ile
+   > düzeltildi. **Slice-3'te subagent'a bu genişletilmiş kuralı baştan ver.** Doğrulamaya
+   > `grep -nE '[ışğİŞĞ]' <twin> | grep -vE '/var/|VERB[İI]S'` (gerçek Türkçe kalıntı = 0) ekle.
+   **Modül DEĞİL** (00-21 deep-dive, `MOD_RE ^[A-F]\d+-` eşleşmez) → qa modül-bütünlük denetimine girmez.
+3. **Dilim başına 3–5 deep-dive, paralel subagent (dosya başına bir).** Nereye gelindiğini STATE'e
+   **dosya-adı seviyesinde** yaz. build-docs.sh'e dokunma (`0[0-9]-*/1[0-9]-*/2[0-9]-*` `cp -r`
+   özyineli stage — P2/P3'te doğrulandı, ek satır gerekmedi).
+4. **P3 bitince → P4 (kalan içerik).** Aşama B eşiği (%60) hâlâ uzak (%23.4).
 
-**P1–P3 taktiği (P0…P2'de 5 kez işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı
-ruleset (yapıyı byte-koru, yalnız prose+frontmatter description çevir, hedef path'i locale-eksiz
-koru, `{ #anchor }` sabit, positioning reframe, placeholder güvenliği, kod/komut verbatim),
-sonra bağımsız orchestrator doğrulaması (başlık/tablo paritesi + link-leak + positioning grep) +
-qa.py + iki-locale build + spot-read. Her tur bir dilim bitir, STATE'e **dosya-seviyesinde** nereye
-gelindiğini yaz, commit, dur.
+**P1–P3 taktiği (P0…P3 slice-2'de 7 kez işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet),
+**genişletilmiş** ruleset (yapıyı byte-koru; prose + frontmatter description + plain-blok prose çevir;
+gerçek kod-artifact + link path'i verbatim; `{ #anchor }` sabit; positioning reframe; placeholder
+güvenliği), sonra bağımsız orchestrator doğrulaması (başlık/tablo/fence paritesi + link-leak +
+**gerçek-Türkçe-kalıntı grep** + positioning grep) + qa.py + iki-locale build + spot-read. Her tur bir
+dilim bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 
 > NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
 > `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, hâlâ mevcut.
@@ -80,7 +86,15 @@ gelindiğini yaz, commit, dur.
 
 ## Açık kararlar
 
-> ✅ **BENİMSENDİ (bu tur) — 00–10 `README.en.md` untracked geldi, doğrulanıp commit edildi.** Tur
+> ✅ **KARAR (bu tur, P3 slice-2) — slice-1'in 4 committed twin'i düzeltildi (remediation, scope içi).**
+> §14.3 öz-denetim, önceki turların teslim ettiği slice-1 twin'lerinde İngilizce sayfaların içinde Türkçe
+> checklist/diyagram/kod-yorumu kalıntısı buldu (plain-blok prose çevrilmemişti). Bunlar `00-21` altında
+> ama benim bu faz katmanımda ürettiğim `.en.md` **twin** dosyaları (§14.4'ün koruduğu mevcut TR/kaynak
+> dosyalar değil) → düzeltmek kısıt ihlali değil. `git status` bu tur: 5 yeni `.en.md` (`??`) + 4 düzeltilmiş
+> `.en.md` (` M`, Pipeline-Patterns/K8s-Hardening/Threat-Modeling/SLI-SLO) + STATE + I18N-COVERAGE. Working-tree
+> TEMİZ girdi (` M README.md` yok — kullanıcı önceki turlarda commit'ledi). Detay ↓ "P3 slice-2" bölümü.
+>
+> ✅ **BENİMSENDİ (önceki tur) — 00–10 `README.en.md` untracked geldi, doğrulanıp commit edildi.** Tur
 > başında `git status` 11 untracked `README.en.md` (00-Culture … 10-Databases-Production) gösterdi —
 > STATE ise "P2 başlamadı" diyordu. Bu çelişki, önceki **kesintili bir turun** (commit/STATE
 > güncellemesi olmadan ölen) P2-dilim-1 işi: structure-preserving çeviriler. Körlemesine commit
@@ -110,7 +124,50 @@ gelindiğini yaz, commit, dur.
 > kullanıcı kararı beklenir (bilinçli düzeltme gibi görünüyor → kullanıcı ayrı commit'ler, değilse
 > `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P3 slice-1 (bu tur — 5 CLAUDE.md "İyi doküman" örneği)
+### Faz 9.5 · EN twin P3 slice-2 (bu tur — deep-dive 6–10 + plain-blok Türkçe-kalıntı düzeltmesi)
+- **Dilim = P3 slice-2 (5/15 deep-dive, count-6 katmanı).** §14.1.3 dosya-seviyesi dilim: 6→
+  `20-Soft-Skills/Documentation-as-Communication` (415s), 7→ `16-Cheatsheets/linux-troubleshooting`
+  (337s), 8→ `07-Observability/Prometheus-Best-Practices` (395s), 9→ `07-Observability/Alerting-Done-Right`
+  (296s), 10→ `00-Culture/Blameless-Postmortem-Template` (224s). I18N-COVERAGE `Slice` kolonuyla birebir.
+  Kalan 5 = slice-3 (11–15, count-4 güvenlik/güvenilirlik çekirdeği).
+- **5 paralel çeviri subagent (dosya başına bir) — P0…P3 slice-1 deseni (6. kez).** Bağımsız
+  orchestrator doğrulaması: başlık paritesi 5/5 (67/72/38/22/20), tablo 5/5 (26/12/12/19/13), fence
+  5/5 (20/22/46/22/6), link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz.
+- **🔴 BULGU (§14.3 öz-denetim) — plain/untagged fenced blok içi Türkçe kalıntısı.** Documentation
+  subagent'ı, slice-1 twin'lerini (Threat-Modeling/K8s-Hardening) örnek alıp **plain untagged ``` blok
+  içeriğini "diyagram/artifact" sayıp verbatim** bıraktı — ama o bloklar sadece diyagram değil,
+  reponun **checklist** bölümünü (CLAUDE.md her dokümanda zorunlu), ASCII **attack-tree/flow-diagram
+  etiketlerini** ve **kod yorumlarını** (`# YANLIŞ`/`# DOĞRU`) içeriyordu. İngilizce twin'de Türkçe
+  checklist = okuyucunun duvara çarpması = gerçek kusur (üstelik ilk P3 ruleset'im "yalnız kod-içi `#`
+  yorum çevrilir" derken checklist'i dışarıda bırakmıştı — ruleset hatası). Kapsamlı Türkçe-tarama
+  (`[ışğİŞĞ]` + TR-fonksiyon-kelime) 5 twin'de 1'i temiz-değil (Documentation, 11 satır) + geriye
+  dönük slice-1'de 4/5 dosya (Pipeline-Patterns, K8s-Hardening, Threat-Modeling, SLI-SLO; KVKK temiz).
+- **KARAR: slice-1'i de bu tur düzelt (scope gerekçesi).** §14.1.2 "en fazla bir faz" **ileri
+  ilerlemeyi** sınırlar (slice-3/P4'e geçme); zaten teslim edilmiş slice-1'in kusurunu §14.3 öz-denetimi
+  gereği düzeltmek **aynı fazın (9.5) remediation'ıdır**, yeni dilim değil. Kapsam frontier'ı ilerlemedi
+  (hâlâ 10/15). Slice-2'yi doğru teslim edip slice-1'de aynı kusuru bilerek bırakmak daha kötü olurdu
+  (§15.4 kandırma-karşıtı ruhu). Bounded + mekanik (prose-only, yapı korunur) → risk düşük.
+- **5 remediation subagent (sıkı "plain-blok prose çevir, kod-artifact + link path dokunma" ruleset).**
+  Sonuç — 10 twin (5 slice-2 + 4 remediated slice-1 + KVKK dokunulmadı) bağımsız doğrulama:
+  başlık/tablo/fence paritesi source ile **10/10 birebir** (satır sayısı source-eşit; twin +prose-wrap
+  farkı yalnız KVKK +3/Documentation +4/Prometheus +1 — hepsi prose, kod/tablo/başlık sabit), gerçek
+  Türkçe kalıntısı **0** (yalnız `/var/…` path + `VERBİS` özel-isim FP), link-leak 0. Remediation
+  ekstra yakaladı: K8s Kyverno `message:` string, SLI-SLO `30 gün`/`43,200 dk` birim'leri,
+  Pipeline maturity-level satırları + 11-satırlık checklist tümü.
+- **Düzeltilmiş ruleset Sıradaki-adım'a + I18N-COVERAGE'a yazıldı** (slice-3 + P4 baştan doğru yapsın):
+  plain-blok içindeki *prose* (checklist/diyagram etiketi/kod yorumu/template örnek/`message:`,`desc:`
+  string) İngilizce'ye çevrilir; yalnız komut/YAML-key/metric/PromQL/path/link-target verbatim.
+  Doğrulama adımına `grep -nE '[ışğİŞĞ]' <twin> | grep -vE '/var/|VERB[İI]S'` eklendi.
+- **build-docs.sh'e dokunulmadı** — 5 slice-2 `.en.md` numaralı klasörlerde (`0[0-9]-*/1[0-9]-*/2[0-9]-*`
+  `cp -r`) otomatik staged; iki-locale build hatasız, 5 sayfa `/en/…/` İngilizce render (EN-marker
+  spot-check: 17/9/34/25/17 hit). EN kapsama %21.9 → %23.4 (78/334).
+- **QA exit 0 (1 UYARI = önceki turlardan kalan `docs/index.en.md` false-positive).** Bu turun 10 twin'i
+  (5 yeni + 5 düzeltilmiş) **yeni kırık link 0**; sayı değişmedi (29 kırık link / 1 dosya).
+- **Working-tree bu tur TEMİZ girdi** (` M README.md` yok). Commit: **11 kendi dosyam** = 5 yeni `.en.md`
+  (slice-2) + 4 düzeltilmiş `.en.md` (slice-1 remediation) + STATE + I18N-COVERAGE. Dosyalar tek tek
+  `git add`, `git add -A` KULLANILMADI (§14.4).
+
+### Faz 9.5 · EN twin P3 slice-1 (önceki tur — 5 CLAUDE.md "İyi doküman" örneği)
 - **Dilim = P3 slice-1 (5/15 deep-dive).** §14.1.3 dosya-seviyesi dilim: P3'ün 15 deep-dive'ı
   büyük (224–601 satır) → bir tura sığmaz, 3–5'lik dilim. Slice-1 = CLAUDE.md "İyi doküman"
   olarak adlandırılan 5 örnek (`08-Security/Kubernetes-Hardening`, `08-Security/Threat-Modeling`,
