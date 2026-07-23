@@ -31,7 +31,7 @@ disiplinine çevirir.
 
 ## 🔨 Teslim edilebilir egzersiz
 Bu modül saf okuma değildir; çıktısı yazılı bir analizdir. Bir iş yükü seç — D2'de
-çalıştırdığın uygulama ya da Capstone 1/2 sistemin. `finops-analiz.md` yaz:
+çalıştırdığın uygulama ya da [`Capstone 1`](../capstones/CAP1-blok-c-sonu.md)/[`Capstone 2`](../capstones/CAP2-blok-d-sonu.md) sistemin. `finops-analiz.md` yaz:
 1. Maliyeti üç eksene ayır (compute, depolama, ağ/egress) — senaryo değerleriyle, gerçek fatura değil.
 2. Bir birim maliyet hesapla (1000 istek başına ya da GB-ay) — varsayımlarını yaz.
 3. Bir optimizasyon öner (right-sizing / spot / depolama sınıfı) ve tasarrufu **mutlak farkla** göster (önce → sonra).
@@ -42,7 +42,7 @@ Hepsi doğrulanmadan sonraki modüle geçme:
 - [ ] `finops-analiz.md`'de maliyet üç eksene (compute / depolama / egress) ayrılmış bir tablo var
 - [ ] Bir birim maliyet sayıyla hesaplandı ve altındaki varsayımlar yazılı
 - [ ] Bir optimizasyon önerisi önce → sonra mutlak farkıyla gerekçelendirildi (yüzde değil, mutlak sayı)
-- [ ] Aynı karar bir paragrafta iş diliyle savunuldu — `grep -c "" finops-analiz.md` boş dosya değil
+- [ ] Aynı karar `finops-analiz.md` içinde ayrı bir "İş tarafı" paragrafında iş diliyle savunuldu (aylık maliyet + kesinti/risk sonucu — yalnız teknik terim değil)
 
 ## 🧪 Kendini test et
 1. Compute maliyeti sabitken egress faturası niçin sürpriz yapar ve nasıl daraltılır?

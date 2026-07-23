@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9 KISMEN — Blok A+B düşmanca review düzeltildi (13 bulgu) + REVIEW-FINDINGS.md (40 bulgu) + TROUBLESHOOTING 55 madde
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9 TAMAM — Blok E+F düşmanca review düzeltildi (12 bulgu) + GLOSSARY-COVERAGE.md çıkarıldı (açık terim boşluğu 0)
 
 ## Faz durumu
 
@@ -17,44 +17,32 @@
 | 6.5 | Sertifika katmanı | ✅ | **Tamam.** README + G1/G2/G3 + HOW-TO-CERTIFY (§8.2 9 bölüm/kapı, sürüm uyarısı, domain×modül boşluk sütunu). Redirect + RoadMap/CV-Tips entegrasyonu + DCA legacy notu + çelişki temizliği. G3'te F2→CKS ileri-link + sıra notu (revizyon 7). QA exit 0 (0 uyarı) |
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
-| 9 | Düşmanca gözden geçirme | 🟡 | **KISMEN.** TROUBLESHOOTING 55 madde ✅ · REVIEW-FINDINGS.md 40 bulgu (6 blok) ✅ · Blok A (A-01..05) + B (B-01..08) düzeltildi ✅ · Blok C/D/E/F bulguları AÇIK · GLOSSARY-COVERAGE.md pending. QA exit 0 |
+| 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
 | 9.5 | A0 + geri-dönük düzeltmeler | ⬜ | **ZORUNLU** — A0 modülü, EN twin'ler. (L06 starter app ARTIK VAR — Faz 9'da doğrulandı, listeden düştü) |
 
 ## Sıradaki adım
 
-**Faz 9 — DEVAM: Blok C düzeltmelerinden başla.** Bulguların tamamı (40 adet, 6 blok)
-`_planning/REVIEW-FINDINGS.md`'de tablo halinde, durum kolonuyla (`✅ düzeltildi` /
-`⬜ açık` / `➖ değişiklik yok`). Bu tur Blok A+B kapandı; **sıradaki iş açık `⬜` bulguları
-blok blok kapatmak:**
+**Faz 9 KAPANDI (✅).** BUILD-PROMPT §10'un son fazı (`-1 → … → 9`) bitti: 40 düşmanca-review
+bulgusunun tamamı `_planning/REVIEW-FINDINGS.md`'de kapalı, çıktı kapısı
+`_planning/GLOSSARY-COVERAGE.md` çıkarıldı (açık terim boşluğu 0). QA exit 0.
 
-1. **Blok C (C-01..C-07)** — C-01/C-03 (C0 Python sözdizimi köprüsü + tutorial'ı 4-alanlı
-   zorunlu "Önce oku" yap), C-02 semver / C-04 LocalStack / C-07 NAT+egress+free-tier
-   glossları + Glossary, C-05 (C0 self-test forward-ref), C-06 (C4 son kabul kriteri →
-   yazılı `report.txt`). C0-ops-python.md + C2/C3/C4 + Glossary.
-2. **Blok D (D-01..D-08)** — GÜVENLİK İPLİĞİ KRİTİK: D-01 (L13 NetworkPolicy verify.sh
-   kelime-grep yerine canlı `wget` exit + CNI/kind sürüm), D-02 (D4 🎯↔kabul uyumu + admission
-   köprüsü + Policy-as-Code-OPA-Kyverno.md linki), D-03 (D1 köprüye RBAC+NetworkPolicy tanımı),
-   D-04 (kind/k3s Glossary+gloss), D-05 (D2 drain kriteri↔L14), D-06 (D1 önkoşul `[C1,C2]`'ye
-   indir — spec uyumu), D-07 (ingress controller notu + taint/toleration). D-08 = §9 kapsam
-   kararı (A-05 ile aynı, STUDY-METHOD kontrol et).
-3. **Blok E (E-01..E-06)** — E-01 Alertmanager tanım+Glossary, E-02 E4 şema-hedefi kabul
-   kriterine bağla, E-03 E2 önkoşula B2, E-04 burn-rate köprüsü, E-05 ack gloss+Glossary,
-   E-06 E5 kabul#3 ilkeyle çelişkiyi yumuşat.
-4. **Blok F (F-01..F-05)** — F-01 grep kontrolü, F-02..05 Glossary (egress/ADR/right-sizing/
-   reserved/bilişsel yük), F-04 Capstone linkleri. F-06 = ➖ (sınırda, ihlal değil).
-5. **Çıktı kapısı (EN SON):** tüm `⬜` kapandıktan sonra `_planning/GLOSSARY-COVERAGE.md`
-   terim envanterini çıkar — her teknik terim ya modülde tanımlı ya `Glossary.md`'de.
-   Sonra Faz 9 → ✅.
+**Sıradaki iş = Faz 9.5 (STATE'e eklenmiş ZORUNLU ek faz — BUILD-PROMPT §10'da yok, önceki
+review turlarında tanımlandı). Bu turda GİRİLMEDİ (§14 tek-faz kuralı).** İçerik:
 
-Her tur: bir(-iki) blok kapat, REVIEW-FINDINGS durum kolonunu güncelle, QA exit 0,
-§14.3 self-check, STATE güncelle, commit, dur. **Blok D'ye özen** — güvenlik ipliği
-bulguları (D-01/D-02) lab verify.sh düzenlemesi içerir, `bash -n` + qa şart.
+1. **A0 modülü** — MODULE-SPEC'te işaretli beginner "ısınma/ön-koşul" modülü. `block-a-intuition/`
+   altına, A1'den önce. Frontmatter (`level: A`, `module: A0`, ön koşul yok), tam modül anatomisi,
+   QA `check_modules` uyumu. CURRICULUM/README/PLACEMENT'a A0 satırı; A1 önkoşuluna A0 ekle
+   (DAG: A0 → A1). qa.py MOD_RE (`^[A-F]\d+-`) A0-... ile eşleşir → zorunlu bölümler tam olmalı.
+2. **EN twin katmanı — HÂLÂ BLOKE.** `qa.py` (değiştiremem, §15.4) `^[A-F]\d+-` eşleşen her
+   dosyada Türkçe bölüm başlıklarını zorunlu tutar → `A1-….en.md` İngilizce başlıkla QA'yı
+   kırar; Türkçe başlık + İngilizce gövde **kandırma** olur. **Kullanıcı müdahalesi gerekir:**
+   qa.py `.en.md` locale dosyalarını modül denetiminden ayırmalı. Bu bloke sürerken A0'ı da
+   yalnız TR üret; EN twin ayrı i18n turu (I18N-COVERAGE P1). Bu turda GİRME.
+3. NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
+   `KURULUM.template.md`) — 9.5 listesinden düşürüldü (Faz 9 A-02 turunda doğrulandı).
 
-- **Faz 9.5 (ZORUNLU, en son):** A0 modülü + EN twin'ler + kalan review maddeleri.
-  NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
-  `KURULUM.template.md`) — 9.5 listesinden düşürüldü (A-02 düzeltmesinde doğrulandı).
-  EN twin katmanı hâlâ `qa.py` `.en.md` çakışmasına takılı (Faz 2 kararı) — kullanıcı
-  müdahalesi gerekir. Bu turda GİRME.
+Her tur: bir faz (Faz 9.5) → A0'ı yaz + CURRICULUM/README/PLACEMENT/A1-önkoşul entegre et,
+QA exit 0, §14.3 self-check, STATE güncelle, commit, dur.
 
 **Yerleşik desenler (sonraki fazlarda referans al):**
 - **STAGE-EXAM deseni (Faz 6'da kondu):** frontmatter (`description/level/tags`, `module`
@@ -76,7 +64,27 @@ bulguları (D-01/D-02) lab verify.sh düzenlemesi içerir, `bash -n` + qa şart.
 
 ## Açık kararlar
 
-### Faz 9 kararları (bu tur — Blok A+B review)
+### Faz 9 kapanışı (bu tur — Blok E+F + çıktı kapısı)
+- **Giriş durumu = limit-break kurtarma.** Önceki tur (`0de0c00 "wip: Faz 9 ara kayıt (limit
+  molası)"`) Blok C+D bulgularını (14) düzeltip commit etmiş (REVIEW-FINDINGS C/D ✅) ama
+  STATE Faz-durumu tablosunu güncellememişti; ayrıca Blok E+F için **inline düzeltmeleri
+  yapıp commit etmeden** bırakmıştı (E1/E2/E4/E5/F1 working-tree'de M). Bu tur o iş
+  doğrulandı, tamamlandı ve kapatıldı — yeniden yazılmadı.
+- **E-03 prose köprüyle çözüldü (frontmatter değişmedi):** E2 önkoşulu `[E1,B1]` kaldı;
+  E2→E1→B2 transitif (E1 prereq=`[B2,D2]`). E2 "Niye bu" bunu açıkça yazar. Frontmatter'a B2
+  eklemek MODULE-SPEC/DAG ile ekstra tutarlılık yükü getirirdi; bağımlılık zaten sağlam →
+  düşük-risk prose tercih edildi.
+- **`bilişsel yük` Glossary'ye EN-anahtarlı girdi (`Cognitive load`, C bölümü):** Glossary
+  EN|TR biçimli; kanonik terim Team Topologies'in "cognitive load"u. TR "bilişsel yük"
+  açıklamada geçtiği için metin araması bulur; F3 zaten `Team-Topologies.md`'ye linkli.
+- **6 yeni Glossary satırı = kısıt #1 ihlali değil:** hepsi tek-cümle tanım (deep-dive
+  tekrarı değil); `Glossary.md` zaten 00-21 dışı kök referans dosyası (qa MOD_RE eşleşmez).
+  §14.3(1): 3 yeni tanım cümlesi repo-genelinde grep → yalnız `Glossary.md`.
+- **GLOSSARY-COVERAGE.md = çıktı kapısı artefaktı** (`_planning`, siteye stage edilmez):
+  16 Faz-9 terimi + blok-içi çekirdek terim envanteri; açık boşluk 0. İki-kaynak kuralı
+  (inline gloss ve/veya Glossary) belgeli.
+
+### Faz 9 kararları (önceki tur — Blok A+B review)
 - **§9 kapsam kararı (A-05/D-08/C-03'te tekrar eder):** Dört-alan dış-kaynak sözleşmesi
   **yönlendirilmiş dış okuma** linkleri içindir. İhtiyaç-anında tekil referans (man page,
   tool wiki, GitHub release sürüm bakışı) muaf — muafiyet A5 modülünde açıkça yazılı
@@ -271,7 +279,46 @@ bulguları (D-01/D-02) lab verify.sh düzenlemesi içerir, `bash -n` + qa şart.
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9 — Blok A+B düşmanca review, KISMEN)
+## Bu oturumda yapılanlar (Faz 9 — Blok E+F + çıktı kapısı, KAPANDI)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, PAUSE yok. `qa-report.txt`
+GEÇTİ ama bayat (son commit sonrası). Working tree'de 5 dosya `M` (E1/E2/E4/E5/F1) —
+`0de0c00 "wip: Faz 9 ara kayıt (limit molası)"` turunun **commit edilmemiş** Blok E+F inline
+düzeltmeleri. Diff okundu: E-01/E-02/E-04/E-05/E-06 + F-01/F-04 inline zaten uygulanmış; eksik =
+Glossary satırları + GLOSSARY-COVERAGE.md + REVIEW-FINDINGS/STATE güncellemesi.
+
+**Bu tur yapılan (§10 Faz 9 kapanışı):**
+1. **Glossary'ye 6 terim** (eksik olanlar; grep'te `ack`→Backstage, `ADR`→CIDR/adres,
+   `NAT`→alternatifi false-positive'leri elenerek doğrulandı): A bölümü `ack`/`ADR`/
+   `Alertmanager`, C bölümü `Cognitive load` (bilişsel yük), R bölümü `Reserved Instance (RI)`/
+   `Right-sizing`. `egress`/`NAT`/`burn rate` zaten vardı (C-07/prev), `semver`/`LocalStack`/
+   `kind`/`k3s`/`Taint`/`Free tier`/`ICMP` de.
+2. **E+F inline düzeltmeleri doğrulandı/kapatıldı:** E-01 (Alertmanager tanım), E-02 (E4 şema
+   kabul kriteri), E-03 (E2 prose B2 köprü), E-04 (E1 burn-rate köprü), E-05 (ack gloss),
+   E-06 (E5 kabul#3 yumuşatma), F-01 (F1 grep→yazılı "İş tarafı" paragrafı), F-04 (F1 Capstone
+   linkleri). REVIEW-FINDINGS E/F blokları `✅`, gerekçeli `➖`: F-06.
+3. **`_planning/GLOSSARY-COVERAGE.md` çıkarıldı** (Faz 9 çıktı kapısı) — 16 terim + blok-içi
+   çekirdek envanteri, açık boşluk 0.
+4. **REVIEW-FINDINGS.md kapanış özeti** (A5·B8·C7·D8·E6·F6, `⬜`=0) + GLOSSARY-COVERAGE gate ✅.
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0.** 29 modül, 49 lab scripti `bash -n`, kırık iç link yok,
+  site iki locale derlendi, `_planning` sızmadı.
+- **§14.3(1) tekrar:** yeni prose (E1/E2 köprü) + 6 Glossary tanımı → grep repo-genelinde
+  yalnız kendi dosyasında; deep-dive tekrarı yok (kısıt #1).
+- **§14.3(2) pazarlama/ünvan:** 22-LP grep → yalnız önceden-kabul teknik "garanti" (D2/L14/K05
+  `requests`). Yeni pazarlama 0. Geniş tarama (`maaş|ROI|%..artış|en kapsamlı`) temiz.
+- **§14.3(3) süre:** yeni modül yok (mevcut E/F modüllerine kısa ekleme + Glossary) →
+  kümülatif ~477s sabit.
+
+**Değişen dosyalar (bu tur):** `Glossary.md` · `block-e-ownership/E1,E2,E4,E5` ·
+`block-f-judgment/F1` (limit-break'ten devralınan inline'lar + bu tur) · `_planning/REVIEW-
+FINDINGS.md` · `_planning/GLOSSARY-COVERAGE.md` (yeni) · `_planning/STATE.md`. `Glossary.md` =
+00-21 dışı kök referans (qa MOD_RE eşleşmez); `block-*` = patika içi (00-21 değil).
+
+---
+
+## Önceki oturum (Faz 9 — Blok A+B düşmanca review, KISMEN)
 
 **Giriş durumu:** Faz 8 önceki tur kapanmıştı. `e47d703 "wip: ara kayıt"` commit'i Faz 9'u
 başlatmış (TROUBLESHOOTING 55 madde + dağınık modül/verify.sh rötuşları) ama REVIEW-FINDINGS
