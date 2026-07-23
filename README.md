@@ -203,4 +203,4 @@ PR'lar memnuniyetle. Önce [CONTRIBUTING.md](CONTRIBUTING.md) ve yazım rehberi 
 
 *Hedef: bir DevOps mühendisinin yıllar boyunca açıp baktığında değer bulduğu bir referans olmak.*
 
-Yazan & sürdüren: **Halil İbrahim Dürmüş** — [@halilibrahimd27](https://github.com/halilibrahimd27) · [LinkedIn](https://www.linkedin.com/in/halilibrahimd)
+Yazan & sürdüren: **Halil İbrahim Dürmüş** — [@halilibrahimd27](https://github.com/halilibrahimd27) · [LinkedIn]([https://www.linkedin.com/in/halilibrahimd](https://www.linkedin.com/in/halil-ibrahim-durmus/))
