@@ -207,4 +207,4 @@ PRs are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the writing guide [
 
 *Goal: to be a reference a DevOps engineer opens and still finds valuable years later.*
 
-Written & maintained by: **Halil İbrahim Dürmüş** — [@halilibrahimd27](https://github.com/halilibrahimd27) · [LinkedIn](https://www.linkedin.com/in/halilibrahimd)
+Written & maintained by: **Halil İbrahim Dürmüş** — [@halilibrahimd27](https://github.com/halilibrahimd27) · [LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus/)
