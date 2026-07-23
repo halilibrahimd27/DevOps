@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P1b: Blok E+F modül twin'leri** (11 dosya: E1–E5 + Blok E STAGE-EXAM · F1–F5 — **Blok F'de STAGE-EXAM yok**). Bununla **P1b TAMAM** (A0…F5 + A–E STAGE-EXAM = 35 dosya). 11 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset. Başlık paritesi 11/11, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, güvenlik ipliği korundu (E4 backup at-rest/erişim, F2 KVKK→GDPR→SOC 2), F-blok `## 🔨 Deliverable exercise` başlığı 5/5 tutarlı. QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %10.8 → %14.1. **Sıra: P2 (21 klasör README'si).**
+**Son güncelleme:** 2026-07-23 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P2: 21 klasör README'si** (`00-Culture` … `20-Soft-Skills` → 21 `.en.md`). 11'i (00–10) önceki kesintili turdan **untracked** geldi (structure-preserving; başlık/tablo paritesi + link-leak + positioning doğrulandı → benimsendi); 10'u (11–20) bu tur 10 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset ile üretildi. Başlık/tablo paritesi 21/21, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, KVKK 19-Compliance'ta global-okur çerçevesiyle reframe. QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin false-positive; bu turdan yeni kırık link 0). EN kapsama %14.1 → %20.4 (68/334). **Sıra: P3 (en güçlü 15 deep-dive).**
 
 ## Faz durumu
 
@@ -18,35 +18,38 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b TAMAM ✅ (A+B · C+D · E+F — bu tur)** — bu tur 11 twin: E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5, Blok F STAGE-EXAM yok). P1b toplam 35 dosya (30 modül + 5 STAGE-EXAM). Kalan: **P2 (21 klasör README'si)** → P3 (15 deep-dive) → P4 (kalan). EN kapsama %10.8 → %14.1. QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ (21 klasör README'si — bu tur)** — bu tur 21 `.en.md` (`00-Culture` … `20-Soft-Skills`); 11'i (00–10) önceki kesintili turdan untracked (doğrulanıp benimsendi), 10'u (11–20) bu tur üretildi. Kalan: **P3 (en güçlü 15 deep-dive)** → P4 (kalan). EN kapsama %14.1 → %20.4 (68/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin false-positive, önceki turlardan; yeni kırık link 0). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P2: 21 klasör README'si (`NN-*/README.en.md`).** P0 + P1a (9 rehber)
-+ **P1b TAMAM** (A+B 12 · C+D 12 · E+F 11 = 35 dosya) bitti. Sıra **21 konu klasörünün
-README twin'leri** (`00-Culture` … `20-Soft-Skills`; bazı numara boş olabilir — `ls -d [0-2][0-9]-*/`
-ile gerçek listeyi çıkar, her birinde `README.md` var mı `ls NN-*/README.md` ile doğrula):
+**Faz 9.5 · EN twin — P3: en güçlü 15 deep-dive (`NN-*/<Doc>.en.md`).** P0 + P1a (9) +
+P1b (35) + **P2 TAMAM** (21 klasör README'si) bitti. Sıra reponun en güçlü ~15 deep-dive'ı —
+bunlar **tam teknik doküman** (250–600 satır), README değil; büyük oldukları için **bir tura
+sığmaz → 3–5'lik dilimlere böl** (§14.1.3, dosya-seviyesi):
 
-1. **Hedef:** her `NN-*/README.md` → `NN-*/README.en.md`. Bu README'ler klasörün "İçindekiler"
-   tablosu + kısa giriş; **modül değil** (frontmatter'sız ya da minimal) → qa `MOD_RE` eşleşmez,
-   modül bütünlük denetimine girmez. Yine de yapı byte-korunur, yalnız prose + (varsa) frontmatter
-   `description` çevrilir.
-2. **İç link kuralı (değişmez):** README içindeki deep-dive linkleri locale eki ALMAZ
-   (`[x](Kubernetes-Hardening.md)`, `.en.md` DEĞİL). Tablo satırlarındaki relative path'ler kaynakla birebir.
-3. **Dilimleme (§14.1.3):** 21 README tek tura sığmayabilir → 2 dilime böl (örn. 00–10, sonra
-   11–20). Blok deseni: paralel sonnet subagent, dosya başına bir. Nereye gelindiğini STATE'e
-   **klasör-numarası seviyesinde** yaz.
-4. **build-docs.sh'e dokunma:** `NN-*` klasörleri zaten `2[0-9]-*` DEĞİL ama `cp -r` ile
-   staging'e giriyor mu doğrula (P0'da numaralı klasörler `cp -r` ile stage ediliyordu). Şüphede
-   `site_src/NN-*/README.en.md` + `/en/NN-*/` render kontrolü yap; gerekiyorsa **yalnız** stage
-   satırı ekle (izinli infra; qa.py/00-21 içeriği değil).
-5. **P2 bitince → P3 (en güçlü 15 deep-dive) → P4 (kalan).** Aşama B eşiği (%60) hâlâ uzak.
+1. **Hangi 15?** Objektif seç: patika modüllerinin `## 📖 Önce oku` tablolarında **en çok
+   anılan** deep-dive'ları say → üstten 15'i al (EN okur için patikanın gerçekten yönlendirdiği
+   içerik önce çevrilir). Komut:
+   `grep -rho '\](\.\./\.\./[0-9][0-9]-[^)]*\.md)' 22-Learning-Path/block-*/ | sort | uniq -c | sort -rn | head -20`.
+   CLAUDE.md "İyi doküman" örnekleri bu listede zaten üst sırada olmalı:
+   `11-SRE/SLI-SLO-Error-Budget.md`, `08-Security/Kubernetes-Hardening.md`,
+   `08-Security/Threat-Modeling.md`, `02-CI-CD/Pipeline-Patterns.md`, `19-Compliance/KVKK-Practical.md`.
+2. **Ruleset P2 ile aynı** ama içerik büyük: yapı byte-korunur (başlık/tablo/kod bloğu/`<details>`/
+   `---`/blockquote), yalnız prose + frontmatter `description`; iç link locale-eksiz `.md`;
+   kod/YAML/komut/çıktı verbatim, yalnız kod-içi `#` yorum prose'u çevrilir; placeholder EN-kanonik;
+   KVKK/BDDK global-okur çerçevesi. **Modül DEĞİL** (00-21 deep-dive, `MOD_RE ^[A-F]\d+-` eşleşmez)
+   → qa modül-bütünlük denetimine girmez.
+3. **Dilim başına 3–5 deep-dive, paralel sonnet subagent (dosya başına bir).** Nereye gelindiğini
+   STATE'e **dosya-adı seviyesinde** yaz ("X.md, Y.md çevrildi; Z.md'den devam"). build-docs.sh'e
+   dokunma (`0[0-9]-*/1[0-9]-*` `cp -r` özyineli stage — P2'de doğrulandı, ek satır gerekmedi).
+4. **P3 bitince → P4 (kalan içerik).** Aşama B eşiği (%60) hâlâ uzak (%20.4).
 
-**P1/P2 taktiği (P0…P1b'de 4 kez işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı
+**P1–P3 taktiği (P0…P2'de 5 kez işe yaradı):** dosya başına bir çeviri subagent'ı (sonnet), sıkı
 ruleset (yapıyı byte-koru, yalnız prose+frontmatter description çevir, hedef path'i locale-eksiz
 koru, `{ #anchor }` sabit, positioning reframe, placeholder güvenliği, kod/komut verbatim),
-sonra qa.py + iki-locale build + spot-read ile doğrula. Her tur bir dilim bitir,
-STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
+sonra bağımsız orchestrator doğrulaması (başlık/tablo paritesi + link-leak + positioning grep) +
+qa.py + iki-locale build + spot-read. Her tur bir dilim bitir, STATE'e **dosya-seviyesinde** nereye
+gelindiğini yaz, commit, dur.
 
 > NOT: **L06 starter app ARTIK VAR** (`labs/build/L06-elle-deploy/starter/app.py` +
 > `KURULUM.template.md`) — 9.5 listesinden Faz 9'da düşmüştü, hâlâ mevcut.
@@ -74,6 +77,14 @@ STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 
 ## Açık kararlar
 
+> ✅ **BENİMSENDİ (bu tur) — 00–10 `README.en.md` untracked geldi, doğrulanıp commit edildi.** Tur
+> başında `git status` 11 untracked `README.en.md` (00-Culture … 10-Databases-Production) gösterdi —
+> STATE ise "P2 başlamadı" diyordu. Bu çelişki, önceki **kesintili bir turun** (commit/STATE
+> güncellemesi olmadan ölen) P2-dilim-1 işi: structure-preserving çeviriler. Körlemesine commit
+> etmedim → **doğruladım** (başlık/tablo paritesi 11/11, link-leak 0, positioning/pazarlama 0,
+> 00-Culture + 08/19 spot-read) → kaliteli olduğunu görüp benimseyip 10 yeni dosyayla (11–20)
+> birlikte tek P2 commit'ine aldım. Uydurma/yarım değillerdi.
+>
 > ✅ **ÇÖZÜLDÜ (önceki tur açık kararı) — kök `README.en.md` LinkedIn URL'i.** C+D turundaki
 > atanmamış `README.en.md` farkı (`.../in/halilibrahimd` → `.../in/halil-ibrahim-durmus/`)
 > kullanıcı tarafından commit'lendi: `3c10144 fix(README): update LinkedIn profile link`. Bilinçli
@@ -84,12 +95,42 @@ STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 > (`.../in/halilibrahimd` → `.../in/halil-ibrahim-durmus/`) — yani kullanıcının `README.en.md`'de
 > yaptığı düzeltmenin TR eşleniği. Bu değişikliği YAPMADIM (E+F çeviri kapsamı dışı; hiçbir
 > subagent'a atanmadı). Kullanıcının kendi profil URL'i + `README.en.md` commit'iyle tutarlı
-> olduğu için **tahminle commit ETMEDİM, geri de ALMADIM** — working-tree'de bırakıldı. Bu turun
-> commit'i yalnız 13 kendi dosyamı içerir (11 twin + STATE + I18N-COVERAGE). **Sonraki tur
-> uyarısı:** `git add -A` ile süpürme; kullanıcı kararı beklenir (bilinçli düzeltme gibi
-> görünüyor → kullanıcı ayrı commit'ler, değilse `git checkout -- README.md`).
+> olduğu için **tahminle commit ETMEDİM, geri de ALMADIM** — working-tree'de bırakıldı. **Bu tur da
+> aynı (P2):** ` M README.md` hâlâ duruyor; commit'ime dahil etmedim. Bu turun commit'i yalnız **23
+> kendi dosyamı** içerir (21 klasör `README.en.md` + STATE + I18N-COVERAGE) — dosyalar tek tek
+> `git add` edildi, `git add -A` KULLANILMADI. **Sonraki tur uyarısı:** `git add -A` ile süpürme;
+> kullanıcı kararı beklenir (bilinçli düzeltme gibi görünüyor → kullanıcı ayrı commit'ler, değilse
+> `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P1b (bu tur — Blok E+F: 11 modül/exam twin'i · P1b TAMAMLANDI)
+### Faz 9.5 · EN twin P2 (bu tur — 21 klasör README'si · P2 TAMAMLANDI)
+- **Dilim = tüm P2 (21 klasör README'si, `00-Culture` … `20-Soft-Skills`).** README'ler küçük
+  (44–119 satır) → §14.1.3 dilimi tek tura sığdı; belgelenmiş 2-dilim planı (00–10 / 11–20) fiilen
+  böyle gerçekleşti çünkü **00–10 zaten önceki kesintili turdan hazırdı** (untracked). Bu tur:
+  00–10 doğrulanıp benimsendi + 11–20 üretildi = tek P2 commit'i. (21-Field-Notes P2 dışı → P4.)
+- **10 paralel çeviri subagent (sonnet), dosya başına bir — P0…P1b deseni tekrar (5. kez).**
+  Ruleset: yapı byte-korunur (başlık sayısı/sıra, tablo satır+kolon, kod bloğu, `<details>`, `---`,
+  blockquote), yalnız prose + frontmatter `description` çevrilir; iç link locale-eksiz
+  (`[x](Kubernetes-Hardening.md)`, `.en.md` DEĞİL), tablo path'leri kaynakla birebir; komut/YAML
+  verbatim; positioning reframe; placeholder güvenliği. 10/10 rapor + bağımsız orchestrator
+  doğrulaması: başlık/tablo paritesi **21/21** OK, link-leak 0, positioning/pazarlama (TR+EN) 0.
+- **`README.en.md` = klasör index'i, MODÜL DEĞİL.** "İçindekiler" tablosu + kısa giriş;
+  `MOD_RE ^[A-F]\d+-` eşleşmez → qa modül-bütünlük denetimine girmez. Frontmatter'ları VAR
+  (`description`+`tags`) → `description` çevrildi, `tags` verbatim.
+- **KVKK/BDDK global-okur reframe (19-Compliance, 20-Soft-Skills).** 19-Compliance twin'inde KVKK
+  "AB-dışı bir veri koruma rejimini mühendislik kontrolüne çevirmenin somut örneği" çerçevesiyle;
+  TR-spesifik içerik SİLİNMEDİ, recontextualize edildi. Hiçbir twin "Turkish resource/guide" demiyor.
+  18-Career twin'inde ünvan-garantisi/maaş/ROI **eklenmedi** (kaynak seviye haritası + comp notları
+  sadık çevrildi, uydurma sayı yok).
+- **build-docs.sh'e dokunulmadı** — numaralı klasörler `0[0-9]-* 1[0-9]-* 2[0-9]-*` `cp -r` globuyla
+  (build-docs.sh:68) özyineli stage oluyor → 21 `.en.md` otomatik staged (doğrulandı: 21 staged;
+  `/en/19-Compliance/` "engineering control"+"Turkey-specific notes", `/en/11-SRE/` İngilizce render).
+  EN kapsama %14.1 → %20.4 (68 site sayfası / 334).
+- **QA'daki 1 UYARI = önceki turlardan kalan `docs/index.en.md` false-positive.** Bu turun 21 twin'i
+  **yeni kırık link 0** ekledi; sayı değişmedi (29 kırık link / 1 dosya, birebir aynı).
+- **00–10 provenance (Açık kararlar'da kanıtlı):** untracked geldi → doğrulandı → benimsendi.
+  ` M README.md` (kullanıcı LinkedIn TR düzeltmesi) commit'e alınmadı (`git add -A` yok).
+
+### Faz 9.5 · EN twin P1b (önceki tur — Blok E+F: 11 modül/exam twin'i · P1b TAMAMLANDI)
 - **Dilim = Blok E + Blok F (11 dosya) — P1b'nin son dilimi.** §14.1.3 dosya-seviyesi dilim:
   E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5). **Blok F'de STAGE-EXAM YOK** (CURRICULUM: "Block F
   doesn't close with an exam") → P1b toplamı = 30 modül + 5 STAGE-EXAM (A–E) = 35 dosya, hepsi
@@ -468,7 +509,48 @@ STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
   `description`+`topics`. **Custom domain verilmedi** → `site_url` fallback
   `https://halilibrahimd27.github.io/devsecops-handbook/`. Repo rename main'e merge ÖNCE.
 
-## Bu oturumda yapılanlar (Faz 9.5 — EN twin P1b: Blok E+F, 11 twin · P1b TAMAMLANDI)
+## Bu oturumda yapılanlar (Faz 9.5 — EN twin P2: 21 klasör README'si · P2 TAMAMLANDI)
+
+**Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, `.local/PAUSE` yok. Giriş HEAD
+`278c953`. Working-tree'de ` M README.md` (kullanıcının LinkedIn TR düzeltmesi — benim işim değil,
+bkz. Açık kararlar) **+ 11 untracked `README.en.md` (00–10)** — önceki kesintili turun P2-dilim-1
+işi (bkz. Açık kararlar "BENİMSENDİ"). Faz -1…9 hepsi ✅; Faz 9.5 sürüyor (A0 ✅, EN twin
+P0/P1a/P1b ✅); sıradaki iş EN twin P2 (21 klasör README'si).
+
+**Bu tur yapılan (Faz 9.5 · EN twin P2 — §14.1.3 dosya-seviyesi · P2 tamam):**
+1. **00–10 (11 untracked twin) doğrulandı ve benimsendi.** Başlık/tablo paritesi 11/11, link-leak 0,
+   positioning/pazarlama 0; 00-Culture tam + 08-Security/19-Compliance spot-read → kaliteli,
+   structure-preserving. Körlemesine değil, doğrulama sonrası benimsendi.
+2. **11–20 (10 twin) üretildi** (10 paralel sonnet subagent, dosya başına bir, sıkı ruleset):
+   `11-SRE` · `12-FinOps` · `13-Platform-Engineering` · `14-Sustainability` · `15-AI-LLMOps` ·
+   `16-Cheatsheets` · `17-Templates` · `18-Career` · `19-Compliance` · `20-Soft-Skills` → `README.en.md`.
+3. **`_planning/I18N-COVERAGE.md`:** P2 → ✅ TAMAM; kapsama %14.1 → %20.4 (68/334).
+4. **build-docs.sh'e dokunulmadı** — numaralı klasörler `cp -r` (build-docs.sh:68) ile 21 `.en.md`'yi
+   özyineli stage ediyor (doğrulandı: `site_src/[0-2][0-9]-*/README.en.md` = 21).
+
+**Doğrulama:**
+- **`python3 .local/qa.py` → exit 0 (1 UYARI).** 30 modül, 49 lab scripti, site iki locale hatasız
+  derlendi, `_planning` sızmadı. Tek uyarı = önceki turların `docs/index.en.md` false-positive'i
+  (29 kırık link / 1 dosya, birebir aynı); **bu turdan yeni kırık link 0**.
+- **Yapısal parite (21/21 OK):** `grep -c '^#'` başlık + `grep -c '^|'` tablo satırı kaynak=twin
+  (glob loop); link locale-eki grep → 0; positioning/pazarlama (TR+EN) grep → 0; her twin
+  frontmatter `description` var (21/21).
+- **İki-locale build:** `build-docs.sh` + `mkdocs build --clean` exit 0; 21 twin staged;
+  `site/en/19-Compliance/` "engineering control"+"Turkey-specific notes" ile, `site/en/11-SRE/` +
+  `site/en/17-Templates/` + `site/en/20-Soft-Skills/` İngilizce render; `_planning` YOK.
+- **Spot-read:** `19-Compliance/README.en.md` (KVKK global-okur reframe + cross-ref locale-eksiz) +
+  `18-Career/README.en.md` (seviye haritası + comp notları sadık, ünvan/maaş uydurması yok).
+- **§14.3(1) tekrar:** çeviri (deep-dive rewrite değil), README index dosyaları. **§14.3(2):**
+  TR+EN pazarlama/ünvan → 0. **§14.3(3) süre:** yeni modül yok → kümülatif ~483s sabit.
+
+**Değişen/eklenen dosyalar (bu tur):** 21 × `[0-2][0-9]-*/README.en.md` (00-Culture … 20-Soft-Skills;
+11'i untracked benimseme, 10'u yeni) · `_planning/I18N-COVERAGE.md` · `_planning/STATE.md`.
+Hepsi `.en.md` twin + `_planning`; **hiçbir 00-21 içerik `.md` dosyası değişmedi**, `qa.py`'ye
+dokunulmadı, `build-docs.sh` değişmedi. (` M README.md` commit'e DAHİL EDİLMEDİ — kullanıcı işi.)
+
+---
+
+## Önceki oturum (Faz 9.5 — EN twin P1b: Blok E+F, 11 twin · P1b TAMAMLANDI)
 
 **Giriş durumu:** `STATE.md` okundu; branch `feat/learning-path`, `.local/PAUSE` yok. Giriş HEAD
 `3c10144`. Working-tree'de ` M README.md` (kullanıcının LinkedIn TR düzeltmesi — benim işim değil,
