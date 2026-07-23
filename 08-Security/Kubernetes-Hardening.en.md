@@ -412,7 +412,7 @@ spec:
           - resources:
               kinds: [Pod]
       validate:
-        message: "':latest' tag yasak; sürüm/digest kullan."
+        message: "':latest' tag is banned; use a version/digest."
         pattern:
           spec:
             containers:
@@ -483,7 +483,7 @@ seccompDefault: true   # k8s 1.27+ stable
 ```yaml
 # Falco rule example
 - rule: Shell in container
-  desc: Container içinde shell başlatıldı (debugging dışında olmamalı)
+  desc: A shell was started inside a container (should not happen outside debugging)
   condition: >
     container and proc.name in (bash, sh, zsh)
     and not container.image.repository in (allowed_debug_images)
@@ -557,23 +557,23 @@ For **hard multi-tenancy** (e.g. isolated clusters per SaaS customer):
 ## 📋 Hardening Checklist (for sprint zero)
 
 ```
-[ ] Audit log açık + SIEM'e ship ediliyor
-[ ] OIDC entegre, statik token yok
-[ ] API server private veya IP allow-list + MFA
+[ ] Audit log enabled + shipped to SIEM
+[ ] OIDC integrated, no static tokens
+[ ] API server private or IP allow-list + MFA
 [ ] etcd encryption-at-rest (KMS provider)
-[ ] PSS: restricted enforce non-system namespace'lerde
-[ ] NetworkPolicy: default-deny + DNS whitelist tüm namespace'lerde
-[ ] RBAC: cluster-admin <= 2 kişi, geri kalan namespace-bound
-[ ] ServiceAccount: kullanılmayan token mount kapalı
+[ ] PSS: restricted enforce on non-system namespaces
+[ ] NetworkPolicy: default-deny + DNS whitelist on all namespaces
+[ ] RBAC: cluster-admin <= 2 people, everyone else namespace-bound
+[ ] ServiceAccount: unused token mount disabled
 [ ] Image: digest pinning, signed images, Kyverno verifyImages
-[ ] Image scan: CI'da Trivy, CRITICAL/HIGH = fail
-[ ] Secrets: Vault + ESO veya equivalent, etcd plaintext yok
-[ ] kube-bench: haftada bir, raporla
-[ ] Falco/Tetragon: en azından "shell in container" + "writes to /etc" alarmı
-[ ] LimitRange + ResourceQuota her namespace'de
+[ ] Image scan: Trivy in CI, CRITICAL/HIGH = fail
+[ ] Secrets: Vault + ESO or equivalent, no plaintext in etcd
+[ ] kube-bench: once a week, report the results
+[ ] Falco/Tetragon: at least a "shell in container" + "writes to /etc" alert
+[ ] LimitRange + ResourceQuota in every namespace
 [ ] Container: runAsNonRoot, readOnlyRootFilesystem, drop ALL caps
 [ ] seccompDefault=true (k8s ≥1.27)
-[ ] Backup: etcd + PV snapshot + restore tatbikatı
+[ ] Backup: etcd + PV snapshot + restore drill
 ```
 
 ---

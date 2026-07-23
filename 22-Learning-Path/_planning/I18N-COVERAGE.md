@@ -5,10 +5,10 @@
 Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 `fallback_to_default: true`.
 
-**EN kapsama:** 73 site sayfası / 334 TR temel sayfası ≈ **%21.9** (Aşama B eşiği %60).
+**EN kapsama:** 78 site sayfası / 334 TR temel sayfası ≈ **%23.4** (Aşama B eşiği %60).
 (P0: 3 sayfa + P1a rehber twin'leri: 9 sayfa + P1b Blok A+B: 12 sayfa + P1b Blok C+D:
 12 sayfa + P1b Blok E+F: 11 sayfa + P2 21 klasör README'si: 21 sayfa + P3 slice-1: 5 deep-dive
-= 73. Kök `README.en.md` GitHub-only, siteye stage edilmez → oran dışı.)
++ P3 slice-2: 5 deep-dive = 78. Kök `README.en.md` GitHub-only, siteye stage edilmez → oran dışı.)
 
 ## Aşama
 
@@ -33,7 +33,7 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 | **P1a** | Patika omurgası — **9 rehber dosyası** (`22-Learning-Path/` README, CURRICULUM, NOT-YET, PLACEMENT, PROGRESS-TEMPLATE, STUDY-METHOD, COST-GUARDRAILS, TROUBLESHOOTING, PORTFOLIO) | ✅ **EN twin hazır** (2026-07-23) — 9 `.en.md` üretildi (9 paralel çeviri subagent, dosya başına bir, sıkı ruleset). Başlık paritesi 9/9, link locale-eksiz, positioning temiz, mermaid/tablo yapısı korundu. build-docs.sh `2[0-9]-*` `cp -r` ile hepsini özyineli stage ediyor; iki-locale build hatasız, `/en/…/CURRICULUM/` İngilizce render. |
 | **P1b** | Patika omurgası — **30 modül** + **5 STAGE-EXAM** twin'i `block-*/<ID>-*.en.md` (A0…F5) | ✅ **EN twin hazır — tüm bloklar (A0…F5 + A–E STAGE-EXAM)** (2026-07-23). Bu tur 11 twin: E1–E5 + Blok E STAGE-EXAM (6) · F1–F5 (5, **Blok F'de STAGE-EXAM yok**). Önceki turlar: A+B (12) · C+D (12). Toplam 35 dosya (30 modül + 5 STAGE-EXAM). Her dilim: 12/11 paralel çeviri subagent, dosya başına bir, sıkı ruleset. Bu tur başlık paritesi 11/11, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, kod-yorumu çevrildi/komut+YAML+SQL verbatim; F-blok ortak `## 🔨 Deliverable exercise` başlığı 5/5 tutarlı; güvenlik ipliği (E4 backup at-rest/erişim, F2 KVKK→GDPR→SOC 2 kontrol zinciri) korundu; `/en/…/E1-sli-slo-error-budget/` + `/en/…/F2-tehdit-uyum/` İngilizce render, qa exit 0. `qa.py` locale-farkındalığı (`LOCALE_RE`) modül twin'lerini bütünlük denetiminden muaf tutuyor. |
 | **P2** | 21 klasör README'si | ✅ **EN twin hazır** (2026-07-23) — 21 `.en.md` (`00-Culture` … `20-Soft-Skills`). 11'i (00–10) önceki kesintili turdan **untracked** geldi (structure-preserving; başlık/tablo paritesi + link-leak + positioning doğrulandı → benimsendi); 10'u (11–20) bu tur 10 paralel çeviri subagent (sonnet), dosya başına bir, sıkı ruleset ile üretildi. Başlık/tablo paritesi 21/21, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, KVKK 19-Compliance'ta global-okur çerçevesiyle reframe. build-docs.sh `0[0-9]-*/1[0-9]-*` `cp -r` ile özyineli stage (ek satır gerekmedi); `/en/19-Compliance/` + `/en/11-SRE/` İngilizce render, qa exit 0. |
-| **P3** | En güçlü 15 deep-dive | 🟡 **slice-1 hazır (5/15)** (2026-07-23) — 5 CLAUDE.md "İyi doküman" örneği twin'lendi: `08-Security/Kubernetes-Hardening.en.md`, `08-Security/Threat-Modeling.en.md`, `11-SRE/SLI-SLO-Error-Budget.en.md`, `02-CI-CD/Pipeline-Patterns.en.md`, `19-Compliance/KVKK-Practical.en.md`. 5 paralel çeviri subagent (dosya başına bir), sıkı ruleset. Başlık/tablo paritesi 5/5, link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN) temiz, KVKK global-okur reframe, kod/formül verbatim. build-docs.sh `0[0-9]-*/1[0-9]-*/2[0-9]-*` `cp -r` ile otomatik stage; `/en/…/Kubernetes-Hardening/` + `/en/…/SLI-SLO-Error-Budget/` İngilizce render, qa exit 0. **Kalan 10/15: slice-2 → slice-3.** |
+| **P3** | En güçlü 15 deep-dive | 🟡 **slice-2 hazır (10/15)** (2026-07-23) — slice-2 = deep-dive 6–10 (count-6 katmanı): `20-Soft-Skills/Documentation-as-Communication.en.md`, `16-Cheatsheets/linux-troubleshooting.en.md`, `07-Observability/Prometheus-Best-Practices.en.md`, `07-Observability/Alerting-Done-Right.en.md`, `00-Culture/Blameless-Postmortem-Template.en.md`. 5 paralel çeviri subagent. **BULGU + DÜZELTME:** ilk çeviri (ve geriye dönük slice-1) plain/untagged fenced blokların içindeki Türkçe prose'u (checklist bölümü, ASCII diyagram/attack-tree etiketleri, kod yorumları `# YANLIŞ`→`# WRONG`, `# … için`, template örnek satırları) **çevirmeden bırakmıştı** — İngilizce twin'de Türkçe checklist = okuyucu duvarı. 5 remediation subagent ile hem slice-2 (Documentation) hem slice-1'in 4 dosyası (Pipeline-Patterns, K8s-Hardening, Threat-Modeling, SLI-SLO) düzeltildi; yapı byte-korundu (satır sayısı/başlık/tablo/fence sabit), `[ ]`/box-drawing/kod token'ları/link path'leri dokunulmadı. **Düzeltilmiş kural (slice-3+P4 için):** plain-blok içindeki *prose* (checklist/diyagram etiketi/kod yorumu/template örnek metni) İngilizce'ye çevrilir; yalnız gerçek verbatim-artifact kod (komut/YAML key/metric adı/PromQL/path) korunur. slice-1 (5 dosya: K8s-Hardening, Threat-Modeling, SLI-SLO, Pipeline-Patterns, KVKK) 2026-07-23. Başlık/tablo/fence paritesi 10/10, link locale-eksiz (0 sızıntı), gerçek Türkçe kalıntısı 0, positioning/pazarlama (TR+EN) temiz. build-docs.sh dokunulmadı (`0[0-9]-*/1[0-9]-*/2[0-9]-*` `cp -r` otomatik stage); 5 slice-2 sayfası `/en/…/` İngilizce render, qa exit 0. **Kalan 5/15: slice-3** (`08-Security/Secrets-Management`, `08-Security/DevSecOps-Pipeline`, `11-SRE/Incident-Response`, `10-Databases-Production/Backup-Restore-Patterns`, `11-SRE/Chaos-Engineering`). |
 | **P4** | Kalan içerik | ⬜ |
 
 ### P3 — 15 deep-dive listesi ve seçim kuralı
@@ -52,11 +52,11 @@ CLAUDE.md örnekleri + güvenlik ipliği.)
 | 3 | `11-SRE/SLI-SLO-Error-Budget.md` | 4 (exemplar) | **1 ✅** |
 | 4 | `02-CI-CD/Pipeline-Patterns.md` | 4 (exemplar) | **1 ✅** |
 | 5 | `19-Compliance/KVKK-Practical.md` | 6 (exemplar) | **1 ✅** |
-| 6 | `20-Soft-Skills/Documentation-as-Communication.md` | 6 | 2 |
-| 7 | `16-Cheatsheets/linux-troubleshooting.md` | 6 | 2 |
-| 8 | `07-Observability/Prometheus-Best-Practices.md` | 6 | 2 |
-| 9 | `07-Observability/Alerting-Done-Right.md` | 6 | 2 |
-| 10 | `00-Culture/Blameless-Postmortem-Template.md` | 6 | 2 |
+| 6 | `20-Soft-Skills/Documentation-as-Communication.md` | 6 | **2 ✅** |
+| 7 | `16-Cheatsheets/linux-troubleshooting.md` | 6 | **2 ✅** |
+| 8 | `07-Observability/Prometheus-Best-Practices.md` | 6 | **2 ✅** |
+| 9 | `07-Observability/Alerting-Done-Right.md` | 6 | **2 ✅** |
+| 10 | `00-Culture/Blameless-Postmortem-Template.md` | 6 | **2 ✅** |
 | 11 | `08-Security/Secrets-Management.md` | 4 | 3 |
 | 12 | `08-Security/DevSecOps-Pipeline.md` | 4 | 3 |
 | 13 | `11-SRE/Incident-Response.md` | 4 | 3 |

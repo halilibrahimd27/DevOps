@@ -17,16 +17,16 @@ tags:
 ## 🎯 The pipeline's jobs (in order)
 
 ```
-1. Lint & Format                  (10-30 sn)
-2. Test                           (1-3 dk)
-3. Security scan (SAST/SCA)       (1-2 dk)
-4. Build artifact (image)         (1-3 dk, cached)
-5. Image vulnerability scan       (30 sn-1 dk)
-6. Image sign + SBOM              (10 sn)
-7. E2E / smoke (preview env)      (3-5 dk)
-8. Promote / GitOps update        (10 sn)
+1. Lint & Format                  (10-30 sec)
+2. Test                           (1-3 min)
+3. Security scan (SAST/SCA)       (1-2 min)
+4. Build artifact (image)         (1-3 min, cached)
+5. Image vulnerability scan       (30 sec-1 min)
+6. Image sign + SBOM              (10 sec)
+7. E2E / smoke (preview env)      (3-5 min)
+8. Promote / GitOps update        (10 sec)
 ─────────────────────────────────────────────
-   Toplam PR feedback hedefi:     < 10 dk
+   Total PR feedback target:      < 10 min
 ```
 
 > If you exceed 10 minutes: run in parallel, improve caching, split up the tests.
@@ -40,13 +40,13 @@ tags:
 ```
 Lint → Test → SAST → Build → Sign → Scan → Smoke → Deploy
    ↓     ↓     ↓       ↓      ↓       ↓        ↓
-   her aşama bir öncekini doğrular; biri fail = sonrakiler skip
+   each stage validates the previous one; one fail = the rest skip
 ```
 
 **When:** Small-to-medium services. Clear, easy to debug.
 
 ```yaml
-# GitHub Actions örneği
+# GitHub Actions example
 jobs:
   lint:    { ... }
   test:    { needs: [lint] }
@@ -100,7 +100,7 @@ test:
       include:
         - os: ubuntu-latest
           node: 22
-          coverage: true                # sadece bir matrix'te coverage
+          coverage: true                # coverage only in one matrix entry
   steps:
     - uses: actions/setup-node@v4
       with: { node-version: ${{ matrix.node }} }
@@ -118,7 +118,7 @@ deploy-prod:
   needs:
     - build-image
     - integration-test
-  # `unit-test` ve `lint` bu job için gerekmiyor; bekleme yok
+  # `unit-test` and `lint` aren't needed for this job; no wait
 ```
 
 ### Pattern 5: Reusable / Callable Workflow
@@ -126,7 +126,7 @@ deploy-prod:
 Don't rewrite the same workflow across N repos.
 
 ```yaml
-# .github/workflows/_build-app.yml (template repo'da)
+# .github/workflows/_build-app.yml (in the template repo)
 on:
   workflow_call:
     inputs:
@@ -141,7 +141,7 @@ jobs:
 ```
 
 ```yaml
-# Caller workflow (tüketici repo'da)
+# Caller workflow (in the consumer repo)
 jobs:
   build:
     uses: <ORG>/.github/.github/workflows/_build-app.yml@main
@@ -273,9 +273,9 @@ GitHub Actions default = read+write on the repo. Restrict it:
 ```yaml
 permissions:
   contents: read
-  id-token: write       # OIDC için
-  packages: write       # ghcr.io push için
-  # diğer her şey explicit eklenmeli
+  id-token: write       # for OIDC
+  packages: write       # for ghcr.io push
+  # everything else must be added explicitly
 ```
 
 ---
@@ -285,8 +285,8 @@ permissions:
 ### Trunk-based + feature flag (recommended)
 
 ```
-main (sürekli deploy edilebilir)
-  ↓ kısa-ömürlü branch (1-2 gün)
+main (continuously deployable)
+  ↓ short-lived branch (1-2 days)
   feature/auth → PR → CI → review → squash merge → main
                                                    ↓
                                               auto-deploy to dev
@@ -310,7 +310,7 @@ deploy-prod:
   environment:
     name: production
     url: https://<DOMAIN>
-  # `environment` GitHub'da manual approval ister
+  # `environment` requires manual approval on GitHub
 ```
 
 ---
@@ -350,7 +350,7 @@ strategy:
   blueGreen:
     activeService: my-app-active
     previewService: my-app-preview
-    autoPromotionEnabled: false   # manuel onay
+    autoPromotionEnabled: false   # manual approval
 ```
 
 ### Feature Flag
@@ -407,12 +407,12 @@ histogram_quantile(0.95, sum by (le) (rate(incident_duration_seconds_bucket[7d])
 ## 🎓 Pipeline Maturity Levels
 
 ```
-Level 1: "It works"          — manuel adımlar, tek-tıkla deploy
+Level 1: "It works"          — manual steps, one-click deploy
 Level 2: "Automated"          — push → CI → auto-deploy dev
-Level 3: "Tested"             — CI'da unit + integration test, fail = no deploy
+Level 3: "Tested"             — unit + integration test in CI, fail = no deploy
 Level 4: "Secured"            — SAST/SCA/IaC scan + image sign + Kyverno verify
-Level 5: "Observed"           — DORA metric'ler track ediliyor, pipeline'a feedback
-Level 6: "Optimized"          — pipeline P95 latency < 10 dk, parallel + cache
+Level 5: "Observed"           — DORA metrics are tracked, feeding back into the pipeline
+Level 6: "Optimized"          — pipeline P95 latency < 10 min, parallel + cache
 Level 7: "Self-healing"       — failed deploy auto-rollback, error budget gate
 ```
 
@@ -423,17 +423,17 @@ Every team should know where it stands and aim for the next level.
 ## 📋 Checklist
 
 ```
-[ ] PR feedback süresi < 10 dk — geçen pipeline'lar paralel/cache ile sıkıştırıldı
-[ ] Pipeline fail-fast: bir aşama fail = sonrakiler skip
-[ ] Bağımsız aşamalar (lint/test/sast/sca) paralel fan-out ile koşuyor
-[ ] Stack'e göre cache aktif (npm/pip/go/cargo/m2/BuildKit)
-[ ] Cloud auth OIDC ile — uzun-ömürlü key repo'da yok
-[ ] GitHub Actions `permissions:` explicit kısıtlandı (default read+write değil)
-[ ] Secret'lar Secrets/Vault'tan; YAML içinde plain yok, log'a echo edilmiyor
-[ ] Image build → sign + SBOM → vulnerability scan zinciri kuruldu
-[ ] Production deploy CI'dan otomatik değil; GitOps PR + manual approval üzerinden
-[ ] `latest` tag yasak — semantic/SHA-pinned tag deploy ediliyor
-[ ] DORA metric'ler (deploy freq, lead time, CFR, MTTR) track ediliyor
+[ ] PR feedback time < 10 min — slow pipelines compressed via parallel/cache
+[ ] Pipeline fail-fast: one stage fail = the rest skip
+[ ] Independent stages (lint/test/sast/sca) run via parallel fan-out
+[ ] Cache active per stack (npm/pip/go/cargo/m2/BuildKit)
+[ ] Cloud auth via OIDC — no long-lived key in the repo
+[ ] GitHub Actions `permissions:` explicitly restricted (not default read+write)
+[ ] Secrets come from Secrets/Vault; nothing plain in YAML, nothing echoed to logs
+[ ] Image build → sign + SBOM → vulnerability scan chain in place
+[ ] Production deploy isn't automatic from CI; goes through GitOps PR + manual approval
+[ ] `latest` tag banned — semantic/SHA-pinned tag deployed instead
+[ ] DORA metrics (deploy freq, lead time, CFR, MTTR) tracked
 ```
 
 ---

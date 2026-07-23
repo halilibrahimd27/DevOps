@@ -99,9 +99,9 @@ Standard: **30-day rolling**.
 
 ```
 SLO          = %99.9
-Window       = 30 gün
-Total minutes = 30 * 24 * 60 = 43,200 dk
-Allowed bad  = 43,200 * (1 - 0.999) = 43.2 dk
+Window       = 30 days
+Total minutes = 30 * 24 * 60 = 43,200 min
+Allowed bad  = 43,200 * (1 - 0.999) = 43.2 min
 ```
 
 So in 30 days you can tolerate **43 minutes** of "bad" time.
@@ -127,10 +127,10 @@ The single-window SLO alert problem: either it sees too late (low-burn) or is to
 **Solution:** Alert if you see a high burn-rate over two different windows at the same time.
 
 ```
-FAST burn  = 14.4x   → 5dk + 1saat penceresi
-                       2 saatte bütçeyi yakar → SEV-1 page
-SLOW burn  = 6x      → 1saat + 6saat
-                       5 günde bütçeyi yakar → SEV-2 ticket
+FAST burn  = 14.4x   → 5min + 1hour window
+                       burns the budget in 2 hours → SEV-1 page
+SLOW burn  = 6x      → 1hour + 6hour
+                       burns the budget in 5 days → SEV-2 ticket
 ```
 
 PromQL example:
@@ -160,7 +160,7 @@ PromQL example:
 ├──────────────────────────────────────────────────────────────┤
 │                                                                │
 │  Current SLO:    99.94%   ✅                                  │
-│  Error Budget:   78%       (33 dk / 43 dk)                    │
+│  Error Budget:   78%       (33 min / 43 min)                  │
 │                                                                │
 │  Burn Rate:                                                    │
 │    1h     0.4x   (within budget)                              │
@@ -184,10 +184,10 @@ PromQL example:
 The average lies. At p99 you catch many more of the bad requests.
 
 ```promql
-# YANLIŞ
+# WRONG
 avg(rate(request_duration_seconds_sum[5m])) / avg(rate(request_duration_seconds_count[5m]))
 
-# DOĞRU
+# RIGHT
 histogram_quantile(0.99,
   sum by (le) (rate(request_duration_seconds_bucket[5m]))
 )
@@ -232,8 +232,8 @@ The target should always be **close to current but a bit better** (if there's wo
 ### 2. List your SLIs
 ```
 - availability  : (1 - error_rate)
-- latency        : p99 < 500ms ana request türleri için
-- (opsiyonel) freshness : data lag < 60s
+- latency        : p99 < 500ms for main request types
+- (optional) freshness : data lag < 60s
 ```
 
 ### 3. Measure current performance
