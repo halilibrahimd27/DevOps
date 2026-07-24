@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-24 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-5 (#21–25)** — `06-GitOps/*` kalan 4 + `05-Kubernetes/*` ilk 1. Tur başında working-tree TEMİZ, son commit `071a1de` (slice-4 finalize, conventional) — kesintili-tur DEĞİL, normal devam. Slice-5 = STATE + I18N-COVERAGE "P4 — dilim planı" #21–25 ile birebir: `06-GitOps/ArgoCD-Setup`, `Flux-vs-ArgoCD`, `Helm-vs-Kustomize-vs-Raw`, `Secrets-in-GitOps` (06-GitOps'u 7/7 tam twin yapar) + `05-Kubernetes/Debugging-Pods` (05-Kubernetes klasör sırasında ilk `.en.md`'siz deep-dive, `ls` ile teyit edildi). 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard referans (`06-GitOps/App-of-Apps-Pattern.en.md`; Debugging-Pods için ek `08-Security/Kubernetes-Hardening.en.md`) → remediation gerekmedi, ilk çeviride doğru. **Bağımsız doğruladım (subagent raporlarına körü körüne değil):** başlık paritesi 5/5 (29/24/36/46/84), tablo 5/5 (26/44/37/18/19), fence 5/5 (40/10/38/40/34, twin==source), satır deltası 0/+1/0/+2/+1 (prose-wrap), gerçek Türkçe kalıntısı **0** (`[ışğİŞĞ]` excl `/var/` + diakritiksiz TR-fonksiyon-kelime taraması da 5/5 temiz), link locale-eksiz (0 sızıntı), positioning/pazarlama (TR+EN, `ROI`/`guarantee`/`garanti`/`most comprehensive`/`maaş` dahil) **0 hit**. Spot-read: Secrets decision-tree `EVET`→`YES`/`HAYIR`→`NO` + ASCII kubeseal-akış etiketleri İngilizce, Debugging bash yorumu `# Log from the previous crash (critical for CrashLoopBackOff)`; K8s status/reason string'leri (`CrashLoopBackOff`/`OOMKilled`/`ImagePullBackOff`/`Pending`) + Flux/ArgoCD CRD (Kustomization/HelmRelease/GitRepository/Application/ApplicationSet) + Secrets tool/CRD (SealedSecret/ExternalSecret/SecretStore/SOPS/ESO) + Helm/Kustomize field + `{{...}}` Go-template + komut + link-target verbatim. **İçerik kaliteli → benimsendi.** QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu 5 twin'den yeni kırık link 0). İki-locale build (build-docs.sh + python3 -m mkdocs) exit 0, 5 sayfa `/en/…/` İngilizce render (EN-marker 384/338/322/447/341), `_planning` sızmadı. EN kapsama %30.8 → %32.3 (108/334). **`06-GitOps` artık tam twin (7/7)**, `05-Kubernetes` başladı (README + Debugging-Pods = 2/7). Working-tree TEMİZ girdi → commit: **7 kendi dosyam** = 5 yeni `.en.md` + STATE + I18N-COVERAGE (tek tek `git add`, `git add -A` KULLANILMADI). **Sıra: P4 slice-6 (`05-Kubernetes/*` kalan 5: HPA-VPA-KEDA, Multi-Tenancy-Patterns, Production-Checklist, Resource-Limits-Guide, Upgrade-Strategy → sonraki tur `ls 05-Kubernetes/*.md` ile teyit et).**
+**Son güncelleme:** 2026-07-24 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-6 (#26–30)** — `05-Kubernetes/*` kalan 5. Tur başında working-tree TEMİZ, son commit `50a7a15` (slice-5, conventional) — kesintili-tur DEĞİL, normal devam. Slice-6 = STATE + I18N-COVERAGE "P4 — dilim planı" #26–30 ile birebir: `05-Kubernetes/HPA-VPA-KEDA`, `Multi-Tenancy-Patterns`, `Production-Checklist`, `Resource-Limits-Guide`, `Upgrade-Strategy` (`ls 05-Kubernetes/*.md` ile teyit: `.en.md`'siz kalan tam bu 5) → **05-Kubernetes artık 7/7 tam twin.** 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard referans (`05-Kubernetes/Debugging-Pods.en.md`) → remediation gerekmedi, ilk çeviride doğru. **Bağımsız doğruladım (subagent raporlarına körü körüne değil):** başlık paritesi 5/5 (36/34/74/42/60), tablo 5/5 (23/18/36/23/13), fence 5/5 (40/26/62/34/34, twin==source), satır deltası -1/0/0/0/+1 (prose-wrap), gerçek Türkçe kalıntısı **0** (rendered article body-TR=0 5/5; `[ışğİŞĞ]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz (0 sızıntı). Spot-read: HPA code-yorumu `# CPU 70% target`/`# fast scale up`/`# wait 5 min` + `%X`→`X%`; Production-Checklist `[ ]` label metni İngilizce + anchor (A2/D4/C1-C5) sabit; Upgrade timeline `Hafta`→`Week` (Week 1–4) + kapanış italiği çevrildi; K8s QoS class (`Guaranteed`/`Burstable`/`BestEffort`) + status/reason (`OOMKilled`/`Evicted`/`Pending`/`CrashLoopBackOff`) + CRD/kind (`HorizontalPodAutoscaler`/`VerticalPodAutoscaler`/`ScaledObject`/`PodDisruptionBudget`/`ResourceQuota`/`LimitRange`/`NetworkPolicy`) + KEDA/vcluster/Capsule + unit (`250m`/`512Mi`/`1Gi`) + `Europe/Istanbul` tz + komut + link-target verbatim. **Positioning/pazarlama grep hit = kaynak-sadık FP:** `Guaranteed` (K8s QoS class, kaynakta 3+7) + `Multi-Tenancy:246 "For high-ROI customers"` (kaynak:246 `ROI yüksek müşteri için`, ROI kaynakta zaten var) — qa `check_marketing` yalnız `22-Learning-Path/` tarar → `05-Kubernetes/*.en.md` scope dışı, flag'lemez. **İçerik kaliteli → benimsendi.** QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu 5 twin'den yeni kırık link 0). İki-locale build (build-docs.sh + python3 -m mkdocs) exit 0, 5 sayfa `/en/05-Kubernetes/…/` İngilizce render (EN-marker 123/77/51/61/99, body-TR=0), `_planning` sızmadı. EN kapsama %32.3 → %33.8 (113/334). **`05-Kubernetes` artık tam twin (7/7)** (06-GitOps + 12-FinOps de tam). Working-tree TEMİZ girdi → commit: **7 kendi dosyam** = 5 yeni `.en.md` + STATE + I18N-COVERAGE (tek tek `git add`, `git add -A` KULLANILMADI). **Sıra: P4 slice-7 (`04-Containers/*` kalan 6'nın ilk 5: BuildKit-Tips, Container-vs-WASM, Distroless-and-Chainguard, Dockerfile-Best-Practices, Image-Signing-Cosign → sonraki tur `ls 04-Containers/*.md` ile teyit et; README twin'li).**
 
 ## Faz durumu
 
@@ -18,28 +18,28 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-5 bitti, 25/…)** — bu tur P4 slice-5: `06-GitOps/*` kalan 4 (ArgoCD-Setup, Flux-vs-ArgoCD, Helm-vs-Kustomize-vs-Raw, Secrets-in-GitOps) + `05-Kubernetes/Debugging-Pods` (#21–25 = STATE/I18N dilim planıyla birebir). Tur başı working-tree TEMİZ, son commit `071a1de` conventional — kesintili-tur DEĞİL, normal devam. 5 paralel çeviri subagent (sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard (`06-GitOps/App-of-Apps-Pattern.en.md`) → remediation gerekmedi. Bağımsız doğruladım: başlık/tablo/fence paritesi 5/5 (29·24·36·46·84 / 26·44·37·18·19 / 40·10·38·40·34, twin==source), satır deltası 0/+1/0/+2/+1, gerçek Türkçe kalıntısı **0** (`[ışğİŞĞ]` excl `/var/` + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz, positioning/pazarlama (TR+EN, `ROI`/`guarantee`/`garanti`/`maaş` dahil) **0 hit**. Spot-read: Secrets `EVET`→`YES`/`HAYIR`→`NO` decision-tree + Debugging bash yorumu (`# Log from the previous crash…`) İngilizce; K8s status string + Flux/ArgoCD CRD + Secrets tool/CRD + `{{...}}` verbatim. İçerik kaliteli → benimsendi. **`06-GitOps` tam twin (7/7)**, `05-Kubernetes` başladı (2/7). EN kapsama %30.8 → %32.3 (108/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin FP, önceki turlardan; yeni kırık link 0). Kalan **P4 çok turlu** — sıra slice-6 (`05-Kubernetes/*` kalan 5 → `04-Containers/*` → `03-IaC/*` → kalan 00-21). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-6 bitti, 30/…)** — bu tur P4 slice-6: `05-Kubernetes/*` kalan 5 (HPA-VPA-KEDA, Multi-Tenancy-Patterns, Production-Checklist, Resource-Limits-Guide, Upgrade-Strategy) (#26–30 = STATE/I18N dilim planıyla birebir). Tur başı working-tree TEMİZ, son commit `50a7a15` conventional — kesintili-tur DEĞİL, normal devam. 5 paralel çeviri subagent (sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard (`05-Kubernetes/Debugging-Pods.en.md`) → remediation gerekmedi. Bağımsız doğruladım: başlık/tablo/fence paritesi 5/5 (36·34·74·42·60 / 23·18·36·23·13 / 40·26·62·34·34, twin==source), satır deltası -1/0/0/0/+1, gerçek Türkçe kalıntısı **0** (rendered body-TR=0 5/5; `[ışğİŞĞ]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz. Spot-read: HPA code-yorumu `# CPU 70% target`/`# wait 5 min` + `%X`→`X%`; Production-Checklist `[ ]` label İngilizce + anchor sabit; Upgrade `Hafta`→`Week`; K8s QoS class (`Guaranteed`/`Burstable`/`BestEffort`) + status/reason + CRD/kind + KEDA/vcluster/Capsule + unit + `Europe/Istanbul` verbatim. **Positioning grep hit = kaynak-sadık FP** (`Guaranteed` K8s QoS + Multi-Tenancy:246 `ROI yüksek müşteri için` kaynakta var; qa `22-Learning-Path/` scope dışı). İçerik kaliteli → benimsendi. **`05-Kubernetes` tam twin (7/7)** (06-GitOps + 12-FinOps de tam). EN kapsama %32.3 → %33.8 (113/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin FP, önceki turlardan; yeni kırık link 0). Kalan **P4 çok turlu** — sıra slice-7 (`04-Containers/*` kalan 6'nın ilk 5 → `03-IaC/*` → kalan 00-21). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-5 BİTTİ (25/…); sıra slice-6.**
+**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-6 BİTTİ (30/…); sıra slice-7.**
 P0 + P1a (9) + P1b (35) + P2 (21) + P3 (15) + P4 slice-1 (5) + P4 slice-2 (5) + P4 slice-3 (5) +
-P4 slice-4 (5) + **P4 slice-5 (5) = 105 twin dosyası** bitti (site sayfası 108, P0 README dahil değil). Kalan = **P4**:
-numaralı klasörlerdeki (00-21) henüz twin'lenmemiş ~180+ deep-dive + `16-Cheatsheets/` (kalan 8) +
-`17-Templates/` (index'ler) + `21-Field-Notes/`. `12-FinOps/` **tam twin'li (8/8)**; `06-GitOps/` artık
-**tam twin'li (7/7)**; `05-Kubernetes/` başladı (README + Debugging-Pods = 2/7).
-Aşama B eşiği (%60) hâlâ uzak (%32.3) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
+P4 slice-4 (5) + P4 slice-5 (5) + **P4 slice-6 (5) = 110 twin dosyası** bitti (site sayfası 113, P0 README dahil değil). Kalan = **P4**:
+numaralı klasörlerdeki (00-21) henüz twin'lenmemiş ~175+ deep-dive + `16-Cheatsheets/` (kalan 8) +
+`17-Templates/` (index'ler) + `21-Field-Notes/`. `12-FinOps/` **tam twin'li (8/8)**; `06-GitOps/`
+**tam twin'li (7/7)**; `05-Kubernetes/` artık **tam twin'li (7/7)**; `04-Containers/` başladı (yalnız README = 1/7).
+Aşama B eşiği (%60) hâlâ uzak (%33.8) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
 
-1. **P4 slice-6 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #26+): `05-Kubernetes/*`
-   kalan 5 (Debugging-Pods sonrası, klasör sırası):**
-   `05-Kubernetes/HPA-VPA-KEDA.md`, `05-Kubernetes/Multi-Tenancy-Patterns.md`,
-   `05-Kubernetes/Production-Checklist.md`, `05-Kubernetes/Resource-Limits-Guide.md`,
-   `05-Kubernetes/Upgrade-Strategy.md` (05-Kubernetes'i 7/7 tam twin yapar; sonraki tur `ls 05-Kubernetes/*.md`
-   ile teyit et — kalan `.en.md`'siz olanlar).
-   **Sıra kaynağı:** I18N-COVERAGE.md → "P4 — dilim planı" tablosu #26+ (kalan `05-Kubernetes/*` →
-   `04-Containers/*` → `03-IaC/Terraform-Best-Practices.md` → sonra kalan 00-21 klasör sırasıyla →
+1. **P4 slice-7 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #31+): `04-Containers/*`
+   kalan 6'nın ilk 5 (README twin'li, klasör sırası):**
+   `04-Containers/BuildKit-Tips.md`, `04-Containers/Container-vs-WASM.md`,
+   `04-Containers/Distroless-and-Chainguard.md`, `04-Containers/Dockerfile-Best-Practices.md`,
+   `04-Containers/Image-Signing-Cosign.md` (6. dosya `Multi-Stage-Builds.md` → slice-8'e; sonraki tur
+   `ls 04-Containers/*.md` ile teyit et — kalan `.en.md`'siz olanlar).
+   **Sıra kaynağı:** I18N-COVERAGE.md → "P4 — dilim planı" tablosu #31+ (`04-Containers/*` →
+   `03-IaC/Terraform-Best-Practices.md` → sonra kalan 00-21 klasör sırasıyla →
    `16-Cheatsheets/` → `17-Templates/` → en son `21-Field-Notes/`).
-   Slice-7+ = `04-Containers/*` + `03-IaC/*` → sonra kalan 00-21 klasör sırasıyla.
+   Slice-8+ = `04-Containers/Multi-Stage-Builds.md` + `03-IaC/*` → sonra kalan 00-21 klasör sırasıyla.
    **Her tur bir dilim; nereye gelindiğini STATE + I18N-COVERAGE dilim tablosunda işaretle.**
 2. **Ruleset — slice-2/slice-3'te oturmuş genişletilmiş kural (baştan uygula):** yapı byte-korunur
    (başlık/tablo/kod bloğu+dil-tag/`<details>`/`---`/blockquote/`{ #anchor }`), iç link locale-eksiz
@@ -129,7 +129,52 @@ dilim bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 > kullanıcı kararı beklenir (bilinçli düzeltme gibi görünüyor → kullanıcı ayrı commit'ler, değilse
 > `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P4 slice-5 (bu tur — `06-GitOps/*` kalan 4 + `05-Kubernetes/*` ilk 1 · #21–25)
+### Faz 9.5 · EN twin P4 slice-6 (bu tur — `05-Kubernetes/*` kalan 5 · #26–30)
+- **Dilim = P4 slice-6 (5 dosya), normal devam (kesintili-tur DEĞİL).** Tur başı `git status` TEMİZ, son
+  commit `50a7a15` (slice-5, conventional). I18N-COVERAGE "P4 — dilim planı" #26–30 (deterministik):
+  `05-Kubernetes/HPA-VPA-KEDA.md` (418s), `Multi-Tenancy-Patterns.md` (352s), `Production-Checklist.md` (513s),
+  `Resource-Limits-Guide.md` (354s), `Upgrade-Strategy.md` (341s) = `05-Kubernetes` deep-dive'larının kalan 5'i
+  → **05-Kubernetes bu turla tam twin (7/7)** (`ls 05-Kubernetes/*.md` ile teyit: `.en.md`'siz kalan tam bu 5;
+  README + Debugging-Pods önceki turlar).
+- **5 paralel çeviri subagent (dosya başına bir, sonnet) — P0…P4 slice-5 deseni (14. kez).** Oturmuş
+  genişletilmiş ruleset baştan verildi + aynı-klasör gold-standard referans `05-Kubernetes/Debugging-Pods.en.md`
+  → remediation gerekmedi, ilk çeviride doğru.
+- **Plain/untagged blok prose doğru çevrildi:** HPA-VPA-KEDA code-yorumu `# CPU 70% target`/`# fast scale up`/
+  `# wait 5 min`/`# max 2x` (marker sabit) + `%70`→`70%` yüzde konvansiyonu; Production-Checklist **çok sayıda
+  `[ ]` checklist label** metni İngilizce'ye çevrildi + item-code anchor'ları (A2/D4/C1-C5/E1-E6/F1) sabit +
+  QoS-blok ASCII prose (`Request = guaranteed minimum`); Resource-Limits-Guide PromQL yorumu `# CPU p95 (1 hafta)`
+  →`# (1 week)` + QoS anlatı; Upgrade-Strategy blue/green ASCII diyagram etiketleri + timeline `Hafta`→`Week`
+  (Week 1–4)/`Adım`→`Step` + kapanış italiği + epigraf. Yüzde/birim `%40`→`40%`, `dk`→`min`, `hafta`→`week`.
+  **Yalnız gerçek verbatim-artifact korundu:** K8s QoS class literal string'leri (`Guaranteed`/`Burstable`/
+  `BestEffort`) — bunlar QoS class adı, çeviri değil → aynen; status/reason (`OOMKilled`/`Evicted`/`Pending`/
+  `CrashLoopBackOff`); CRD/kind (`HorizontalPodAutoscaler`/`VerticalPodAutoscaler`/`ScaledObject`/
+  `PodDisruptionBudget`/`ResourceQuota`/`LimitRange`/`NetworkPolicy`/`Role`/`RoleBinding`); KEDA/vcluster/Capsule/
+  Hierarchical-Namespace tenancy araçları; resource unit (`250m`/`512Mi`/`1Gi`); `{{...}}` + `Europe/Istanbul` tz
+  YAML value; kubeadm/eksctl/gcloud/az komut+flag; API group (`autoscaling/v2`, `networking.k8s.io/v1`);
+  link-target (`../08-Security/…`, `Production-Checklist.md` dahil locale-eksiz).
+- **Bağımsız orchestrator doğrulaması (subagent raporuna körü körüne güvenilmedi):** başlık paritesi 5/5
+  (36/34/74/42/60), tablo 5/5 (23/18/36/23/13), fence 5/5 (40/26/62/34/34, twin==source), satır deltası
+  -1/0/0/0/+1 (prose-wrap), gerçek Türkçe kalıntısı **0** — rendered article `<article>` gövdesi body-TR=0
+  (5/5, python HTML ayrıştırması ile teyit; sayfadaki 7 TR-token tamamen nav/theme chrome'da, Aşama A kısmi
+  i18n beklenen) **VE** `[ışğİŞĞ]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime (`için|değil|kullan|
+  hangi|niye|senaryo|adım|gerekir`) = 0 (5/5). Link locale-eksiz (0 `.en.md`/`.tr.md` sızıntısı, 5/5).
+- **Positioning/pazarlama grep hit = kaynak-sadık FP (dokunulmadı), qa scope dışı.** `Guaranteed`/`guaranteed`
+  hitleri = K8s **QoS class `Guaranteed`** (kaynakta Production-Checklist 3, Resource-Limits 7) + "guaranteed
+  minimum/during voluntary disruption" teknik prose; `Multi-Tenancy-Patterns.en.md:246 "For high-ROI customers"`
+  = kaynak:246 `ROI yüksek müşteri için` (ROI kaynakta zaten var, uydurma değil). qa.py `check_marketing` yalnız
+  `22-Learning-Path/` tarar → `05-Kubernetes/*.en.md` kapsam DIŞI → flag'lemez, exit 0. (Önceki turların
+  FinOps/Platform ROI + Chaos "guarantee" FP'siyle aynı belgeli desen.)
+- **build-docs.sh'e dokunulmadı** — 5 `.en.md` numaralı klasörde (`0[0-9]-*` `cp -r` özyineli) otomatik staged
+  (doğrulandı: 5 staged); iki-locale build (`build-docs.sh` + `python3 -m mkdocs build --clean`) exit 0, 5 sayfa
+  `/en/05-Kubernetes/…/` İngilizce render (EN-marker 123/77/51/61/99, body-TR=0), TR root sayfaları (default)
+  korundu, `_planning` sızmadı. EN kapsama %32.3 → %33.8 (113/334). mkdocs INFO satırları (RoadMap TR-anchor)
+  önceki durumdan, bu dilimden değil.
+- **QA exit 0 (1 UYARI = önceki turlardan kalan `docs/index.en.md` locale-twin FP, 29 kırık link/1 dosya).**
+  Bu turun 5 twin'i **yeni kırık link 0**; sayı değişmedi.
+- **Working-tree bu tur TEMİZ girdi** (` M README.md` yok). Commit: **7 kendi dosyam** = 5 yeni `.en.md`
+  (P4 slice-6) + STATE + I18N-COVERAGE. Dosyalar tek tek `git add`, `git add -A` KULLANILMADI (§14.4).
+
+### Faz 9.5 · EN twin P4 slice-5 (önceki tur — `06-GitOps/*` kalan 4 + `05-Kubernetes/*` ilk 1 · #21–25)
 - **Dilim = P4 slice-5 (5 dosya), normal devam (kesintili-tur DEĞİL).** Tur başı `git status` TEMİZ, son
   commit `071a1de` (slice-4 finalize, conventional). I18N-COVERAGE "P4 — dilim planı" #21–25 (deterministik):
   `06-GitOps/ArgoCD-Setup.md` (548s), `Flux-vs-ArgoCD.md` (266s), `Helm-vs-Kustomize-vs-Raw.md` (510s),
