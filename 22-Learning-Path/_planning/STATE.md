@@ -1,6 +1,6 @@
 # STATE — Öğrenme Patikası İnşası
 
-**Son güncelleme:** 2026-07-24 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-6 (#26–30)** — `05-Kubernetes/*` kalan 5. Tur başında working-tree TEMİZ, son commit `50a7a15` (slice-5, conventional) — kesintili-tur DEĞİL, normal devam. Slice-6 = STATE + I18N-COVERAGE "P4 — dilim planı" #26–30 ile birebir: `05-Kubernetes/HPA-VPA-KEDA`, `Multi-Tenancy-Patterns`, `Production-Checklist`, `Resource-Limits-Guide`, `Upgrade-Strategy` (`ls 05-Kubernetes/*.md` ile teyit: `.en.md`'siz kalan tam bu 5) → **05-Kubernetes artık 7/7 tam twin.** 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard referans (`05-Kubernetes/Debugging-Pods.en.md`) → remediation gerekmedi, ilk çeviride doğru. **Bağımsız doğruladım (subagent raporlarına körü körüne değil):** başlık paritesi 5/5 (36/34/74/42/60), tablo 5/5 (23/18/36/23/13), fence 5/5 (40/26/62/34/34, twin==source), satır deltası -1/0/0/0/+1 (prose-wrap), gerçek Türkçe kalıntısı **0** (rendered article body-TR=0 5/5; `[ışğİŞĞ]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz (0 sızıntı). Spot-read: HPA code-yorumu `# CPU 70% target`/`# fast scale up`/`# wait 5 min` + `%X`→`X%`; Production-Checklist `[ ]` label metni İngilizce + anchor (A2/D4/C1-C5) sabit; Upgrade timeline `Hafta`→`Week` (Week 1–4) + kapanış italiği çevrildi; K8s QoS class (`Guaranteed`/`Burstable`/`BestEffort`) + status/reason (`OOMKilled`/`Evicted`/`Pending`/`CrashLoopBackOff`) + CRD/kind (`HorizontalPodAutoscaler`/`VerticalPodAutoscaler`/`ScaledObject`/`PodDisruptionBudget`/`ResourceQuota`/`LimitRange`/`NetworkPolicy`) + KEDA/vcluster/Capsule + unit (`250m`/`512Mi`/`1Gi`) + `Europe/Istanbul` tz + komut + link-target verbatim. **Positioning/pazarlama grep hit = kaynak-sadık FP:** `Guaranteed` (K8s QoS class, kaynakta 3+7) + `Multi-Tenancy:246 "For high-ROI customers"` (kaynak:246 `ROI yüksek müşteri için`, ROI kaynakta zaten var) — qa `check_marketing` yalnız `22-Learning-Path/` tarar → `05-Kubernetes/*.en.md` scope dışı, flag'lemez. **İçerik kaliteli → benimsendi.** QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu 5 twin'den yeni kırık link 0). İki-locale build (build-docs.sh + python3 -m mkdocs) exit 0, 5 sayfa `/en/05-Kubernetes/…/` İngilizce render (EN-marker 123/77/51/61/99, body-TR=0), `_planning` sızmadı. EN kapsama %32.3 → %33.8 (113/334). **`05-Kubernetes` artık tam twin (7/7)** (06-GitOps + 12-FinOps de tam). Working-tree TEMİZ girdi → commit: **7 kendi dosyam** = 5 yeni `.en.md` + STATE + I18N-COVERAGE (tek tek `git add`, `git add -A` KULLANILMADI). **Sıra: P4 slice-7 (`04-Containers/*` kalan 6'nın ilk 5: BuildKit-Tips, Container-vs-WASM, Distroless-and-Chainguard, Dockerfile-Best-Practices, Image-Signing-Cosign → sonraki tur `ls 04-Containers/*.md` ile teyit et; README twin'li).**
+**Son güncelleme:** 2026-07-24 · **Son commit:** (bu tur) Faz 9.5 — EN twin **P4 slice-7 (#31–35)** — `04-Containers/*` kalan 6'nın ilk 5. Tur başında working-tree TEMİZ, son commit `9324c1e` (slice-6, conventional) — kesintili-tur DEĞİL, normal devam. Slice-7 = STATE + I18N-COVERAGE "P4 — dilim planı" #31–35 ile birebir: `04-Containers/BuildKit-Tips`, `Container-vs-WASM`, `Distroless-and-Chainguard`, `Dockerfile-Best-Practices`, `Image-Signing-Cosign` (`ls 04-Containers/*.md` ile teyit: `.en.md`'siz kalan 6, ilk 5 bu dilim; 6. `Multi-Stage-Builds` → slice-8) → README önceki turdan twin'liydi → **04-Containers bu turla 6/7.** 5 paralel çeviri subagent (dosya başına bir, sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard referans (`04-Containers/README.en.md`) → remediation gerekmedi, ilk çeviride doğru. **Bağımsız doğruladım (subagent raporlarına körü körüne değil):** başlık paritesi 5/5 (45/29/37/68/23), tablo 5/5 (21/55/33/29/16), fence 5/5 (58/22/20/50/20, twin==source), satır deltası 0/+1/0/0/+1 (trailing-nl/prose-wrap), gerçek Türkçe kalıntısı **0** (rendered article body-TR=0 5/5; `[ışğİŞĞçöü]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz (0 sızıntı). Spot-read: Dockerfile code-yorumu `# ❌ Kötü`→`# ❌ Bad`/`# ✅ İyi`→`# ✅ Good` + anti-pattern tablo hücreleri (`Çok`→`Many`/`kaçın`→`avoid`/`uygun`→`suitable`); BuildKit `# Single build`/`# Daemon-wide (default on Docker 23+)` yorumları; Image-Signing Kyverno bloğu (`validationFailureAction: Enforce`/`verifyImages:`) + `İmzasız imaj cluster'a girer`→`Unsigned image → deploy rejected`; image ref (`gcr.io/distroless/static-debian12`/`cgr.dev/chainguard/*`/`ubuntu:22.04`/`:20-alpine`) + Dockerfile talimatı (`FROM`/`RUN`/`COPY`/`USER`/`HEALTHCHECK`) + BuildKit token (`--mount=type=cache/secret/ssh`, `buildx`, `--platform linux/amd64,linux/arm64`, `DOCKER_BUILDKIT`) + Wasm (`Spin`/`wasmCloud`/`WASI`/`wasmtime`/`.wasm`) + Cosign/Sigstore (`Fulcio`/`Rekor`/`keyless`/`SBOM`) + digest/SHA-pin + link-target verbatim. **Positioning/pazarlama grep 0 hit (TR+EN)** — bu 5 kaynak artifact yoğun (Dockerfile/YAML/tablo/komut); ROI/guarantee prose'u geçmiyor, slice-6'nın QoS `Guaranteed`/FinOps ROI FP'si burada yok. **İçerik kaliteli → benimsendi.** QA exit 0 (1 uyarı: önceki turlardan kalan qa.py docs/index.en.md locale-twin FP; bu 5 twin'den yeni kırık link 0). İki-locale build (build-docs.sh + python3 -m mkdocs) exit 0, 5 sayfa `/en/04-Containers/…/` İngilizce render (EN-marker 404/315/394/473/355, body-TR=0), `_planning` sızmadı. EN kapsama %33.8 → %35.3 (118/334). **`04-Containers` artık 6/7** (`Multi-Stage-Builds` kaldı → slice-8; 05-Kubernetes + 06-GitOps + 12-FinOps tam twin). Working-tree TEMİZ girdi → commit: **7 kendi dosyam** = 5 yeni `.en.md` + STATE + I18N-COVERAGE (tek tek `git add`, `git add -A` KULLANILMADI). **Sıra: P4 slice-8 (`04-Containers/Multi-Stage-Builds.md` + `03-IaC/Terraform-Best-Practices.md` + kalan 00-21 klasör sırasıyla → sonraki tur `ls 04-Containers/*.md` + I18N dilim tablosu #36+ ile teyit et).**
 
 ## Faz durumu
 
@@ -18,28 +18,26 @@
 | 7 | Blok F + kariyer köprüsü | ✅ | **Tamam.** F1–F5 içerik (üçüncü bakış çerçevesi) + F1/F2/F4/F5 teslim egzersizleri + PORTFOLIO.md + CV-Tips çift yönlü bağ. F toplam=48s (plan F48 tutuyor). QA exit 0 (0 uyarı) |
 | 8 | Entegrasyon | ✅ | **Tamam.** Kök README (patika = Hızlı Başlangıç 1. satır + TOC) · RoadMap "A — Yeni Başlayan" redirect (eski liste `<details>` arşiv) · build-docs.sh: 22-LP `.pages` başlık+iç sıra, kök nav'da RoadMap'ten ÖNCE, `_planning` stage edilmiyor · mkdocs nav_translations EN başlık · **43 deep-dive'a "Önce oku" geri-linki** (kısıt #2 tek istisnası). QA exit 0, iki locale derlendi |
 | 9 | Düşmanca gözden geçirme | ✅ | **Tamam.** TROUBLESHOOTING 55 madde · REVIEW-FINDINGS 40 bulgu (6 blok) hepsi kapandı (A5·B8·C7·D8·E6·F6; `⬜` yok, `➖` gerekçeli: A-05/B-04/F-06) · GLOSSARY-COVERAGE.md çıkarıldı → açık terim boşluğu 0. Glossary'ye 6 terim (ack/ADR/Alertmanager/Cognitive load/Reserved Instance/Right-sizing). QA exit 0 |
-| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-6 bitti, 30/…)** — bu tur P4 slice-6: `05-Kubernetes/*` kalan 5 (HPA-VPA-KEDA, Multi-Tenancy-Patterns, Production-Checklist, Resource-Limits-Guide, Upgrade-Strategy) (#26–30 = STATE/I18N dilim planıyla birebir). Tur başı working-tree TEMİZ, son commit `50a7a15` conventional — kesintili-tur DEĞİL, normal devam. 5 paralel çeviri subagent (sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard (`05-Kubernetes/Debugging-Pods.en.md`) → remediation gerekmedi. Bağımsız doğruladım: başlık/tablo/fence paritesi 5/5 (36·34·74·42·60 / 23·18·36·23·13 / 40·26·62·34·34, twin==source), satır deltası -1/0/0/0/+1, gerçek Türkçe kalıntısı **0** (rendered body-TR=0 5/5; `[ışğİŞĞ]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz. Spot-read: HPA code-yorumu `# CPU 70% target`/`# wait 5 min` + `%X`→`X%`; Production-Checklist `[ ]` label İngilizce + anchor sabit; Upgrade `Hafta`→`Week`; K8s QoS class (`Guaranteed`/`Burstable`/`BestEffort`) + status/reason + CRD/kind + KEDA/vcluster/Capsule + unit + `Europe/Istanbul` verbatim. **Positioning grep hit = kaynak-sadık FP** (`Guaranteed` K8s QoS + Multi-Tenancy:246 `ROI yüksek müşteri için` kaynakta var; qa `22-Learning-Path/` scope dışı). İçerik kaliteli → benimsendi. **`05-Kubernetes` tam twin (7/7)** (06-GitOps + 12-FinOps de tam). EN kapsama %32.3 → %33.8 (113/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin FP, önceki turlardan; yeni kırık link 0). Kalan **P4 çok turlu** — sıra slice-7 (`04-Containers/*` kalan 6'nın ilk 5 → `03-IaC/*` → kalan 00-21). |
+| 9.5 | A0 + geri-dönük düzeltmeler + EN twin | 🟡 | **A0 TAMAM.** **EN twin: P0 ✅ · P1a ✅ · P1b ✅ · P2 ✅ · P3 ✅ (15/15) · P4 🟡 (slice-7 bitti, 35/…)** — bu tur P4 slice-7: `04-Containers/*` kalan 6'nın ilk 5 (BuildKit-Tips, Container-vs-WASM, Distroless-and-Chainguard, Dockerfile-Best-Practices, Image-Signing-Cosign) (#31–35 = STATE/I18N dilim planıyla birebir; 6. Multi-Stage-Builds → slice-8). Tur başı working-tree TEMİZ, son commit `9324c1e` conventional — kesintili-tur DEĞİL, normal devam. 5 paralel çeviri subagent (sonnet), oturmuş genişletilmiş ruleset + aynı-klasör gold-standard (`04-Containers/README.en.md`) → remediation gerekmedi. Bağımsız doğruladım: başlık/tablo/fence paritesi 5/5 (45·29·37·68·23 / 21·55·33·29·16 / 58·22·20·50·20, twin==source), satır deltası 0/+1/0/0/+1, gerçek Türkçe kalıntısı **0** (rendered body-TR=0 5/5; `[ışğİŞĞçöü]` excl path/Istanbul + diakritiksiz TR-fonksiyon-kelime 5/5 temiz), link locale-eksiz. Spot-read: Dockerfile code-yorumu `# ❌ Kötü`→`# ❌ Bad`/`# ✅ İyi`→`# ✅ Good` + anti-pattern tablo hücresi (`Çok`→`Many`/`kaçın`→`avoid`); BuildKit `# Single build`/`# Daemon-wide` yorumu; Image-Signing Kyverno bloğu (`validationFailureAction: Enforce`/`verifyImages:`) sabit; image ref (`gcr.io/distroless/static-debian12`/`cgr.dev/chainguard/*`) + Dockerfile talimatı + BuildKit token (`--mount=type=cache/secret/ssh`/`buildx`/`--platform`) + Wasm (`Spin`/`WASI`/`.wasm`) + Cosign/Sigstore (`Fulcio`/`Rekor`/`keyless`/`SBOM`) verbatim. **Positioning grep 0 hit** (bu 5 kaynak artifact yoğun; ROI/guarantee prose'u yok). İçerik kaliteli → benimsendi. **`04-Containers` artık 6/7** (Multi-Stage-Builds → slice-8; 05-Kubernetes + 06-GitOps + 12-FinOps tam). EN kapsama %33.8 → %35.3 (118/334). QA exit 0 (1 uyarı: docs/index.en.md locale-twin FP, önceki turlardan; yeni kırık link 0). Kalan **P4 çok turlu** — sıra slice-8 (`04-Containers/Multi-Stage-Builds` + `03-IaC/Terraform-Best-Practices` + kalan 00-21). |
 
 ## Sıradaki adım
 
-**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-6 BİTTİ (30/…); sıra slice-7.**
+**Faz 9.5 · EN twin — P4: kalan içerik (`NN-*/<Doc>.en.md`). P4 slice-7 BİTTİ (35/…); sıra slice-8.**
 P0 + P1a (9) + P1b (35) + P2 (21) + P3 (15) + P4 slice-1 (5) + P4 slice-2 (5) + P4 slice-3 (5) +
-P4 slice-4 (5) + P4 slice-5 (5) + **P4 slice-6 (5) = 110 twin dosyası** bitti (site sayfası 113, P0 README dahil değil). Kalan = **P4**:
-numaralı klasörlerdeki (00-21) henüz twin'lenmemiş ~175+ deep-dive + `16-Cheatsheets/` (kalan 8) +
+P4 slice-4 (5) + P4 slice-5 (5) + P4 slice-6 (5) + **P4 slice-7 (5) = 115 twin dosyası** bitti (site sayfası 118, P0 README dahil değil). Kalan = **P4**:
+numaralı klasörlerdeki (00-21) henüz twin'lenmemiş ~170+ deep-dive + `16-Cheatsheets/` (kalan 8) +
 `17-Templates/` (index'ler) + `21-Field-Notes/`. `12-FinOps/` **tam twin'li (8/8)**; `06-GitOps/`
-**tam twin'li (7/7)**; `05-Kubernetes/` artık **tam twin'li (7/7)**; `04-Containers/` başladı (yalnız README = 1/7).
-Aşama B eşiği (%60) hâlâ uzak (%33.8) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
+**tam twin'li (7/7)**; `05-Kubernetes/` **tam twin'li (7/7)**; `04-Containers/` artık **6/7** (yalnız `Multi-Stage-Builds.md` kaldı).
+Aşama B eşiği (%60) hâlâ uzak (%35.3) — P4 çok turludur, **§14.1.3 dosya-seviyesi dilim** (dilim başına 5 dosya).
 
-1. **P4 slice-7 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #31+): `04-Containers/*`
-   kalan 6'nın ilk 5 (README twin'li, klasör sırası):**
-   `04-Containers/BuildKit-Tips.md`, `04-Containers/Container-vs-WASM.md`,
-   `04-Containers/Distroless-and-Chainguard.md`, `04-Containers/Dockerfile-Best-Practices.md`,
-   `04-Containers/Image-Signing-Cosign.md` (6. dosya `Multi-Stage-Builds.md` → slice-8'e; sonraki tur
-   `ls 04-Containers/*.md` ile teyit et — kalan `.en.md`'siz olanlar).
-   **Sıra kaynağı:** I18N-COVERAGE.md → "P4 — dilim planı" tablosu #31+ (`04-Containers/*` →
+1. **P4 slice-8 = SONRAKİ 5 DOSYA (deterministik, I18N-COVERAGE "P4 — dilim planı" #36+): `04-Containers/*`
+   son 1'i + `03-IaC/*` + kalan 00-21 klasör sırasıyla:**
+   `04-Containers/Multi-Stage-Builds.md` (→ `04-Containers` tam twin 7/7), `03-IaC/Terraform-Best-Practices.md`,
+   sonra kalan 00-21 klasör sırasındaki ilk `.en.md`'siz deep-dive'lar (sonraki tur `ls 03-IaC/*.md` /
+   klasör taramasıyla teyit et — 5'e tamamla).
+   **Sıra kaynağı:** I18N-COVERAGE.md → "P4 — dilim planı" tablosu #36+ (`04-Containers/Multi-Stage-Builds` →
    `03-IaC/Terraform-Best-Practices.md` → sonra kalan 00-21 klasör sırasıyla →
    `16-Cheatsheets/` → `17-Templates/` → en son `21-Field-Notes/`).
-   Slice-8+ = `04-Containers/Multi-Stage-Builds.md` + `03-IaC/*` → sonra kalan 00-21 klasör sırasıyla.
    **Her tur bir dilim; nereye gelindiğini STATE + I18N-COVERAGE dilim tablosunda işaretle.**
 2. **Ruleset — slice-2/slice-3'te oturmuş genişletilmiş kural (baştan uygula):** yapı byte-korunur
    (başlık/tablo/kod bloğu+dil-tag/`<details>`/`---`/blockquote/`{ #anchor }`), iç link locale-eksiz
@@ -129,7 +127,53 @@ dilim bitir, STATE'e **dosya-seviyesinde** nereye gelindiğini yaz, commit, dur.
 > kullanıcı kararı beklenir (bilinçli düzeltme gibi görünüyor → kullanıcı ayrı commit'ler, değilse
 > `git checkout -- README.md`).
 
-### Faz 9.5 · EN twin P4 slice-6 (bu tur — `05-Kubernetes/*` kalan 5 · #26–30)
+### Faz 9.5 · EN twin P4 slice-7 (bu tur — `04-Containers/*` kalan 6'nın ilk 5 · #31–35)
+- **Dilim = P4 slice-7 (5 dosya), normal devam (kesintili-tur DEĞİL).** Tur başı `git status` TEMİZ, son
+  commit `9324c1e` (slice-6, conventional). I18N-COVERAGE "P4 — dilim planı" #31–35 (deterministik):
+  `04-Containers/BuildKit-Tips.md` (359s), `Container-vs-WASM.md` (337s), `Distroless-and-Chainguard.md` (271s),
+  `Dockerfile-Best-Practices.md` (444s), `Image-Signing-Cosign.md` (289s) = `04-Containers` deep-dive'larının
+  kalan 6'sının ilk 5'i (`ls 04-Containers/*.md` ile teyit: `.en.md`'siz kalan tam 6; 6. `Multi-Stage-Builds.md`
+  → slice-8). README önceki turlarda twin'liydi → **04-Containers bu turla 6/7.**
+- **5 paralel çeviri subagent (dosya başına bir, sonnet) — P0…P4 slice-6 deseni (15. kez).** Oturmuş
+  genişletilmiş ruleset baştan verildi + aynı-klasör gold-standard referans `04-Containers/README.en.md`
+  (+ `05-Kubernetes/Resource-Limits-Guide.en.md`) → remediation gerekmedi, ilk çeviride doğru.
+- **Plain/untagged blok prose doğru çevrildi:** Dockerfile code-yorumu `# ❌ Kötü: tüm araçlar imajda kalır`→
+  `# ❌ Bad: all tools stay in the image` / `# ✅ İyi: build artifact'ı temiz imaja kopyala`→`# ✅ Good: copy the
+  build artifact into a clean image` (emoji-işaretli marker sabit, `# ✅ Exec form` gibi) + anti-pattern/base-image
+  tablo hücreleri (`Çok`→`Many`/`Az`→`Few`/`kaçın`→`avoid`/`uygun`→`suitable`/`production sweet spot` sabit);
+  BuildKit `# Single build`/`# Daemon-wide (default on Docker 23+)`/`# buildx (multi-platform)`/`# Use TARGETPLATFORM
+  for cross-compilation` yorumları; Image-Signing `İmzasız imaj cluster'a girer`→`Unsigned image → deploy rejected`;
+  `[ ]` checklist label metni İngilizce. Yüzde/birim `%X`→`X%`, `dk`→`min`, `hafta`→`week`.
+  **Yalnız gerçek verbatim-artifact korundu:** image ref (`gcr.io/distroless/static-debian12`/`gcr.io/distroless/base`/
+  `cgr.dev/chainguard/*`/`wolfi-base`/`ubuntu:22.04`/`:20-alpine`/`USER 65532`) — bunlar registry path/tag, çeviri değil
+  → aynen; Dockerfile talimatları (`FROM`/`RUN`/`COPY`/`ADD`/`USER`/`WORKDIR`/`ENTRYPOINT`/`CMD`/`HEALTHCHECK`/`ARG`/`ENV`)
+  + flag (`--chown`/`--from`/`--mount`); BuildKit token (`--mount=type=cache`/`secret`/`ssh`, `# syntax=docker/dockerfile:1.7`,
+  `buildx`, `--platform linux/amd64,linux/arm64`, `DOCKER_BUILDKIT`, cache backend `registry`/`gha`/`local`/`inline`);
+  Wasm ekosistemi (`Spin`/`wasmCloud`/`Fermyon`/`WASI`/`wasmtime`/`WasmEdge`/`component model`/`.wasm`/`spin up`);
+  Cosign/Sigstore (`cosign sign/verify`, `Fulcio`/`Rekor`/`keyless`/`OIDC`/`SBOM`/`SLSA`/`Kyverno verifyImages`/
+  `validationFailureAction: Enforce`/`ClusterPolicy`) + digest (`sha256:…`) + SHA-pin action ref; path/URL; link-target
+  (`../08-Security/Policy-as-Code-OPA-Kyverno.md` dahil locale-eksiz).
+- **Bağımsız orchestrator doğrulaması (subagent raporuna körü körüne güvenilmedi):** başlık paritesi 5/5
+  (45/29/37/68/23), tablo 5/5 (21/55/33/29/16), fence 5/5 (58/22/20/50/20, twin==source), satır deltası
+  0/+1/0/0/+1 (Container-vs-WASM/Image-Signing trailing-nl+prose-wrap), gerçek Türkçe kalıntısı **0** — rendered
+  article `<article>` gövdesi body-TR=0 (5/5, python HTML ayrıştırması ile teyit) **VE** `[ışğİŞĞçöü]` excl
+  path/Istanbul + diakritiksiz TR-fonksiyon-kelime (`için|değil|kullan|hangi|niye|senaryo|adım|gerekir|yani|olan`)
+  = 0 (5/5). Link locale-eksiz (0 `.en.md`/`.tr.md` sızıntısı, 5/5).
+- **Positioning/pazarlama grep bu dilim 0 hit (TR+EN).** `türkçe kaynak|turkish resource/guide/handbook|
+  most comprehensive|en kapsamlı|\bROI\b|guarantee|garanti|maaş|salary` → hiçbir twin'de yok. Bu 5 kaynak
+  teknik-artifact yoğun (Dockerfile/YAML/tablo/komut/image-ref); slice-6'nın QoS `Guaranteed` + FinOps ROI FP'si
+  burada yok.
+- **build-docs.sh'e dokunulmadı** — 5 `.en.md` numaralı klasörde (`0[0-9]-*` `cp -r` özyineli) otomatik staged
+  (doğrulandı: `site_src/04-Containers/` altında 5 `.en.md` staged); iki-locale build (`build-docs.sh` + `python3
+  -m mkdocs build --clean`) exit 0, 5 sayfa `/en/04-Containers/…/` İngilizce render (EN-marker 404/315/394/473/355,
+  body-TR=0), TR root sayfaları (default) korundu, `_planning` sızmadı. EN kapsama %33.8 → %35.3 (118/334).
+  mkdocs WARNING satırları (CLAUDE.md link, RoadMap anchor, i18n switcher/homepage) önceki durumdan, bu dilimden değil.
+- **QA exit 0 (1 UYARI = önceki turlardan kalan `docs/index.en.md` locale-twin FP, 29 kırık link/1 dosya).**
+  Bu turun 5 twin'i **yeni kırık link 0**; sayı değişmedi.
+- **Working-tree bu tur TEMİZ girdi** (` M README.md` yok). Commit: **7 kendi dosyam** = 5 yeni `.en.md`
+  (P4 slice-7) + STATE + I18N-COVERAGE. Dosyalar tek tek `git add`, `git add -A` KULLANILMADI (§14.4).
+
+### Faz 9.5 · EN twin P4 slice-6 (önceki tur — `05-Kubernetes/*` kalan 5 · #26–30)
 - **Dilim = P4 slice-6 (5 dosya), normal devam (kesintili-tur DEĞİL).** Tur başı `git status` TEMİZ, son
   commit `50a7a15` (slice-5, conventional). I18N-COVERAGE "P4 — dilim planı" #26–30 (deterministik):
   `05-Kubernetes/HPA-VPA-KEDA.md` (418s), `Multi-Tenancy-Patterns.md` (352s), `Production-Checklist.md` (513s),
