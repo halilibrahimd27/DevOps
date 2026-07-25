@@ -4,7 +4,7 @@ level: A
 module: A0
 estimated_hours: 6
 prerequisites: []
-tags: [Learning Path, Başlangıç]
+tags: [Learning Path, Getting Started]
 ---
 # A0 — Before You Start: Environment, Terminal, and How This Path Works
 
