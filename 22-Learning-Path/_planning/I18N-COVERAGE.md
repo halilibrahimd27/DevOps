@@ -5,7 +5,7 @@
 Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 `fallback_to_default: true`.
 
-**EN kapsama:** 210 site sayfası / 334 TR temel sayfası ≈ **%62.9** — 🎯 **Aşama B eşiği %60 AŞILDI** (slice-24'te; slice-26 ile %62.9'a çıktı). **P4 TAMAM (slice-26, 2026-07-25):** `21-Field-Notes` **14/14 tam twin** → tüm 00-21 tam twin, P4 kapandı. Eşik geçildi + tam twin sağlandı; ancak **Aşama B (EN varsayılan flip) DOKÜMANTE YÖNTEMLE İMKÂNSIZ çıktı** (2026-07-25 P4-sonrası tur — mkdocs-static-i18n suffix şeması eksiz TR `X.md`'leri default'a bağlar → `default: en` build'i kırar; çözüm korunan-dosya rename'i = Kısıt #2 ihlali). ⏸️🔴 **TIKANMA — kullanıcı kararı bekleniyor** (`.local/PAUSE`); 3 seçenek + öneri → bkz. Aşama bölümü + STATE `Açık kararlar`. İçerik işi %100 tamam; Aşama A (TR default + EN `/en/`) canlı/yeşil korunuyor.
+**EN kapsama:** 210 site sayfası / 334 TR temel sayfası ≈ **%62.9** — 🎯 **Aşama B eşiği %60 AŞILDI** (slice-24'te; slice-26 ile %62.9'a çıktı). **P4 TAMAM (slice-26, 2026-07-25):** `21-Field-Notes` **14/14 tam twin** → tüm 00-21 tam twin, P4 kapandı. Eşik geçildi + tam twin sağlandı; ancak **Aşama B (EN varsayılan flip) DOKÜMANTE YÖNTEMLE İMKÂNSIZ çıktı** (2026-07-25 P4-sonrası tur — mkdocs-static-i18n suffix şeması eksiz TR `X.md`'leri default'a bağlar → `default: en` build'i kırar; çözüm korunan-dosya rename'i = Kısıt #2 ihlali). ✅ **KARAR (2026-07-25, kullanıcı `.local/PAUSE`'u sildi → Seçenek 1 benimsendi, §14.1.4 makul varsayım):** **Aşama A kalıcı** — TR default (kök) + EN `/en/` altında tam twin. Flip kalemi kapandı; %60 eşiğinin amacı (global/İngilizce erişim) `/en/` tam-twin ile karşılanıyor. İçerik işi %100 tamam; Aşama A canlı/yeşil.
 (P0: 3 sayfa + P1a rehber twin'leri: 9 sayfa + P1b Blok A+B: 12 sayfa + P1b Blok C+D:
 12 sayfa + P1b Blok E+F: 11 sayfa + P2 21 klasör README'si: 21 sayfa + P3 slice-1: 5 deep-dive
 + P3 slice-2: 5 deep-dive + P3 slice-3: 5 deep-dive + P4 slice-1: 5 deep-dive
@@ -13,22 +13,23 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 
 ## Aşama
 
-- **Aşama A (şimdi):** TR varsayılan (kök `X.md` = `X.tr.md` eşdeğeri), EN `/en/`
-  altında **kısmi**. Çevirisi olmayan sayfa TR içeriğine fallback eder → iki-locale
-  build fallback ile hatasız geçer.
-- **Aşama B (⏸️🔴 TIKANDI — dokümante yöntem İMKÂNSIZ; kullanıcı kararı bekleniyor):** Plan
-  `default: true`'yu en'e taşımak + TR `/tr/`'ye indirmekti. **2026-07-25 (P4 sonrası tur) empirik
-  olarak denendi ve mkdocs build KIRILDI:** `Exception: Conflicting files for the default language
-  'en': choose either 'index.md' or 'index.md' but not both`. **Kök sebep:** `docs_structure: suffix`
-  şemasında **eksiz** `X.md` **her zaman default locale'e** atanır (plugin kaynağı
+- **Aşama A (KALICI — benimsenen çözüm):** TR varsayılan (kök `X.md` = `X.tr.md` eşdeğeri), EN `/en/`
+  altında **tam twin** (tüm 00-21 + rehber/omurga). Çevirisi olmayan sayfa TR içeriğine fallback eder →
+  iki-locale build fallback ile hatasız geçer. **2026-07-25: kullanıcı `.local/PAUSE`'u sildi → Seçenek 1
+  benimsendi (§14.1.4 makul varsayım). Bu son hâldir.**
+- **Aşama B (❌ KAPANDI — dokümante yöntem imkânsız, flip yapılmadı):** Plan `default: true`'yu en'e
+  taşımaktı. **2026-07-25 empirik olarak denendi ve mkdocs build KIRILDI:** `Exception: Conflicting files
+  for the default language 'en': choose either 'index.md' or 'index.md' but not both`. **Kök sebep:**
+  `docs_structure: suffix` şemasında **eksiz** `X.md` **her zaman default locale'e** atanır (plugin kaynağı
   `mkdocs_static_i18n/suffix.py:35,54`). Repoda 334 eksiz `X.md` = **TR içerik** (Kısıt #2/§14.4 ile
   korumalı — `.tr.md`'ye rename edilemez) + 210'unun `.en.md` ikizi var → `default: en`'de ikisi de
   `en` iddia eder → conflict (`reconfigure.py:586`); ikizsiz 124 sayfa da EN sayılıp TR içerikle
   sunulur. **Gerçek EN-kök yalnız korunan `00-21/X.md`'leri `.tr.md`'ye RENAME ederek mümkün → kırmızı
-  çizgi.** Dışa-dönük konumlandırma kararı → kullanıcıya bırakıldı. **3 seçenek + öneri** (Seçenek 1:
-  Aşama A'da kal [öneri, sıfır risk]; Seçenek 2: rename'siz EN-önce landing redirect; Seçenek 3: tam
-  flip + Kısıt #2 muafiyetli rename) → `_planning/STATE.md` → `Açık kararlar` en üst blok. **O ana kadar
-  Aşama A korunur (canlı/yeşil).**
+  çizgi.** Dışa-dönük konumlandırma kararı kullanıcıya bırakılmış, kullanıcı `.local/PAUSE`'u silerek
+  (öneri Seçenek 1'i override etmeden) **Aşama A'da kalmayı** onaylamıştır. Seçenek 2 (rename'siz EN-önce
+  landing redirect) ve Seçenek 3 (tam flip + Kısıt #2 muafiyetli rename) **seçilmedi** — ikisi de açık
+  kullanıcı onayı gerektiriyordu, gelmedi. %60 eşiğinin amacı (global/İngilizce erişim) `/en/` tam-twin
+  ile karşılanıyor.
 
 ## Kurallar
 
