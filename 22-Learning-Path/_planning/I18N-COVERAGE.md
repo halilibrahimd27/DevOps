@@ -5,7 +5,7 @@
 Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 `fallback_to_default: true`.
 
-**EN kapsama:** 210 site sayfası / 334 TR temel sayfası ≈ **%62.9** — 🎯 **Aşama B eşiği %60 AŞILDI** (slice-24'te; slice-26 ile %62.9'a çıktı). **P4 TAMAM (slice-26, 2026-07-25):** `21-Field-Notes` **14/14 tam twin** → tüm 00-21 tam twin, P4 kapandı. Eşik geçildi ve tam twin sağlandı ama Aşama B (EN varsayılan flip) **bu turda YAPILMADI** (BUILD-PROMPT §Faz-1(c) "şimdi yapma" + otonom sözleşme bir-slice/tur); artık **sıradaki ayrı tur/faz** — bkz. Aşama bölümü + STATE `Açık kararlar`.
+**EN kapsama:** 210 site sayfası / 334 TR temel sayfası ≈ **%62.9** — 🎯 **Aşama B eşiği %60 AŞILDI** (slice-24'te; slice-26 ile %62.9'a çıktı). **P4 TAMAM (slice-26, 2026-07-25):** `21-Field-Notes` **14/14 tam twin** → tüm 00-21 tam twin, P4 kapandı. Eşik geçildi + tam twin sağlandı; ancak **Aşama B (EN varsayılan flip) DOKÜMANTE YÖNTEMLE İMKÂNSIZ çıktı** (2026-07-25 P4-sonrası tur — mkdocs-static-i18n suffix şeması eksiz TR `X.md`'leri default'a bağlar → `default: en` build'i kırar; çözüm korunan-dosya rename'i = Kısıt #2 ihlali). ⏸️🔴 **TIKANMA — kullanıcı kararı bekleniyor** (`.local/PAUSE`); 3 seçenek + öneri → bkz. Aşama bölümü + STATE `Açık kararlar`. İçerik işi %100 tamam; Aşama A (TR default + EN `/en/`) canlı/yeşil korunuyor.
 (P0: 3 sayfa + P1a rehber twin'leri: 9 sayfa + P1b Blok A+B: 12 sayfa + P1b Blok C+D:
 12 sayfa + P1b Blok E+F: 11 sayfa + P2 21 klasör README'si: 21 sayfa + P3 slice-1: 5 deep-dive
 + P3 slice-2: 5 deep-dive + P3 slice-3: 5 deep-dive + P4 slice-1: 5 deep-dive
@@ -16,12 +16,19 @@ Plugin: `mkdocs-static-i18n` · `docs_structure: suffix` (`X.<locale>.md`) ·
 - **Aşama A (şimdi):** TR varsayılan (kök `X.md` = `X.tr.md` eşdeğeri), EN `/en/`
   altında **kısmi**. Çevirisi olmayan sayfa TR içeriğine fallback eder → iki-locale
   build fallback ile hatasız geçer.
-- **Aşama B (SIRADAKI):** EN kapsama **≥ %60** olunca EN varsayılan yapılır
-  (`default: true` en'e taşınır, TR `/tr/`'ye iner). **Bu turda değil — kendi turunda.**
-  → 🎯 **2026-07-25: eşik %60.2 ile AŞILDI (slice-24); slice-26 ile %62.9 (210/334) ve `21-Field-Notes`
-  14/14 → tüm 00-21 tam twin, P4 KAPANDI.** Flip yine de bu turda YAPILMADI (otonom sözleşme: bir-slice/tur;
-  flip ayrı bir operasyon — mkdocs i18n config `default` taşı + kök nav + ~924 iç link denetimi + iki-locale
-  re-test + rozet/URL). Ön koşullar (eşik + tam twin) artık sağlandı → **Aşama B sıradaki tur/faz.**
+- **Aşama B (⏸️🔴 TIKANDI — dokümante yöntem İMKÂNSIZ; kullanıcı kararı bekleniyor):** Plan
+  `default: true`'yu en'e taşımak + TR `/tr/`'ye indirmekti. **2026-07-25 (P4 sonrası tur) empirik
+  olarak denendi ve mkdocs build KIRILDI:** `Exception: Conflicting files for the default language
+  'en': choose either 'index.md' or 'index.md' but not both`. **Kök sebep:** `docs_structure: suffix`
+  şemasında **eksiz** `X.md` **her zaman default locale'e** atanır (plugin kaynağı
+  `mkdocs_static_i18n/suffix.py:35,54`). Repoda 334 eksiz `X.md` = **TR içerik** (Kısıt #2/§14.4 ile
+  korumalı — `.tr.md`'ye rename edilemez) + 210'unun `.en.md` ikizi var → `default: en`'de ikisi de
+  `en` iddia eder → conflict (`reconfigure.py:586`); ikizsiz 124 sayfa da EN sayılıp TR içerikle
+  sunulur. **Gerçek EN-kök yalnız korunan `00-21/X.md`'leri `.tr.md`'ye RENAME ederek mümkün → kırmızı
+  çizgi.** Dışa-dönük konumlandırma kararı → kullanıcıya bırakıldı. **3 seçenek + öneri** (Seçenek 1:
+  Aşama A'da kal [öneri, sıfır risk]; Seçenek 2: rename'siz EN-önce landing redirect; Seçenek 3: tam
+  flip + Kısıt #2 muafiyetli rename) → `_planning/STATE.md` → `Açık kararlar` en üst blok. **O ana kadar
+  Aşama A korunur (canlı/yeşil).**
 
 ## Kurallar
 
