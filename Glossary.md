@@ -1,3 +1,7 @@
+---
+title: 📖 Sözlük
+description: "Türkçe ↔ İngilizce DevOps/DevSecOps terim rehberi — tool isimleri, akronimler ve jargonun tutarlı karşılıkları."
+---
 # Sözlük — Türkçe ↔ İngilizce DevOps Terim Rehberi
 
 > *Bu repo Türkçe yazılır, ama tool isimleri/akronimler/jargon

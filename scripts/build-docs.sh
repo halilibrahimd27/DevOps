@@ -142,38 +142,42 @@ for entry in "${TITLES[@]}"; do
 done
 
 # 7) Top-level nav sırası (.pages root)
+# Slim nav: 21 konu "Konular" grubu altında toplanır → üst bar kalabalık/kayan
+# tab bar yerine az sayıda anlamlı sekme. about/Glossary/tags plain-entry
+# (explicit "Title: file.md" formu i18n EN'de lokalize olmuyordu → 404).
 cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
   - index.md
-  - "👤 Hakkımda": about.md
   - 22-Learning-Path
   - RoadMap
-  - 00-Culture
-  - 01-Git-Workflow
-  - 02-CI-CD
-  - 03-IaC
-  - 04-Containers
-  - 05-Kubernetes
-  - 06-GitOps
-  - 07-Observability
-  - 08-Security
-  - 09-Networking
-  - 10-Databases-Production
-  - 11-SRE
-  - 12-FinOps
-  - 13-Platform-Engineering
-  - 14-Sustainability
-  - 15-AI-LLMOps
-  - 16-Cheatsheets
-  - 17-Templates
-  - 18-Career
-  - 19-Compliance
-  - 20-Soft-Skills
-  - 21-Field-Notes
-  - "📖 Sözlük": Glossary.md
-  - "🏷️ Etiketler": tags.md
+  - "📚 Konular":
+    - 00-Culture
+    - 01-Git-Workflow
+    - 02-CI-CD
+    - 03-IaC
+    - 04-Containers
+    - 05-Kubernetes
+    - 06-GitOps
+    - 07-Observability
+    - 08-Security
+    - 09-Networking
+    - 10-Databases-Production
+    - 11-SRE
+    - 12-FinOps
+    - 13-Platform-Engineering
+    - 14-Sustainability
+    - 15-AI-LLMOps
+    - 16-Cheatsheets
+    - 17-Templates
+    - 18-Career
+    - 19-Compliance
+    - 20-Soft-Skills
+    - 21-Field-Notes
+  - "📖 Referans":
+    - Glossary.md
+    - tags.md
 PAGES_EOF
-echo "  + .pages (root nav)"
+echo "  + .pages (root nav — slim, Konular grubu)"
 
 # 8) RoadMap iç dosya başlıkları (junior'a hitap için yeniden sıralı)
 if [ -d "$STAGE/RoadMap" ]; then

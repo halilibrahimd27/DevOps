@@ -1,3 +1,7 @@
+---
+title: 📖 Glossary
+description: "Turkish ↔ English DevOps/DevSecOps glossary — consistent equivalents for tool names, acronyms and jargon."
+---
 # Glossary — DevOps / DevSecOps Terms
 
 > *A quick reference for the DevOps / DevSecOps terms used across this

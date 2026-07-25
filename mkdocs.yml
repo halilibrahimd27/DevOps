@@ -53,14 +53,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
+      primary: indigo
       accent: deep orange
       toggle:
         icon: material/weather-night
         name: Karanlık moda geç
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
+      primary: indigo
       accent: deep orange
       toggle:
         icon: material/weather-sunny
@@ -100,7 +100,8 @@ plugins:
           nav_translations:
             "🎓 Öğrenme Patikası": "🎓 Learning Path"
             "🗺️ Yol Haritası": "🗺️ Roadmap"
-            "👤 Hakkımda": "👤 About"
+            "📚 Konular": "📚 Topics"
+            "📖 Referans": "📖 Reference"
             "📖 Sözlük": "📖 Glossary"
             "🏷️ Etiketler": "🏷️ Tags"
   - git-revision-date-localized:

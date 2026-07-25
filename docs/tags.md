@@ -1,4 +1,5 @@
 ---
+title: 🏷️ Etiketler
 description: "DevOps Notebook'taki tüm dokümanların konu etiketlerine göre indeksi — Kubernetes, Security, SRE, CI/CD ve daha fazlasına göz at."
 hide:
   - navigation
