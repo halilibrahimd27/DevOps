@@ -2,58 +2,54 @@
 hide:
   - toc
   - navigation
-title: Halil İbrahim Dürmüş — DevSecOps Engineer
+title: The DevSecOps Handbook — Halil İbrahim Dürmüş
 description: >-
-  Halil İbrahim Dürmüş — DevSecOps Engineer. Production-focused work on Kubernetes, GitOps,
-  IaC, observability, supply-chain security, and SRE. A DevSecOps handbook with deep TR/EU
-  regulatory coverage (21 topics, 125 deep-dives) and open-source projects.
+  Production-focused modern DevOps · DevSecOps · SRE · Platform Engineering
+  practices — with deep TR/EU regulatory coverage. 21 topics, 125 deep-dives,
+  70K+ lines. By Halil İbrahim Dürmüş, DevSecOps Engineer.
 ---
 
-<div class="profile-hero" markdown>
+<div class="dn-hero" markdown>
+<div class="dn-hero__inner" markdown>
 
-![Halil İbrahim Dürmüş](https://github.com/halilibrahimd27.png){ .profile-hero__avatar .off-glb loading=lazy }
+<span class="dn-hero__eyebrow">DevOps · DevSecOps · SRE · Platform Engineering</span>
 
-<div class="profile-hero__text" markdown>
+# The DevSecOps Handbook
 
-# Halil İbrahim Dürmüş
-
-<span class="role">DevSecOps Engineer</span>
-
-<p class="tagline" markdown>
-I'd rather argue about a threat model on day one than patch a breach on day ninety.
+<p class="dn-hero__lead">
+An opinionated, actionable reference that works in production — not a conference slide
+deck, but a reference that earns its keep on-call. Every section runs
+<b>what → how → why</b>, and ends with an anti-pattern table and a production checklist.
+Written in Turkish, with deep TR/EU regulatory coverage.
 </p>
 
-<div class="profile-links" markdown>
-[:material-email: Email](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
-[:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
-[:material-book-open-variant: Knowledge Base](#flagship){ .md-button }
+<div class="dn-hero__cta" markdown>
+[:material-school: Learning Path](22-Learning-Path/){ .md-button .md-button--primary }
+[:material-map: Roadmap 2026](RoadMap/Modern-DevOps-2026.md){ .md-button }
+[:material-bookshelf: All topics](#kategoriler){ .md-button }
+</div>
+
+<div class="dn-hero__byline">
+  <img class="off-glb" src="https://github.com/halilibrahimd27.png" loading="lazy" alt="Halil İbrahim Dürmüş">
+  <span><b>Halil İbrahim Dürmüş</b> — DevSecOps Engineer <span class="sep">·</span> <a href="https://github.com/halilibrahimd27">GitHub</a> <span class="sep">·</span> <a href="https://www.linkedin.com/in/halilibrahimd">LinkedIn</a></span>
 </div>
 
 </div>
 </div>
 
-Hi 👋 I'm Halil, a **DevSecOps** engineer. I bake security gates into CI/CD pipelines, build reliable
-platforms on Kubernetes, manage infrastructure as code, and make everything observable. **The
-DevSecOps Handbook** below is my flagship — a distilled, opinionated handbook of what I've learned
-in production, with deep TR/EU regulatory coverage — alongside my open-source projects.
+<div class="dn-stats">
+  <div class="stat"><b>21</b><span>topics</span></div>
+  <div class="stat"><b>125</b><span>deep-dives</span></div>
+  <div class="stat"><b>9</b><span>cheatsheets</span></div>
+  <div class="stat"><b>19</b><span>templates</span></div>
+  <div class="stat"><b>70K+</b><span>lines</span></div>
+</div>
 
 ---
 
-<span class="section-eyebrow">Flagship</span>
+<span class="section-eyebrow">Why this handbook</span>
 
-## :material-book-open-page-variant: The DevSecOps Handbook { #flagship }
-
-Modern **DevOps · DevSecOps · SRE · Platform Engineering** practices that work in production — with deep TR/EU regulatory coverage. Not a conference slide deck — a **reference that earns its keep on-call**.
-
-<div class="hero-stats" markdown>
-
-| | | | | |
-|---|---|---|---|---|
-| **21** | **125** | **9** | **19** | **70K+** |
-| topics | deep-dives | cheatsheets | templates | lines |
-
-</div>
+## :material-star-four-points: What makes it different { #neden }
 
 <div class="grid cards" markdown>
 
@@ -61,7 +57,7 @@ Modern **DevOps · DevSecOps · SRE · Platform Engineering** practices that wor
 
     ---
 
-    Every section follows "what / how / why" in order. Not buzzwords — steps you can apply *today*.
+    Every section follows "what / how / why". Not a buzzword list — steps you can apply *today* and commands that run.
 
 -   :material-shield-lock-outline:{ .lg .middle } __Placeholder-safe__
 
@@ -79,12 +75,22 @@ Modern **DevOps · DevSecOps · SRE · Platform Engineering** practices that wor
 
     ---
 
-    KVKK, BDDK, Wazuh, Iyzico stack notes. Not just an English translation — local engineering for a non-EU regulatory regime.
+    KVKK, BDDK, Wazuh, Iyzico stack notes. Not just an English translation — local engineering.
 
 </div>
 
-[:material-rocket-launch: Start with the roadmap](RoadMap/Modern-DevOps-2026.md){ .md-button .md-button--primary }
-[:material-bookshelf: All sections](#kategoriler){ .md-button }
+<div class="dn-feature" markdown>
+<div class="dn-feature__body" markdown>
+
+### :material-school: Starting from scratch?
+
+Not a **reading list** but a **curriculum**: read → build → verify → go back if you fail → move on if you pass. 6 blocks, 29 modules, labs + "broken labs" + certification gates. It never leaves you asking "what now?".
+
+[:material-arrow-right: Enter the Learning Path](22-Learning-Path/){ .md-button .md-button--primary }
+[Study method](22-Learning-Path/STUDY-METHOD.md){ .md-button }
+
+</div>
+</div>
 
 ---
 
@@ -146,66 +152,149 @@ Modern **DevOps · DevSecOps · SRE · Platform Engineering** practices that wor
 
 ---
 
-<span class="section-eyebrow">Knowledge base</span>
+<span class="section-eyebrow">Knowledge base · 21 topics · 125 deep-dives</span>
 
 ## :material-bookshelf: Categories { #kategoriler }
 
-<div class="grid cards" markdown>
+<div class="dn-topics" markdown>
 
--   :material-account-group: __Culture & People__
+<div class="cluster" markdown>
 
-    ---
+### Culture & People
 
-    DORA/SPACE, Team Topologies, blameless postmortems, on-call culture.
+<p class="desc">Sustainable teams, blameless culture, on-call health.</p>
 
-    [:octicons-arrow-right-24: 00 — Culture](00-Culture/)
+- [**00** Culture `5`](00-Culture/)
+- [**20** Soft Skills `8`](20-Soft-Skills/)
 
--   :material-source-branch: __Build & Ship__
+</div>
 
-    ---
+<div class="cluster" markdown>
 
-    Git/Trunk-based, CI/CD, IaC, Containers, Kubernetes, GitOps.
+### Build & Ship
 
-    [01 — Git](01-Git-Workflow/) · [02 — CI/CD](02-CI-CD/) · [03 — IaC](03-IaC/)
+<p class="desc">From source to production: version, pipeline, infra, containers, orchestration.</p>
 
-    [04 — Containers](04-Containers/) · [05 — K8s](05-Kubernetes/) · [06 — GitOps](06-GitOps/)
+- [**01** Git Workflow `5`](01-Git-Workflow/)
+- [**02** CI/CD `7`](02-CI-CD/)
+- [**03** IaC `6`](03-IaC/)
+- [**04** Containers `6`](04-Containers/)
+- [**05** Kubernetes `6`](05-Kubernetes/)
+- [**06** GitOps `6`](06-GitOps/)
 
--   :material-eye-outline: __Run & Observe__
+</div>
 
-    ---
+<div class="cluster" markdown>
 
-    Observability, Security, Networking, Databases, SRE.
+### Run & Observe
 
-    [07 — Observability](07-Observability/) · [08 — Security](08-Security/) · [09 — Networking](09-Networking/)
+<p class="desc">Run, see, protect: observability, security, networking, data, SRE.</p>
 
-    [10 — Databases](10-Databases-Production/) · [11 — SRE](11-SRE/)
+- [**07** Observability `8`](07-Observability/)
+- [**08** Security `9`](08-Security/)
+- [**09** Networking `7`](09-Networking/)
+- [**10** Databases `8`](10-Databases-Production/)
+- [**11** SRE `7`](11-SRE/)
 
--   :material-trending-up: __Modern Trends__
+</div>
 
-    ---
+<div class="cluster" markdown>
 
-    FinOps, Platform Engineering, Sustainability, AI/LLMOps.
+### Optimize & Evolve
 
-    [12 — FinOps](12-FinOps/) · [13 — Platform](13-Platform-Engineering/)
+<p class="desc">Cost, platform, sustainability and AI/LLMOps.</p>
 
-    [14 — Sustainability](14-Sustainability/) · [15 — AI/LLMOps](15-AI-LLMOps/)
+- [**12** FinOps `8`](12-FinOps/)
+- [**13** Platform Engineering `5`](13-Platform-Engineering/)
+- [**14** Sustainability `5`](14-Sustainability/)
+- [**15** AI / LLMOps `7`](15-AI-LLMOps/)
 
--   :material-toolbox: __In Your Back Pocket__
+</div>
 
-    ---
+<div class="cluster" markdown>
 
-    9 cheatsheets, 19 production-ready templates, career prep.
+### In Your Back Pocket
 
-    [16 — Cheatsheets](16-Cheatsheets/) · [17 — Templates](17-Templates/) · [18 — Career](18-Career/)
+<p class="desc">Quick reference: cheatsheets, copy-paste templates, career.</p>
 
--   :material-scale-balance: __Legal & Soft Skills__
+- [**16** Cheatsheets `9`](16-Cheatsheets/)
+- [**17** Templates `19`](17-Templates/)
+- [**18** Career `4`](18-Career/)
 
-    ---
+</div>
 
-    KVKK · GDPR · ISO 27001 · SOC 2 · oncall sustainability · stakeholder.
+<div class="cluster" markdown>
 
-    [19 — Compliance](19-Compliance/) · [20 — Soft Skills](20-Soft-Skills/)
+### Legal & Field
 
+<p class="desc">Compliance controls and raw field notes from real deployments.</p>
+
+- [**19** Compliance `8`](19-Compliance/)
+- [**21** Field Notes `13`](21-Field-Notes/)
+
+</div>
+
+</div>
+
+---
+
+<span class="section-eyebrow">Author</span>
+
+## :material-account: About
+
+<div class="dn-author" markdown>
+
+![Halil İbrahim Dürmüş](https://github.com/halilibrahimd27.png){ .off-glb loading=lazy }
+
+<div class="dn-author__body" markdown>
+
+### Halil İbrahim Dürmüş
+
+<span class="dn-author__role">DevSecOps Engineer</span>
+
+<p>I don't trust pipelines that leave security for last. A default config that "works" means "not broken yet" to me — I build both Kubernetes and the supply chain tight from day one, I don't patch them later. This handbook is my flagship, distilling what I've learned in production into something actionable.</p>
+
+<div class="dn-author__links" markdown>
+[:material-email: Email](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
+[:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:material-account-details: More — About](about.md){ .md-button }
+</div>
+
+</div>
+</div>
+
+<div class="skill-chips">
+<span class="chip">Kubernetes</span>
+<span class="chip">Docker</span>
+<span class="chip">Helm</span>
+<span class="chip">Kustomize</span>
+<span class="chip">Terraform</span>
+<span class="chip">OpenTofu</span>
+<span class="chip">ArgoCD</span>
+<span class="chip">Flux</span>
+<span class="chip">GitHub Actions</span>
+<span class="chip">GitLab CI</span>
+<span class="chip">AWS</span>
+<span class="chip">Cilium / eBPF</span>
+<span class="chip">Gateway API</span>
+<span class="chip">Prometheus</span>
+<span class="chip">Grafana</span>
+<span class="chip">OpenTelemetry</span>
+<span class="chip">Loki / Tempo</span>
+<span class="chip">PostgreSQL</span>
+<span class="chip">Patroni</span>
+<span class="chip">Vault / ESO</span>
+<span class="chip">Trivy</span>
+<span class="chip">Cosign / SLSA</span>
+<span class="chip">Kyverno / OPA</span>
+<span class="chip">Falco</span>
+<span class="chip">Wazuh SIEM</span>
+<span class="chip">Ansible</span>
+<span class="chip">Python</span>
+<span class="chip">Bash</span>
+<span class="chip">KVKK / GDPR</span>
+<span class="chip">vLLM / RAG</span>
 </div>
 
 ---
@@ -267,47 +356,6 @@ Alongside the knowledge base, open-source tools I've written for production:
     [:octicons-arrow-right-24: github.com/halilibrahimd27](https://github.com/halilibrahimd27)
 
 </div>
-
----
-
-<span class="section-eyebrow">Toolbox</span>
-
-## :material-toolbox-outline: Stack & Skills
-
-<div class="skill-chips">
-<span class="chip">Kubernetes</span>
-<span class="chip">Docker</span>
-<span class="chip">Helm</span>
-<span class="chip">Kustomize</span>
-<span class="chip">Terraform</span>
-<span class="chip">OpenTofu</span>
-<span class="chip">ArgoCD</span>
-<span class="chip">Flux</span>
-<span class="chip">GitHub Actions</span>
-<span class="chip">GitLab CI</span>
-<span class="chip">AWS</span>
-<span class="chip">Cilium / eBPF</span>
-<span class="chip">Gateway API</span>
-<span class="chip">Prometheus</span>
-<span class="chip">Grafana</span>
-<span class="chip">OpenTelemetry</span>
-<span class="chip">Loki / Tempo</span>
-<span class="chip">PostgreSQL</span>
-<span class="chip">Patroni</span>
-<span class="chip">Vault / ESO</span>
-<span class="chip">Trivy</span>
-<span class="chip">Cosign / SLSA</span>
-<span class="chip">Kyverno / OPA</span>
-<span class="chip">Falco</span>
-<span class="chip">Wazuh SIEM</span>
-<span class="chip">Ansible</span>
-<span class="chip">Python</span>
-<span class="chip">Bash</span>
-<span class="chip">KVKK / GDPR</span>
-<span class="chip">vLLM / RAG</span>
-</div>
-
-[:material-account-details: More — About](about.md){ .md-button }
 
 ---
 
