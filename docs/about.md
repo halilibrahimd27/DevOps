@@ -25,7 +25,7 @@ Türkiye · Güvenliği en sona bırakan pipeline'lara güvenmem; Kubernetes'i d
 <div class="profile-links" markdown>
 [:material-email: E-posta](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 </div>
 
 </div>
@@ -178,7 +178,7 @@ Türkiye · Güvenliği en sona bırakan pipeline'lara güvenmem; Kubernetes'i d
 İş birliği, fırsat ya da bir soru için **çekinme**. / For collaboration, opportunities or a question — **reach out**.
 
 [:material-email: s.ibrahimdrms@gmail.com](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
 
 </div>

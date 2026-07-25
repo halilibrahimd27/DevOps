@@ -31,7 +31,7 @@ Written in Turkish, with deep TR/EU regulatory coverage.
 
 <div class="dn-hero__byline">
   <img class="off-glb" src="https://github.com/halilibrahimd27.png" loading="lazy" alt="Halil İbrahim Dürmüş">
-  <span><b>Halil İbrahim Dürmüş</b> — DevSecOps Engineer <span class="sep">·</span> <a href="https://github.com/halilibrahimd27">GitHub</a> <span class="sep">·</span> <a href="https://www.linkedin.com/in/halilibrahimd">LinkedIn</a></span>
+  <span><b>Halil İbrahim Dürmüş</b> — DevSecOps Engineer <span class="sep">·</span> <a href="https://github.com/halilibrahimd27">GitHub</a> <span class="sep">·</span> <a href="https://www.linkedin.com/in/halil-ibrahim-durmus">LinkedIn</a></span>
 </div>
 
 </div>
@@ -257,7 +257,7 @@ Not a **reading list** but a **curriculum**: read → build → verify → go ba
 <div class="dn-author__links" markdown>
 [:material-email: Email](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 [:material-account-details: More — About](about.md){ .md-button }
 </div>
 
@@ -366,7 +366,7 @@ Alongside the knowledge base, open-source tools I've written for production:
 Got an idea, a collaboration, or a question? **Don't be shy — reach out.**
 
 [:material-email: s.ibrahimdrms@gmail.com](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
 
 </div>

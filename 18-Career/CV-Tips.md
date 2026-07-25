@@ -63,7 +63,7 @@ yazımı" disiplinini anlatır.
 ```
 Halil İbrahim Demir
 Senior SRE / Platform Engineer
-İstanbul, Türkiye · halil@example.com · linkedin.com/in/halilibrahimd27 · github.com/halilibrahimd27
+İstanbul, Türkiye · halil@example.com · linkedin.com/in/halil-ibrahim-durmus27 · github.com/halilibrahimd27
 ```
 
 ### Özet (3-4 cümle, etki vurgulu)

@@ -24,7 +24,7 @@ Türkiye · I'd rather argue about a threat model on day one than patch a breach
 <div class="profile-links" markdown>
 [:material-email: Email](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 </div>
 
 </div>
@@ -145,7 +145,7 @@ runbooks over one-off fixes; reproducible builds over "worked on my machine".
 For collaboration, opportunities or a question — **reach out**.
 
 [:material-email: s.ibrahimdrms@gmail.com](mailto:s.ibrahimdrms@gmail.com){ .md-button .md-button--primary }
-[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halilibrahimd){ .md-button }
+[:fontawesome-brands-linkedin: LinkedIn](https://www.linkedin.com/in/halil-ibrahim-durmus){ .md-button }
 [:fontawesome-brands-github: GitHub](https://github.com/halilibrahimd27){ .md-button }
 
 </div>
