@@ -269,10 +269,10 @@ questions. This is what an engineer does instead of guessing.
 | Source | For what | When |
 |---|---|---|
 | `man dig`, `man curl`, `man openssl` | Full reference for sub-commands | When you're curious about a flag |
-| [`08-Security/`](../../08-Security/) folder | The security depth of TLS/PKI | **After block D** — certificate management is there |
+| [`08-Security/`](../../08-Security/README.md) folder | The security depth of TLS/PKI | **After block D** — certificate management is there |
 
 ## 🔨 Lab
-👉 [`labs/build/L03-dns-http-tls/`](../labs/build/L03-dns-http-tls/) — (Task outline: resolve
+👉 [`labs/build/L03-dns-http-tls/`](../labs/build/L03-dns-http-tls/README.md) — (Task outline: resolve
 a name, read the HTTP response headers, verify the certificate's expiry/owner;
 deliberately break DNS and TLS and diagnose each separately.)
 

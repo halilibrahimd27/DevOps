@@ -29,10 +29,10 @@ these settings.
 | [`05-Kubernetes/Resource-Limits-Guide.md`](../../05-Kubernetes/Resource-Limits-Guide.md) | request/limit | ~25 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L14-k8s-production/`](../labs/build/L14-k8s-production/)
+👉 [`labs/build/L14-k8s-production/`](../labs/build/L14-k8s-production/README.md)
 
 ## 💥 Broken lab
-👉 [`labs/broken/K05-oomkilled-probe/`](../labs/broken/K05-oomkilled-probe/) — Symptom: "Pod keeps
+👉 [`labs/broken/K05-oomkilled-probe/`](../labs/broken/K05-oomkilled-probe/README.md) — Symptom: "Pod keeps
 restarting / not receiving traffic." (Realistic cause hidden: OOMKilled / wrong probe / missing limit.)
 
 ## ✅ Acceptance criteria

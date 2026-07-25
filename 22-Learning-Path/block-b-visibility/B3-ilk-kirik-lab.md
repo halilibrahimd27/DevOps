@@ -261,7 +261,7 @@ provasıdır:
 | [`16-Cheatsheets/linux-troubleshooting.md`](../../16-Cheatsheets/linux-troubleshooting.md) | USE method + 60-saniye protokolü — teşhis çerçevesi | ~25 dk |
 
 ## 💥 Kırık lab
-👉 [`labs/broken/K01-kirik-vm/`](../labs/broken/K01-kirik-vm/) — Belirti: "Servis ayağa
+👉 [`labs/broken/K01-kirik-vm/`](../labs/broken/K01-kirik-vm/README.md) — Belirti: "Servis ayağa
 kalkmıyor / yanıt vermiyor." Gerçekçi sebep gizli (yanlış izin / port çakışması / disk
 dolu / systemd unit hatası). `README.md` **asla** ne bozulduğunu söylemez — yalnız
 belirtiyi verir.

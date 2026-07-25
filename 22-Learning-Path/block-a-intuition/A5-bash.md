@@ -261,7 +261,7 @@ Halka halka: `grep` süz → `awk` 7. alanı (yol) al → `sort | uniq -c` say �
 | [ShellCheck wiki](https://www.shellcheck.net/wiki/) | `shellcheck`'in verdiği uyarı kodunun (ör. SC2086) açıklaması | `shellcheck` bir uyarı verdiğinde, o kodu ara |
 
 ## 🔨 Lab
-👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/) — (Görev taslağı: iki argüman alan,
+👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/README.md) — (Görev taslağı: iki argüman alan,
 `set -euo pipefail` kullanan, bir log dosyasını özetleyip sonucu bir rapor dosyasına
 yazan ve `shellcheck`'ten temiz geçen bir script.)
 

@@ -131,9 +131,9 @@ feeds [`CV-Tips.md`](../18-Career/CV-Tips.md) → "Skills — Categorized".
 ## 📚 References
 
 - [`18-Career/CV-Tips.md`](../18-Career/CV-Tips.md) — CV structure, impact-based bullets, skill categories
-- [`capstones/`](capstones/) — CAP1–CAP3 specs + portfolio README templates
+- [`capstones/`](capstones/CAP1-blok-c-sonu.md) — CAP1–CAP3 specs + portfolio README templates
 - [`README.md`](README.md) → Honest ceiling — why the last two gates can't be passed on your own
-- [`block-f-judgment/`](block-f-judgment/) — F1–F5, the written artifacts of judgment
+- [`block-f-judgment/`](block-f-judgment/F1-maliyet-finops.md) — F1–F5, the written artifacts of judgment
 
 ---
 

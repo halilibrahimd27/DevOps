@@ -1,6 +1,6 @@
 # L11 — Terraform: elle kurduğunu koda çevir (yerel: LocalStack)
 
-> Modül: [`C3`](../../../block-c-reproducibility/C3-terraform.md) · Süre: ~3 saat · Kırık lab: [`K03`](../../broken/K03-terraform-state/)
+> Modül: [`C3`](../../../block-c-reproducibility/C3-terraform.md) · Süre: ~3 saat · Kırık lab: [`K03`](../../broken/K03-terraform-state/README.md)
 
 A6'da altyapıyı elle kurdun; komutları hatırlaman, tekrar kurman gerekti. Bu lab
 aynı işi **kod** yapar: `terraform apply` sıfırdan kaynak açar, `destroy` kapatır,

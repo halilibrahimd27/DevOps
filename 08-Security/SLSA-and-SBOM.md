@@ -379,7 +379,7 @@ SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct) docker buildx build ...
 - **Executive Order 14028** — US federal yazılım SBOM zorunluluğu
 - [`Container-Image-Scanning.md`](Container-Image-Scanning.md)
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — admission gating
-- [`19-Compliance/`](../19-Compliance/) (Faz 4) — yasal çerçeve
+- [`19-Compliance/`](../19-Compliance/README.md) (Faz 4) — yasal çerçeve
 
 ---
 

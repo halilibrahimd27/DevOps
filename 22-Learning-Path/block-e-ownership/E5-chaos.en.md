@@ -29,7 +29,7 @@ controlled way. This is the last ownership exam before the E → F transition.
 | [`11-SRE/Capacity-Planning.md`](../../11-SRE/Capacity-Planning.md) | load/capacity link | ~20 min |
 
 ## 💥 Broken lab
-👉 [`labs/broken/K09-chaos-gameday/`](../labs/broken/K09-chaos-gameday/) — A multi-failure,
+👉 [`labs/broken/K09-chaos-gameday/`](../labs/broken/K09-chaos-gameday/README.md) — A multi-failure,
 hypothesis-driven game day; blast radius limited, observation and learning at the center.
 
 ## ✅ Acceptance criteria

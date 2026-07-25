@@ -574,7 +574,7 @@ vault audit log içinde:
 - **OWASP Secrets Management Cheat Sheet** — cheatsheetseries.owasp.org
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — etcd encryption + RBAC kısmı
 - [`DevSecOps-Pipeline.md`](DevSecOps-Pipeline.md) — pre-commit + CI scan kısmı
-- [`19-Compliance/`](../19-Compliance/) (Faz 4) — KVKK/GDPR sırrı saklama yükümlülükleri
+- [`19-Compliance/`](../19-Compliance/README.md) (Faz 4) — KVKK/GDPR sırrı saklama yükümlülükleri
 
 ---
 

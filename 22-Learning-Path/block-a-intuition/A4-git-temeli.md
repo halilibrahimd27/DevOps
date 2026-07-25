@@ -92,7 +92,7 @@ commit mesajı "niçin"i taşır — bunu başka hiçbir yer taşımaz.
 
 > `git log`, bir yıl sonra "bu satır neden böyle?" sorusunun cevabını taşıyacak tek
 > yerdir. "değişiklik", "fix", "update" gibi mesajlar o cevabı yok eder. Reponun
-> commit disiplini için [`CLAUDE.md`](../../CLAUDE.md) ve A6 sonrası alışkanlıkların
+> commit disiplini için [`CLAUDE.md`](https://github.com/halilibrahimd27/devsecops-handbook/blob/main/CLAUDE.md) ve A6 sonrası alışkanlıkların
 > temelini burada kur.
 
 ## 3️⃣ Branch ve merge: paralel çalışma
@@ -266,7 +266,7 @@ git reset --hard <iyi_hash>    # reflog'da gördüğün sağlam noktaya dön
 | `git help <komut>` (örn. `git help rebase`) | Her komutun resmi, tam referansı | Bir davranışı merak ettiğinde |
 
 ## 🔨 Lab
-👉 [`labs/build/L04-git/`](../labs/build/L04-git/) — (Görev taslağı: sıfırdan repo,
+👉 [`labs/build/L04-git/`](../labs/build/L04-git/README.md) — (Görev taslağı: sıfırdan repo,
 iki branch, bilerek bir conflict üret ve çöz; aynı işi bir kez merge, bir kez rebase
 ile yapıp grafik farkını gör.)
 

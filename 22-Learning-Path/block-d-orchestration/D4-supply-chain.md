@@ -39,7 +39,7 @@ parçası olur, sonradan yapılan ayrı bir iş değil.
 | [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../../08-Security/Policy-as-Code-OPA-Kyverno.md) | admission ile imza zorlama — nerede devreye girer | ~20 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/) — C2 pipeline'ının üstüne.
+👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/README.md) — C2 pipeline'ının üstüne.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

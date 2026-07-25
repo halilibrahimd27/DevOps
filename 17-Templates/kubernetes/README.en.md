@@ -24,7 +24,7 @@ tags:
 | [`pdb.yaml`](pdb.yaml) | PodDisruptionBudget | Minimum standing pods during voluntary disruption |
 | [`serviceaccount-rbac.yaml`](serviceaccount-rbac.yaml) | SA + Role + RoleBinding | Least-privilege API access |
 
-For depth: [`05-Kubernetes/`](../../05-Kubernetes/) and [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md).
+For depth: [`05-Kubernetes/`](../../05-Kubernetes/README.md) and [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md).
 
 ### 1️⃣ `deployment.yaml`
 

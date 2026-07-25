@@ -31,7 +31,7 @@ normal hızın kaç katıyla harcanıyor. E2'deki alerting bu SLO'ların ve burn
 | [`07-Observability/SLO-Engineering.md`](../../07-Observability/SLO-Engineering.md) | pratiğe dökme | ~25 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L18-sli-slo/`](../labs/build/L18-sli-slo/)
+👉 [`labs/build/L18-sli-slo/`](../labs/build/L18-sli-slo/README.md)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

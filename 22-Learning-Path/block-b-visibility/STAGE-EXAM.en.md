@@ -42,7 +42,7 @@ security thread.
 ## 2️⃣ Applied task — "prove it, don't guess"
 
 **Task A — Diagnose the broken VM (core):**
-Solve the [`K01 — broken VM`](../labs/broken/K01-kirik-vm/) lab.
+Solve the [`K01 — broken VM`](../labs/broken/K01-kirik-vm/README.md) lab.
 
 - [ ] `bash labs/broken/K01-kirik-vm/verify.sh` passes with zero errors
 - [ ] You wrote a `teshis.md` that shows the root cause with **log/metric evidence**:
@@ -51,7 +51,7 @@ Solve the [`K01 — broken VM`](../labs/broken/K01-kirik-vm/) lab.
       (not just "I fixed it")
 
 **Task B — A health indicator backed by a metric:**
-Use the [`B2`](B2-metrik-prometheus.md)/[`L08`](../labs/build/L08-metrik/) setup.
+Use the [`B2`](B2-metrik-prometheus.md)/[`L08`](../labs/build/L08-metrik/README.md) setup.
 
 - [ ] The target shows `UP` on the Prometheus **Targets** screen; the `up` query
       returns `1`

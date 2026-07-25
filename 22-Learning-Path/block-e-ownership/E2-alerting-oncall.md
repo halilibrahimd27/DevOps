@@ -30,7 +30,7 @@ koyamazsın). E3'teki incident response bu alarmlarla tetiklenir.
 | [`00-Culture/On-Call-Playbook.md`](../../00-Culture/On-Call-Playbook.md) | nöbet disiplini | ~25 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L19-alerting/`](../labs/build/L19-alerting/)
+👉 [`labs/build/L19-alerting/`](../labs/build/L19-alerting/README.md)
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

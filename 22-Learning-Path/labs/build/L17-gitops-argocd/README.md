@@ -1,6 +1,6 @@
 # L17 — GitOps: tek uygulamayı ArgoCD ile Git'ten yönet
 
-> Modül: [`D5`](../../../block-d-orchestration/D5-gitops-argocd.md) · Süre: ~3 saat · Kırık lab: [`K06`](../../broken/K06-argocd-out-of-sync/)
+> Modül: [`D5`](../../../block-d-orchestration/D5-gitops-argocd.md) · Süre: ~3 saat · Kırık lab: [`K06`](../../broken/K06-argocd-out-of-sync/README.md)
 
 Şimdiye kadar `kubectl apply` ile **elle** deploy ettin. GitOps bunu tersine çevirir:
 Git deposu **tek gerçek kaynaktır**, cluster ona uyar. Bu lab tek bir uygulamayı

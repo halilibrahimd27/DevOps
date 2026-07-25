@@ -125,7 +125,7 @@ karşılığıyla eşler.
 ### A.8.9 Configuration Management
 - **Kontrol**: IaC, drift detection
 - **Kanıt**: Terraform + ArgoCD self-heal + drift alert
-- **Doc**: [`06-GitOps/`](../06-GitOps/)
+- **Doc**: [`06-GitOps/`](../06-GitOps/README.md)
 
 ### A.8.10 Information Deletion
 - **Kontrol**: Right to erasure, retention
@@ -332,7 +332,7 @@ jobs:
 - [`KVKK-Practical.md`](KVKK-Practical.md)
 - [`GDPR-Engineering.md`](GDPR-Engineering.md)
 - [`SOC2-Type2-Prep.md`](SOC2-Type2-Prep.md)
-- [`08-Security/`](../08-Security/) — tüm security deep-dive'lar
+- [`08-Security/`](../08-Security/README.md) — tüm security deep-dive'lar
 
 ---
 

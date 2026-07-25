@@ -1,6 +1,6 @@
 # L20 — Backup al, **temiz bir ortama restore et**, bütünlüğü kanıtla
 
-> Modül: [`E4`](../../../block-e-ownership/E4-veritabani-restore.md) · Süre: ~3 saat · Kırık lab: [`K08`](../../broken/K08-restore-basarisiz/)
+> Modül: [`E4`](../../../block-e-ownership/E4-veritabani-restore.md) · Süre: ~3 saat · Kırık lab: [`K08`](../../broken/K08-restore-basarisiz/README.md)
 
 "Backup her gece alınıyor" bir güvence değildir. Güvence, o backup'ın **temiz bir
 ortama gerçekten geri yüklenebildiğini** görmektir. Burada seed'li bir Postgres'ten

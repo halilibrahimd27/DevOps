@@ -29,10 +29,10 @@ abstractions (App-of-Apps, ApplicationSet) are **not yet** in scope — see [`NO
 | [`06-GitOps/Helm-vs-Kustomize-vs-Raw.md`](../../06-GitOps/Helm-vs-Kustomize-vs-Raw.md) | manifest approach | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L17-gitops-argocd/`](../labs/build/L17-gitops-argocd/) — local: kind + ArgoCD.
+👉 [`labs/build/L17-gitops-argocd/`](../labs/build/L17-gitops-argocd/README.md) — local: kind + ArgoCD.
 
 ## 💥 Broken lab
-👉 [`labs/broken/K06-argocd-out-of-sync/`](../labs/broken/K06-argocd-out-of-sync/) — Symptom: "The application
+👉 [`labs/broken/K06-argocd-out-of-sync/`](../labs/broken/K06-argocd-out-of-sync/README.md) — Symptom: "The application
 is out of sync with Git / won't sync." (Realistic cause hidden: drift / bad manifest / access.)
 
 ## ✅ Acceptance criteria

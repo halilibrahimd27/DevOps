@@ -31,7 +31,7 @@ In C2 you produced and published an image; but you never verified what you publi
 | [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../../08-Security/Policy-as-Code-OPA-Kyverno.md) | enforcing signatures via admission — where it kicks in | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/) — on top of the C2 pipeline.
+👉 [`labs/build/L16-supply-chain/`](../labs/build/L16-supply-chain/README.md) — on top of the C2 pipeline.
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

@@ -1,6 +1,6 @@
 # L06 — Bir uygulamayı **elle** ayağa kaldır (container YOK)
 
-> Modül: [`A6`](../../../block-a-intuition/A6-elle-deploy.md) · Süre: ~4–6 saat · Kırık lab: [`K00`](../../broken/K00-systemd-ayaga-kalkmiyor/)
+> Modül: [`A6`](../../../block-a-intuition/A6-elle-deploy.md) · Süre: ~4–6 saat · Kırık lab: [`K00`](../../broken/K00-systemd-ayaga-kalkmiyor/README.md)
 
 Bu lab **kasıtlı olarak zahmetlidir.** Sıfır bir VM'den başlayıp bir uygulamayı,
 veritabanını, systemd unit'ini, nginx ters vekilini ve firewall'ı **elle** kurarsın.
@@ -45,5 +45,5 @@ elinle acısını çekerek bilmek. Kolaylaştırma; her adımı `KURULUM.md`'ye 
 - "Reboot'tan sağ çıktı mı" testi `enable` etmeyi unutup unutmadığını gösterir —
   `is-active` yetmez, `is-enabled` şart.
 
-Bu lab bozulacak; bozulunca [`K00`](../../broken/K00-systemd-ayaga-kalkmiyor/) seni bekliyor.
+Bu lab bozulacak; bozulunca [`K00`](../../broken/K00-systemd-ayaga-kalkmiyor/README.md) seni bekliyor.
 Takılırsan `solution/`'a bak — ama **önce kendin uğraş**.

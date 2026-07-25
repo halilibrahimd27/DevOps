@@ -16,14 +16,14 @@ tags:
 
 | Klasör | İçerik |
 |---|---|
-| [`github-actions/`](github-actions/) | Reusable workflow'lar: docker build/push, terraform plan, release-please |
-| [`kubernetes/`](kubernetes/) | Production-grade Deployment, Service, HPA, NetworkPolicy, PDB |
-| [`dockerfiles/`](dockerfiles/) | Multi-stage Dockerfile'lar: Go, Node.js, Python |
-| [`terraform/`](terraform/) | Module skeleton + standard variable yapısı |
-| [`kyverno-policies/`](kyverno-policies/) | Imza doğrulama, label enforcement, image source kısıtlama |
+| [`github-actions/`](github-actions/README.md) | Reusable workflow'lar: docker build/push, terraform plan, release-please |
+| [`kubernetes/`](kubernetes/README.md) | Production-grade Deployment, Service, HPA, NetworkPolicy, PDB |
+| [`dockerfiles/`](dockerfiles/README.md) | Multi-stage Dockerfile'lar: Go, Node.js, Python |
+| [`terraform/`](terraform/README.md) | Module skeleton + standard variable yapısı |
+| [`kyverno-policies/`](kyverno-policies/README.md) | Imza doğrulama, label enforcement, image source kısıtlama |
 | [`runbooks/`](runbooks/) | Runbook ve postmortem template |
-| [`prometheus-rules/`](prometheus-rules/) | SLO recording + alerting rule template'leri |
-| [`gitignore/`](gitignore/) | Stack başına `.gitignore` örnekleri |
+| [`prometheus-rules/`](prometheus-rules/README.md) | SLO recording + alerting rule template'leri |
+| [`gitignore/`](gitignore/README.md) | Stack başına `.gitignore` örnekleri |
 
 ## Genel kural
 

@@ -285,7 +285,7 @@ spec:
           required: true
 ```
 
-Full set: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/)
+Full set: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md)
 
 ### Pod Security Standards
 
@@ -454,7 +454,7 @@ Before going to production, check every line — if one is missing, the pipeline
 - [SLSA framework](https://slsa.dev)
 - [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)
 - [Sigstore documentation](https://docs.sigstore.dev)
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — ready-made policies
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — ready-made policies
 
 ---
 

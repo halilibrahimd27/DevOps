@@ -45,19 +45,19 @@ Her soru bir modülün kabul kriterine izlenebilir.
 
 **Görev A — Üç kırık lab (çekirdek):**
 
-- [ ] [`K07 — incident simülasyonu`](../labs/broken/K07-incident-sim/): `verify.sh` yeşil; UTC dakika hassasiyetli timeline ile yönetildi
-- [ ] [`K08 — restore başarısız`](../labs/broken/K08-restore-basarisiz/): `verify.sh` yeşil; restore gerçekten çalıştı
-- [ ] [`K09 — chaos game day`](../labs/broken/K09-chaos-gameday/): `verify.sh` yeşil; sınırlı blast radius korundu
+- [ ] [`K07 — incident simülasyonu`](../labs/broken/K07-incident-sim/README.md): `verify.sh` yeşil; UTC dakika hassasiyetli timeline ile yönetildi
+- [ ] [`K08 — restore başarısız`](../labs/broken/K08-restore-basarisiz/README.md): `verify.sh` yeşil; restore gerçekten çalıştı
+- [ ] [`K09 — chaos game day`](../labs/broken/K09-chaos-gameday/README.md): `verify.sh` yeşil; sınırlı blast radius korundu
 
 **Görev B — SLO'ya bağlı alarm (E1+E2):**
-[`L18`](../labs/build/L18-sli-slo/) + [`L19`](../labs/build/L19-alerting/).
+[`L18`](../labs/build/L18-sli-slo/README.md) + [`L19`](../labs/build/L19-alerting/README.md).
 
 - [ ] Bir servis için bir SLI Prometheus'ta ölçülüyor; bir SLO + error budget (dk/ay) yazılı hesaplandı
 - [ ] SLO'ya bağlı bir alarm kuralı **bir kez ateşlendi** ve çözüldü — Alertmanager/panel kanıtı
 - [ ] Her alarm page/ticket/log olarak sınıflandırıldı; eskalasyon yazılı tanımlı
 
 **Görev C — Restore gerçekten test edildi (zorunlu, güvenlik ipliği):**
-[`E4`](E4-veritabani-restore.md)/[`L20`](../labs/build/L20-veritabani-restore/).
+[`E4`](E4-veritabani-restore.md)/[`L20`](../labs/build/L20-veritabani-restore/README.md).
 
 - [ ] Bir backup **temiz bir ortama** restore edildi; veri bütünlüğü bir sorguyla (satır sayısı/checksum) doğrulandı
 - [ ] RTO ve RPO ölçülüp yazıldı

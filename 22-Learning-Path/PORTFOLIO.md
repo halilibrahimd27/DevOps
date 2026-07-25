@@ -124,9 +124,9 @@ eşleme, [`CV-Tips.md`](../18-Career/CV-Tips.md) → "Yetenekler — Kategorize"
 ## 📚 Referanslar
 
 - [`18-Career/CV-Tips.md`](../18-Career/CV-Tips.md) — CV yapısı, etki-bazlı bulle, yetenek kategorileri
-- [`capstones/`](capstones/) — CAP1–CAP3 şartnameleri + portfolyo README şablonları
+- [`capstones/`](capstones/CAP1-blok-c-sonu.md) — CAP1–CAP3 şartnameleri + portfolyo README şablonları
 - [`README.md`](README.md) → Dürüst tavan — son iki kapının niçin kendi kendine geçilemediği
-- [`block-f-judgment/`](block-f-judgment/) — F1–F5, karar vericiliğin yazılı eserleri
+- [`block-f-judgment/`](block-f-judgment/F1-maliyet-finops.md) — F1–F5, karar vericiliğin yazılı eserleri
 
 ---
 

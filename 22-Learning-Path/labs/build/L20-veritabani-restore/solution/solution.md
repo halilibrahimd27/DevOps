@@ -46,7 +46,7 @@ Kontrol:
 ## Sık hata: `--schema-only`
 
 `pg_dump --schema-only` yalnız tabloları oluşturur, veriyi almaz. Restore "başarılı"
-görünür ama satır sayısı **0** çıkar. Bu, [`K08`](../../../broken/K08-restore-basarisiz/)
+görünür ama satır sayısı **0** çıkar. Bu, [`K08`](../../../broken/K08-restore-basarisiz/README.md)
 kırık lab'ının tam olarak öğrettiği tuzaktır: restore'u satır sayısıyla doğrulamazsan,
 boş bir backup'ı "çalışıyor" sanırsın.
 

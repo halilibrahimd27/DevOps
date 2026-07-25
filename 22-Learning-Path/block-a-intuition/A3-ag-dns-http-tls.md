@@ -265,10 +265,10 @@ tahmin yerine yaptığı budur.
 | Kaynak | Ne için | Ne zaman |
 |---|---|---|
 | `man dig`, `man curl`, `man openssl` | Alt komutların tam referansı | Bir bayrağı merak ettiğinde |
-| [`08-Security/`](../../08-Security/) klasörü | TLS/PKI'nin güvenlik derinliği | **D bloğundan sonra** — sertifika yönetimi orada |
+| [`08-Security/`](../../08-Security/README.md) klasörü | TLS/PKI'nin güvenlik derinliği | **D bloğundan sonra** — sertifika yönetimi orada |
 
 ## 🔨 Lab
-👉 [`labs/build/L03-dns-http-tls/`](../labs/build/L03-dns-http-tls/) — (Görev taslağı: bir ismi
+👉 [`labs/build/L03-dns-http-tls/`](../labs/build/L03-dns-http-tls/README.md) — (Görev taslağı: bir ismi
 çöz, HTTP yanıt başlıklarını oku, sertifikanın süresini/sahibini doğrula; DNS ile
 TLS'i bilerek bozup her birini ayrı ayrı teşhis et.)
 

@@ -1,6 +1,6 @@
 # L13 — K8s temel: Deployment/Service/Ingress + RBAC + NetworkPolicy
 
-> Modül: [`D1`](../../../block-d-orchestration/D1-k8s-temel.md) · Süre: ~4 saat · Kırık lab: [`K04`](../../broken/K04-imagepullbackoff-rbac/)
+> Modül: [`D1`](../../../block-d-orchestration/D1-k8s-temel.md) · Süre: ~4 saat · Kırık lab: [`K04`](../../broken/K04-imagepullbackoff-rbac/README.md)
 
 Uygulamayı yerel bir **kind** cluster'ında Deployment olarak çalıştırır, Service +
 Ingress ile dışarıdan erişir. Ama K8s'i **güvenlik iplikten ayrı** öğrenmek bu

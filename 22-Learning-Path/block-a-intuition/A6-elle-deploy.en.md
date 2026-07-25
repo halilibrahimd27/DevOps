@@ -30,7 +30,7 @@ you're automating by hand once, you can't see what the automation is actually do
 Work on a free, local Linux VM. Options (pick one):
 - **Multipass** (`multipass launch --name lab`) — fastest, an Ubuntu VM.
 - **Vagrant + VirtualBox** — portable, repeatable via a `Vagrantfile`.
-- **Proxmox / KVM** — if you have your own server (see [`21-Field-Notes/`](../../21-Field-Notes/)).
+- **Proxmox / KVM** — if you have your own server (see [`21-Field-Notes/`](../../21-Field-Notes/README.md)).
 
 Run every command **inside the VM**, not on your host machine. When a step breaks,
 check the logs first — don't go looking for a hint. Breaking things is this module's
@@ -284,12 +284,12 @@ goal is just to see nginx listening on `443` and serving the certificate.
 | [`21-Field-Notes/ansible/system-preparation.md`](../../21-Field-Notes/ansible/system-preparation.md) | What a real system-prep note actually looks like | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L06-elle-deploy/`](../labs/build/L06-elle-deploy/) — (Task outline: starting
+👉 [`labs/build/L06-elle-deploy/`](../labs/build/L06-elle-deploy/README.md) — (Task outline: starting
 from a blank VM, set up the DB + application + systemd unit + nginx + firewall by hand,
 survive a reboot, and write every step to `KURULUM.md`.)
 
 ## 💥 Broken lab
-👉 [`labs/broken/K00-systemd-ayaga-kalkmiyor/`](../labs/broken/K00-systemd-ayaga-kalkmiyor/) — Symptom: "the systemd
+👉 [`labs/broken/K00-systemd-ayaga-kalkmiyor/`](../labs/broken/K00-systemd-ayaga-kalkmiyor/README.md) — Symptom: "the systemd
 service won't come up." The cause is hidden (port conflict / wrong `ExecStart` path /
 permissions / missing `EnvironmentFile`). Requires no K8s knowledge; debugging intuition
 starts right here.

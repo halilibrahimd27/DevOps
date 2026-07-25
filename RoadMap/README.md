@@ -89,8 +89,8 @@ seçtiğin seviyeden başla.
 
 ### Hafta 1-2 — Temel Bilgisayar Bilgisi
 - **Linux komut satırı**: file, process, permission, systemd → [16 · Cheatsheets / linux-troubleshooting.md](../16-Cheatsheets/linux-troubleshooting.md)
-- **Network temelleri**: TCP/IP, DNS, HTTP, TLS → [09 · Networking](../09-Networking/)
-- **Git**: branch, merge, rebase, conflict → [01 · Git Workflow](../01-Git-Workflow/)
+- **Network temelleri**: TCP/IP, DNS, HTTP, TLS → [09 · Networking](../09-Networking/README.md)
+- **Git**: branch, merge, rebase, conflict → [01 · Git Workflow](../01-Git-Workflow/README.md)
 
 ### Hafta 3-4 — Container ve Image
 - Docker'ın ne olduğu, niye var → [04 · Containers / Dockerfile-Best-Practices.md](../04-Containers/Dockerfile-Best-Practices.md)
@@ -104,7 +104,7 @@ seçtiğin seviyeden başla.
 - **Hedef**: Her commit'te image build edip GitHub Container Registry'ye push
 
 ### Hafta 7-9 — Kubernetes Temelleri
-- Pod, Deployment, Service, Ingress kavramları → [05 · Kubernetes](../05-Kubernetes/)
+- Pod, Deployment, Service, Ingress kavramları → [05 · Kubernetes](../05-Kubernetes/README.md)
 - `kubectl` cheatsheet → [16 · Cheatsheets / kubectl.md](../16-Cheatsheets/kubectl.md)
 - Lokal: minikube veya kind ile bir cluster
 - **Hedef**: Docker'a aldığın uygulamayı K8s'e deploy et
@@ -168,12 +168,12 @@ seçtiğin seviyeden başla.
 |---|---|---|
 | **Platform Engineering** | Developer experience'ı sahiplenmek | [13 · Platform / Internal-Developer-Platform.md](../13-Platform-Engineering/Internal-Developer-Platform.md) |
 | **Multi-tenancy** | Birden fazla ekip aynı cluster | [05 · K8s / Multi-Tenancy-Patterns.md](../05-Kubernetes/Multi-Tenancy-Patterns.md) |
-| **Compliance** | KVKK, GDPR, SOC 2 audit | [19 · Compliance](../19-Compliance/) |
-| **FinOps** | Bütçe sahipliği, savings plan kararları | [12 · FinOps](../12-FinOps/) |
-| **Sustainability** | Karbon farkındalığı, region seçimi | [14 · Sustainability](../14-Sustainability/) |
-| **LLMOps** | AI feature'larını production'a almak | [15 · AI-LLMOps](../15-AI-LLMOps/) |
+| **Compliance** | KVKK, GDPR, SOC 2 audit | [19 · Compliance](../19-Compliance/README.md) |
+| **FinOps** | Bütçe sahipliği, savings plan kararları | [12 · FinOps](../12-FinOps/README.md) |
+| **Sustainability** | Karbon farkındalığı, region seçimi | [14 · Sustainability](../14-Sustainability/README.md) |
+| **LLMOps** | AI feature'larını production'a almak | [15 · AI-LLMOps](../15-AI-LLMOps/README.md) |
 | **Threat Modeling** | Mimari güvenliği | [08 · Security / Threat-Modeling.md](../08-Security/Threat-Modeling.md) |
-| **Soft skills** | Stakeholder, mentor, "hayır" demek | [20 · Soft-Skills](../20-Soft-Skills/) |
+| **Soft skills** | Stakeholder, mentor, "hayır" demek | [20 · Soft-Skills](../20-Soft-Skills/README.md) |
 
 ### Staff seviyesi sorular (kendine sor)
 - [ ] Ekibimin DORA metriklerini ay ay görebiliyor muyum?

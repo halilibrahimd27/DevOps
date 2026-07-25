@@ -261,13 +261,13 @@ bağlanamıyorum"u tahmin değil **kanıt** hâline getirir — B3'teki ilk kır
 | Kaynak | Ne için | Ne zaman |
 |---|---|---|
 | `man ss`, `man ip` | `ss`/`ip` alt komutlarının tam referansı | Bir bayrağı merak ettiğinde |
-| [`09-Networking/`](../../09-Networking/) klasörü | Kubernetes-içi ağ (service mesh, eBPF, Gateway API) | **D bloğundan sonra** — hepsi cluster-içi, şimdi çok ileri |
+| [`09-Networking/`](../../09-Networking/README.md) klasörü | Kubernetes-içi ağ (service mesh, eBPF, Gateway API) | **D bloğundan sonra** — hepsi cluster-içi, şimdi çok ileri |
 
 > Not: `09-Networking/` içeriğinin tamamı K8s ağıdır ve bu modülün seviyesinin çok
 > ötesindedir. Şimdi açma; D1'den sonra anlamlı olacak.
 
 ## 🔨 Lab
-👉 [`labs/build/L02-ag-tcp-ip/`](../labs/build/L02-ag-tcp-ip/) — (Görev taslağı: bir servisi
+👉 [`labs/build/L02-ag-tcp-ip/`](../labs/build/L02-ag-tcp-ip/README.md) — (Görev taslağı: bir servisi
 farklı portlarda/arayüzlerde bağla, `ss`/`nc` ile dinleneni doğrula; "refused" ve
 "timeout" durumlarını bilerek üret ve ayırt et.)
 

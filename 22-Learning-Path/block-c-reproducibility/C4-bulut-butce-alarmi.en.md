@@ -44,7 +44,7 @@ the bill and access. For short definitions of the terms, see [`Glossary.md`](../
 | [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md) | local alternative + budget alarm | ~15 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L12-bulut-butce-alarmi/`](../labs/build/L12-bulut-butce-alarmi/) — **First step: the budget alarm.**
+👉 [`labs/build/L12-bulut-butce-alarmi/`](../labs/build/L12-bulut-butce-alarmi/README.md) — **First step: the budget alarm.**
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

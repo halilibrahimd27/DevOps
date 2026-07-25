@@ -29,10 +29,10 @@ D1 (K8s) bu image'ı çalıştıracak.
 | [`04-Containers/Multi-Stage-Builds.md`](../../04-Containers/Multi-Stage-Builds.md) | küçük image | ~20 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L09-container/`](../labs/build/L09-container/)
+👉 [`labs/build/L09-container/`](../labs/build/L09-container/README.md)
 
 ## 💥 Kırık lab
-👉 [`labs/broken/K02-container-hatasi/`](../labs/broken/K02-container-hatasi/) — Belirti: "Container çalışmıyor /
+👉 [`labs/broken/K02-container-hatasi/`](../labs/broken/K02-container-hatasi/README.md) — Belirti: "Container çalışmıyor /
 bağlanılamıyor." (Gerçekçi sebep gizli: yanlış image tag / port eşlemesi / eksik
 env.) Container hataları yeni başlayanın en sık takıldığı yerdir — bu yüzden zorunlu.
 

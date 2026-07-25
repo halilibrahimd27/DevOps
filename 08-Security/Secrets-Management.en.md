@@ -574,7 +574,7 @@ in the vault audit log:
 - **OWASP Secrets Management Cheat Sheet** — cheatsheetseries.owasp.org
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — etcd encryption + RBAC section
 - [`DevSecOps-Pipeline.md`](DevSecOps-Pipeline.md) — pre-commit + CI scan section
-- [`19-Compliance/`](../19-Compliance/) (Phase 4) — KVKK (Turkey's Personal Data Protection Law, No. 6698) / GDPR secret-retention obligations
+- [`19-Compliance/`](../19-Compliance/README.md) (Phase 4) — KVKK (Turkey's Personal Data Protection Law, No. 6698) / GDPR secret-retention obligations
 
 ---
 

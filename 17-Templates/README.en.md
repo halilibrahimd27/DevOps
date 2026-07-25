@@ -16,14 +16,14 @@ tags:
 
 | Folder | Content |
 |---|---|
-| [`github-actions/`](github-actions/) | Reusable workflows: docker build/push, terraform plan, release-please |
-| [`kubernetes/`](kubernetes/) | Production-grade Deployment, Service, HPA, NetworkPolicy, PDB |
-| [`dockerfiles/`](dockerfiles/) | Multi-stage Dockerfiles: Go, Node.js, Python |
-| [`terraform/`](terraform/) | Module skeleton + standard variable structure |
-| [`kyverno-policies/`](kyverno-policies/) | Signature verification, label enforcement, image source restriction |
+| [`github-actions/`](github-actions/README.md) | Reusable workflows: docker build/push, terraform plan, release-please |
+| [`kubernetes/`](kubernetes/README.md) | Production-grade Deployment, Service, HPA, NetworkPolicy, PDB |
+| [`dockerfiles/`](dockerfiles/README.md) | Multi-stage Dockerfiles: Go, Node.js, Python |
+| [`terraform/`](terraform/README.md) | Module skeleton + standard variable structure |
+| [`kyverno-policies/`](kyverno-policies/README.md) | Signature verification, label enforcement, image source restriction |
 | [`runbooks/`](runbooks/) | Runbook and postmortem templates |
-| [`prometheus-rules/`](prometheus-rules/) | SLO recording + alerting rule templates |
-| [`gitignore/`](gitignore/) | `.gitignore` examples per stack |
+| [`prometheus-rules/`](prometheus-rules/README.md) | SLO recording + alerting rule templates |
+| [`gitignore/`](gitignore/README.md) | `.gitignore` examples per stack |
 
 ## General rule
 

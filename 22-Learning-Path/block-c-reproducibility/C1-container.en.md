@@ -29,10 +29,10 @@ image automatically, D1 (K8s) will run this image.
 | [`04-Containers/Multi-Stage-Builds.md`](../../04-Containers/Multi-Stage-Builds.md) | small image | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L09-container/`](../labs/build/L09-container/)
+👉 [`labs/build/L09-container/`](../labs/build/L09-container/README.md)
 
 ## 💥 Broken lab
-👉 [`labs/broken/K02-container-hatasi/`](../labs/broken/K02-container-hatasi/) — Symptom: "Container doesn't work /
+👉 [`labs/broken/K02-container-hatasi/`](../labs/broken/K02-container-hatasi/README.md) — Symptom: "Container doesn't work /
 can't connect." (Realistic cause hidden: wrong image tag / port mapping / missing
 env.) Container errors are where beginners get stuck most often — that's why this one is mandatory.
 

@@ -39,7 +39,7 @@ doğruluyor" cevaptır. Her soru bir modülün kabul kriterine izlenebilir.
 ## 2️⃣ Uygulamalı görev — "kanıtla, tahmin etme"
 
 **Görev A — Kırık VM'yi teşhis et (çekirdek):**
-[`K01 — kırık VM`](../labs/broken/K01-kirik-vm/) lab'ını çöz.
+[`K01 — kırık VM`](../labs/broken/K01-kirik-vm/README.md) lab'ını çöz.
 
 - [ ] `bash labs/broken/K01-kirik-vm/verify.sh` sıfır hatayla geçiyor
 - [ ] Kök sebebi **log/metrik kanıtıyla** gösteren bir `teshis.md` yazdın:
@@ -47,7 +47,7 @@ doğruluyor" cevaptır. Her soru bir modülün kabul kriterine izlenebilir.
 - [ ] Düzeltmeden sonra belirtinin **gittiğini** ayrı bir komutla kanıtladın (sadece "düzelttim" değil)
 
 **Görev B — Metrikle bir sağlık göstergesi:**
-[`B2`](B2-metrik-prometheus.md)/[`L08`](../labs/build/L08-metrik/) kurulumunu kullan.
+[`B2`](B2-metrik-prometheus.md)/[`L08`](../labs/build/L08-metrik/README.md) kurulumunu kullan.
 
 - [ ] Prometheus **Targets** ekranında hedef `UP`; `up` sorgusu `1` döndürüyor
 - [ ] Bir sağlık göstergesi için bir `rate(...[5m])` sorgusu yazdın ve çıktısını gösterdin

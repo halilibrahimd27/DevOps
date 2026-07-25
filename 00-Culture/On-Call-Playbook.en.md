@@ -264,7 +264,7 @@ Check off everything below before calling an on-call rotation **production-ready
 - [Google SRE Book — Chapter 11: Being On-Call](https://sre.google/sre-book/being-on-call/)
 - *Seeking SRE* — David N. Blank-Edelman (book)
 - [PagerDuty Incident Response docs](https://response.pagerduty.com)
-- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md) — runbook + postmortem template
 
 ---
 

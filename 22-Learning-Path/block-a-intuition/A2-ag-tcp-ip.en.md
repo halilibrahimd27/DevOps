@@ -275,13 +275,13 @@ into **evidence** — the core of the first broken lab in B3.
 | Source | For what | When |
 |---|---|---|
 | `man ss`, `man ip` | Full reference for `ss`/`ip` subcommands | When you're curious about a flag |
-| The [`09-Networking/`](../../09-Networking/) folder | In-cluster Kubernetes networking (service mesh, eBPF, Gateway API) | **After Block D** — it's all cluster-internal, too advanced for now |
+| The [`09-Networking/`](../../09-Networking/README.md) folder | In-cluster Kubernetes networking (service mesh, eBPF, Gateway API) | **After Block D** — it's all cluster-internal, too advanced for now |
 
 > Note: all of `09-Networking/`'s content is K8s networking and is far beyond this
 > module's level. Don't open it now; it'll make sense after D1.
 
 ## 🔨 Lab
-👉 [`labs/build/L02-ag-tcp-ip/`](../labs/build/L02-ag-tcp-ip/) — (Task draft: bind a
+👉 [`labs/build/L02-ag-tcp-ip/`](../labs/build/L02-ag-tcp-ip/README.md) — (Task draft: bind a
 service on different ports/interfaces, verify what's listening with `ss`/`nc`;
 deliberately produce and distinguish "refused" and "timeout" conditions.)
 

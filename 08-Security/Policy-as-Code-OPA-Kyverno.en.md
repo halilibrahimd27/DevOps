@@ -293,7 +293,7 @@ The 10 policies that **must** be in place before a production cluster goes live:
 | 9 | `require-labels` | cost-center, owner, env |
 | 10 | `default-deny-network-policy` | Auto-generate when a namespace opens |
 
-Prepare each of these as a Kyverno ClusterPolicy. Ready-made templates: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/).
+Prepare each of these as a Kyverno ClusterPolicy. Ready-made templates: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md).
 
 ### Full set example
 ```yaml
@@ -473,7 +473,7 @@ jobs:
 - **CNCF Policy WG** — github.com/cncf/sig-security
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — PSS + admission together
 - [`SLSA-and-SBOM.md`](SLSA-and-SBOM.md) — the verifyImages section
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — ready-made policies
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — ready-made policies
 
 ---
 

@@ -275,7 +275,7 @@ mistakes you make before you ever see them.
 | [ShellCheck wiki](https://www.shellcheck.net/wiki/) | Explanation of the warning code `shellcheck` gives you (e.g., SC2086) | When `shellcheck` gives a warning, look up that code |
 
 ## 🔨 Lab
-👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/) — (Task draft: a script
+👉 [`labs/build/L05-bash/`](../labs/build/L05-bash/README.md) — (Task draft: a script
 that takes two arguments, uses `set -euo pipefail`, summarizes a log file and
 writes the result to a report file, and passes `shellcheck` clean.)
 

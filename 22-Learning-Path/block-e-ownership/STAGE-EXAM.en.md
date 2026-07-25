@@ -47,19 +47,19 @@ Block E.
 
 **Task A — Three broken labs (core):**
 
-- [ ] [`K07 — incident simulation`](../labs/broken/K07-incident-sim/): `verify.sh` green; managed with a UTC minute-precision timeline
-- [ ] [`K08 — restore failed`](../labs/broken/K08-restore-basarisiz/): `verify.sh` green; the restore actually worked
-- [ ] [`K09 — chaos game day`](../labs/broken/K09-chaos-gameday/): `verify.sh` green; limited blast radius maintained
+- [ ] [`K07 — incident simulation`](../labs/broken/K07-incident-sim/README.md): `verify.sh` green; managed with a UTC minute-precision timeline
+- [ ] [`K08 — restore failed`](../labs/broken/K08-restore-basarisiz/README.md): `verify.sh` green; the restore actually worked
+- [ ] [`K09 — chaos game day`](../labs/broken/K09-chaos-gameday/README.md): `verify.sh` green; limited blast radius maintained
 
 **Task B — Alarm tied to an SLO (E1+E2):**
-[`L18`](../labs/build/L18-sli-slo/) + [`L19`](../labs/build/L19-alerting/).
+[`L18`](../labs/build/L18-sli-slo/README.md) + [`L19`](../labs/build/L19-alerting/README.md).
 
 - [ ] An SLI for a service is measured in Prometheus; an SLO + error budget (min/month) has been calculated in writing
 - [ ] An alarm rule tied to the SLO **fired at least once** and was resolved — Alertmanager/panel proof
 - [ ] Every alarm is classified as page/ticket/log; escalation is defined in writing
 
 **Task C — Restore genuinely tested (mandatory, security thread):**
-[`E4`](E4-veritabani-restore.md)/[`L20`](../labs/build/L20-veritabani-restore/).
+[`E4`](E4-veritabani-restore.md)/[`L20`](../labs/build/L20-veritabani-restore/README.md).
 
 - [ ] A backup was restored to a **clean environment**; data integrity was verified with a query (row count/checksum)
 - [ ] RTO and RPO were measured and written down

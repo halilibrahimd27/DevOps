@@ -34,7 +34,7 @@ scale. CI ties these steps to every commit. D4 (supply chain: scanning + signing
 | [`02-CI-CD/GitHub-Actions-Recipes.md`](../../02-CI-CD/GitHub-Actions-Recipes.md) | working examples | ~30 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L10-ci/`](../labs/build/L10-ci/)
+👉 [`labs/build/L10-ci/`](../labs/build/L10-ci/README.md)
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

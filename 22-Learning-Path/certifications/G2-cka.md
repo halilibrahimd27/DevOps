@@ -28,7 +28,7 @@ tam olarak bunu inşa etti; bu kapı onu dışarıya kanıtlar.
 - [ ] [`D3`](../block-d-orchestration/D3-secret-yonetimi.md) — Secret oluşturup `secretKeyRef` ile bağladın; base64 ≠ şifreleme olduğunu kanıtladın
 - [ ] [`D4`](../block-d-orchestration/D4-supply-chain.md) — image tarama kapısı + imzalama CI'ın parçası
 - [ ] [`D5`](../block-d-orchestration/D5-gitops-argocd.md) — tek uygulamayı ArgoCD ile GitOps'ladın
-- [ ] Kırık lab'ları çözdün: [`K04`](../labs/broken/K04-imagepullbackoff-rbac/), [`K05`](../labs/broken/K05-oomkilled-probe/), [`K06`](../labs/broken/K06-argocd-out-of-sync/)
+- [ ] Kırık lab'ları çözdün: [`K04`](../labs/broken/K04-imagepullbackoff-rbac/README.md), [`K05`](../labs/broken/K05-oomkilled-probe/README.md), [`K06`](../labs/broken/K06-argocd-out-of-sync/README.md)
 - [ ] Blok D [`STAGE-EXAM`](../block-d-orchestration/STAGE-EXAM.md)'ini geçtin
 
 Bir Pod'un neden `Pending`/`CrashLoopBackOff`/`ImagePullBackOff` olduğunu **dokümana
@@ -56,7 +56,7 @@ Alan ağırlıkları resmi müfredattan; **kendin doğrula**:
 
 | Alan | ~Ağırlık | Karşılayan modül | Boşluk (kendin çalış) |
 |---|---|---|---|
-| Troubleshooting | ~%30 | [`D1`](../block-d-orchestration/D1-k8s-temel.md), [`D2`](../block-d-orchestration/D2-k8s-production.md), [`K04`](../labs/broken/K04-imagepullbackoff-rbac/), [`K05`](../labs/broken/K05-oomkilled-probe/), [`B1`](../block-b-visibility/B1-log-okuma.md) | Node NotReady, kubelet/certificate sorunları |
+| Troubleshooting | ~%30 | [`D1`](../block-d-orchestration/D1-k8s-temel.md), [`D2`](../block-d-orchestration/D2-k8s-production.md), [`K04`](../labs/broken/K04-imagepullbackoff-rbac/README.md), [`K05`](../labs/broken/K05-oomkilled-probe/README.md), [`B1`](../block-b-visibility/B1-log-okuma.md) | Node NotReady, kubelet/certificate sorunları |
 | Cluster Architecture, Install & Config | ~%25 | [`D1`](../block-d-orchestration/D1-k8s-temel.md) (RBAC), [`D3`](../block-d-orchestration/D3-secret-yonetimi.md) | **kubeadm ile kurulum/yükseltme, etcd yedek/geri-yükleme** — patika `kind` kullanır, bunları kendin çalış |
 | Services & Networking | ~%20 | [`D1`](../block-d-orchestration/D1-k8s-temel.md) (Service, Ingress, NetworkPolicy) | CoreDNS yapılandırma, Gateway API, CNI ayrıntısı |
 | Workloads & Scheduling | ~%15 | [`D1`](../block-d-orchestration/D1-k8s-temel.md), [`D2`](../block-d-orchestration/D2-k8s-production.md) | DaemonSet, static pod, taint/toleration, affinity |
@@ -93,7 +93,7 @@ Tek gerçek kaynak resmi müfredat ve sınav kılavuzu — bu sayfa değil:
 ## 6. Pratik ortamı (yerel-önce)
 
 - **kind** veya **k3s** ile çok-node'lu bir cluster kur; para gerekmez.
-- [`L13`](../labs/build/L13-k8s-temel/) ve [`L14`](../labs/build/L14-k8s-production/) zaten kind üstünde.
+- [`L13`](../labs/build/L13-k8s-temel/README.md) ve [`L14`](../labs/build/L14-k8s-production/README.md) zaten kind üstünde.
 - Boşluk alanları için: `kubeadm` ile 2 VM'de (veya `kind`'ın dışında Vagrant/Multipass ile) bir
   cluster kurup **etcd snapshot al/geri yükle** pratiği yap — bu sınavın klasik görevidir.
 - Storage için: yerel `StorageClass` + `PVC` + Pod bağlama döngüsünü tekrarla.

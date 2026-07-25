@@ -114,7 +114,7 @@ Mevcut sistemden geçiş.
 
 > "İncident anında ne yap" / "İncident sonrası ne öğrendik".
 
-> Template'ler: [`17-Templates/runbooks/`](../17-Templates/runbooks/)
+> Template'ler: [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md)
 
 ---
 
@@ -289,7 +289,7 @@ Bir doc'u "production-ready" saymadan önce:
 - [Architecture Decision Records (ADR) on GitHub](https://adr.github.io/)
 - [Google Technical Writing courses](https://developers.google.com/tech-writing) — ücretsiz
 - [Write the Docs community](https://www.writethedocs.org)
-- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md) — runbook + postmortem template
 
 ---
 
@@ -299,7 +299,7 @@ Bir doc'u "production-ready" saymadan önce:
 - [`Blameless-Postmortem-Template.md`](Blameless-Postmortem-Template.md) — Tier-4 postmortem şablonu
 - [`11-SRE/Runbook-Template.md`](../11-SRE/Runbook-Template.md) — incident anı runbook iskeleti
 - [`11-SRE/Postmortem-Practice.md`](../11-SRE/Postmortem-Practice.md) — postmortem kültürü, drift'e karşı öğrenme
-- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template dizini
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md) — runbook + postmortem template dizini
 - [Diátaxis framework](https://diataxis.fr) — tutorial / how-to / reference / explanation ayrımı
 
 ---

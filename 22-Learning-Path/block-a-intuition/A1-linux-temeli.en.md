@@ -341,7 +341,7 @@ can leak them — secrets management is D3's topic.
 > is a skill.
 
 ## 🔨 Lab
-👉 [`labs/build/L01-linux-temeli/`](../labs/build/L01-linux-temeli/) — (Task outline: find-
+👉 [`labs/build/L01-linux-temeli/`](../labs/build/L01-linux-temeli/README.md) — (Task outline: find-
 inspect-stop a given process; pull a directory tree's permissions into `750`/`640`
 order; create a service user.)
 

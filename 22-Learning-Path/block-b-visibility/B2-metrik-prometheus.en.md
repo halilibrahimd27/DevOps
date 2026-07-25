@@ -330,7 +330,7 @@ go deeper in Block E. For now, Prometheus's own Graph UI is enough.
 | [`07-Observability/Alerting-Done-Right.md`](../../07-Observability/Alerting-Done-Right.md) | Going from metrics to alerts | **Before E2** — not now |
 
 ## 🔨 Lab
-👉 [`labs/build/L08-metrik/`](../labs/build/L08-metrik/) — (Task outline: set up
+👉 [`labs/build/L08-metrik/`](../labs/build/L08-metrik/README.md) — (Task outline: set up
 node_exporter + Prometheus with systemd on the A6 VM, query at least two of the four
 golden signals with PromQL, and deliberately add a high-cardinality label to observe how
 the series count explodes.)

@@ -513,7 +513,7 @@ spec:
 - **Cilium Network Policy** — docs.cilium.io
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — RBAC + NetworkPolicy
 - [`Secrets-Management.md`](Secrets-Management.md) — workload identity
-- [`09-Networking/`](../09-Networking/) — service mesh deep-dive (Phase 3)
+- [`09-Networking/`](../09-Networking/README.md) — service mesh deep-dive (Phase 3)
 
 ---
 

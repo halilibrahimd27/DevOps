@@ -29,7 +29,7 @@ key). Since everything will be in Git in D5's GitOps, how secrets get managed
 | [`06-GitOps/Secrets-in-GitOps.md`](../../06-GitOps/Secrets-in-GitOps.md) | secrets in GitOps | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L15-secret-yonetimi/`](../labs/build/L15-secret-yonetimi/)
+👉 [`labs/build/L15-secret-yonetimi/`](../labs/build/L15-secret-yonetimi/README.md)
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

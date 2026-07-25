@@ -31,7 +31,7 @@ is triggered by these alerts.
 | [`00-Culture/On-Call-Playbook.md`](../../00-Culture/On-Call-Playbook.md) | on-call discipline | ~25 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L19-alerting/`](../labs/build/L19-alerting/)
+👉 [`labs/build/L19-alerting/`](../labs/build/L19-alerting/README.md)
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

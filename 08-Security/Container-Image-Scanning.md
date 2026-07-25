@@ -291,7 +291,7 @@ spec:
               - image: "<REGISTRY>/* | gcr.io/distroless/*"
 ```
 
-Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/).
+Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md).
 
 ---
 
@@ -408,7 +408,7 @@ groups:
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — admission policy
 - [`SLSA-and-SBOM.md`](SLSA-and-SBOM.md) — supply chain integrity
 - [`04-Containers/Dockerfile-Best-Practices.md`](../04-Containers/Dockerfile-Best-Practices.md)
-- [`17-Templates/dockerfiles/`](../17-Templates/dockerfiles/) — minimal Dockerfile şablonları
+- [`17-Templates/dockerfiles/`](../17-Templates/dockerfiles/README.md) — minimal Dockerfile şablonları
 
 ---
 

@@ -59,7 +59,7 @@ Seviye ekseni araç sayısı değil, **sorumluluk yarıçapıdır:**
 Blok toplamları: A 103 · B 36 · C 88 · D 84 · E 64 · F 48 · Capstone 60.
 
 Kapı projeleri: **Capstone 1** (Blok C sonu), **Capstone 2** (Blok D sonu),
-**Capstone 3** (Blok E sonu) → [`capstones/`](capstones/).
+**Capstone 3** (Blok E sonu) → [`capstones/`](capstones/CAP1-blok-c-sonu.md).
 
 ---
 

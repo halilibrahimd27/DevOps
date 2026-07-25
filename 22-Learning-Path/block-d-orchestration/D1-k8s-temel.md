@@ -44,10 +44,10 @@ Bu zincir kırılırsa (yanlış selector, eksik Ingress kuralı) uygulama "çal
 | [`05-Kubernetes/Debugging-Pods.md`](../../05-Kubernetes/Debugging-Pods.md) | Pod arızası daraltma | ~25 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L13-k8s-temel/`](../labs/build/L13-k8s-temel/) — yerel: kind/k3s.
+👉 [`labs/build/L13-k8s-temel/`](../labs/build/L13-k8s-temel/README.md) — yerel: kind/k3s.
 
 ## 💥 Kırık lab
-👉 [`labs/broken/K04-imagepullbackoff-rbac/`](../labs/broken/K04-imagepullbackoff-rbac/) — Belirti: "Pod'lar ayağa
+👉 [`labs/broken/K04-imagepullbackoff-rbac/`](../labs/broken/K04-imagepullbackoff-rbac/README.md) — Belirti: "Pod'lar ayağa
 kalkmıyor / erişilemiyor." (Gerçekçi sebep gizli: ImagePullBackOff / yanlış label
 selector / RBAC forbidden / NetworkPolicy engeli.)
 

@@ -29,7 +29,7 @@ builds on the postmortem practice from this module.
 | [`00-Culture/Blameless-Postmortem-Template.md`](../../00-Culture/Blameless-Postmortem-Template.md) | template | ~20 min |
 
 ## 💥 Broken lab
-👉 [`labs/broken/K07-incident-sim/`](../labs/broken/K07-incident-sim/) — Symptom: a multi-fault incident
+👉 [`labs/broken/K07-incident-sim/`](../labs/broken/K07-incident-sim/README.md) — Symptom: a multi-fault incident
 simulation; multiple signals, real time pressure. Diagnosis + communication are measured together.
 
 ## ✅ Acceptance criteria

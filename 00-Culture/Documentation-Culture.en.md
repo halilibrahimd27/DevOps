@@ -114,7 +114,7 @@ Migration path from the current system.
 
 > "What to do during an incident" / "What we learned after the incident."
 
-> Templates: [`17-Templates/runbooks/`](../17-Templates/runbooks/)
+> Templates: [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md)
 
 ---
 
@@ -290,7 +290,7 @@ Before calling a doc "production-ready":
 - [Architecture Decision Records (ADR) on GitHub](https://adr.github.io/)
 - [Google Technical Writing courses](https://developers.google.com/tech-writing) — free
 - [Write the Docs community](https://www.writethedocs.org)
-- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — runbook + postmortem template
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md) — runbook + postmortem template
 
 ---
 
@@ -300,7 +300,7 @@ Before calling a doc "production-ready":
 - [`Blameless-Postmortem-Template.md`](Blameless-Postmortem-Template.md) — the Tier-4 postmortem template
 - [`11-SRE/Runbook-Template.md`](../11-SRE/Runbook-Template.md) — the in-incident runbook skeleton
 - [`11-SRE/Postmortem-Practice.md`](../11-SRE/Postmortem-Practice.md) — postmortem culture, learning against drift
-- [`17-Templates/runbooks/`](../17-Templates/runbooks/) — the runbook + postmortem template directory
+- [`17-Templates/runbooks/`](../17-Templates/runbooks/runbook-template.md) — the runbook + postmortem template directory
 - [Diátaxis framework](https://diataxis.fr) — the tutorial / how-to / reference / explanation split
 
 ---

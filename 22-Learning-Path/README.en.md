@@ -38,7 +38,7 @@ is already covered in a deep-dive, the module **links to it.**
 6. At the end of each block, solve that block's `STAGE-EXAM.md` (in the block
    folder) — the signal isn't "I get it," it's command output + written
    justification. At the end of Block C/D/E there's also a
-   [`capstone`](capstones/) deliverable project.
+   [`capstone`](capstones/CAP1-blok-c-sonu.md) deliverable project.
 
 You're not alone when you get stuck: every module has a `🆘 If you're stuck`
 table; common errors are in [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) (Phase 9).

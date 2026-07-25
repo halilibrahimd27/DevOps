@@ -42,12 +42,12 @@ soruları K8s sorularından ayrılmaz. Her soru bir modülün kabul kriterine iz
 
 **Görev A — Üç kırık lab (çekirdek, ikisi çok-arızalı):**
 
-- [ ] [`K04 — ImagePullBackOff + NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/): `verify.sh` yeşil; **iki** arızayı da (yok-olan tag + izinsiz default-deny) buldun (RBAC `forbidden` burada refleks olarak `solution.md`'de anlatılır, bu lab'da arıza değil)
-- [ ] [`K05 — OOMKilled + probe`](../labs/broken/K05-oomkilled-probe/): `verify.sh` yeşil; **iki** arızayı da (32Mi limit + yanlış probe portu) buldun
-- [ ] [`K06 — ArgoCD OutOfSync`](../labs/broken/K06-argocd-out-of-sync/): `verify.sh` yeşil; auto-sync geri açıldı
+- [ ] [`K04 — ImagePullBackOff + NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/README.md): `verify.sh` yeşil; **iki** arızayı da (yok-olan tag + izinsiz default-deny) buldun (RBAC `forbidden` burada refleks olarak `solution.md`'de anlatılır, bu lab'da arıza değil)
+- [ ] [`K05 — OOMKilled + probe`](../labs/broken/K05-oomkilled-probe/README.md): `verify.sh` yeşil; **iki** arızayı da (32Mi limit + yanlış probe portu) buldun
+- [ ] [`K06 — ArgoCD OutOfSync`](../labs/broken/K06-argocd-out-of-sync/README.md): `verify.sh` yeşil; auto-sync geri açıldı
 
 **Görev B — Güvenlik ipliği ayakta (zorunlu):**
-[`D1`](D1-k8s-temel.md)/[`L13`](../labs/build/L13-k8s-temel/) + [`D4`](D4-supply-chain.md)/[`L16`](../labs/build/L16-supply-chain/).
+[`D1`](D1-k8s-temel.md)/[`L13`](../labs/build/L13-k8s-temel/README.md) + [`D4`](D4-supply-chain.md)/[`L16`](../labs/build/L16-supply-chain/README.md).
 
 - [ ] Uygulama Deployment + Service + Ingress ile çalışıyor; RBAC Role/RoleBinding + NetworkPolicy uygulanmış
 - [ ] `kubectl auth can-i delete pods --as=<SA>` → **no**; yetkisiz erişimin reddedildiğini gösterdin
@@ -55,7 +55,7 @@ soruları K8s sorularından ayrılmaz. Her soru bir modülün kabul kriterine iz
 - [ ] Image imzalanıyor ve `cosign verify` ile doğrulanıyor
 
 **Görev C — Secret repo dışında:**
-[`D3`](D3-secret-yonetimi.md)/[`L15`](../labs/build/L15-secret-yonetimi/).
+[`D3`](D3-secret-yonetimi.md)/[`L15`](../labs/build/L15-secret-yonetimi/README.md).
 
 - [ ] Bir sır Pod'a image/repo dışından (Secret referansı / harici store) iletiliyor
 - [ ] Repoda düz metin sır olmadığını gösteren bir tarama (`gitleaks` / `trivy fs`) çıktısı temiz

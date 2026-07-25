@@ -24,7 +24,7 @@ tags:
 | [`pdb.yaml`](pdb.yaml) | PodDisruptionBudget | Voluntary disruption'da minimum ayakta pod |
 | [`serviceaccount-rbac.yaml`](serviceaccount-rbac.yaml) | SA + Role + RoleBinding | Least-privilege API erişimi |
 
-Derinlik için: [`05-Kubernetes/`](../../05-Kubernetes/) ve [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md).
+Derinlik için: [`05-Kubernetes/`](../../05-Kubernetes/README.md) ve [`08-Security/Kubernetes-Hardening.md`](../../08-Security/Kubernetes-Hardening.md).
 
 ### 1️⃣ `deployment.yaml`
 

@@ -444,16 +444,16 @@ Every team should know where it stands and aim for the next level.
 - [`Reusable-Workflows.md`](Reusable-Workflows.md) — org-wide callable workflow patterns
 - [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md) — SAST/SCA/scan gates
 - [`08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md) — signing + provenance + SBOM
-- [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster promote flow
+- [`06-GitOps/`](../06-GitOps/README.md) — pipeline → ArgoCD → cluster promote flow
 - [GitHub Actions docs](https://docs.github.com/en/actions)
 
 ---
 
 ## 📚 Further reading
 
-- [`17-Templates/github-actions/`](../17-Templates/github-actions/) — ready-made workflows
+- [`17-Templates/github-actions/`](../17-Templates/github-actions/README.md) — ready-made workflows
 - [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md)
-- [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster flow
+- [`06-GitOps/`](../06-GitOps/README.md) — pipeline → ArgoCD → cluster flow
 - [Continuous Delivery — Jez Humble & David Farley]
 
 ---

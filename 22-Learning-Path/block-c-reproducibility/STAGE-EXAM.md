@@ -42,18 +42,18 @@ Bu sınav onu ölçer. Her soru bir modülün kabul kriterine izlenebilir.
 
 **Görev A — İki kırık lab (çekirdek):**
 
-- [ ] [`K02 — container hatası`](../labs/broken/K02-container-hatasi/): `bash labs/broken/K02-container-hatasi/verify.sh` çözümden sonra sıfır hatayla geçiyor
-- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/): `bash labs/broken/K03-terraform-state/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] [`K02 — container hatası`](../labs/broken/K02-container-hatasi/README.md): `bash labs/broken/K02-container-hatasi/verify.sh` çözümden sonra sıfır hatayla geçiyor
+- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/README.md): `bash labs/broken/K03-terraform-state/verify.sh` çözümden sonra sıfır hatayla geçiyor
 - [ ] Her ikisi için kök sebep + teşhis akışını yazdın (K03 = bayat state kilidi → `force-unlock`)
 
 **Görev B — Tekrarlanabilirlik kanıtı:**
-[`C3`](C3-terraform.md)/[`L11`](../labs/build/L11-terraform/) (LocalStack) kurulumunu kullan.
+[`C3`](C3-terraform.md)/[`L11`](../labs/build/L11-terraform/README.md) (LocalStack) kurulumunu kullan.
 
 - [ ] `terraform apply` ile ortam sıfırdan kuruluyor → `terraform destroy` → tekrar `apply` **aynı** sonucu üretiyor
-- [ ] Bir commit → CI → registry akışı yeşil ([`L10`](../labs/build/L10-ci/)); image sürümlü etiketle yayımlanıyor (`:latest` yok)
+- [ ] Bir commit → CI → registry akışı yeşil ([`L10`](../labs/build/L10-ci/README.md)); image sürümlü etiketle yayımlanıyor (`:latest` yok)
 
 **Görev C — Bütçe alarmı gerçekten çalışıyor:**
-[`C4`](C4-bulut-butce-alarmi.md)/[`L12`](../labs/build/L12-bulut-butce-alarmi/).
+[`C4`](C4-bulut-butce-alarmi.md)/[`L12`](../labs/build/L12-bulut-butce-alarmi/README.md).
 
 - [ ] Bütçe/faturalama alarmı kurulu, bir bildirim kanalına bağlı ve **tetiklenerek** test edildi
 - [ ] Küçük bir kaynak açıldı ve `destroy` ile kapatıldı — **açık kaynak kalmadığı** doğrulandı

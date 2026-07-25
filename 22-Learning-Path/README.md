@@ -37,7 +37,7 @@ için değil, **kontrol testiyle.**
 5. İlk modülünü aç, **kabul kriterlerini geçmeden sonrakine geçme.**
 6. Her bloğun sonunda o bloğun `STAGE-EXAM.md`'sini çöz (blok klasöründe) —
    sinyali "anladım" değil, komut çıktısı + yazılı gerekçe kanıtlar. Blok C/D/E
-   sonunda ayrıca bir [`capstone`](capstones/) teslim projesi vardır.
+   sonunda ayrıca bir [`capstone`](capstones/CAP1-blok-c-sonu.md) teslim projesi vardır.
 
 Takıldığında yalnız değilsin: her modülde `🆘 Takıldıysan` tablosu var; genel
 hatalar [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md)'de (Faz 9). Para harcamadan

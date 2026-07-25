@@ -276,7 +276,7 @@ cosign verify --key cosign.pub <REGISTRY>/<APP>:<TAG>
 - [`08-Security/Container-Image-Scanning.md`](../08-Security/Container-Image-Scanning.md)
 - [`08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md)
 - [`08-Security/Policy-as-Code-OPA-Kyverno.md`](../08-Security/Policy-as-Code-OPA-Kyverno.md)
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — verify-image-signature.yaml
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — verify-image-signature.yaml
 
 ---
 

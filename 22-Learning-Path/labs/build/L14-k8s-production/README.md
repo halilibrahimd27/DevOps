@@ -1,6 +1,6 @@
 # L14 — K8s production: request/limit, probe, PDB, HPA
 
-> Modül: [`D2`](../../../block-d-orchestration/D2-k8s-production.md) · Süre: ~4 saat · Kırık lab: [`K05`](../../broken/K05-oomkilled-probe/)
+> Modül: [`D2`](../../../block-d-orchestration/D2-k8s-production.md) · Süre: ~4 saat · Kırık lab: [`K05`](../../broken/K05-oomkilled-probe/README.md)
 
 D1'de Pod ayağa kalktı. Bu lab onu **production'a hazır** yapar: doğru request/limit,
 `readiness`/`liveness` probe, kesinti bütçesi (PDB) ve yük altında ölçeklenme (HPA).

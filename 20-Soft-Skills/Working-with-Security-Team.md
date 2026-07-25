@@ -252,7 +252,7 @@ Birlikte ölçtüğünüz metrikler iyi işbirliği indikatörü:
 - **Building Security Champions** — OWASP
 - **The Phoenix Project** — Gene Kim (kültür)
 - **The Unicorn Project** — devamı
-- [`08-Security/`](../08-Security/) — security deep-dives
+- [`08-Security/`](../08-Security/README.md) — security deep-dives
 - [`08-Security/Threat-Modeling.md`](../08-Security/Threat-Modeling.md)
 - [`Stakeholder-Management.md`](Stakeholder-Management.md)
 

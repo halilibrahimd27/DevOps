@@ -48,7 +48,7 @@ kendi cümlelerinle yaz. Ezber tanım değil, *niçin*i olan cevap.
 Bu görev A1–A6'yı tek senaryoda birleştirir ve A→B sinyalinin ta kendisidir.
 
 **Görev A — Kırık servisi teşhis et (çekirdek):**
-[`K00 — systemd ayağa kalkmıyor`](../labs/broken/K00-systemd-ayaga-kalkmiyor/) kırık
+[`K00 — systemd ayağa kalkmıyor`](../labs/broken/K00-systemd-ayaga-kalkmiyor/README.md) kırık
 lab'ını çöz. `README.md` yalnız belirtiyi verir; sebebi sen bulacaksın.
 
 - [ ] `bash labs/broken/K00-systemd-ayaga-kalkmiyor/verify.sh` sıfır hatayla geçiyor
@@ -56,7 +56,7 @@ lab'ını çöz. `README.md` yalnız belirtiyi verir; sebebi sen bulacaksın.
 - [ ] En fazla `hint-1`/`hint-2` kullandın; `hint-3`/`solution.md` açtıysan bu sefer geçmedin sayılır
 
 **Görev B — Elle deploy'un ayakta olduğunu kanıtla:**
-[`A6`](A6-elle-deploy.md)/[`L06`](../labs/build/L06-elle-deploy/) kurulumunu kullan.
+[`A6`](A6-elle-deploy.md)/[`L06`](../labs/build/L06-elle-deploy/README.md) kurulumunu kullan.
 
 - [ ] `systemctl is-enabled app` → `enabled` **ve** `systemctl is-active app` → `active`
 - [ ] `curl -s http://127.0.0.1/health` nginx üzerinden `200` + beklenen gövde

@@ -53,7 +53,7 @@ CKS'in "Minimize Microservice Vulnerabilities" ve "Supply Chain Security" alanla
 ## 1. Bu kapıya hazır mısın?
 
 - [ ] [`E1`](../block-e-ownership/E1-sli-slo-error-budget.md)–[`E5`](../block-e-ownership/E5-chaos.md) kabul kriterlerini geçtin
-- [ ] Kırık lab'ları çözdün: [`K08`](../labs/broken/K08-restore-basarisiz/) (restore), [`K09`](../labs/broken/K09-chaos-gameday/) (chaos)
+- [ ] Kırık lab'ları çözdün: [`K08`](../labs/broken/K08-restore-basarisiz/README.md) (restore), [`K09`](../labs/broken/K09-chaos-gameday/README.md) (chaos)
 - [ ] Blok E [`STAGE-EXAM`](../block-e-ownership/STAGE-EXAM.md)'ini geçtin
 - [ ] **CKS için:** geçerli bir CKA'n var ([`G2`](G2-cka.md))
 - [ ] **AWS SAA için:** [`C4`](../block-c-reproducibility/C4-bulut-butce-alarmi.md)'teki bulut temellerini (VPC/IAM/compute) rahat anlatıyorsun
@@ -78,7 +78,7 @@ birleştirebiliyorum" der. İkisi de production sahipliğinin yerine geçmez.
 
 | Alan | ~Ağırlık | Karşılayan modül | Boşluk (kendin çalış) |
 |---|---|---|---|
-| Supply Chain Security | ~%20 | [`D4`](../block-d-orchestration/D4-supply-chain.md) + [`L16`](../labs/build/L16-supply-chain/) | image imza politikası zorlaması (admission) |
+| Supply Chain Security | ~%20 | [`D4`](../block-d-orchestration/D4-supply-chain.md) + [`L16`](../labs/build/L16-supply-chain/README.md) | image imza politikası zorlaması (admission) |
 | Minimize Microservice Vuln. | ~%20 | [`D1`](../block-d-orchestration/D1-k8s-temel.md) (NetworkPolicy), [`D3`](../block-d-orchestration/D3-secret-yonetimi.md), [`F2`](../block-f-judgment/F2-tehdit-uyum.md) | securityContext, PSS/PSA, mTLS ayrıntısı |
 | Cluster Hardening | ~%15 | [`D1`](../block-d-orchestration/D1-k8s-temel.md) (RBAC), [`08-Security/Kubernetes-Hardening`](../../08-Security/Kubernetes-Hardening.md) | API server bayrakları, admission controller zinciri |
 | Monitoring, Logging & Runtime | ~%20 | [`B1`](../block-b-visibility/B1-log-okuma.md), [`B2`](../block-b-visibility/B2-metrik-prometheus.md) | **Falco kural yazımı, audit log yapılandırma** — kendin çalış |
@@ -131,8 +131,8 @@ Ağırlıklar sürüme göre değişir; **girmeden önce resmi kılavuzla karş�
 ## 6. Pratik ortamı (yerel-önce)
 
 - **CKS:** tamamen yerel — `kind`/`k3s` + Falco + Trivy + kube-bench. Para gerekmez.
-- **AWS SAA:** kavram pratiği [`L11`](../labs/build/L11-terraform/) (LocalStack) ve
-  [`L12`](../labs/build/L12-bulut-butce-alarmi/) ile bulutsuz başlar. Servis davranışını
+- **AWS SAA:** kavram pratiği [`L11`](../labs/build/L11-terraform/README.md) (LocalStack) ve
+  [`L12`](../labs/build/L12-bulut-butce-alarmi/README.md) ile bulutsuz başlar. Servis davranışını
   görmek için AWS **free-tier** yeter — ama **her zaman bütçe alarmı açık**, kaynağı
   bırakma. Maliyet disiplini için [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md).
 

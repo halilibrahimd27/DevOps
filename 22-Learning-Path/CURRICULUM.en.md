@@ -60,7 +60,7 @@ The level axis isn't the number of tools — it's the **radius of responsibility
 Block totals: A 103 · B 36 · C 88 · D 84 · E 64 · F 48 · Capstone 60.
 
 Gate projects: **Capstone 1** (end of Block C), **Capstone 2** (end of Block D),
-**Capstone 3** (end of Block E) → [`capstones/`](capstones/).
+**Capstone 3** (end of Block E) → [`capstones/`](capstones/CAP1-blok-c-sonu.md).
 
 ---
 

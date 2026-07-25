@@ -48,7 +48,7 @@ correct and in your own words. Not a memorized definition — an answer with a *
 This task combines A1–A6 into a single scenario and is the A→B signal itself.
 
 **Task A — Diagnose the broken service (core):**
-Solve the [`K00 — systemd won't come up`](../labs/broken/K00-systemd-ayaga-kalkmiyor/) broken
+Solve the [`K00 — systemd won't come up`](../labs/broken/K00-systemd-ayaga-kalkmiyor/README.md) broken
 lab. `README.md` only gives the symptom; you'll find the cause.
 
 - [ ] `bash labs/broken/K00-systemd-ayaga-kalkmiyor/verify.sh` passes with zero errors
@@ -56,7 +56,7 @@ lab. `README.md` only gives the symptom; you'll find the cause.
 - [ ] You used at most `hint-1`/`hint-2`; if you opened `hint-3`/`solution.md`, this doesn't count as a pass this time
 
 **Task B — Prove the manual deploy is up:**
-Use the [`A6`](A6-elle-deploy.md)/[`L06`](../labs/build/L06-elle-deploy/) setup.
+Use the [`A6`](A6-elle-deploy.md)/[`L06`](../labs/build/L06-elle-deploy/README.md) setup.
 
 - [ ] `systemctl is-enabled app` → `enabled` **and** `systemctl is-active app` → `active`
 - [ ] `curl -s http://127.0.0.1/health` returns `200` + the expected body via nginx

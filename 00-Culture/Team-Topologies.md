@@ -70,7 +70,7 @@ DevOps & Platform Engineering ekiplerinin **yapı** referansı.
 - Backstage, golden path, CI/CD reusable workflow, monitoring stack
 - **Customer = developer** — ürün gibi yönetir (NPS ölçer, roadmap'i var)
 
-> 📚 [`13-Platform-Engineering/`](../13-Platform-Engineering/)
+> 📚 [`13-Platform-Engineering/`](../13-Platform-Engineering/README.md)
 
 ---
 
@@ -273,7 +273,7 @@ Bir org yapısını "Team Topologies uyumlu" saymadan önce şunları doğrula:
 - *Team Topologies* — Skelton & Pais (kitap, **must read**)
 - [TeamTopologies.com](https://teamtopologies.com) — örnekler ve workshop'lar
 - *Topologies of Team* — InfoQ talk (free YouTube)
-- [`13-Platform-Engineering/`](../13-Platform-Engineering/) — platform team detayları
+- [`13-Platform-Engineering/`](../13-Platform-Engineering/README.md) — platform team detayları
 
 ---
 

@@ -29,10 +29,10 @@ the D → E transition signal (something you built broke, and you brought it bac
 | [`10-Databases-Production/Zero-Downtime-Migrations.md`](../../10-Databases-Production/Zero-Downtime-Migrations.md) | schema changes | ~25 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L20-veritabani-restore/`](../labs/build/L20-veritabani-restore/)
+👉 [`labs/build/L20-veritabani-restore/`](../labs/build/L20-veritabani-restore/README.md)
 
 ## 💥 Broken lab
-👉 [`labs/broken/K08-restore-basarisiz/`](../labs/broken/K08-restore-basarisiz/) — Symptom: "Restore doesn't work /
+👉 [`labs/broken/K08-restore-basarisiz/`](../labs/broken/K08-restore-basarisiz/README.md) — Symptom: "Restore doesn't work /
 data comes back incomplete." (Realistic root cause hidden: corrupt/incomplete backup / wrong order / version mismatch.)
 
 ## ✅ Acceptance criteria

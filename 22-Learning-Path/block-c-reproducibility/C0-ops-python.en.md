@@ -147,7 +147,7 @@ Tell the caller **what happened** with `sys.exit(code)` — a silent failure is 
 There's no separate lab directory — this module's practice is the **acceptance
 criteria** below: write a CLI with `argparse` + a script that fetches JSON.
 You'll later put the tool you write here into a pipeline in the
-[`C2`](C2-ci.md) CI lab ([`L10`](../labs/build/L10-ci/)).
+[`C2`](C2-ci.md) CI lab ([`L10`](../labs/build/L10-ci/README.md)).
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

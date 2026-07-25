@@ -419,7 +419,7 @@ spec:
               - image: "!*:latest"
 ```
 
-Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/).
+Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md).
 
 ### Image scan gate (Trivy)
 ```yaml
@@ -588,7 +588,7 @@ Aynı cluster'da farklı ekipler:
 - [`Policy-as-Code-OPA-Kyverno.md`](Policy-as-Code-OPA-Kyverno.md) (Faz 2)
 - [`Secrets-Management.md`](Secrets-Management.md) (Faz 2)
 - [`05-Kubernetes/Production-Checklist.md`](../05-Kubernetes/Production-Checklist.md) — operasyonel checklist
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — hazır policy örnekleri
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — hazır policy örnekleri
 
 ---
 

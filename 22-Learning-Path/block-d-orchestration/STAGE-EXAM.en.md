@@ -45,12 +45,12 @@ the security questions, you haven't passed D.
 
 **Task A — Three broken labs (core, two of them multi-fault):**
 
-- [ ] [`K04 — ImagePullBackOff + NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/): `verify.sh` green; you found **both** faults (a nonexistent tag + an unauthorized default-deny) (the RBAC `forbidden` reflex here is covered in `solution.md` — it isn't a fault in this lab)
-- [ ] [`K05 — OOMKilled + probe`](../labs/broken/K05-oomkilled-probe/): `verify.sh` green; you found **both** faults (32Mi limit + wrong probe port)
-- [ ] [`K06 — ArgoCD OutOfSync`](../labs/broken/K06-argocd-out-of-sync/): `verify.sh` green; auto-sync turned back on
+- [ ] [`K04 — ImagePullBackOff + NetworkPolicy`](../labs/broken/K04-imagepullbackoff-rbac/README.md): `verify.sh` green; you found **both** faults (a nonexistent tag + an unauthorized default-deny) (the RBAC `forbidden` reflex here is covered in `solution.md` — it isn't a fault in this lab)
+- [ ] [`K05 — OOMKilled + probe`](../labs/broken/K05-oomkilled-probe/README.md): `verify.sh` green; you found **both** faults (32Mi limit + wrong probe port)
+- [ ] [`K06 — ArgoCD OutOfSync`](../labs/broken/K06-argocd-out-of-sync/README.md): `verify.sh` green; auto-sync turned back on
 
 **Task B — Security thread standing (mandatory):**
-[`D1`](D1-k8s-temel.md)/[`L13`](../labs/build/L13-k8s-temel/) + [`D4`](D4-supply-chain.md)/[`L16`](../labs/build/L16-supply-chain/).
+[`D1`](D1-k8s-temel.md)/[`L13`](../labs/build/L13-k8s-temel/README.md) + [`D4`](D4-supply-chain.md)/[`L16`](../labs/build/L16-supply-chain/README.md).
 
 - [ ] The app is running via Deployment + Service + Ingress; RBAC Role/RoleBinding + NetworkPolicy applied
 - [ ] `kubectl auth can-i delete pods --as=<SA>` → **no**; you showed unauthorized access gets denied
@@ -58,7 +58,7 @@ the security questions, you haven't passed D.
 - [ ] The image is signed and verified with `cosign verify`
 
 **Task C — Secret outside the repo:**
-[`D3`](D3-secret-yonetimi.md)/[`L15`](../labs/build/L15-secret-yonetimi/).
+[`D3`](D3-secret-yonetimi.md)/[`L15`](../labs/build/L15-secret-yonetimi/README.md).
 
 - [ ] A secret reaches the Pod from outside the image/repo (Secret reference / external store)
 - [ ] A scan (`gitleaks` / `trivy fs`) comes back clean, showing no plaintext secret in the repo

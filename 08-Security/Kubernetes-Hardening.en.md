@@ -419,7 +419,7 @@ spec:
               - image: "!*:latest"
 ```
 
-Ready-made templates: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/).
+Ready-made templates: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md).
 
 ### Image scan gate (Trivy)
 ```yaml
@@ -588,7 +588,7 @@ For **hard multi-tenancy** (e.g. isolated clusters per SaaS customer):
 - [`Policy-as-Code-OPA-Kyverno.md`](Policy-as-Code-OPA-Kyverno.md) (Phase 2)
 - [`Secrets-Management.md`](Secrets-Management.md) (Phase 2)
 - [`05-Kubernetes/Production-Checklist.md`](../05-Kubernetes/Production-Checklist.md) — operational checklist
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — ready-made policy examples
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — ready-made policy examples
 
 ---
 

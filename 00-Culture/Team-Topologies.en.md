@@ -70,7 +70,7 @@ reference for modern DevOps & Platform Engineering teams.
 - Backstage, golden path, reusable CI/CD workflows, monitoring stack
 - **Customer = developer** — runs it like a product (measures NPS, has a roadmap)
 
-> 📚 [`13-Platform-Engineering/`](../13-Platform-Engineering/)
+> 📚 [`13-Platform-Engineering/`](../13-Platform-Engineering/README.md)
 
 ---
 
@@ -273,7 +273,7 @@ Before you call an org structure "Team Topologies compliant," verify the followi
 - *Team Topologies* — Skelton & Pais (book, **must read**)
 - [TeamTopologies.com](https://teamtopologies.com) — examples and workshops
 - *Topologies of Team* — InfoQ talk (free on YouTube)
-- [`13-Platform-Engineering/`](../13-Platform-Engineering/) — platform team details
+- [`13-Platform-Engineering/`](../13-Platform-Engineering/README.md) — platform team details
 
 ---
 

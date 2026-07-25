@@ -1,6 +1,6 @@
 # L09 — Container: image, katman, multi-stage, compose
 
-> Modül: [`C1`](../../../block-c-reproducibility/C1-container.md) · Süre: ~3 saat · Kırık lab: [`K02`](../../broken/K02-container-hatasi/)
+> Modül: [`C1`](../../../block-c-reproducibility/C1-container.md) · Süre: ~3 saat · Kırık lab: [`K02`](../../broken/K02-container-hatasi/README.md)
 
 A6'da uygulamayı **elle** kurdun: VM, systemd, nginx, PostgreSQL. Bu lab aynı
 uygulamayı bir **image**'a paketler ve `docker compose` ile app + DB'yi tek komutla

@@ -42,7 +42,7 @@ kısa tanımları için [`Glossary.md`](../../Glossary.md) (VPC/IAM/Compute · f
 | [`COST-GUARDRAILS.md`](../COST-GUARDRAILS.md) | yerel alternatif + bütçe alarmı | ~15 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L12-bulut-butce-alarmi/`](../labs/build/L12-bulut-butce-alarmi/) — **İlk adım: bütçe alarmı.**
+👉 [`labs/build/L12-bulut-butce-alarmi/`](../labs/build/L12-bulut-butce-alarmi/README.md) — **İlk adım: bütçe alarmı.**
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

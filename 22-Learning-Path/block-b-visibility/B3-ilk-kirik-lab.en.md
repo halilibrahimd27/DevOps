@@ -273,7 +273,7 @@ the incident work in Block E:
 | [`16-Cheatsheets/linux-troubleshooting.md`](../../16-Cheatsheets/linux-troubleshooting.md) | USE method + 60-second checklist — diagnostic framework | ~25 min |
 
 ## 💥 Broken lab
-👉 [`labs/broken/K01-kirik-vm/`](../labs/broken/K01-kirik-vm/) — Symptom: "The service
+👉 [`labs/broken/K01-kirik-vm/`](../labs/broken/K01-kirik-vm/README.md) — Symptom: "The service
 won't come up / isn't responding." The realistic cause is hidden (wrong permission /
 port conflict / disk full / systemd unit error). `README.md` **never** says what
 broke — it gives only the symptom.

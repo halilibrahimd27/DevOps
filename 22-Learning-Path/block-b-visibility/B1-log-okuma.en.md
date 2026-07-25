@@ -326,7 +326,7 @@ infrastructure-side proof of the "don't log everything" principle (closing line)
 | [`19-Compliance/KVKK-Practical.md`](../../19-Compliance/KVKK-Practical.md) | The compliance dimension of PII in logs | At curiosity level, before F2 (compliance) |
 
 ## 🔨 Lab
-👉 [`labs/build/L07-log-okuma/`](../labs/build/L07-log-okuma/) — (Task sketch: break your
+👉 [`labs/build/L07-log-okuma/`](../labs/build/L07-log-okuma/README.md) — (Task sketch: break your
 A6 app in three different ways, find each one using only `journalctl` filters; also
 deliberately write a log line that leaks a secret and then make it safe.)
 

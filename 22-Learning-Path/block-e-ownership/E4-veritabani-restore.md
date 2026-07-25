@@ -29,10 +29,10 @@ A6'da bir DB kurdun; D2'de production ayarlarını gördün. Ama asıl sahiplik 
 | [`10-Databases-Production/Zero-Downtime-Migrations.md`](../../10-Databases-Production/Zero-Downtime-Migrations.md) | şema değişimi | ~25 dk |
 
 ## 🔨 Lab
-👉 [`labs/build/L20-veritabani-restore/`](../labs/build/L20-veritabani-restore/)
+👉 [`labs/build/L20-veritabani-restore/`](../labs/build/L20-veritabani-restore/README.md)
 
 ## 💥 Kırık lab
-👉 [`labs/broken/K08-restore-basarisiz/`](../labs/broken/K08-restore-basarisiz/) — Belirti: "Restore çalışmıyor /
+👉 [`labs/broken/K08-restore-basarisiz/`](../labs/broken/K08-restore-basarisiz/README.md) — Belirti: "Restore çalışmıyor /
 eksik veri geliyor." (Gerçekçi sebep gizli: bozuk/eksik backup / yanlış sıra / sürüm uyumsuzluğu.)
 
 ## ✅ Kabul kriterleri

@@ -31,7 +31,7 @@ on top of these SLOs and burn rate.
 | [`07-Observability/SLO-Engineering.md`](../../07-Observability/SLO-Engineering.md) | putting it into practice | ~25 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L18-sli-slo/`](../labs/build/L18-sli-slo/)
+👉 [`labs/build/L18-sli-slo/`](../labs/build/L18-sli-slo/README.md)
 
 ## ✅ Acceptance criteria
 Don't move to the next module until all of these are verified:

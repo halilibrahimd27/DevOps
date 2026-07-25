@@ -29,10 +29,10 @@ rebuild your system from scratch, without touching anything by hand?"
 | [`03-IaC/Terraform-Module-Layout.md`](../../03-IaC/Terraform-Module-Layout.md) | module layout | ~20 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L11-terraform/`](../labs/build/L11-terraform/) — local: **LocalStack** (an emulator that mimics AWS services locally — no cloud/money needed; [`Glossary.md`](../../Glossary.md)).
+👉 [`labs/build/L11-terraform/`](../labs/build/L11-terraform/README.md) — local: **LocalStack** (an emulator that mimics AWS services locally — no cloud/money needed; [`Glossary.md`](../../Glossary.md)).
 
 ## 💥 Broken lab
-👉 [`labs/broken/K03-terraform-state/`](../labs/broken/K03-terraform-state/) — Symptom: "apply gives an
+👉 [`labs/broken/K03-terraform-state/`](../labs/broken/K03-terraform-state/README.md) — Symptom: "apply gives an
 unexpected result / is locked." (Realistic cause hidden: state lock / drift.) This is
 Block C's mandatory broken lab.
 

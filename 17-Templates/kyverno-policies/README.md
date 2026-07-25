@@ -21,7 +21,7 @@ tags:
 | [`require-image-signature.yaml`](require-image-signature.yaml) | Sadece cosign-imzalı imaj | Supply Chain |
 | [`require-labels.yaml`](require-labels.yaml) | Standart label (cost/ownership) | Best Practices |
 
-Policy-as-code derinliği: [`08-Security/`](../../08-Security/).
+Policy-as-code derinliği: [`08-Security/`](../../08-Security/README.md).
 
 ### 1️⃣ `disallow-latest-tag.yaml`
 

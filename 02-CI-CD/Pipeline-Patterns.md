@@ -444,16 +444,16 @@ Her ekip nerede olduğunu bilmeli ve bir sonraki seviyeyi hedeflemeli.
 - [`Reusable-Workflows.md`](Reusable-Workflows.md) — org-wide callable workflow pattern'leri
 - [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md) — SAST/SCA/scan kapıları
 - [`08-Security/SLSA-and-SBOM.md`](../08-Security/SLSA-and-SBOM.md) — imzalama + provenance + SBOM
-- [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster promote akışı
+- [`06-GitOps/`](../06-GitOps/README.md) — pipeline → ArgoCD → cluster promote akışı
 - [GitHub Actions docs](https://docs.github.com/en/actions)
 
 ---
 
 ## 📚 Devamı
 
-- [`17-Templates/github-actions/`](../17-Templates/github-actions/) — hazır workflow'lar
+- [`17-Templates/github-actions/`](../17-Templates/github-actions/README.md) — hazır workflow'lar
 - [`08-Security/DevSecOps-Pipeline.md`](../08-Security/DevSecOps-Pipeline.md)
-- [`06-GitOps/`](../06-GitOps/) — pipeline → ArgoCD → cluster akışı
+- [`06-GitOps/`](../06-GitOps/README.md) — pipeline → ArgoCD → cluster akışı
 - [Continuous Delivery — Jez Humble & David Farley]
 
 ---

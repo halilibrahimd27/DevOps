@@ -293,7 +293,7 @@ Production cluster'a girişte **mutlaka** olması gereken 10 policy:
 | 9 | `require-labels` | cost-center, owner, env |
 | 10 | `default-deny-network-policy` | Namespace açılırken auto-generate |
 
-Her birini bir Kyverno ClusterPolicy olarak hazırla. Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/).
+Her birini bir Kyverno ClusterPolicy olarak hazırla. Hazır şablonlar: [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md).
 
 ### Tam set örneği
 ```yaml
@@ -473,7 +473,7 @@ jobs:
 - **CNCF Policy WG** — github.com/cncf/sig-security
 - [`Kubernetes-Hardening.md`](Kubernetes-Hardening.md) — PSS + admission birlikte
 - [`SLSA-and-SBOM.md`](SLSA-and-SBOM.md) — verifyImages kısmı
-- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/) — hazır policy
+- [`17-Templates/kyverno-policies/`](../17-Templates/kyverno-policies/README.md) — hazır policy
 
 ---
 

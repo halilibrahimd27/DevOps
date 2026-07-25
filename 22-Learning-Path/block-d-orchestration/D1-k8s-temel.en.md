@@ -45,10 +45,10 @@ If this chain breaks (wrong selector, missing Ingress rule) the app ends up "run
 | [`05-Kubernetes/Debugging-Pods.md`](../../05-Kubernetes/Debugging-Pods.md) | Narrowing down Pod failures | ~25 min |
 
 ## 🔨 Lab
-👉 [`labs/build/L13-k8s-temel/`](../labs/build/L13-k8s-temel/) — local: kind/k3s.
+👉 [`labs/build/L13-k8s-temel/`](../labs/build/L13-k8s-temel/README.md) — local: kind/k3s.
 
 ## 💥 Broken lab
-👉 [`labs/broken/K04-imagepullbackoff-rbac/`](../labs/broken/K04-imagepullbackoff-rbac/) — Symptom: "Pods won't
+👉 [`labs/broken/K04-imagepullbackoff-rbac/`](../labs/broken/K04-imagepullbackoff-rbac/README.md) — Symptom: "Pods won't
 come up / unreachable." (Real cause hidden: ImagePullBackOff / wrong label
 selector / RBAC forbidden / NetworkPolicy block.)
 

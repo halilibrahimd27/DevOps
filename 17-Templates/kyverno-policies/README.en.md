@@ -21,7 +21,7 @@ tags:
 | [`require-image-signature.yaml`](require-image-signature.yaml) | Only cosign-signed images | Supply Chain |
 | [`require-labels.yaml`](require-labels.yaml) | Standard labels (cost/ownership) | Best Practices |
 
-Policy-as-code depth: [`08-Security/`](../../08-Security/).
+Policy-as-code depth: [`08-Security/`](../../08-Security/README.md).
 
 ### 1️⃣ `disallow-latest-tag.yaml`
 

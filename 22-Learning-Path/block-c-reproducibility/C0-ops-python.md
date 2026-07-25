@@ -140,7 +140,7 @@ except FileNotFoundError as e:
 ## 🔨 Lab
 Ayrı bir lab dizini yok — bu modülün pratiği aşağıdaki **kabul kriterleridir**:
 `argparse`'li bir CLI + JSON çeken bir betik yaz. Burada yazdığın aracı sonra
-[`C2`](C2-ci.md) CI lab'ında ([`L10`](../labs/build/L10-ci/)) pipeline'a koyarsın.
+[`C2`](C2-ci.md) CI lab'ında ([`L10`](../labs/build/L10-ci/README.md)) pipeline'a koyarsın.
 
 ## ✅ Kabul kriterleri
 Hepsi doğrulanmadan sonraki modüle geçme:

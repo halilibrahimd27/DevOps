@@ -95,7 +95,7 @@ the commit message carries the "why" — nothing else does.
 > `git log` is the only place that will carry the answer to "why is this line
 > like this?" a year from now. Messages like "change", "fix", "update" destroy
 > that answer. For the repo's commit discipline, see
-> [`CLAUDE.md`](../../CLAUDE.md) — build the foundation for your post-A6
+> [`CLAUDE.md`](https://github.com/halilibrahimd27/devsecops-handbook/blob/main/CLAUDE.md) — build the foundation for your post-A6
 > habits right here.
 
 ## 3️⃣ Branch and merge: working in parallel
@@ -277,7 +277,7 @@ git reset --hard <good_hash>    # go back to the solid point you saw in reflog
 | `git help <command>` (e.g. `git help rebase`) | The official, complete reference for every command | When you're curious about a behavior |
 
 ## 🔨 Lab
-👉 [`labs/build/L04-git/`](../labs/build/L04-git/) — (Task outline: a repo from
+👉 [`labs/build/L04-git/`](../labs/build/L04-git/README.md) — (Task outline: a repo from
 scratch, two branches, deliberately create and resolve a conflict; do the same
 work once with merge and once with rebase, and see the difference in the
 graph.)

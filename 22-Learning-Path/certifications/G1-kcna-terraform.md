@@ -79,8 +79,8 @@ tanıyorum" der; "bunu canlıda işlettim" demez.
 | Amaç | Karşılayan modül | Boşluk (kendin çalış) |
 |---|---|---|
 | IaC kavramları + Terraform'un amacı | [`C3`](../block-c-reproducibility/C3-terraform.md) | Diğer IaC araçlarıyla karşılaştırma jargonu |
-| Temel akış: `init/plan/apply` | [`C3`](../block-c-reproducibility/C3-terraform.md) + [`L11`](../labs/build/L11-terraform/) | — |
-| State: backend, kilit, remote | [`C3`](../block-c-reproducibility/C3-terraform.md) + [`K03`](../labs/broken/K03-terraform-state/) | Remote backend çeşitleri (S3/HCP) ayrıntısı |
+| Temel akış: `init/plan/apply` | [`C3`](../block-c-reproducibility/C3-terraform.md) + [`L11`](../labs/build/L11-terraform/README.md) | — |
+| State: backend, kilit, remote | [`C3`](../block-c-reproducibility/C3-terraform.md) + [`K03`](../labs/broken/K03-terraform-state/README.md) | Remote backend çeşitleri (S3/HCP) ayrıntısı |
 | Değişken, çıktı, fonksiyon | [`C3`](../block-c-reproducibility/C3-terraform.md) | `for_each`/`dynamic` blok, karmaşık ifadeler |
 | Modül kullanımı | [`C3`](../block-c-reproducibility/C3-terraform.md) | Registry modülleri, sürümleme |
 | HCP Terraform yetenekleri | — | **Boşluk — tamamen kendin çalış** (resmi doküman) |
@@ -116,7 +116,7 @@ Yukarıdaki ağırlıklar sınav sürümüne göre değişir. **Sınava girmeden
 
 Para harcamadan:
 
-- **Terraform Associate:** [`L11`](../labs/build/L11-terraform/) zaten **LocalStack** üstünde
+- **Terraform Associate:** [`L11`](../labs/build/L11-terraform/README.md) zaten **LocalStack** üstünde
   çalışıyor — gerçek bulut hesabı gerekmez. `init/plan/apply/destroy` döngüsünü burada tekrarla.
 - **KCNA:** `kind` ile yerel bir cluster kur; `kubectl get/describe` ile nesneleri gez.
   Sınav hands-on değil ama nesneleri gerçekten görmek kavramı ezberden ayırır.

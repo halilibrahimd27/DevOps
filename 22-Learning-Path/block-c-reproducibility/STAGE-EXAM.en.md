@@ -42,18 +42,18 @@ is **mandatory correct** — mutable tags are a supply-chain risk and a prerequi
 
 **Task A — Two broken labs (core):**
 
-- [ ] [`K02 — container error`](../labs/broken/K02-container-hatasi/): `bash labs/broken/K02-container-hatasi/verify.sh` passes with zero errors after the fix
-- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/): `bash labs/broken/K03-terraform-state/verify.sh` passes with zero errors after the fix
+- [ ] [`K02 — container error`](../labs/broken/K02-container-hatasi/README.md): `bash labs/broken/K02-container-hatasi/verify.sh` passes with zero errors after the fix
+- [ ] [`K03 — terraform state`](../labs/broken/K03-terraform-state/README.md): `bash labs/broken/K03-terraform-state/verify.sh` passes with zero errors after the fix
 - [ ] For both, you wrote the root cause + diagnostic flow (K03 = stale state lock → `force-unlock`)
 
 **Task B — Proof of reproducibility:**
-Use the [`C3`](C3-terraform.md)/[`L11`](../labs/build/L11-terraform/) (LocalStack) setup.
+Use the [`C3`](C3-terraform.md)/[`L11`](../labs/build/L11-terraform/README.md) (LocalStack) setup.
 
 - [ ] The environment is built from scratch with `terraform apply` → `terraform destroy` → `apply` again produces the **same** result
-- [ ] A commit → CI → registry flow is green ([`L10`](../labs/build/L10-ci/)); the image is published with a versioned tag (no `:latest`)
+- [ ] A commit → CI → registry flow is green ([`L10`](../labs/build/L10-ci/README.md)); the image is published with a versioned tag (no `:latest`)
 
 **Task C — The budget alert really works:**
-[`C4`](C4-bulut-butce-alarmi.md)/[`L12`](../labs/build/L12-bulut-butce-alarmi/).
+[`C4`](C4-bulut-butce-alarmi.md)/[`L12`](../labs/build/L12-bulut-butce-alarmi/README.md).
 
 - [ ] The budget/billing alert is set up, connected to a notification channel, and tested by **actually triggering** it
 - [ ] A small resource was created and closed with `destroy` — verified that **no resource is left running**
