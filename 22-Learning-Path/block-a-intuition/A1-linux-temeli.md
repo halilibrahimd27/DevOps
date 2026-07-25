@@ -175,11 +175,11 @@ sudo du -x -h / 2>/dev/null | sort -rh | head -10
 
 ```
 -rw-r--r--  1 halil  developers  1240  ...  app.conf
-│└┬┘└┬┘└┬┘    └─┬─┘  └────┬────┘
-│ │   │  └ diğerleri (other): r--   → sahip ve grup dışı herkes
-│ │   └── grup (group):       r--   → developers grubu
-│ └────── sahip (user):       rw-   → halil
-└──────── tür: - dosya, d dizin, l sembolik link
+┬└┬┘└┬┘└┬┘
+│ │  │  └─ diğerleri (other): r-- → sahip ve grup dışı herkes
+│ │  └──── grup (group): r-- → developers grubu
+│ └─────── sahip (user): rw- → halil
+└───────── tür: - dosya, d dizin, l sembolik link
 ```
 
 Üç izin, üç kitle için: **sahip / grup / diğerleri**. Her biri `r` (oku), `w` (yaz),

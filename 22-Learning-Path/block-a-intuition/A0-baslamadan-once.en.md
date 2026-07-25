@@ -117,12 +117,12 @@ do. But its language is simple. Break down one line:
 
 ```
 halil@devbox:~$ ls -l /etc
-└─┬─┘ └──┬─┘ │  └┬┘ └─┬─┘
-  │      │   │   │    └ argument: which directory
-  │      │   │   └───── flag: "long form"
-  │      │   └───────── command: what to do
-  │      └───────────── machine name
-  └──────────────────── username
+└─┬─┘ └──┬─┘     ┬  ┬ └─┬┘
+  │      │       │  │   └─ argument: which directory — /etc
+  │      │       │  └───── flag: "long form" — -l
+  │      │       └──────── command: what to do — ls
+  │      └──────────────── machine name — devbox
+  └─────────────────────── username — halil
 ```
 
 The trailing symbol tells you who you are:

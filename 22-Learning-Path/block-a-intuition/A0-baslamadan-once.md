@@ -112,12 +112,12 @@ basittir. Bir satırı çöz:
 
 ```
 halil@devbox:~$ ls -l /etc
-└─┬─┘ └──┬─┘ │  └┬┘ └─┬─┘
-  │      │   │   │    └ argüman: hangi dizin
-  │      │   │   └───── bayrak: "uzun biçim"
-  │      │   └───────── komut: ne yapılacak
-  │      └───────────── makine adı
-  └──────────────────── kullanıcı adı
+└─┬─┘ └──┬─┘     ┬  ┬ └─┬┘
+  │      │       │  │   └─ argüman: hangi dizin — /etc
+  │      │       │  └───── bayrak: "uzun biçim" — -l
+  │      │       └──────── komut: ne yapılacak — ls
+  │      └──────────────── makine adı — devbox
+  └─────────────────────── kullanıcı adı — halil
 ```
 
 Sondaki işaret kim olduğunu söyler:

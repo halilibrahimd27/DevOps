@@ -178,11 +178,11 @@ The first column of `ls -l` output tells you everything about a file:
 
 ```
 -rw-r--r--  1 halil  developers  1240  ...  app.conf
-│└┬┘└┬┘└┬┘    └─┬─┘  └────┬────┘
-│ │   │  └ other:  r--   → everyone besides owner and group
-│ │   └── group:   r--   → developers group
-│ └────── owner:   rw-   → halil
-└──────── type: - file, d directory, l symbolic link
+┬└┬┘└┬┘└┬┘
+│ │  │  └─ other: r-- → everyone besides owner and group
+│ │  └──── group: r-- → developers group
+│ └─────── owner: rw- → halil
+└───────── type: - file, d directory, l symbolic link
 ```
 
 Three permissions, for three audiences: **owner / group / other**. Each is `r`
