@@ -550,3 +550,67 @@
   .dn-hero, .profile-hero, .contact-band { background: none !important; color: #000 !important; border: 1px solid #ccc; }
   .md-typeset .dn-hero h1, .profile-hero h1 { color: #000 !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+ * 20. İnce ayarlar — "iyi"den "güzel"e (tarayıcı incelemesiyle)
+ * ══════════════════════════════════════════════════════════════ */
+
+/* Etiket chip'leri (DORA, Monitoring…) — marka indigo tint, düz gri değil */
+.md-typeset .md-tag {
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-primary-fg-color);
+  border: 1px solid var(--dn-border);
+  border-radius: 999px; font-weight: 650; font-size: 0.64rem;
+  padding: 0.28em 0.72em; letter-spacing: 0.01em;
+  transition: border-color .14s, color .14s, transform .14s;
+}
+[data-md-color-scheme="slate"] .md-typeset .md-tag { color: var(--md-primary-fg-color--light); }
+.md-typeset .md-tag:hover { border-color: var(--md-primary-fg-color); transform: translateY(-1px); }
+.md-typeset .md-tag .md-tag-icon:before { color: var(--md-primary-fg-color); }
+
+/* Blockquote / epigraf — hafif zeminli, zarif */
+.md-typeset blockquote {
+  border-left: 3px solid var(--md-primary-fg-color);
+  background: var(--dn-surface-alt);
+  border-radius: 0 10px 10px 0;
+  padding: 0.7rem 1.15rem; margin-left: 0;
+  color: var(--dn-ink-soft);
+}
+.md-typeset blockquote > :first-child { margin-top: 0; }
+.md-typeset blockquote > :last-child { margin-bottom: 0; }
+
+/* H1 hemen sonrası ilk blockquote = epigraf: biraz daha büyük, italik */
+.md-typeset h1 + blockquote {
+  font-size: 1.02rem; font-style: italic; line-height: 1.6;
+  border-left-color: var(--md-accent-fg-color);
+}
+
+/* Kart hover — üstte ince marka aksanı belirir */
+.md-typeset .grid.cards > ul > li,
+.md-typeset div.grid.cards > div { position: relative; overflow: hidden; }
+.md-typeset .grid.cards > ul > li::after,
+.md-typeset div.grid.cards > div::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.md-typeset .grid.cards > ul > li:hover::after,
+.md-typeset div.grid.cards > div:hover::after { transform: scaleX(1); }
+/* .projects kartlarında zaten üst kenar var → çift çizgi olmasın */
+.md-typeset .grid.cards.projects > ul > li::after { display: none; }
+
+/* Section başlığındaki emoji hafif büyük + hizalı */
+.md-typeset h2 .twemoji, .md-typeset h2 img.emojione { vertical-align: -0.12em; }
+
+/* Okuma konforu — içerik gövdesi biraz daha yüksek satır aralığı */
+.md-content__inner.md-typeset { line-height: 1.75; }
+.md-typeset :is(h2,h3) + p { margin-top: 0.5rem; }
+
+/* TOC (sağ) — aktif madde marka rengi + ince sol işaret */
+.md-nav--secondary .md-nav__link--active { color: var(--md-primary-fg-color); font-weight: 700; }
+
+/* Kod bloğu başlığı / satır — biraz daha yumuşak */
+.md-typeset .highlighttable .linenos { opacity: 0.5; }
+
+/* İçerik genişliği — çok geniş ekranda okunabilir satır uzunluğu */
+@media (min-width: 1600px) { .md-grid { max-width: 68rem; } }

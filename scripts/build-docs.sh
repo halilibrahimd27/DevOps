@@ -147,7 +147,6 @@ done
 # (explicit "Title: file.md" formu i18n EN'de lokalize olmuyordu → 404).
 cat > "$STAGE/.pages" <<'PAGES_EOF'
 nav:
-  - index.md
   - 22-Learning-Path
   - RoadMap
   - "📚 Konular":
