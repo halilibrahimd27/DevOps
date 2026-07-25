@@ -1,5 +1,5 @@
 # compose.yaml — SEN doldur. app + db birlikte ayağa kalkacak.
-# DB_PASSWORD kabuktan gelir:  export DB_PASSWORD='<kendi-secimin>'
+# DB_PASSWORD kabuktan gelir:  export DB_PASSWORD='<KENDI_SECIMIN>'
 services:
   app:
     build: .

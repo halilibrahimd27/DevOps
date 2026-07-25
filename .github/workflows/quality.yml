@@ -125,7 +125,7 @@ jobs:
           grep -rEn -i '(password|passwd|secret|api[_-]?key|access[_-]?token|bearer)\s*[:=]\s*["'"'"'][^"'"'"'[:space:]]{6,}["'"'"']' \
               --include="*.md" --include="*.yaml" --include="*.yml" \
               --exclude-dir=.git . \
-              | grep -viE '(<[A-Za-z_]+>|YOUR_|REPLACE_|REDACTED|placeholder|example|change[-_]?me|x{4,}|ghp_x|\$\{?[A-Za-z_]+\}?|\$\(|valuefrom|secretkeyref|secretref|fromsecret|existingsecret|base64)' \
+              | grep -viE '(<[A-Za-z0-9_-]+>|YOUR_|REPLACE_|REDACTED|placeholder|example|change[-_]?me|x{4,}|ghp_x|\$\{?[A-Za-z_]+\}?|\$\(|valuefrom|secretkeyref|secretref|fromsecret|existingsecret|base64)' \
               > "${RUNNER_TEMP:-/tmp}/cred_hits.txt" || true
           if [ -s "${RUNNER_TEMP:-/tmp}/cred_hits.txt" ]; then
             echo "::error::Olası hardcoded credential — <PLACEHOLDER> veya secret referansı kullan:"

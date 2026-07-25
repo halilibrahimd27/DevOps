@@ -29,7 +29,7 @@ ayağa kaldırır. Sonra aynı Dockerfile'ı **multi-stage** yaparak image'ı k�
 3. **Compose ile app + DB.** `compose.yaml` iskeletini doldur: `app` servisi image'ı
    build eder, `db` servisi PostgreSQL çalıştırır, app `DB_HOST=db` ile bağlanır.
    ```bash
-   export DB_PASSWORD='<kendi-secimin>'   # asla repoya yazma
+   export DB_PASSWORD='<KENDI_SECIMIN>'   # asla repoya yazma
    docker compose up -d --build
    curl -s http://127.0.0.1:8000/health   # {"db": true}
    ```

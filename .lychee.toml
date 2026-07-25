@@ -8,7 +8,24 @@ retry_wait_time = 5
 
 # 200-299 OK, 403/429 = login/rate-limit (link sağ)
 accept = ["200..=299", "403", "429"]
-include_fragments = false
+# NOT: `include_fragments` kaldırıldı — lychee 0.24+ bu anahtarı boolean'dan
+# enum'a (none|anchor-only|full) çevirdi; eski `= false` yeni sürümde config
+# parse'ı kırıyordu (job 7sn'de config-load'da düşüyordu). Fragment kontrolü
+# zaten varsayılan KAPALI (opt-in), satırı çıkarmak davranışı değiştirmez.
+
+# Tarama dışı dosyalar — link hedefleri SİTE KÖKÜNE göredir, ham dosyaya göre değil.
+# docs/index*.md build sırasında site köküne kopyalanır (scripts/build-docs.sh);
+# içindeki `RoadMap/...`, `11-SRE/...` linkleri orada çözülür ama `docs/` dizininden
+# ham dosya olarak çözülemez → lychee offline'da yanlış "kırık" verir. Bu linkler
+# ayrıca .local/qa.py'de kök-göreli doğrulanır, kapsam kaybı yok.
+exclude_path = [
+    "docs/index.md",
+    "docs/index.en.md",
+    # _planning/ = otonom inşa döngüsünün work-log'u; mkdocs'ta da exclude_docs
+    # ile siteden hariç (yayınlanmaz). Prose içinde illüstratif `[x](path)` ve
+    # `…` placeholder'lı örnek path'ler var — gezilecek gerçek link değiller.
+    "22-Learning-Path/_planning",
+]
 
 # Atlamalar — placeholder URL'ler ve sürekli 4xx/5xx veren tarihsel link'ler
 exclude = [
