@@ -5,8 +5,8 @@ hide:
 title: The DevSecOps Handbook — Halil İbrahim Dürmüş
 description: >-
   Production-focused modern DevOps · DevSecOps · SRE · Platform Engineering
-  practices — with deep TR/EU regulatory coverage. 21 topics, 125 deep-dives,
-  70K+ lines. By Halil İbrahim Dürmüş, DevSecOps Engineer.
+  practices — with deep TR/EU regulatory coverage. 21 topics, 134 deep-dives,
+  85K+ lines. By Halil İbrahim Dürmüş, DevSecOps Engineer.
 ---
 
 <div class="dn-hero" markdown>
@@ -39,10 +39,10 @@ Written in Turkish, with deep TR/EU regulatory coverage.
 
 <div class="dn-stats">
   <div class="stat"><b>21</b><span>topics</span></div>
-  <div class="stat"><b>125</b><span>deep-dives</span></div>
+  <div class="stat"><b>134</b><span>deep-dives</span></div>
   <div class="stat"><b>9</b><span>cheatsheets</span></div>
   <div class="stat"><b>19</b><span>templates</span></div>
-  <div class="stat"><b>70K+</b><span>lines</span></div>
+  <div class="stat"><b>85K+</b><span>lines</span></div>
 </div>
 
 ---
@@ -152,7 +152,7 @@ Not a **reading list** but a **curriculum**: read → build → verify → go ba
 
 ---
 
-<span class="section-eyebrow">Knowledge base · 21 topics · 125 deep-dives</span>
+<span class="section-eyebrow">Knowledge base · 21 topics · 134 deep-dives</span>
 
 ## :material-bookshelf: Categories { #kategoriler }
 

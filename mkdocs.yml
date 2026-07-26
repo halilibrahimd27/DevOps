@@ -2,7 +2,7 @@ site_name: The DevSecOps Handbook
 site_description: >-
   Halil İbrahim Dürmüş — DevSecOps Engineer. Kubernetes, GitOps, IaC, observability ve
   supply-chain security üzerine üretim-odaklı bir DevSecOps handbook — derin TR/EU
-  regülasyon kapsamıyla (21 konu · 125 deep-dive · 70K+ satır) ve açık kaynak projeler.
+  regülasyon kapsamıyla (21 konu · 134 deep-dive · 85K+ satır) ve açık kaynak projeler.
 site_author: Halil İbrahim Dürmüş
 site_url: https://halilibrahimd27.github.io/devsecops-handbook/
 copyright: >-

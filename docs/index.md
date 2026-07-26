@@ -5,7 +5,7 @@ hide:
 title: The DevSecOps Handbook — Halil İbrahim Dürmüş
 description: >-
   Production'a yönelik modern DevOps · DevSecOps · SRE · Platform Engineering
-  pratikleri — derin TR/EU regülasyon kapsamıyla. 21 konu, 125 deep-dive, 70K+
+  pratikleri — derin TR/EU regülasyon kapsamıyla. 21 konu, 134 deep-dive, 85K+
   satır Türkçe içerik. Yazan: Halil İbrahim Dürmüş, DevSecOps Engineer.
 ---
 
@@ -39,10 +39,10 @@ regülasyon kapsamıyla.
 
 <div class="dn-stats">
   <div class="stat"><b>21</b><span>ana konu</span></div>
-  <div class="stat"><b>125</b><span>deep-dive</span></div>
+  <div class="stat"><b>134</b><span>deep-dive</span></div>
   <div class="stat"><b>9</b><span>cheatsheet</span></div>
   <div class="stat"><b>19</b><span>template</span></div>
-  <div class="stat"><b>70K+</b><span>satır</span></div>
+  <div class="stat"><b>85K+</b><span>satır</span></div>
 </div>
 
 ---
@@ -152,7 +152,7 @@ Bir **okuma listesi** değil, **müfredat**: oku → inşa et → doğrula → g
 
 ---
 
-<span class="section-eyebrow">Bilgi tabanı · 21 konu · 125 deep-dive</span>
+<span class="section-eyebrow">Bilgi tabanı · 21 konu · 134 deep-dive</span>
 
 ## :material-bookshelf: Kategoriler { #kategoriler }
 

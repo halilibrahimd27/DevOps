@@ -5,6 +5,7 @@ description: >-
   and supply-chain security. Bio, skills and contact.
 hide:
   - navigation
+  - toc
 ---
 
 <div class="profile-hero" markdown>
@@ -106,7 +107,7 @@ runbooks over one-off fixes; reproducible builds over "worked on my machine".
 
     ---
 
-    A DevSecOps handbook with deep TR/EU regulatory coverage — 21 topics, 125 deep-dives, 70K+ lines. This site itself.
+    A DevSecOps handbook with deep TR/EU regulatory coverage — 21 topics, 134 deep-dives, 85K+ lines. This site itself.
 
     [:octicons-arrow-right-24: Explore](index.md)
 

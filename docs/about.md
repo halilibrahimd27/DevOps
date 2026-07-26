@@ -5,6 +5,7 @@ description: >-
   ve supply-chain security üzerine çalışan mühendis. Bio, yetkinlikler ve iletişim.
 hide:
   - navigation
+  - toc
 ---
 
 <div class="profile-hero" markdown>
@@ -139,7 +140,7 @@ Türkiye · Güvenliği en sona bırakan pipeline'lara güvenmem; Kubernetes'i d
 
     ---
 
-    Derin TR/EU regülasyon kapsamı olan DevSecOps handbook — 21 konu, 125 deep-dive, 70K+ satır. Bu sitenin kendisi.
+    Derin TR/EU regülasyon kapsamı olan DevSecOps handbook — 21 konu, 134 deep-dive, 85K+ satır. Bu sitenin kendisi.
 
     [:octicons-arrow-right-24: Keşfet](index.md)
 

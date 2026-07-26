@@ -11,7 +11,7 @@ from zero and work through step by step. Every step spells out what to read,
 what to build, how to verify it, and where to go next. The goal: **never once
 asking "what do I do now?"**
 
-This repo (`The DevSecOps Handbook`) holds 125+ deep-dives across 21 topic
+This repo (`The DevSecOps Handbook`) holds 134 deep-dives across 21 topic
 folders. The path is their **backbone and sequencer** — not a copy. If a topic
 is already covered in a deep-dive, the module **links to it.**
 

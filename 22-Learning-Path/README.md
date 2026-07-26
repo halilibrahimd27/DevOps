@@ -11,7 +11,7 @@ adım adım ilerleyebileceği bir müfredattır. Her adımda ne okuyacağın, ne
 edeceğin, nasıl doğrulayacağın ve sonra nereye gideceğin yazılıdır. Hedef:
 **hiçbir noktada "şimdi ne yapacağım?" diye sormamak.**
 
-Bu repo (`The DevSecOps Handbook`) 21 konu klasöründe 125+ deep-dive barındırır.
+Bu repo (`The DevSecOps Handbook`) 21 konu klasöründe 134 deep-dive barındırır.
 Patika o dokümanların **omurgası ve sıralayıcısıdır** — kopyası değil. Bir konu
 zaten bir deep-dive'da anlatılıyorsa, modül ona **link verir.**
 

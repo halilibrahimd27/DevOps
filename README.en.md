@@ -30,8 +30,8 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 
 ## 🎯 What's inside
 
-- **125 deep-dive documents** — most 250-600 lines, actionable and opinionated
-- **~66,000 lines** of content — DevOps + DevSecOps + SRE + Platform
+- **134 deep-dive documents** — most 250-600 lines, actionable and opinionated
+- **~85,000 lines** of content — DevOps + DevSecOps + SRE + Platform
 - **21 main topics** (00–20) + **Field Notes** + **Roadmap**
 - Every deep-dive has an **anti-pattern table** (a "don't do this" list) and a **production checklist**
 - **9 cheatsheets** + **19 copy-paste templates** (Kubernetes, GitHub Actions, Dockerfile, Kyverno, runbook)

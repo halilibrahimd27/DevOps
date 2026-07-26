@@ -28,8 +28,8 @@ Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Plat
 
 ## 🎯 Ne içerir
 
-- **125 deep-dive doküman** — çoğu 250-600 satır, eylemsel ve yargılı
-- **~66.000 satır** Türkçe içerik — DevOps + DevSecOps + SRE + Platform
+- **134 deep-dive doküman** — çoğu 250-600 satır, eylemsel ve yargılı
+- **~85.000 satır** Türkçe içerik — DevOps + DevSecOps + SRE + Platform
 - **21 ana konu** (00–20) + **Saha Notları** + **Yol Haritası**
 - Her deep-dive'da **anti-pattern tablosu** ("yapma" listesi) ve **production checklist**
 - **9 cheatsheet** + **19 kopyala-yapıştır şablon** (Kubernetes, GitHub Actions, Dockerfile, Kyverno, runbook)
