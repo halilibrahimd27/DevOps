@@ -6,7 +6,7 @@
 
 Kubernetes · CI/CD · GitOps · IaC · Observability · Security · SRE · Platform Engineering · FinOps · LLMOps · Compliance
 
-[![Site](https://img.shields.io/badge/canlı_site-halilibrahimd27.github.io%2Fdevsecops-handbook-8A2BE2?style=flat-square)](https://halilibrahimd27.github.io/devsecops-handbook/)
+[![Site](https://img.shields.io/badge/site-halilibrahimd27.github.io%2Fdevsecops--handbook-8A2BE2?style=flat-square)](https://halilibrahimd27.github.io/devsecops-handbook/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/halilibrahimd27/devsecops-handbook?style=flat-square)](https://github.com/halilibrahimd27/devsecops-handbook/commits/main)
 
