@@ -33,8 +33,10 @@ theme:
   logo: assets/logo.svg
   favicon: assets/favicon.svg
   features:
-    - navigation.instant
-    - navigation.instant.progress
+    # navigation.instant KAPALI: mkdocs-static-i18n ile bilinen uyumsuzluk —
+    # instant loader dil-geçişini (ve /en/ logo linkini) bozup ana sayfaya
+    # atıyordu. Kapatınca her gezinme tam sayfa yüklemesi → dil switcher doğru
+    # twin'e, logo doğru locale ana sayfaya gider.
     - navigation.tracking
     - navigation.tabs
     - navigation.sections

@@ -58,3 +58,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   document.addEventListener("DOMContentSwitch", initTabsScroll);
 })();
+
+// Logo / başlık "ana sayfa" linkini locale-aware yap.
+// Material logoyu her zaman varsayılan-locale köküne (TR /) bağlar; /en/ altında
+// bir sayfadayken bu yanlış (EN kullanıcıyı TR ana sayfaya atardı). Bu fix, /en/
+// sayfalarında logo + başlık + drawer logosunu /en/ ana sayfaya yönlendirir.
+(function () {
+  var localizeHome = function () {
+    var m = window.location.pathname.match(/^(.*?\/)en\//);
+    if (!m) return; // TR (varsayılan) — dokunma
+    var enHome = m[1] + "en/";
+    document
+      .querySelectorAll("a.md-logo, .md-header__title a.md-header__button, .md-header__title > a")
+      .forEach(function (a) {
+        a.setAttribute("href", enHome);
+      });
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", localizeHome);
+  } else {
+    localizeHome();
+  }
+  document.addEventListener("DOMContentSwitch", localizeHome);
+})();
