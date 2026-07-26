@@ -442,7 +442,7 @@ kubectl apply -f database-backup-cronjob.yaml
 
 ### 📋 **9.3 Disaster Recovery Runbook**
 
-```bash
+````bash
 # 9.3.1 DR runbook oluştur
 cat > ~/devops-infrastructure/docs/disaster-recovery-runbook.md << 'EOF'
 # Disaster Recovery Runbook
@@ -669,6 +669,6 @@ echo "Cleanup: kubectl delete namespace $NAMESPACE"
 EOF
 
 chmod +x ~/devops-infrastructure/scripts/dr-test.sh
-```
+````
 
 ---

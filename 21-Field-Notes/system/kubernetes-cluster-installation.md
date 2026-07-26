@@ -621,7 +621,7 @@ sudo kubeadm init \
 
 
 ### HTTPS Hatası ve Tokeni Kalıcı Hale Getirme
- ```bash
+```bash
 # Master'da token'ı al
 kubectl -n kubernetes-dashboard create token admin-user
 

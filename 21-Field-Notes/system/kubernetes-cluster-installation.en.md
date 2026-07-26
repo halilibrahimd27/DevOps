@@ -621,7 +621,7 @@ sudo kubeadm init \
 
 
 ### HTTPS Error and Making the Token Persistent
- ```bash
+```bash
 # Get the token on the Master
 kubectl -n kubernetes-dashboard create token admin-user
 

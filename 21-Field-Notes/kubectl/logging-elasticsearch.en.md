@@ -11,6 +11,7 @@ tags:
 
 ## ElasticSearch
 
+```bash
 kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
@@ -82,10 +83,12 @@ spec:
     targetPort: 9300
     name: transport
 EOF
+```
 
 
 ## Kibana
 
+```bash
 kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
@@ -140,11 +143,13 @@ spec:
     targetPort: 5601
     name: http
 EOF
+```
 
 
 
 ## Logstash
 
+```bash
 kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
@@ -235,10 +240,12 @@ spec:
     targetPort: 9600
     name: http
 EOF
+```
 
 
 ## Filebeat
 
+```bash
 kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: DaemonSet
@@ -372,3 +379,4 @@ roleRef:
   name: filebeat
   apiGroup: rbac.authorization.k8s.io
 EOF
+```

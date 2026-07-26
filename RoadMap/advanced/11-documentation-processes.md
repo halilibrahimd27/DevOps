@@ -10,7 +10,7 @@ tags:
 
 ### 📖 **12.1 Comprehensive Documentation**
 
-```bash
+````bash
 # 12.1.1 Architecture documentation
 cat > ~/devops-infrastructure/docs/architecture-overview.md << 'EOF'
 # DevOps Infrastructure Architecture
@@ -776,7 +776,7 @@ EOF
 
 # Monitor test progress
 kubectl logs -f job/load-test-1 -n dev
-```
+````
 
 ## Security Best Practices
 
